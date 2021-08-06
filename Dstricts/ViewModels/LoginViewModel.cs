@@ -53,20 +53,14 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteLoginWithQloudIdAppCommand()
 		{
 			if (Device.RuntimePlatform == Device.iOS)
-			{
-				//var supportsUri = await Launcher.CanOpenAsync("QloudidUrl://");
-				//if (supportsUri)
 				await Launcher.OpenAsync("QloudidUrl://NoffaPlusApp");
-				else
-					await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
-			}
 			else
 			{
 				var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");
 				if (supportsUri)
 					await Launcher.OpenAsync("https://qloudid.com/ip/");
-				//else
-				//await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
+				else
+					await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
 			}
 			await Task.CompletedTask;
 		}
