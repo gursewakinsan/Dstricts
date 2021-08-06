@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.LoginPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False"
+	mc:Ignorable="d">
+	<ScrollView VerticalScrollBarVisibility="Never">
+		<StackLayout Padding="0,100,0,80" Spacing="50">
+			<StackLayout
+				HorizontalOptions="CenterAndExpand"
+				Spacing="0"
+				VerticalOptions="StartAndExpand">
+				<ImageButton
+					BackgroundColor="Transparent"
+					HeightRequest="180"
+					HorizontalOptions="Center"
+					Source="splashLogo.png"
+					VerticalOptions="Center"
+					WidthRequest="180" />
+
+				<Label
+					Margin="0,40,0,0"
+					FontSize="25"
+					HorizontalTextAlignment="Center"
+					IsVisible="False"
+					Text="Noffa +"
+					TextColor="White"
+					VerticalTextAlignment="Start" />
+
+				<Label
+					FontSize="35"
+					HorizontalTextAlignment="Center"
+					IsVisible="False"
+					Text="Your digital ID"
+					TextColor="White"
+					VerticalTextAlignment="Start" />
+			</StackLayout>
+
+			<StackLayout Spacing="30" VerticalOptions="EndAndExpand">
+				<Frame
+					Margin="25"
+					Padding="0"
+					BackgroundColor="White"
+					CornerRadius="10"
+					HasShadow="False"
+					HeightRequest="50">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding LoginWithQloudIdAppCommand}" />
+					</Frame.GestureRecognizers>
+					<StackLayout
+						HorizontalOptions="CenterAndExpand"
+						Orientation="Horizontal"
+						Spacing="0">
+						<StackLayout.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding LoginWithQloudIdAppCommand}" />
+						</StackLayout.GestureRecognizers>
+						<Label
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxMarkedCircleOutline}"
+							TextColor="Black"
+							VerticalOptions="CenterAndExpand">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding LoginWithQloudIdAppCommand}" />
+							</Label.GestureRecognizers>
+						</Label>
+
+						<controls:CustomButton
+							Padding="0"
+							BackgroundColor="Transparent"
+							Command="{Binding LoginWithQloudIdAppCommand}"
+							FontFamily="{StaticResource SFProSemiboldFontFamily}"
+							Text="Login With QloudID"
+							TextColor="Black"
+							WidthRequest="160" />
+					</StackLayout>
+				</Frame>
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+</ContentPage>
