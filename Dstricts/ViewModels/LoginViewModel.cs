@@ -25,7 +25,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteLoginWithSessionCommand()
 		{
-			//DependencyService.Get<IProgressBar>().Show();
+			DependencyService.Get<IProgressBar>().Show();
 			ILoginService service = new LoginService();
 			Models.InterAppSessionResponse response = await service.LoginWithSessionAsync(new Models.InterAppSessionRequest()
 			{
@@ -40,7 +40,7 @@ namespace Dstricts.ViewModels
 				Helper.Helper.LoggedInUserId = response.UserId;
 				Application.Current.MainPage = new NavigationPage(new Views.SuccessfullyLoggedInPage(response.UserName));
 			}
-			//DependencyService.Get<IProgressBar>().Hide();
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
