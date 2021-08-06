@@ -10,5 +10,8 @@
 		{
 			return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 		}
+
+		public static int LoggedInUserId { get; set; }
+		public static string SessionId { get; set; }
 	}
 }

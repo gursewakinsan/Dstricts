@@ -15,5 +15,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.InterAppSessionResponse> LoginWithSessionAsync(Models.InterAppSessionRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.InterAppSessionResponse>(HttpWebRequest.Create(string.Format(EndPointsList.VerifyInterAppSessionUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

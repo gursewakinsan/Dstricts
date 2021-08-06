@@ -14,5 +14,11 @@ namespace Dstricts.Views
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = loginViewModel = new LoginViewModel(this.Navigation);
 		}
+		protected override void OnAppearing()
+		{
+			if (!string.IsNullOrWhiteSpace(Helper.Helper.SessionId))
+				loginViewModel.LoginWithSessionCommand.Execute(null);
+			base.OnAppearing();
+		}
 	}
 }
