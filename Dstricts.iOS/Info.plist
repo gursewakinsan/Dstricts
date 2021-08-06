@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/SFProDisplayLight.ttf</string>
+		<string>Fonts/SFProDisplayRegular.ttf</string>
+		<string>Fonts/SFProDisplaySemibold.ttf</string>
+		<string>Fonts/SFProDisplayMedium.ttf</string>
+		<string>Fonts/SFProDisplayBold.ttf</string>
+		<string>Fonts/materialdesignicons-webfont.ttf</string>
+	</array>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>

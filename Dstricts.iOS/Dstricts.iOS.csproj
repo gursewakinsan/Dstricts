@@ -69,6 +69,12 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\Fonts\materialdesignicons-webfont.ttf" />
+    <BundleResource Include="Resources\Fonts\SFProDisplayBold.ttf" />
+    <BundleResource Include="Resources\Fonts\SFProDisplayLight.ttf" />
+    <BundleResource Include="Resources\Fonts\SFProDisplayMedium.ttf" />
+    <BundleResource Include="Resources\Fonts\SFProDisplayRegular.ttf" />
+    <BundleResource Include="Resources\Fonts\SFProDisplaySemibold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
