@@ -14,6 +14,7 @@ namespace Dstricts.Views
 
 		private void OnCloseButtonClicked(object sender, System.EventArgs e)
 		{
+			Helper.Helper.SessionId = string.Empty;
 			Application.Current.MainPage = new NavigationPage(new LoginPage());
 		}
 	}

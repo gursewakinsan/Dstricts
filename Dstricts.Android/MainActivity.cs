@@ -9,7 +9,7 @@ namespace Dstricts.Droid
 	[Activity(Label = "Dstricts", Icon = "@drawable/appIcon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
 	[IntentFilter(new[] { Intent.ActionView },
 				  DataScheme = "https",
-				  DataHost = "Dstricts.com",
+				  DataHost = "DstrictsApp.com",
 				  DataPathPrefix = "/session",
 				  AutoVerify = true,
 				  Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable })]

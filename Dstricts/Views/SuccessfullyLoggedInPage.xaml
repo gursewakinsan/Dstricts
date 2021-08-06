@@ -60,9 +60,17 @@
 				<usercontrols:DotLineControl />
 
 				<controls:CustomButton
+					Margin="40,0,40,0"
+					BackgroundColor="Transparent"
+					BorderColor="White"
+					BorderWidth="1"
 					Clicked="OnCloseButtonClicked"
+					CornerRadius="25"
 					FontFamily="{StaticResource SFProRegularFontFamily}"
-					Text="Close" />
+					FontSize="17"
+					HeightRequest="50"
+					Text="Close"
+					TextColor="White" />
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>

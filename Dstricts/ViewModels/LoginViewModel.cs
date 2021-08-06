@@ -25,7 +25,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteLoginWithSessionCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ILoginService service = new LoginService();
 			Models.InterAppSessionResponse response = await service.LoginWithSessionAsync(new Models.InterAppSessionRequest()
 			{
@@ -40,7 +40,7 @@ namespace Dstricts.ViewModels
 				Helper.Helper.LoggedInUserId = response.UserId;
 				Application.Current.MainPage = new NavigationPage(new Views.SuccessfullyLoggedInPage(response.UserName));
 			}
-			DependencyService.Get<IProgressBar>().Hide();
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -58,7 +58,7 @@ namespace Dstricts.ViewModels
 			{
 				var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");
 				if (supportsUri)
-					await Launcher.OpenAsync("https://qloudid.com/ip/");
+					await Launcher.OpenAsync("https://qloudid.com/ip/DstrictsApp");
 				else
 					await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
 			}
