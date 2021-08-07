@@ -56,11 +56,11 @@ namespace Dstricts.ViewModels
 				await Launcher.OpenAsync("QloudidUrl://NoffaPlusApp");
 			else
 			{
-				var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");
-				if (supportsUri)
+				//var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");
+				//if (supportsUri)
 					await Launcher.OpenAsync("https://qloudid.com/ip/DstrictsApp");
-				else
-					await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
+				//else
+				//	await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
 			}
 			await Task.CompletedTask;
 		}
