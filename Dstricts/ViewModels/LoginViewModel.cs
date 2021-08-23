@@ -38,7 +38,7 @@ namespace Dstricts.ViewModels
 			else if (response.Result == 1)
 			{
 				Helper.Helper.LoggedInUserId = response.UserId;
-				Application.Current.MainPage = new NavigationPage(new Views.SuccessfullyLoggedInPage(response.UserName));
+				Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 			}
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -58,7 +58,7 @@ namespace Dstricts.ViewModels
 			{
 				//var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");
 				//if (supportsUri)
-					await Launcher.OpenAsync("https://qloudid.com/ip/DstrictsApp");
+					await Launcher.OpenAsync("https://qloudid.com/ip/DstrictsApp/LoginDstrictsApp");
 				//else
 				//	await Alert.DisplayAlert("QloudID app not install on your mobile phone.");
 			}

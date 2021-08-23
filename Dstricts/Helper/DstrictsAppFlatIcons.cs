@@ -7,5 +7,6 @@
 		public const string ArrowLeft = "\U000f004d";
 		public const string Plus = "\U000f0415";
 		public const string ChevronRight = "\U000f0142";
+		public const string Onepassword = "\U000f0881";
 	}
 }

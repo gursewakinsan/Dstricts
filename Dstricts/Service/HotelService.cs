@@ -26,11 +26,11 @@ namespace Dstricts.Service
 			});
 		}
 
-		public Task<int> VerifyCheckedInCodeAsync(Models.VerifyCheckedInCodeRequest request)
+		public Task<Models.VerifyCheckedInCodeResponse> VerifyCheckedInCodeAsync(Models.VerifyCheckedInCodeRequest request)
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.VerifyCheckedInCodeUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<Models.VerifyCheckedInCodeResponse>(HttpWebRequest.Create(string.Format(EndPointsList.VerifyCheckedInCodeUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}

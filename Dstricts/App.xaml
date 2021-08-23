@@ -2,7 +2,8 @@
 <Application
 	x:Class="Dstricts.App"
 	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:converters="clr-namespace:Dstricts.Converters">
 	<Application.Resources>
 		<ResourceDictionary>
 			<Color x:Key="Primary">#3623B7</Color>
@@ -54,6 +55,8 @@
 				x:TypeArguments="x:String"
 				Android="SFProDisplayBold.ttf#SFProDisplayBold"
 				iOS="SFProDisplayBold" />
+
+			<converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

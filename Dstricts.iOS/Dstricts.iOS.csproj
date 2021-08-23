@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CustomEntryRenderer.cs" />
     <Compile Include="Services\ProgressBar.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
@@ -162,4 +163,5 @@
   <ItemGroup>
     <BundleResource Include="Resources\splashLogo.png" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

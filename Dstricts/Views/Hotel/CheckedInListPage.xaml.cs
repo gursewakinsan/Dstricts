@@ -18,7 +18,6 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			Helper.Helper.LoggedInUserId = 299;
 			loginViewModel.GetCheckedInCommand.Execute(null);
 		}
 

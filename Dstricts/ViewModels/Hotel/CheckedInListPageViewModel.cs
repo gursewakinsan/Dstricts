@@ -40,40 +40,32 @@ namespace Dstricts.ViewModels
 			if (responseCheckedIn?.Count > 0)
 			{
 				foreach (var item in responseCheckedIn)
-					checkedIns.Add(item);
+					if (item != null)
+						checkedIns.Add(item);
 			}
 
 			if (responseCheckedInApartment?.Count > 0)
 			{
 				foreach (var item in responseCheckedInApartment)
-					checkedIns.Add(item);
+					if (item != null)
+						checkedIns.Add(item);
 			}
+
 			CheckedInList = checkedIns;
+			IsListEmpty = CheckedInList?.Count > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
-		#region Verify Checked In Code Command.
-		private ICommand verifyCheckedInCodeCommand;
-		public ICommand VerifyCheckedInCodeCommand
+		#region Go To Verify Checked In Code Page Command.
+		private ICommand goToVerifyCheckedInCodePageCommand;
+		public ICommand GoToVerifyCheckedInCodePageCommand
 		{
-			get => verifyCheckedInCodeCommand ?? (verifyCheckedInCodeCommand = new Command(async () => await ExecuteVerifyCheckedInCodeCommand()));
+			get => goToVerifyCheckedInCodePageCommand ?? (goToVerifyCheckedInCodePageCommand = new Command(async () => await ExecuteGoToVerifyCheckedInCodePageCommand()));
 		}
-		private async Task ExecuteVerifyCheckedInCodeCommand()
+		private async Task ExecuteGoToVerifyCheckedInCodePageCommand()
 		{
-			if (string.IsNullOrWhiteSpace(CheckedInCodeInEmail))
-				await Helper.Alert.DisplayAlert("Code is required.");
-			else
-			{
-				DependencyService.Get<IProgressBar>().Show();
-				IHotelService service = new HotelService();
-				int response = await service.VerifyCheckedInCodeAsync(new Models.VerifyCheckedInCodeRequest()
-				{
-					UserId = Helper.Helper.LoggedInUserId,
-					Ecode = CheckedInCodeInEmail
-				});
-				DependencyService.Get<IProgressBar>().Hide();
-			}
+			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage());
 		}
 		#endregion
 
@@ -89,14 +81,14 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private string checkedInCodeInEmail;
-		public string CheckedInCodeInEmail
+		private bool isListEmpty = true;
+		public bool IsListEmpty
 		{
-			get => checkedInCodeInEmail;
+			get => isListEmpty;
 			set
 			{
-				checkedInCodeInEmail = value;
-				OnPropertyChanged("CheckedInCodeInEmail");
+				isListEmpty = value;
+				OnPropertyChanged("IsListEmpty");
 			}
 		}
 		#endregion
