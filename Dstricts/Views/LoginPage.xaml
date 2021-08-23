@@ -9,7 +9,7 @@
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="Black"
+	BackgroundColor="White"
 	NavigationPage.HasNavigationBar="False"
 	mc:Ignorable="d">
 	<ScrollView VerticalScrollBarVisibility="Never">
@@ -48,7 +48,7 @@
 				<Frame
 					Margin="25"
 					Padding="0"
-					BackgroundColor="White"
+					BackgroundColor="Black"
 					CornerRadius="10"
 					HasShadow="False"
 					HeightRequest="50">
@@ -66,7 +66,7 @@
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxMarkedCircleOutline}"
-							TextColor="Black"
+							TextColor="White"
 							VerticalOptions="CenterAndExpand">
 							<Label.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding LoginWithQloudIdAppCommand}" />
@@ -79,7 +79,7 @@
 							Command="{Binding LoginWithQloudIdAppCommand}"
 							FontFamily="{StaticResource SFProSemiboldFontFamily}"
 							Text="Login With QloudID"
-							TextColor="Black"
+							TextColor="White"
 							WidthRequest="160" />
 					</StackLayout>
 				</Frame>
