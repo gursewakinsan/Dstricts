@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dstricts.Android", "Dstrict
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dstricts.iOS", "Dstricts.iOS\Dstricts.iOS.csproj", "{ED3A4C07-DC65-4636-BD72-DF3B2AA6C421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dstricts", "Dstricts\Dstricts.csproj", "{61DECCBD-5889-417D-9A66-0AEA44B28B34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dstricts", "Dstricts\Dstricts.csproj", "{61DECCBD-5889-417D-9A66-0AEA44B28B34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

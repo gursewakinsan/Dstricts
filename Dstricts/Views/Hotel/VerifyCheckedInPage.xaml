@@ -131,8 +131,7 @@
 				FontSize="16"
 				HorizontalOptions="CenterAndExpand"
 				Text="Submit"
-				VerticalOptions="EndAndExpand"
-				WidthRequest="250" />
+				VerticalOptions="EndAndExpand" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

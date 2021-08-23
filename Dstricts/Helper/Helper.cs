@@ -11,6 +11,7 @@
 			return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 		}
 
+		public static bool IsLoggedInUser { get; set; } = false;
 		public static int LoggedInUserId { get; set; }
 		public static string SessionId { get; set; }
 	}
