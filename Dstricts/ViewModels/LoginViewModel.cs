@@ -53,7 +53,7 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteLoginWithQloudIdAppCommand()
 		{
 			if (Device.RuntimePlatform == Device.iOS)
-				await Launcher.OpenAsync("QloudidUrl://DstrictsApp");
+				await Launcher.OpenAsync("QloudidUrl://DstrictsApp/LoginDstrictsApp");
 			else
 			{
 				//var supportsUri = await Launcher.CanOpenAsync("https://qloudid.com/ip/");

@@ -37,7 +37,7 @@
 					Grid.Column="0"
 					Padding="0,5,15,5"
 					BackgroundColor="Transparent"
-					Command="{Binding BackCommand}"
+					Command="{Binding CloseCommand}"
 					HorizontalOptions="StartAndExpand">
 					<ImageButton.Source>
 						<FontImageSource
@@ -129,7 +129,6 @@
 				CornerRadius="25"
 				FontFamily="{StaticResource SFProSemiboldFontFamily}"
 				FontSize="16"
-				HorizontalOptions="CenterAndExpand"
 				Text="Submit"
 				VerticalOptions="EndAndExpand" />
 		</Grid>
