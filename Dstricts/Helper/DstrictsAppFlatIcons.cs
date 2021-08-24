@@ -8,5 +8,8 @@
 		public const string Plus = "\U000f0415";
 		public const string ChevronRight = "\U000f0142";
 		public const string Onepassword = "\U000f0881";
+		public const string CameraOutline = "\U000f0d5d";
+		public const string DotsHorizontal = "\U000f01d8";
+		public const string MapMarker = "\U000f034e";
 	}
 }

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.TestPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	BackgroundColor="Black">
+	<ContentPage.Content>
+		<Grid
+			Padding="15,15,15,0"
+			ColumnSpacing="0"
+			RowSpacing="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="70" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="70" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Row="0"
+				Grid.ColumnSpan="2"
+				FontFamily="{StaticResource SansProBoldFontFamily}"
+				FontSize="34"
+				HorizontalTextAlignment="Start"
+				Text="Dstricts"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+			<Button
+				Grid.Row="1"
+				Grid.Column="0"
+				Padding="0"
+				CornerRadius="18"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HeightRequest="60"
+				HorizontalOptions="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.CameraOutline}"
+				TextColor="#5587C3"
+				VerticalOptions="Center"
+				WidthRequest="60" />
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalScrollBarVisibility="Never"
+				Orientation="Horizontal">
+				<StackLayout x:Name="imageList" Orientation="Horizontal">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate>
+							<ImageButton
+								Padding="0"
+								Aspect="Fill"
+								CornerRadius="18"
+								HeightRequest="60"
+								HorizontalOptions="Start"
+								Source="{Binding ImageURL}"
+								VerticalOptions="Center"
+								WidthRequest="60" />
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+			</ScrollView>
+
+			<Frame
+				Grid.Row="2"
+				Grid.ColumnSpan="2"
+				Padding="0"
+				BackgroundColor="#1A1C2A"
+				BorderColor="#1A1C2A"
+				CornerRadius="10"
+				HasShadow="False"
+				IsClippedToBounds="True"
+				VerticalOptions="StartAndExpand">
+				<Grid ColumnSpacing="0" RowSpacing="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="200" />
+						<RowDefinition Height="60" />
+						<RowDefinition Height="auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="70" />
+						<ColumnDefinition />
+						<ColumnDefinition Width="50" />
+					</Grid.ColumnDefinitions>
+					<Image
+						x:Name="cardImage"
+						Grid.Row="0"
+						Grid.ColumnSpan="3"
+						Aspect="AspectFill"
+						HeightRequest="200" />
+
+					<ImageButton
+						x:Name="cardImage1"
+						Grid.Row="1"
+						Grid.Column="0"
+						Padding="0"
+						Aspect="AspectFill"
+						BackgroundColor="Transparent"
+						CornerRadius="25"
+						HeightRequest="50"
+						HorizontalOptions="CenterAndExpand"
+						VerticalOptions="CenterAndExpand"
+						WidthRequest="50" />
+
+					<StackLayout
+						Grid.Row="1"
+						Grid.Column="1"
+						Margin="10,0,0,0"
+						Spacing="5"
+						VerticalOptions="CenterAndExpand">
+						<Label
+							FontFamily="{StaticResource SansProBoldFontFamily}"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="Anthony Cortez"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+						<StackLayout Orientation="Horizontal" Spacing="0">
+							<Label
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="12"
+								HorizontalTextAlignment="Start"
+								Text="30 min ago"
+								TextColor="#768196"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								Margin="10,0,5,0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="12"
+								HorizontalTextAlignment="Start"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.MapMarker}"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="12"
+								HorizontalTextAlignment="Start"
+								Text="London, United Kingdom"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+						</StackLayout>
+					</StackLayout>
+
+					<Button
+						Grid.Row="1"
+						Grid.Column="2"
+						Padding="0"
+						BackgroundColor="Transparent"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="32"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsHorizontal}"
+						TextColor="White"
+						VerticalOptions="StartAndExpand" />
+
+					<Label
+						Grid.Row="3"
+						Grid.ColumnSpan="3"
+						Margin="20,10,20,10"
+						FontFamily="{StaticResource SansProRegularFontFamily}"
+						FontSize="14"
+						HorizontalTextAlignment="Start"
+						Text="Spent all day in this cozy place with my laptop. Undoubtedly the best place for work."
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+				</Grid>
+			</Frame>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

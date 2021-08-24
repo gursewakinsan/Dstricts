@@ -78,6 +78,18 @@
     <BundleResource Include="Resources\Fonts\SFProDisplayRegular.ttf" />
     <BundleResource Include="Resources\Fonts\SFProDisplaySemibold.ttf" />
     <BundleResource Include="Resources\splashLogo_1.png" />
+    <BundleResource Include="Resources\Fonts\SansProBlack.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProBlackItalic.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProBold.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProBoldItalic.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProExtraLight.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProExtraLightItalic.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProItalic.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProLight.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProLightItalic.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProRegular.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProSemiBold.ttf" />
+    <BundleResource Include="Resources\Fonts\SansProSemiBoldItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
