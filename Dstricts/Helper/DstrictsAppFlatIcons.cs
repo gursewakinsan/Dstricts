@@ -11,5 +11,8 @@
 		public const string CameraOutline = "\U000f0d5d";
 		public const string DotsHorizontal = "\U000f01d8";
 		public const string MapMarker = "\U000f034e";
+		public const string Heart = "\U000f02d1";
+		public const string Chat = "\U000f0b79";
+		public const string StarOutline = "\U000f04d2";
 	}
 }
