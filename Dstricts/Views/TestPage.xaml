@@ -165,12 +165,34 @@
 										TextColor="White"
 										VerticalOptions="StartAndExpand" />
 
-									<Image
+									<CarouselView
 										Grid.Row="1"
 										Grid.ColumnSpan="3"
-										Aspect="AspectFill"
+										BackgroundColor="Transparent"
 										HeightRequest="200"
-										Source="{Binding CardsImage}" />
+										HorizontalScrollBarVisibility="Never"
+										IndicatorView="indicatorView"
+										ItemsSource="{Binding CardsImage}"
+										VerticalOptions="CenterAndExpand">
+										<CarouselView.ItemTemplate>
+											<DataTemplate>
+												<Image
+													Aspect="AspectFill"
+													HeightRequest="200"
+													Source="{Binding URL}" />
+											</DataTemplate>
+										</CarouselView.ItemTemplate>
+									</CarouselView>
+
+									<IndicatorView
+										x:Name="indicatorView"
+										Grid.Row="1"
+										Grid.ColumnSpan="3"
+										Margin="0,0,0,10"
+										HorizontalOptions="CenterAndExpand"
+										IndicatorColor="#9DA4B3"
+										SelectedIndicatorColor="#FE2042"
+										VerticalOptions="EndAndExpand" />
 
 									<StackLayout Grid.Row="2" Grid.ColumnSpan="3">
 										<Grid ColumnSpacing="0">
@@ -291,7 +313,7 @@
 						Padding="0"
 						BackgroundColor="Transparent"
 						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="28" 
+						FontSize="28"
 						HorizontalOptions="Center"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
 						TextColor="#9DA4B3"

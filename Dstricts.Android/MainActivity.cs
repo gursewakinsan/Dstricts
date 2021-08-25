@@ -18,6 +18,12 @@ namespace Dstricts.Droid
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
+			Xamarin.Forms.Forms.SetFlags(new string[]
+			{
+				"CarouselView_Experimental",
+				"IndicatorView_Experimental",
+				"Brush_Experimental"
+			});
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());

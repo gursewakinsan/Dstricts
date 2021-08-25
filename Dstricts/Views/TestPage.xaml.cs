@@ -34,8 +34,22 @@ namespace Dstricts.Views
 			BindableLayout.SetItemsSource(imageList, list);
 
 			List<DemoCards> demoCardsList = new List<DemoCards>();
-			demoCardsList.Add(new DemoCards() { UserImage = "https://www.photodoozy.com/uploads/pak-army-handsome-boy-hd-stylish-dp-2020-photodoozy.jpg", CardsImage = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			demoCardsList.Add(new DemoCards() { UserImage = "https://images.pexels.com/photos/1190208/pexels-photo-1190208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", CardsImage = "https://www.gstatic.com/webp/gallery/4.webp" });
+			List<Images> CardsImages = new List<Images>();
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/4.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
+
+			demoCardsList.Add(new DemoCards()
+			{
+				UserImage = "https://www.photodoozy.com/uploads/pak-army-handsome-boy-hd-stylish-dp-2020-photodoozy.jpg",
+				CardsImage = CardsImages
+			});
+			demoCardsList.Add(new DemoCards()
+			{
+				UserImage = "https://images.pexels.com/photos/1190208/pexels-photo-1190208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				CardsImage = CardsImages
+			});
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
 	}
@@ -47,5 +61,9 @@ public class Test
 public class DemoCards
 {
 	public string UserImage { get; set; }
-	public string CardsImage { get; set; }
+	public List<Images> CardsImage { get; set; }
+}
+public class Images
+{
+	public string URL { get; set; }
 }
