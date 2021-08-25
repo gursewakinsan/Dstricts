@@ -22,7 +22,7 @@
 					BackgroundColor="Transparent"
 					HeightRequest="180"
 					HorizontalOptions="Center"
-					Source="splashLogo.png"
+					Source="pageLogo.png"
 					VerticalOptions="Center"
 					WidthRequest="180" />
 

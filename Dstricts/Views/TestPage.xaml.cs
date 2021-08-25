@@ -15,7 +15,10 @@ namespace Dstricts.Views
 		public TestPage()
 		{
 			InitializeComponent();
-			List<Test> list = new List<Test>();
+		}
+	}
+}
+			/*List<Test> list = new List<Test>();
 			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
 			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
 			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
@@ -66,4 +69,4 @@ public class DemoCards
 public class Images
 {
 	public string URL { get; set; }
-}
+}*/

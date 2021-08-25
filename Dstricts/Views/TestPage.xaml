@@ -104,7 +104,7 @@
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="70" />
 										<ColumnDefinition />
-										<ColumnDefinition Width="50" />
+										<ColumnDefinition Width="40" />
 									</Grid.ColumnDefinitions>
 									<ImageButton
 										Grid.Row="0"
@@ -122,7 +122,7 @@
 									<StackLayout
 										Grid.Row="0"
 										Grid.Column="1"
-										Margin="10,0,0,0"
+										Margin="5,0,0,0"
 										Spacing="5"
 										VerticalOptions="CenterAndExpand">
 										<Label
@@ -138,12 +138,13 @@
 												FontFamily="{StaticResource SansProRegularFontFamily}"
 												FontSize="12"
 												HorizontalTextAlignment="Start"
+												MaxLines="1"
 												Text="30 min ago"
 												TextColor="#768196"
 												VerticalTextAlignment="Center" />
 
 											<Label
-												Margin="10,0,5,0"
+												Margin="5,0,5,0"
 												FontFamily="{StaticResource MaterialFontFamily}"
 												FontSize="12"
 												HorizontalTextAlignment="Start"
@@ -155,6 +156,7 @@
 												FontFamily="{StaticResource SansProRegularFontFamily}"
 												FontSize="12"
 												HorizontalTextAlignment="Start"
+												MaxLines="1"
 												Text="London, United Kingdom"
 												TextColor="White"
 												VerticalTextAlignment="Center" />

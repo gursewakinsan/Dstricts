@@ -16,6 +16,10 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "qloud_checkout_id")]
 		public string QloudCheckOutId { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "image_path")]
+		public string ImagePath { get; set; }
+		
 		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
 	}
 }

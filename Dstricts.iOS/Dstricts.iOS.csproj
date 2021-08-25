@@ -177,5 +177,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\splashLogo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\pageLogo.png" />
+  </ItemGroup>
 </Project>
