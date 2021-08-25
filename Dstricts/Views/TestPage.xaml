@@ -3,17 +3,19 @@
 	x:Class="Dstricts.Views.TestPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	BackgroundColor="Black">
 	<ContentPage.Content>
 		<Grid
-			Padding="15,15,15,0"
+			Padding="0,15,0,0"
 			ColumnSpacing="0"
-			RowSpacing="20">
+			RowSpacing="10">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="40" />
 				<RowDefinition Height="70" />
 				<RowDefinition Height="*" />
+				<RowDefinition Height="55" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="70" />
@@ -22,6 +24,7 @@
 			<Label
 				Grid.Row="0"
 				Grid.ColumnSpan="2"
+				Padding="15,0,0,0"
 				FontFamily="{StaticResource SansProBoldFontFamily}"
 				FontSize="34"
 				HorizontalTextAlignment="Start"
@@ -32,6 +35,7 @@
 			<Button
 				Grid.Row="1"
 				Grid.Column="0"
+				Margin="15,0,0,0"
 				Padding="0"
 				CornerRadius="18"
 				FontFamily="{StaticResource MaterialFontFamily}"
@@ -46,6 +50,7 @@
 			<ScrollView
 				Grid.Row="1"
 				Grid.Column="1"
+				Padding="5,0,0,0"
 				HorizontalScrollBarVisibility="Never"
 				Orientation="Horizontal">
 				<StackLayout x:Name="imageList" Orientation="Horizontal">
@@ -69,11 +74,12 @@
 				Grid.Row="2"
 				Grid.ColumnSpan="2"
 				VerticalScrollBarVisibility="Never">
-				<StackLayout x:Name="cards">
+				<StackLayout x:Name="cards" Padding="15,0,15,0">
 					<BindableLayout.ItemTemplate>
 						<DataTemplate>
-							<Frame Margin="0,0,0,15"
+							<Frame
 								Grid.Row="2"
+								Margin="0,0,0,15"
 								Padding="0,10,0,10"
 								BackgroundColor="#1A1C2A"
 								BorderColor="#1A1C2A"
@@ -219,7 +225,7 @@
 												BackgroundColor="Transparent"
 												FontFamily="{StaticResource MaterialFontFamily}"
 												FontSize="32"
-												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Chat}"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.ShareOutline}"
 												TextColor="#9DA4B3" />
 
 											<Button
@@ -250,6 +256,82 @@
 					</BindableLayout.ItemTemplate>
 				</StackLayout>
 			</ScrollView>
+
+			<controls:CustomFrame
+				Grid.Row="3"
+				Grid.ColumnSpan="2"
+				Padding="5"
+				BackgroundColor="#1A1C2A"
+				CornerRadius="20,20,0,0">
+				<Grid ColumnSpacing="10">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<Button
+						Grid.Column="0"
+						Padding="0"
+						BackgroundColor="White"
+						CornerRadius="21"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="26"
+						HeightRequest="42"
+						HorizontalOptions="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeCircleOutline}"
+						TextColor="Black"
+						VerticalOptions="Center"
+						WidthRequest="42" />
+
+					<Button
+						Grid.Column="1"
+						Padding="0"
+						BackgroundColor="Transparent"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="28" 
+						HorizontalOptions="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+						TextColor="#9DA4B3"
+						VerticalOptions="Center" />
+
+					<Button
+						Grid.Column="2"
+						Padding="0"
+						BackgroundColor="Transparent"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalOptions="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Chat}"
+						TextColor="#9DA4B3"
+						VerticalOptions="Center" />
+
+					<Button
+						Grid.Column="3"
+						Padding="0"
+						BackgroundColor="Transparent"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalOptions="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
+						TextColor="#9DA4B3"
+						VerticalOptions="Center" />
+
+					<Button
+						Grid.Column="4"
+						Padding="0"
+						BackgroundColor="Transparent"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalOptions="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+						TextColor="#9DA4B3"
+						VerticalOptions="Center" />
+
+				</Grid>
+			</controls:CustomFrame>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>
