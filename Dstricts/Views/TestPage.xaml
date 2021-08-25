@@ -47,11 +47,9 @@
 				VerticalOptions="Center"
 				WidthRequest="60">
 				<Button.Background>
-					<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.8,1">
-						<LinearGradientBrush.GradientStops>
-							<GradientStop Offset="0" Color="#fe2042" />
-							<GradientStop Offset="1" Color="#ff900b" />
-						</LinearGradientBrush.GradientStops>
+					<LinearGradientBrush>
+						<GradientStop Offset="0.1" Color="#fe2042" />
+						<GradientStop Offset="1.0" Color="#ff900b" />
 					</LinearGradientBrush>
 				</Button.Background>
 			</Button>
