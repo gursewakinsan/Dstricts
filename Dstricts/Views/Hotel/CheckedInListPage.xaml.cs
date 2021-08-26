@@ -8,19 +8,19 @@ namespace Dstricts.Views.Hotel
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CheckedInListPage : ContentPage
 	{
-		CheckedInListPageViewModel loginViewModel;
+		CheckedInListPageViewModel viewModel;
 		public CheckedInListPage()
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
-			BindingContext = loginViewModel = new CheckedInListPageViewModel(this.Navigation);
+			BindingContext = viewModel = new CheckedInListPageViewModel(this.Navigation);
 			rr();
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			loginViewModel.GetCheckedInCommand.Execute(null);
+			viewModel.GetCheckedInCommand.Execute(null);
 		}
 
 		private void OnCheckedInItemTapped(object sender, ItemTappedEventArgs e)
@@ -30,24 +30,6 @@ namespace Dstricts.Views.Hotel
 
 		void rr()
 		{
-			/*List<Test> list = new List<Test>();
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			BindableLayout.SetItemsSource(imageList, list);*/
-
 			List<DemoCards> demoCardsList = new List<DemoCards>();
 			List<Images> CardsImages = new List<Images>();
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
@@ -67,11 +49,14 @@ namespace Dstricts.Views.Hotel
 			});
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
+
+		private void OnHotelImageClicked(object sender, System.EventArgs e)
+		{
+			ImageButton image = sender as ImageButton;
+			Helper.Helper.HotelDetails = image.BindingContext as Models.CheckedInResponse;
+			viewModel.HotelDetailsCommand.Execute(null);
+		}
 	}
-}
-public class Test
-{
-	public string ImageURL { get; set; }
 }
 public class DemoCards
 {

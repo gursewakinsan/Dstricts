@@ -14,5 +14,6 @@
 		public static bool IsLoggedInUser { get; set; } = false;
 		public static int LoggedInUserId { get; set; }
 		public static string SessionId { get; set; }
+		public static Models.CheckedInResponse HotelDetails { get; set; }
 	}
 }

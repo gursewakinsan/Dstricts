@@ -69,6 +69,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Hotel Details Command.
+		private ICommand hotelDetailsCommand;
+		public ICommand HotelDetailsCommand
+		{
+			get => hotelDetailsCommand ?? (hotelDetailsCommand = new Command(async () => await ExecuteHotelDetailsCommand()));
+		}
+		private async Task ExecuteHotelDetailsCommand()
+		{
+			await Navigation.PushAsync(new Views.Hotel.HotelDetailsPage());
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.CheckedInResponse> checkedInList;
 		public List<Models.CheckedInResponse> CheckedInList
