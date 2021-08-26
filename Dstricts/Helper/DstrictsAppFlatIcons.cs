@@ -19,5 +19,11 @@
 		public const string HomeCircleOutline = "\U000f104d";
 		public const string SearchIcon = "\U000f0349";
 		public const string ShareOutline = "\U000f0932";
+		public const string Star = "\U000f04ce";
+		public const string ShieldStar = "\U000f113b";
+		public const string RoomService = "\U000f088d";
+		public const string Bed = "\U000f02e3";
+		public const string ScaleBathroom = "\U000f0473";
+		public const string ElectronFramework = "\U000f1024";
 	}
 }

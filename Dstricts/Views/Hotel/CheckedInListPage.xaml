@@ -101,7 +101,6 @@
 									TextColor="White"
 									VerticalTextAlignment="Center" />
 							</Grid>
-
 						</DataTemplate>
 					</BindableLayout.ItemTemplate>
 				</StackLayout>
