@@ -25,5 +25,6 @@
 		public const string Bed = "\U000f02e3";
 		public const string ScaleBathroom = "\U000f0473";
 		public const string ElectronFramework = "\U000f1024";
+		public const string DotsVertical = "\U000f01d9";
 	}
 }

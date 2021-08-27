@@ -36,6 +36,11 @@ namespace Dstricts.Views.Hotel
 			listWellness.Add(new EatAndDrink() { Name = "Spa", URL = "https://m.economictimes.com/thumb/msid-67344533,width-1200,height-900,resizemode-4,imgsize-552643/spa-wellness-massage-gettyimages-875640820.jpg" });
 			BindableLayout.SetItemsSource(layoutWellness, listWellness);
 		}
+
+		private void OnMoreOrLessTapped(object sender, System.EventArgs e)
+		{
+
+		}
 	}
 }
 public class EatAndDrink
