@@ -28,7 +28,7 @@ namespace Dstricts.Views.Hotel
 
 			List<EatAndDrink> eatAndDrink = new List<EatAndDrink>();
 			eatAndDrink.Add(new EatAndDrink() { Name = "Breakfast", URL = "https://www.verywellhealth.com/thmb/gF-I-Kf6MyQfEbp1Q9mpXtcENxM=/2880x1920/filters:fill(87E3EF,1)/best-breakfast-choices-and-diabetes-1087468-primary-recirc-603a39fe3b10439eaa9a0cf80a09eec2.jpg" });
-			eatAndDrink.Add(new EatAndDrink() { Name = "Asia Kitchen", URL = "http://4.bp.blogspot.com/-uklPnN96htg/XA3nU6CxAHI/AAAAAAAAcZk/bYn6MN1cCXAWh88rgopnopeL2p_NuAw8wCK4BGAYYCw/s1600/entrance-asia-kitchen-by-mainland-china-dhole-patil-road-pune.jpg" });
+			eatAndDrink.Add(new EatAndDrink() { Name = "Asia Kitchen", URL = "https://b.zmtcdn.com/data/pictures/5/18217475/74f000f5b38ccbc09b920913ad4b71d4.jpg" });
 			BindableLayout.SetItemsSource(layoutEatAndDrink, eatAndDrink);
 
 			List<EatAndDrink> listWellness = new List<EatAndDrink>();

@@ -514,14 +514,19 @@
 
 										<Label
 											Grid.Row="0"
+											Margin="10,0,0,10"
+											Padding="2"
+											BackgroundColor="#9DA4B3"
 											FontFamily="{StaticResource SansProRegularFontFamily}"
-											FontSize="20"
-											HorizontalTextAlignment="Center"
+											FontSize="12"
+											HorizontalOptions="Start"
+											HorizontalTextAlignment="Start"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
 											Text="{Binding Name}"
-											TextColor="#FE2042"
-											VerticalTextAlignment="Center" />
+											TextColor="White"
+											VerticalOptions="EndAndExpand"
+											VerticalTextAlignment="End" />
 									</Grid>
 								</DataTemplate>
 							</BindableLayout.ItemTemplate>
@@ -568,14 +573,19 @@
 
 										<Label
 											Grid.Row="0"
+											Margin="10,0,0,10"
+											Padding="2"
+											BackgroundColor="#9DA4B3"
 											FontFamily="{StaticResource SansProRegularFontFamily}"
-											FontSize="20"
-											HorizontalTextAlignment="Center"
+											FontSize="12"
+											HorizontalOptions="Start"
+											HorizontalTextAlignment="Start"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
 											Text="{Binding Name}"
-											TextColor="#FE2042"
-											VerticalTextAlignment="Center" />
+											TextColor="White"
+											VerticalOptions="EndAndExpand"
+											VerticalTextAlignment="End" />
 									</Grid>
 								</DataTemplate>
 							</BindableLayout.ItemTemplate>
