@@ -37,9 +37,16 @@ namespace Dstricts.Views.Hotel
 			BindableLayout.SetItemsSource(layoutWellness, listWellness);
 		}
 
-		private void OnMoreOrLessTapped(object sender, System.EventArgs e)
+		private void OnMoreTapped(object sender, System.EventArgs e)
 		{
-
+			lblMoreInfo.IsVisible = false;
+			lblLessInfo.IsVisible = true;
+		}
+		
+		private void OnLessTapped(object sender, System.EventArgs e)
+		{
+			lblLessInfo.IsVisible = false;
+			lblMoreInfo.IsVisible = true;
 		}
 	}
 }

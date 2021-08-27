@@ -3,7 +3,6 @@
 	x:Class="Dstricts.Views.Hotel.HotelDetailsPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
@@ -134,9 +133,10 @@
 									FontFamily="{StaticResource SansProBoldFontFamily}"
 									FontSize="14"
 									HorizontalTextAlignment="Start"
-									Text="Anthony Cortez"
+									Text="{Binding HotelDetails.PropertyNickName}"
 									TextColor="White"
 									VerticalTextAlignment="Center" />
+
 								<StackLayout Orientation="Horizontal" Spacing="0">
 									<Label
 										Margin="0,0,5,0"
@@ -152,7 +152,7 @@
 										FontSize="12"
 										HorizontalTextAlignment="Start"
 										MaxLines="1"
-										Text="London, United Kingdom"
+										Text="{Binding HotelDetails.Address}"
 										TextColor="White"
 										VerticalTextAlignment="Center" />
 								</StackLayout>
@@ -272,6 +272,7 @@
 							</Grid>
 
 							<Label
+								x:Name="lblMoreInfo"
 								Grid.Row="3"
 								Grid.ColumnSpan="3"
 								Padding="5,0,5,5"
@@ -283,9 +284,47 @@
 								<Label.FormattedText>
 									<FormattedString>
 										<Span Text="I have prepared a list of service we can provide to enhance your stay." />
+										<Span x:Name="lblMore" Text=" ...More">
+											<Span.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnMoreTapped" />
+											</Span.GestureRecognizers>
+										</Span>
 									</FormattedString>
 								</Label.FormattedText>
 							</Label>
+
+							<StackLayout
+								x:Name="lblLessInfo"
+								Grid.Row="3"
+								Grid.ColumnSpan="3"
+								Padding="5,0,5,5"
+								IsVisible="False">
+								<Label
+									FontFamily="{StaticResource SansProRegularFontFamily}"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="I have prepared a list of service we can provide to enhance your stay. Information about the hotel or your payment can be found below."
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+								<Label
+									FontFamily="{StaticResource SansProRegularFontFamily}"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									TextColor="White"
+									VerticalTextAlignment="Start">
+									<Label.FormattedText>
+										<FormattedString>
+											<Span Text="We wish you a pleasant stay and don't hesitate to reach out to us for help." />
+											<Span x:Name="lblLess" Text=" ...Less">
+												<Span.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnLessTapped" />
+												</Span.GestureRecognizers>
+											</Span>
+										</FormattedString>
+									</Label.FormattedText>
+								</Label>
+							</StackLayout>
 						</Grid>
 					</Frame>
 
@@ -477,11 +516,11 @@
 								<Span
 									FontFamily="{StaticResource SansProBoldFontFamily}"
 									FontSize="30"
-									Text="Guest " />
+									Text="{Binding EatAndDrinkText}" />
 								<Span
 									FontFamily="{StaticResource SansProRegularFontFamily}"
 									FontSize="30"
-									Text="Services" />
+									Text=" @ Hotel" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
