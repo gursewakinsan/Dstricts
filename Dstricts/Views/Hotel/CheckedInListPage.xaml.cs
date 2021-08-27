@@ -23,11 +23,6 @@ namespace Dstricts.Views.Hotel
 			viewModel.GetCheckedInCommand.Execute(null);
 		}
 
-		private void OnCheckedInItemTapped(object sender, ItemTappedEventArgs e)
-		{
-			//listCheckedIn.SelectedItem = null;
-		}
-
 		void rr()
 		{
 			List<DemoCards> demoCardsList = new List<DemoCards>();

@@ -29,7 +29,11 @@
 				HorizontalTextAlignment="Start"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
 				TextColor="White"
-				VerticalTextAlignment="Center" />
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
 
 			<ScrollView
 				Grid.Row="1"
@@ -68,7 +72,7 @@
 						FontSize="20"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
-						Text="Gursewak Singh"
+						Text="{Binding UserName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
@@ -139,18 +143,28 @@
 									FontFamily="{StaticResource SansProBoldFontFamily}"
 									FontSize="14"
 									HorizontalTextAlignment="Start"
-									Text="Anthony Cortez"
+									Text="{Binding HotelDetails.PropertyNickName}"
 									TextColor="White"
 									VerticalTextAlignment="Center" />
+								<StackLayout Orientation="Horizontal" Spacing="0">
+									<Label
+										Margin="0,0,5,0"
+										FontFamily="{StaticResource MaterialFontFamily}"
+										FontSize="12"
+										HorizontalTextAlignment="Start"
+										Text="{x:Static fontawesome:DstrictsAppFlatIcons.MapMarker}"
+										TextColor="White"
+										VerticalTextAlignment="Center" />
 
-								<Label
-									FontFamily="{StaticResource SansProRegularFontFamily}"
-									FontSize="12"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="London, United Kingdom"
-									TextColor="White"
-									VerticalTextAlignment="Center" />
+									<Label
+										FontFamily="{StaticResource SansProRegularFontFamily}"
+										FontSize="12"
+										HorizontalTextAlignment="Start"
+										MaxLines="1"
+										Text="{Binding HotelDetails.Address}"
+										TextColor="White"
+										VerticalTextAlignment="Center" />
+								</StackLayout>
 							</StackLayout>
 
 							<Button

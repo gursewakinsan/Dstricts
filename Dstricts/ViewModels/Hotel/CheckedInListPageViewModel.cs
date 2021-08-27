@@ -24,6 +24,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGetCheckedInCommand()
 		{
+			if (CheckedInList?.Count > 0) return;
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
 			List<Models.CheckedInResponse> checkedIns = new List<Models.CheckedInResponse>();

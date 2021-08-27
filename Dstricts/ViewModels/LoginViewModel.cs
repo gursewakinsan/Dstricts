@@ -38,6 +38,7 @@ namespace Dstricts.ViewModels
 			else if (response.Result == 1)
 			{
 				Helper.Helper.LoggedInUserId = response.UserId;
+				Helper.Helper.LoggedInUserName = response.UserName;
 				Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 			}
 			DependencyService.Get<IProgressBar>().Hide();

@@ -28,6 +28,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 		public string EatAndDrinkText => $"Eat & Drink";
+		public string UserName => Helper.Helper.LoggedInUserName;
 		#endregion
 	}
 }
