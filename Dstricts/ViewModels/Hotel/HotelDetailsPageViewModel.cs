@@ -27,6 +27,7 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("HotelDetails");
 			}
 		}
+		public string EatAndDrinkText => $"Eat & Drink";
 		#endregion
 	}
 }
