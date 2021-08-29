@@ -15,7 +15,7 @@
 		public int Enc { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "qloud_checkout_id")]
-		public string QloudCheckOutId { get; set; }
+		public int QloudCheckOutId { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "image_path")]
 		public string ImagePath { get; set; }
