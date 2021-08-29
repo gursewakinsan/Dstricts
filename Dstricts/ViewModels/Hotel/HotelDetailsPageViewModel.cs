@@ -28,30 +28,30 @@ namespace Dstricts.ViewModels
 			IHotelService service = new HotelService();
 			Models.HotelCompleteInfoResponse response = await service.HotelCompleteInfoAsync(new Models.HotelCompleteInfoRequest()
 			{
-				Id = Helper.Helper.HotelCheckedIn
+				Id =Helper.Helper.HotelCheckedIn
 			});
 
 			//Resturants
-			InhouseInfo inhouseResturantsInfo = new InhouseInfo()
+			InhouseResturantsInfo inhouseResturantsInfo = new InhouseResturantsInfo()
 			{
-				CenterType= "Room Service",
+				ResturantType= "Room Service",
 				ImageUrl= "https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="
 			};
 			if (response.InhouseResturants?.Count > 0)
 			{
 				foreach (var resturants in response.InhouseResturants)
-					if (!string.IsNullOrWhiteSpace(resturants.CenterType))
+					if (!string.IsNullOrWhiteSpace(resturants.ResturantType))
 						resturants.ImageUrl = "https://www.elitetraveler.com/wp-content/uploads/2007/02/Alain-Ducasse-scaled.jpg";
 				response.InhouseResturants.Insert(0, inhouseResturantsInfo);
 			}
 			else
 			{
-				response.InhouseResturants = new List<InhouseInfo>();
+				response.InhouseResturants = new List<InhouseResturantsInfo>();
 				response.InhouseResturants.Add(inhouseResturantsInfo);
 			}
 
 			//Fittness
-			InhouseInfo inhouseFittnessInfo = new InhouseInfo()
+			InhouseFittnessInfo inhouseFittnessInfo = new InhouseFittnessInfo()
 			{
 				CenterType = "Fittness",
 				ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"
@@ -65,7 +65,7 @@ namespace Dstricts.ViewModels
 			}
 			else
 			{
-				response.InhouseFittness = new List<InhouseInfo>();
+				response.InhouseFittness = new List<InhouseFittnessInfo>();
 				response.InhouseFittness.Add(inhouseFittnessInfo);
 			}
 

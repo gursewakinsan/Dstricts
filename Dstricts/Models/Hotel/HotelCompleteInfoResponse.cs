@@ -17,10 +17,10 @@ namespace Dstricts.Models
 		public List<HotelImages> HotelImages { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "inhouse_resturants")]
-		public List<InhouseInfo> InhouseResturants { get; set; }
+		public List<InhouseResturantsInfo> InhouseResturants { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "inhouse_fittness")]
-		public List<InhouseInfo> InhouseFittness { get; set; }
+		public List<InhouseFittnessInfo> InhouseFittness { get; set; }
 	}
 }
 
@@ -29,7 +29,17 @@ public class HotelImages
 	public string ImageUrl { get; set; }
 }
 
-public class InhouseInfo
+public class InhouseResturantsInfo
+{
+	[Newtonsoft.Json.JsonProperty(PropertyName = "rtype")]
+	public int Rtype { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "resturant_type")]
+	public string ResturantType { get; set; }
+	public string ImageUrl { get; set; }
+}
+
+public class InhouseFittnessInfo
 {
 	[Newtonsoft.Json.JsonProperty(PropertyName = "ctype")]
 	public int CType { get; set; }

@@ -563,7 +563,7 @@
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
-												Text="{Binding CenterType}"
+												Text="{Binding ResturantType}"
 												TextColor="White"
 												VerticalOptions="EndAndExpand"
 												VerticalTextAlignment="End" />
