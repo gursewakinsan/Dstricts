@@ -14,17 +14,23 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new HotelDetailsPageViewModel(this.Navigation);
-			rr();
+			//rr();
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.HotelCompleteInfoCommand.Execute(null);
 		}
 
 		void rr()
 		{
-			List<Images> CardsImages = new List<Images>();
+			/*List<Images> CardsImages = new List<Images>();
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/4.webp" });
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			cardCarouselView.ItemsSource = CardsImages;
+			cardCarouselView.ItemsSource = CardsImages;*/
 
 			List<EatAndDrink> eatAndDrink = new List<EatAndDrink>();
 			eatAndDrink.Add(new EatAndDrink() { Name = "Breakfast", URL = "https://www.verywellhealth.com/thmb/gF-I-Kf6MyQfEbp1Q9mpXtcENxM=/2880x1920/filters:fill(87E3EF,1)/best-breakfast-choices-and-diabetes-1087468-primary-recirc-603a39fe3b10439eaa9a0cf80a09eec2.jpg" });

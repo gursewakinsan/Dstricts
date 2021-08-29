@@ -12,7 +12,7 @@
 		public string Address { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "enc")]
-		public string Enc { get; set; }
+		public int Enc { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "qloud_checkout_id")]
 		public string QloudCheckOutId { get; set; }

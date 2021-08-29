@@ -133,7 +133,7 @@
 									FontFamily="{StaticResource SansProBoldFontFamily}"
 									FontSize="14"
 									HorizontalTextAlignment="Start"
-									Text="{Binding HotelDetails.PropertyNickName}"
+									Text="{Binding HotelDetails.HotelName}"
 									TextColor="White"
 									VerticalTextAlignment="Center" />
 
@@ -152,7 +152,7 @@
 										FontSize="12"
 										HorizontalTextAlignment="Start"
 										MaxLines="1"
-										Text="{Binding HotelDetails.Address}"
+										Text="{Binding HotelDetails.VisitingAddress}"
 										TextColor="White"
 										VerticalTextAlignment="Center" />
 								</StackLayout>
@@ -177,13 +177,14 @@
 								HeightRequest="200"
 								HorizontalScrollBarVisibility="Never"
 								IndicatorView="indicatorView"
+								ItemsSource="{Binding HotelDetails.HotelImages}"
 								VerticalOptions="CenterAndExpand">
 								<CarouselView.ItemTemplate>
 									<DataTemplate>
 										<Image
 											Aspect="AspectFill"
 											HeightRequest="200"
-											Source="{Binding URL}" />
+											Source="{Binding ImageUrl}" />
 									</DataTemplate>
 								</CarouselView.ItemTemplate>
 							</CarouselView>
@@ -530,7 +531,10 @@
 						Margin="15,0,15,0"
 						HorizontalScrollBarVisibility="Never"
 						Orientation="Horizontal">
-						<StackLayout x:Name="layoutEatAndDrink" Orientation="Horizontal">
+						<StackLayout
+							x:Name="layoutEatAndDrink"
+							BindableLayout.ItemsSource="{Binding HotelDetails.InhouseResturants}"
+							Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
 									<Grid Margin="0,0,20,0">
@@ -539,7 +543,7 @@
 											Aspect="Fill"
 											CornerRadius="18"
 											HeightRequest="150"
-											Source="{Binding URL}"
+											Source="{Binding ImageUrl}"
 											WidthRequest="220" />
 
 										<Frame
@@ -559,7 +563,7 @@
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
-												Text="{Binding Name}"
+												Text="{Binding CenterType}"
 												TextColor="White"
 												VerticalOptions="EndAndExpand"
 												VerticalTextAlignment="End" />
@@ -596,7 +600,10 @@
 						Margin="15,0,15,0"
 						HorizontalScrollBarVisibility="Never"
 						Orientation="Horizontal">
-						<StackLayout x:Name="layoutWellness" Orientation="Horizontal">
+						<StackLayout
+							x:Name="layoutWellness"
+							BindableLayout.ItemsSource="{Binding HotelDetails.InhouseFittness}"
+							Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
 									<Grid Margin="0,0,20,0">
@@ -605,7 +612,7 @@
 											Aspect="Fill"
 											CornerRadius="18"
 											HeightRequest="150"
-											Source="{Binding URL}"
+											Source="{Binding ImageUrl}"
 											WidthRequest="220" />
 
 										<Frame
@@ -625,7 +632,7 @@
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
-												Text="{Binding Name}"
+												Text="{Binding CenterType}"
 												TextColor="White"
 												VerticalOptions="EndAndExpand"
 												VerticalTextAlignment="End" />

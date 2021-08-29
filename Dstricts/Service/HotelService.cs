@@ -34,5 +34,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.HotelCompleteInfoResponse> HotelCompleteInfoAsync(Models.HotelCompleteInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.HotelCompleteInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.HotelCompleteInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

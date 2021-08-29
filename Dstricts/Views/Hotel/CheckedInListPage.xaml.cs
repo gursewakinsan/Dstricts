@@ -48,8 +48,12 @@ namespace Dstricts.Views.Hotel
 		private void OnHotelImageClicked(object sender, System.EventArgs e)
 		{
 			ImageButton image = sender as ImageButton;
-			Helper.Helper.HotelDetails = image.BindingContext as Models.CheckedInResponse;
-			viewModel.HotelDetailsCommand.Execute(null);
+			Models.CheckedInResponse checkedIn = image.BindingContext as Models.CheckedInResponse;
+			if (checkedIn.Enc == 1)
+			{
+				Helper.Helper.HotelCheckedIn = checkedIn.Id;
+				viewModel.HotelDetailsCommand.Execute(null);
+			}
 		}
 	}
 }

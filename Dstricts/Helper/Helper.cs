@@ -15,6 +15,6 @@
 		public static int LoggedInUserId { get; set; }
 		public static string LoggedInUserName { get; set; }
 		public static string SessionId { get; set; }
-		public static Models.CheckedInResponse HotelDetails { get; set; }
+		public static int HotelCheckedIn { get; set; }
 	}
 }
