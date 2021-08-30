@@ -82,6 +82,7 @@
 									x:Name="imgHotel"
 									Padding="0"
 									Aspect="Fill"
+									BackgroundColor="Transparent"
 									Clicked="OnHotelImageClicked"
 									CornerRadius="18"
 									HeightRequest="60"

@@ -13,6 +13,12 @@ namespace Dstricts.Models
 		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_name")]
 		public string HotelName { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "checkin_date")]
+		public string CheckinDate { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "checkout_date")]
+		public string CheckoutDate { get; set; }
+
 		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_images")]
 		public List<HotelImages> HotelImages { get; set; }
 

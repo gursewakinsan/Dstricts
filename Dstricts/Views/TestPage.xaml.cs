@@ -15,6 +15,12 @@ namespace Dstricts.Views
 		public TestPage()
 		{
 			InitializeComponent();
+			List<Images> CardsImages = new List<Images>();
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/4.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
+			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
+			cardCarouselView.ItemsSource = CardsImages;
 		}
 	}
 }

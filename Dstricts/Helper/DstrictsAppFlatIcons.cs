@@ -26,5 +26,8 @@
 		public const string ScaleBathroom = "\U000f0473";
 		public const string ElectronFramework = "\U000f1024";
 		public const string DotsVertical = "\U000f01d9";
+		public const string CheckboxBlankCircle = "\U000f012f";
+		public const string Directions = "\U000f01d0";
+		public const string Phone = "\U000f03f2";
 	}
 }
