@@ -16,6 +16,7 @@ namespace Dstricts.Views
 		}
 		protected override void OnAppearing()
 		{
+			Helper.Helper.DeviceWidth = Application.Current.MainPage.Width;
 			if (!string.IsNullOrWhiteSpace(Helper.Helper.SessionId))
 				loginViewModel.LoginWithSessionCommand.Execute(null);
 			base.OnAppearing();

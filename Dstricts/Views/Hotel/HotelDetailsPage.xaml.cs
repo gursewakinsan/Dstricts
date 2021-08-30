@@ -14,7 +14,8 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new HotelDetailsPageViewModel(this.Navigation);
-			//rr();
+			imgRoomService.Source = ImageSource.FromUri(new System.Uri("https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="));
+			imgFittness.Source = ImageSource.FromUri(new System.Uri("https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"));
 		}
 
 		protected override void OnAppearing()

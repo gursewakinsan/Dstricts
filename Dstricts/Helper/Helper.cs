@@ -10,7 +10,7 @@
 		{
 			return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 		}
-
+		public static double DeviceWidth { get; set; }
 		public static bool IsLoggedInUser { get; set; } = false;
 		public static int LoggedInUserId { get; set; }
 		public static string LoggedInUserName { get; set; }

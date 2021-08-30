@@ -29,5 +29,12 @@
 		public const string CheckboxBlankCircle = "\U000f012f";
 		public const string Directions = "\U000f01d0";
 		public const string Phone = "\U000f03f2";
+		public const string Food = "\U000f025a";
+		public const string Wifi = "\U000f05a9";
+		public const string Group = "\U000f02c3";
+		public const string Taxi = "\U000f04ff";
+		public const string TumbleDryer = "\U000f0917";
+		public const string VolumeMedium = "\U000f0580";
+
 	}
 }

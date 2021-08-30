@@ -72,16 +72,17 @@
 						<RowDefinition Height="1" />
 						<RowDefinition Height="100" />
 						<RowDefinition Height="1" />
-						<RowDefinition Height="100" />
+						<RowDefinition Height="120" />
 						<RowDefinition Height="25" />
 						<RowDefinition Height="1" />
-						<RowDefinition Height="65" />
-						<RowDefinition Height="90" />
+
+						<RowDefinition Height="110" />
+						<RowDefinition Height="auto" />
 						<RowDefinition Height="20" />
-						<RowDefinition Height="50" />
+						<RowDefinition Height="90" />
 						<RowDefinition Height="150" />
 						<RowDefinition Height="20" />
-						<RowDefinition Height="50" />
+						<RowDefinition Height="90" />
 						<RowDefinition Height="150" />
 						<RowDefinition Height="20" />
 					</Grid.RowDefinitions>
@@ -312,6 +313,7 @@
 					<Grid
 						Grid.Row="15"
 						Margin="15,0,15,0"
+						RowSpacing="20"
 						VerticalOptions="EndAndExpand">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="60" />
@@ -412,29 +414,299 @@
 
 					<Label
 						Grid.Row="18"
-						Padding="15,0,0,0"
+						Padding="15,0,0,10"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						TextColor="White"
-						VerticalTextAlignment="Center">
+						VerticalTextAlignment="End">
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
 									FontFamily="{StaticResource SansProBoldFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text="Guest " />
 								<Span
 									FontFamily="{StaticResource SansProRegularFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text="Services" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
 
+					<Frame
+						Grid.Row="19"
+						Margin="15,0,15,15"
+						Padding="15"
+						BackgroundColor="#1A1C2A"
+						BorderColor="#1A1C2A"
+						CornerRadius="20"
+						HasShadow="False"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Grid RowSpacing="20">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="60" />
+								<RowDefinition Height="auto" />
+								<RowDefinition Height="60" />
+								<RowDefinition Height="auto" />
+								<RowDefinition Height="60" />
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="60" />
+							</Grid.ColumnDefinitions>
+							<Button
+								Grid.Row="0"
+								Grid.Column="0"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="StartAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Food}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="1"
+								Grid.Column="0"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Food"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="0"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="CenterAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Wifi}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="1"
+								Grid.Column="1"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Wifi"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="0"
+								Grid.Column="2"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="EndAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Group}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="1"
+								Grid.Column="2"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Wake-up"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="2"
+								Grid.Column="0"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="StartAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Taxi}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="3"
+								Grid.Column="0"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Taxi"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="2"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="CenterAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.TumbleDryer}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="3"
+								Grid.Column="1"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Dry cleaning"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="2"
+								Grid.Column="2"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="EndAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.RoomService}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="3"
+								Grid.Column="2"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Room"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="4"
+								Grid.Column="0"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="StartAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bed}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="5"
+								Grid.Column="0"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Bed"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="4"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="CenterAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.VolumeMedium}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="5"
+								Grid.Column="1"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Media"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="4"
+								Grid.Column="2"
+								Padding="0"
+								BackgroundColor="Black"
+								CornerRadius="25"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="30"
+								HeightRequest="60"
+								HorizontalOptions="EndAndExpand"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ScaleBathroom}"
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								WidthRequest="60" />
+
+							<Label
+								Grid.Row="5"
+								Grid.Column="2"
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="10"
+								HorizontalTextAlignment="Center"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Bathroom"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+						</Grid>
+					</Frame>
+
 					<ScrollView
 						Grid.Row="19"
 						Margin="15,0,15,0"
 						HorizontalScrollBarVisibility="Never"
+						IsVisible="False"
 						Orientation="Horizontal">
 						<Grid ColumnSpacing="20" VerticalOptions="CenterAndExpand">
 							<Grid.RowDefinitions>
@@ -588,29 +860,66 @@
 
 					<Label
 						Grid.Row="21"
-						Padding="15,0,0,0"
+						Padding="15,0,0,10"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						TextColor="White"
-						VerticalTextAlignment="Start">
+						VerticalTextAlignment="End">
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
 									FontFamily="{StaticResource SansProBoldFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text="{Binding EatAndDrinkText}" />
 								<Span
 									FontFamily="{StaticResource SansProRegularFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text=" @ Hotel" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
 
+					<Grid
+						Grid.Row="22"
+						Margin="15,0,15,0"
+						IsVisible="{Binding IsInhouseResturantsList, Converter={StaticResource InverseBoolConverter}}">
+						<ImageButton
+							x:Name="imgRoomService"
+							Padding="0"
+							Aspect="AspectFill"
+							CornerRadius="18"
+							HeightRequest="150"
+							HorizontalOptions="FillAndExpand" />
+
+						<Frame
+							Grid.Row="0"
+							Margin="10,0,0,10"
+							Padding="5"
+							BackgroundColor="#9DA4B3"
+							CornerRadius="10"
+							HasShadow="False"
+							HorizontalOptions="StartAndExpand"
+							IsClippedToBounds="True"
+							VerticalOptions="EndAndExpand">
+							<Label
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="12"
+								HorizontalOptions="Start"
+								HorizontalTextAlignment="Start"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Room Service"
+								TextColor="White"
+								VerticalOptions="EndAndExpand"
+								VerticalTextAlignment="End" />
+						</Frame>
+					</Grid>
+
 					<ScrollView
 						Grid.Row="22"
 						Margin="15,0,15,0"
 						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsInhouseResturantsList}"
 						Orientation="Horizontal">
 						<StackLayout
 							x:Name="layoutEatAndDrink"
@@ -657,29 +966,66 @@
 
 					<Label
 						Grid.Row="24"
-						Padding="15,0,0,0"
+						Padding="15,0,0,10"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						TextColor="White"
-						VerticalTextAlignment="Start">
+						VerticalTextAlignment="End">
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
 									FontFamily="{StaticResource SansProBoldFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text="Wellness " />
 								<Span
 									FontFamily="{StaticResource SansProRegularFontFamily}"
-									FontSize="30"
+									FontSize="25"
 									Text="@ Hotel" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
 
+					<Grid
+						Grid.Row="25"
+						Margin="15,0,15,0"
+						IsVisible="{Binding IsInhouseFittnessList, Converter={StaticResource InverseBoolConverter}}">
+						<ImageButton
+							x:Name="imgFittness"
+							Padding="0"
+							Aspect="AspectFill"
+							CornerRadius="18"
+							HeightRequest="150"
+							HorizontalOptions="FillAndExpand" />
+
+						<Frame
+							Grid.Row="0"
+							Margin="10,0,0,10"
+							Padding="5"
+							BackgroundColor="#9DA4B3"
+							CornerRadius="10"
+							HasShadow="False"
+							HorizontalOptions="StartAndExpand"
+							IsClippedToBounds="True"
+							VerticalOptions="EndAndExpand">
+							<Label
+								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontSize="12"
+								HorizontalOptions="Start"
+								HorizontalTextAlignment="Start"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="Fittness"
+								TextColor="White"
+								VerticalOptions="EndAndExpand"
+								VerticalTextAlignment="End" />
+						</Frame>
+					</Grid>
+
 					<ScrollView
 						Grid.Row="25"
 						Margin="15,0,15,0"
 						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsInhouseFittnessList}"
 						Orientation="Horizontal">
 						<StackLayout
 							x:Name="layoutWellness"

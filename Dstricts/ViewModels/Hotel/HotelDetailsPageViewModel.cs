@@ -32,43 +32,38 @@ namespace Dstricts.ViewModels
 			});
 
 			//Resturants
-			InhouseResturantsInfo inhouseResturantsInfo = new InhouseResturantsInfo()
-			{
-				ResturantType= "Room Service",
-				ImageUrl= "https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="
-			};
 			if (response.InhouseResturants?.Count > 0)
 			{
+				IsInhouseResturantsList = true;
+				InhouseResturantsInfo inhouseResturantsInfo = new InhouseResturantsInfo()
+				{
+					ResturantType = "Room Service",
+					ImageUrl = "https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="
+				};
 				foreach (var resturants in response.InhouseResturants)
 					if (!string.IsNullOrWhiteSpace(resturants.ResturantType))
 						resturants.ImageUrl = "https://www.elitetraveler.com/wp-content/uploads/2007/02/Alain-Ducasse-scaled.jpg";
 				response.InhouseResturants.Insert(0, inhouseResturantsInfo);
 			}
 			else
-			{
-				response.InhouseResturants = new List<InhouseResturantsInfo>();
-				response.InhouseResturants.Add(inhouseResturantsInfo);
-			}
+				IsInhouseResturantsList = false;
 
 			//Fittness
-			InhouseFittnessInfo inhouseFittnessInfo = new InhouseFittnessInfo()
-			{
-				CenterType = "Fittness",
-				ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"
-			};
 			if (response.InhouseFittness?.Count > 0)
 			{
+				IsInhouseFittnessList = true;
+				InhouseFittnessInfo inhouseFittnessInfo = new InhouseFittnessInfo()
+				{
+					CenterType = "Fittness",
+					ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"
+				};
 				foreach (var fittness in response.InhouseFittness)
 					if (!string.IsNullOrWhiteSpace(fittness.CenterType))
 						fittness.ImageUrl = "https://d1heoihvzm7u4h.cloudfront.net/40d13e2df255a7bff04453dc1531cc416c8c443f_APRIL_banner_18.jpg";
 				response.InhouseFittness.Insert(0, inhouseFittnessInfo);
 			}
 			else
-			{
-				response.InhouseFittness = new List<InhouseFittnessInfo>();
-				response.InhouseFittness.Add(inhouseFittnessInfo);
-			}
-
+				IsInhouseFittnessList = false;
 			HotelDetails = response;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -85,7 +80,30 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("HotelDetails");
 			}
 		}
+
+		private bool isInhouseResturantsList = false;
+		public bool IsInhouseResturantsList
+		{
+			get => isInhouseResturantsList;
+			set
+			{
+				isInhouseResturantsList = value;
+				OnPropertyChanged("IsInhouseResturantsList");
+			}
+		}
+
+		private bool isInhouseFittnessList = false;
+		public bool IsInhouseFittnessList
+		{
+			get => isInhouseFittnessList;
+			set
+			{
+				isInhouseFittnessList = value;
+				OnPropertyChanged("IsInhouseFittnessList");
+			}
+		}
 		public string EatAndDrinkText => $"Eat & Drink";
 		#endregion
 	}
 }
+
