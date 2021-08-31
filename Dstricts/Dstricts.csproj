@@ -40,9 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="AppFonts\" />
+    <None Remove="AppFonts\SansProBold.ttf" />
+    <None Remove="AppFonts\SansProRegular.ttf" />
+    <None Remove="AppFonts\SansProSemiBold.ttf" />
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppFonts\SansProBold.ttf" />
+    <EmbeddedResource Include="AppFonts\SansProRegular.ttf" />
+    <EmbeddedResource Include="AppFonts\SansProSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
 </Project>

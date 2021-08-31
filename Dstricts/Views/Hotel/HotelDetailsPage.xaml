@@ -61,7 +61,7 @@
 					VerticalOptions="StartAndExpand">
 					<StackLayout Orientation="Horizontal" Spacing="5">
 						<Label
-							FontFamily="{StaticResource SansProRegularFontFamily}"
+							FontFamily="SansProRegularFontFamily"
 							FontSize="15"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
@@ -79,7 +79,7 @@
 							VerticalTextAlignment="Center" />
 
 						<Label
-							FontFamily="{StaticResource SansProRegularFontFamily}"
+							FontFamily="SansProRegularFontFamily"
 							FontSize="15"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
@@ -89,7 +89,7 @@
 					</StackLayout>
 
 					<Label
-						FontFamily="SourceSansProBlackFontFamily"
+						FontFamily="SansProBoldFontFamily"
 						FontSize="30"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
@@ -145,7 +145,7 @@
 
 					<Label
 						Margin="0,20,0,5"
-						FontFamily="SourceSansProBlackFontFamily"
+						FontFamily="SansProBoldFontFamily"
 						FontSize="20"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
@@ -154,7 +154,7 @@
 						VerticalTextAlignment="Center" />
 
 					<Label
-						FontFamily="{StaticResource SansProRegularFontFamily}"
+						FontFamily="SansProRegularFontFamily"
 						FontSize="16"
 						HorizontalTextAlignment="Start"
 						MaxLines="2"
@@ -168,7 +168,7 @@
 						BorderColor="White"
 						BorderWidth="1"
 						CornerRadius="10"
-						FontFamily="{StaticResource SansProSemiBoldFontFamily}"
+						FontFamily="SansProSemiBoldFontFamily"
 						Text="Details" />
 
 					<BoxView
@@ -192,7 +192,7 @@
 							VerticalOptions="CenterAndExpand">
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="SourceSansProBlackFontFamily"
+								FontFamily="SansProBoldFontFamily"
 								FontSize="18"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -202,7 +202,7 @@
 
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -212,7 +212,7 @@
 
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -233,7 +233,7 @@
 							VerticalOptions="CenterAndExpand">
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="SourceSansProBlackFontFamily"
+								FontFamily="SansProBoldFontFamily"
 								FontSize="18"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -243,7 +243,7 @@
 
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -253,7 +253,7 @@
 
 							<Label
 								Margin="15,0,0,0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
@@ -299,7 +299,7 @@
 						<Label
 							Grid.Row="1"
 							Grid.Column="0"
-							FontFamily="{StaticResource SansProRegularFontFamily}"
+							FontFamily="SansProRegularFontFamily"
 							FontSize="10"
 							HorizontalTextAlignment="Center"
 							LineBreakMode="TailTruncation"
@@ -326,7 +326,7 @@
 						<Label
 							Grid.Row="1"
 							Grid.Column="1"
-							FontFamily="{StaticResource SansProRegularFontFamily}"
+							FontFamily="SansProRegularFontFamily"
 							FontSize="10"
 							HorizontalTextAlignment="Center"
 							LineBreakMode="TailTruncation"
@@ -353,7 +353,7 @@
 						<Label
 							Grid.Row="1"
 							Grid.Column="2"
-							FontFamily="{StaticResource SansProRegularFontFamily}"
+							FontFamily="SansProRegularFontFamily"
 							FontSize="10"
 							HorizontalTextAlignment="Center"
 							LineBreakMode="TailTruncation"
@@ -377,11 +377,11 @@
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
-									FontFamily="SourceSansProBlackFontFamily"
-									FontSize="28"
+									FontFamily="SansProBoldFontFamily"
+									FontSize="25"
 									Text="Guest " />
 								<Span
-									FontFamily="{StaticResource SansProRegularFontFamily}"
+									FontFamily="SansProRegularFontFamily"
 									FontSize="25"
 									Text="Services" />
 							</FormattedString>
@@ -428,7 +428,7 @@
 							<Label
 								Grid.Row="1"
 								Grid.Column="0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -455,7 +455,7 @@
 							<Label
 								Grid.Row="1"
 								Grid.Column="1"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -482,7 +482,7 @@
 							<Label
 								Grid.Row="1"
 								Grid.Column="2"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -509,7 +509,7 @@
 							<Label
 								Grid.Row="3"
 								Grid.Column="0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -536,7 +536,7 @@
 							<Label
 								Grid.Row="3"
 								Grid.Column="1"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -563,7 +563,7 @@
 							<Label
 								Grid.Row="3"
 								Grid.Column="2"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -590,7 +590,7 @@
 							<Label
 								Grid.Row="5"
 								Grid.Column="0"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -617,7 +617,7 @@
 							<Label
 								Grid.Row="5"
 								Grid.Column="1"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -644,7 +644,7 @@
 							<Label
 								Grid.Row="5"
 								Grid.Column="2"
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="10"
 								HorizontalTextAlignment="Center"
 								LineBreakMode="TailTruncation"
@@ -664,11 +664,11 @@
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
-									FontFamily="SourceSansProBlackFontFamily"
-									FontSize="28"
+									FontFamily="SansProBoldFontFamily"
+									FontSize="25"
 									Text="{Binding EatAndDrinkText}" />
 								<Span
-									FontFamily="{StaticResource SansProRegularFontFamily}"
+									FontFamily="SansProRegularFontFamily"
 									FontSize="25"
 									Text=" @ Hotel" />
 							</FormattedString>
@@ -696,7 +696,7 @@
 							IsClippedToBounds="True"
 							VerticalOptions="EndAndExpand">
 							<Label
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="12"
 								HorizontalOptions="Start"
 								HorizontalTextAlignment="Start"
@@ -740,7 +740,7 @@
 											IsClippedToBounds="True"
 											VerticalOptions="EndAndExpand">
 											<Label
-												FontFamily="{StaticResource SansProRegularFontFamily}"
+												FontFamily="SansProRegularFontFamily"
 												FontSize="12"
 												HorizontalOptions="Start"
 												HorizontalTextAlignment="Start"
@@ -766,11 +766,11 @@
 						<Label.FormattedText>
 							<FormattedString>
 								<Span
-									FontFamily="SourceSansProBlackFontFamily"
-									FontSize="28"
+									FontFamily="SansProBoldFontFamily"
+									FontSize="25"
 									Text="Wellness " />
 								<Span
-									FontFamily="{StaticResource SansProRegularFontFamily}"
+									FontFamily="SansProRegularFontFamily"
 									FontSize="25"
 									Text="@ Hotel" />
 							</FormattedString>
@@ -798,7 +798,7 @@
 							IsClippedToBounds="True"
 							VerticalOptions="EndAndExpand">
 							<Label
-								FontFamily="{StaticResource SansProRegularFontFamily}"
+								FontFamily="SansProRegularFontFamily"
 								FontSize="12"
 								HorizontalOptions="Start"
 								HorizontalTextAlignment="Start"
@@ -842,7 +842,7 @@
 											IsClippedToBounds="True"
 											VerticalOptions="EndAndExpand">
 											<Label
-												FontFamily="{StaticResource SansProRegularFontFamily}"
+												FontFamily="SansProRegularFontFamily"
 												FontSize="12"
 												HorizontalOptions="Start"
 												HorizontalTextAlignment="Start"
@@ -858,6 +858,8 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
+
+					<BoxView BackgroundColor="Transparent" HeightRequest="25" />
 				</StackLayout>
 			</ScrollView>
 		</Grid>
