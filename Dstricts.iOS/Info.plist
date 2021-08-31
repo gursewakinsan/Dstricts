@@ -10,18 +10,6 @@
 		<string>Fonts/SFProDisplayMedium.ttf</string>
 		<string>Fonts/SFProDisplayBold.ttf</string>
 		<string>Fonts/materialdesignicons-webfont.ttf</string>
-		<string>Fonts/SansProBlack.ttf</string>
-		<string>Fonts/SansProBlackItalic.ttf</string>
-		<string>Fonts/SansProBold.ttf</string>
-		<string>Fonts/SansProBoldItalic.ttf</string>
-		<string>Fonts/SansProExtraLight.ttf</string>
-		<string>Fonts/SansProExtraLightItalic.ttf</string>
-		<string>Fonts/SansProItalic.ttf</string>
-		<string>Fonts/SansProLight.ttf</string>
-		<string>Fonts/SansProLightItalic.ttf</string>
-		<string>Fonts/SansProRegular.ttf</string>
-		<string>Fonts/SansProSemiBold.ttf</string>
-		<string>Fonts/SansProSemiBoldItalic.ttf</string>
 	</array>
 	<key>UIDeviceFamily</key>
 	<array>
