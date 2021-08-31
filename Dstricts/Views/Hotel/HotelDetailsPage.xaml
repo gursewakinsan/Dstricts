@@ -436,26 +436,26 @@
 					<Frame
 						Grid.Row="19"
 						Margin="15,0,15,15"
-						Padding="15"
+						Padding="25"
 						BackgroundColor="#1A1C2A"
 						BorderColor="#1A1C2A"
 						CornerRadius="20"
 						HasShadow="False"
 						IsClippedToBounds="True"
 						VerticalOptions="StartAndExpand">
-						<Grid RowSpacing="20">
+						<Grid ColumnSpacing="0" RowSpacing="20">
 							<Grid.RowDefinitions>
-								<RowDefinition Height="60" />
+								<RowDefinition Height="80" />
 								<RowDefinition Height="auto" />
-								<RowDefinition Height="60" />
+								<RowDefinition Height="80" />
 								<RowDefinition Height="auto" />
-								<RowDefinition Height="60" />
+								<RowDefinition Height="80" />
 								<RowDefinition Height="auto" />
 							</Grid.RowDefinitions>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="80" />
 								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="60" />
+								<ColumnDefinition Width="80" />
 							</Grid.ColumnDefinitions>
 							<Button
 								Grid.Row="0"
@@ -464,13 +464,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="StartAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Food}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="1"
@@ -491,13 +491,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="CenterAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Wifi}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="1"
@@ -518,13 +518,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="EndAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Group}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="1"
@@ -545,13 +545,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="StartAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Taxi}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="3"
@@ -572,13 +572,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="CenterAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.TumbleDryer}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="3"
@@ -599,13 +599,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="EndAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.RoomService}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="3"
@@ -626,13 +626,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="StartAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bed}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="5"
@@ -653,13 +653,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="CenterAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.VolumeMedium}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="5"
@@ -680,13 +680,13 @@
 								BackgroundColor="Black"
 								CornerRadius="25"
 								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="30"
-								HeightRequest="60"
+								FontSize="35"
+								HeightRequest="80"
 								HorizontalOptions="EndAndExpand"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ScaleBathroom}"
 								TextColor="White"
 								VerticalOptions="CenterAndExpand"
-								WidthRequest="60" />
+								WidthRequest="80" />
 
 							<Label
 								Grid.Row="5"
