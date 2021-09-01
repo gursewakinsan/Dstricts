@@ -3,7 +3,7 @@
 	x:Class="Dstricts.UserControls.DotLineControl"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-	<Grid Margin="0,50,0,50">
+	<Grid>
 		<BoxView
 			Grid.Column="0"
 			BackgroundColor="White"

@@ -6,3 +6,6 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("SansProRegular.ttf", Alias = "SansProRegularFontFamily")]
 [assembly: ExportFont("SansProSemiBold.ttf", Alias = "SansProSemiBoldFontFamily")]
 [assembly: ExportFont("SourceSansProBlack.ttf", Alias = "SourceSansProBlackFontFamily")]
+
+[assembly: ExportFont("JosefinSansRegular.ttf", Alias = "JosefinSansRegularFontFamily")]
+[assembly: ExportFont("JosefinSansSemiBold.ttf", Alias = "JosefinSansSemiBoldFontFamily")]

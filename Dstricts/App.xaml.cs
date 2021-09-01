@@ -8,7 +8,7 @@ namespace Dstricts
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new Views.LoginPage();
+			MainPage = new Views.Hotel.RoomServiceMenuPage();
 		}
 
 		#region Login With Session For iOS.

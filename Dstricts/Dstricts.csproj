@@ -25,6 +25,9 @@
     <EmbeddedResource Update="Views\Hotel\HotelDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Hotel\RoomServiceMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Hotel\VerifyCheckedInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -40,12 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="AppFonts\" />
+    <None Remove="AppFonts\JosefinSansRegular.ttf" />
+    <None Remove="AppFonts\JosefinSansSemiBold.ttf" />
     <None Remove="AppFonts\SansProBold.ttf" />
     <None Remove="AppFonts\SansProRegular.ttf" />
     <None Remove="AppFonts\SansProSemiBold.ttf" />
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />
+    <EmbeddedResource Include="AppFonts\JosefinSansSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\SansProBold.ttf" />
     <EmbeddedResource Include="AppFonts\SansProRegular.ttf" />
     <EmbeddedResource Include="AppFonts\SansProSemiBold.ttf" />
