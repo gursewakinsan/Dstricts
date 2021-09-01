@@ -3,7 +3,6 @@
 	x:Class="Dstricts.Views.Hotel.RoomServiceMenuPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:usercontrols="clr-namespace:Dstricts.UserControls"
@@ -94,7 +93,7 @@
 						FontSize="30"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
-						Text="Hotel Name"
+						Text="{Binding HotelDetails.HotelName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
@@ -129,7 +128,7 @@
 								HeightRequest="200"
 								HorizontalScrollBarVisibility="Never"
 								IndicatorView="indicatorView"
-								ItemsSource="{Binding HotelImagesList}"
+								ItemsSource="{Binding HotelDetails.HotelImages}"
 								VerticalOptions="CenterAndExpand">
 								<CarouselView.ItemTemplate>
 									<DataTemplate>
@@ -171,91 +170,87 @@
 						Text="You can access information about the hotel, your stay and payment here"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
-					<Label
-						Margin="0,60,0,30"
-						FontFamily="SansProBoldFontFamily"
-						FontSize="25"
-						HorizontalTextAlignment="Center"
-						MaxLines="1"
-						Text="SOUPS"
-						TextColor="White" />
 
-					<ImageButton
-						BackgroundColor="LightGray"
-						CornerRadius="10"
-						HeightRequest="200" />
+					<StackLayout BindableLayout.ItemsSource="{Binding RoomServiceAppMenu}">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<StackLayout Spacing="0">
+									<Label
+										Margin="0,60,0,30"
+										FontFamily="SansProBoldFontFamily"
+										FontSize="25"
+										HorizontalTextAlignment="Center"
+										MaxLines="1"
+										Text="{Binding ServeInfo}"
+										TextColor="White" />
 
-					<Grid
-						Margin="0,30,0,0"
-						ColumnSpacing="10"
-						RowSpacing="0">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="auto" />
-							<RowDefinition Height="auto" />
-							<RowDefinition Height="1" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="80" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="50" />
-						</Grid.ColumnDefinitions>
-						<ImageButton
-							Grid.Row="0"
-							Grid.RowSpan="2"
-							Grid.Column="0"
-							BackgroundColor="LightGray"
-							CornerRadius="40"
-							HeightRequest="80"
-							HorizontalOptions="CenterAndExpand"
-							VerticalOptions="StartAndExpand"
-							WidthRequest="80" />
+									<ImageButton
+										Padding="0"
+										Aspect="AspectFill"
+										BackgroundColor="Transparent"
+										CornerRadius="10"
+										HeightRequest="200"
+										Source="{Binding ServeImage}" />
 
-						<Label
-							Grid.Row="0"
-							Grid.Column="1"
-							FontFamily="JosefinSansSemiBoldFontFamily"
-							FontSize="20"
-							MaxLines="1"
-							Text="Cheesy Does It"
-							TextColor="White" />
+									<usercontrols:DotLineControl Margin="0,60,0,20" />
 
-						<StackLayout
-							Grid.Row="0"
-							Grid.Column="2"
-							HorizontalOptions="EndAndExpand"
-							Orientation="Horizontal"
-							Spacing="5"
-							VerticalOptions="CenterAndExpand">
-							<Label
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="18"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
-								TextColor="Yellow"
-								VerticalOptions="Center" />
+									<StackLayout BindableLayout.ItemsSource="{Binding Category}">
+										<BindableLayout.ItemTemplate>
+											<DataTemplate>
+												<Grid ColumnSpacing="10" RowSpacing="5">
+													<Grid.RowDefinitions>
+														<RowDefinition Height="auto" />
+														<RowDefinition Height="auto" />
+														<RowDefinition Height="10" />
+														<RowDefinition Height="1" />
+														<RowDefinition Height="10" />
+													</Grid.RowDefinitions>
+													<Grid.ColumnDefinitions>
+														<ColumnDefinition Width="80" />
+														<ColumnDefinition Width="*" />
+													</Grid.ColumnDefinitions>
+													<ImageButton
+														Grid.Row="0"
+														Grid.RowSpan="2"
+														Grid.Column="0"
+														BackgroundColor="Transparent"
+														CornerRadius="40"
+														HeightRequest="80"
+														HorizontalOptions="CenterAndExpand"
+														Source="{Binding DishImage}"
+														VerticalOptions="StartAndExpand"
+														WidthRequest="80" />
 
-							<Label
-								FontFamily="JosefinSansSemiBoldFontFamily"
-								FontSize="20"
-								Text="4.5"
-								TextColor="White"
-								VerticalOptions="CenterAndExpand" />
-						</StackLayout>
+													<Label
+														Grid.Row="0"
+														Grid.Column="1"
+														FontFamily="JosefinSansSemiBoldFontFamily"
+														FontSize="20"
+														MaxLines="1"
+														Text="{Binding DishName}"
+														TextColor="White"
+														TextTransform="Uppercase" />
 
-						<Label
-							Grid.Row="1"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							Margin="0,0,0,15"
-							FontFamily="JosefinSansRegular"
-							FontSize="18"
-							HorizontalOptions="StartAndExpand"
-							HorizontalTextAlignment="Start"
-							Text="Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmo temp cididunt ut labore et dolore magna aliqua. Ut enim ad mini veniam quis."
-							TextColor="White" />
+													<Label
+														Grid.Row="1"
+														Grid.Column="1"
+														Margin="0,0,50,0"
+														FontFamily="JosefinSansRegular"
+														FontSize="18"
+														HorizontalOptions="StartAndExpand"
+														HorizontalTextAlignment="Start"
+														Text="{Binding DishDetail}"
+														TextColor="White" />
 
-						<usercontrols:DotLineControl Grid.Row="2" Grid.ColumnSpan="3" />
-					</Grid>
-
+													<usercontrols:DotLineControl Grid.Row="3" Grid.ColumnSpan="2" />
+												</Grid>
+											</DataTemplate>
+										</BindableLayout.ItemTemplate>
+									</StackLayout>
+								</StackLayout>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
 					<BoxView BackgroundColor="Transparent" HeightRequest="25" />
 				</StackLayout>
 			</ScrollView>

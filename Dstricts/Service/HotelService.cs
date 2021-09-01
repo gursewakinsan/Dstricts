@@ -43,5 +43,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.SelectedRoomServiceAppMenuResponse>> SelectedRoomServiceAppMenuAsync(Models.SelectedRoomServiceAppMenuRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SelectedRoomServiceAppMenuResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedRoomServiceAppMenuUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

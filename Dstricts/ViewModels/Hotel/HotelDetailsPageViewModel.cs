@@ -69,6 +69,21 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Room And Food Service Command.
+		private ICommand roomAndFoodServiceCommand;
+		public ICommand RoomAndFoodServiceCommand
+		{
+			get => roomAndFoodServiceCommand ?? (roomAndFoodServiceCommand = new Command(async () => await ExecuteRoomAndFoodServiceCommand()));
+		}
+		private async Task ExecuteRoomAndFoodServiceCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			Helper.Helper.HotelDetails = HotelDetails;
+			await Navigation.PushAsync(new Views.Hotel.RoomServiceMenuPage());
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		private Models.HotelCompleteInfoResponse hotelDetails;
 		public Models.HotelCompleteInfoResponse HotelDetails

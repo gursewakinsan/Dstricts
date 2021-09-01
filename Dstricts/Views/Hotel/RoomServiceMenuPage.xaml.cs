@@ -14,5 +14,11 @@ namespace Dstricts.Views.Hotel
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new RoomServiceMenuPageViewModel(this.Navigation);
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.GetRoomServiceMenuCommand.Execute(null);
+		}
 	}
 }

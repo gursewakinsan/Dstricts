@@ -415,6 +415,7 @@
 								Grid.Column="0"
 								Padding="0"
 								BackgroundColor="Black"
+								Command="{Binding RoomAndFoodServiceCommand}"
 								CornerRadius="40"
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="35"

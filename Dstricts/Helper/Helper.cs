@@ -16,5 +16,6 @@
 		public static string LoggedInUserName { get; set; }
 		public static string SessionId { get; set; }
 		public static int HotelCheckedIn { get; set; }
+		public static Models.HotelCompleteInfoResponse HotelDetails { get; set; }
 	}
 }

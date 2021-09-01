@@ -13,9 +13,6 @@ namespace Dstricts.ViewModels
 		public RoomServiceMenuPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
-			HotelImagesList = new List<HotelImages>();
-			HotelImagesList.Add(new HotelImages() {ImageUrl= "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/01/02/947331-grand-chola.jpg" });
-			HotelImagesList.Add(new HotelImages() { ImageUrl = "https://images.indianexpress.com/2021/01/itc-grand-cholda-chennai.jpg" });
 		}
 		#endregion
 
@@ -29,20 +26,26 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
-			await Task.CompletedTask;
+			var response = await service.SelectedRoomServiceAppMenuAsync(new Models.SelectedRoomServiceAppMenuRequest()
+			{
+				QloudCheckOutId = Helper.Helper.HotelCheckedIn
+			});
+			RoomServiceAppMenu = response;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
 		#region Properties.
-		private List<HotelImages> hotelImagesList;
-		public List<HotelImages> HotelImagesList
+		public Models.HotelCompleteInfoResponse HotelDetails => Helper.Helper.HotelDetails;
+
+		private List<Models.SelectedRoomServiceAppMenuResponse> roomServiceAppMenu;
+		public List<Models.SelectedRoomServiceAppMenuResponse> RoomServiceAppMenu
 		{
-			get => hotelImagesList;
+			get => roomServiceAppMenu;
 			set
 			{
-				hotelImagesList = value;
-				OnPropertyChanged("HotelImagesList");
+				roomServiceAppMenu = value;
+				OnPropertyChanged("RoomServiceAppMenu");
 			}
 		}
 		#endregion
