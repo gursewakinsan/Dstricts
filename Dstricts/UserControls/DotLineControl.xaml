@@ -3,7 +3,7 @@
 	x:Class="Dstricts.UserControls.DotLineControl"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-	<Grid>
+	<Grid ColumnSpacing="5">
 		<BoxView
 			Grid.Column="0"
 			BackgroundColor="White"
@@ -102,6 +102,70 @@
 
 		<BoxView
 			Grid.Column="12"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="13"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="14"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="15"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="16"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="17"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="18"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="19"
+			BackgroundColor="White"
+			HeightRequest="1"
+			HorizontalOptions="CenterAndExpand"
+			Opacity="0.4"
+			WidthRequest="10" />
+
+		<BoxView
+			Grid.Column="20"
 			BackgroundColor="White"
 			HeightRequest="1"
 			HorizontalOptions="CenterAndExpand"

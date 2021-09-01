@@ -197,7 +197,7 @@
 									<StackLayout BindableLayout.ItemsSource="{Binding Category}">
 										<BindableLayout.ItemTemplate>
 											<DataTemplate>
-												<Grid ColumnSpacing="10" RowSpacing="5">
+												<Grid ColumnSpacing="15" RowSpacing="5">
 													<Grid.RowDefinitions>
 														<RowDefinition Height="auto" />
 														<RowDefinition Height="auto" />
@@ -226,7 +226,6 @@
 														Grid.Column="1"
 														FontFamily="JosefinSansSemiBoldFontFamily"
 														FontSize="20"
-														MaxLines="1"
 														Text="{Binding DishName}"
 														TextColor="White"
 														TextTransform="Uppercase" />
