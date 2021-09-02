@@ -35,6 +35,9 @@
 		public const string Taxi = "\U000f04ff";
 		public const string TumbleDryer = "\U000f0917";
 		public const string VolumeMedium = "\U000f0580";
-
+		public const string PlusCircleOutline = "\U000f0419";
+		public const string PlusCircle = "\U000f0417";
+		public const string MinusCircle = "\U000f0376";
+		public const string MinusCircleOutline = "\U000f0377";
 	}
 }

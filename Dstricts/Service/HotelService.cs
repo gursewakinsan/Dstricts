@@ -52,5 +52,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.AddFoodItemToCartResponse> AddFoodItemToCartAsync(Models.AddFoodItemToCartRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.AddFoodItemToCartResponse>(HttpWebRequest.Create(string.Format(EndPointsList.AddFoodItemToCartUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

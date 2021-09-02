@@ -1,4 +1,6 @@
-﻿namespace Dstricts.Helper
+﻿using System.Collections.Generic;
+
+namespace Dstricts.Helper
 {
 	public static class Helper
 	{
@@ -17,5 +19,8 @@
 		public static string SessionId { get; set; }
 		public static int HotelCheckedIn { get; set; }
 		public static Models.HotelCompleteInfoResponse HotelDetails { get; set; }
+		public static CategoryInfo SelectedRoomServiceMenuCategory { get; set; }
+		public static List<Models.AddFoodItemToCartRequest> FoodCartItems { get; set; }
+		public static bool IsProceedToCheckOut { get; set; } = false;
 	}
 }

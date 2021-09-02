@@ -24,6 +24,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGetRoomServiceMenuCommand()
 		{
+			if (RoomServiceAppMenu?.Count > 0) return;
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
 			var response = await service.SelectedRoomServiceAppMenuAsync(new Models.SelectedRoomServiceAppMenuRequest()
@@ -31,6 +32,20 @@ namespace Dstricts.ViewModels
 				QloudCheckOutId = Helper.Helper.HotelCheckedIn
 			});
 			RoomServiceAppMenu = response;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Selected Room Service Menu Category Command.
+		private ICommand selectedRoomServiceMenuCategoryCommand;
+		public ICommand SelectedRoomServiceMenuCategoryCommand
+		{
+			get => selectedRoomServiceMenuCategoryCommand ?? (selectedRoomServiceMenuCategoryCommand = new Command(async () => await ExecuteSelectedRoomServiceMenuCategoryCommand()));
+		}
+		private async Task ExecuteSelectedRoomServiceMenuCategoryCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			await Navigation.PushAsync(new Views.Hotel.RoomServiceMenuDetailsPage());
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -46,6 +61,17 @@ namespace Dstricts.ViewModels
 			{
 				roomServiceAppMenu = value;
 				OnPropertyChanged("RoomServiceAppMenu");
+			}
+		}
+
+		private bool isProceedToCheckOut;
+		public bool IsProceedToCheckOut
+		{
+			get => isProceedToCheckOut;
+			set
+			{
+				isProceedToCheckOut = value;
+				OnPropertyChanged("IsProceedToCheckOut");
 			}
 		}
 		#endregion

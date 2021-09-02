@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Hotel.RoomServiceMenuDetailsPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:usercontrols="clr-namespace:Dstricts.UserControls"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition />
+				<RowDefinition Height="60" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout
+					Padding="15,20,15,0"
+					Spacing="0"
+					VerticalOptions="StartAndExpand">
+					<Label
+						FontFamily="SansProRegularFontFamily"
+						FontSize="15"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						TextColor="White"
+						VerticalTextAlignment="Center">
+						<Label.FormattedText>
+							<FormattedString>
+								<Span Text="Price " />
+								<Span Text="$" />
+								<Span Text="{Binding SelectedRoomServiceMenuCategory.DishPrice}" />
+							</FormattedString>
+						</Label.FormattedText>
+					</Label>
+
+					<Label
+						FontFamily="SansProBoldFontFamily"
+						FontSize="30"
+						HorizontalTextAlignment="Start"
+						Text="{Binding SelectedRoomServiceMenuCategory.DishName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Margin="0,20,0,20"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.5" />
+
+					<ImageButton
+						Aspect="AspectFit"
+						BackgroundColor="White"
+						CornerRadius="10"
+						HeightRequest="200"
+						Source="{Binding SelectedRoomServiceMenuCategory.DishImage}"
+						VerticalOptions="StartAndExpand" />
+
+					<Label
+						Margin="0,20,0,5"
+						FontFamily="SansProBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="Description"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						FontFamily="SansProRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						Text="{Binding SelectedRoomServiceMenuCategory.DishDetail}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+				</StackLayout>
+			</ScrollView>
+
+			<Grid
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#1A1C2A"
+				ColumnSpacing="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50" />
+					<ColumnDefinition Width="50" />
+					<ColumnDefinition Width="50" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Button
+					Grid.Column="0"
+					Padding="5"
+					BackgroundColor="Transparent"
+					Command="{Binding DecreaseItemCountCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="40"
+					HorizontalOptions="FillAndExpand"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.MinusCircle}"
+					TextColor="White"
+					VerticalOptions="FillAndExpand" />
+
+				<Label
+					Grid.Column="1"
+					FontFamily="SansProBoldFontFamily"
+					FontSize="22"
+					HorizontalTextAlignment="Center"
+					MaxLines="1"
+					Text="{Binding ItemCount}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Button
+					Grid.Column="2"
+					Padding="5"
+					BackgroundColor="Transparent"
+					Command="{Binding IncreaseItemCountCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="40"
+					HorizontalOptions="FillAndExpand"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusCircle}"
+					TextColor="White"
+					VerticalOptions="FillAndExpand" />
+
+
+				<controls:CustomButton
+					Grid.Column="3"
+					Margin="40,5,10,5"
+					BackgroundColor="#5663FF"
+					Command="{Binding SubmitCommand}"
+					CornerRadius="10"
+					FontFamily="SansProSemiBoldFontFamily"
+					Text="Submit"
+					TextColor="White" />
+			</Grid>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

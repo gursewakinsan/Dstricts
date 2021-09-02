@@ -23,6 +23,9 @@ public class CategoryInfo
 	[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 	public int Id { get; set; }
 
+	[Newtonsoft.Json.JsonProperty(PropertyName = "serve_type")]
+	public int ServeType { get; set; }
+
 	[Newtonsoft.Json.JsonProperty(PropertyName = "dish_name")]
 	public string DishName { get; set; }
 

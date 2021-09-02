@@ -3,6 +3,7 @@
 	x:Class="Dstricts.Views.Hotel.RoomServiceMenuPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:usercontrols="clr-namespace:Dstricts.UserControls"
@@ -14,6 +15,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="30" />
 				<RowDefinition />
+				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="80" />
@@ -111,45 +113,13 @@
 						HeightRequest="1"
 						Opacity="0.5" />
 
-					<Frame
+					<ImageButton
+						x:Name="imgFood"
 						Padding="0"
-						BackgroundColor="Transparent"
-						BorderColor="Transparent"
+						Aspect="AspectFit"
+						BackgroundColor="White"
 						CornerRadius="10"
-						HasShadow="False"
-						HeightRequest="200"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Grid>
-							<CarouselView
-								x:Name="carouselViewHotelImages"
-								Grid.Row="0"
-								BackgroundColor="Transparent"
-								HeightRequest="200"
-								HorizontalScrollBarVisibility="Never"
-								IndicatorView="indicatorView"
-								ItemsSource="{Binding HotelDetails.HotelImages}"
-								VerticalOptions="CenterAndExpand">
-								<CarouselView.ItemTemplate>
-									<DataTemplate>
-										<Image
-											Aspect="AspectFill"
-											HeightRequest="200"
-											Source="{Binding ImageUrl}" />
-									</DataTemplate>
-								</CarouselView.ItemTemplate>
-							</CarouselView>
-
-							<IndicatorView
-								x:Name="indicatorView"
-								Grid.Row="0"
-								Margin="0,0,0,10"
-								HorizontalOptions="CenterAndExpand"
-								IndicatorColor="#9DA4B3"
-								SelectedIndicatorColor="#FE2042"
-								VerticalOptions="EndAndExpand" />
-						</Grid>
-					</Frame>
+						HeightRequest="200" />
 
 					<Label
 						Margin="0,20,0,5"
@@ -198,6 +168,9 @@
 										<BindableLayout.ItemTemplate>
 											<DataTemplate>
 												<Grid ColumnSpacing="15" RowSpacing="5">
+													<Grid.GestureRecognizers>
+														<TapGestureRecognizer Tapped="OnRoomServiceMenuCategoryTapped" />
+													</Grid.GestureRecognizers>
 													<Grid.RowDefinitions>
 														<RowDefinition Height="auto" />
 														<RowDefinition Height="auto" />
@@ -269,9 +242,26 @@
 							</DataTemplate>
 						</BindableLayout.ItemTemplate>
 					</StackLayout>
+
 					<BoxView BackgroundColor="Transparent" HeightRequest="25" />
 				</StackLayout>
 			</ScrollView>
+
+			<StackLayout
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#1A1C2A"
+				HeightRequest="60"
+				IsVisible="{Binding IsProceedToCheckOut}">
+				<controls:CustomButton
+					Margin="40,5,40,5"
+					BackgroundColor="#5663FF"
+					Command="{Binding ProceedToCheckOutCommand}"
+					CornerRadius="10"
+					FontFamily="SansProSemiBoldFontFamily"
+					Text="Proceed to Checkout"
+					TextColor="White" />
+			</StackLayout>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

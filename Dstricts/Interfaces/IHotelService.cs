@@ -10,6 +10,7 @@ namespace Dstricts.Interfaces
 		Task<Models.VerifyCheckedInCodeResponse> VerifyCheckedInCodeAsync(Models.VerifyCheckedInCodeRequest request);
 		Task<Models.HotelCompleteInfoResponse> HotelCompleteInfoAsync(Models.HotelCompleteInfoRequest request);
 		Task<List<Models.SelectedRoomServiceAppMenuResponse>> SelectedRoomServiceAppMenuAsync(Models.SelectedRoomServiceAppMenuRequest request);
+		Task <Models.AddFoodItemToCartResponse> AddFoodItemToCartAsync(Models.AddFoodItemToCartRequest request);
 	}
 }
 
