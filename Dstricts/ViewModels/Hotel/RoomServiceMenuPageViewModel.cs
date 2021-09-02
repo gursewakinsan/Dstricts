@@ -50,6 +50,20 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Proceed To Check Out Command.
+		private ICommand proceedToCheckOutCommand;
+		public ICommand ProceedToCheckOutCommand
+		{
+			get => proceedToCheckOutCommand ?? (proceedToCheckOutCommand = new Command(async () => await ExecuteProceedToCheckOutCommand()));
+		}
+		private async Task ExecuteProceedToCheckOutCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			await Navigation.PushAsync(new Views.Hotel.FoodCartListPage());
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		public Models.HotelCompleteInfoResponse HotelDetails => Helper.Helper.HotelDetails;
 
