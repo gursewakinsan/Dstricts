@@ -8,11 +8,11 @@ namespace Dstricts.Service
 {
 	public class CartService : ICartService
 	{
-		public Task<Models.AddFoodItemToCartResponse> AddFoodItemToCartAsync(Models.AddFoodItemToCartRequest request)
+		public Task<int> AddFoodItemToCartAsync(Models.AddFoodItemToCartRequest request)
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<Models.AddFoodItemToCartResponse>(HttpWebRequest.Create(string.Format(EndPointsList.AddFoodItemToCartUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddFoodItemToCartUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}
@@ -35,11 +35,11 @@ namespace Dstricts.Service
 			});
 		}
 
-		public Task<Models.UpdateCartItemCountResponse> UpdateCartItemCountAsync(Models.UpdateCartItemCountRequest request)
+		public Task<int> UpdateCartItemCountAsync(Models.UpdateCartItemCountRequest request)
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<Models.UpdateCartItemCountResponse>(HttpWebRequest.Create(string.Format(EndPointsList.UpdateCartItemCountUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.UpdateCartItemCountUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}

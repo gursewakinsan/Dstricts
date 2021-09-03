@@ -173,7 +173,7 @@
 												FontSize="20"
 												HorizontalTextAlignment="Center"
 												MaxLines="1"
-												Text="{Binding Quantity}"
+												Text="{Binding DishQuantity}"
 												TextColor="Black"
 												VerticalTextAlignment="Center" />
 

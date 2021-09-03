@@ -19,7 +19,6 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.IsProceedToCheckOut = Helper.Helper.IsProceedToCheckOut;
 			viewModel.GetRoomServiceMenuCommand.Execute(null);
 		}
 

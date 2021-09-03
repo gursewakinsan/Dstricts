@@ -24,14 +24,22 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGetRoomServiceMenuCommand()
 		{
-			if (RoomServiceAppMenu?.Count > 0) return;
 			DependencyService.Get<IProgressBar>().Show();
-			IHotelService service = new HotelService();
-			var response = await service.SelectedRoomServiceAppMenuAsync(new Models.SelectedRoomServiceAppMenuRequest()
+			if (RoomServiceAppMenu == null || RoomServiceAppMenu?.Count == 0)
 			{
-				QloudCheckOutId = Helper.Helper.HotelCheckedIn
+				IHotelService service = new HotelService();
+				var response = await service.SelectedRoomServiceAppMenuAsync(new Models.SelectedRoomServiceAppMenuRequest()
+				{
+					QloudCheckOutId = Helper.Helper.HotelCheckedIn
+				});
+				RoomServiceAppMenu = response;
+			}
+			ICartService cartService = new CartService();
+			int cartServiceResponse = await cartService.CartItemCountAsync(new Models.CartItemCountRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
 			});
-			RoomServiceAppMenu = response;
+			IsProceedToCheckOut = cartServiceResponse > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

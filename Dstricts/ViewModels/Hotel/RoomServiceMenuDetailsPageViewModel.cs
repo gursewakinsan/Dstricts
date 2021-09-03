@@ -49,8 +49,7 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteSubmitCommand()
 		{
 			DependencyService.Get<IProgressBar>().Show();
-			if (Helper.Helper.FoodCartItems == null)
-				Helper.Helper.FoodCartItems = new System.Collections.Generic.List<Models.AddFoodItemToCartRequest>();
+			ICartService service = new CartService();
 			Models.AddFoodItemToCartRequest foodItem = new Models.AddFoodItemToCartRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn,
@@ -62,9 +61,11 @@ namespace Dstricts.ViewModels
 				Quantity = ItemCount,
 				ServiceType = SelectedRoomServiceMenuCategory.ServeType
 			};
-			Helper.Helper.FoodCartItems.Add(foodItem);
-			if (!Helper.Helper.IsProceedToCheckOut) Helper.Helper.IsProceedToCheckOut = true;
-			await Navigation.PopAsync();
+			int response = await service.AddFoodItemToCartAsync(foodItem);
+			if (response == 1)
+				await Navigation.PopAsync();
+			else
+				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
