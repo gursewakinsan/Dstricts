@@ -51,6 +51,7 @@ namespace Dstricts.Views.Hotel
 			Models.CheckedInResponse checkedIn = image.BindingContext as Models.CheckedInResponse;
 			if (checkedIn.Enc == 1)
 			{
+				Helper.Helper.IsRoomService = checkedIn.RoomService;
 				Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 				viewModel.HotelDetailsCommand.Execute(null);
 			}

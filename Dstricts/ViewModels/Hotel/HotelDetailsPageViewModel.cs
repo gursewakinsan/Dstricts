@@ -77,10 +77,13 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteRoomAndFoodServiceCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
-			Helper.Helper.HotelDetails = HotelDetails;
-			await Navigation.PushAsync(new Views.Hotel.RoomServiceMenuPage());
-			DependencyService.Get<IProgressBar>().Hide();
+			if (Helper.Helper.IsRoomService)
+			{
+				DependencyService.Get<IProgressBar>().Show();
+				Helper.Helper.HotelDetails = HotelDetails;
+				await Navigation.PushAsync(new Views.Hotel.RoomServiceMenuPage());
+				DependencyService.Get<IProgressBar>().Hide();
+			}
 		}
 		#endregion
 

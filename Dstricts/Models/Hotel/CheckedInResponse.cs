@@ -19,7 +19,11 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "image_path")]
 		public string ImagePath { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "room_service")]
+		public bool RoomService { get; set; }
 		
-		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
+
+		//public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
 	}
 }
