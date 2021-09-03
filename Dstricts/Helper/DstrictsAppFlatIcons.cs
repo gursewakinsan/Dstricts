@@ -39,5 +39,6 @@
 		public const string PlusCircle = "\U000f0417";
 		public const string MinusCircle = "\U000f0376";
 		public const string MinusCircleOutline = "\U000f0377";
+		public const string Minus = "\U000f0374";
 	}
 }

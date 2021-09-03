@@ -163,7 +163,7 @@
 												FontFamily="{StaticResource MaterialFontFamily}"
 												FontSize="25"
 												HorizontalOptions="FillAndExpand"
-												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Minus}"
 												TextColor="Black"
 												VerticalOptions="FillAndExpand" />
 
