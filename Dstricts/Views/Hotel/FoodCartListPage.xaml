@@ -219,6 +219,7 @@
 						Grid.Column="0"
 						Padding="0"
 						BackgroundColor="White"
+						Command="{Binding PayOnCommand}"
 						FontFamily="SansProSemiBoldFontFamily"
 						FontSize="20"
 						Text="Pay on"
@@ -228,6 +229,7 @@
 						Grid.Column="1"
 						Padding="0"
 						BackgroundColor="#1A1C2A"
+						Command="{Binding AddToRoomCommand}"
 						FontFamily="SansProSemiBoldFontFamily"
 						FontSize="20"
 						Text="Add to room" />

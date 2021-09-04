@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 using Dstricts.Service;
+using Xamarin.Essentials;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
@@ -61,6 +61,40 @@ namespace Dstricts.ViewModels
 			if (FoodCartListItemCount == 0)
 				await Navigation.PopAsync();
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Pay On Command.
+		private ICommand payOnCommand;
+		public ICommand PayOnCommand
+		{
+			get => payOnCommand ?? (payOnCommand = new Command(async () => await ExecutePayOnCommand()));
+		}
+		private async Task ExecutePayOnCommand()
+		{
+			Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
+			{
+				CheckedInId = Helper.Helper.HotelCheckedIn,
+				ServiceType = 1,
+				QloudIdPay = 1
+			};
+			string payJson = Newtonsoft.Json.JsonConvert.SerializeObject(payOnRequest);
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
+			else
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
+		}
+		#endregion
+
+		#region Add To Room Command.
+		private ICommand addToRoomCommand;
+		public ICommand AddToRoomCommand
+		{
+			get => addToRoomCommand ?? (addToRoomCommand = new Command(async () => await ExecuteAddToRoomCommand()));
+		}
+		private async Task ExecuteAddToRoomCommand()
+		{
+			await Task.CompletedTask;
 		}
 		#endregion
 

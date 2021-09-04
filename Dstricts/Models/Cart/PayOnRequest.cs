@@ -1,0 +1,9 @@
+﻿namespace Dstricts.Models
+{
+	public class PayOnRequest
+	{
+		public int CheckedInId { get; set; }
+		public int ServiceType { get; set; }
+		public int QloudIdPay { get; set; }
+	}
+}
