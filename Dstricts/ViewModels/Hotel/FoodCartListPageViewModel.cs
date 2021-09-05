@@ -94,7 +94,17 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteAddToRoomCommand()
 		{
-			await Task.CompletedTask;
+			Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
+			{
+				CheckedInId = Helper.Helper.HotelCheckedIn,
+				ServiceType = 1,
+				QloudIdPay = 2
+			};
+			string payJson = Newtonsoft.Json.JsonConvert.SerializeObject(payOnRequest);
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
+			else
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
 		}
 		#endregion
 
