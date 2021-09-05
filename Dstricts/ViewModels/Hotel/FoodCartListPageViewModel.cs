@@ -94,7 +94,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteAddToRoomCommand()
 		{
-			Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
+			/*Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
 			{
 				CheckedInId = Helper.Helper.HotelCheckedIn,
 				ServiceType = 1,
@@ -104,7 +104,8 @@ namespace Dstricts.ViewModels
 			if (Device.RuntimePlatform == Device.iOS)
 				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
 			else
-				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");*/
+			await Task.CompletedTask;
 		}
 		#endregion
 
