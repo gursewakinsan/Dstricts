@@ -12,7 +12,7 @@ namespace Dstricts.Views.Hotel
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
-			imgFood.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/roomserviceImages/heading.jpg"));
+			//imgFood.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/roomserviceImages/heading.jpg"));
 			BindingContext = viewModel = new RoomServiceMenuPageViewModel(this.Navigation);
 		}
 

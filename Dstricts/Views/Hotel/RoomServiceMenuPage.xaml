@@ -61,38 +61,9 @@
 					Padding="15,20,15,0"
 					Spacing="0"
 					VerticalOptions="StartAndExpand">
-					<StackLayout Orientation="Horizontal" Spacing="5">
-						<Label
-							FontFamily="SansProRegularFontFamily"
-							FontSize="15"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="4.6 Stars"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Margin="2,0,2,0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="4"
-							HorizontalTextAlignment="End"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxBlankCircle}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							FontFamily="SansProRegularFontFamily"
-							FontSize="15"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="17 Reviews"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</StackLayout>
-
 					<Label
-						FontFamily="SansProBoldFontFamily"
-						FontSize="30"
+						FontFamily="SansProRegularFontFamily"
+						FontSize="15"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="{Binding HotelDetails.HotelName}"
@@ -100,12 +71,13 @@
 						VerticalTextAlignment="Center" />
 
 					<Label
-						FontFamily="SansProRegularFontFamily"
-						FontSize="15"
+						FontFamily="SansProBoldFontFamily"
+						FontSize="30"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="Room Service Menu"
-						TextColor="White" />
+						TextColor="White"
+						VerticalTextAlignment="Center" />
 
 					<BoxView
 						Margin="0,20,0,20"
@@ -113,56 +85,48 @@
 						HeightRequest="1"
 						Opacity="0.5" />
 
-					<ImageButton
-						x:Name="imgFood"
-						Padding="0"
-						Aspect="AspectFit"
-						BackgroundColor="White"
-						CornerRadius="10"
-						HeightRequest="200" />
-
-					<Label
-						Margin="0,20,0,5"
-						FontFamily="SansProBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="About your stay"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Label
-						Margin="0,0,0,0"
-						FontFamily="SansProRegularFontFamily"
-						FontSize="16"
-						HorizontalTextAlignment="Start"
-						MaxLines="2"
-						Text="You can access information about the hotel, your stay and payment here"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
 					<StackLayout BindableLayout.ItemsSource="{Binding RoomServiceAppMenu}">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
 								<StackLayout Spacing="0">
-									<Label
-										Margin="0,60,0,30"
-										FontFamily="SansProBoldFontFamily"
-										FontSize="25"
-										HorizontalTextAlignment="Center"
-										MaxLines="1"
-										Text="{Binding ServeInfo}"
-										TextColor="White" />
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="200" />
+										</Grid.RowDefinitions>
+										<ImageButton
+											Grid.Row="0"
+											Padding="0"
+											Aspect="AspectFill"
+											BackgroundColor="Transparent"
+											CornerRadius="10"
+											HeightRequest="200"
+											Source="{Binding ServeImage}" />
 
-									<ImageButton
-										Padding="0"
-										Aspect="AspectFill"
-										BackgroundColor="Transparent"
-										CornerRadius="10"
-										HeightRequest="200"
-										Source="{Binding ServeImage}" />
+										<Frame
+											Grid.Row="0"
+											Margin="10,0,0,10"
+											Padding="5"
+											BackgroundColor="Black"
+											CornerRadius="10"
+											HasShadow="False"
+											HorizontalOptions="StartAndExpand"
+											IsClippedToBounds="True"
+											VerticalOptions="EndAndExpand">
+											<Label
+												FontFamily="SansProBoldFontFamily"
+												FontSize="25"
+												HorizontalOptions="Start"
+												HorizontalTextAlignment="Start"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Text="{Binding ServeInfo}"
+												TextColor="White"
+												VerticalOptions="EndAndExpand"
+												VerticalTextAlignment="End" />
+										</Frame>
+									</Grid>
 
-									<usercontrols:DotLineControl Margin="0,60,0,20" />
+									<usercontrols:DotLineControl Margin="0,20,0,20" />
 
 									<StackLayout BindableLayout.ItemsSource="{Binding Category}">
 										<BindableLayout.ItemTemplate>
@@ -198,7 +162,7 @@
 													<Label
 														Grid.Row="0"
 														Grid.Column="1"
-														FontFamily="JosefinSansSemiBoldFontFamily"
+														FontFamily="SansProBoldFontFamily"
 														FontSize="20"
 														Text="{Binding DishName}"
 														TextColor="White"
@@ -208,8 +172,8 @@
 														Grid.Row="1"
 														Grid.Column="1"
 														Margin="0,0,50,0"
-														FontFamily="JosefinSansRegular"
-														FontSize="18"
+														FontFamily="SansProRegularFontFamily"
+														FontSize="16"
 														HorizontalOptions="StartAndExpand"
 														HorizontalTextAlignment="Start"
 														Text="{Binding DishDetail}"
@@ -219,8 +183,8 @@
 														Grid.Row="2"
 														Grid.Column="1"
 														Margin="0,0,50,0"
-														FontFamily="JosefinSansRegular"
-														FontSize="18"
+														FontFamily="SansProBoldFontFamily"
+														FontSize="16"
 														HorizontalOptions="StartAndExpand"
 														HorizontalTextAlignment="Start"
 														TextColor="White">
