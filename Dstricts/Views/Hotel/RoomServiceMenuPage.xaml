@@ -131,15 +131,13 @@
 									<StackLayout BindableLayout.ItemsSource="{Binding Category}">
 										<BindableLayout.ItemTemplate>
 											<DataTemplate>
-												<Grid ColumnSpacing="15" RowSpacing="5">
+												<Grid ColumnSpacing="15" RowSpacing="0">
 													<Grid.GestureRecognizers>
 														<TapGestureRecognizer Tapped="OnRoomServiceMenuCategoryTapped" />
 													</Grid.GestureRecognizers>
 													<Grid.RowDefinitions>
 														<RowDefinition Height="auto" />
-														<RowDefinition Height="auto" />
-														<RowDefinition Height="auto" />
-														<RowDefinition Height="10" />
+														<RowDefinition Height="20" />
 														<RowDefinition Height="1" />
 														<RowDefinition Height="10" />
 													</Grid.RowDefinitions>
@@ -159,45 +157,39 @@
 														VerticalOptions="StartAndExpand"
 														WidthRequest="80" />
 
-													<Label
-														Grid.Row="0"
-														Grid.Column="1"
-														FontFamily="SansProBoldFontFamily"
-														FontSize="20"
-														Text="{Binding DishName}"
-														TextColor="White"
-														TextTransform="Uppercase" />
+													<StackLayout VerticalOptions="CenterAndExpand" Spacing="5" Grid.Row="0" Grid.Column="1">
+														<Label
+															FontFamily="SansProBoldFontFamily"
+															FontSize="20" HorizontalOptions="StartAndExpand"
+															HorizontalTextAlignment="Start"
+															Text="{Binding DishName}"
+															TextColor="White"
+															TextTransform="Uppercase" />
 
-													<Label
-														Grid.Row="1"
-														Grid.Column="1"
-														Margin="0,0,50,0"
-														FontFamily="SansProRegularFontFamily"
-														FontSize="16"
-														HorizontalOptions="StartAndExpand"
-														HorizontalTextAlignment="Start"
-														Text="{Binding DishDetail}"
-														TextColor="White" />
+														<Label
+															Margin="0,0,50,0" HorizontalOptions="StartAndExpand"
+															FontFamily="SansProRegularFontFamily"
+															FontSize="16"
+															HorizontalTextAlignment="Start"
+															Text="{Binding DishDetail}"
+															TextColor="White" />
 
-													<Label
-														Grid.Row="2"
-														Grid.Column="1"
-														Margin="0,0,50,0"
-														FontFamily="SansProBoldFontFamily"
-														FontSize="16"
-														HorizontalOptions="StartAndExpand"
-														HorizontalTextAlignment="Start"
-														TextColor="White">
-														<Label.FormattedText>
-															<FormattedString>
-																<Span Text="Price " />
-																<Span Text="$" />
-																<Span Text="{Binding DishPrice}" />
-															</FormattedString>
-														</Label.FormattedText>
-													</Label>
+														<Label
+															FontFamily="SansProBoldFontFamily"
+															FontSize="16" HorizontalOptions="StartAndExpand"
+															HorizontalTextAlignment="Start"
+															TextColor="White">
+															<Label.FormattedText>
+																<FormattedString>
+																	<Span Text="Price " />
+																	<Span Text="$" />
+																	<Span Text="{Binding DishPrice}" />
+																</FormattedString>
+															</Label.FormattedText>
+														</Label>
+													</StackLayout>
 
-													<usercontrols:DotLineControl Grid.Row="4" Grid.ColumnSpan="2" />
+													<usercontrols:DotLineControl Grid.Row="2" Grid.ColumnSpan="2" />
 												</Grid>
 											</DataTemplate>
 										</BindableLayout.ItemTemplate>
