@@ -15,6 +15,7 @@ namespace Dstricts.iOS
 				"Brush_Experimental"
 			});
 			global::Xamarin.Forms.Forms.Init();
+			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}

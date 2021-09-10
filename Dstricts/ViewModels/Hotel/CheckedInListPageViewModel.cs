@@ -58,6 +58,27 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Verify QR Code Command.
+		private ICommand verifyQrCodeCommand;
+		public ICommand VerifyQrCodeCommand
+		{
+			get => verifyQrCodeCommand ?? (verifyQrCodeCommand = new Command<string>(async (qrCode) => await ExecuteVerifyQrCodeCommand(qrCode)));
+		}
+		private async Task ExecuteVerifyQrCodeCommand(string qrCode)
+		{
+			string[] codeInfo = qrCode.Split('/');
+			switch (codeInfo[0])
+			{
+				case "verify_checkin":
+					GoToVerifyCheckedInCodePageCommand.Execute(null);
+					break;
+				case "getQueue":
+					break;
+			}
+			await Task.CompletedTask;
+		}
+		#endregion
+
 		#region Go To Verify Checked In Code Page Command.
 		private ICommand goToVerifyCheckedInCodePageCommand;
 		public ICommand GoToVerifyCheckedInCodePageCommand

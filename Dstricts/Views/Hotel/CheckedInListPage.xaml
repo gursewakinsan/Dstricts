@@ -36,11 +36,12 @@
 				VerticalTextAlignment="Center" />
 
 			<Button
+				x:Name="btnOpenCameraToScanQrCode"
 				Grid.Row="1"
 				Grid.Column="0"
 				Margin="15,0,0,0"
 				Padding="0"
-				Command="{Binding GoToVerifyCheckedInCodePageCommand}"
+				Clicked="OnBtnOpenCameraToScanQrCodeClicked"
 				CornerRadius="18"
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="25"

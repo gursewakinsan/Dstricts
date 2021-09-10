@@ -1,6 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
+using ZXing.Net.Mobile.Forms;
 using System.Collections.Generic;
 
 namespace Dstricts.Views.Hotel
@@ -9,6 +11,7 @@ namespace Dstricts.Views.Hotel
 	public partial class CheckedInListPage : ContentPage
 	{
 		CheckedInListPageViewModel viewModel;
+		ZXingScannerPage scanPage;
 		public CheckedInListPage()
 		{
 			InitializeComponent();
@@ -45,7 +48,7 @@ namespace Dstricts.Views.Hotel
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
 
-		private void OnHotelImageClicked(object sender, System.EventArgs e)
+		private void OnHotelImageClicked(object sender, EventArgs e)
 		{
 			ImageButton image = sender as ImageButton;
 			Models.CheckedInResponse checkedIn = image.BindingContext as Models.CheckedInResponse;
@@ -55,6 +58,50 @@ namespace Dstricts.Views.Hotel
 				Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 				viewModel.HotelDetailsCommand.Execute(null);
 			}
+		}
+
+		private void OnBackClicked(object sender, EventArgs e)
+		{
+			Device.BeginInvokeOnMainThread(async () =>
+			{
+				this.scanPage.IsScanning = false;
+				await Navigation.PopModalAsync();
+			});
+		}
+
+		private async void OnBtnOpenCameraToScanQrCodeClicked(object sender, EventArgs e)
+		{
+			var customOverlay = new StackLayout
+			{
+				HorizontalOptions = LayoutOptions.StartAndExpand,
+				VerticalOptions = LayoutOptions.StartAndExpand
+			};
+
+			var back = new ImageButton
+			{
+				Margin = new Thickness(15, 20, 0, 0),
+				BackgroundColor = Color.Transparent,
+				Source = "iconBack.png",
+				Padding = 10,
+				HeightRequest = 50,
+				WidthRequest = 50,
+				HorizontalOptions = LayoutOptions.StartAndExpand,
+				VerticalOptions = LayoutOptions.StartAndExpand
+			};
+
+			back.Clicked += OnBackClicked;
+			customOverlay.Children.Add(back);
+
+			this.scanPage = new ZXingScannerPage(customOverlay: customOverlay);
+			scanPage.OnScanResult += (result) => {
+				scanPage.IsScanning = false;
+				Device.BeginInvokeOnMainThread(async () => {
+					await Navigation.PopModalAsync();
+					viewModel.VerifyQrCodeCommand.Execute(result.Text);
+				});
+			};
+			scanPage.IsScanning = true;
+			await Navigation.PushModalAsync(scanPage);
 		}
 	}
 }
