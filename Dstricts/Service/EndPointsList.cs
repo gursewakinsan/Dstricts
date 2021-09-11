@@ -15,5 +15,8 @@
 		public const string CartItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartItemCount";
 		public const string CartInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartInfo";
 		public const string UpdateCartItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/UpdatecartItemCount";
+
+		//Queue
+		public const string AvalibleQueueOnTheLocationUrl = "https://www.qloudid.com/user/index.php/QloudidApp/avalibleQueueOnTheLocation";
 	}
 }

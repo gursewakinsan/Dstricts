@@ -21,7 +21,6 @@ namespace Dstricts.Helper
 		public static Models.HotelCompleteInfoResponse HotelDetails { get; set; }
 		public static CategoryInfo SelectedRoomServiceMenuCategory { get; set; }
 		public static bool IsRoomService { get; set; }
-		//public static List<Models.AddFoodItemToCartRequest> FoodCartItems { get; set; }
-		//public static bool IsProceedToCheckOut { get; set; } = false;
+		public static string AvalibleQueueId { get; set; }
 	}
 }

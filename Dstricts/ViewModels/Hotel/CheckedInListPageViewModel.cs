@@ -73,6 +73,8 @@ namespace Dstricts.ViewModels
 					GoToVerifyCheckedInCodePageCommand.Execute(null);
 					break;
 				case "getQueue":
+					Helper.Helper.AvalibleQueueId = codeInfo[1];
+					await Navigation.PushAsync(new Views.Queue.AvalibleQueueOnTheLocationPage());
 					break;
 			}
 			await Task.CompletedTask;
