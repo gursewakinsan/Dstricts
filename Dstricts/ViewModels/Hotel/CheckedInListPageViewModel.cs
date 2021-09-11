@@ -38,6 +38,11 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
+			var responseUserQueueListAsync = await service.UserQueueListAsync(new Models.CheckedInRequest()
+			{
+				UserId = Helper.Helper.LoggedInUserId
+			});
+			
 			if (responseCheckedIn?.Count > 0)
 			{
 				foreach (var item in responseCheckedIn)
@@ -48,6 +53,13 @@ namespace Dstricts.ViewModels
 			if (responseCheckedInApartment?.Count > 0)
 			{
 				foreach (var item in responseCheckedInApartment)
+					if (item != null)
+						checkedIns.Add(item);
+			}
+
+			if (responseUserQueueListAsync?.Count > 0)
+			{
+				foreach (var item in responseUserQueueListAsync)
 					if (item != null)
 						checkedIns.Add(item);
 			}
