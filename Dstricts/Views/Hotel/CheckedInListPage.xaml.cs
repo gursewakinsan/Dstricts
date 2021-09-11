@@ -48,15 +48,20 @@ namespace Dstricts.Views.Hotel
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
 
-		private void OnHotelImageClicked(object sender, EventArgs e)
+		private async void OnHotelImageClicked(object sender, EventArgs e)
 		{
 			ImageButton image = sender as ImageButton;
 			Models.CheckedInResponse checkedIn = image.BindingContext as Models.CheckedInResponse;
-			if (checkedIn.Enc == 1)
+			if (checkedIn.Enc == 0) //Queue
+				await Navigation.PushAsync(new Queue.UserQueueWaitingDetailPage(checkedIn.Id));
+			else if (checkedIn.Enc == 1) //Hotel
 			{
 				Helper.Helper.IsRoomService = checkedIn.RoomService;
 				Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 				viewModel.HotelDetailsCommand.Execute(null);
+			}
+			else if (checkedIn.Enc == 2) //Apartment
+			{ 
 			}
 		}
 

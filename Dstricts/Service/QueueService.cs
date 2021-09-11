@@ -16,5 +16,23 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.UserQueueWaitingDetailResponse> UserQueueWaitingDetailAsync(Models.UserQueueWaitingDetailRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.UserQueueWaitingDetailResponse>(HttpWebRequest.Create(string.Format(EndPointsList.UserQueueWaitingDetailUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> UserRemoveFromQueueWaitingListAsync(Models.UserRemoveFromQueueWaitingListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.RemoveFromListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

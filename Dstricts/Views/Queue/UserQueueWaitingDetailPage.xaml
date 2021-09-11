@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Queue.UserQueueWaitingDetailPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout
+					Padding="15,20,15,0"
+					Spacing="0"
+					VerticalOptions="StartAndExpand">
+					<Label
+						FontFamily="SansProRegularFontFamily"
+						FontSize="15"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="{Binding UserQueueWaitingDetail.QueueName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						FontFamily="SansProBoldFontFamily"
+						FontSize="30"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="{Binding UserQueueWaitingDetail.CompanyName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Margin="0,20,0,20"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.5" />
+
+					<Frame
+						Padding="0"
+						BackgroundColor="White"
+						BorderColor="White"
+						CornerRadius="10"
+						HasShadow="False"
+						HeightRequest="200"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Label
+							FontFamily="SansProRegularFontFamily"
+							FontSize="60"
+							HorizontalOptions="CenterAndExpand"
+							Text="{Binding UserQueueWaitingDetail.HashTag}"
+							TextColor="Black"
+							VerticalOptions="CenterAndExpand" />
+					</Frame>
+
+					<Label
+						Margin="0,20,0,5"
+						FontFamily="SansProBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="{Binding UserQueueWaitingDetail.GuestName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						FontFamily="SansProRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						MaxLines="2"
+						TextColor="White"
+						VerticalTextAlignment="Center">
+						<Label.FormattedText>
+							<FormattedString>
+								<Span Text="You are " />
+								<Span Text="{Binding UserQueueWaitingDetail.HashTag}" />
+								<Span Text=" in line at " />
+								<Span Text="{Binding UserQueueWaitingDetail.Address}" />
+							</FormattedString>
+						</Label.FormattedText>
+					</Label>
+
+					<controls:CustomButton
+						Margin="0,20,0,20"
+						BackgroundColor="Transparent"
+						BorderColor="White"
+						BorderWidth="1"
+						CornerRadius="10"
+						FontFamily="SansProSemiBoldFontFamily"
+						Text="View waitlist" />
+
+					<controls:CustomButton
+						Margin="0,0,0,20"
+						BackgroundColor="Transparent"
+						BorderColor="White"
+						BorderWidth="1"
+						Command="{Binding UserRemoveFromQueueWaitingCommand}"
+						CornerRadius="10"
+						FontFamily="SansProSemiBoldFontFamily"
+						IsVisible="{Binding UserQueueWaitingDetail.IsServiced}"
+						Text="Remove me from the waitlist" />
+
+					<BoxView
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.5" />
+				</StackLayout>
+			</ScrollView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
