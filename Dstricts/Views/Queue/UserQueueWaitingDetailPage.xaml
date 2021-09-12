@@ -145,7 +145,7 @@
 						Command="{Binding UserRemoveFromQueueWaitingCommand}"
 						CornerRadius="10"
 						FontFamily="SansProSemiBoldFontFamily"
-						IsVisible="{Binding UserQueueWaitingDetail.IsServiced}"
+						IsVisible="{Binding UserQueueWaitingDetail.IsServiced, Converter={StaticResource InverseBoolConverter}}"
 						Text="Remove me from the waitlist" />
 
 					<BoxView
