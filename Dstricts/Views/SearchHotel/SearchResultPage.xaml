@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.SearchHotel.SearchResultPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid RowSpacing="15">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition Height="45" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Frame
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Margin="20,0,20,0"
+				Padding="16,0,16,0"
+				BackgroundColor="#1F1F23"
+				CornerRadius="8"
+				HasShadow="False"
+				IsClippedToBounds="True">
+				<Grid ColumnSpacing="10">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="20" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Label
+						Grid.Row="0"
+						Grid.Column="0"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalTextAlignment="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<controls:CustomEntry
+						Grid.Row="0"
+						Grid.Column="1"
+						BackgroundColor="Transparent"
+						FontFamily="SansProRegularFontFamily"
+						FontSize="14"
+						Placeholder="Search"
+						PlaceholderColor="White"
+						ReturnType="Search"
+						TextColor="White"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+			</Frame>
+
+			<ListView
+				x:Name="listSearchResult"
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="20,0,20,10"
+				BackgroundColor="Transparent"
+				HasUnevenRows="True"
+				ItemTapped="OnSearchResultItemTapped"
+				ItemsSource="{Binding SearchInfoList}"
+				SeparatorVisibility="None"
+				VerticalScrollBarVisibility="Never">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid Margin="0,10,0,10" ColumnSpacing="12">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="44" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+
+								<ImageButton
+									Grid.Row="0"
+									Grid.Column="0"
+									Padding="0"
+									Aspect="AspectFill"
+									CornerRadius="22"
+									HeightRequest="44"
+									Source="{Binding Url}"
+									VerticalOptions="Start"
+									WidthRequest="44" />
+
+								<StackLayout
+									Grid.Row="0"
+									Grid.Column="1"
+									Spacing="5"
+									VerticalOptions="StartAndExpand">
+									<Label
+										FontFamily="SansProBoldFontFamily"
+										FontSize="14"
+										HorizontalTextAlignment="Start"
+										MaxLines="1"
+										Text="{Binding Name}"
+										TextColor="White"
+										VerticalTextAlignment="Start" />
+
+									<Label
+										FontFamily="SansProRegularFontFamily"
+										FontSize="14"
+										HorizontalTextAlignment="Start"
+										Text="{Binding Details}"
+										TextColor="#757575"
+										VerticalTextAlignment="Start" />
+								</StackLayout>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
