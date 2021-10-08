@@ -70,7 +70,7 @@ namespace Dstricts.ViewModels
 		#endregion
 
 		#region Properties.
-		public string EatAndDrink => $"Eat & drink";
+		public string EatAndDrink => $"Eat & Drink";
 		public string SearchText { get; set; } = "aa";
 		#endregion
 	}

@@ -6,7 +6,8 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="Black"
+	BackgroundColor="Transparent"
+	BackgroundImageSource="searchBG.png"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
 		<Grid>
@@ -28,7 +29,7 @@
 				FontSize="25"
 				HorizontalTextAlignment="Start"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
-				TextColor="White"
+				TextColor="Black"
 				VerticalTextAlignment="Center">
 				<Label.GestureRecognizers>
 					<TapGestureRecognizer Command="{Binding CloseCommand}" />
@@ -42,8 +43,9 @@
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="25"
 				HorizontalTextAlignment="End"
+				IsVisible="False"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
-				TextColor="White"
+				TextColor="Black"
 				VerticalTextAlignment="Center">
 				<Label.GestureRecognizers>
 					<TapGestureRecognizer Command="{Binding CloseCommand}" />
@@ -54,13 +56,13 @@
 				Grid.Row="1"
 				Grid.ColumnSpan="3"
 				VerticalScrollBarVisibility="Never">
-				<StackLayout Spacing="20" VerticalOptions="Start">
+				<StackLayout Spacing="15" VerticalOptions="EndAndExpand">
 					<Frame
-						Margin="28,20,28,0"
-						Padding="24"
+						Margin="28,0,28,0"
+						Padding="20,10,20,10"
 						BackgroundColor="Transparent"
 						BorderColor="#757575"
-						CornerRadius="16"
+						CornerRadius="10"
 						HasShadow="False"
 						IsClippedToBounds="True"
 						VerticalOptions="StartAndExpand">
@@ -72,10 +74,7 @@
 								<ColumnDefinition Width="48" />
 								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="48" />
-								<RowDefinition Height="auto" />
-							</Grid.RowDefinitions>
+
 							<BoxView
 								Grid.Row="0"
 								Grid.Column="0"
@@ -85,7 +84,6 @@
 								HorizontalOptions="Center"
 								VerticalOptions="Start"
 								WidthRequest="48" />
-
 							<Label
 								Grid.Row="0"
 								Grid.Column="0"
@@ -96,36 +94,25 @@
 								TextColor="#E08D70"
 								VerticalTextAlignment="Center" />
 
-							<StackLayout
-								Grid.RowSpan="2"
+							<Label
+								Grid.Row="0"
 								Grid.Column="1"
-								Spacing="10">
-								<Label
-									FontFamily="SansProBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="User"
-									TextColor="White"
-									VerticalTextAlignment="Start" />
-
-								<Label
-									FontFamily="SansProRegularFontFamily"
-									FontSize="14"
-									HorizontalTextAlignment="Start"
-									Text="You have received 10 new badges this month."
-									TextColor="#757575"
-									VerticalTextAlignment="Start" />
-							</StackLayout>
+								FontFamily="SansProBoldFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="People"
+								TextColor="Black"
+								VerticalTextAlignment="Center" />
 						</Grid>
 					</Frame>
 
 					<Frame
 						Margin="28,0,28,0"
-						Padding="24"
+						Padding="20,10,20,10"
 						BackgroundColor="Transparent"
 						BorderColor="#757575"
-						CornerRadius="16"
+						CornerRadius="10"
 						HasShadow="False"
 						IsClippedToBounds="True"
 						VerticalOptions="StartAndExpand">
@@ -137,10 +124,7 @@
 								<ColumnDefinition Width="48" />
 								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="48" />
-								<RowDefinition Height="auto" />
-							</Grid.RowDefinitions>
+
 							<BoxView
 								Grid.Row="0"
 								Grid.Column="0"
@@ -161,36 +145,25 @@
 								TextColor="#BD6DFA"
 								VerticalTextAlignment="Center" />
 
-							<StackLayout
-								Grid.RowSpan="2"
+							<Label
+								Grid.Row="0"
 								Grid.Column="1"
-								Spacing="10">
-								<Label
-									FontFamily="SansProBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="Company"
-									TextColor="White"
-									VerticalTextAlignment="Start" />
-
-								<Label
-									FontFamily="SansProRegularFontFamily"
-									FontSize="14"
-									HorizontalTextAlignment="Start"
-									Text="Manage the way we s end you all the notifications."
-									TextColor="#757575"
-									VerticalTextAlignment="Start" />
-							</StackLayout>
+								FontFamily="SansProBoldFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="Business"
+								TextColor="Black"
+								VerticalTextAlignment="Center" />
 						</Grid>
 					</Frame>
 
 					<Frame
 						Margin="28,0,28,20"
-						Padding="24"
+						Padding="20,10,20,10"
 						BackgroundColor="Transparent"
 						BorderColor="#757575"
-						CornerRadius="16"
+						CornerRadius="10"
 						HasShadow="False"
 						IsClippedToBounds="True"
 						VerticalOptions="StartAndExpand">
@@ -202,10 +175,7 @@
 								<ColumnDefinition Width="48" />
 								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="48" />
-								<RowDefinition Height="auto" />
-							</Grid.RowDefinitions>
+
 							<BoxView
 								Grid.Row="0"
 								Grid.Column="0"
@@ -226,30 +196,19 @@
 								TextColor="#FFFFFF"
 								VerticalTextAlignment="Center" />
 
-							<StackLayout
-								Grid.RowSpan="2"
+							<Label
+								Grid.Row="0"
 								Grid.Column="1"
-								Spacing="10">
-								<Label
-									FontFamily="SansProBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="{Binding EatAndDrink}"
-									TextColor="White"
-									VerticalTextAlignment="Start" />
-
-								<Label
-									FontFamily="SansProRegularFontFamily"
-									FontSize="14"
-									HorizontalTextAlignment="Start"
-									Text="You have 1 card ending 4242 linked to you account."
-									TextColor="#757575" />
-							</StackLayout>
+								FontFamily="SansProBoldFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="{Binding EatAndDrink}"
+								TextColor="Black"
+								VerticalTextAlignment="Center" />
 						</Grid>
 					</Frame>
 				</StackLayout>
-
 			</ScrollView>
 		</Grid>
 	</ContentPage.Content>

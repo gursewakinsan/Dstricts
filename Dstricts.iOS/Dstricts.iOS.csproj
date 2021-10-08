@@ -177,4 +177,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconBack.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchBG.png" />
+  </ItemGroup>
 </Project>
