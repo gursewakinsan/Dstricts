@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.SearchHotel.SearchHotelByTypePage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout Spacing="20" VerticalOptions="Start">
+					<Frame
+						Margin="28,20,28,0"
+						Padding="24"
+						BackgroundColor="Transparent"
+						BorderColor="#757575"
+						CornerRadius="16"
+						HasShadow="False"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}" />
+						</Frame.GestureRecognizers>
+						<Grid ColumnSpacing="20">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="48" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="48" />
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<BoxView
+								Grid.Row="0"
+								Grid.Column="0"
+								BackgroundColor="#342B20"
+								CornerRadius="16"
+								HeightRequest="48"
+								HorizontalOptions="Center"
+								VerticalOptions="Start"
+								WidthRequest="48" />
+
+							<Label
+								Grid.Row="0"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+								TextColor="#E08D70"
+								VerticalTextAlignment="Center" />
+
+							<StackLayout
+								Grid.RowSpan="2"
+								Grid.Column="1"
+								Spacing="10">
+								<Label
+									FontFamily="SansProBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="User"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+								<Label
+									FontFamily="SansProRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Text="You have received 10 new badges this month."
+									TextColor="#757575"
+									VerticalTextAlignment="Start" />
+							</StackLayout>
+						</Grid>
+					</Frame>
+
+					<Frame
+						Margin="28,0,28,0"
+						Padding="24"
+						BackgroundColor="Transparent"
+						BorderColor="#757575"
+						CornerRadius="16"
+						HasShadow="False"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding SearchHotelByCompanyCommand}" />
+						</Frame.GestureRecognizers>
+						<Grid ColumnSpacing="20">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="48" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="48" />
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<BoxView
+								Grid.Row="0"
+								Grid.Column="0"
+								BackgroundColor="#342334"
+								CornerRadius="16"
+								HeightRequest="48"
+								HorizontalOptions="Center"
+								VerticalOptions="Start"
+								WidthRequest="48" />
+
+							<Label
+								Grid.Row="0"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.BankOutline}"
+								TextColor="#BD6DFA"
+								VerticalTextAlignment="Center" />
+
+							<StackLayout
+								Grid.RowSpan="2"
+								Grid.Column="1"
+								Spacing="10">
+								<Label
+									FontFamily="SansProBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="Company"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+								<Label
+									FontFamily="SansProRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Text="Manage the way we s end you all the notifications."
+									TextColor="#757575"
+									VerticalTextAlignment="Start" />
+							</StackLayout>
+						</Grid>
+					</Frame>
+
+					<Frame
+						Margin="28,0,28,20"
+						Padding="24"
+						BackgroundColor="Transparent"
+						BorderColor="#757575"
+						CornerRadius="16"
+						HasShadow="False"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}" />
+						</Frame.GestureRecognizers>
+						<Grid ColumnSpacing="20">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="48" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="48" />
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<BoxView
+								Grid.Row="0"
+								Grid.Column="0"
+								BackgroundColor="#223426"
+								CornerRadius="16"
+								HeightRequest="48"
+								HorizontalOptions="Center"
+								VerticalOptions="Start"
+								WidthRequest="48" />
+
+							<Label
+								Grid.Row="0"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.FoodForkDrink}"
+								TextColor="#FFFFFF"
+								VerticalTextAlignment="Center" />
+
+							<StackLayout
+								Grid.RowSpan="2"
+								Grid.Column="1"
+								Spacing="10">
+								<Label
+									FontFamily="SansProBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="{Binding EatAndDrink}"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+								<Label
+									FontFamily="SansProRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Text="You have 1 card ending 4242 linked to you account."
+									TextColor="#757575" />
+							</StackLayout>
+						</Grid>
+					</Frame>
+				</StackLayout>
+
+			</ScrollView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

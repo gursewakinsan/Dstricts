@@ -40,5 +40,7 @@
 		public const string MinusCircle = "\U000f0376";
 		public const string MinusCircleOutline = "\U000f0377";
 		public const string Minus = "\U000f0374";
+		public const string BankOutline = "\U000f0e80";
+		public const string FoodForkDrink = "\U000f05f2";
 	}
 }
