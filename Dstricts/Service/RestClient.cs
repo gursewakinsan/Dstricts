@@ -49,7 +49,7 @@ namespace Dstricts.Service
 			request.Method = "POST";
 			request.Timeout = 40000;  //approx 40s
 			request.ContentType = "application/json";
-
+			ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 			if (!string.IsNullOrEmpty(requestData))
 			{
 				UTF8Encoding encoder = new UTF8Encoding();

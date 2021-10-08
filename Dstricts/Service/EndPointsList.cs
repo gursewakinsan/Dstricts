@@ -22,5 +22,10 @@
 		public const string AvalibleQueueOnTheLocationUrl = "https://www.qloudid.com/user/index.php/QloudidApp/avalibleQueueOnTheLocation";
 		public const string UserQueueWaitingDetailUrl = "https://www.qloudid.com/user/index.php/QloudidApp/userQueueWaitingDetail";
 		public const string RemoveFromListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/removeFromList";
+
+		//Search
+		public const string UsersListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/usersList";
+		public const string CompanyListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/companylist";
+		public const string ResturantSearchListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantSearchList";
 	}
 }

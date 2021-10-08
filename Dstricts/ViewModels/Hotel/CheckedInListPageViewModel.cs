@@ -117,6 +117,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Search Command.
+		private ICommand searchCommand;
+		public ICommand SearchCommand
+		{
+			get => searchCommand ?? (searchCommand = new Command(async () => await ExecuteSearchCommand()));
+		}
+		private async Task ExecuteSearchCommand()
+		{
+			await Navigation.PushAsync(new Views.SearchHotel.SearchHotelByTypePage());
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.CheckedInResponse> checkedInList;
 		public List<Models.CheckedInResponse> CheckedInList
@@ -142,3 +154,4 @@ namespace Dstricts.ViewModels
 		#endregion
 	}
 }
+

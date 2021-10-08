@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 
@@ -21,7 +23,13 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByUserCommand()
 		{
-			await Task.CompletedTask;
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchUserAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -33,7 +41,13 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByCompanyCommand()
 		{
-			await Task.CompletedTask;
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchCompanyAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -45,12 +59,19 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByEatAndDrinkCommand()
 		{
-			await Task.CompletedTask;
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchResturantAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
 		#region Properties.
 		public string EatAndDrink => $"Eat & drink";
+		public string SearchText { get; set; } = "aa";
 		#endregion
 	}
 }
