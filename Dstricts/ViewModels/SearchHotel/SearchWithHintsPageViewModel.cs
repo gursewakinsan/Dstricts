@@ -165,6 +165,7 @@ namespace Dstricts.ViewModels
 				Application.Current.Properties.Add("AlreadySearchInfo", searchDataJson);
 				await Application.Current.SavePropertiesAsync();
 			}
+			Helper.Helper.SelectSearchText = SearchText;
 			await Navigation.PushAsync(new Views.SearchHotel.SearchResultPage());
 			DependencyService.Get<IProgressBar>().Hide();
 		}

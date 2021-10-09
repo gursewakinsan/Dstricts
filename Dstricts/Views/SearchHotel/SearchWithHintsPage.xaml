@@ -101,6 +101,7 @@
 				Margin="0,15,0,0"
 				BackgroundColor="Black"
 				CachingStrategy="RecycleElement"
+				ItemTapped="OnAlreadySearchItemTapped"
 				ItemsSource="{Binding AlreadySearchData}"
 				SeparatorVisibility="None"
 				VerticalScrollBarVisibility="Never">

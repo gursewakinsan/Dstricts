@@ -84,7 +84,9 @@
 						FontSize="14"
 						Placeholder="Search"
 						PlaceholderColor="White"
+						ReturnCommand="{Binding SearchCommand}"
 						ReturnType="Search"
+						Text="{Binding SearchText}"
 						TextColor="White"
 						VerticalOptions="CenterAndExpand" />
 				</Grid>
@@ -96,9 +98,10 @@
 				Grid.ColumnSpan="3"
 				Margin="20,0,20,10"
 				BackgroundColor="Transparent"
+				CachingStrategy="RecycleElement"
 				HasUnevenRows="True"
 				ItemTapped="OnSearchResultItemTapped"
-				ItemsSource="{Binding SearchInfoList}"
+				ItemsSource="{Binding SearchResult}"
 				SeparatorVisibility="None"
 				VerticalScrollBarVisibility="Never">
 				<ListView.ItemTemplate>
@@ -115,9 +118,10 @@
 									Grid.Column="0"
 									Padding="0"
 									Aspect="AspectFill"
+									BackgroundColor="Transparent"
 									CornerRadius="22"
 									HeightRequest="44"
-									Source="{Binding Url}"
+									Source="{Binding UserImage}"
 									VerticalOptions="Start"
 									WidthRequest="44" />
 
@@ -139,7 +143,7 @@
 										FontFamily="SansProRegularFontFamily"
 										FontSize="14"
 										HorizontalTextAlignment="Start"
-										Text="{Binding Details}"
+										Text="Seen 6h ago"
 										TextColor="#757575"
 										VerticalTextAlignment="Start" />
 								</StackLayout>

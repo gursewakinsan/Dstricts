@@ -1,4 +1,7 @@
 ﻿using Xamarin.Forms;
+using Newtonsoft.Json;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
@@ -11,40 +14,180 @@ namespace Dstricts.ViewModels
 		public SearchResultPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
-			SearchInfoList = new ObservableCollection<SearchInfo>();
-			for (int i = 0; i < 10; i++)
+		}
+		#endregion
+
+		#region Back Command.
+		private ICommand backCommand;
+		public ICommand BackCommand
+		{
+			get => backCommand ?? (backCommand = new Command(async () => await ExecuteBackCommand()));
+		}
+		private async Task ExecuteBackCommand()
+		{
+			/*if (Application.Current.Properties.ContainsKey("AlreadySearchInfo"))
+				Application.Current.Properties.Remove("AlreadySearchInfo");
+			string searchDataJson = JsonConvert.SerializeObject(AlreadySearchData);
+			Application.Current.Properties.Add("AlreadySearchInfo", searchDataJson);
+			await Application.Current.SavePropertiesAsync();*/
+			await Navigation.PopAsync();
+		}
+		#endregion
+
+		#region Search Command.
+		private ICommand searchCommand;
+		public ICommand SearchCommand
+		{
+			get => searchCommand ?? (searchCommand = new Command(() => ExecuteSearchCommand()));
+		}
+		public void ExecuteSearchCommand()
+		{
+			if (string.IsNullOrWhiteSpace(SearchText)) return;
+			else if (SearchText.Length > 2)
 			{
-				SearchInfoList.Add(new SearchInfo()
+				switch (Helper.Helper.SelectSearchType)
 				{
-					Url= "https://www.pngtosvg.com/wp-content/uploads/2018/08/pngtosvghome.jpg",
-					Name = $"Name {i}",
-					Details = $"Details {i}"
-				});
+					case 1:
+						SearchHotelByUserCommand.Execute(null);
+						break;
+					case 2:
+						SearchHotelByCompanyCommand.Execute(null);
+						break;
+					case 3:
+						SearchHotelByEatAndDrinkCommand.Execute(null);
+						break;
+				}
 			}
 		}
 		#endregion
 
-		#region Search Result Command.
-		private ICommand searchResultCommand;
-		public ICommand SearchResultCommand
+		#region Search Hotel By User Command.
+		private ICommand searchHotelByUserCommand;
+		public ICommand SearchHotelByUserCommand
 		{
-			get => searchResultCommand ?? (searchResultCommand = new Command(async () => await ExecuteSearchResultCommand()));
+			get => searchHotelByUserCommand ?? (searchHotelByUserCommand = new Command(async () => await ExecuteSearchHotelByUserCommand()));
 		}
-		private async Task ExecuteSearchResultCommand()
+		private async Task ExecuteSearchHotelByUserCommand()
 		{
-			await Task.CompletedTask;
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchUserAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+
+			if (response?.Count > 0)
+			{
+				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+				SearchResult.Clear();
+				SearchResult = new ObservableCollection<Models.SearchUserResponse>(response);
+			}
+			IsSearchResult = SearchResult?.Count > 0 ? true : false;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Search Hotel By Company Command.
+		private ICommand searchHotelByCompanyCommand;
+		public ICommand SearchHotelByCompanyCommand
+		{
+			get => searchHotelByCompanyCommand ?? (searchHotelByCompanyCommand = new Command(async () => await ExecuteSearchHotelByCompanyCommand()));
+		}
+		private async Task ExecuteSearchHotelByCompanyCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchCompanyAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			if (response?.Count > 0)
+			{
+				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+				SearchResult.Clear();
+				foreach (var item in response)
+				{
+					SearchResult.Add(new Models.SearchUserResponse()
+					{
+						Id = item.Id,
+						Name = item.Name,
+						PassportImage = item.PassportImage,
+						UserImage = item.UserImage
+					});
+				}
+			}
+			IsSearchResult = SearchResult?.Count > 0 ? true : false;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Search Hotel By Eat & Drink Command.
+		private ICommand searchHotelByEatAndDrinkCommand;
+		public ICommand SearchHotelByEatAndDrinkCommand
+		{
+			get => searchHotelByEatAndDrinkCommand ?? (searchHotelByEatAndDrinkCommand = new Command(async () => await ExecuteSearchHotelByEatAndDrinkCommand()));
+		}
+		private async Task ExecuteSearchHotelByEatAndDrinkCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchResturantAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			if (response?.Count > 0)
+			{
+				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+				SearchResult.Clear();
+				foreach (var item in response)
+				{
+					SearchResult.Add(new Models.SearchUserResponse()
+					{
+						Id = item.Id,
+						Name = item.Name,
+						PassportImage = item.PassportImage,
+						UserImage = item.UserImage
+					});
+				}
+			}
+			IsSearchResult = SearchResult?.Count > 0 ? true : false;
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
 		#region Properties.
-		public ObservableCollection<SearchInfo> SearchInfoList { get; set; }
+		private string searchText = Helper.Helper.SelectSearchText;
+		public string SearchText
+		{
+			get => searchText;
+			set
+			{
+				searchText = value;
+				OnPropertyChanged("SearchText");
+			}
+		}
+
+		private ObservableCollection<Models.SearchUserResponse> searchResult;
+		public ObservableCollection<Models.SearchUserResponse> SearchResult
+		{
+			get => searchResult;
+			set
+			{
+				searchResult = value;
+				OnPropertyChanged("SearchResult");
+			}
+		}
+
+		private bool isSearchResult;
+		public bool IsSearchResult
+		{
+			get => isSearchResult;
+			set
+			{
+				isSearchResult = value;
+				OnPropertyChanged("IsSearchResult");
+			}
+		}
 		#endregion
 	}
-}
-
-public class SearchInfo
-{
-	public string Url { get; set; }
-	public string Name { get; set; }
-	public string Details { get; set; }
 }

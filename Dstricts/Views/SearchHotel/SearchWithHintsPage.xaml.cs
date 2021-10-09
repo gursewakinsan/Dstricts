@@ -67,5 +67,13 @@ namespace Dstricts.Views.SearchHotel
 			string clearText = clear.BindingContext as string;
 			viewModel.AlreadySearchData.Remove(clearText);
 		}
+
+		private void OnAlreadySearchItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			string text = e.Item as string;
+			searchBar.Text = text;
+			((ListView)sender).SelectedItem = null;
+			viewModel.GoToSearchResultPageCommand.Execute(null);
+		}
 	}
 }

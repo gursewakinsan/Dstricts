@@ -15,6 +15,12 @@ namespace Dstricts.Views.SearchHotel
 			BindingContext = viewModel = new SearchResultPageViewModel(this.Navigation);
 		}
 
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.SearchCommand.Execute(null);
+		}
+
 		private void OnSearchResultItemTapped(object sender, ItemTappedEventArgs e)
 		{
 			listSearchResult.SelectedItem = null;
