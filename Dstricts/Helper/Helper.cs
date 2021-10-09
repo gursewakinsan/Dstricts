@@ -22,5 +22,7 @@ namespace Dstricts.Helper
 		public static CategoryInfo SelectedRoomServiceMenuCategory { get; set; }
 		public static bool IsRoomService { get; set; }
 		public static string AvalibleQueueId { get; set; }
+		public static int SelectSearchType { get; set; }
+		public static string SelectSearchText { get; set; }
 	}
 }

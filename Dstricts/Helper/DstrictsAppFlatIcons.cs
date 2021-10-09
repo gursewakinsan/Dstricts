@@ -42,5 +42,8 @@
 		public const string Minus = "\U000f0374";
 		public const string BankOutline = "\U000f0e80";
 		public const string FoodForkDrink = "\U000f05f2";
+		public const string ArrowTopLeft = "\U000f005b";
+		public const string ClockTimeFiveOutline = "\U000f144f";
+		public const string Close = "\U000f0156";
 	}
 }

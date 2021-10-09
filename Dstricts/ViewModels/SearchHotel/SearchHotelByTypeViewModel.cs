@@ -1,6 +1,4 @@
 ﻿using Xamarin.Forms;
-using Dstricts.Service;
-using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 
@@ -23,13 +21,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByUserCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
-			ISearchService service = new SearchService();
-			var response = await service.SearchUserAsync(new Models.SearchRequest()
-			{
-				Name = SearchText
-			});
-			DependencyService.Get<IProgressBar>().Hide();
+			Helper.Helper.SelectSearchType = 1;
+			await Navigation.PushAsync(new Views.SearchHotel.SearchWithHintsPage());
 		}
 		#endregion
 
@@ -41,13 +34,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByCompanyCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
-			ISearchService service = new SearchService();
-			var response = await service.SearchCompanyAsync(new Models.SearchRequest()
-			{
-				Name = SearchText
-			});
-			DependencyService.Get<IProgressBar>().Hide();
+			Helper.Helper.SelectSearchType = 2;
+			await Navigation.PushAsync(new Views.SearchHotel.SearchWithHintsPage());
 		}
 		#endregion
 
@@ -59,19 +47,13 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByEatAndDrinkCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
-			ISearchService service = new SearchService();
-			var response = await service.SearchResturantAsync(new Models.SearchRequest()
-			{
-				Name = SearchText
-			});
-			DependencyService.Get<IProgressBar>().Hide();
+			Helper.Helper.SelectSearchType = 3;
+			await Navigation.PushAsync(new Views.SearchHotel.SearchWithHintsPage());
 		}
 		#endregion
 
 		#region Properties.
 		public string EatAndDrink => $"Eat & Drink";
-		public string SearchText { get; set; } = "aa";
 		#endregion
 	}
 }

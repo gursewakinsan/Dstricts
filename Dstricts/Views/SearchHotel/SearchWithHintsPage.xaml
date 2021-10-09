@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.SearchHotel.SearchWithHintsPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition Height="15" />
+				<RowDefinition Height="50" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding BackCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding BackCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Frame
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="20,0,20,0"
+				Padding="16,0,16,0"
+				BackgroundColor="#1F1F23"
+				CornerRadius="8"
+				HasShadow="False"
+				IsClippedToBounds="True">
+				<Grid ColumnSpacing="10">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="20" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Label
+						Grid.Row="0"
+						Grid.Column="0"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalTextAlignment="Center"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<controls:CustomEntry
+						x:Name="searchBar"
+						Grid.Row="0"
+						Grid.Column="1"
+						BackgroundColor="Transparent"
+						FontFamily="SansProRegularFontFamily"
+						FontSize="14"
+						Placeholder="Search"
+						PlaceholderColor="White"
+						ReturnCommand="{Binding SearchCommand}"
+						ReturnType="Search"
+						Text="{Binding SearchText}"
+						TextChanged="OnSearchBarTextChanged"
+						TextColor="White"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+			</Frame>
+
+			<ListView
+				x:Name="listAlreadySearch"
+				Grid.Row="3"
+				Grid.ColumnSpan="3"
+				Margin="0,15,0,0"
+				BackgroundColor="Black"
+				CachingStrategy="RecycleElement"
+				ItemsSource="{Binding AlreadySearchData}"
+				SeparatorVisibility="None"
+				VerticalScrollBarVisibility="Never">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid ColumnSpacing="5">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="50" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="50" />
+									<ColumnDefinition />
+									<ColumnDefinition Width="50" />
+								</Grid.ColumnDefinitions>
+
+								<Label
+									Grid.Column="0"
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="20"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.ClockTimeFiveOutline}"
+									TextColor="White"
+									VerticalTextAlignment="Center" />
+
+								<Label
+									Grid.Column="1"
+									FontFamily="SansProRegularFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="{Binding .}"
+									TextColor="White"
+									VerticalTextAlignment="Center" />
+
+								<Label
+									Grid.Column="2"
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="20"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.Close}"
+									TextColor="White"
+									VerticalTextAlignment="Center">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnCloseTapped" />
+									</Label.GestureRecognizers>
+								</Label>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<ListView
+				x:Name="countryListView"
+				Grid.Row="3"
+				Grid.ColumnSpan="3"
+				Margin="20,5,20,0"
+				BackgroundColor="White"
+				CachingStrategy="RecycleElement"
+				HeightRequest="150"
+				IsVisible="{Binding IsSearchResult}"
+				ItemTapped="ListView_OnItemTapped"
+				ItemsSource="{Binding SearchResult}"
+				VerticalOptions="StartAndExpand"
+				VerticalScrollBarVisibility="Never">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid ColumnSpacing="5">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="50" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="40" />
+									<ColumnDefinition />
+									<ColumnDefinition Width="40" />
+								</Grid.ColumnDefinitions>
+
+								<Label
+									Grid.Column="0"
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="20"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+									TextColor="#FF464859"
+									VerticalTextAlignment="Center" />
+
+								<Label
+									Grid.Column="1"
+									FontFamily="SansProRegularFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									LineBreakMode="TailTruncation"
+									MaxLines="1"
+									Text="{Binding Name}"
+									TextColor="#FF464859"
+									VerticalTextAlignment="Center" />
+
+								<Label
+									Grid.Column="2"
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="20"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowTopLeft}"
+									TextColor="#FF464859"
+									VerticalTextAlignment="Center" />
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
