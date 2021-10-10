@@ -33,6 +33,35 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Search Button Command.
+		private ICommand searchButtonCommand;
+		public ICommand SearchButtonCommand
+		{
+			get => searchButtonCommand ?? (searchButtonCommand = new Command(async () => await ExecuteSearchButtonCommand()));
+		}
+		public async Task ExecuteSearchButtonCommand()
+		{
+			if (string.IsNullOrWhiteSpace(SearchText)) return;
+			else if (SearchText.Length > 2)
+			{
+				IsSearchSuggestion = false;
+				switch (Helper.Helper.SelectSearchType)
+				{
+					case 1:
+						SearchHotelByUserCommand.Execute(null);
+						break;
+					case 2:
+						SearchHotelByCompanyCommand.Execute(null);
+						break;
+					case 3:
+						SearchHotelByEatAndDrinkCommand.Execute(null);
+						break;
+				}
+			}
+			await Task.CompletedTask;
+		}
+		#endregion
+
 		#region Search Command.
 		private ICommand searchCommand;
 		public ICommand SearchCommand

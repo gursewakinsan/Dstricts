@@ -156,6 +156,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToSearchResultPageCommand()
 		{
+			if (string.IsNullOrWhiteSpace(SearchText) || SearchText.Length < 3) return;
+			IsSearchSuggestion = false;
 			DependencyService.Get<IProgressBar>().Show();
 			if (AlreadySearchData == null) AlreadySearchData = new ObservableCollection<string>();
 			if (!AlreadySearchData.Contains(SearchText))

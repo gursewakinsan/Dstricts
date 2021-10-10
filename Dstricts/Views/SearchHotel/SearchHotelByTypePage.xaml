@@ -6,8 +6,7 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="Transparent"
-	BackgroundImageSource="searchBG.png"
+	BackgroundColor="#FFE3B1" 
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
 		<Grid>
@@ -20,6 +19,8 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="80" />
 			</Grid.ColumnDefinitions>
+
+			<Image Source="searchBG.png" Grid.RowSpan="2" Grid.ColumnSpan="3" Aspect="AspectFill"/>
 
 			<Label
 				Grid.Row="0"
@@ -52,11 +53,9 @@
 				</Label.GestureRecognizers>
 			</Label>
 
-			<ScrollView
-				Grid.Row="1"
-				Grid.ColumnSpan="3"
-				VerticalScrollBarVisibility="Never">
-				<StackLayout Spacing="15" VerticalOptions="EndAndExpand">
+			
+			<StackLayout Spacing="15" VerticalOptions="EndAndExpand" Grid.Row="1"
+				Grid.ColumnSpan="3">
 					<Frame
 						Margin="28,0,28,0"
 						Padding="20,10,20,10"
@@ -209,7 +208,6 @@
 						</Grid>
 					</Frame>
 				</StackLayout>
-			</ScrollView>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

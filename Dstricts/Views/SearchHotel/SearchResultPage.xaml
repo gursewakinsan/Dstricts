@@ -87,7 +87,7 @@
 						FontSize="14"
 						Placeholder="Search"
 						PlaceholderColor="White"
-						ReturnCommand="{Binding SearchCommand}"
+						ReturnCommand="{Binding SearchButtonCommand}"
 						ReturnType="Search"
 						Text="{Binding SearchText}"
 						TextChanged="OnSearchBarTextChanged"
