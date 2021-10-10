@@ -5,6 +5,9 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int Id { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "first_name")]
+		public string FirstName { get; set; } //Bind with view.
+
 		[Newtonsoft.Json.JsonProperty(PropertyName = "name")]
 		public string Name { get; set; }
 

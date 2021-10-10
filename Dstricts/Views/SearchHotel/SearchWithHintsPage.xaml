@@ -14,7 +14,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="30" />
 				<RowDefinition Height="15" />
-				<RowDefinition Height="50" />
+				<RowDefinition Height="45" />
 				<RowDefinition />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -65,6 +65,7 @@
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="20" />
 						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="20" />
 					</Grid.ColumnDefinitions>
 					<Label
 						Grid.Row="0"
@@ -91,6 +92,22 @@
 						TextChanged="OnSearchBarTextChanged"
 						TextColor="White"
 						VerticalOptions="CenterAndExpand" />
+
+					<Label
+						x:Name="iconClearSearchBar"
+						Grid.Row="0"
+						Grid.Column="2"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalTextAlignment="Center"
+						IsVisible="False"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Close}"
+						TextColor="White"
+						VerticalTextAlignment="Center">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnClearSearchBarTapped" />
+						</Label.GestureRecognizers>
+					</Label>
 				</Grid>
 			</Frame>
 
@@ -155,16 +172,16 @@
 			</ListView>
 
 			<ListView
-				x:Name="countryListView"
+				x:Name="listSearchSuggestion"
 				Grid.Row="3"
 				Grid.ColumnSpan="3"
 				Margin="20,5,20,0"
 				BackgroundColor="White"
 				CachingStrategy="RecycleElement"
 				HeightRequest="150"
-				IsVisible="{Binding IsSearchResult}"
-				ItemTapped="ListView_OnItemTapped"
-				ItemsSource="{Binding SearchResult}"
+				IsVisible="{Binding IsSearchSuggestion}"
+				ItemTapped="OnSearchSuggestionItemTapped"
+				ItemsSource="{Binding SearchSuggestionList}"
 				VerticalOptions="StartAndExpand"
 				VerticalScrollBarVisibility="Never">
 				<ListView.ItemTemplate>
@@ -196,7 +213,7 @@
 									HorizontalTextAlignment="Start"
 									LineBreakMode="TailTruncation"
 									MaxLines="1"
-									Text="{Binding Name}"
+									Text="{Binding FirstName}"
 									TextColor="#FF464859"
 									VerticalTextAlignment="Center" />
 

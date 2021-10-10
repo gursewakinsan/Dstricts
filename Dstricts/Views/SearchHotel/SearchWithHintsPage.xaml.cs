@@ -24,39 +24,45 @@ namespace Dstricts.Views.SearchHotel
 			viewModel.GetAlreadySearchDataCommand.Execute(null);
 		}
 
-		private async void OnSearchBarTextChanged(object sender, TextChangedEventArgs e)
+		private void OnSearchBarTextChanged(object sender, TextChangedEventArgs e)
 		{
 			var entry = (Controls.CustomEntry)sender;
+			if (string.IsNullOrWhiteSpace(entry.Text))
+			{
+				if (iconClearSearchBar.IsVisible) iconClearSearchBar.IsVisible = false;
+				return;
+			}
+			if (!iconClearSearchBar.IsVisible) iconClearSearchBar.IsVisible = true;
 			if (entry.Text.Length == 3)
 			{
 				viewModel.ExecuteSearchCommand();
 			}
-			viewModel.IsSearchResult = true;
-			countryListView.BeginRefresh();
+			viewModel.IsSearchSuggestion = true;
+			listSearchSuggestion.BeginRefresh();
 			try
 			{
-				if (viewModel.SearchResult == null)
-					viewModel.SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+				if (viewModel.SearchSuggestionList== null)
+					viewModel.SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>();
 
-				var dataEmpty = viewModel.SearchResult.Where(i => i.Name.ToLower().Contains(e.NewTextValue.ToLower()));
+				var dataEmpty = viewModel.SearchSuggestionList.Where(i => i.Name.ToLower().Contains(e.NewTextValue.ToLower()));
 				if (string.IsNullOrWhiteSpace(e.NewTextValue))
-					viewModel.IsSearchResult = false;
+					viewModel.IsSearchSuggestion = false;
 				else if (dataEmpty.Count() == 0)
-					viewModel.IsSearchResult = false;
+					viewModel.IsSearchSuggestion = false;
 				else
-					countryListView.ItemsSource = viewModel.SearchResult.Where(i => i.Name.ToLower().Contains(e.NewTextValue.ToLower()));
+					listSearchSuggestion.ItemsSource = viewModel.SearchSuggestionList.Where(i => i.Name.ToLower().Contains(e.NewTextValue.ToLower()));
 			}
 			catch (Exception ex)
 			{
-				viewModel.IsSearchResult = false;
+				viewModel.IsSearchSuggestion = false;
 			}
-			countryListView.EndRefresh();
+			listSearchSuggestion.EndRefresh();
 		}
-		private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+		private void OnSearchSuggestionItemTapped(object sender, ItemTappedEventArgs e)
 		{
 			Models.SearchUserResponse search = e.Item as Models.SearchUserResponse;
-			searchBar.Text = search.Name;
-			viewModel.IsSearchResult = false;
+			searchBar.Text = search.FirstName;
+			viewModel.IsSearchSuggestion = false;
 			((ListView)sender).SelectedItem = null;
 			viewModel.GoToSearchResultPageCommand.Execute(null);
 		}
@@ -74,6 +80,13 @@ namespace Dstricts.Views.SearchHotel
 			searchBar.Text = text;
 			((ListView)sender).SelectedItem = null;
 			viewModel.GoToSearchResultPageCommand.Execute(null);
+		}
+
+		private void OnClearSearchBarTapped(object sender, EventArgs e)
+		{
+			iconClearSearchBar.IsVisible = false;
+			searchBar.Text = string.Empty;
+			viewModel.IsSearchSuggestion = false;
 		}
 	}
 }

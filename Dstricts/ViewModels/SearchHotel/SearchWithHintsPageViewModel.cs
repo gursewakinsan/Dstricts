@@ -69,16 +69,16 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByUserCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchUserAsync(new Models.SearchRequest()
 			{
 				Name = SearchText
 			});
 			if (response?.Count > 0)
-				SearchResult = new ObservableCollection<Models.SearchUserResponse>(response);
-			IsSearchResult = SearchResult.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+				SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>(response);
+			IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -90,7 +90,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByCompanyCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchCompanyAsync(new Models.SearchRequest()
 			{
@@ -100,17 +100,18 @@ namespace Dstricts.ViewModels
 			{
 				foreach (var item in response)
 				{
-					SearchResult.Add(new Models.SearchUserResponse()
+					SearchSuggestionList.Add(new Models.SearchUserResponse()
 					{
 						Id = item.Id,
+						FirstName = item.FirstName,
 						Name = item.Name,
 						PassportImage = item.PassportImage,
 						UserImage = item.UserImage
-					});
+					}); ;
 				}
 			}
-			IsSearchResult = SearchResult.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -122,7 +123,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByEatAndDrinkCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchResturantAsync(new Models.SearchRequest()
 			{
@@ -132,17 +133,18 @@ namespace Dstricts.ViewModels
 			{
 				foreach (var item in response)
 				{
-					SearchResult.Add(new Models.SearchUserResponse()
+					SearchSuggestionList.Add(new Models.SearchUserResponse()
 					{
 						Id = item.Id,
+						FirstName = item.FirstName,
 						Name = item.Name,
 						PassportImage = item.PassportImage,
 						UserImage = item.UserImage
 					});
 				}
 			}
-			IsSearchResult = SearchResult.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -166,6 +168,7 @@ namespace Dstricts.ViewModels
 				await Application.Current.SavePropertiesAsync();
 			}
 			Helper.Helper.SelectSearchText = SearchText;
+			SearchText = string.Empty;
 			await Navigation.PushAsync(new Views.SearchHotel.SearchResultPage());
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -201,14 +204,14 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private ObservableCollection<Models.SearchUserResponse> searchResult;
-		public ObservableCollection<Models.SearchUserResponse> SearchResult
+		private ObservableCollection<Models.SearchUserResponse> searchSuggestionList;
+		public ObservableCollection<Models.SearchUserResponse> SearchSuggestionList
 		{
-			get => searchResult;
+			get => searchSuggestionList;
 			set
 			{
-				searchResult = value;
-				OnPropertyChanged("SearchResult");
+				searchSuggestionList = value;
+				OnPropertyChanged("SearchSuggestionList");
 			}
 		}
 
@@ -223,14 +226,14 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private bool isSearchResult;
-		public bool IsSearchResult
+		private bool isSearchSuggestion;
+		public bool IsSearchSuggestion
 		{
-			get => isSearchResult;
+			get => isSearchSuggestion;
 			set
 			{
-				isSearchResult = value;
-				OnPropertyChanged("IsSearchResult");
+				isSearchSuggestion = value;
+				OnPropertyChanged("IsSearchSuggestion");
 			}
 		}
 		#endregion

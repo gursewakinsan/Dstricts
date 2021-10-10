@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using Newtonsoft.Json;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -38,9 +37,9 @@ namespace Dstricts.ViewModels
 		private ICommand searchCommand;
 		public ICommand SearchCommand
 		{
-			get => searchCommand ?? (searchCommand = new Command(() => ExecuteSearchCommand()));
+			get => searchCommand ?? (searchCommand = new Command(async() => await ExecuteSearchCommand()));
 		}
-		public void ExecuteSearchCommand()
+		public async Task ExecuteSearchCommand()
 		{
 			if (string.IsNullOrWhiteSpace(SearchText)) return;
 			else if (SearchText.Length > 2)
@@ -48,13 +47,13 @@ namespace Dstricts.ViewModels
 				switch (Helper.Helper.SelectSearchType)
 				{
 					case 1:
-						SearchHotelByUserCommand.Execute(null);
+						await ExecuteSearchHotelByUserCommand();
 						break;
 					case 2:
-						SearchHotelByCompanyCommand.Execute(null);
+						await ExecuteSearchHotelByCompanyCommand();
 						break;
 					case 3:
-						SearchHotelByEatAndDrinkCommand.Execute(null);
+						await ExecuteSearchHotelByEatAndDrinkCommand();
 						break;
 				}
 			}
@@ -69,7 +68,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByUserCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchUserAsync(new Models.SearchRequest()
 			{
@@ -78,12 +77,21 @@ namespace Dstricts.ViewModels
 
 			if (response?.Count > 0)
 			{
-				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
-				SearchResult.Clear();
-				SearchResult = new ObservableCollection<Models.SearchUserResponse>(response);
+				if (IsSearchSuggestion)
+				{
+					if (SearchSuggestionList == null) SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>();
+					SearchSuggestionList.Clear();
+					SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>(response);
+					IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+				}
+				else
+				{
+					if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+					SearchResult.Clear();
+					SearchResult = new ObservableCollection<Models.SearchUserResponse>(response);
+				}
 			}
-			IsSearchResult = SearchResult?.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -95,7 +103,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByCompanyCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchCompanyAsync(new Models.SearchRequest()
 			{
@@ -103,21 +111,41 @@ namespace Dstricts.ViewModels
 			});
 			if (response?.Count > 0)
 			{
-				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
-				SearchResult.Clear();
-				foreach (var item in response)
+				if (IsSearchSuggestion)
 				{
-					SearchResult.Add(new Models.SearchUserResponse()
+					if (SearchSuggestionList == null) SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>();
+					SearchSuggestionList.Clear();
+					foreach (var item in response)
 					{
-						Id = item.Id,
-						Name = item.Name,
-						PassportImage = item.PassportImage,
-						UserImage = item.UserImage
-					});
+						SearchSuggestionList.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage
+						});
+					}
+					IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+				}
+				else
+				{
+					if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+					SearchResult.Clear();
+					foreach (var item in response)
+					{
+						SearchResult.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage
+						});
+					}
 				}
 			}
-			IsSearchResult = SearchResult?.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -129,7 +157,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteSearchHotelByEatAndDrinkCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
+			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchResturantAsync(new Models.SearchRequest()
 			{
@@ -137,21 +165,41 @@ namespace Dstricts.ViewModels
 			});
 			if (response?.Count > 0)
 			{
-				if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
-				SearchResult.Clear();
-				foreach (var item in response)
+				if (IsSearchSuggestion)
 				{
-					SearchResult.Add(new Models.SearchUserResponse()
+					if (SearchSuggestionList == null) SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>();
+					SearchSuggestionList.Clear();
+					foreach (var item in response)
 					{
-						Id = item.Id,
-						Name = item.Name,
-						PassportImage = item.PassportImage,
-						UserImage = item.UserImage
-					});
+						SearchSuggestionList.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage
+						});
+					}
+					IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+				}
+				else
+				{
+					if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+					SearchResult.Clear();
+					foreach (var item in response)
+					{
+						SearchResult.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage
+						});
+					}
 				}
 			}
-			IsSearchResult = SearchResult?.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			//DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -178,14 +226,25 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private bool isSearchResult;
-		public bool IsSearchResult
+		private ObservableCollection<Models.SearchUserResponse> searchSuggestionList;
+		public ObservableCollection<Models.SearchUserResponse> SearchSuggestionList
 		{
-			get => isSearchResult;
+			get => searchSuggestionList;
 			set
 			{
-				isSearchResult = value;
-				OnPropertyChanged("IsSearchResult");
+				searchSuggestionList = value;
+				OnPropertyChanged("SearchSuggestionList");
+			}
+		}
+
+		private bool isSearchSuggestion;
+		public bool IsSearchSuggestion
+		{
+			get => isSearchSuggestion;
+			set
+			{
+				isSearchSuggestion = value;
+				OnPropertyChanged("IsSearchSuggestion");
 			}
 		}
 		#endregion
