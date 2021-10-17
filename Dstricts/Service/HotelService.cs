@@ -61,5 +61,23 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.ResturantProfileInfoResponse> ResturantProfileInfoAsync(Models.ResturantProfileInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.ResturantProfileInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.ResturantProfileInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.ResturantServeInfoResponse>> ResturantServeInfoAsync(Models.ResturantServeInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.ResturantServeInfoResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.ResturantServeInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

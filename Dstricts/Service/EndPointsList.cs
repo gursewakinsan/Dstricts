@@ -27,5 +27,9 @@
 		public const string UsersListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/usersList";
 		public const string CompanyListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/companylist";
 		public const string ResturantSearchListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantSearchList";
+
+		//Resturant
+		public const string ResturantProfileInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantProfileInfo";
+		public const string ResturantServeInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantServeInfo";
 	}
 }

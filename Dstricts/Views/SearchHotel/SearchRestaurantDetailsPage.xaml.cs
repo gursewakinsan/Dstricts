@@ -14,5 +14,11 @@ namespace Dstricts.Views.SearchHotel
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new SearchRestaurantDetailsPageViewModel(this.Navigation);
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.GetResturantInfobyIdCommand.Execute(null);
+		}
 	}
 }

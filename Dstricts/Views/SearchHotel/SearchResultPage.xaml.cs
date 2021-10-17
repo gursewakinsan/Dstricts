@@ -28,9 +28,13 @@ namespace Dstricts.Views.SearchHotel
 			viewModel.SearchCommand.Execute(null);
 		}
 
-		private void OnSearchResultItemTapped(object sender, ItemTappedEventArgs e)
+		private async void OnSearchResultItemTapped(object sender, ItemTappedEventArgs e)
 		{
+			Models.SearchUserResponse response = e.Item as Models.SearchUserResponse;
+			Helper.Helper.SelectResturantId = response.Id;
 			listSearchResult.SelectedItem = null;
+			if (Helper.Helper.SelectSearchType == 3)
+				await Navigation.PushAsync(new SearchRestaurantDetailsPage());
 		}
 
 		private async void OnSearchSuggestionItemTapped(object sender, ItemTappedEventArgs e)

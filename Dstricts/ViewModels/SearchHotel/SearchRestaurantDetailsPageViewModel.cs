@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -11,34 +13,82 @@ namespace Dstricts.ViewModels
 		public SearchRestaurantDetailsPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
-			HotelImagesInfo = new List<HotelImages>();
-			HotelImagesInfo.Add(new HotelImages() { ImageUrl = "https://img.etimg.com/thumb/width-1200,height-900,imgsize-179297,resizemode-1,msid-77220757/industry/services/hotels-/-restaurants/indian-hotel-sector-will-collapse-if-not-supported-by-the-govt-and-rbi-hai.jpg" });
-			HotelImagesInfo.Add(new HotelImages() { ImageUrl = "https://www.mayfairhotels.com/img/home_banner/Mayfair_Waves.jpg" });
-			HotelImagesInfo.Add(new HotelImages() { ImageUrl = "https://images.financialexpress.com/2020/09/hotel-660x440-620x413.jpg" });
 		}
 		#endregion
 
-		#region Search Hotel By User Command.
-		private ICommand searchHotelByUserCommand;
-		public ICommand SearchHotelByUserCommand
+		#region Get Resturant Info by Id Command.
+		private ICommand getResturantInfobyIdCommand;
+		public ICommand GetResturantInfobyIdCommand
 		{
-			get => searchHotelByUserCommand ?? (searchHotelByUserCommand = new Command(async () => await ExecuteSearchHotelByUserCommand()));
+			get => getResturantInfobyIdCommand ?? (getResturantInfobyIdCommand = new Command(async () => await ExecuteGetResturantInfobyIdCommand()));
 		}
-		private async Task ExecuteSearchHotelByUserCommand()
+		private async Task ExecuteGetResturantInfobyIdCommand()
 		{
-			await Task.CompletedTask;
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			ResturantProfileInfo = await service.ResturantProfileInfoAsync(new Models.ResturantProfileInfoRequest()
+			{
+				ResturantId = Helper.Helper.SelectResturantId
+			});
+			if (ResturantProfileInfo != null)
+			{
+				List<HotelImages> hotelImages = new List<HotelImages>();
+				hotelImages.Add(new HotelImages() { ImageUrl = ResturantProfileInfo.BigImage });
+				hotelImages.Add(new HotelImages() { ImageUrl = ResturantProfileInfo.SmallImage });
+				hotelImages.Add(new HotelImages() { ImageUrl = ResturantProfileInfo.SmallImage2 });
+				ResturantImages = hotelImages;
+			}
+
+			ResturantServeInfo = await service.ResturantServeInfoAsync(new Models.ResturantServeInfoRequest()
+			{
+				ResturantId = Helper.Helper.SelectResturantId
+			});
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
 		#region Properties.
-		private List<HotelImages> hotelImagesInfo;
-		public List<HotelImages> HotelImagesInfo
+		private List<HotelImages> resturantImages;
+		public List<HotelImages> ResturantImages
 		{
-			get => hotelImagesInfo;
+			get => resturantImages;
 			set
 			{
-				hotelImagesInfo = value;
-				OnPropertyChanged("HotelImagesInfo");
+				resturantImages = value;
+				OnPropertyChanged("ResturantImages");
+			}
+		}
+
+		private Models.ResturantProfileInfoResponse resturantProfileInfo;
+		public Models.ResturantProfileInfoResponse ResturantProfileInfo
+		{
+			get => resturantProfileInfo;
+			set
+			{
+				resturantProfileInfo = value;
+				OnPropertyChanged("ResturantProfileInfo");
+			}
+		}
+
+		private List<Models.ResturantServeInfoResponse> resturantServeInfo;
+		public List<Models.ResturantServeInfoResponse> ResturantServeInfo
+		{
+			get => resturantServeInfo;
+			set
+			{
+				resturantServeInfo = value;
+				OnPropertyChanged("ResturantServeInfo");
+			}
+		}
+
+		private string loggedInUserName = Helper.Helper.LoggedInUserName;
+		public string LoggedInUserName
+		{
+			get => loggedInUserName;
+			set
+			{
+				loggedInUserName = value;
+				OnPropertyChanged("LoggedInUserName");
 			}
 		}
 		#endregion

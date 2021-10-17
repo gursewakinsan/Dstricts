@@ -93,7 +93,7 @@
 						FontSize="30"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
-						Text="Hotel Name"
+						Text="{Binding ResturantProfileInfo.ResturantName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
@@ -120,7 +120,7 @@
 								HeightRequest="200"
 								HorizontalScrollBarVisibility="Never"
 								IndicatorView="indicatorView"
-								ItemsSource="{Binding HotelImagesInfo}"
+								ItemsSource="{Binding ResturantImages}"
 								VerticalOptions="CenterAndExpand">
 								<CarouselView.ItemTemplate>
 									<DataTemplate>
@@ -193,7 +193,7 @@
 							HorizontalTextAlignment="End"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
-							Text="Singh"
+							Text="{Binding LoggedInUserName}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -216,7 +216,7 @@
 							HorizontalTextAlignment="End"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
-							Text="abc@1455"
+							Text="**************"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -356,7 +356,7 @@
 							Grid.ColumnSpan="2"
 							Orientation="Horizontal"
 							VerticalScrollBarVisibility="Never">
-							<StackLayout BindableLayout.ItemsSource="{Binding HotelImagesInfo}" Orientation="Horizontal">
+							<StackLayout BindableLayout.ItemsSource="{Binding ResturantServeInfo}" Orientation="Horizontal">
 								<BindableLayout.ItemTemplate>
 									<DataTemplate>
 										<StackLayout Padding="0,0,10,0" Spacing="0">
@@ -367,7 +367,7 @@
 												CornerRadius="10"
 												HeightRequest="120"
 												HorizontalOptions="Center"
-												Source="https://www.mayfairhotels.com/img/home_banner/Mayfair_Waves.jpg"
+												Source="{Binding ServeImage}"
 												VerticalOptions="Center"
 												WidthRequest="120" />
 
@@ -378,7 +378,7 @@
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="2"
-												Text="Faus Leather"
+												Text="{Binding Serve}"
 												TextColor="White"
 												VerticalTextAlignment="Start"
 												WidthRequest="120" />
@@ -389,9 +389,15 @@
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
-												Text="32 Items"
 												TextColor="White"
-												VerticalTextAlignment="Start" />
+												VerticalTextAlignment="Start">
+												<Label.FormattedText>
+													<FormattedString>
+														<Span Text="{Binding Num}" />
+														<Span Text=" Items" />
+													</FormattedString>
+												</Label.FormattedText>
+											</Label>
 										</StackLayout>
 									</DataTemplate>
 								</BindableLayout.ItemTemplate>

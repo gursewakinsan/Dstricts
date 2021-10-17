@@ -24,5 +24,6 @@ namespace Dstricts.Helper
 		public static string AvalibleQueueId { get; set; }
 		public static int SelectSearchType { get; set; }
 		public static string SelectSearchText { get; set; }
+		public static int SelectResturantId { get; set; }
 	}
 }
