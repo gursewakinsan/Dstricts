@@ -31,5 +31,6 @@
 		//Resturant
 		public const string ResturantProfileInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantProfileInfo";
 		public const string ResturantServeInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantServeInfo";
+		public const string ResturantServeBasedMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/ResturantServeBasedMenu";
 	}
 }

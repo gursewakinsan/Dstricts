@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.SearchHotel.ResturantServeBasedMenuPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout
+					Padding="28,20,28,0"
+					Spacing="0"
+					VerticalOptions="StartAndExpand">
+					<StackLayout Orientation="Horizontal" Spacing="5">
+						<Label
+							FontFamily="SansProRegularFontFamily"
+							FontSize="16"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Opacity="0.5"
+							Text="4.6 Stars"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+						<Label
+							Margin="2,0,2,0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="4"
+							HorizontalTextAlignment="End"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxBlankCircle}"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+						<Label
+							FontFamily="SansProRegularFontFamily"
+							FontSize="16"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Opacity="0.5"
+							Text="17 Reviews"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+					</StackLayout>
+
+					<Label
+						Margin="0,4,0,0"
+						FontFamily="SansProBoldFontFamily"
+						FontSize="32"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="{Binding ResturantServeInfo.Serve}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Margin="0,30,0,30"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.2" />
+
+					<Frame
+						Padding="0"
+						BackgroundColor="Transparent"
+						BorderColor="Transparent"
+						CornerRadius="16"
+						HasShadow="False"
+						HeightRequest="244"
+						IsClippedToBounds="True"
+						VerticalOptions="StartAndExpand">
+						<Image
+							Aspect="AspectFill"
+							HeightRequest="244"
+							Source="{Binding ResturantServeInfo.ServeImage}" />
+					</Frame>
+
+				</StackLayout>
+			</ScrollView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
