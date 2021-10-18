@@ -56,15 +56,16 @@
 				Grid.ColumnSpan="3"
 				VerticalScrollBarVisibility="Never">
 				<StackLayout
-					Padding="15,20,15,0"
+					Padding="28,20,28,0"
 					Spacing="0"
 					VerticalOptions="StartAndExpand">
 					<StackLayout Orientation="Horizontal" Spacing="5">
 						<Label
 							FontFamily="SansProRegularFontFamily"
-							FontSize="15"
+							FontSize="16"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
+							Opacity="0.5"
 							Text="4.6 Stars"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
@@ -80,17 +81,19 @@
 
 						<Label
 							FontFamily="SansProRegularFontFamily"
-							FontSize="15"
+							FontSize="16"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
+							Opacity="0.5"
 							Text="17 Reviews"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 					</StackLayout>
 
 					<Label
+						Margin="0,4,0,0"
 						FontFamily="SansProBoldFontFamily"
-						FontSize="30"
+						FontSize="32"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="{Binding ResturantProfileInfo.ResturantName}"
@@ -98,18 +101,18 @@
 						VerticalTextAlignment="Center" />
 
 					<BoxView
-						Margin="0,20,0,20"
+						Margin="0,30,0,30"
 						BackgroundColor="White"
 						HeightRequest="1"
-						Opacity="0.5" />
+						Opacity="0.2" />
 
 					<Frame
 						Padding="0"
 						BackgroundColor="Transparent"
 						BorderColor="Transparent"
-						CornerRadius="10"
+						CornerRadius="16"
 						HasShadow="False"
-						HeightRequest="200"
+						HeightRequest="244"
 						IsClippedToBounds="True"
 						VerticalOptions="StartAndExpand">
 						<Grid>
@@ -117,7 +120,7 @@
 								x:Name="cardCarouselView"
 								Grid.Row="0"
 								BackgroundColor="Transparent"
-								HeightRequest="200"
+								HeightRequest="244"
 								HorizontalScrollBarVisibility="Never"
 								IndicatorView="indicatorView"
 								ItemsSource="{Binding ResturantImages}"
@@ -126,7 +129,7 @@
 									<DataTemplate>
 										<Image
 											Aspect="AspectFill"
-											HeightRequest="200"
+											HeightRequest="244"
 											Source="{Binding ImageUrl}" />
 									</DataTemplate>
 								</CarouselView.ItemTemplate>
@@ -232,14 +235,14 @@
 					</Grid>
 
 					<BoxView
-						Margin="0,20,0,10"
+						Margin="0,30,0,30"
 						BackgroundColor="White"
 						HeightRequest="1"
-						Opacity="0.5" />
+						Opacity="0.2" />
 
 					<Grid ColumnSpacing="5" RowSpacing="10">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="50" />
+							<RowDefinition Height="30" />
 							<RowDefinition Height="100" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
@@ -253,7 +256,7 @@
 							Grid.Column="0"
 							Grid.ColumnSpan="2"
 							FontFamily="SansProBoldFontFamily"
-							FontSize="30"
+							FontSize="20"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Images"
@@ -316,12 +319,15 @@
 							VerticalOptions="FillAndExpand" />
 					</Grid>
 
-					<Grid
-						Margin="0,20,0,20"
-						ColumnSpacing="5"
-						RowSpacing="10">
+					<BoxView
+						Margin="0,30,0,30"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.2" />
+
+					<Grid ColumnSpacing="5" RowSpacing="10">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="50" />
+							<RowDefinition Height="30" />
 							<RowDefinition Height="auto" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
@@ -333,7 +339,7 @@
 							Grid.Row="0"
 							Grid.Column="0"
 							FontFamily="SansProBoldFontFamily"
-							FontSize="30"
+							FontSize="20"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Menu"
@@ -365,16 +371,16 @@
 												Aspect="AspectFill"
 												BackgroundColor="Transparent"
 												CornerRadius="10"
-												HeightRequest="120"
+												HeightRequest="148"
 												HorizontalOptions="Center"
 												Source="{Binding ServeImage}"
 												VerticalOptions="Center"
-												WidthRequest="120" />
+												WidthRequest="152" />
 
 											<Label
-												Margin="0,10,0,0"
+												Margin="0,10,0,4"
 												FontFamily="SansProBoldFontFamily"
-												FontSize="20"
+												FontSize="16"
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="2"
@@ -385,10 +391,11 @@
 
 											<Label
 												FontFamily="SansProRegularFontFamily"
-												FontSize="15"
+												FontSize="12"
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
+												Opacity="0.5"
 												TextColor="White"
 												VerticalTextAlignment="Start">
 												<Label.FormattedText>
@@ -405,12 +412,18 @@
 						</ScrollView>
 					</Grid>
 
+					<BoxView
+						Margin="0,30,0,30"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.2" />
+
 					<Grid
 						Margin="0,0,0,10"
 						ColumnSpacing="20"
 						RowSpacing="20">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="50" />
+							<RowDefinition Height="30" />
 							<RowDefinition Height="180" />
 							<RowDefinition Height="180" />
 						</Grid.RowDefinitions>
@@ -424,7 +437,7 @@
 							Grid.Column="0"
 							Grid.ColumnSpan="2"
 							FontFamily="SansProBoldFontFamily"
-							FontSize="30"
+							FontSize="20"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Choose from available dates"
