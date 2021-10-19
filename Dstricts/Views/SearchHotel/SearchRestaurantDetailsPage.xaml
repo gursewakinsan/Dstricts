@@ -6,7 +6,7 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="Black"
+	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
 		<Grid>
@@ -90,21 +90,16 @@
 					</StackLayout>
 
 					<Label
-						Margin="0,4,0,0"
+						Margin="0,4,0,30"
 						FontAttributes="Bold"
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
+						HeightRequest="48"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="{Binding ResturantProfileInfo.ResturantName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
-
-					<BoxView
-						Margin="0,30,0,30"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
 
 					<Frame
 						Padding="0"
@@ -150,7 +145,8 @@
 						Margin="0,20,0,5"
 						FontAttributes="Bold"
 						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
+						FontSize="24"
+						HeightRequest="36"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="Wifi"
@@ -245,7 +241,10 @@
 						HeightRequest="1"
 						Opacity="0.2" />
 
-					<Grid ColumnSpacing="5" RowSpacing="10">
+					<Grid
+						ColumnSpacing="5"
+						IsVisible="False"
+						RowSpacing="10">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="30" />
 							<RowDefinition Height="100" />
@@ -329,11 +328,12 @@
 						Margin="0,30,0,30"
 						BackgroundColor="White"
 						HeightRequest="1"
+						IsVisible="False"
 						Opacity="0.2" />
 
-					<Grid ColumnSpacing="5" RowSpacing="10">
+					<Grid ColumnSpacing="5" RowSpacing="18">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="30" />
+							<RowDefinition Height="36" />
 							<RowDefinition Height="auto" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
@@ -346,12 +346,27 @@
 							Grid.Column="0"
 							FontAttributes="Bold"
 							FontFamily="PoppinsBoldFontFamily"
-							FontSize="20"
+							FontSize="24"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Menu"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="10,0,10,0"
+							BackgroundColor="Transparent"
+							BorderColor="White"
+							BorderWidth="1"
+							CornerRadius="8"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="20"
+							HorizontalOptions="EndAndExpand"
+							Text="View All"
+							TextColor="#E08D70"
+							VerticalOptions="CenterAndExpand" />
 
 						<Label
 							Grid.Row="0"
@@ -359,6 +374,7 @@
 							FontFamily="PoppinsRegularFontFamily"
 							FontSize="20"
 							HorizontalTextAlignment="End"
+							IsVisible="False"
 							MaxLines="1"
 							Text="See All "
 							TextColor="#6368EA"
@@ -389,10 +405,11 @@
 												Margin="0,10,0,4"
 												FontAttributes="Bold"
 												FontFamily="PoppinsBoldFontFamily"
-												FontSize="16"
+												FontSize="18"
+												HeightRequest="27"
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
-												MaxLines="2"
+												MaxLines="1"
 												Text="{Binding Serve}"
 												TextColor="White"
 												VerticalTextAlignment="Start"
@@ -400,7 +417,8 @@
 
 											<Label
 												FontFamily="PoppinsRegularFontFamily"
-												FontSize="12"
+												FontSize="14"
+												HeightRequest="24"
 												HorizontalTextAlignment="Start"
 												LineBreakMode="TailTruncation"
 												MaxLines="1"
