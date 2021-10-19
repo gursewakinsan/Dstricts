@@ -56,6 +56,24 @@
 				Android="SFProDisplayBold.ttf#SFProDisplayBold"
 				iOS="SFProDisplayBold" />
 
+			<OnPlatform
+				x:Key="PoppinsBoldFontFamily"
+				x:TypeArguments="x:String"
+				Android="PoppinsBold.ttf#PoppinsBold"
+				iOS="PoppinsBold" />
+
+			<OnPlatform
+				x:Key="PoppinsRegularFontFamily"
+				x:TypeArguments="x:String"
+				Android="PoppinsRegular.ttf#PoppinsRegular"
+				iOS="PoppinsRegular" />
+
+			<OnPlatform
+				x:Key="PoppinsSemiBoldFontFamily"
+				x:TypeArguments="x:String"
+				Android="PoppinsSemiBold.ttf#PoppinsSemiBold"
+				iOS="PoppinsSemiBold" />
+
 			<converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 		</ResourceDictionary>
 	</Application.Resources>

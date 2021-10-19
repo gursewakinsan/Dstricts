@@ -59,7 +59,7 @@
 					VerticalOptions="StartAndExpand">
 					<StackLayout Orientation="Horizontal" Spacing="5">
 						<Label
-							FontFamily="SansProRegularFontFamily"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
@@ -78,7 +78,7 @@
 							VerticalTextAlignment="Center" />
 
 						<Label
-							FontFamily="SansProRegularFontFamily"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
@@ -90,7 +90,8 @@
 
 					<Label
 						Margin="0,4,0,0"
-						FontFamily="SansProBoldFontFamily"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
@@ -144,7 +145,8 @@
 									<Label
 										Grid.Row="1"
 										Grid.Column="0"
-										FontFamily="SansProBoldFontFamily"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
 										FontSize="20"
 										HorizontalTextAlignment="Start"
 										MaxLines="1"
@@ -155,7 +157,7 @@
 									<Label
 										Grid.Row="1"
 										Grid.Column="1"
-										FontFamily="SansProRegularFontFamily"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="20"
 										HorizontalTextAlignment="End"
 										MaxLines="1"
@@ -185,7 +187,8 @@
 
 														<Label
 															Margin="0,10,0,4"
-															FontFamily="SansProBoldFontFamily"
+															FontAttributes="Bold"
+															FontFamily="PoppinsBoldFontFamily"
 															FontSize="16"
 															HorizontalTextAlignment="Start"
 															LineBreakMode="TailTruncation"
@@ -196,7 +199,7 @@
 															WidthRequest="120" />
 
 														<Label
-															FontFamily="SansProRegularFontFamily"
+															FontFamily="PoppinsRegularFontFamily"
 															FontSize="12"
 															HorizontalOptions="StartAndExpand"
 															HorizontalTextAlignment="Start"
