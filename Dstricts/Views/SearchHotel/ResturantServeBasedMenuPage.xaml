@@ -118,7 +118,7 @@
 					<StackLayout BindableLayout.ItemsSource="{Binding ResturantServeBasedMenuInfo}">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
-								<Grid ColumnSpacing="5" RowSpacing="10">
+								<Grid ColumnSpacing="5" RowSpacing="18">
 									<Grid.RowDefinitions>
 										<RowDefinition Height="auto" />
 										<RowDefinition Height="36" />
