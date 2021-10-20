@@ -46,5 +46,6 @@
 		public const string ClockTimeFiveOutline = "\U000f144f";
 		public const string Close = "\U000f0156";
 		public const string Fingerprint = "\U000f0237";
+		public const string BookmarkPlusOutline = "\U000f00c4";
 	}
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,64 +10,88 @@ namespace Dstricts.Views
 		public TestPage()
 		{
 			InitializeComponent();
-			List<Images> CardsImages = new List<Images>();
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			cardCarouselView.ItemsSource = CardsImages;
+		}
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			imgRecommendation.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
+			BindInfo();
+
+			img0.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Breakfast.jpg";
+			img1.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Brunch.jpg";
+			img2.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/lunch.jpg";
+			img3.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Beverage.jpg";
+
+			img4.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Breakfast.jpg";
+			img5.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Brunch.jpg";
+			img6.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/lunch.jpg";
+			img7.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Beverage.jpg";
+
+			img8.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Breakfast.jpg";
+			img9.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Brunch.jpg";
+			img10.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/lunch.jpg";
+			img11.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Beverage.jpg";
+
+
+			img12.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Breakfast.jpg";
+			img13.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Brunch.jpg";
+			img14.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/lunch.jpg";
+			img15.Source = "https://www.qloudid.com/html/usercontent/images/roomserviceImages/Beverage.jpg";
+
+		}
+
+		void BindInfo()
+		{
+			List<abc> abcs = new List<abc>();
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/2.png",
+				Name = "Faux Leather",
+				Detail = "32 Item"
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/3.png",
+				Name = "Ultraburn",
+				Detail = "15 Item"
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/2.png",
+				Name = "Faux Leather",
+				Detail = "32 Item"
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/3.png",
+				Name = "Ultraburn",
+				Detail = "15 Item"
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/2.png",
+				Name = "Faux Leather",
+				Detail = "32 Item"
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/3.png",
+				Name = "Ultraburn",
+				Detail = "15 Item"
+			});
+			BindableLayout.SetItemsSource(layoutMenu, abcs);
 		}
 	}
 }
-			/*List<Test> list = new List<Test>();
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/1.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/3.jpg" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			list.Add(new Test() { ImageURL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			BindableLayout.SetItemsSource(imageList, list);
 
-			List<DemoCards> demoCardsList = new List<DemoCards>();
-			List<Images> CardsImages = new List<Images>();
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/4.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
-			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
-
-			demoCardsList.Add(new DemoCards()
-			{
-				UserImage = "https://www.photodoozy.com/uploads/pak-army-handsome-boy-hd-stylish-dp-2020-photodoozy.jpg",
-				CardsImage = CardsImages
-			});
-			demoCardsList.Add(new DemoCards()
-			{
-				UserImage = "https://images.pexels.com/photos/1190208/pexels-photo-1190208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-				CardsImage = CardsImages
-			});
-			BindableLayout.SetItemsSource(cards, demoCardsList);
-		}
-	}
-}
-public class Test
+public class abc
 {
-	public string ImageURL { get; set; }
+	public string ImgUrl { get; set; }
+	public string Name { get; set; }
+	public string Detail { get; set; }
 }
-public class DemoCards
-{
-	public string UserImage { get; set; }
-	public List<Images> CardsImage { get; set; }
-}
-public class Images
-{
-	public string URL { get; set; }
-}*/
