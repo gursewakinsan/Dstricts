@@ -338,7 +338,7 @@
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition />
-							<ColumnDefinition />
+							<ColumnDefinition Width="80" />
 						</Grid.ColumnDefinitions>
 
 						<Label
@@ -361,11 +361,8 @@
 							BorderWidth="1"
 							CornerRadius="8"
 							FontFamily="PoppinsRegularFontFamily"
-							FontSize="12"
 							HeightRequest="34"
-							HorizontalOptions="EndAndExpand"
-							Text="View All"
-							TextColor="#E08D70"
+							Opacity="0.5"
 							VerticalOptions="CenterAndExpand"
 							WidthRequest="80" />
 
@@ -373,12 +370,10 @@
 							Grid.Row="0"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
-							FontSize="20"
-							HorizontalTextAlignment="End"
-							IsVisible="False"
-							MaxLines="1"
-							Text="See All "
-							TextColor="#6368EA"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="View All"
+							TextColor="#E08D70"
 							VerticalTextAlignment="Center" />
 
 						<ScrollView
