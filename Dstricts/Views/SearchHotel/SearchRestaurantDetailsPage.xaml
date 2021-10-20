@@ -379,6 +379,7 @@
 						<ScrollView
 							Grid.Row="1"
 							Grid.ColumnSpan="2"
+							HorizontalScrollBarVisibility="Never"
 							Orientation="Horizontal"
 							VerticalScrollBarVisibility="Never">
 							<StackLayout BindableLayout.ItemsSource="{Binding ResturantServeInfo}" Orientation="Horizontal">

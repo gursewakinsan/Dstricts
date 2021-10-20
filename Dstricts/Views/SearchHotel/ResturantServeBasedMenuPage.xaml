@@ -175,6 +175,7 @@
 									<ScrollView
 										Grid.Row="2"
 										Grid.ColumnSpan="2"
+										HorizontalScrollBarVisibility="Never"
 										Orientation="Horizontal"
 										VerticalScrollBarVisibility="Never">
 										<StackLayout BindableLayout.ItemsSource="{Binding Dishes}" Orientation="Horizontal">
