@@ -126,7 +126,7 @@
 									</Grid.RowDefinitions>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition />
-										<ColumnDefinition />
+										<ColumnDefinition Width="80" />
 									</Grid.ColumnDefinitions>
 
 									<BoxView
@@ -157,13 +157,20 @@
 										BorderWidth="1"
 										CornerRadius="8"
 										FontFamily="PoppinsRegularFontFamily"
-										FontSize="12"
 										HeightRequest="34"
-										HorizontalOptions="EndAndExpand"
-										Text="View All"
-										TextColor="#E08D70"
+										Opacity="0.5"
 										VerticalOptions="CenterAndExpand"
 										WidthRequest="80" />
+
+									<Label
+										Grid.Row="1"
+										Grid.Column="1"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="12"
+										HorizontalTextAlignment="Center"
+										Text="View All"
+										TextColor="#E08D70"
+										VerticalTextAlignment="Center" />
 
 									<ScrollView
 										Grid.Row="2"
