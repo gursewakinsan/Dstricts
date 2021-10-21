@@ -46,7 +46,8 @@
 				HorizontalOptions="EndAndExpand"
 				Text="Get Wifi"
 				TextColor="#5DA1A6"
-				VerticalOptions="CenterAndExpand" />
+				VerticalOptions="CenterAndExpand"
+				WidthRequest="70" />
 
 			<Label
 				Grid.Row="0"

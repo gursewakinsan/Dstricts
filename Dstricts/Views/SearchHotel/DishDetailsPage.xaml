@@ -46,7 +46,8 @@
 				HorizontalOptions="EndAndExpand"
 				Text="Get Wifi"
 				TextColor="#5DA1A6"
-				VerticalOptions="CenterAndExpand" />
+				VerticalOptions="CenterAndExpand"
+				WidthRequest="70" />
 
 			<Label
 				Grid.Row="0"
@@ -145,7 +146,7 @@
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
 								Opacity="0.7"
-								Text="4329"
+								Text="435 Kalorier"
 								TextColor="White"
 								VerticalTextAlignment="Center" />
 
@@ -162,7 +163,7 @@
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
 								Opacity="0.7"
-								Text="28"
+								Text="295 gram"
 								TextColor="White"
 								VerticalTextAlignment="Center" />
 						</StackLayout>
