@@ -39,10 +39,24 @@ namespace Dstricts.ViewModels
 				ResturantImages = hotelImages;
 			}
 
-			ResturantServeInfo = await service.ResturantServeInfoAsync(new Models.ResturantServeInfoRequest()
+			var response  = await service.ResturantServeInfoAsync(new Models.ResturantServeInfoRequest()
 			{
 				ResturantId = Helper.Helper.SelectResturantId
 			});
+
+			if (response?.Count > 0)
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 40 / 100;
+				int imgHeight = imgWidth * 97 / 100;
+
+				foreach (var item in response)
+				{
+					item.ImgHeight = imgHeight;
+					item.ImgWidth = imgWidth;
+				}
+			}
+			ResturantServeInfo = response;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

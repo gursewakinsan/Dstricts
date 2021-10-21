@@ -26,10 +26,17 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
-			ResturantServeBasedMenuInfo = await service.ResturantServeBasedMenuAsync(new Models.ResturantServeBasedMenuRequest()
+
+			int deviceWidth = App.ScreenWidth - 56;
+			int imgWidth = deviceWidth * 40 / 100;
+			int imgHeight = imgWidth * 97 / 100;
+
+			ResturantServeBasedMenuInfo = ResturantServeBasedMenuInfo = await service.ResturantServeBasedMenuAsync(new Models.ResturantServeBasedMenuRequest()
 			{
 				ResturantId = Helper.Helper.SelectResturantId,
-				ServeType = ResturantServeInfo.Id
+				ServeType = ResturantServeInfo.Id,
+				ImgHeight = imgHeight,
+				ImgWidth = imgWidth
 			});
 			DependencyService.Get<IProgressBar>().Hide();
 		}

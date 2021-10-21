@@ -13,5 +13,7 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "num")]
 		public int Num { get; set; }
+		public double ImgWidth { get; set; }
+		public double ImgHeight { get; set; }
 	}
 }

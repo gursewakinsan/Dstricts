@@ -7,5 +7,11 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "serve_type")]
 		public int ServeType { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "width")]
+		public double ImgWidth { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "height")]
+		public double ImgHeight { get; set; }
 	}
 }

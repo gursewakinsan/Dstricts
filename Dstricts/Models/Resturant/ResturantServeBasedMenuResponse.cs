@@ -33,5 +33,11 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_price")]
 		public int DishPrice { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "width")]
+		public double ImgWidth { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "height")]
+		public double ImgHeight { get; set; }
 	}
 }
