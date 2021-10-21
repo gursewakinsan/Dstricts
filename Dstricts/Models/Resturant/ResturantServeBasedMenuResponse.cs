@@ -39,5 +39,8 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "height")]
 		public double ImgHeight { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "food_category")]
+		public string FoodCategory { get; set; }
 	}
 }

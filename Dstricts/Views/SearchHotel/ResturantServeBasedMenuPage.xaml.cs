@@ -21,5 +21,12 @@ namespace Dstricts.Views.SearchHotel
 			base.OnAppearing();
 			viewModel.ResturantServeBasedMenuCommand.Execute(null);
 		}
+
+		private async void OnDishImageClicked(object sender, System.EventArgs e)
+		{
+			ImageButton image = sender as ImageButton;
+			Models.Dish dish = image.BindingContext as Models.Dish;
+			await Navigation.PushAsync(new DishDetailsPage(dish));
+		}
 	}
 }

@@ -11,13 +11,13 @@
 	<ContentPage.Content>
 		<Grid>
 			<Grid.RowDefinitions>
-				<RowDefinition Height="30" />
+				<RowDefinition Height="40" />
 				<RowDefinition />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="90" />
 				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="90" />
 			</Grid.ColumnDefinitions>
 
 			<Label
@@ -35,6 +35,19 @@
 				</Label.GestureRecognizers>
 			</Label>
 
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				BackgroundColor="#302F1E"
+				CornerRadius="8"
+				FontFamily="PoppinsBoldFontFamily"
+				FontSize="14"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				VerticalOptions="CenterAndExpand" />
+
 			<Label
 				Grid.Row="0"
 				Grid.Column="2"
@@ -42,6 +55,7 @@
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="25"
 				HorizontalTextAlignment="End"
+				IsVisible="False"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
 				TextColor="White"
 				VerticalTextAlignment="Center">
