@@ -47,5 +47,7 @@
 		public const string Close = "\U000f0156";
 		public const string Fingerprint = "\U000f0237";
 		public const string BookmarkPlusOutline = "\U000f00c4";
+		public const string HomeOutline = "\U000f06a1";
+		public const string AccountOutline = "\U000f0013";
 	}
 }
