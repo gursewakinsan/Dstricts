@@ -15,9 +15,9 @@
 				<RowDefinition />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="102" />
+				<ColumnDefinition Width="117" />
 				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="102" />
+				<ColumnDefinition Width="117" />
 			</Grid.ColumnDefinitions>
 
 			<Label
@@ -38,6 +38,7 @@
 			<Button
 				Grid.Row="0"
 				Grid.Column="2"
+				Margin="0,0,15,0"
 				Padding="0"
 				BackgroundColor="#342B20"
 				CornerRadius="8"
