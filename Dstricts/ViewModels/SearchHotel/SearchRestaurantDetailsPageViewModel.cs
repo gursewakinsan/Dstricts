@@ -61,6 +61,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Book Table Command.
+		private ICommand bookTableCommand;
+		public ICommand BookTableCommand
+		{
+			get => bookTableCommand ?? (bookTableCommand = new Command(async () => await ExecuteBookTableCommand()));
+		}
+		private async Task ExecuteBookTableCommand()
+		{
+			await Navigation.PushAsync(new Views.BookTable.BookTablePage());
+		}
+		#endregion
+
 		#region Properties.
 		private List<HotelImages> resturantImages;
 		public List<HotelImages> ResturantImages
