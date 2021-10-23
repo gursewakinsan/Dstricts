@@ -88,5 +88,32 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.ResturantWorkInfoResponse>> ResturantWorkInfoAsync(Models.ResturantWorkInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.ResturantWorkInfoResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.ResturantWorkInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.ResturantTableAvailableResponse>> ResturantTableAvailableAsync(Models.ResturantTableAvailableRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.ResturantTableAvailableResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.ResturantTableAvailableUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> RequestTableBookingAsync(Models.RequestTableBookingRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.RequestTableBookingUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

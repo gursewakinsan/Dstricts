@@ -6,6 +6,7 @@
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
 	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
@@ -15,6 +16,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="32" />
 				<RowDefinition />
+				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="117" />
@@ -116,19 +118,17 @@
 							UnfocusedColor="#6263ED"
 							UnfocusedStrokeWidth="1">
 							<controls:CustomPicker
+								x:Name="pickerType"
 								Title="Type"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
 								HeightRequest="56"
+								ItemDisplayBinding="{Binding Serve}"
+								ItemsSource="{Binding ResturantWorkInfo}"
+								SelectedIndexChanged="OnTypeSelectedIndexChanged"
+								SelectedItem="{Binding ResturantWorkInfoSelectedItem}"
 								TextColor="White"
-								TitleColor="#6263ED">
-								<controls:CustomPicker.ItemsSource>
-									<x:Array Type="{x:Type x:String}">
-										<x:String>Location - 1</x:String>
-										<x:String>Location - 2</x:String>
-									</x:Array>
-								</controls:CustomPicker.ItemsSource>
-							</controls:CustomPicker>
+								TitleColor="#6263ED" />
 							<textinputlayout:SfTextInputLayout.TrailingView>
 								<Label
 									FontFamily="{StaticResource MaterialFontFamily}"
@@ -161,7 +161,7 @@
 								Keyboard="Numeric"
 								MaxLength="2"
 								PlaceholderColor="#6263ED"
-								Text="{Binding CustomerObject.FirstName, Mode=TwoWay}"
+								Text="{Binding PartyCount}"
 								TextColor="White" />
 						</textinputlayout:SfTextInputLayout>
 
@@ -178,9 +178,14 @@
 							UnfocusedColor="#6263ED"
 							UnfocusedStrokeWidth="1">
 							<controls:CustomDatePicker
+								x:Name="bookTableDate"
+								Date="{Binding SelectedDate}"
+								DateSelected="OnBookTableDateSelected"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
+								Format="dd/MM/yyyy"
 								HeightRequest="56"
+								MinimumDate="{Binding MinDate}"
 								TextColor="White" />
 						</textinputlayout:SfTextInputLayout>
 					</Grid>
@@ -195,6 +200,7 @@
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="16"
 						HorizontalTextAlignment="Start"
+						IsVisible="{Binding IsResturantTableAvailable}"
 						MaxLines="1"
 						Opacity="0.8"
 						Text="Please select a time below"
@@ -204,6 +210,7 @@
 					<Grid
 						Margin="0,20,0,0"
 						ColumnSpacing="20"
+						IsVisible="False"
 						RowSpacing="20">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="32" />
@@ -355,8 +362,55 @@
 							Text="11:00"
 							TextColor="White" />
 					</Grid>
+
+					<syncfusion:SfListView
+						x:Name="listView"
+						Margin="0,20,0,0"
+						IsScrollBarVisible="False"
+						IsVisible="{Binding IsResturantTableAvailable}"
+						ItemTapped="listView_ItemTapped"
+						ItemsSource="{Binding ResturantTableAvailableInfo}">
+						<syncfusion:SfListView.LayoutManager>
+							<syncfusion:GridLayout SpanCount="3" />
+						</syncfusion:SfListView.LayoutManager>
+						<syncfusion:SfListView.ItemTemplate>
+							<DataTemplate>
+								<Grid>
+									<Button
+										Margin="5,0,5,10"
+										Padding="10,0,10,0"
+										BackgroundColor="{Binding SelectedWorkTimeBg}"
+										Clicked="OnWorkTimeClicked"
+										CornerRadius="8"
+										FontAttributes="Bold"
+										FontFamily="PoppinsSemiBoldFontFamily"
+										FontSize="12"
+										HeightRequest="50"
+										Text="{Binding WorkTime}"
+										TextColor="White"
+										VerticalOptions="StartAndExpand" />
+								</Grid>
+							</DataTemplate>
+						</syncfusion:SfListView.ItemTemplate>
+					</syncfusion:SfListView>
 				</StackLayout>
 			</ScrollView>
+
+			<controls:CustomButton
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="28,0,28,0"
+				BackgroundColor="#6263ED"
+				Command="{Binding RequestTableBookingCommand}"
+				CornerRadius="12"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="16"
+				HeightRequest="50"
+				IsVisible="{Binding IsVisibleSubmit}"
+				Text="Submit"
+				TextColor="White"
+				VerticalOptions="EndAndExpand" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>
