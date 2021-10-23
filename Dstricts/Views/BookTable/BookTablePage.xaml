@@ -3,8 +3,10 @@
 	x:Class="Dstricts.Views.BookTable.BookTablePage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
@@ -97,32 +99,90 @@
 						VerticalTextAlignment="Center" />
 
 					<Grid
-						Margin="0,28,0,0"
+						Margin="0,20,0,0"
 						ColumnSpacing="10"
-						HeightRequest="60">
-						<Button
+						HeightRequest="56">
+						<textinputlayout:SfTextInputLayout
 							Grid.Row="0"
 							Grid.Column="0"
-							BackgroundColor="Transparent"
-							BorderColor="#6263ED"
-							BorderWidth="1"
-							CornerRadius="10" />
+							ContainerBackgroundColor="Transparent"
+							ContainerType="Outlined"
+							FocusedColor="#6263ED"
+							FocusedStrokeWidth="1"
+							HeightRequest="56"
+							Hint="Type"
+							OutlineCornerRadius="12"
+							TrailingViewPosition="Inside"
+							UnfocusedColor="#6263ED"
+							UnfocusedStrokeWidth="1">
+							<controls:CustomPicker
+								Title="Type"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HeightRequest="56"
+								TextColor="White"
+								TitleColor="#6263ED">
+								<controls:CustomPicker.ItemsSource>
+									<x:Array Type="{x:Type x:String}">
+										<x:String>Location - 1</x:String>
+										<x:String>Location - 2</x:String>
+									</x:Array>
+								</controls:CustomPicker.ItemsSource>
+							</controls:CustomPicker>
+							<textinputlayout:SfTextInputLayout.TrailingView>
+								<Label
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="20"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
+									TextColor="#6263ED"
+									VerticalOptions="CenterAndExpand"
+									VerticalTextAlignment="Center" />
+							</textinputlayout:SfTextInputLayout.TrailingView>
+						</textinputlayout:SfTextInputLayout>
 
-						<Button
+						<textinputlayout:SfTextInputLayout
 							Grid.Row="0"
 							Grid.Column="1"
-							BackgroundColor="Transparent"
-							BorderColor="#6263ED"
-							BorderWidth="1"
-							CornerRadius="10" />
+							ContainerBackgroundColor="Transparent"
+							ContainerType="Outlined"
+							FocusedColor="#6263ED"
+							FocusedStrokeWidth="1"
+							HeightRequest="56"
+							Hint="Party"
+							OutlineCornerRadius="12"
+							UnfocusedColor="#6263ED"
+							UnfocusedStrokeWidth="1">
+							<Entry
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HeightRequest="56"
+								Keyboard="Numeric"
+								MaxLength="2"
+								PlaceholderColor="#6263ED"
+								Text="{Binding CustomerObject.FirstName, Mode=TwoWay}"
+								TextColor="White" />
+						</textinputlayout:SfTextInputLayout>
 
-						<Button
+						<textinputlayout:SfTextInputLayout
 							Grid.Row="0"
 							Grid.Column="2"
-							BackgroundColor="Transparent"
-							BorderColor="#6263ED"
-							BorderWidth="1"
-							CornerRadius="10" />
+							ContainerBackgroundColor="Transparent"
+							ContainerType="Outlined"
+							FocusedColor="#6263ED"
+							FocusedStrokeWidth="1"
+							HeightRequest="56"
+							Hint="Date"
+							OutlineCornerRadius="12"
+							UnfocusedColor="#6263ED"
+							UnfocusedStrokeWidth="1">
+							<controls:CustomDatePicker
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HeightRequest="56"
+								TextColor="White" />
+						</textinputlayout:SfTextInputLayout>
 					</Grid>
 
 					<BoxView

@@ -49,5 +49,6 @@
 		public const string BookmarkPlusOutline = "\U000f00c4";
 		public const string HomeOutline = "\U000f06a1";
 		public const string AccountOutline = "\U000f0013";
+		public const string ChevronDown = "\U000f0140";
 	}
 }
