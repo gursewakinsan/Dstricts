@@ -105,9 +105,9 @@
 						ColumnSpacing="10"
 						HeightRequest="56">
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition/>
-							<ColumnDefinition Width="80"/>
-							<ColumnDefinition/>
+							<ColumnDefinition />
+							<ColumnDefinition Width="80" />
+							<ColumnDefinition />
 						</Grid.ColumnDefinitions>
 						<textinputlayout:SfTextInputLayout
 							Grid.Row="0"
