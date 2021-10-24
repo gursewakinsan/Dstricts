@@ -104,6 +104,11 @@
 						Margin="0,20,0,0"
 						ColumnSpacing="10"
 						HeightRequest="56">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition Width="80"/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
 						<textinputlayout:SfTextInputLayout
 							Grid.Row="0"
 							Grid.Column="0"
@@ -111,7 +116,6 @@
 							ContainerType="Outlined"
 							FocusedColor="#6263ED"
 							FocusedStrokeWidth="1"
-							HeightRequest="56"
 							Hint="Type"
 							OutlineCornerRadius="12"
 							TrailingViewPosition="Inside"
@@ -122,7 +126,6 @@
 								Title="Type"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
-								HeightRequest="56"
 								ItemDisplayBinding="{Binding Serve}"
 								ItemsSource="{Binding ResturantWorkInfo}"
 								SelectedIndexChanged="OnTypeSelectedIndexChanged"
@@ -149,7 +152,6 @@
 							ContainerType="Outlined"
 							FocusedColor="#6263ED"
 							FocusedStrokeWidth="1"
-							HeightRequest="56"
 							Hint="Party"
 							OutlineCornerRadius="12"
 							UnfocusedColor="#6263ED"
@@ -157,7 +159,6 @@
 							<Entry
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
-								HeightRequest="56"
 								Keyboard="Numeric"
 								MaxLength="2"
 								PlaceholderColor="#6263ED"
@@ -172,7 +173,6 @@
 							ContainerType="Outlined"
 							FocusedColor="#6263ED"
 							FocusedStrokeWidth="1"
-							HeightRequest="56"
 							Hint="Date"
 							OutlineCornerRadius="12"
 							UnfocusedColor="#6263ED"
@@ -184,7 +184,6 @@
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="14"
 								Format="dd/MM/yyyy"
-								HeightRequest="56"
 								MinimumDate="{Binding MinDate}"
 								TextColor="White" />
 						</textinputlayout:SfTextInputLayout>
