@@ -11,7 +11,7 @@
 	<ContentPage.Content>
 		<Grid>
 			<Grid.RowDefinitions>
-				<RowDefinition Height="32" />
+				<RowDefinition Height="36" />
 				<RowDefinition />
 				<RowDefinition Height="10" />
 				<RowDefinition Height="44" />
@@ -44,22 +44,22 @@
 				Margin="0,0,15,0"
 				Padding="0"
 				BackgroundColor="#342B20"
-				CornerRadius="8"
+				CornerRadius="12"
 				FontAttributes="Bold"
 				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="14"
-				HeightRequest="32"
+				HeightRequest="36"
 				HorizontalOptions="EndAndExpand"
 				Text="Get Wifi"
 				TextColor="#4EDCEB"
-				WidthRequest="102" />
+				WidthRequest="94" />
 
 			<ScrollView
 				Grid.Row="1"
 				Grid.ColumnSpan="3"
 				VerticalScrollBarVisibility="Never">
 				<StackLayout
-					Padding="28,20,28,0"
+					Padding="28,16,28,0"
 					Spacing="0"
 					VerticalOptions="StartAndExpand">
 					<StackLayout Orientation="Horizontal" Spacing="5">
@@ -96,7 +96,7 @@
 						VerticalTextAlignment="Center" />
 
 					<BoxView
-						Margin="0,16,0,28"
+						Margin="0,16,0,31"
 						BackgroundColor="White"
 						HeightRequest="1"
 						Opacity="0.2" />
@@ -113,7 +113,7 @@
 							x:Name="imgRecommendation"
 							Aspect="AspectFill"
 							BackgroundColor="Black"
-							HeightRequest="246" />
+							HeightRequest="244" />
 					</Frame>
 
 					<Label
@@ -134,7 +134,7 @@
 						TextColor="White" />
 
 					<Frame
-						Margin="0,34,0,0"
+						Margin="0,34,0,42"
 						Padding="0"
 						BackgroundColor="#FC7125"
 						BorderColor="#FC7125"
@@ -152,7 +152,7 @@
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="30"
 								HorizontalTextAlignment="Center"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.AlertCircle}"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Information}"
 								TextColor="White"
 								VerticalTextAlignment="Center" />
 
@@ -167,13 +167,7 @@
 						</StackLayout>
 					</Frame>
 
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
-					<Grid ColumnSpacing="0" RowSpacing="15">
+					<Grid ColumnSpacing="0" RowSpacing="20">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="34" />
 							<RowDefinition Height="26" />
@@ -226,7 +220,7 @@
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
 							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.VectorTriangle}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -251,7 +245,7 @@
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
 							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.StorefrontOutline}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -322,7 +316,7 @@
 					</Grid>
 
 					<Label
-						Margin="0,43,0,20"
+						Margin="0,40,0,20"
 						FontAttributes="Bold"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="18"
@@ -373,7 +367,7 @@
 							HorizontalTextAlignment="Center"
 							MaxLines="1"
 							Opacity="0.7"
-							Text="room"
+							Text="the room"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -475,7 +469,7 @@
 							HorizontalTextAlignment="Center"
 							MaxLines="1"
 							Opacity="0.7"
-							Text="Order"
+							Text="Wake-up"
 							TextColor="White"
 							VerticalTextAlignment="End" />
 
@@ -487,27 +481,59 @@
 							HorizontalTextAlignment="Center"
 							MaxLines="1"
 							Opacity="0.7"
-							Text="Wake up call"
+							Text="call"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 					</Grid>
 
 					<BoxView
-						Margin="0,28,0,28"
+						Margin="0,53,0,55"
 						BackgroundColor="White"
 						HeightRequest="1"
 						Opacity="0.2" />
 
-					<Label
-						Margin="0,0,0,21"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="Guest service"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
+					<Grid Margin="0,0,0,32">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="32" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition Width="80" />
+						</Grid.ColumnDefinitions>
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="24"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Guest service"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="1"
+							BackgroundColor="Transparent"
+							BorderColor="White"
+							BorderWidth="1"
+							CornerRadius="8"
+							FontSize="14"
+							Opacity="0.5" />
+
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontAttributes="Bold"
+							FontFamily="PoppinsSemiBoldFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							MaxLines="1"
+							Text="View all"
+							TextColor="#E08D70"
+							VerticalTextAlignment="Center" />
+					</Grid>
 
 					<Grid ColumnSpacing="15">
 						<StackLayout
@@ -526,7 +552,7 @@
 									x:Name="imgRoom"
 									Aspect="AspectFill"
 									BackgroundColor="Black"
-									HeightRequest="142"
+									HeightRequest="145"
 									WidthRequest="152" />
 							</Frame>
 							<Label
@@ -638,7 +664,7 @@
 									x:Name="imgBathroom"
 									Aspect="AspectFill"
 									BackgroundColor="Black"
-									HeightRequest="142"
+									HeightRequest="145"
 									WidthRequest="152" />
 							</Frame>
 							<Label
@@ -663,61 +689,18 @@
 						</StackLayout>
 					</Grid>
 
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
+					<Label
+						Margin="0,59,0,43"
+						FontAttributes="Bold"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="24"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="Room service"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
 
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="34" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="80" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="80" />
-						</Grid.ColumnDefinitions>
-						<Label
-							Grid.Row="0"
-							Grid.Column="0"
-							Grid.ColumnSpan="2"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="20"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="Room service"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Button
-							Grid.Row="0"
-							Grid.Column="2"
-							BackgroundColor="Transparent"
-							BorderColor="White"
-							BorderWidth="1"
-							CornerRadius="8"
-							FontSize="14"
-							Opacity="0.5" />
-
-						<Label
-							Grid.Row="0"
-							Grid.Column="2"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							MaxLines="1"
-							Text="View all"
-							TextColor="#E08D70"
-							VerticalTextAlignment="Center" />
-					</Grid>
-
-					<ScrollView
-						Margin="0,15,0,0"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
+					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
 						<StackLayout x:Name="layoutRoomService" Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
@@ -753,35 +736,17 @@
 						</StackLayout>
 					</ScrollView>
 
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
 					<Label
+						x:Name="lblEatDrink"
+						Margin="0,67,0,46"
+						FontAttributes="Bold"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="24"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
-						TextColor="White">
-						<Label.FormattedText>
-							<FormattedString>
-								<Span
-									x:Name="lblEatDrink"
-									FontAttributes="Bold"
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="20" />
-								<Span
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="20"
-									Text=" at the hotel" />
-							</FormattedString>
-						</Label.FormattedText>
-					</Label>
+						TextColor="White" />
 
-					<ScrollView
-						Margin="0,22,0,0"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
+					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
 						<StackLayout x:Name="layoutEatDrinkAtTheHotel" Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
@@ -801,7 +766,7 @@
 											WidthRequest="{Binding ImgWidth}" />
 
 										<Label
-											Margin="0,12,0,0"
+											Margin="0,24,0,0"
 											FontAttributes="Bold"
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="16"
@@ -817,30 +782,15 @@
 						</StackLayout>
 					</ScrollView>
 
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
 					<Label
+						x:Name="lblFitnessSpa"
+						Margin="0,69,0,45"
+						FontAttributes="Bold"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="24"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
-						TextColor="White">
-						<Label.FormattedText>
-							<FormattedString>
-								<Span
-									x:Name="lblFitnessSpa"
-									FontAttributes="Bold"
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="20" />
-								<Span
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="20"
-									Text=" at the hotel" />
-							</FormattedString>
-						</Label.FormattedText>
-					</Label>
+						TextColor="White" />
 
 					<ScrollView
 						Margin="0,22,0,0"
@@ -865,7 +815,7 @@
 											WidthRequest="{Binding ImgWidth}" />
 
 										<Label
-											Margin="0,12,0,0"
+											Margin="0,27,0,0"
 											FontAttributes="Bold"
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="16"
@@ -880,12 +830,6 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
 				</StackLayout>
 			</ScrollView>
 
