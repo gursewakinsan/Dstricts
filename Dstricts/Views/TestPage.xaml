@@ -128,9 +128,19 @@
 					<Label
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="16"
+						HeightRequest="26"
 						HorizontalTextAlignment="Start"
 						Opacity="0.5"
-						Text="Please choose at least one from the following items to get started."
+						Text="Please choose at least one from the"
+						TextColor="White" />
+
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HeightRequest="26"
+						HorizontalTextAlignment="Start"
+						Opacity="0.5"
+						Text="following items to get started."
 						TextColor="White" />
 
 					<Frame
@@ -158,8 +168,8 @@
 
 							<Label
 								FontAttributes="Bold"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="14"
+								FontFamily="PoppinsBoldFontFamily"
+								FontSize="24"
 								MaxLines="1"
 								Text="About your details"
 								TextColor="White"
@@ -176,9 +186,9 @@
 							<RowDefinition Height="26" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="auto" />
 							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="auto" />
 						</Grid.ColumnDefinitions>
 						<Label
 							Grid.Row="0"
@@ -219,7 +229,7 @@
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
-							HorizontalTextAlignment="Center"
+							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.VectorTriangle}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
@@ -244,7 +254,7 @@
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
-							HorizontalTextAlignment="Center"
+							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.StorefrontOutline}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
@@ -269,7 +279,7 @@
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
-							HorizontalTextAlignment="Center"
+							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
@@ -294,7 +304,7 @@
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
-							HorizontalTextAlignment="Center"
+							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
@@ -690,7 +700,7 @@
 					</Grid>
 
 					<Label
-						Margin="0,59,0,43"
+						Margin="0,53,0,32"
 						FontAttributes="Bold"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="24"
@@ -738,7 +748,7 @@
 
 					<Label
 						x:Name="lblEatDrink"
-						Margin="0,67,0,46"
+						Margin="0,53,0,32"
 						FontAttributes="Bold"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="24"
@@ -784,7 +794,7 @@
 
 					<Label
 						x:Name="lblFitnessSpa"
-						Margin="0,69,0,45"
+						Margin="0,53,0,32"
 						FontAttributes="Bold"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="24"
@@ -792,10 +802,7 @@
 						MaxLines="1"
 						TextColor="White" />
 
-					<ScrollView
-						Margin="0,22,0,0"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
+					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
 						<StackLayout x:Name="layoutFitnessSpa" Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>

@@ -14,14 +14,160 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new HotelDetailsPageViewModel(this.Navigation);
-			imgRoomService.Source = ImageSource.FromUri(new System.Uri("https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="));
-			imgFittness.Source = ImageSource.FromUri(new System.Uri("https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"));
+			//imgRoomService.Source = ImageSource.FromUri(new System.Uri("https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="));
+			//imgFittness.Source = ImageSource.FromUri(new System.Uri("https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg"));
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
 			viewModel.HotelCompleteInfoCommand.Execute(null);
+			lblEatDrink.Text = $"Eat & Drink";
+			lblFitnessSpa.Text = "Fitness & Spa";
+
+			imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
+			imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
+			imgMedia.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
+			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
+
+			BindRoomServiceInfo();
+			BindEatDrinkAtTheHotelInfo();
+			BindFitnessSpaInfo();
+		}
+
+		void BindRoomServiceInfo()
+		{
+			int deviceWidth = App.ScreenWidth - 56;
+			int w = deviceWidth * 42 / 100;
+			int h = w * 97 / 100;
+
+			List<abc> abcs = new List<abc>();
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/8.png",
+				Name = "Breakfast",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/9.png",
+				Name = "Lunch",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/8.png",
+				Name = "Breakfast",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/9.png",
+				Name = "Lunch",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+			BindableLayout.SetItemsSource(layoutRoomService, abcs);
+		}
+
+		void BindEatDrinkAtTheHotelInfo()
+		{
+			int deviceWidth = App.ScreenWidth - 56;
+			int w = deviceWidth * 80 / 100;
+			int h = w * 68 / 100;
+
+			List<abc> abcs = new List<abc>();
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/11.png",
+				Name = "Restaurant 1",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/12.png",
+				Name = "Restaurant 2",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/11.png",
+				Name = "Restaurant 3",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/12.png",
+				Name = "Restaurant 4",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+			BindableLayout.SetItemsSource(layoutEatDrinkAtTheHotel, abcs);
+		}
+
+		void BindFitnessSpaInfo()
+		{
+			int deviceWidth = App.ScreenWidth - 56;
+			int w = deviceWidth * 80 / 100;
+			int h = w * 68 / 100;
+
+			List<abc> abcs = new List<abc>();
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/13.png",
+				Name = "Gym",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/14.png",
+				Name = "Spa",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/13.png",
+				Name = "Gym",
+				Detail = "32 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+
+			abcs.Add(new abc()
+			{
+				ImgUrl = "https://www.qloudid.com/html/usercontent/images/dstricts/14.png",
+				Name = "Spa",
+				Detail = "15 Item",
+				ImgWidth = w,
+				ImgHeight = h
+			});
+			BindableLayout.SetItemsSource(layoutFitnessSpa, abcs);
 		}
 
 		void rr()
@@ -54,6 +200,11 @@ namespace Dstricts.Views.Hotel
 		{
 			//lblLessInfo.IsVisible = false;
 			//slblMoreInfo.IsVisible = true;
+		}
+
+		private void OnEatDrinkClicked(object sender, System.EventArgs e)
+		{
+			viewModel.RoomAndFoodServiceCommand.Execute(null);
 		}
 	}
 }
