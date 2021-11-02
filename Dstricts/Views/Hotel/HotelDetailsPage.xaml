@@ -143,8 +143,9 @@
 
 					<Label
 						Margin="0,31,0,7"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="18"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="24"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="About"
