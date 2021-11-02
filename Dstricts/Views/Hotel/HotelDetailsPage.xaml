@@ -194,8 +194,8 @@
 
 							<Label
 								FontAttributes="Bold"
-								FontFamily="PoppinsBoldFontFamily"
-								FontSize="24"
+								FontFamily="PoppinsSemiBoldFontFamily"
+								FontSize="14"
 								MaxLines="1"
 								Text="About your details"
 								TextColor="White"
