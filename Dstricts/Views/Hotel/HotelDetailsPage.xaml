@@ -214,7 +214,7 @@
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="auto" />
 							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="auto" />
+							<ColumnDefinition Width="80" />
 						</Grid.ColumnDefinitions>
 						<Label
 							Grid.Row="0"
