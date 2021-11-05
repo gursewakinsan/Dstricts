@@ -31,7 +31,7 @@ namespace Dstricts.ViewModels
 			int imgWidth = deviceWidth * 40 / 100;
 			int imgHeight = imgWidth * 97 / 100;
 
-			ResturantServeBasedMenuInfo = ResturantServeBasedMenuInfo = await service.ResturantServeBasedMenuAsync(new Models.ResturantServeBasedMenuRequest()
+			ResturantServeBasedMenuInfo = await service.ResturantServeBasedMenuAsync(new Models.ResturantServeBasedMenuRequest()
 			{
 				ResturantId = Helper.Helper.SelectResturantId,
 				ServeType = ResturantServeInfo.Id,

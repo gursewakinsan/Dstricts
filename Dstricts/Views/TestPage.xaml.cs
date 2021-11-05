@@ -15,19 +15,20 @@ namespace Dstricts.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			lblEatDrink.Text = $"Eat & Drink";
-			lblFitnessSpa.Text = "Fitness & Spa";
+			//lblEatDrink.Text = $"Eat & Drink";
+			//lblFitnessSpa.Text = "Fitness & Spa";
 
 			imgRecommendation.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
 
-			imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
-			imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
-			imgMedia.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
-			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
+			//imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
+			//imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
+			//imgMedia.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
+			//imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
 			
 			BindRoomServiceInfo();
-			BindEatDrinkAtTheHotelInfo();
-			BindFitnessSpaInfo();
+			//BindEatDrinkAtTheHotelInfo();
+			//BindFitnessSpaInfo();
+			BindMenuInfo();
 		}
 
 		void BindRoomServiceInfo()
@@ -72,7 +73,8 @@ namespace Dstricts.Views
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutRoomService, abcs);
+			BindableLayout.SetItemsSource(layoutCategory1, abcs);
+			BindableLayout.SetItemsSource(layoutCategory2, abcs);
 		}
 
 		void BindEatDrinkAtTheHotelInfo()
@@ -117,7 +119,7 @@ namespace Dstricts.Views
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutEatDrinkAtTheHotel, abcs);
+			BindableLayout.SetItemsSource(layoutCategory2, abcs);
 		}
 
 		void BindFitnessSpaInfo()
@@ -162,7 +164,20 @@ namespace Dstricts.Views
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutFitnessSpa, abcs);
+			//BindableLayout.SetItemsSource(layoutFitnessSpa, abcs);
+		}
+
+		void BindMenuInfo()
+		{
+			int deviceWidth = App.ScreenWidth - 56;
+			int w = deviceWidth * 26 / 100;
+
+			List<MenuInfo> menuInfos = new List<MenuInfo>();
+			menuInfos.Add(new MenuInfo() { Name = "Breakfast", MenuBg = Color.FromHex("#6263ED"), ImgWidth= w });
+			menuInfos.Add(new MenuInfo() { Name = "Brunch", MenuBg = Color.FromHex("#2A2A31"), ImgWidth = w });
+			menuInfos.Add(new MenuInfo() { Name = "Lunch", MenuBg = Color.FromHex("#2A2A31"), ImgWidth = w });
+			menuInfos.Add(new MenuInfo() { Name = "Dinner", MenuBg = Color.FromHex("#2A2A31"), ImgWidth = w });
+			BindableLayout.SetItemsSource(layoutMenuInfos, menuInfos);
 		}
 	}
 }
@@ -174,4 +189,11 @@ public class abc
 	public string Detail { get; set; }
 	public double ImgWidth { get; set; }
 	public double ImgHeight { get; set; }
+}
+
+public class MenuInfo
+{
+	public string Name { get; set; }
+	public Color MenuBg { get; set; }
+	public double ImgWidth { get; set; }
 }
