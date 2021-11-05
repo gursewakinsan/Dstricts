@@ -11,7 +11,9 @@
 		public const string VerifyCheckedInCodeUrl = "https://dstricts.com/user/index.php/DstrictsApp/verifyCode";
 		public const string HotelCompleteInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelCompleteInfo";
 		public const string SelectedRoomServiceAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedRoomServiceAppMenu";
-		
+		public const string SelectedRoomServiceAppServesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedRoomServiceAppServes";
+		public const string SelectedRoomServiceServeBasedAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedRoomServiceServeBasedAppMenu";
+
 		//Cart.
 		public const string AddFoodItemToCartUrl = "https://dstricts.com/user/index.php/DstrictsApp/addFoodItemToCart";
 		public const string CartItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartItemCount";

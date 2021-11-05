@@ -65,6 +65,7 @@ namespace Dstricts.ViewModels
 			else
 				IsInhouseFittnessList = false;
 			HotelDetails = response;
+			Helper.Helper.HotelDetails = HotelDetails;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -87,7 +88,47 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Selected Room Service App Serves Command.
+		private ICommand selectedRoomServiceAppServesCommand;
+		public ICommand SelectedRoomServiceAppServesCommand
+		{
+			get => selectedRoomServiceAppServesCommand ?? (selectedRoomServiceAppServesCommand = new Command(async () => await ExecuteSelectedRoomServiceAppServesCommand()));
+		}
+		private async Task ExecuteSelectedRoomServiceAppServesCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			var response = await service.SelectedRoomServiceAppServesAsync(new Models.SelectedRoomServiceAppServesRequest()
+			{
+				Id = Helper.Helper.HotelCheckedIn
+			});
+
+			int deviceWidth = App.ScreenWidth - 56;
+			int w = deviceWidth * 42 / 100;
+			int h = w * 97 / 100;
+
+			foreach (var item in response)
+			{
+				item.ImgWidth = w;
+				item.ImgHeight = h;
+			}
+			SelectedRoomServiceAppServesInfo = new List<Models.SelectedRoomServiceAppServesResponse>(response);
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
+		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
+		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo
+		{
+			get => selectedRoomServiceAppServesInfo;
+			set
+			{
+				selectedRoomServiceAppServesInfo = value;
+				OnPropertyChanged("SelectedRoomServiceAppServesInfo");
+			}
+		}
+
 		private Models.HotelCompleteInfoResponse hotelDetails;
 		public Models.HotelCompleteInfoResponse HotelDetails
 		{

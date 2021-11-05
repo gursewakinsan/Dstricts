@@ -34,7 +34,7 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
-		
+
 		public Task<Models.VerifyCheckedInCodeResponse> VerifyCheckedInCodeAsync(Models.VerifyCheckedInCodeRequest request)
 		{
 			return Task.Factory.StartNew(() =>
@@ -112,6 +112,24 @@ namespace Dstricts.Service
 			return Task.Factory.StartNew(() =>
 			{
 				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.RequestTableBookingUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.SelectedRoomServiceAppServesResponse>> SelectedRoomServiceAppServesAsync(Models.SelectedRoomServiceAppServesRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SelectedRoomServiceAppServesResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedRoomServiceAppServesUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.SelectedRoomServiceServeBasedAppMenuResponse>> SelectedRoomServiceServeBasedAppMenuAsync(Models.SelectedRoomServiceServeBasedAppMenuRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SelectedRoomServiceServeBasedAppMenuResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedRoomServiceServeBasedAppMenuUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}

@@ -737,7 +737,10 @@
 						VerticalTextAlignment="Center" />
 
 					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-						<StackLayout x:Name="layoutRoomService" Orientation="Horizontal">
+						<StackLayout
+							x:Name="layoutRoomService"
+							BindableLayout.ItemsSource="{Binding SelectedRoomServiceAppServesInfo}"
+							Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
 									<StackLayout
@@ -748,10 +751,11 @@
 											Padding="0"
 											Aspect="AspectFill"
 											BackgroundColor="Transparent"
+											Clicked="OnRoomServiceImageClicked"
 											CornerRadius="10"
 											HeightRequest="{Binding ImgHeight}"
 											HorizontalOptions="Center"
-											Source="{Binding ImgUrl}"
+											Source="{Binding ServeImage}"
 											VerticalOptions="Center"
 											WidthRequest="{Binding ImgWidth}" />
 
@@ -763,7 +767,7 @@
 											HorizontalTextAlignment="Start"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
-											Text="{Binding Name}"
+											Text="{Binding ServeInfo}"
 											TextColor="White"
 											VerticalTextAlignment="Start" />
 									</StackLayout>
