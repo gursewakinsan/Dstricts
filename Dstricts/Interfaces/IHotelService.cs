@@ -19,6 +19,7 @@ namespace Dstricts.Interfaces
 		Task<int> RequestTableBookingAsync(Models.RequestTableBookingRequest request);
 		Task<List<Models.SelectedRoomServiceAppServesResponse>> SelectedRoomServiceAppServesAsync(Models.SelectedRoomServiceAppServesRequest request);
 		Task<List<Models.SelectedRoomServiceServeBasedAppMenuResponse>> SelectedRoomServiceServeBasedAppMenuAsync(Models.SelectedRoomServiceServeBasedAppMenuRequest request);
+		Task<int> AddFoodToCartAsync(Models.AddFoodToCartRequest request);
 	}
 }
 

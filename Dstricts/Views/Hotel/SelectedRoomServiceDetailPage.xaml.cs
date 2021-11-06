@@ -43,5 +43,12 @@ namespace Dstricts.Views.Hotel
 				viewModel.SelectedRoomServiceServeBasedAppMenuCommand.Execute(null);
 			}
 		}
+
+		private async void OnFoodCategoryClicked(object sender, System.EventArgs e)
+		{
+			ImageButton imageButton = sender as ImageButton;
+			Models.Category category = imageButton.BindingContext as Models.Category;
+			await Navigation.PushAsync(new RoomServiceAddFoodToCartPage(category));
+		}
 	}
 }

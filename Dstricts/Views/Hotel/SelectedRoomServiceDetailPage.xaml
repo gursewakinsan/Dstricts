@@ -93,7 +93,8 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						HorizontalTextAlignment="Start"
-						MaxLines="1" LineBreakMode="TailTruncation"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
 						Text="{Binding SelectedRoomService.ServeInfo}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
@@ -261,6 +262,7 @@
 															Padding="0"
 															Aspect="AspectFill"
 															BackgroundColor="Transparent"
+															Clicked="OnFoodCategoryClicked"
 															CornerRadius="10"
 															HeightRequest="{Binding ImgHeight}"
 															HorizontalOptions="Center"
