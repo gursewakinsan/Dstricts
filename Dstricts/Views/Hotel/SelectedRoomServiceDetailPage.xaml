@@ -77,7 +77,6 @@
 					Padding="28,20,28,0"
 					Spacing="0"
 					VerticalOptions="StartAndExpand">
-
 					<Label
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="16"
@@ -94,7 +93,7 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						HorizontalTextAlignment="Start"
-						MaxLines="1"
+						MaxLines="1" LineBreakMode="TailTruncation"
 						Text="{Binding SelectedRoomService.ServeInfo}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
