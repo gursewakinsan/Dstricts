@@ -46,6 +46,27 @@ namespace Dstricts.ViewModels
 				}
 			}
 			SelectedRoomServiceDetailInfo = new List<Models.SelectedRoomServiceServeBasedAppMenuResponse>(response);
+
+			ICartService cartService = new CartService();
+			int cartServiceResponse = await cartService.CartItemCountAsync(new Models.CartItemCountRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
+			});
+			IsProceedToCheckOut = cartServiceResponse > 0 ? true : false;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Proceed To Check Out Command.
+		private ICommand proceedToCheckOutCommand;
+		public ICommand ProceedToCheckOutCommand
+		{
+			get => proceedToCheckOutCommand ?? (proceedToCheckOutCommand = new Command(async () => await ExecuteProceedToCheckOutCommand()));
+		}
+		private async Task ExecuteProceedToCheckOutCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			await Navigation.PushAsync(new Views.Hotel.RoomServiceFoodCartListPage());
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -92,6 +113,17 @@ namespace Dstricts.ViewModels
 			{
 				hotelDetails = value;
 				OnPropertyChanged("HotelDetails");
+			}
+		}
+
+		private bool isProceedToCheckOut;
+		public bool IsProceedToCheckOut
+		{
+			get => isProceedToCheckOut;
+			set
+			{
+				isProceedToCheckOut = value;
+				OnPropertyChanged("IsProceedToCheckOut");
 			}
 		}
 		#endregion

@@ -15,27 +15,32 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Add Food To Cart Command.
-		private ICommand addFoodToCartCommand;
-		public ICommand AddFoodToCartCommand
+		#region Submit Command.
+		private ICommand submitCommand;
+		public ICommand SubmitCommand
 		{
-			get => addFoodToCartCommand ?? (addFoodToCartCommand = new Command(async () => await ExecuteAddFoodToCartCommand()));
+			get => submitCommand ?? (submitCommand = new Command(async () => await ExecuteSubmitCommand()));
 		}
-		private async Task ExecuteAddFoodToCartCommand()
+		private async Task ExecuteSubmitCommand()
 		{
 			DependencyService.Get<IProgressBar>().Show();
-			IHotelService service = new HotelService();
-			var response = await service.AddFoodToCartAsync(new Models.AddFoodToCartRequest()
+			ICartService service = new CartService();
+			Models.AddFoodItemToCartRequest foodItem = new Models.AddFoodItemToCartRequest()
 			{
-				QloudCheckoutId = Helper.Helper.HotelCheckedIn,
-				DishId = SelectedFoodCategory.Id,
+				CheckId = Helper.Helper.HotelCheckedIn,
+				ItemId = SelectedFoodCategory.Id,
 				DishName = SelectedFoodCategory.DishName,
 				DishDetail = SelectedFoodCategory.DishDetail,
 				DishImage = SelectedFoodCategory.DishImage,
 				DishPrice = SelectedFoodCategory.DishPrice,
-				DishQuantity = FoodCartCount,
-				TotalPrice = SelectedFoodCategory.DishPrice * FoodCartCount
-			});
+				Quantity = FoodCartCount,
+				ServiceType = SelectedFoodCategory.ServeType
+			};
+			int response = await service.AddFoodItemToCartAsync(foodItem);
+			if (response == 1)
+				await Navigation.PopAsync();
+			else
+				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

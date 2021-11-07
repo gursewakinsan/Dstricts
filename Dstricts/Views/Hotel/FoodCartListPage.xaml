@@ -6,7 +6,6 @@
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	xmlns:usercontrols="clr-namespace:Dstricts.UserControls"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="Black"
 	NavigationPage.HasNavigationBar="False">

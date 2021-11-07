@@ -83,7 +83,7 @@
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Opacity="0.5"
-						Text="Main course"
+						Text="{Binding SelectedFoodCategory.FoodCategory}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
@@ -95,7 +95,7 @@
 						HorizontalTextAlignment="Start"
 						LineBreakMode="TailTruncation"
 						MaxLines="1"
-						Text="Chicken Tikka Ma"
+						Text="{Binding SelectedFoodCategory.DishName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
@@ -149,7 +149,8 @@
 							<Image
 								x:Name="imgRecommendation"
 								Aspect="AspectFill"
-								HeightRequest="244" />
+								HeightRequest="244"
+								Source="{Binding SelectedFoodCategory.DishImage}" />
 						</Frame>
 
 						<StackLayout
@@ -210,7 +211,7 @@
 						HorizontalTextAlignment="Start"
 						LineHeight="1.5"
 						Opacity="0.5"
-						Text="Chicken tikka masala is a dish consisting of roasted marinated chicken chunks in spiced curry sauce. The curry is usually creamy and orange-coloured."
+						Text="{Binding SelectedFoodCategory.DishDetail}"
 						TextColor="White" />
 				</StackLayout>
 			</ScrollView>
@@ -218,6 +219,7 @@
 			<Grid
 				Grid.Row="3"
 				Grid.ColumnSpan="3"
+				Margin="28,0,28,0"
 				ColumnSpacing="15"
 				RowSpacing="0">
 				<Grid.ColumnDefinitions>
@@ -290,7 +292,7 @@
 					Grid.Row="0"
 					Grid.Column="3"
 					BackgroundColor="#6263ED"
-					Command="{Binding AddFoodToCartCommand}"
+					Command="{Binding SubmitCommand}"
 					CornerRadius="10"
 					FontAttributes="Bold"
 					FontFamily="PoppinsSemiBoldFontFamily"

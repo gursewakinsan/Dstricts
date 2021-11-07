@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Hotel.RoomServiceFoodCartListPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+				<RowDefinition Height="60" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Padding="28,16,28,0"
+				Spacing="0"
+				VerticalOptions="StartAndExpand">
+				<Label
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					MaxLines="1"
+					Opacity="0.5"
+					Text="Checkout"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Label
+					Margin="0,4,0,20"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="To pay"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Frame
+					BackgroundColor="Transparent"
+					BorderColor="#6263ED"
+					CornerRadius="16"
+					HasShadow="False"
+					HeightRequest="159"
+					IsClippedToBounds="True"
+					VerticalOptions="Start">
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="50"
+						HorizontalTextAlignment="Center"
+						MaxLines="1"
+						TextColor="#6263ED"
+						VerticalTextAlignment="Center">
+						<Label.FormattedText>
+							<FormattedString>
+								<Span Text="$" />
+								<Span Text="{Binding FoodCartListItemTotalPrice}" />
+							</FormattedString>
+						</Label.FormattedText>
+					</Label>
+				</Frame>
+
+				<BoxView
+					Margin="0,28,0,28"
+					BackgroundColor="White"
+					HeightRequest="1"
+					Opacity="0.2" />
+
+				<ScrollView VerticalScrollBarVisibility="Never">
+					<StackLayout BindableLayout.ItemsSource="{Binding FoodCartList}">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Grid
+									Margin="0,0,0,30"
+									ColumnSpacing="30"
+									RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="124" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="109" />
+										<ColumnDefinition Width="*" />
+									</Grid.ColumnDefinitions>
+									<ImageButton
+										Grid.Row="0"
+										Grid.Column="0"
+										Padding="0"
+										Aspect="Fill"
+										BackgroundColor="White"
+										CornerRadius="15"
+										HeightRequest="124"
+										Source="{Binding DishImage}"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="109" />
+
+									<StackLayout
+										Grid.Row="0"
+										Grid.Column="1"
+										Spacing="5">
+										<Label
+											FontFamily="SFProSemiboldFontFamily"
+											FontSize="16"
+											HorizontalTextAlignment="Start"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding DishName}"
+											TextColor="White" />
+
+										<Label
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="12"
+											HorizontalTextAlignment="Start"
+											LineBreakMode="TailTruncation"
+											LineHeight="1.5"
+											MaxLines="2"
+											Opacity="0.7"
+											Text="{Binding DishDetail}"
+											TextColor="White" />
+
+										<Grid
+											ColumnSpacing="10"
+											HorizontalOptions="StartAndExpand"
+											VerticalOptions="EndAndExpand">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="57" />
+												<ColumnDefinition Width="51" />
+												<ColumnDefinition Width="57" />
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="43" />
+											</Grid.RowDefinitions>
+
+											<Frame
+												Grid.Column="0"
+												Padding="0"
+												BackgroundColor="Transparent"
+												BorderColor="White"
+												CornerRadius="16"
+												HeightRequest="43"
+												HorizontalOptions="CenterAndExpand"
+												IsClippedToBounds="True"
+												Opacity="0.2"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="57" />
+
+											<Button
+												Grid.Row="0"
+												Grid.Column="0"
+												Padding="0"
+												BackgroundColor="Transparent"
+												Clicked="OnDecreaseFoodItemCountClicked"
+												FontSize="30"
+												HeightRequest="43"
+												HorizontalOptions="CenterAndExpand"
+												Text="-"
+												TextColor="White"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="57" />
+
+											<Frame
+												Grid.Row="0"
+												Grid.Column="1"
+												Padding="0"
+												BackgroundColor="Transparent"
+												BorderColor="#6263ED"
+												CornerRadius="16"
+												HeightRequest="43"
+												HorizontalOptions="CenterAndExpand"
+												IsClippedToBounds="True"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="51">
+												<Label
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="20"
+													HorizontalOptions="CenterAndExpand"
+													Text="{Binding DishQuantity}"
+													TextColor="#6263ED"
+													VerticalOptions="CenterAndExpand" />
+											</Frame>
+
+											<Frame
+												Grid.Row="0"
+												Grid.Column="2"
+												Padding="0"
+												BackgroundColor="Transparent"
+												BorderColor="White"
+												CornerRadius="16"
+												HeightRequest="43"
+												HorizontalOptions="CenterAndExpand"
+												IsClippedToBounds="True"
+												Opacity="0.2"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="57" />
+
+											<Button
+												Grid.Row="0"
+												Grid.Column="2"
+												Padding="0"
+												BackgroundColor="Transparent"
+												Clicked="OnIncreaseFoodItemCountClicked"
+												FontSize="24"
+												HeightRequest="43"
+												HorizontalOptions="CenterAndExpand"
+												Text="+"
+												TextColor="White"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="57" />
+										</Grid>
+										<!--<Grid>
+												<Grid.RowDefinitions>
+													<RowDefinition Height="30" />
+												</Grid.RowDefinitions>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="25" />
+													<ColumnDefinition Width="25" />
+													<ColumnDefinition Width="25" />
+												</Grid.ColumnDefinitions>
+												<Button
+													Grid.Column="0"
+													Padding="0"
+													BackgroundColor="Transparent"
+													Clicked="OnDecreaseFoodItemCountClicked"
+													FontFamily="{StaticResource MaterialFontFamily}"
+													FontSize="25"
+													HorizontalOptions="FillAndExpand"
+													Text="{x:Static fontawesome:DstrictsAppFlatIcons.Minus}"
+													TextColor="Black"
+													VerticalOptions="FillAndExpand" />
+
+												<Label
+													Grid.Column="1"
+													FontFamily="SansProBoldFontFamily"
+													FontSize="20"
+													HorizontalTextAlignment="Center"
+													MaxLines="1"
+													Text="{Binding DishQuantity}"
+													TextColor="Black"
+													VerticalTextAlignment="Center" />
+
+												<Button
+													Grid.Column="2"
+													Padding="0"
+													BackgroundColor="Transparent"
+													Clicked="OnIncreaseFoodItemCountClicked"
+													FontFamily="{StaticResource MaterialFontFamily}"
+													FontSize="25"
+													HorizontalOptions="FillAndExpand"
+													Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+													TextColor="Black"
+													VerticalOptions="FillAndExpand" />
+											</Grid>-->
+									</StackLayout>
+								</Grid>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
+			</StackLayout>
+
+			<Frame
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="15,0,15,0"
+				Padding="0"
+				BackgroundColor="Transparent"
+				CornerRadius="24"
+				HasShadow="False"
+				HeightRequest="50"
+				IsClippedToBounds="True"
+				VerticalOptions="CenterAndExpand">
+				<Grid ColumnSpacing="0">
+					<controls:CustomButton
+						Grid.Column="0"
+						Padding="0"
+						BackgroundColor="White"
+						Command="{Binding PayOnCommand}"
+						FontFamily="SansProSemiBoldFontFamily"
+						FontSize="20"
+						Text="Pay on"
+						TextColor="Black" />
+
+					<controls:CustomButton
+						Grid.Column="1"
+						Padding="0"
+						BackgroundColor="#1A1C2A"
+						Command="{Binding AddToRoomCommand}"
+						FontFamily="SansProSemiBoldFontFamily"
+						FontSize="20"
+						Text="Add to room" />
+				</Grid>
+			</Frame>
+		</Grid>
+
+		<!--<Grid ColumnSpacing="0" RowSpacing="10">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="60" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="80" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="80" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				FontFamily="SansProRegularFontFamily"
+				FontSize="20"
+				HorizontalTextAlignment="End"
+				MaxLines="1"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="{Binding FoodCartListItemCount}" />
+						<Span Text=" Items" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+
+			<Label
+				Grid.Row="1"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="SansProBoldFontFamily"
+				FontSize="30"
+				HorizontalTextAlignment="Start"
+				MaxLines="1"
+				Text="Cart"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+			<Label
+				Grid.Row="1"
+				Grid.Column="2"
+				Grid.ColumnSpan="1"
+				Margin="0,0,15,0"
+				FontFamily="SansProBoldFontFamily"
+				FontSize="30"
+				HorizontalTextAlignment="End"
+				MaxLines="1"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="$" />
+						<Span Text="{Binding FoodCartListItemTotalPrice}" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+
+			<ScrollView Grid.Row="2" Grid.ColumnSpan="3">
+				<StackLayout Margin="15,0,15,0" BindableLayout.ItemsSource="{Binding FoodCartList}">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate>
+							<Grid ColumnSpacing="20" RowSpacing="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*" />
+									<RowDefinition Height="1" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<ImageButton
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="0,20,0,20"
+									Padding="0"
+									Aspect="AspectFit"
+									BackgroundColor="White"
+									CornerRadius="10"
+									Source="{Binding DishImage}"
+									VerticalOptions="CenterAndExpand" />
+
+								<StackLayout
+									Grid.Row="0"
+									Grid.Column="1"
+									Margin="0,20,0,20"
+									Spacing="5"
+									VerticalOptions="CenterAndExpand">
+									<Label
+										FontFamily="JosefinSansSemiBoldFontFamily"
+										FontSize="20"
+										HorizontalTextAlignment="Start"
+										Text="{Binding DishName}"
+										TextColor="White" />
+
+									<Label
+										FontFamily="JosefinSansRegular"
+										FontSize="18"
+										HorizontalTextAlignment="Start"
+										TextColor="White">
+										<Label.FormattedText>
+											<FormattedString>
+												<Span Text="Price " />
+												<Span Text="$" />
+												<Span Text="{Binding DishPrice}" />
+											</FormattedString>
+										</Label.FormattedText>
+									</Label>
+
+									<Frame
+										Margin="0,5,0,0"
+										Padding="5,0,5,0"
+										BackgroundColor="#EBEBEB"
+										HasShadow="False"
+										HorizontalOptions="StartAndExpand"
+										IsClippedToBounds="True">
+										<Grid>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="30" />
+											</Grid.RowDefinitions>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="25" />
+												<ColumnDefinition Width="25" />
+												<ColumnDefinition Width="25" />
+											</Grid.ColumnDefinitions>
+											<Button
+												Grid.Column="0"
+												Padding="0"
+												BackgroundColor="Transparent"
+												Clicked="OnDecreaseFoodItemCountClicked"
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="25"
+												HorizontalOptions="FillAndExpand"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Minus}"
+												TextColor="Black"
+												VerticalOptions="FillAndExpand" />
+
+											<Label
+												Grid.Column="1"
+												FontFamily="SansProBoldFontFamily"
+												FontSize="20"
+												HorizontalTextAlignment="Center"
+												MaxLines="1"
+												Text="{Binding DishQuantity}"
+												TextColor="Black"
+												VerticalTextAlignment="Center" />
+
+											<Button
+												Grid.Column="2"
+												Padding="0"
+												BackgroundColor="Transparent"
+												Clicked="OnIncreaseFoodItemCountClicked"
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="25"
+												HorizontalOptions="FillAndExpand"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+												TextColor="Black"
+												VerticalOptions="FillAndExpand" />
+										</Grid>
+									</Frame>
+								</StackLayout>
+
+								<BoxView
+									Grid.Row="1"
+									Grid.ColumnSpan="2"
+									BackgroundColor="White"
+									Opacity="0.5" />
+							</Grid>
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+			</ScrollView>
+
+			<Frame
+				Grid.Row="3"
+				Grid.ColumnSpan="3"
+				Margin="15,0,15,0"
+				Padding="0"
+				BackgroundColor="Transparent"
+				CornerRadius="24"
+				HasShadow="False"
+				HeightRequest="50"
+				IsClippedToBounds="True"
+				VerticalOptions="CenterAndExpand">
+				<Grid ColumnSpacing="0">
+					<controls:CustomButton
+						Grid.Column="0"
+						Padding="0"
+						BackgroundColor="White"
+						Command="{Binding PayOnCommand}"
+						FontFamily="SansProSemiBoldFontFamily"
+						FontSize="20"
+						Text="Pay on"
+						TextColor="Black" />
+
+					<controls:CustomButton
+						Grid.Column="1"
+						Padding="0"
+						BackgroundColor="#1A1C2A"
+						Command="{Binding AddToRoomCommand}"
+						FontFamily="SansProSemiBoldFontFamily"
+						FontSize="20"
+						Text="Add to room" />
+				</Grid>
+			</Frame>
+		</Grid>-->
+	</ContentPage.Content>
+</ContentPage>

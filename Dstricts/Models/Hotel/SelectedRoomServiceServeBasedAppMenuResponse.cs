@@ -22,6 +22,12 @@ namespace Dstricts.Models
 		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int Id { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "serve_type")]
+		public int ServeType { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "food_category")]
+		public string FoodCategory { get; set; }
+
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_name")]
 		public string DishName { get; set; }
 

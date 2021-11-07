@@ -3,6 +3,7 @@
 	x:Class="Dstricts.Views.Hotel.SelectedRoomServiceDetailPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
@@ -14,7 +15,7 @@
 				<RowDefinition Height="32" />
 				<RowDefinition />
 				<RowDefinition Height="10" />
-				<RowDefinition Height="44" />
+				<RowDefinition Height="auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="117" />
@@ -347,115 +348,21 @@
 				</StackLayout>
 			</ScrollView>
 
-			<Grid
+			<StackLayout
 				Grid.Row="3"
 				Grid.ColumnSpan="3"
-				ColumnSpacing="5"
-				RowSpacing="0">
-				<Grid.RowDefinitions>
-					<RowDefinition />
-					<RowDefinition Height="20" />
-				</Grid.RowDefinitions>
-				<Label
-					Grid.Row="0"
-					Grid.Column="0"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="1"
-					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					MaxLines="1"
-					Text="Menu"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="1"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="1"
-					Grid.Column="1"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					MaxLines="1"
-					Text="Book table"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Button
-					Grid.Row="0"
-					Grid.RowSpan="2"
-					Grid.Column="2"
-					Padding="0"
-					BackgroundColor="#6263ED"
-					CornerRadius="22"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HeightRequest="44"
-					HorizontalOptions="CenterAndExpand"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
-					TextColor="White"
-					VerticalOptions="CenterAndExpand"
-					WidthRequest="44" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="3"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="1"
-					Grid.Column="3"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					MaxLines="1"
-					Text="Drop in"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="4"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="1"
-					Grid.Column="4"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					MaxLines="1"
-					Text="Member"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-			</Grid>
+				BackgroundColor="#1A1C2A"
+				HeightRequest="60"
+				IsVisible="{Binding IsProceedToCheckOut}">
+				<controls:CustomButton
+					Margin="40,5,40,5"
+					BackgroundColor="#5663FF"
+					Command="{Binding ProceedToCheckOutCommand}"
+					CornerRadius="10"
+					FontFamily="SansProSemiBoldFontFamily"
+					Text="Proceed to Checkout"
+					TextColor="White" />
+			</StackLayout>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

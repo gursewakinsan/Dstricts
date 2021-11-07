@@ -19,7 +19,6 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			imgRecommendation.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
 		}
 	}
 }
