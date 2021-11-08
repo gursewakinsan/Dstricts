@@ -43,6 +43,7 @@
 				Margin="0,0,15,0"
 				Padding="0"
 				BackgroundColor="#342B20"
+				Clicked="Button_Clicked"
 				CornerRadius="8"
 				FontAttributes="Bold"
 				FontFamily="PoppinsSemiBoldFontFamily"

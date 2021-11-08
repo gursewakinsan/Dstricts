@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -178,6 +180,11 @@ namespace Dstricts.Views
 			menuInfos.Add(new MenuInfo() { Name = "Lunch", MenuBg = Color.FromHex("#2A2A31"), ImgWidth = w });
 			menuInfos.Add(new MenuInfo() { Name = "Dinner", MenuBg = Color.FromHex("#2A2A31"), ImgWidth = w });
 			BindableLayout.SetItemsSource(layoutMenuInfos, menuInfos);
+		}
+
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage());
 		}
 	}
 }

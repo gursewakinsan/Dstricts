@@ -2,6 +2,7 @@
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using System.Collections.Generic;
+using Rg.Plugins.Popup.Extensions;
 
 namespace Dstricts.Views.Laundry
 {
@@ -37,6 +38,11 @@ namespace Dstricts.Views.Laundry
 				selected.SelectedRoomServiceBg = Color.FromHex("#6263ED");
 				viewModel.SelectedDryCleaningServeBasedAppMenuCommand.Execute(null);
 			}
+		}
+
+		private void OnDryCleaningItemTapped(object sender, System.EventArgs e)
+		{
+			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage());
 		}
 	}
 }

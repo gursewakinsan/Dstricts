@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+	x:Class="Dstricts.PopupPages.AddLaundryItemToCartPopupPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:pages="http://rotorgames.com">
+	<controls:CustomFrame
+		Padding="20"
+		BackgroundColor="#282732"
+		CornerRadius="30,30,30,30"
+		VerticalOptions="EndAndExpand">
+		<StackLayout HorizontalOptions="CenterAndExpand" Spacing="0">
+			<Label
+				FontAttributes="Bold"
+				FontFamily="PoppinsBoldFontFamily"
+				FontSize="24"
+				HorizontalTextAlignment="Center"
+				MaxLines="1"
+				Text="Shirts"
+				TextColor="White" />
+
+			<Label
+				Margin="0,5,0,4"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="14"
+				HorizontalTextAlignment="Center"
+				MaxLines="1"
+				Opacity="0.7"
+				Text="Please select the number of shirts and"
+				TextColor="White" />
+
+			<Label
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="14"
+				HorizontalTextAlignment="Center"
+				MaxLines="1"
+				Opacity="0.7"
+				Text="submit the order to us."
+				TextColor="White" />
+
+			<Grid
+				Margin="0,40,0,27"
+				ColumnSpacing="25"
+				HorizontalOptions="CenterAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="81" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="68" />
+					<ColumnDefinition Width="83" />
+					<ColumnDefinition Width="68" />
+				</Grid.ColumnDefinitions>
+
+				<Frame
+					Grid.Row="0"
+					Grid.Column="0"
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="White"
+					CornerRadius="16"
+					HeightRequest="53"
+					HorizontalOptions="CenterAndExpand"
+					IsClippedToBounds="True"
+					Opacity="0.2"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="68" />
+
+				<Button
+					Grid.Row="0"
+					Grid.Column="0"
+					Padding="0"
+					BackgroundColor="Transparent"
+					Command="{Binding DecreaseLaundryItemCountCommand}"
+					FontSize="40"
+					HorizontalOptions="CenterAndExpand"
+					Text="-"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand" />
+
+				<Frame
+					Grid.Row="0"
+					Grid.Column="1"
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="#5663FF"
+					CornerRadius="16"
+					HeightRequest="81"
+					HorizontalOptions="CenterAndExpand"
+					IsClippedToBounds="True"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="83" />
+
+				<Label
+					Grid.Row="0"
+					Grid.Column="1"
+					FontAttributes="Bold"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="28"
+					HorizontalOptions="CenterAndExpand"
+					Opacity="0.4"
+					Text="4"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand" />
+
+				<Frame
+					Grid.Row="0"
+					Grid.Column="2"
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="White"
+					CornerRadius="16"
+					HeightRequest="53"
+					HorizontalOptions="CenterAndExpand"
+					IsClippedToBounds="True"
+					Opacity="0.2"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="68" />
+
+				<Button
+					Grid.Row="0"
+					Grid.Column="2"
+					Padding="0"
+					BackgroundColor="Transparent"
+					Command="{Binding IncreaseLaundryItemCountCommand}"
+					FontSize="25"
+					HorizontalOptions="CenterAndExpand"
+					Text="+"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand" />
+
+			</Grid>
+
+			<controls:CustomButton
+				BackgroundColor="#5663FF"
+				Command="{Binding SaveChangesCommand}"
+				CornerRadius="10"
+				FontFamily="SansProSemiBoldFontFamily"
+				HeightRequest="48"
+				Text="Save changes"
+				TextColor="White"
+				WidthRequest="299" />
+		</StackLayout>
+	</controls:CustomFrame>
+</pages:PopupPage>
