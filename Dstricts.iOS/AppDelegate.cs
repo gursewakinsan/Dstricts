@@ -14,6 +14,7 @@ namespace Dstricts.iOS
 				"IndicatorView_Experimental",
 				"Brush_Experimental"
 			});
+			Rg.Plugins.Popup.Popup.Init();
 			global::Xamarin.Forms.Forms.Init();
 			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 			App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;

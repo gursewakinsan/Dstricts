@@ -56,6 +56,9 @@
     <PackageReference Include="AndHUD">
       <Version>1.4.3</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.14</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>19.3.0.43</Version>
     </PackageReference>

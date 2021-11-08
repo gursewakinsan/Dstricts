@@ -34,13 +34,8 @@ namespace Dstricts.ViewModels
 				Id = Helper.Helper.HotelCheckedIn,
 				CategoryId = selectedLaundryService.CategoryId
 			});
-
-			List<Models.SelectedDryCleaningServeBasedAppMenuResponse> ss = new List<Models.SelectedDryCleaningServeBasedAppMenuResponse>(); 
-			for (int i = 0; i < 10; i++)
-			{
-				ss.Add(response[0]);
-			}
-			foreach (var item in ss)
+			
+			foreach (var item in response)
 			{
 				if (item.DishQuantity > 0)
 				{
@@ -57,7 +52,7 @@ namespace Dstricts.ViewModels
 					item.CardBoarderOpacity = 0.2;
 				}
 			}
-			SelectedDryCleaningServeList = new ObservableCollection<Models.SelectedDryCleaningServeBasedAppMenuResponse>(ss);
+			SelectedDryCleaningServeList = new ObservableCollection<Models.SelectedDryCleaningServeBasedAppMenuResponse>(response);
 
 			/*ICartService cartService = new CartService();
 			int cartServiceResponse = await cartService.CartItemCountAsync(new Models.CartItemCountRequest()

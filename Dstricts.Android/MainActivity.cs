@@ -24,6 +24,7 @@ namespace Dstricts.Droid
 				"IndicatorView_Experimental",
 				"Brush_Experimental"
 			});
+			Rg.Plugins.Popup.Popup.Init(this);
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			ZXing.Net.Mobile.Forms.Android.Platform.Init();
@@ -36,6 +37,11 @@ namespace Dstricts.Droid
 			Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+
+		public override void OnBackPressed()
+		{
+			Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
 		}
 	}
 }
