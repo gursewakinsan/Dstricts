@@ -53,6 +53,9 @@
     <EmbeddedResource Update="Views\Hotel\VerifyCheckedInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Laundry\LaundryServicePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -103,9 +106,5 @@
     <EmbeddedResource Include="AppFonts\SansProRegular.ttf" />
     <EmbeddedResource Include="AppFonts\SansProSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\Laundry\" />
-    <Folder Include="Views\Laundry\" />
   </ItemGroup>
 </Project>

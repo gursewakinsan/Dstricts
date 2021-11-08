@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using System.Collections.Generic;
@@ -214,9 +213,6 @@ namespace Dstricts.Views.Hotel
 		{
 			ImageButton imageButton = sender as ImageButton;
 			var selectedRoomService = imageButton.BindingContext as Models.SelectedRoomServiceAppServesResponse;
-			//selectedRoomService.IsSelectedRoomService = true;
-			//selectedRoomService.SelectedRoomServiceBg = Color.FromHex("#6263ED");
-
 			foreach (var item in viewModel.SelectedRoomServiceAppServesInfo)
 			{
 				if (item.ServeType.Equals(selectedRoomService.ServeType))
@@ -231,6 +227,26 @@ namespace Dstricts.Views.Hotel
 				}
 			}
 			await Navigation.PushAsync(new SelectedRoomServiceDetailPage(viewModel.SelectedRoomServiceAppServesInfo));
+		}
+
+		private async void OnLaundryServiceImageClicked(object sender, System.EventArgs e)
+		{
+			ImageButton imageButton = sender as ImageButton;
+			var selectedLaundryService = imageButton.BindingContext as Models.SelectedLaundaryCategoriesResponse;
+			foreach (var item in viewModel.LaundryServiceInfo)
+			{
+				if (item.CategoryId.Equals(selectedLaundryService.CategoryId))
+				{
+					item.IsSelectedRoomService = true;
+					item.SelectedRoomServiceBg = Color.FromHex("#6263ED");
+				}
+				else
+				{
+					item.IsSelectedRoomService = false;
+					item.SelectedRoomServiceBg = Color.FromHex("#2A2A31");
+				}
+			}
+			await Navigation.PushAsync(new Laundry.LaundryServicePage(viewModel.LaundryServiceInfo));
 		}
 	}
 }

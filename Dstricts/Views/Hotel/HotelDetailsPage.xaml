@@ -748,6 +748,7 @@
 											Padding="0"
 											Aspect="AspectFill"
 											BackgroundColor="Transparent"
+											Clicked="OnLaundryServiceImageClicked"
 											CornerRadius="10"
 											HeightRequest="{Binding ImgHeight}"
 											HorizontalOptions="Center"

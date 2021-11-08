@@ -16,5 +16,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.SelectedDryCleaningServeBasedAppMenuResponse>> SelectedDryCleaningServeBasedAppMenuAsync(Models.SelectedDryCleaningServeBasedAppMenuRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SelectedDryCleaningServeBasedAppMenuResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedDryCleaningServeBasedAppMenuUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

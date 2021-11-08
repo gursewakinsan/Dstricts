@@ -36,10 +36,6 @@ namespace Dstricts.Models
 			get => selectedRoomServiceBg;
 			set
 			{
-				/*if (IsSelectedRoomService)
-					value = Xamarin.Forms.Color.FromHex("#6263ED");
-				else
-					value = Xamarin.Forms.Color.FromHex("#2A2A31");*/
 				selectedRoomServiceBg = value;
 				OnPropertyChanged("SelectedRoomServiceBg");
 			}
