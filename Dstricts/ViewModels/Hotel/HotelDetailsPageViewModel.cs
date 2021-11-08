@@ -66,6 +66,27 @@ namespace Dstricts.ViewModels
 				IsInhouseFittnessList = false;
 			HotelDetails = response;
 			Helper.Helper.HotelDetails = HotelDetails;
+
+			if (response.IsDryCleaning)
+			{
+				ILaundryService laundryService = new LaundryService();
+				var laundryServiceResponse = await laundryService.SelectedLaundaryCategoriesAsync(new Models.SelectedLaundaryCategoriesRequest()
+				{
+					Id = Helper.Helper.HotelCheckedIn
+				});
+				int deviceWidth = App.ScreenWidth - 56;
+				int w = deviceWidth * 42 / 100;
+				int h = w * 97 / 100;
+
+				foreach (var item in laundryServiceResponse)
+				{
+					item.ImgWidth = w;
+					item.ImgHeight = h;
+				}
+				LaundryServiceInfo = laundryServiceResponse;
+				IsLaundryService = LaundryServiceInfo?.Count > 0 ? true : false;
+			}
+
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -159,6 +180,28 @@ namespace Dstricts.ViewModels
 			{
 				isInhouseFittnessList = value;
 				OnPropertyChanged("IsInhouseFittnessList");
+			}
+		}
+
+		private List<Models.SelectedLaundaryCategoriesResponse> laundryServiceInfo;
+		public List<Models.SelectedLaundaryCategoriesResponse> LaundryServiceInfo
+		{
+			get => laundryServiceInfo;
+			set
+			{
+				laundryServiceInfo = value;
+				OnPropertyChanged("LaundryServiceInfo");
+			}
+		}
+
+		private bool isLaundryService;
+		public bool IsLaundryService
+		{
+			get => isLaundryService;
+			set
+			{
+				isLaundryService = value;
+				OnPropertyChanged("IsLaundryService");
 			}
 		}
 		public string EatAndDrinkText => $"Eat & Drink";

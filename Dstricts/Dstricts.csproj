@@ -104,4 +104,8 @@
     <EmbeddedResource Include="AppFonts\SansProSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Laundry\" />
+    <Folder Include="Views\Laundry\" />
+  </ItemGroup>
 </Project>

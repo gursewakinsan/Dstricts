@@ -723,6 +723,57 @@
 						</StackLayout>
 					</Grid>
 
+					<!--  Start Laundry service  -->
+					<Label
+						Margin="0,53,0,32"
+						FontAttributes="Bold"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="24"
+						HorizontalTextAlignment="Start"
+						IsVisible="{Binding IsLaundryService}"
+						MaxLines="1"
+						Text="Laundromat"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+						<StackLayout BindableLayout.ItemsSource="{Binding LaundryServiceInfo}" Orientation="Horizontal">
+							<BindableLayout.ItemTemplate>
+								<DataTemplate>
+									<StackLayout
+										Margin="0,0,15,0"
+										Spacing="0"
+										WidthRequest="{Binding ImgWidth}">
+										<ImageButton
+											Padding="0"
+											Aspect="AspectFill"
+											BackgroundColor="Transparent"
+											CornerRadius="10"
+											HeightRequest="{Binding ImgHeight}"
+											HorizontalOptions="Center"
+											Source="{Binding ServeImage}"
+											VerticalOptions="Center"
+											WidthRequest="{Binding ImgWidth}" />
+
+										<Label
+											Margin="0,12,0,0"
+											FontAttributes="Bold"
+											FontFamily="PoppinsSemiBoldFontFamily"
+											FontSize="16"
+											HorizontalTextAlignment="Start"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding ServeInfo}"
+											TextColor="White"
+											VerticalTextAlignment="Start" />
+									</StackLayout>
+								</DataTemplate>
+							</BindableLayout.ItemTemplate>
+						</StackLayout>
+					</ScrollView>
+					<!--  End Laundry service  -->
+
+					<!--  Start Room service  -->
 					<Label
 						Margin="0,53,0,32"
 						FontAttributes="Bold"
@@ -773,7 +824,9 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
+					<!--  End Room service  -->
 
+					<!--  Start Eat & Drink  -->
 					<Label
 						x:Name="lblEatDrink"
 						Margin="0,53,0,32"
@@ -820,7 +873,9 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
+					<!--  End Eat & Drink  -->
 
+					<!--  Start Fitness & Spa  -->
 					<Label
 						x:Name="lblFitnessSpa"
 						Margin="0,53,0,32"
@@ -866,6 +921,7 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
+					<!--  End Fitness & Spa  -->
 				</StackLayout>
 			</ScrollView>
 

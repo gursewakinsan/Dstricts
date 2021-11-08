@@ -38,5 +38,8 @@
 		public const string ResturantWorkInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantWorkInfo";
 		public const string ResturantTableAvailableUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantTableAvailable";
 		public const string RequestTableBookingUrl = "https://www.qloudid.com/user/index.php/QloudidApp/requestTableBooking";
+
+		//Laundary
+		public const string SelectedLaundaryCategoriesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedLaundaryCategories";
 	}
 }

@@ -4,6 +4,10 @@ namespace Dstricts.Models
 {
 	public class HotelCompleteInfoResponse
 	{
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "dry_cleaning")]
+		public bool IsDryCleaning { get; set; }
+
 		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_description")]
 		public string HotelDescription { get; set; }
 
