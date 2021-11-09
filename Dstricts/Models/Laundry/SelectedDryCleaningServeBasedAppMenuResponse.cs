@@ -22,29 +22,16 @@ namespace Dstricts.Models
 		public int ServeType { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_quantity")]
-		public int DishQuantity { get; set; }
-
-		/*public int dishQuantity;
+		public int dishQuantity;
 		public int DishQuantity 
 		{
 			get => dishQuantity;
 			set
 			{
 				dishQuantity = value;
-				if (dishQuantity > 0)
-				{
-					DishQuantityBg = Color.FromHex("#223426");
-					DishQuantityText = Color.FromHex("#4FD471");
-					CardBoarder = Color.FromHex("#6F70FB");
-				}
-				else
-				{
-					DishQuantityBg = Color.FromHex("#242A37");
-					DishQuantityText = Color.FromHex("#6F70FB");
-					CardBoarder = Color.FromHex("#E4E4E4");
-				}
+				OnPropertyChanged("DishQuantity");
 			}
-		}*/
+		}
 
 		private Color dishQuantityBg;
 		public Color DishQuantityBg

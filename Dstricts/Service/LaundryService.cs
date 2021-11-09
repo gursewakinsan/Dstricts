@@ -25,5 +25,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<int> AddDryCleaningItemToCartAsync(Models.AddDryCleaningItemToCartRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddDryCleaningItemToCartUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

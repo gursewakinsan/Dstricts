@@ -11,7 +11,7 @@ namespace Dstricts
 		{
 			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTIzNzQzQDMxMzkyZTMzMmUzMFBIaTRVTHZ6RSt5ZFl4ZzFkTkhHSWcwTGFnQ0JkUjg4TEJNcnVhSUVZeUE9");
 			InitializeComponent();
-			MainPage = new Views.TestPage();
+			MainPage = new Views.LoginPage();
 		}
 
 		#region Login With Session For iOS.

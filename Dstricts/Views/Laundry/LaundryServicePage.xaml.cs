@@ -42,7 +42,9 @@ namespace Dstricts.Views.Laundry
 
 		private void OnDryCleaningItemTapped(object sender, System.EventArgs e)
 		{
-			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage());
+			Grid grid = sender as Grid;
+			Models.SelectedDryCleaningServeBasedAppMenuResponse selectedDryCleaning = grid.BindingContext as Models.SelectedDryCleaningServeBasedAppMenuResponse;
+			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage(selectedDryCleaning));
 		}
 	}
 }

@@ -184,7 +184,7 @@ namespace Dstricts.Views
 
 		private void Button_Clicked(object sender, EventArgs e)
 		{
-			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage());
+			//Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage());
 		}
 	}
 }

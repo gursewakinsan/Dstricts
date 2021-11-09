@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms.Xaml;
+using Dstricts.ViewModels;
 using Rg.Plugins.Popup.Pages;
 
 namespace Dstricts.PopupPages
@@ -6,9 +7,13 @@ namespace Dstricts.PopupPages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddLaundryItemToCartPopupPage : PopupPage
 	{
-		public AddLaundryItemToCartPopupPage()
+		AddLaundryItemToCartPopupPageViewModel viewModel;
+		public AddLaundryItemToCartPopupPage(Models.SelectedDryCleaningServeBasedAppMenuResponse selectedDryCleaningServe)
 		{
 			InitializeComponent();
+			BindingContext = viewModel = new AddLaundryItemToCartPopupPageViewModel(this.Navigation);
+			viewModel.SelectedDryCleaningService = selectedDryCleaningServe;
+			viewModel.DishQuantity = selectedDryCleaningServe.DishQuantity;
 		}
 	}
 }

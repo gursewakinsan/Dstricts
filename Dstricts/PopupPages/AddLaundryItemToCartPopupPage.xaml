@@ -17,7 +17,7 @@
 				FontSize="24"
 				HorizontalTextAlignment="Center"
 				MaxLines="1"
-				Text="Shirts"
+				Text="{Binding SelectedDryCleaningService.DishName}"
 				TextColor="White" />
 
 			<Label
@@ -99,7 +99,7 @@
 					FontSize="28"
 					HorizontalOptions="CenterAndExpand"
 					Opacity="0.4"
-					Text="4"
+					Text="{Binding DishQuantity}"
 					TextColor="White"
 					VerticalOptions="CenterAndExpand" />
 
@@ -128,12 +128,11 @@
 					Text="+"
 					TextColor="White"
 					VerticalOptions="CenterAndExpand" />
-
 			</Grid>
 
 			<controls:CustomButton
 				BackgroundColor="#5663FF"
-				Command="{Binding SaveChangesCommand}"
+				Command="{Binding AddDryCleaningItemToCartCommand}"
 				CornerRadius="10"
 				FontFamily="SansProSemiBoldFontFamily"
 				HeightRequest="48"

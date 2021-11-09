@@ -42,5 +42,6 @@
 		//Laundary
 		public const string SelectedLaundaryCategoriesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedLaundaryCategories";
 		public const string SelectedDryCleaningServeBasedAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedDrycleaningServeBasedAppMenu";
+		public const string AddDryCleaningItemToCartUrl = "https://dstricts.com/user/index.php/DstrictsApp/addDrycleaningItemToCart";
 	}
 }

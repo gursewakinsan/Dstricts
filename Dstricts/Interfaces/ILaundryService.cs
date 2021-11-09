@@ -7,5 +7,6 @@ namespace Dstricts.Interfaces
 	{
 		Task<List<Models.SelectedLaundaryCategoriesResponse>> SelectedLaundaryCategoriesAsync(Models.SelectedLaundaryCategoriesRequest request);
 		Task<List<Models.SelectedDryCleaningServeBasedAppMenuResponse>> SelectedDryCleaningServeBasedAppMenuAsync(Models.SelectedDryCleaningServeBasedAppMenuRequest request);
+		Task<int> AddDryCleaningItemToCartAsync(Models.AddDryCleaningItemToCartRequest request);
 	}
 }
