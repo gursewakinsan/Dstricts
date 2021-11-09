@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using System.Collections.Generic;
@@ -44,7 +45,17 @@ namespace Dstricts.Views.Laundry
 		{
 			Grid grid = sender as Grid;
 			Models.SelectedDryCleaningServeBasedAppMenuResponse selectedDryCleaning = grid.BindingContext as Models.SelectedDryCleaningServeBasedAppMenuResponse;
+			selectedDryCleaning.CallBack = DryCleaningCallBack;
 			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage(selectedDryCleaning));
+		}
+
+		private void DryCleaningCallBack()
+		{
+			var service = viewModel.SelectedDryCleaningServeList.FirstOrDefault(x => x.DishQuantity != 0);
+			if (service == null)
+				viewModel.IsCheckOut = false;
+			else
+				viewModel.IsCheckOut = true;
 		}
 	}
 }

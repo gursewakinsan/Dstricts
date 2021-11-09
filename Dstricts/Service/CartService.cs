@@ -61,5 +61,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<int> UpdateCartItemCountInfoAsync(Models.UpdateCartItemCountInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.UpdateCartItemCountInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

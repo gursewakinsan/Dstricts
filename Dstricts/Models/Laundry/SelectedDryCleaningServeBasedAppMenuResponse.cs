@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -76,7 +77,8 @@ namespace Dstricts.Models
 				OnPropertyChanged("CardBoarderOpacity");
 			}
 		}
-		
+
+		public Action CallBack { get; set; }
 
 		#region On Property Changed.
 		public event PropertyChangedEventHandler PropertyChanged;

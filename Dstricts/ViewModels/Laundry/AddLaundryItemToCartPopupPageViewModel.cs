@@ -81,6 +81,7 @@ namespace Dstricts.ViewModels
 					SelectedDryCleaningService.CardBoarder = Color.FromHex("#E4E4E4");
 					SelectedDryCleaningService.CardBoarderOpacity = 0.2;
 				}
+				SelectedDryCleaningService.CallBack.Invoke();
 				DependencyService.Get<IProgressBar>().Hide();
 			}
 			await Navigation.PopPopupAsync();
