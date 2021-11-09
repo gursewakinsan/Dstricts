@@ -116,7 +116,7 @@
 							<DataTemplate>
 								<Grid
 									Margin="0,0,0,30"
-									ColumnSpacing="30"
+									ColumnSpacing="15"
 									RowSpacing="0">
 									<Grid.RowDefinitions>
 										<RowDefinition Height="124" />
@@ -192,14 +192,11 @@
 											Text="{Binding DishDetail}"
 											TextColor="White" />
 
-										<Grid
-											ColumnSpacing="10"
-											HorizontalOptions="StartAndExpand"
-											VerticalOptions="EndAndExpand">
+										<Grid ColumnSpacing="5" VerticalOptions="EndAndExpand">
 											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="57" />
+												<ColumnDefinition Width="54" />
 												<ColumnDefinition Width="51" />
-												<ColumnDefinition Width="57" />
+												<ColumnDefinition Width="54" />
 											</Grid.ColumnDefinitions>
 											<Grid.RowDefinitions>
 												<RowDefinition Height="43" />
@@ -216,7 +213,7 @@
 												IsClippedToBounds="True"
 												Opacity="0.2"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="57" />
+												WidthRequest="54" />
 
 											<Button
 												Grid.Row="0"
@@ -230,7 +227,7 @@
 												Text="-"
 												TextColor="White"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="57" />
+												WidthRequest="54" />
 
 											<Frame
 												Grid.Row="0"
@@ -265,7 +262,7 @@
 												IsClippedToBounds="True"
 												Opacity="0.2"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="57" />
+												WidthRequest="54" />
 
 											<Button
 												Grid.Row="0"
@@ -279,7 +276,7 @@
 												Text="+"
 												TextColor="White"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="57" />
+												WidthRequest="54" />
 										</Grid>
 									</StackLayout>
 								</Grid>

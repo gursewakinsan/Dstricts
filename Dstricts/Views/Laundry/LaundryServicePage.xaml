@@ -146,7 +146,7 @@
 									ColumnSpacing="15"
 									HeightRequest="80">
 									<Grid.GestureRecognizers>
-										<TapGestureRecognizer Tapped="OnDryCleaningItemTapped" />
+										<TapGestureRecognizer Tapped="OnGridDryCleaningItemTapped" />
 									</Grid.GestureRecognizers>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="40" />
@@ -166,7 +166,7 @@
 										Opacity="{Binding CardBoarderOpacity}"
 										VerticalOptions="StartAndExpand">
 										<Frame.GestureRecognizers>
-											<TapGestureRecognizer Tapped="OnDryCleaningItemTapped" />
+											<TapGestureRecognizer Tapped="OnFrameDryCleaningItemTapped" />
 										</Frame.GestureRecognizers>
 									</Frame>
 

@@ -41,12 +41,12 @@ namespace Dstricts.Views.Laundry
 			}
 		}
 
-		private void OnDryCleaningItemTapped(object sender, System.EventArgs e)
+		private async void OnGridDryCleaningItemTapped(object sender, System.EventArgs e)
 		{
 			Grid grid = sender as Grid;
 			Models.SelectedDryCleaningServeBasedAppMenuResponse selectedDryCleaning = grid.BindingContext as Models.SelectedDryCleaningServeBasedAppMenuResponse;
 			selectedDryCleaning.CallBack = DryCleaningCallBack;
-			Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage(selectedDryCleaning));
+			await Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage(selectedDryCleaning));
 		}
 
 		private void DryCleaningCallBack()
@@ -56,6 +56,14 @@ namespace Dstricts.Views.Laundry
 				viewModel.IsCheckOut = false;
 			else
 				viewModel.IsCheckOut = true;
+		}
+
+		private async void OnFrameDryCleaningItemTapped(object sender, System.EventArgs e)
+		{
+			Frame frame = sender as Frame;
+			Models.SelectedDryCleaningServeBasedAppMenuResponse selectedDryCleaning = frame.BindingContext as Models.SelectedDryCleaningServeBasedAppMenuResponse;
+			selectedDryCleaning.CallBack = DryCleaningCallBack;
+			await Navigation.PushPopupAsync(new PopupPages.AddLaundryItemToCartPopupPage(selectedDryCleaning));
 		}
 	}
 }
