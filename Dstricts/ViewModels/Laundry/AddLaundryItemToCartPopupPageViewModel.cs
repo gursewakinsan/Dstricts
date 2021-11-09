@@ -66,6 +66,21 @@ namespace Dstricts.ViewModels
 					ServiceType = SelectedDryCleaningService.ServeType
 				};
 				await service.AddDryCleaningItemToCartAsync(dryCleaningItem);
+
+				if (SelectedDryCleaningService.DishQuantity > 0)
+				{
+					SelectedDryCleaningService.DishQuantityBg = Color.FromHex("#223426");
+					SelectedDryCleaningService.DishQuantityText = Color.FromHex("#4FD471");
+					SelectedDryCleaningService.CardBoarder = Color.FromHex("#6F70FB");
+					SelectedDryCleaningService.CardBoarderOpacity = 10;
+				}
+				else
+				{
+					SelectedDryCleaningService.DishQuantityBg = Color.FromHex("#242A37");
+					SelectedDryCleaningService.DishQuantityText = Color.FromHex("#6F70FB");
+					SelectedDryCleaningService.CardBoarder = Color.FromHex("#E4E4E4");
+					SelectedDryCleaningService.CardBoarderOpacity = 0.2;
+				}
 				DependencyService.Get<IProgressBar>().Hide();
 			}
 			await Navigation.PopPopupAsync();

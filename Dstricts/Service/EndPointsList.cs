@@ -20,6 +20,8 @@
 		public const string CartInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartInfo";
 		public const string UpdateCartItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/UpdatecartItemCount";
 		public const string AddFoodToCartUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addFoodToCart";
+		public const string CartItemCountInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartItemCountInfo";
+		public const string CartInfoListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartInfoList";
 
 		//Queue
 		public const string AvalibleQueueOnTheLocationUrl = "https://www.qloudid.com/user/index.php/QloudidApp/avalibleQueueOnTheLocation";

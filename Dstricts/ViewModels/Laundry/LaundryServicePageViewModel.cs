@@ -54,13 +54,26 @@ namespace Dstricts.ViewModels
 			}
 			SelectedDryCleaningServeList = new ObservableCollection<Models.SelectedDryCleaningServeBasedAppMenuResponse>(response);
 
-			/*ICartService cartService = new CartService();
-			int cartServiceResponse = await cartService.CartItemCountAsync(new Models.CartItemCountRequest()
+			ICartService cartService = new CartService();
+			int cartServiceResponse = await cartService.CartItemCountInfoAsync(new Models.CartItemCountInfoRequest()
 			{
-				CheckId = Helper.Helper.HotelCheckedIn
+				CheckId = Helper.Helper.HotelCheckedIn,
+				ServiceType = 4
 			});
-			IsProceedToCheckOut = cartServiceResponse > 0 ? true : false;*/
+			IsCheckOut = cartServiceResponse > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Check Out Laundry Service Command.
+		private ICommand checkOutLaundryServiceCommand;
+		public ICommand CheckOutLaundryServiceCommand
+		{
+			get => checkOutLaundryServiceCommand ?? (checkOutLaundryServiceCommand = new Command(async () => await ExecuteCheckOutLaundryServiceCommand()));
+		}
+		private async Task ExecuteCheckOutLaundryServiceCommand()
+		{
+			await Navigation.PushAsync(new Views.Laundry.LaundryServiceCheckOutToPayPage());
 		}
 		#endregion
 
@@ -95,6 +108,17 @@ namespace Dstricts.ViewModels
 			{
 				hotelDetails = value;
 				OnPropertyChanged("HotelDetails");
+			}
+		}
+
+		private bool isCheckOut;
+		public bool IsCheckOut
+		{
+			get => isCheckOut;
+			set
+			{
+				isCheckOut = value;
+				OnPropertyChanged("IsCheckOut");
 			}
 		}
 		#endregion

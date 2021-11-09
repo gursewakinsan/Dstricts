@@ -9,5 +9,7 @@ namespace Dstricts.Interfaces
 		Task<int> CartItemCountAsync(Models.CartItemCountRequest request);
 		Task<List<Models.CartInfoResponse>> CartInfoAsync(Models.CartInfoRequest request);
 		Task<int> UpdateCartItemCountAsync(Models.UpdateCartItemCountRequest request);
+		Task<int> CartItemCountInfoAsync(Models.CartItemCountInfoRequest request);
+		Task<List<Models.CartInfoListResponse>> CartInfoListAsync(Models.CartInfoListRequest request);
 	}
 }

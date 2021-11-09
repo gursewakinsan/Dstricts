@@ -246,7 +246,7 @@
 				CornerRadius="10"
 				FontFamily="SansProSemiBoldFontFamily"
 				HeightRequest="48"
-				IsVisible="False"
+				IsVisible="{Binding IsCheckOut}"
 				Text="Checkout"
 				TextColor="White"
 				VerticalOptions="EndAndExpand" />
