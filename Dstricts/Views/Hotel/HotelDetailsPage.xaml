@@ -587,7 +587,11 @@
 									Aspect="AspectFill"
 									BackgroundColor="Black"
 									HeightRequest="145"
-									WidthRequest="152" />
+									WidthRequest="152">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
+									</Image.GestureRecognizers>
+								</Image>
 							</Frame>
 							<Label
 								Margin="0,12,0,0"
@@ -628,7 +632,11 @@
 									Aspect="AspectFill"
 									BackgroundColor="Black"
 									HeightRequest="237"
-									WidthRequest="152" />
+									WidthRequest="152">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="3" />
+									</Image.GestureRecognizers>
+								</Image>
 							</Frame>
 
 							<Label
@@ -675,7 +683,11 @@
 									Aspect="AspectFill"
 									BackgroundColor="Black"
 									HeightRequest="237"
-									WidthRequest="152" />
+									WidthRequest="152">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="1" />
+									</Image.GestureRecognizers>
+								</Image>
 							</Frame>
 
 							<Label
@@ -717,7 +729,11 @@
 									Aspect="AspectFill"
 									BackgroundColor="Black"
 									HeightRequest="145"
-									WidthRequest="152" />
+									WidthRequest="152">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="2" />
+									</Image.GestureRecognizers>
+								</Image>
 							</Frame>
 							<Label
 								Margin="0,12,0,0"

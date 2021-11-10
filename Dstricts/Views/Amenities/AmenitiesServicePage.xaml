@@ -2,13 +2,247 @@
 <ContentPage
 	x:Class="Dstricts.Views.Amenities.AmenitiesServicePage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
-		<StackLayout>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+				<RowDefinition Height="10" />
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
+
 			<Label
-				HorizontalOptions="CenterAndExpand"
-				Text="Welcome to Xamarin.Forms!"
-				VerticalOptions="CenterAndExpand" />
-		</StackLayout>
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,10,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				IsVisible="False"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsVertical}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Padding="28,20,28,0"
+				Spacing="0"
+				VerticalOptions="StartAndExpand">
+				<Label
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					MaxLines="1"
+					Opacity="0.5"
+					Text="{Binding HotelDetails.HotelName}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Label
+					Margin="0,4,0,0"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Guest services"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<BoxView
+					Margin="0,28,0,28"
+					BackgroundColor="White"
+					HeightRequest="1"
+					Opacity="0.2" />
+
+				<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+					<StackLayout BindableLayout.ItemsSource="{Binding GuestServicesList}" Orientation="Horizontal">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Button
+									Margin="0,0,10,0"
+									BackgroundColor="{Binding SelectedServiceBg}"
+									Clicked="OnGuestServiceClicked"
+									CornerRadius="12"
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="12"
+									HeightRequest="36"
+									HorizontalOptions="Start"
+									Text="{Binding ServiceName}"
+									TextColor="White" />
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
+
+				<Label
+					Margin="0,32,0,23"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Amenity"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+					<StackLayout BindableLayout.ItemsSource="{Binding AmenitiesList}" Orientation="Vertical">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Grid
+									Margin="0,0,0,20"
+									Padding="20,0,20,0"
+									ColumnSpacing="15"
+									HeightRequest="80">
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnGridAmenityItemTapped" />
+									</Grid.GestureRecognizers>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="40" />
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="60" />
+									</Grid.ColumnDefinitions>
+									<Frame
+										Grid.Row="0"
+										Grid.ColumnSpan="3"
+										Margin="-20,0,-20,0"
+										BackgroundColor="Transparent"
+										BorderColor="{Binding CardBoarder}"
+										CornerRadius="16"
+										HasShadow="False"
+										HeightRequest="80"
+										IsClippedToBounds="True"
+										Opacity="{Binding CardBoarderOpacity}"
+										VerticalOptions="StartAndExpand">
+										<Frame.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnFrameAmenityItemTapped" />
+										</Frame.GestureRecognizers>
+									</Frame>
+
+									<Button
+										Grid.Row="0"
+										Grid.Column="0"
+										Padding="0"
+										BackgroundColor="{Binding QuantityBg}"
+										CornerRadius="20"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="18"
+										HeightRequest="40"
+										HorizontalOptions="CenterAndExpand"
+										Text="{Binding Quantity}"
+										TextColor="{Binding QuantityText}"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="40" />
+
+									<Label
+										Grid.Row="0"
+										Grid.Column="1"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="18"
+										HorizontalTextAlignment="Start"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="{Binding AmenityName}"
+										TextColor="White"
+										VerticalTextAlignment="Center" />
+
+									<StackLayout
+										Grid.Row="0"
+										Grid.Column="2"
+										HorizontalOptions="EndAndExpand"
+										Spacing="2"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsSemiBoldFontFamily"
+											FontSize="18"
+											HorizontalTextAlignment="Center"
+											MaxLines="1"
+											Text="$0"
+											TextColor="White"
+											VerticalTextAlignment="Center" />
+
+										<Label
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="14"
+											HorizontalTextAlignment="Center"
+											MaxLines="1"
+											Opacity="0.5"
+											Text="A peice"
+											TextColor="White"
+											VerticalTextAlignment="Center" />
+									</StackLayout>
+								</Grid>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
+			</StackLayout>
+
+			<controls:CustomButton
+				Grid.Row="3"
+				Grid.ColumnSpan="3"
+				Margin="40,5,40,5"
+				BackgroundColor="#5663FF"
+				Command="{Binding CheckOutAmenityServiceCommand}"
+				CornerRadius="10"
+				FontFamily="SansProSemiBoldFontFamily"
+				HeightRequest="48"
+				IsVisible="{Binding IsCheckOut}"
+				Text="Checkout"
+				TextColor="White"
+				VerticalOptions="EndAndExpand" />
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

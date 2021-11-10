@@ -4,6 +4,7 @@ using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
@@ -14,6 +15,44 @@ namespace Dstricts.ViewModels
 		public AmenitiesServicePageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+			GuestServicesList = new List<Models.GuestServices>();
+			GuestServicesList.Add(new Models.GuestServices() { Id = 0, ServiceName = "Room" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 1, ServiceName = "Bed" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 2, ServiceName = "Bathroom" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 3, ServiceName = "Media" });
+		}
+		#endregion
+
+		#region Get App Amenities Command.
+		private ICommand getAppAmenitiesCommand;
+		public ICommand GetAppAmenitiesCommand
+		{
+			get => getAppAmenitiesCommand ?? (getAppAmenitiesCommand = new Command(() => ExecuteGetAppAmenitiesCommand()));
+		}
+		private void ExecuteGetAppAmenitiesCommand()
+		{
+			foreach (var guestServices in GuestServicesList)
+			{
+				if (guestServices.Id == SelectedGuestServicesId)
+					guestServices.SelectedServiceBg = Color.FromHex("#6263ED");
+				else
+					guestServices.SelectedServiceBg = Color.FromHex("#2A2A31");
+			}
+			switch (SelectedGuestServicesId)
+			{
+				case 0:
+					HotelRoomAppAmenitiesCommand.Execute(null);
+					break;
+				case 1:
+					HotelBedAppAmenitiesCommand.Execute(null);
+					break;
+				case 2:
+					HotelBathroomAppAmenitiesCommand.Execute(null);
+					break;
+				case 3:
+					HotelMediaAppAmenitiesCommand.Execute(null);
+					break;
+			}
 		}
 		#endregion
 
@@ -200,7 +239,29 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("AmenitiesList");
 			}
 		}
-		
+
+		private List<Models.GuestServices> guestServicesList;
+		public List<Models.GuestServices> GuestServicesList
+		{
+			get => guestServicesList;
+			set
+			{
+				guestServicesList = value;
+				OnPropertyChanged("GuestServicesList");
+			}
+		}
+
+		private int selectedGuestServicesId;
+		public int SelectedGuestServicesId
+		{
+			get => selectedGuestServicesId;
+			set
+			{
+				selectedGuestServicesId = value;
+				OnPropertyChanged("SelectedGuestServicesId");
+			}
+		}
+
 		private Models.HotelCompleteInfoResponse hotelDetails = Helper.Helper.HotelDetails;
 		public Models.HotelCompleteInfoResponse HotelDetails
 		{

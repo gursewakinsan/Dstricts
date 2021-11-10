@@ -168,6 +168,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Selected Guest Service Command.
+		private ICommand selectedGuestServiceCommand;
+		public ICommand SelectedGuestServiceCommand
+		{
+			get => selectedGuestServiceCommand ?? (selectedGuestServiceCommand = new Command<string>(async (id) => await ExecuteSelectedGuestServiceCommand(id)));
+		}
+		private async Task ExecuteSelectedGuestServiceCommand(string id)
+		{
+			await Navigation.PushAsync(new Views.Amenities.AmenitiesServicePage(Convert.ToInt32(id)));
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
 		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo
