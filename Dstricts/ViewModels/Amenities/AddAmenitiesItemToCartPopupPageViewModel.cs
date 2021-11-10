@@ -41,50 +41,47 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Add Dry Cleaning Item To Cart Command.
-		private ICommand addDryCleaningItemToCartCommand;
-		public ICommand AddDryCleaningItemToCartCommand
+		#region Add Amenities Item To Cart Command.
+		private ICommand addAmenitiesItemToCartCommand;
+		public ICommand AddAmenitiesItemToCartCommand
 		{
-			get => addDryCleaningItemToCartCommand ?? (addDryCleaningItemToCartCommand = new Command(async () => await ExecuteAddDryCleaningItemToCartCommand()));
+			get => addAmenitiesItemToCartCommand ?? (addAmenitiesItemToCartCommand = new Command(async () => await ExecuteAddAmenitiesItemToCartCommand()));
 		}
-		private async Task ExecuteAddDryCleaningItemToCartCommand()
+		private async Task ExecuteAddAmenitiesItemToCartCommand()
 		{
-			/*if (SelectedDryCleaningService.DishQuantity != DishQuantity)
+			if (SelectedAmenitiesService.Quantity != Quantity)
 			{
-				SelectedDryCleaningService.DishQuantity = DishQuantity;
+				SelectedAmenitiesService.Quantity = Quantity;
 				DependencyService.Get<IProgressBar>().Show();
-				ILaundryService service = new LaundryService();
-				Models.AddDryCleaningItemToCartRequest dryCleaningItem = new Models.AddDryCleaningItemToCartRequest()
+				IAmenitiesService service = new AmenitiesService();
+				Models.OrderHotelAppAmenityRequest addAmenities = new Models.OrderHotelAppAmenityRequest()
 				{
+					AId = SelectedAmenitiesService.Enc,
+					AName = SelectedAmenitiesService.AmenityName,
+					Quantity = SelectedAmenitiesService.Quantity,
+					UserId = Helper.Helper.LoggedInUserId,
 					CheckId = Helper.Helper.HotelCheckedIn,
-					ItemId = SelectedDryCleaningService.Id,
-					DishName = SelectedDryCleaningService.DishName,
-					DishDetail = SelectedDryCleaningService.DishDetail,
-					DishImage = string.Empty,
-					DishPrice = SelectedDryCleaningService.DishPrice,
-					Quantity = SelectedDryCleaningService.DishQuantity,
-					ServiceType = SelectedDryCleaningService.ServeType
 				};
-				await service.AddDryCleaningItemToCartAsync(dryCleaningItem);
+				await service.OrderHotelAppAmenityAsync(addAmenities);
 
-				if (SelectedDryCleaningService.DishQuantity > 0)
+				if (SelectedAmenitiesService.Quantity > 0)
 				{
-					SelectedDryCleaningService.DishQuantityBg = Color.FromHex("#223426");
-					SelectedDryCleaningService.DishQuantityText = Color.FromHex("#4FD471");
-					SelectedDryCleaningService.CardBoarder = Color.FromHex("#6F70FB");
-					SelectedDryCleaningService.CardBoarderOpacity = 10;
+					SelectedAmenitiesService.QuantityBg = Color.FromHex("#223426");
+					SelectedAmenitiesService.QuantityText = Color.FromHex("#4FD471");
+					SelectedAmenitiesService.CardBoarder = Color.FromHex("#6F70FB");
+					SelectedAmenitiesService.CardBoarderOpacity = 10;
 				}
 				else
 				{
-					SelectedDryCleaningService.DishQuantityBg = Color.FromHex("#242A37");
-					SelectedDryCleaningService.DishQuantityText = Color.FromHex("#6F70FB");
-					SelectedDryCleaningService.CardBoarder = Color.FromHex("#E4E4E4");
-					SelectedDryCleaningService.CardBoarderOpacity = 0.2;
+					SelectedAmenitiesService.QuantityBg = Color.FromHex("#242A37");
+					SelectedAmenitiesService.QuantityText = Color.FromHex("#6F70FB");
+					SelectedAmenitiesService.CardBoarder = Color.FromHex("#E4E4E4");
+					SelectedAmenitiesService.CardBoarderOpacity = 0.2;
 				}
-				SelectedDryCleaningService.CallBack.Invoke();
+				SelectedAmenitiesService.CallBack.Invoke();
 				DependencyService.Get<IProgressBar>().Hide();
 			}
-			await Navigation.PopPopupAsync();*/
+			await Navigation.PopPopupAsync();
 		}
 		#endregion
 
