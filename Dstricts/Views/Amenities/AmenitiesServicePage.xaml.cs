@@ -33,14 +33,29 @@ namespace Dstricts.Views.Amenities
 			viewModel.GetAppAmenitiesCommand.Execute(null);
 		}
 
-		private void OnGridAmenityItemTapped(object sender, System.EventArgs e)
+		private async void OnGridAmenityItemTapped(object sender, System.EventArgs e)
 		{
-
+			Grid grid = sender as Grid;
+			Models.AmenitiesResponse selectedAmenities = grid.BindingContext as Models.AmenitiesResponse;
+			selectedAmenities.CallBack = AmenitiesCallBack;
+			await Navigation.PushPopupAsync(new PopupPages.AddAmenitiesItemToCartPopupPage(selectedAmenities));
 		}
 
-		private void OnFrameAmenityItemTapped(object sender, System.EventArgs e)
+		private async void OnFrameAmenityItemTapped(object sender, System.EventArgs e)
 		{
+			Frame frame = sender as Frame;
+			Models.AmenitiesResponse selectedAmenities = frame.BindingContext as Models.AmenitiesResponse;
+			selectedAmenities.CallBack = AmenitiesCallBack;
+			await Navigation.PushPopupAsync(new PopupPages.AddAmenitiesItemToCartPopupPage(selectedAmenities));
+		}
 
+		private void AmenitiesCallBack()
+		{
+			var service = viewModel.AmenitiesList.FirstOrDefault(x => x.Quantity != 0);
+			if (service == null)
+				viewModel.IsCheckOut = false;
+			else
+				viewModel.IsCheckOut = true;
 		}
 	}
 }

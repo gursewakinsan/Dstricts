@@ -14,7 +14,7 @@ namespace Dstricts.Models
 		public string AmenityName { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "is_order")]
-		public bool IsOrder { get; set; }
+		public int IsOrder { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "enc")]
 		public string Enc { get; set; }
