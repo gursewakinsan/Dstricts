@@ -46,5 +46,13 @@
 		public const string SelectedLaundaryCategoriesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedLaundaryCategories";
 		public const string SelectedDryCleaningServeBasedAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedDrycleaningServeBasedAppMenu";
 		public const string AddDryCleaningItemToCartUrl = "https://dstricts.com/user/index.php/DstrictsApp/addDrycleaningItemToCart";
+
+		//Amenities
+		public const string HotelRoomAppAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelRoomAppAmenities";
+		public const string HotelBedAppAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelBedAppAmenities";
+		public const string HotelMediaAppAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelMediaAppAmenities";
+		public const string HotelBathroomAppAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelBathroomAppAmenities";
+		public const string CartAmenityItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartAmenityItemCount";
+		public const string OrderHotelAppAmenityUrl = "https://www.qloudid.com/user/index.php/QloudidApp/orderHotelAppAmenity";
 	}
 }

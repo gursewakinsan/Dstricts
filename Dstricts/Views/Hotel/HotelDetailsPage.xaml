@@ -606,8 +606,14 @@
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
 								Opacity="0.5"
-								Text="29 items"
-								TextColor="White" />
+								TextColor="White">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="{Binding RoomAppAmenitiesCount}" />
+										<Span Text=" items" />
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
 
 							<Frame
 								Padding="0"
@@ -642,8 +648,14 @@
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
 								Opacity="0.5"
-								Text="29 items"
-								TextColor="White" />
+								TextColor="White">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="{Binding MediaAppAmenitiesCount}" />
+										<Span Text=" items" />
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
 						</StackLayout>
 
 						<StackLayout
@@ -683,8 +695,14 @@
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
 								Opacity="0.5"
-								Text="29 items"
-								TextColor="White" />
+								TextColor="White">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="{Binding BedAppAmenitiesCount}" />
+										<Span Text=" items" />
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
 
 							<Frame
 								Padding="0"
@@ -718,8 +736,14 @@
 								HorizontalTextAlignment="Start"
 								MaxLines="1"
 								Opacity="0.5"
-								Text="29 items"
-								TextColor="White" />
+								TextColor="White">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="{Binding BathroomAppAmenitiesCount}" />
+										<Span Text=" items" />
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
 						</StackLayout>
 					</Grid>
 

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -67,6 +68,34 @@ namespace Dstricts.ViewModels
 			HotelDetails = response;
 			Helper.Helper.HotelDetails = HotelDetails;
 
+			#region Amenities Service.
+			IAmenitiesService amenitiesService = new AmenitiesService();
+			var roomAppAmenities = await amenitiesService.HotelRoomAppAmenitiesAsync(new Models.AmenitiesRequest()
+			{
+				Id = Helper.Helper.HotelCheckedIn
+			});
+			RoomAppAmenitiesCount = Convert.ToInt32(roomAppAmenities?.Count);
+
+			var bedAppAmenities = await amenitiesService.HotelBedAppAmenitiesAsync(new Models.AmenitiesRequest()
+			{
+				Id = Helper.Helper.HotelCheckedIn
+			});
+			BedAppAmenitiesCount = Convert.ToInt32(bedAppAmenities?.Count);
+
+			var mediaAppAmenities = await amenitiesService.HotelMediaAppAmenitiesAsync(new Models.AmenitiesRequest()
+			{
+				Id = Helper.Helper.HotelCheckedIn
+			});
+			MediaAppAmenitiesCount = Convert.ToInt32(mediaAppAmenities?.Count);
+
+			var bathroomAppAmenities = await amenitiesService.HotelBathroomAppAmenitiesAsync(new Models.AmenitiesRequest()
+			{
+				Id = Helper.Helper.HotelCheckedIn
+			});
+			BathroomAppAmenitiesCount = Convert.ToInt32(bathroomAppAmenities?.Count);
+			#endregion
+
+			#region Laundry Service.
 			if (response.IsDryCleaning)
 			{
 				ILaundryService laundryService = new LaundryService();
@@ -86,6 +115,7 @@ namespace Dstricts.ViewModels
 				LaundryServiceInfo = laundryServiceResponse;
 				IsLaundryService = LaundryServiceInfo?.Count > 0 ? true : false;
 			}
+			#endregion
 
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -202,6 +232,50 @@ namespace Dstricts.ViewModels
 			{
 				isLaundryService = value;
 				OnPropertyChanged("IsLaundryService");
+			}
+		}
+
+		private int roomAppAmenitiesCount;
+		public int RoomAppAmenitiesCount
+		{
+			get => roomAppAmenitiesCount;
+			set
+			{
+				roomAppAmenitiesCount = value;
+				OnPropertyChanged("RoomAppAmenitiesCount");
+			}
+		}
+
+		private int bedAppAmenitiesCount;
+		public int BedAppAmenitiesCount
+		{
+			get => bedAppAmenitiesCount;
+			set
+			{
+				bedAppAmenitiesCount = value;
+				OnPropertyChanged("BedAppAmenitiesCount");
+			}
+		}
+
+		private int mediaAppAmenitiesCount;
+		public int MediaAppAmenitiesCount
+		{
+			get => mediaAppAmenitiesCount;
+			set
+			{
+				mediaAppAmenitiesCount = value;
+				OnPropertyChanged("MediaAppAmenitiesCount");
+			}
+		}
+
+		private int bathroomAppAmenitiesCount;
+		public int BathroomAppAmenitiesCount
+		{
+			get => bathroomAppAmenitiesCount;
+			set
+			{
+				bathroomAppAmenitiesCount = value;
+				OnPropertyChanged("BathroomAppAmenitiesCount");
 			}
 		}
 		public string EatAndDrinkText => $"Eat & Drink";
