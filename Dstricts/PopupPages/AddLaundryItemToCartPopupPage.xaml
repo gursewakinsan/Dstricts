@@ -16,27 +16,20 @@
 				FontFamily="PoppinsBoldFontFamily"
 				FontSize="24"
 				HorizontalTextAlignment="Center"
+				LineBreakMode="TailTruncation"
 				MaxLines="1"
 				Text="{Binding SelectedDryCleaningService.DishName}"
 				TextColor="White" />
 
 			<Label
+				x:Name="lblHeading1"
 				Margin="0,5,0,4"
 				FontFamily="PoppinsRegularFontFamily"
 				FontSize="14"
+				HorizontalOptions="CenterAndExpand"
 				HorizontalTextAlignment="Center"
-				MaxLines="1"
+				LineHeight="1.2"
 				Opacity="0.7"
-				Text="Please select the number of shirts and"
-				TextColor="White" />
-
-			<Label
-				FontFamily="PoppinsRegularFontFamily"
-				FontSize="14"
-				HorizontalTextAlignment="Center"
-				MaxLines="1"
-				Opacity="0.7"
-				Text="submit the order to us."
 				TextColor="White" />
 
 			<Grid

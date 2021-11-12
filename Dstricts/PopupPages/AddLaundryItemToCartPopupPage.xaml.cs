@@ -14,6 +14,7 @@ namespace Dstricts.PopupPages
 			BindingContext = viewModel = new AddLaundryItemToCartPopupPageViewModel(this.Navigation);
 			viewModel.SelectedDryCleaningService = selectedDryCleaningServe;
 			viewModel.DishQuantity = selectedDryCleaningServe.DishQuantity;
+			lblHeading1.Text = $"Please select the number of {selectedDryCleaningServe.DishName} and submit the order to us.";
 		}
 	}
 }

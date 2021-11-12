@@ -15,8 +15,7 @@ namespace Dstricts.PopupPages
 			viewModel.SelectedAmenitiesService = selectedAmenities;
 			if (selectedAmenities.IsOrder == 1)
 			{
-				lblHeading1.Text = "Please select the number of sewing kits and";
-				lblHeading2.Text = "submit the order to us.";
+				lblHeading1.Text = $"Please select the number of {selectedAmenities.AmenityName} the order to us.";
 
 				frameDecreaseAmenities.IsVisible = true;
 				btnDecreaseAmenities.IsVisible = true;
@@ -28,8 +27,7 @@ namespace Dstricts.PopupPages
 			}
 			else
 			{
-				lblHeading1.Text = "Please cofirm the Espresson Maching and";
-				lblHeading2.Text = "submit the order to us.";
+				lblHeading1.Text = $"Please cofirm the {selectedAmenities.AmenityName} and submit the order to us.";
 
 				frameDecreaseAmenities.IsVisible = false;
 				btnDecreaseAmenities.IsVisible = false;

@@ -16,6 +16,7 @@
 				FontFamily="PoppinsBoldFontFamily"
 				FontSize="24"
 				HorizontalTextAlignment="Center"
+				LineBreakMode="TailTruncation"
 				MaxLines="1"
 				Text="{Binding SelectedAmenitiesService.AmenityName}"
 				TextColor="White" />
@@ -25,17 +26,9 @@
 				Margin="0,5,0,4"
 				FontFamily="PoppinsRegularFontFamily"
 				FontSize="14"
+				HorizontalOptions="CenterAndExpand"
 				HorizontalTextAlignment="Center"
-				MaxLines="1"
-				Opacity="0.7"
-				TextColor="White" />
-
-			<Label
-				x:Name="lblHeading2"
-				FontFamily="PoppinsRegularFontFamily"
-				FontSize="14"
-				HorizontalTextAlignment="Center"
-				MaxLines="1"
+				LineHeight="1.2"
 				Opacity="0.7"
 				TextColor="White" />
 
