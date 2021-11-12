@@ -54,5 +54,7 @@
 		public const string HotelBathroomAppAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelBathroomAppAmenities";
 		public const string CartAmenityItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartAmenityItemCount";
 		public const string OrderHotelAppAmenityUrl = "https://www.qloudid.com/user/index.php/QloudidApp/orderHotelAppAmenity";
+		public const string CartAmenityInfoListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartAmenityInfoList";
+		public const string UpdateAmenityCartItemCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/updateAmenitycartItemCount";
 	}
 }

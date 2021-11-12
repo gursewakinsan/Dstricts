@@ -11,5 +11,7 @@ namespace Dstricts.Interfaces
 		Task<List<Models.AmenitiesResponse>> HotelBathroomAppAmenitiesAsync(Models.AmenitiesRequest request);
 		Task<int> CartAmenityItemCountAsync(Models.CartAmenityItemCountRequest request);
 		Task<int> OrderHotelAppAmenityAsync(Models.OrderHotelAppAmenityRequest request);
+		Task<List<Models.CartAmenityInfoListResponse>> CartAmenityInfoListAsync(Models.CartAmenityInfoListRequest request);
+		Task<int> UpdateAmenityCartItemCountAsync(Models.UpdateAmenityCartItemCountRequest request);
 	}
 }

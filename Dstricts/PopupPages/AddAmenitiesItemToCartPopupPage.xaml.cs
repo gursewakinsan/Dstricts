@@ -13,7 +13,7 @@ namespace Dstricts.PopupPages
 			InitializeComponent();
 			BindingContext = viewModel = new AddAmenitiesItemToCartPopupPageViewModel(this.Navigation);
 			viewModel.SelectedAmenitiesService = selectedAmenities;
-			if (selectedAmenities.IsOrder == 2)
+			if (selectedAmenities.IsOrder == 1)
 			{
 				lblHeading1.Text = "Please select the number of sewing kits and";
 				lblHeading2.Text = "submit the order to us.";

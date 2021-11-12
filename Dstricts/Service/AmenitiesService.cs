@@ -61,5 +61,23 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.CartAmenityInfoListResponse>> CartAmenityInfoListAsync(Models.CartAmenityInfoListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.CartAmenityInfoListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CartAmenityInfoListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> UpdateAmenityCartItemCountAsync(Models.UpdateAmenityCartItemCountRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.UpdateAmenityCartItemCountUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

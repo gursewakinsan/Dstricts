@@ -27,7 +27,7 @@ namespace Dstricts.Models
 			set
 			{
 				quantity = value;
-				OnPropertyChanged("DishQuantity");
+				OnPropertyChanged("Quantity");
 			}
 		}
 

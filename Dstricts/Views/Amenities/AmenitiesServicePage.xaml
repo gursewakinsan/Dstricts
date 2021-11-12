@@ -233,7 +233,7 @@
 			<controls:CustomButton
 				Grid.Row="3"
 				Grid.ColumnSpan="3"
-				Margin="40,5,40,5"
+				Margin="28,0,28,5"
 				BackgroundColor="#5663FF"
 				Command="{Binding CheckOutAmenityServiceCommand}"
 				CornerRadius="10"

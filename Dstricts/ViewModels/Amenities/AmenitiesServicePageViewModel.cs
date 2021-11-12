@@ -228,6 +228,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Check Out Amenity Service Command.
+		private ICommand checkOutAmenityServiceCommand;
+		public ICommand CheckOutAmenityServiceCommand
+		{
+			get => checkOutAmenityServiceCommand ?? (checkOutAmenityServiceCommand = new Command(async () => await ExecuteCheckOutAmenityServiceCommand()));
+		}
+		private async Task ExecuteCheckOutAmenityServiceCommand()
+		{
+			await Navigation.PushAsync(new Views.Amenities.AmenitiesServiceCheckOutToPayPage());
+		}
+		#endregion
+
 		#region Properties.
 		private ObservableCollection<Models.AmenitiesResponse> amenitiesList;
 		public ObservableCollection<Models.AmenitiesResponse> AmenitiesList
