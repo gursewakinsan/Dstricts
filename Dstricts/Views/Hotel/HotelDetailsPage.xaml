@@ -821,6 +821,7 @@
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="24"
 						HorizontalTextAlignment="Start"
+						IsVisible="{Binding IsRoomService}"
 						MaxLines="1"
 						Text="Room service"
 						TextColor="White"

@@ -164,6 +164,7 @@ namespace Dstricts.ViewModels
 				item.ImgHeight = h;
 			}
 			SelectedRoomServiceAppServesInfo = new List<Models.SelectedRoomServiceAppServesResponse>(response);
+			IsRoomService = SelectedRoomServiceAppServesInfo?.Count > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -244,6 +245,18 @@ namespace Dstricts.ViewModels
 			{
 				isLaundryService = value;
 				OnPropertyChanged("IsLaundryService");
+			}
+		}
+
+
+		private bool isRoomService;
+		public bool IsRoomService
+		{
+			get => isRoomService;
+			set
+			{
+				isRoomService = value;
+				OnPropertyChanged("IsRoomService");
 			}
 		}
 
