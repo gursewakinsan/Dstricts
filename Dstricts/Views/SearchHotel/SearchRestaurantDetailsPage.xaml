@@ -415,7 +415,11 @@
 					HorizontalTextAlignment="Center"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
 					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
+					VerticalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding WaitListCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
 
 				<Label
 					Grid.Row="1"
@@ -424,9 +428,13 @@
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					MaxLines="1"
-					Text="Drop in"
+					Text="Wait list"
 					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
+					VerticalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding WaitListCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
 
 				<Label
 					Grid.Row="0"

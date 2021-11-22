@@ -39,7 +39,7 @@ namespace Dstricts.ViewModels
 				ResturantImages = hotelImages;
 			}
 
-			var response  = await service.ResturantServeInfoAsync(new Models.ResturantServeInfoRequest()
+			var response = await service.ResturantServeInfoAsync(new Models.ResturantServeInfoRequest()
 			{
 				ResturantId = Helper.Helper.SelectResturantId
 			});
@@ -57,6 +57,20 @@ namespace Dstricts.ViewModels
 				}
 			}
 			ResturantServeInfo = response;
+
+			IWaitService waitService = new WaitService();
+			PublishedResturantInfo = await waitService.PublishedResturantInfoAsync(new Models.PublishedResturantInfoRequest()
+			{
+				ResturantId = Helper.Helper.SelectResturantId
+			});
+			if (PublishedResturantInfo.PublishDropIn)
+			{
+				WaitListResturantInfo = await waitService.WaitListResturantAsync(new Models.WaitListResturantRequest()
+				{
+					ResturantId = Helper.Helper.SelectResturantId,
+					QueueType = 2
+				});
+			}
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -69,7 +83,26 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteBookTableCommand()
 		{
-			await Navigation.PushAsync(new Views.BookTable.BookTablePage());
+			if (PublishedResturantInfo.PublishBookTable)
+				await Navigation.PushAsync(new Views.BookTable.BookTablePage());
+		}
+		#endregion
+
+		#region Wait List Command.
+		private ICommand waitListCommand;
+		public ICommand WaitListCommand
+		{
+			get => waitListCommand ?? (waitListCommand = new Command(async () => await ExecuteWaitListCommand()));
+		}
+		private async Task ExecuteWaitListCommand()
+		{
+			if (PublishedResturantInfo.PublishDropIn)
+			{
+				if (WaitListResturantInfo?.Count > 1)
+					await Navigation.PushAsync(new Views.WaitList.WaitListResturantPage(WaitListResturantInfo));
+				else if (WaitListResturantInfo?.Count == 1)
+					await Navigation.PushAsync(new Views.WaitList.WaitListResturantDetailPage(WaitListResturantInfo[0]));
+			}
 		}
 		#endregion
 
@@ -115,6 +148,28 @@ namespace Dstricts.ViewModels
 			{
 				loggedInUserName = value;
 				OnPropertyChanged("LoggedInUserName");
+			}
+		}
+
+		private Models.PublishedResturantInfoResponse publishedResturantInfo;
+		public Models.PublishedResturantInfoResponse PublishedResturantInfo
+		{
+			get => publishedResturantInfo;
+			set
+			{
+				publishedResturantInfo = value;
+				OnPropertyChanged("PublishedResturantInfo");
+			}
+		}
+
+		private List<Models.WaitListResturantResponse> waitListResturantInfo;
+		public List<Models.WaitListResturantResponse> WaitListResturantInfo
+		{
+			get => waitListResturantInfo;
+			set
+			{
+				waitListResturantInfo = value;
+				OnPropertyChanged("WaitListResturantInfo");
 			}
 		}
 		#endregion
