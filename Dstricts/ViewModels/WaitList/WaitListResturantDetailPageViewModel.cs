@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-using Dstricts.Service;
-using Dstricts.Interfaces;
+using Xamarin.Essentials;
 using System.Windows.Input;
 using System.Threading.Tasks;
 
@@ -24,7 +23,8 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteSelectedPeopleInPartyCommand(string parm)
 		{
-			switch (Convert.ToInt32(parm))
+			TotalPerson = Convert.ToInt32(parm);
+			switch (TotalPerson)
 			{
 				case 1:
 					if (Button1Bg.Equals(ButtonBlackBg))
@@ -210,6 +210,28 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Submit Wait List Resturant Detail Command.
+		private ICommand submitWaitListResturantDetailCommand;
+		public ICommand SubmitWaitListResturantDetailCommand
+		{
+			get => submitWaitListResturantDetailCommand ?? (submitWaitListResturantDetailCommand = new Command(async () => await ExecuteSubmitWaitListResturantDetailCommand()));
+		}
+		private async Task ExecuteSubmitWaitListResturantDetailCommand()
+		{
+			Models.SubmitWaitListResturantDetail submitRequest = new Models.SubmitWaitListResturantDetail()
+			{
+				Qid = SelectedWaitResturantInfo.Id,
+				UserId = Helper.Helper.LoggedInUserId,
+				TotalPerson = TotalPerson,
+			};
+			string submitJson = Newtonsoft.Json.JsonConvert.SerializeObject(submitRequest);
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsWaitListResturant/{submitJson}");
+			else
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsWaitListResturant/{submitJson}");
+		}
+		#endregion
+
 		#region Properties.
 		private Models.WaitListResturantResponse selectedWaitResturantInfo;
 		public Models.WaitListResturantResponse SelectedWaitResturantInfo
@@ -332,6 +354,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		public int TotalPerson { get; set; }
 		public static string ButtonBlackBg => "#2A2A31";
 		public static string ButtonBlueBg => "#6263ED";
 		#endregion

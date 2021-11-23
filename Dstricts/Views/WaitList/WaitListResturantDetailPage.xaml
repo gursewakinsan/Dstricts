@@ -264,6 +264,7 @@
 				Grid.ColumnSpan="3"
 				Margin="40,5,40,5"
 				BackgroundColor="#5663FF"
+				Command="{Binding SubmitWaitListResturantDetailCommand}"
 				CornerRadius="10"
 				FontFamily="SansProSemiBoldFontFamily"
 				HeightRequest="48"
