@@ -16,5 +16,19 @@ namespace Dstricts.Views.WaitList
 			BindingContext = viewModel = new WaitListResturantPageViewModel(this.Navigation);
 			viewModel.WaitListResturantInfo = waitListResturants;
 		}
+
+		private async void OnGridWaitListResturantTapped(object sender, System.EventArgs e)
+		{
+			Grid grid = sender as Grid;
+			Models.WaitListResturantResponse selectedWaitListResturant = grid.BindingContext as Models.WaitListResturantResponse;
+			await Navigation.PushAsync(new WaitListResturantDetailPage(selectedWaitListResturant));
+		}
+
+		private async void OnFrameWaitListResturantTapped(object sender, System.EventArgs e)
+		{
+			Frame frame = sender as Frame;
+			Models.WaitListResturantResponse selectedWaitListResturant = frame.BindingContext as Models.WaitListResturantResponse;
+			await Navigation.PushAsync(new WaitListResturantDetailPage(selectedWaitListResturant));
+		}
 	}
 }

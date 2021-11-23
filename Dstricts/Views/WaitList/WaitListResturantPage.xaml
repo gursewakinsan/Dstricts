@@ -2,13 +2,192 @@
 <ContentPage
 	x:Class="Dstricts.Views.WaitList.WaitListResturantPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
-		<StackLayout>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
 			<Label
-				HorizontalOptions="CenterAndExpand"
-				Text="Welcome to Xamarin.Forms!"
-				VerticalOptions="CenterAndExpand" />
-		</StackLayout>
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Padding="28,20,28,0"
+				Spacing="0"
+				VerticalOptions="StartAndExpand">
+				<Label
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					MaxLines="1"
+					Opacity="0.5"
+					Text="Wait list"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Label
+					Margin="0,4,0,0"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Welcome"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<BoxView
+					Margin="0,28,0,28"
+					BackgroundColor="White"
+					HeightRequest="1"
+					Opacity="0.2" />
+
+				<Label
+					Margin="0,0,0,20"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalOptions="Start"
+					MaxLines="1"
+					Text="Please select a queue"
+					TextColor="White"
+					VerticalOptions="Start" />
+
+				<ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
+					<StackLayout BindableLayout.ItemsSource="{Binding WaitListResturantInfo}" Orientation="Vertical">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Grid
+									Margin="0,0,0,20"
+									Padding="20,0,20,0"
+									ColumnSpacing="15"
+									HeightRequest="80">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="40" />
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="60" />
+									</Grid.ColumnDefinitions>
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnGridWaitListResturantTapped" />
+									</Grid.GestureRecognizers>
+									<Frame
+										Grid.Row="0"
+										Grid.ColumnSpan="3"
+										Margin="-20,0,-20,0"
+										BackgroundColor="Transparent"
+										BorderColor="White"
+										CornerRadius="16"
+										HasShadow="False"
+										HeightRequest="80"
+										IsClippedToBounds="True"
+										Opacity="0.2"
+										VerticalOptions="StartAndExpand">
+										<Frame.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnFrameWaitListResturantTapped" />
+										</Frame.GestureRecognizers>
+									</Frame>
+
+									<Button
+										Grid.Row="0"
+										Grid.Column="0"
+										Padding="0"
+										BackgroundColor="{Binding QueueFirstLetterBg}"
+										CornerRadius="20"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="18"
+										HeightRequest="40"
+										HorizontalOptions="CenterAndExpand"
+										Text="{Binding FirstLetterName}"
+										TextColor="{Binding QueueFirstLetterText}"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="40" />
+
+									<Label
+										Grid.Row="0"
+										Grid.Column="1"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="18"
+										HorizontalTextAlignment="Start"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="{Binding QueueName}"
+										TextColor="White"
+										VerticalTextAlignment="Center" />
+
+									<StackLayout
+										Grid.Row="0"
+										Grid.Column="2"
+										HorizontalOptions="EndAndExpand"
+										Spacing="2"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsSemiBoldFontFamily"
+											FontSize="18"
+											HorizontalTextAlignment="Center"
+											MaxLines="1"
+											Text="{Binding WaitingCount}"
+											TextColor="White"
+											VerticalTextAlignment="Center" />
+
+										<Label
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="14"
+											HorizontalTextAlignment="Center"
+											MaxLines="1"
+											Opacity="0.5"
+											Text="Before"
+											TextColor="White"
+											VerticalTextAlignment="Center" />
+									</StackLayout>
+								</Grid>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

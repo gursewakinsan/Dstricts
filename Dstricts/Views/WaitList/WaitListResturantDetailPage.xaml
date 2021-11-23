@@ -21,6 +21,7 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="117" />
 			</Grid.ColumnDefinitions>
+
 			<Label
 				Grid.Row="0"
 				Grid.Column="0"
@@ -114,6 +115,147 @@
 						BackgroundColor="White"
 						HeightRequest="1"
 						Opacity="0.2" />
+
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalOptions="Start"
+						MaxLines="1"
+						Text="How many people in your party?"
+						TextColor="White"
+						VerticalOptions="Start" />
+
+					<Grid
+						Margin="0,20,0,10"
+						ColumnSpacing="20"
+						RowSpacing="20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="36" />
+							<RowDefinition Height="36" />
+							<RowDefinition Height="36" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Button
+							Grid.Row="0"
+							Grid.Column="0"
+							Padding="0"
+							BackgroundColor="{Binding Button1Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="1"
+							CornerRadius="12"
+							HorizontalOptions="StartAndExpand"
+							Text="1"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="0"
+							BackgroundColor="{Binding Button2Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="2"
+							CornerRadius="12"
+							HorizontalOptions="CenterAndExpand"
+							Text="2"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="2"
+							Padding="0"
+							BackgroundColor="{Binding Button3Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="3"
+							CornerRadius="12"
+							HorizontalOptions="EndAndExpand"
+							Text="3"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="1"
+							Grid.Column="0"
+							Padding="0"
+							BackgroundColor="{Binding Button4Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="4"
+							CornerRadius="12"
+							HorizontalOptions="StartAndExpand"
+							Text="4"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="1"
+							Grid.Column="1"
+							Padding="0"
+							BackgroundColor="{Binding Button5Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="5"
+							CornerRadius="12"
+							HorizontalOptions="CenterAndExpand"
+							Text="5"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="1"
+							Grid.Column="2"
+							Padding="0"
+							BackgroundColor="{Binding Button6Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="6"
+							CornerRadius="12"
+							HorizontalOptions="EndAndExpand"
+							Text="6"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="2"
+							Grid.Column="0"
+							Padding="0"
+							BackgroundColor="{Binding Button7Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="7"
+							CornerRadius="12"
+							HorizontalOptions="StartAndExpand"
+							Text="7"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="2"
+							Grid.Column="1"
+							Padding="0"
+							BackgroundColor="{Binding Button8Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="8"
+							CornerRadius="12"
+							HorizontalOptions="CenterAndExpand"
+							Text="8"
+							TextColor="White"
+							WidthRequest="91" />
+
+						<Button
+							Grid.Row="2"
+							Grid.Column="2"
+							Padding="0"
+							BackgroundColor="{Binding Button9Bg}"
+							Command="{Binding SelectedPeopleInPartyCommand}"
+							CommandParameter="9"
+							CornerRadius="12"
+							HorizontalOptions="EndAndExpand"
+							Text="9"
+							TextColor="White"
+							WidthRequest="91" />
+					</Grid>
 				</StackLayout>
 			</ScrollView>
 
@@ -125,6 +267,7 @@
 				CornerRadius="10"
 				FontFamily="SansProSemiBoldFontFamily"
 				HeightRequest="48"
+				IsVisible="{Binding IsSubmit}"
 				Text="Submit"
 				TextColor="White"
 				VerticalOptions="EndAndExpand" />

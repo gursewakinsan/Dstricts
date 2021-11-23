@@ -99,7 +99,16 @@ namespace Dstricts.ViewModels
 			if (PublishedResturantInfo.PublishDropIn)
 			{
 				if (WaitListResturantInfo?.Count > 1)
+				{
+					int index = 0;
+					foreach (var waitList in WaitListResturantInfo)
+					{
+						waitList.QueueFirstLetterBg = Helper.Helper.ListIconBgColorList[index];
+						waitList.QueueFirstLetterText = Helper.Helper.ListIconTextColorList[index];
+						index = index + 1;
+					}
 					await Navigation.PushAsync(new Views.WaitList.WaitListResturantPage(WaitListResturantInfo));
+				}
 				else if (WaitListResturantInfo?.Count == 1)
 					await Navigation.PushAsync(new Views.WaitList.WaitListResturantDetailPage(WaitListResturantInfo[0]));
 			}

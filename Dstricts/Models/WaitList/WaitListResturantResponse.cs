@@ -1,6 +1,11 @@
-﻿namespace Dstricts.Models
+﻿using System;
+using Xamarin.Forms;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace Dstricts.Models
 {
-	public class WaitListResturantResponse
+	public class WaitListResturantResponse : INotifyPropertyChanged
 	{
 		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int Id { get; set; }
@@ -10,6 +15,38 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "waiting_count")]
 		public int WaitingCount { get; set; }
+
+		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(QueueName, 0).ToUpper();
+
+		private string queueFirstLetterBg;
+		public string QueueFirstLetterBg
+		{
+			get => queueFirstLetterBg;
+			set
+			{
+				queueFirstLetterBg = value;
+				OnPropertyChanged("QueueFirstLetterBg");
+			}
+		}
+
+		private string queueFirstLetterText;
+		public string QueueFirstLetterText
+		{
+			get => queueFirstLetterText;
+			set
+			{
+				queueFirstLetterText = value;
+				OnPropertyChanged("QueueFirstLetterText");
+			}
+		}
+
+		#region On Property Changed.
+		public event PropertyChangedEventHandler PropertyChanged;
+		public virtual void OnPropertyChanged([CallerMemberName] string name = "")
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+		}
+		#endregion
 
 		/*[Newtonsoft.Json.JsonProperty(PropertyName = "company_id")]
 		public int CompanyId { get; set; }
