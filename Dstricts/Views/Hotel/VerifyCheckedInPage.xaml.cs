@@ -7,12 +7,13 @@ namespace Dstricts.Views.Hotel
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class VerifyCheckedInPage : ContentPage
 	{
-		VerifyCheckedInPageViewModel loginViewModel;
-		public VerifyCheckedInPage()
+		VerifyCheckedInPageViewModel viewModel;
+		public VerifyCheckedInPage(int hotelPropertyType)
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
-			BindingContext = loginViewModel = new VerifyCheckedInPageViewModel(this.Navigation);
+			BindingContext = viewModel = new VerifyCheckedInPageViewModel(this.Navigation);
+			viewModel.HotelPropertyType = hotelPropertyType;
 		}
 	}
 }

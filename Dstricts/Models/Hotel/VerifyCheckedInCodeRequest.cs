@@ -7,5 +7,8 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "ecode")]
 		public string Ecode { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_property_type")]
+		public int HotelPropertyType { get; set; }
 	}
 }

@@ -33,7 +33,8 @@ namespace Dstricts.ViewModels
 				Models.VerifyCheckedInCodeResponse response = await service.VerifyCheckedInCodeAsync(new Models.VerifyCheckedInCodeRequest()
 				{
 					UserId = Helper.Helper.LoggedInUserId,
-					Ecode = CheckedInCodeInEmail
+					Ecode = CheckedInCodeInEmail,
+					HotelPropertyType = HotelPropertyType
 				});
 				if (response.Result == 0)
 					await Helper.Alert.DisplayAlert("Booking not available with given code!");
@@ -60,6 +61,7 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("CheckedInCodeInEmail");
 			}
 		}
+		public int HotelPropertyType { get; set; }
 		#endregion
 	}
 }

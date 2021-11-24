@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -82,6 +83,7 @@ namespace Dstricts.ViewModels
 			switch (codeInfo[0])
 			{
 				case "verify_checkin":
+					HotelPropertyType = Convert.ToInt32(codeInfo[1]);
 					GoToVerifyCheckedInCodePageCommand.Execute(null);
 					break;
 				case "getQueue":
@@ -101,7 +103,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToVerifyCheckedInCodePageCommand()
 		{
-			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage());
+			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage(HotelPropertyType));
 		}
 		#endregion
 
@@ -151,6 +153,8 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("IsListEmpty");
 			}
 		}
+
+		public int HotelPropertyType { get; set; }
 		#endregion
 	}
 }
