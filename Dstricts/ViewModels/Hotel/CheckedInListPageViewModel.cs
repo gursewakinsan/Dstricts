@@ -17,57 +17,15 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Get Checked In Command.
-		private ICommand getCheckedInCommand;
-		public ICommand GetCheckedInCommand
+		#region Go To Check In Command.
+		private ICommand goToCheckInCommand;
+		public ICommand GoToCheckInCommand
 		{
-			get => getCheckedInCommand ?? (getCheckedInCommand = new Command(async () => await ExecuteGetCheckedInCommand()));
+			get => goToCheckInCommand ?? (goToCheckInCommand = new Command(async () => await ExecuteGoToCheckInCommand()));
 		}
-		private async Task ExecuteGetCheckedInCommand()
+		private async Task ExecuteGoToCheckInCommand()
 		{
-			//if (CheckedInList?.Count > 0) return;
-			DependencyService.Get<IProgressBar>().Show();
-			IHotelService service = new HotelService();
-			List<Models.CheckedInResponse> checkedIns = new List<Models.CheckedInResponse>();
-			var responseCheckedIn = await service.CheckedInHotelAsync(new Models.CheckedInRequest()
-			{
-				UserId = Helper.Helper.LoggedInUserId
-			});
-
-			var responseCheckedInApartment = await service.CheckedInApartmentAsync(new Models.CheckedInRequest()
-			{
-				UserId = Helper.Helper.LoggedInUserId
-			});
-
-			var responseUserQueueListAsync = await service.UserQueueListAsync(new Models.CheckedInRequest()
-			{
-				UserId = Helper.Helper.LoggedInUserId
-			});
-			
-			if (responseCheckedIn?.Count > 0)
-			{
-				foreach (var item in responseCheckedIn)
-					if (item != null)
-						checkedIns.Add(item);
-			}
-
-			if (responseCheckedInApartment?.Count > 0)
-			{
-				foreach (var item in responseCheckedInApartment)
-					if (item != null)
-						checkedIns.Add(item);
-			}
-
-			if (responseUserQueueListAsync?.Count > 0)
-			{
-				foreach (var item in responseUserQueueListAsync)
-					if (item != null)
-						checkedIns.Add(item);
-			}
-
-			CheckedInList = checkedIns;
-			IsListEmpty = CheckedInList?.Count > 0 ? true : false;
-			DependencyService.Get<IProgressBar>().Hide();
+			await Navigation.PushAsync(new Views.Hotel.CheckInPage());
 		}
 		#endregion
 
@@ -132,28 +90,6 @@ namespace Dstricts.ViewModels
 		#endregion
 
 		#region Properties.
-		private List<Models.CheckedInResponse> checkedInList;
-		public List<Models.CheckedInResponse> CheckedInList
-		{
-			get => checkedInList;
-			set
-			{
-				checkedInList = value;
-				OnPropertyChanged("CheckedInList");
-			}
-		}
-
-		private bool isListEmpty = true;
-		public bool IsListEmpty
-		{
-			get => isListEmpty;
-			set
-			{
-				isListEmpty = value;
-				OnPropertyChanged("IsListEmpty");
-			}
-		}
-
 		public int HotelPropertyType { get; set; }
 		#endregion
 	}

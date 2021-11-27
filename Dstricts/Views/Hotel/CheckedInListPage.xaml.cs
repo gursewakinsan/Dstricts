@@ -23,7 +23,6 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.GetCheckedInCommand.Execute(null);
 		}
 
 		void rr()
@@ -38,12 +37,14 @@ namespace Dstricts.Views.Hotel
 			demoCardsList.Add(new DemoCards()
 			{
 				UserImage = "https://www.photodoozy.com/uploads/pak-army-handsome-boy-hd-stylish-dp-2020-photodoozy.jpg",
-				CardsImage = CardsImages
+				CardsImage = CardsImages,
+				ImgURL= "https://www.gstatic.com/webp/gallery/2.webp"
 			});
 			demoCardsList.Add(new DemoCards()
 			{
 				UserImage = "https://images.pexels.com/photos/1190208/pexels-photo-1190208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-				CardsImage = CardsImages
+				CardsImage = CardsImages,
+				ImgURL= "https://www.gstatic.com/webp/gallery/4.webp"
 			});
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
@@ -113,6 +114,7 @@ namespace Dstricts.Views.Hotel
 public class DemoCards
 {
 	public string UserImage { get; set; }
+	public string ImgURL { get; set; }
 	public List<Images> CardsImage { get; set; }
 }
 public class Images

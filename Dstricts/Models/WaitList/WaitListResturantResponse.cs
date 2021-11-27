@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Dstricts.Models

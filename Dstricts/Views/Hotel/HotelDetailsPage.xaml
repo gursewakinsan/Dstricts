@@ -827,7 +827,10 @@
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
-					<ScrollView IsVisible="{Binding IsRoomService}" HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+					<ScrollView
+						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsRoomService}"
+						Orientation="Horizontal">
 						<StackLayout
 							x:Name="layoutRoomService"
 							BindableLayout.ItemsSource="{Binding SelectedRoomServiceAppServesInfo}"

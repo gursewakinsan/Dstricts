@@ -56,5 +56,7 @@
 		public const string Information = "\U000f02fc";
 		public const string VectorTriangle = "\U000f0563";
 		public const string StorefrontOutline = "\U000f10c1";
+		public const string ChevronLeft = "\U000f0141";
+		public const string MessageOutline = "\U000f0365";
 	}
 }
