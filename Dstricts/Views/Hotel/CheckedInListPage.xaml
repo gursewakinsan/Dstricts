@@ -3,7 +3,6 @@
 	x:Class="Dstricts.Views.Hotel.CheckedInListPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
@@ -123,12 +122,12 @@
 				<ScrollView
 					Grid.RowSpan="2"
 					Grid.Column="1"
-					Padding="28,0,0,0"
+					Padding="15,0,0,0"
 					HorizontalScrollBarVisibility="Never"
 					Orientation="Horizontal">
 					<Grid
 						Grid.Row="2"
-						ColumnSpacing="28"
+						ColumnSpacing="15"
 						RowSpacing="0">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="64" />
@@ -173,6 +172,7 @@
 							Grid.Column="1"
 							Padding="0"
 							BackgroundColor="#242A37"
+							Command="{Binding GoToAllWaitCommand}"
 							CornerRadius="28"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="22"

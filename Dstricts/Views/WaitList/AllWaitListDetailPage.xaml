@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.WaitList.AllWaitListDetailPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout
+					Padding="28,20,28,0"
+					Spacing="0"
+					VerticalOptions="StartAndExpand">
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Opacity="0.5"
+						Text="{Binding SelectedWaitInfo.CompanyName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						Margin="0,4,0,0"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="32"
+						HorizontalTextAlignment="Start"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="{Binding SelectedWaitInfo.PropertyNickName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Margin="0,28,0,0"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.2" />
+
+					<StackLayout HorizontalOptions="StartAndExpand" Spacing="0">
+						<Label
+							Padding="0"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="100"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="{Binding SelectedWaitInfo.WaitingCount}"
+							TextColor="White"
+							VerticalOptions="Start" />
+
+						<Label
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="24"
+							HorizontalOptions="Start"
+							MaxLines="1"
+							Text="Before you!"
+							TextColor="#EF3B17"
+							VerticalOptions="Start" />
+					</StackLayout>
+
+					<Grid
+						Margin="0,34,0,0"
+						ColumnSpacing="20"
+						RowSpacing="20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="30" />
+							<RowDefinition Height="30" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="30" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HorizontalOptions="StartAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChartTimelineVariant}"
+							TextColor="White"
+							VerticalOptions="Center" />
+
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="16"
+							HorizontalOptions="Start"
+							MaxLines="1"
+							Text="View waitlist"
+							TextColor="White"
+							VerticalOptions="Center" />
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HorizontalOptions="StartAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.DeleteOutline}"
+							TextColor="White"
+							VerticalOptions="Center" />
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="16"
+							HorizontalOptions="Start"
+							MaxLines="1"
+							Text="Delete reservatiion"
+							TextColor="White"
+							VerticalOptions="Center" />
+					</Grid>
+				</StackLayout>
+			</ScrollView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

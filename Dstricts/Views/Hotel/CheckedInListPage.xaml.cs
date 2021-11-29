@@ -23,6 +23,7 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			viewModel.UserQueueListCommand.Execute(null);
 		}
 
 		void rr()

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-	x:Class="Dstricts.Views.WaitList.WaitListResturantPage"
+	x:Class="Dstricts.Views.WaitList.AllWaitListPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
@@ -95,7 +95,7 @@
 					VerticalOptions="Start" />
 
 				<ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never">
-					<StackLayout BindableLayout.ItemsSource="{Binding WaitListResturantInfo}" Orientation="Vertical">
+					<StackLayout BindableLayout.ItemsSource="{Binding AllWaitListInfo}" Orientation="Vertical">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
 								<Grid
@@ -109,7 +109,7 @@
 										<ColumnDefinition Width="60" />
 									</Grid.ColumnDefinitions>
 									<Grid.GestureRecognizers>
-										<TapGestureRecognizer Tapped="OnGridWaitListResturantTapped" />
+										<TapGestureRecognizer Tapped="OnGridAllWaitListTapped" />
 									</Grid.GestureRecognizers>
 									<Frame
 										Grid.Row="0"
@@ -124,7 +124,7 @@
 										Opacity="0.2"
 										VerticalOptions="StartAndExpand">
 										<Frame.GestureRecognizers>
-											<TapGestureRecognizer Tapped="OnFrameWaitListResturantTapped" />
+											<TapGestureRecognizer Tapped="OnFrameAllWaitListTapped" />
 										</Frame.GestureRecognizers>
 									</Frame>
 
@@ -132,14 +132,14 @@
 										Grid.Row="0"
 										Grid.Column="0"
 										Padding="0"
-										BackgroundColor="{Binding QueueFirstLetterBg}"
+										BackgroundColor="{Binding FirstLetterBg}"
 										CornerRadius="20"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="18"
 										HeightRequest="40"
 										HorizontalOptions="CenterAndExpand"
 										Text="{Binding FirstLetterName}"
-										TextColor="{Binding QueueFirstLetterText}"
+										TextColor="{Binding FirstLetterText}"
 										VerticalOptions="CenterAndExpand"
 										WidthRequest="40" />
 
@@ -152,7 +152,7 @@
 										HorizontalTextAlignment="Start"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
-										Text="{Binding QueueName}"
+										Text="{Binding PropertyNickName}"
 										TextColor="White"
 										VerticalTextAlignment="Center" />
 

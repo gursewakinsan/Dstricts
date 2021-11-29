@@ -29,7 +29,7 @@
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="25"
 				HorizontalTextAlignment="Start"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 				TextColor="White"
 				VerticalTextAlignment="Center">
 				<Label.GestureRecognizers>

@@ -29,6 +29,47 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To All Wait Command.
+		private ICommand goToAllWaitCommand;
+		public ICommand GoToAllWaitCommand
+		{
+			get => goToAllWaitCommand ?? (goToAllWaitCommand = new Command(async () => await ExecuteGoToAllWaitCommand()));
+		}
+		private async Task ExecuteGoToAllWaitCommand()
+		{
+			if (UserQueueList?.Count > 0)
+			{
+				int index = 0;
+				foreach (var waitList in UserQueueList)
+				{
+					waitList.FirstLetterBg = Helper.Helper.ListIconBgColorList[index];
+					waitList.FirstLetterText = Helper.Helper.ListIconTextColorList[index];
+					index = index + 1;
+				}
+				await Navigation.PushAsync(new Views.WaitList.AllWaitListPage(UserQueueList));
+			}
+		}
+		#endregion
+
+		#region User Queue List Command.
+		private ICommand userQueueListCommand;
+		public ICommand UserQueueListCommand
+		{
+			get => userQueueListCommand ?? (userQueueListCommand = new Command(async () => await ExecuteUserQueueListCommand()));
+			
+		}
+		private async Task ExecuteUserQueueListCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			UserQueueList = await service.UserQueueListAsync(new Models.UserQueueListRequest()
+			{
+				UserId = Helper.Helper.LoggedInUserId
+			});
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Verify QR Code Command.
 		private ICommand verifyQrCodeCommand;
 		public ICommand VerifyQrCodeCommand
@@ -90,6 +131,7 @@ namespace Dstricts.ViewModels
 		#endregion
 
 		#region Properties.
+		public List<Models.UserQueueListResponse> UserQueueList { get; set; }
 		public int HotelPropertyType { get; set; }
 		#endregion
 	}

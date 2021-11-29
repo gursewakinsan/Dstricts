@@ -58,5 +58,7 @@
 		public const string StorefrontOutline = "\U000f10c1";
 		public const string ChevronLeft = "\U000f0141";
 		public const string MessageOutline = "\U000f0365";
+		public const string DeleteOutline = "\U000f09e7";
+		public const string ChartTimelineVariant = "\U000f0e93";
 	}
 }

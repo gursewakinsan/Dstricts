@@ -26,11 +26,11 @@ namespace Dstricts.Service
 			});
 		}
 
-		public Task<List<Models.CheckedInResponse>> UserQueueListAsync(Models.CheckedInRequest request)
+		public Task<List<Models.UserQueueListResponse>> UserQueueListAsync(Models.UserQueueListRequest request)
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<List<Models.CheckedInResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.UserQueueListUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<List<Models.UserQueueListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.UserQueueListUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}
