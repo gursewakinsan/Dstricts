@@ -17,7 +17,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="40" />
 				<RowDefinition Height="15" />
-				<RowDefinition Height="90" />
+				<RowDefinition Height="84" />
 				<RowDefinition Height="auto" />
 				<RowDefinition Height="*" />
 				<RowDefinition Height="60" />
@@ -51,45 +51,61 @@
 
 			<Grid
 				Grid.Row="2"
-				Grid.Column="0"
-				Margin="28,0,0,0">
+				Grid.ColumnSpan="2"
+				Margin="28,0,0,0"
+				ColumnSpacing="0"
+				RowSpacing="0">
 				<Grid.RowDefinitions>
-					<RowDefinition Height="56" />
-					<RowDefinition Height="20" />
+					<RowDefinition Height="64" />
+					<RowDefinition />
 				</Grid.RowDefinitions>
-				<Frame
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="64" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+
+				<BoxView
 					Grid.Row="0"
 					Grid.Column="0"
-					Padding="2"
-					BackgroundColor="#6263ED"
+					BackgroundColor="#EF3B17"
+					CornerRadius="32"
+					HeightRequest="64"
+					HorizontalOptions="CenterAndExpand"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="64" />
+
+				<BoxView
+					Grid.Row="0"
+					Grid.Column="0"
+					BackgroundColor="Black"
+					CornerRadius="30"
+					HeightRequest="60"
+					HorizontalOptions="CenterAndExpand"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="60" />
+
+				<Button
+					x:Name="btnOpenCameraToScanQrCode"
+					Grid.Row="0"
+					Grid.Column="0"
+					Padding="0"
+					Clicked="OnBtnOpenCameraToScanQrCodeClicked"
 					CornerRadius="28"
-					HasShadow="False"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="25"
 					HeightRequest="56"
-					HorizontalOptions="Start"
-					IsClippedToBounds="True"
-					VerticalOptions="Start"
+					HorizontalOptions="CenterAndExpand"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.CameraOutline}"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand"
 					WidthRequest="56">
-					<Button
-						x:Name="btnOpenCameraToScanQrCode"
-						Padding="0"
-						BorderColor="Black"
-						BorderWidth="2"
-						Clicked="OnBtnOpenCameraToScanQrCodeClicked"
-						CornerRadius="27"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="25"
-						HeightRequest="54"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.CameraOutline}"
-						TextColor="White"
-						WidthRequest="54">
-						<Button.Background>
-							<LinearGradientBrush>
-								<GradientStop Offset="0.1" Color="#fe2042" />
-								<GradientStop Offset="1.0" Color="#ff900b" />
-							</LinearGradientBrush>
-						</Button.Background>
-					</Button>
-				</Frame>
+					<Button.Background>
+						<LinearGradientBrush>
+							<GradientStop Offset="0.1" Color="#fe2042" />
+							<GradientStop Offset="1.0" Color="#ff900b" />
+						</LinearGradientBrush>
+					</Button.Background>
+				</Button>
 
 				<Label
 					Grid.Row="1"
@@ -102,173 +118,139 @@
 					Text="Scan me"
 					TextColor="White"
 					VerticalTextAlignment="End" />
-			</Grid>
 
 
-			<ScrollView
-				Grid.Row="2"
-				Grid.Column="1"
-				Padding="21,0,0,0"
-				HorizontalScrollBarVisibility="Never"
-				Orientation="Horizontal">
-				<Grid ColumnSpacing="21">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="56" />
-						<RowDefinition Height="20" />
-					</Grid.RowDefinitions>
-
-					<Button
-						Grid.Row="0"
-						Grid.Column="0"
-						Padding="0"
-						BackgroundColor="#223426"
-						Command="{Binding GoToCheckInCommand}"
-						CornerRadius="28"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="22"
-						HeightRequest="56"
-						HorizontalOptions="CenterAndExpand"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"
-						TextColor="#45C366"
-						VerticalOptions="CenterAndExpand"
-						WidthRequest="56" />
-
-					<Label
-						Grid.Row="1"
-						Grid.Column="0"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						MaxLines="1"
-						Opacity="0.7"
-						Text="Check-in"
-						TextColor="White"
-						VerticalTextAlignment="End" />
-
-					<Button
-						Grid.Row="0"
-						Grid.Column="1"
-						Padding="0"
-						BackgroundColor="#242A37"
-						CornerRadius="28"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="22"
-						HeightRequest="56"
-						HorizontalOptions="CenterAndExpand"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageTextOutline}"
-						TextColor="#4C7CE5"
-						VerticalOptions="CenterAndExpand"
-						WidthRequest="56" />
-
-					<Label
-						Grid.Row="1"
-						Grid.Column="1"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						MaxLines="1"
-						Opacity="0.7"
-						Text="Waitlist"
-						TextColor="White"
-						VerticalTextAlignment="End" />
-
-					<Button
-						Grid.Row="0"
-						Grid.Column="2"
-						Padding="0"
-						BackgroundColor="#342B20"
-						CornerRadius="28"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="22"
-						HeightRequest="56"
-						HorizontalOptions="CenterAndExpand"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.ShareVariant}"
-						TextColor="#FF9129"
-						VerticalOptions="CenterAndExpand"
-						WidthRequest="56" />
-
-					<Label
-						Grid.Row="1"
-						Grid.Column="2"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						MaxLines="1"
-						Opacity="0.7"
-						Text="Book"
-						TextColor="White"
-						VerticalTextAlignment="End" />
-
-					<Button
-						Grid.Row="0"
-						Grid.Column="3"
-						Padding="0"
-						BackgroundColor="#3E3235"
-						CornerRadius="28"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="22"
-						HeightRequest="56"
-						HorizontalOptions="CenterAndExpand"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsHorizontal}"
-						TextColor="#E94975"
-						VerticalOptions="CenterAndExpand"
-						WidthRequest="56" />
-
-					<Label
-						Grid.Row="1"
-						Grid.Column="3"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						MaxLines="1"
-						Opacity="0.7"
-						Text="VIP"
-						TextColor="White"
-						VerticalTextAlignment="End" />
-				</Grid>
-
-				<!--<StackLayout
-					BindableLayout.ItemsSource="{Binding CheckedInList}"
-					IsVisible="{Binding IsListEmpty}"
+				<ScrollView
+					Grid.RowSpan="2"
+					Grid.Column="1"
+					Padding="28,0,0,0"
+					HorizontalScrollBarVisibility="Never"
 					Orientation="Horizontal">
-					<BindableLayout.ItemTemplate>
-						<DataTemplate>
-							<Grid RowSpacing="5">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="60" />
-									<RowDefinition Height="15" />
-								</Grid.RowDefinitions>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="60" />
-								</Grid.ColumnDefinitions>
-								<ImageButton
-									x:Name="imgHotel"
-									Padding="0"
-									Aspect="Fill"
-									BackgroundColor="Transparent"
-									Clicked="OnHotelImageClicked"
-									CornerRadius="18"
-									HeightRequest="60"
-									HorizontalOptions="Start"
-									Source="{Binding ImagePath}"
-									VerticalOptions="Center"
-									WidthRequest="60" />
+					<Grid
+						Grid.Row="2"
+						ColumnSpacing="28"
+						RowSpacing="0">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="64" />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="64" />
+							<ColumnDefinition Width="64" />
+							<ColumnDefinition Width="64" />
+							<ColumnDefinition Width="64" />
+						</Grid.ColumnDefinitions>
+						<Button
+							Grid.Row="0"
+							Grid.Column="0"
+							Padding="0"
+							BackgroundColor="#223426"
+							Command="{Binding GoToCheckInCommand}"
+							CornerRadius="28"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HeightRequest="56"
+							HorizontalOptions="CenterAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"
+							TextColor="#45C366"
+							VerticalOptions="CenterAndExpand"
+							WidthRequest="56" />
 
-								<Label
-									Grid.Row="1"
-									FontFamily="SansProRegularFontFamily"
-									FontSize="10"
-									HorizontalTextAlignment="Start"
-									LineBreakMode="TailTruncation"
-									MaxLines="1"
-									Text="{Binding PropertyNickName}"
-									TextColor="White"
-									VerticalTextAlignment="Center" />
-							</Grid>
-						</DataTemplate>
-					</BindableLayout.ItemTemplate>
-				</StackLayout>-->
-			</ScrollView>
+						<Label
+							Grid.Row="1"
+							Grid.Column="0"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							MaxLines="1"
+							Opacity="0.7"
+							Text="Check-in"
+							TextColor="White"
+							VerticalTextAlignment="End" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="0"
+							BackgroundColor="#242A37"
+							CornerRadius="28"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HeightRequest="56"
+							HorizontalOptions="CenterAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageTextOutline}"
+							TextColor="#4C7CE5"
+							VerticalOptions="CenterAndExpand"
+							WidthRequest="56" />
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							MaxLines="1"
+							Opacity="0.7"
+							Text="Waitlist"
+							TextColor="White"
+							VerticalTextAlignment="End" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="2"
+							Padding="0"
+							BackgroundColor="#342B20"
+							CornerRadius="28"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HeightRequest="56"
+							HorizontalOptions="CenterAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ShareVariant}"
+							TextColor="#FF9129"
+							VerticalOptions="CenterAndExpand"
+							WidthRequest="56" />
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="2"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							MaxLines="1"
+							Opacity="0.7"
+							Text="Book"
+							TextColor="White"
+							VerticalTextAlignment="End" />
+
+						<Button
+							Grid.Row="0"
+							Grid.Column="3"
+							Padding="0"
+							BackgroundColor="#3E3235"
+							CornerRadius="28"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="22"
+							HeightRequest="56"
+							HorizontalOptions="CenterAndExpand"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsHorizontal}"
+							TextColor="#E94975"
+							VerticalOptions="CenterAndExpand"
+							WidthRequest="56" />
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="3"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							MaxLines="1"
+							Opacity="0.7"
+							Text="VIP"
+							TextColor="White"
+							VerticalTextAlignment="End" />
+					</Grid>
+				</ScrollView>
+			</Grid>
 
 			<BoxView
 				Grid.Row="3"
@@ -323,45 +305,26 @@
 										Grid.Row="0"
 										Grid.Column="1"
 										Margin="5,0,0,0"
-										Spacing="2"
 										VerticalOptions="CenterAndExpand">
 										<Label
 											FontFamily="SansProBoldFontFamily"
 											FontSize="14"
 											HorizontalTextAlignment="Start"
+											LineHeight="1.5"
 											Text="Alena James"
 											TextColor="White"
 											VerticalTextAlignment="Center" />
 
-										<StackLayout Orientation="Horizontal" Spacing="0">
-											<Label
-												FontFamily="SansProRegularFontFamily"
-												FontSize="12"
-												HorizontalTextAlignment="Start"
-												LineBreakMode="TailTruncation"
-												MaxLines="1"
-												Text="Egypt"
-												TextColor="#768196"
-												VerticalTextAlignment="Center" />
-
-											<!--<Label
-												Margin="5,0,5,0"
-												FontFamily="{StaticResource MaterialFontFamily}"
-												FontSize="12"
-												HorizontalTextAlignment="Start"
-												Text="{x:Static fontawesome:DstrictsAppFlatIcons.MapMarker}"
-												TextColor="White"
-												VerticalTextAlignment="Center" />
-
-											<Label
-												FontFamily="SansProRegularFontFamily"
-												FontSize="12"
-												HorizontalTextAlignment="Start"
-												MaxLines="1"
-												Text="London, United Kingdom"
-												TextColor="White"
-												VerticalTextAlignment="Center" />-->
-										</StackLayout>
+										<Label
+											FontFamily="SansProRegularFontFamily"
+											FontSize="12"
+											HorizontalTextAlignment="Start"
+											LineBreakMode="TailTruncation"
+											LineHeight="1.2"
+											MaxLines="1"
+											Text="Egypt"
+											TextColor="#768196"
+											VerticalTextAlignment="Center" />
 									</StackLayout>
 
 									<Button
