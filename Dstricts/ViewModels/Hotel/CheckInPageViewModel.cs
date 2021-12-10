@@ -34,7 +34,7 @@ namespace Dstricts.ViewModels
 
 			var responseCheckedInApartment = await service.CheckedInApartmentAsync(new Models.CheckedInRequest()
 			{
-				UserId = Helper.Helper.LoggedInUserId
+				UserId = 299//Helper.Helper.LoggedInUserId
 			});
 
 			if (responseCheckedIn?.Count > 0)

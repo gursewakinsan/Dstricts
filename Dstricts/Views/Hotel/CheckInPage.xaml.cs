@@ -53,8 +53,7 @@ namespace Dstricts.Views.Hotel
 				viewModel.HotelDetailsCommand.Execute(null);
 			}
 			else if (checkedIn.Enc == 2) //Apartment
-			{
-			}
+				await Navigation.PushAsync(new Apartment.QloudIdApartmentDetailsPage(checkedIn));
 		}
 	}
 }
