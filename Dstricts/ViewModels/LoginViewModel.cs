@@ -39,6 +39,11 @@ namespace Dstricts.ViewModels
 			{
 				Helper.Helper.LoggedInUserId = response.UserId;
 				Helper.Helper.LoggedInUserName = response.UserName;
+
+				Application.Current.Properties.Add("UserId", response.UserId);
+				Application.Current.Properties.Add("UserName", response.UserName);
+				await Application.Current.SavePropertiesAsync();
+
 				Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 			}
 			DependencyService.Get<IProgressBar>().Hide();

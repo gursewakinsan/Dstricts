@@ -11,7 +11,14 @@ namespace Dstricts
 		{
 			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTIzNzQzQDMxMzkyZTMzMmUzMFBIaTRVTHZ6RSt5ZFl4ZzFkTkhHSWcwTGFnQ0JkUjg4TEJNcnVhSUVZeUE9");
 			InitializeComponent();
-			MainPage = new Views.LoginPage();
+			if (Application.Current.Properties.ContainsKey("UserId"))
+			{
+				Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
+				Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
+				MainPage = new Views.Hotel.CheckedInListPage();
+			}
+			else
+				MainPage = new Views.LoginPage();
 		}
 
 		#region Login With Session For iOS.
