@@ -15,7 +15,7 @@ namespace Dstricts
 			{
 				Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
 				Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
-				MainPage = new Views.Hotel.CheckedInListPage();
+				MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 			}
 			else
 				MainPage = new Views.LoginPage();
