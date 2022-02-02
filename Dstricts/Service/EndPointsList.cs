@@ -60,5 +60,11 @@
 		//Wait
 		public const string WaitListResturantUrl = "https://www.qloudid.com/user/index.php/QloudidApp/waitlistResturant";
 		public const string PublishedResturantInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/publishedResturantInfo";
+
+		//Fittness & Spa
+		public const string SelectedWellnessCategoriesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessCategories";
+		public const string SelectedWellnessBookingAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessBookingAppMenu";
+		public const string AddServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addServiceToCartApp";
+		public const string UpdateWellnessCartItemUrl = "https://www.qloudid.com/user/index.php/QloudidApp/UpdateWellnessCartItem";
 	}
 }

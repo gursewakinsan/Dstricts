@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.FittnessAndSpa.CartInfoWellnessListPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+				<RowDefinition Height="56" />
+				<RowDefinition Height="10" />
+				<RowDefinition Height="20" />
+				<RowDefinition Height="10" />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Padding="28,20,28,0"
+				Spacing="0"
+				VerticalOptions="StartAndExpand">
+				<Label
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					MaxLines="1"
+					Opacity="0.5"
+					Text="Selected"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+
+				<Label
+					Margin="0,4,0,0"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					MaxLines="1"
+					Text="Services"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<BoxView
+					Margin="0,28,0,28"
+					BackgroundColor="White"
+					HeightRequest="1"
+					Opacity="0.2" />
+
+				<ScrollView Margin="0,0,0,20" VerticalScrollBarVisibility="Never">
+					<StackLayout BindableLayout.ItemsSource="{Binding AddedServiceToCartList}">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Grid ColumnSpacing="0" RowSpacing="0">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="35" />
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="100" />
+										<RowDefinition Height="1" />
+									</Grid.RowDefinitions>
+
+									<StackLayout
+										Grid.Row="0"
+										Grid.Column="0"
+										Spacing="5"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsBoldFontFamily"
+											FontSize="16"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding DishName}"
+											TextColor="White" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="12"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Opacity="0.7"
+											Text="The price is based upon €3 a piece"
+											TextColor="White" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="12"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											TextColor="White">
+											<Label.FormattedText>
+												<FormattedString>
+													<Span Text="{Binding DishPrice}" />
+													<Span Text=" SEK" />
+												</FormattedString>
+											</Label.FormattedText>
+										</Label>
+									</StackLayout>
+
+
+									<Label
+										Grid.Row="0"
+										Grid.Column="1"
+										Margin="0,0,10,0"
+										BackgroundColor="White"
+										HeightRequest="10"
+										HorizontalOptions="EndAndExpand"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="20" />
+
+									<Label
+										Grid.Row="0"
+										Grid.Column="1"
+										FontFamily="{StaticResource MaterialFontFamily}"
+										FontSize="35"
+										HorizontalTextAlignment="End"
+										Text="{x:Static fontawesome:DstrictsAppFlatIcons.MinusBox}"
+										TextColor="#E53614"
+										VerticalTextAlignment="Center">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnMinusBoxTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<BoxView
+										Grid.Row="1"
+										Grid.ColumnSpan="2"
+										BackgroundColor="#2A2A31"
+										HeightRequest="1" />
+								</Grid>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
+			</StackLayout>
+
+			<Frame
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="28,0,28,0"
+				Padding="0"
+				BackgroundColor="Transparent"
+				BorderColor="#2A2A31"
+				CornerRadius="12"
+				HasShadow="False"
+				HeightRequest="56"
+				IsClippedToBounds="True">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding AddServicesCommand}" />
+				</Frame.GestureRecognizers>
+				<StackLayout
+					HorizontalOptions="CenterAndExpand"
+					Orientation="Horizontal"
+					Spacing="15"
+					VerticalOptions="CenterAndExpand">
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding AddServicesCommand}" />
+					</StackLayout.GestureRecognizers>
+					<Label
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="30"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBoxOutline}"
+						TextColor="#45C366">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding AddServicesCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
+
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="Add services"
+						TextColor="White"
+						VerticalTextAlignment="Center">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding AddServicesCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
+				</StackLayout>
+			</Frame>
+
+			<Grid
+				Grid.Row="4"
+				Grid.ColumnSpan="3"
+				Margin="28,0,28,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="20" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<BoxView
+					Grid.Column="0"
+					BackgroundColor="#2A2A31"
+					HeightRequest="1"
+					VerticalOptions="CenterAndExpand" />
+
+				<Label
+					Grid.Column="1"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="13"
+					HorizontalTextAlignment="Center"
+					Opacity="0.4"
+					Text="OR"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<BoxView
+					Grid.Column="2"
+					BackgroundColor="#2A2A31"
+					HeightRequest="1"
+					VerticalOptions="CenterAndExpand" />
+			</Grid>
+
+			<controls:CustomButton
+				Grid.Row="6"
+				Grid.ColumnSpan="3"
+				Margin="28,0,28,0"
+				BackgroundColor="#6263ED"
+				CornerRadius="10"
+				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontSize="16"
+				HeightRequest="48"
+				Text="Book a time"
+				TextColor="White" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

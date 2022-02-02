@@ -60,5 +60,11 @@
 		public const string MessageOutline = "\U000f0365";
 		public const string DeleteOutline = "\U000f09e7";
 		public const string ChartTimelineVariant = "\U000f0e93";
+		public const string Qrcode = "\U000f0432";
+		public const string FilterOutline = "\U000f0233";
+		public const string DeleteVariant = "\U000f01b3";
+		public const string CartOutline = "\U000f0111";
+		public const string MinusBox = "\U000f0375";
+		public const string PlusBoxOutline = "\U000f0704";
 	}
 }

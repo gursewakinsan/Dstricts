@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.FittnessAndSpa.AddServiceToCartAppPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32" />
+				<RowDefinition />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="117" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="117" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="15,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				Margin="0,0,15,0"
+				Padding="0"
+				BackgroundColor="#342B20"
+				CornerRadius="8"
+				FontAttributes="Bold"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="12"
+				HeightRequest="32"
+				HorizontalOptions="EndAndExpand"
+				Text="Get Wifi"
+				TextColor="#5DA1A6"
+				WidthRequest="102" />
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout
+					Padding="28,20,28,0"
+					Spacing="0"
+					VerticalOptions="StartAndExpand">
+
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Opacity="0.5"
+						Text="{Binding WellnessName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+
+					<Label
+						Margin="0,4,0,0"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="32"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="{Binding SelectedFittnessAndSpaInfo.DishName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Margin="0,28,0,28"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.2" />
+
+					<Grid ColumnSpacing="12" RowSpacing="12">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="244" />
+							<RowDefinition Height="24" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="24" />
+						</Grid.ColumnDefinitions>
+
+						<Frame
+							Grid.Row="0"
+							Grid.ColumnSpan="2"
+							Padding="0"
+							BackgroundColor="Transparent"
+							BorderColor="Transparent"
+							CornerRadius="16"
+							HasShadow="False"
+							IsClippedToBounds="True"
+							VerticalOptions="StartAndExpand">
+							<Image
+								Aspect="AspectFill"
+								BackgroundColor="Black"
+								HeightRequest="244"
+								Source="{Binding SelectedFittnessAndSpaInfo.DishImage}" />
+						</Frame>
+
+						<StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							Orientation="Horizontal"
+							Spacing="0">
+							<Label
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="24"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
+								TextColor="#EF3B17"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								Margin="8,0,24,0"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								Opacity="0.7"
+								Text="435 Kalorier"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="24"
+								Opacity="0.7"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Chat}"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								Margin="11,0,0,0"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								Opacity="0.7"
+								Text="295 gram"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+						</StackLayout>
+
+						<Label
+							Grid.Row="1"
+							Grid.Column="1"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="24"
+							HorizontalTextAlignment="End"
+							Opacity="0.7"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BookmarkPlusOutline}"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+					</Grid>
+
+					<Label
+						Margin="0,28,0,28"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						Opacity="0.5"
+						Text="{Binding SelectedFittnessAndSpaInfo.DishDetail}"
+						TextColor="White"
+						VerticalOptions="StartAndExpand" />
+				</StackLayout>
+			</ScrollView>
+
+			<controls:CustomButton
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				Margin="28,0,28,0"
+				BackgroundColor="#6263ED"
+				Command="{Binding AddServiceToCartAppCommand}"
+				CornerRadius="10"
+				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontSize="16"
+				HeightRequest="48"
+				Text="Book"
+				TextColor="White" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

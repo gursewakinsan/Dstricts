@@ -932,7 +932,10 @@
 						TextColor="White" />
 
 					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-						<StackLayout x:Name="layoutFitnessSpa" Orientation="Horizontal">
+						<StackLayout
+							x:Name="layoutFitnessSpa"
+							BindableLayout.ItemsSource="{Binding HotelDetails.InhouseFittness}"
+							Orientation="Horizontal">
 							<BindableLayout.ItemTemplate>
 								<DataTemplate>
 									<StackLayout
@@ -943,10 +946,11 @@
 											Padding="0"
 											Aspect="AspectFill"
 											BackgroundColor="Transparent"
+											Clicked="OnFitnessAndSpaImageClicked"
 											CornerRadius="16"
 											HeightRequest="{Binding ImgHeight}"
 											HorizontalOptions="Center"
-											Source="{Binding ImgUrl}"
+											Source="{Binding ImageUrl}"
 											VerticalOptions="Center"
 											WidthRequest="{Binding ImgWidth}" />
 
@@ -958,7 +962,7 @@
 											HorizontalTextAlignment="Start"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
-											Text="{Binding Name}"
+											Text="{Binding CenterName}"
 											TextColor="White"
 											VerticalTextAlignment="Start" />
 									</StackLayout>

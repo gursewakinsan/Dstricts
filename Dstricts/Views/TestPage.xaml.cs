@@ -13,13 +13,15 @@ namespace Dstricts.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			imgVacation.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
+			/*imgVacation.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
 			imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
 			imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
 			imgMedia.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
 			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
 			lblMedicalAndHealth.Text = "Medical & Health";
-			lblGetPhoneAddressHere.Text = "Get phone & address here";
+			lblGetPhoneAddressHere.Text = "Get phone & address here";*/
+			BindableLayout.SetItemsSource(cards, new string[10]);
+			BindableLayout.SetItemsSource(listPickDate, new string[10]);
 		}
 	}
 }

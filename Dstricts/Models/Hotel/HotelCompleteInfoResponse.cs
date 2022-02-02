@@ -51,10 +51,19 @@ public class InhouseResturantsInfo
 
 public class InhouseFittnessInfo
 {
+	[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
+	public int Id { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "center_name")]
+	public string CenterName { get; set; }
+
 	[Newtonsoft.Json.JsonProperty(PropertyName = "ctype")]
 	public int CType { get; set; }
 
 	[Newtonsoft.Json.JsonProperty(PropertyName = "center_type")]
 	public string CenterType { get; set; }
+
 	public string ImageUrl { get; set; }
+	public double ImgWidth { get; set; }
+	public double ImgHeight { get; set; }
 }

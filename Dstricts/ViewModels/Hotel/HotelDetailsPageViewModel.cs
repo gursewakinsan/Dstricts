@@ -52,7 +52,18 @@ namespace Dstricts.ViewModels
 			//Fittness
 			if (response.InhouseFittness?.Count > 0)
 			{
-				IsInhouseFittnessList = true;
+				int deviceWidth = App.ScreenWidth - 56;
+				int w = deviceWidth * 80 / 100;
+				int h = w * 68 / 100;
+
+				foreach (var fittness in response.InhouseFittness)
+				{
+					fittness.ImgHeight = h;
+					fittness.ImgWidth = w;
+					fittness.ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg";
+				}
+
+				/*IsInhouseFittnessList = true;
 				InhouseFittnessInfo inhouseFittnessInfo = new InhouseFittnessInfo()
 				{
 					CenterType = "Fittness",
@@ -61,10 +72,11 @@ namespace Dstricts.ViewModels
 				foreach (var fittness in response.InhouseFittness)
 					if (!string.IsNullOrWhiteSpace(fittness.CenterType))
 						fittness.ImageUrl = "https://d1heoihvzm7u4h.cloudfront.net/40d13e2df255a7bff04453dc1531cc416c8c443f_APRIL_banner_18.jpg";
-				response.InhouseFittness.Insert(0, inhouseFittnessInfo);
+				response.InhouseFittness.Insert(0, inhouseFittnessInfo);*/
 			}
 			else
 				IsInhouseFittnessList = false;
+
 			HotelDetails = response;
 			Helper.Helper.HotelDetails = HotelDetails;
 
