@@ -66,5 +66,10 @@
 		public const string SelectedWellnessBookingAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessBookingAppMenu";
 		public const string AddServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addServiceToCartApp";
 		public const string UpdateWellnessCartItemUrl = "https://www.qloudid.com/user/index.php/QloudidApp/UpdateWellnessCartItem";
+		public const string CartInfoWellnessListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartInfoWellnessList";
+		public const string SelectEmployeeForSelectedServicesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectEmployeeForSelectedServices";
+		public const string AvailableDatesForbookingUrl = "https://www.qloudid.com/user/index.php/QloudidApp/availableDatesForbooking";
+		public const string EmployeeBookingCalenderInfoAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/employeeBookingCalenderInfoApp";
+		public const string WellnessCartBookingTimeUpdateUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessCartBookingTimeUpdate";
 	}
 }

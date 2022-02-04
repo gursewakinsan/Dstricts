@@ -13,11 +13,11 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new RoomServiceFoodCartListPageViewModels(this.Navigation);
+			viewModel.GetAllFoodCartItemsCommand.Execute(null);
 		}
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.GetAllFoodCartItemsCommand.Execute(null);
 		}
 
 		private void OnDecreaseFoodItemCountClicked(object sender, System.EventArgs e)

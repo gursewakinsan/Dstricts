@@ -13,11 +13,11 @@ namespace Dstricts.Views.FittnessAndSpa
 			InitializeComponent ();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new FittnessAndSpaDetailsViewModel(this.Navigation);
-			viewModel.SelectedWellnessCategoriesCommand.Execute(null);
 		}
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			viewModel.SelectedWellnessCategoriesCommand.Execute(null);
 		}
 
 		private void OnFittnessAndSpaCategoryClicked(object sender, System.EventArgs e)

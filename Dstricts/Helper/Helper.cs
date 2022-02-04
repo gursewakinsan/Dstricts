@@ -27,6 +27,7 @@ namespace Dstricts.Helper
 		public static int SelectResturantId { get; set; }
 		public static int WellnessId { get; set; }
 		public static string WellnessName { get; set; }
+		public static bool IsFromViewCartButtonClicked { get; set; } = false;
 
 		public static string[] ListIconBgColorList =
 		{

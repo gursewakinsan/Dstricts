@@ -16,15 +16,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Add services Command.
-		private ICommand addServicesCommand;
-		public ICommand AddServicesCommand
+		#region Go To services Command.
+		private ICommand goToServicesCommand;
+		public ICommand GoToServicesCommand
 		{
-			get => addServicesCommand ?? (addServicesCommand = new Command( () => ExecuteAddServicesCommand()));
+			get => goToServicesCommand ?? (goToServicesCommand = new Command(async () =>await ExecuteGoToServicesCommand()));
 		}
-		private void ExecuteAddServicesCommand()
+		private async Task ExecuteGoToServicesCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
+			if (!Helper.Helper.IsFromViewCartButtonClicked)
+				this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
+			else Helper.Helper.IsFromViewCartButtonClicked = false;
+			await Navigation.PopAsync();
 		}
 		#endregion
 
@@ -42,13 +45,25 @@ namespace Dstricts.ViewModels
 			{
 				WellnessId = Helper.Helper.WellnessId,
 				CheckId = Helper.Helper.HotelCheckedIn,
-				DishId = removeItem.DishId
+				DishId = removeItem.DishId,
+				ServiceType = 5
 			});
 			AddedServiceToCartList.Remove(removeItem);
 			if (AddedServiceToCartList?.Count == 0)
-				Application.Current.MainPage = new NavigationPage(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
-				
+				GoToServicesCommand.Execute(null);
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Book Time Command.
+		private ICommand bookTimeCommand;
+		public ICommand BookTimeCommand
+		{
+			get => bookTimeCommand ?? (bookTimeCommand = new Command(async () => await ExecuteBookTimeCommand()));
+		}
+		private async Task ExecuteBookTimeCommand()
+		{
+			await Navigation.PushAsync(new Views.FittnessAndSpa.BookTimePage());
 		}
 		#endregion
 

@@ -45,6 +45,9 @@
     <EmbeddedResource Update="Views\FittnessAndSpa\AddServiceToCartAppPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\FittnessAndSpa\BookTimePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\FittnessAndSpa\CartInfoWellnessListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

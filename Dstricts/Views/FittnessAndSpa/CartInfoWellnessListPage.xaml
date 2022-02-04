@@ -36,7 +36,7 @@
 				TextColor="White"
 				VerticalTextAlignment="Center">
 				<Label.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+					<TapGestureRecognizer Command="{Binding GoToServicesCommand}" />
 				</Label.GestureRecognizers>
 			</Label>
 
@@ -221,7 +221,7 @@
 						TextColor="White"
 						VerticalTextAlignment="Center">
 						<Label.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding AddServicesCommand}" />
+							<TapGestureRecognizer Command="{Binding GoToServicesCommand}" />
 						</Label.GestureRecognizers>
 					</Label>
 				</StackLayout>
@@ -264,6 +264,7 @@
 				Grid.ColumnSpan="3"
 				Margin="28,0,28,0"
 				BackgroundColor="#6263ED"
+				Command="{Binding BookTimeCommand}"
 				CornerRadius="10"
 				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 				FontSize="16"

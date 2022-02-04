@@ -33,6 +33,7 @@ namespace Dstricts.ViewModels
 			});
 			FoodCartList = new ObservableCollection<Models.CartInfoResponse>(response);
 			FoodCartListItemCount = FoodCartList.Count;
+			FoodCartListItemTotalPrice = 0;
 			foreach (var item in FoodCartList)
 			{
 				for (int i = 0; i < item.DishQuantity; i++)

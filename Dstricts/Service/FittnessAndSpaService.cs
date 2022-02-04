@@ -43,5 +43,50 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.AddServiceToCartAppResponse>> CartInfoWellnessListAsync(Models.CartInfoWellnessListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.AddServiceToCartAppResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CartInfoWellnessListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.SelectEmployeeForSelectedServicesResponse>> SelectEmployeeForSelectedServicesAsync(Models.SelectEmployeeForSelectedServicesRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SelectEmployeeForSelectedServicesResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectEmployeeForSelectedServicesUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.AvailableDatesForbookingResponse>> AvailableDatesForbookingAsync(Models.AvailableDatesForbookingRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.AvailableDatesForbookingResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.AvailableDatesForbookingUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.EmployeeBookingCalenderInfoAppResponse>> EmployeeBookingCalenderInfoAppAsync(Models.EmployeeBookingCalenderInfoAppRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post< List<Models.EmployeeBookingCalenderInfoAppResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.EmployeeBookingCalenderInfoAppUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<string> WellnessCartBookingTimeUpdateAsync(Models.WellnessCartBookingTimeUpdateRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<string>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessCartBookingTimeUpdateUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

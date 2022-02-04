@@ -10,5 +10,8 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_id")]
 		public int DishId { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "service_type")]
+		public int ServiceType { get; set; }
 	}
 }

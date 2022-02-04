@@ -3,6 +3,7 @@
 	x:Class="Dstricts.Views.FittnessAndSpa.FittnessAndSpaDetailsPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
@@ -21,6 +22,7 @@
 			<RowDefinition Height="20" />
 			<RowDefinition Height="auto" />
 			<RowDefinition Height="*" />
+			<RowDefinition Height="auto" />
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="28" />
@@ -200,5 +202,21 @@
 				</BindableLayout.ItemTemplate>
 			</StackLayout>
 		</ScrollView>
+
+		<controls:CustomButton
+			Grid.Row="7"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			Margin="0,20,0,0"
+			BackgroundColor="#6263ED"
+			Command="{Binding ViewCartCommand}"
+			CornerRadius="10"
+			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontSize="16"
+			HeightRequest="48"
+			IsVisible="{Binding IsCartInfoWellnessList}"
+			Text="View cart"
+			TextColor="White"
+			VerticalOptions="EndAndExpand" />
 	</Grid>
 </ContentPage>
