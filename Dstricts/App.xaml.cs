@@ -26,7 +26,15 @@ namespace Dstricts
 		{
 			if (!string.IsNullOrWhiteSpace(session))
 				Helper.Helper.SessionId = session;
-			MainPage = new Views.LoginPage();
+			if (Application.Current.Properties.ContainsKey("UserId"))
+			{
+				Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
+				Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
+				MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+			}
+			else
+				MainPage = new Views.LoginPage();
+			//MainPage = new Views.LoginPage();
 		}
 		#endregion
 
@@ -38,8 +46,14 @@ namespace Dstricts
 				if (uri.Segments != null && uri.Segments.Length == 3)
 				{
 					Helper.Helper.SessionId = uri.Segments[2];
-					if (Helper.Helper.IsLoggedInUser)
-						MainPage = new Views.Hotel.CheckedInListPage();
+					//if (Helper.Helper.IsLoggedInUser)
+					//MainPage = new Views.Hotel.CheckedInListPage();
+					if (Application.Current.Properties.ContainsKey("UserId"))
+					{
+						Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
+						Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
+						MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+					}
 					else
 						MainPage = new Views.LoginPage();
 				}
