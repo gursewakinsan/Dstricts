@@ -248,14 +248,14 @@ namespace Dstricts.Views.Hotel
 			}
 			await Navigation.PushAsync(new Laundry.LaundryServicePage(viewModel.LaundryServiceInfo));
 		}
-		
-		private async void OnFitnessAndSpaImageClicked(object sender, System.EventArgs e)
+
+		private void OnFitnessAndSpaImageClicked(object sender, System.EventArgs e)
 		{
 			ImageButton button = sender as ImageButton;
 			InhouseFittnessInfo info = button.BindingContext as InhouseFittnessInfo;
 			Helper.Helper.WellnessId = info.Id;
 			Helper.Helper.WellnessName = info.CenterName;
-			await Navigation.PushAsync(new FittnessAndSpa.FittnessAndSpaDetailsPage());
+			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
 		}
 	}
 }

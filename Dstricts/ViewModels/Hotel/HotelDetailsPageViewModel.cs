@@ -193,6 +193,27 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Fittness And Spa Details Page Command.
+		private ICommand goToFittnessAndSpaDetailsPageCommand;
+		public ICommand GoToFittnessAndSpaDetailsPageCommand
+		{
+			get => goToFittnessAndSpaDetailsPageCommand ?? (goToFittnessAndSpaDetailsPageCommand = new Command(async () => await ExecuteGoToFittnessAndSpaDetailsPageCommand()));
+		}
+		private async Task ExecuteGoToFittnessAndSpaDetailsPageCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IFittnessAndSpaService service = new FittnessAndSpaService();
+			await service.DeleteWellnessSharedItemsAsync(new Models.DeleteWellnessSharedItemsRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn,
+				WellnessId = Helper.Helper.WellnessId,
+				ServiceType = 5
+			});
+			await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
 		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo

@@ -88,5 +88,23 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<string> DeleteWellnessSharedItemsAsync(Models.DeleteWellnessSharedItemsRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<string>(HttpWebRequest.Create(string.Format(EndPointsList.DeleteWellnessSharedItemsUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<List<Models.EmployeeBookingCalenderInfoAppResponse>> WellnessPrivateCalenderInfoAppAsync(Models.EmployeeBookingCalenderInfoAppRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.EmployeeBookingCalenderInfoAppResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessPrivateCalenderInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

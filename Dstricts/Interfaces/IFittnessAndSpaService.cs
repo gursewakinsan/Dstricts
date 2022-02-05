@@ -14,5 +14,7 @@ namespace Dstricts.Interfaces
 		Task<List<Models.AvailableDatesForbookingResponse>> AvailableDatesForbookingAsync(Models.AvailableDatesForbookingRequest request);
 		Task<List<Models.EmployeeBookingCalenderInfoAppResponse>> EmployeeBookingCalenderInfoAppAsync(Models.EmployeeBookingCalenderInfoAppRequest request);
 		Task<string> WellnessCartBookingTimeUpdateAsync(Models.WellnessCartBookingTimeUpdateRequest request);
+		Task<string> DeleteWellnessSharedItemsAsync(Models.DeleteWellnessSharedItemsRequest request);
+		Task<List<Models.EmployeeBookingCalenderInfoAppResponse>> WellnessPrivateCalenderInfoAppAsync(Models.EmployeeBookingCalenderInfoAppRequest request);
 	}
 }

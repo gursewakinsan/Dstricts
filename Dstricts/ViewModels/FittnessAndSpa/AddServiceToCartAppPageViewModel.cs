@@ -42,7 +42,12 @@ namespace Dstricts.ViewModels
 				Checkid = Helper.Helper.HotelCheckedIn
 			});
 			if (response?.Count > 0)
-				await Navigation.PushAsync(new Views.FittnessAndSpa.CartInfoWellnessListPage(response));
+			{
+				if (SelectedFittnessAndSpaInfo.OneSharedType == 2)
+					await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessPrivateCalenderInfoPage());
+				else
+					await Navigation.PushAsync(new Views.FittnessAndSpa.CartInfoWellnessListPage(response));
+			}
 			else
 				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
 			DependencyService.Get<IProgressBar>().Hide();

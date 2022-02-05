@@ -71,5 +71,7 @@
 		public const string AvailableDatesForbookingUrl = "https://www.qloudid.com/user/index.php/QloudidApp/availableDatesForbooking";
 		public const string EmployeeBookingCalenderInfoAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/employeeBookingCalenderInfoApp";
 		public const string WellnessCartBookingTimeUpdateUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessCartBookingTimeUpdate";
+		public const string DeleteWellnessSharedItemsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/deleteWellnessSharedItems";
+		public const string WellnessPrivateCalenderInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/WellnessPrivateCalenderInfo";
 	}
 }
