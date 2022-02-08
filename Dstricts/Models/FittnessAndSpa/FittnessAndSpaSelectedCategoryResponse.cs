@@ -23,6 +23,9 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "one_shared_type")]
 		public int OneSharedType { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "recurring_event")]
+		public bool RecurringEvent { get; set; }
+
 
 		/*[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int is_bookable { get; set; }

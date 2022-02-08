@@ -106,5 +106,23 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.WellnessSelectedServiceInfoResponse> WellnessSelectedServiceInfoAsync(Models.WellnessSelectedServiceInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.WellnessSelectedServiceInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessSelectedServiceInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> AddPublicServiceToCartAppAsync(Models.AddPublicServiceToCartAppRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddPublicServiceToCartAppUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

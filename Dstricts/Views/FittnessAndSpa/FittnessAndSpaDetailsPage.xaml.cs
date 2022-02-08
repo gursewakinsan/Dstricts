@@ -38,21 +38,30 @@ namespace Dstricts.Views.FittnessAndSpa
 		{
 			ImageButton image = sender as ImageButton;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = image.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
+			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
 		}
 		
 		private async void OnDishNameTapped(object sender, System.EventArgs e)
 		{
 			StackLayout layout = sender as StackLayout;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = layout.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
+			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
 		}
 
 		private async void OnFittnessAndSpaTapped(object sender, System.EventArgs e)
 		{
 			Grid grid = sender as Grid;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = grid.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
+			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));
 		}
 	}
 }
