@@ -73,43 +73,48 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteAddPublicServiceToCartAppCommand()
 		{
-			DependencyService.Get<IProgressBar>().Show();
-			IFittnessAndSpaService service = new FittnessAndSpaService();
-			var response = await service.AddPublicServiceToCartAppAsync(new Models.AddPublicServiceToCartAppRequest()
-			{
-				WellnessId = Helper.Helper.WellnessId,
-				DstrictsUserId = Helper.Helper.LoggedInUserId,
-				DishDetail = WellnessSelectedServiceInfo.DishDetail,
-				DishImage = WellnessSelectedServiceInfo.DishImage,
-				DishName = WellnessSelectedServiceInfo.DishName,
-				Price = WellnessSelectedServiceInfo.DishPrice,
-				Quantity = CompanySize,
-				ServiceType = 5,
-				ItemId = WellnessSelectedServiceInfo.Id,
-				OneShared = WellnessSelectedServiceInfo.OneShared,
-				OneSharedType = WellnessSelectedServiceInfo.OneSharedType,
-				Checkid = Helper.Helper.HotelCheckedIn,
-				OpenEventDate = WellnessSelectedServiceInfo.OpenEventDate,
-				OpenEventTime = WellnessSelectedServiceInfo.OpenEventTime
-			});
-			if (response == 1)
-			{
-				Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
-				{
-					CheckedInId = Helper.Helper.HotelCheckedIn,
-					ServiceType = 5,
-					QloudIdPay = 1,
-					WellnessId = Helper.Helper.WellnessId
-				};
-				string payJson = Newtonsoft.Json.JsonConvert.SerializeObject(payOnRequest);
-				if (Device.RuntimePlatform == Device.iOS)
-					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
-				else
-					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
-			}
+			if (WellnessSelectedServiceInfo.RecurringEvent)
+				await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessOpenCalenderInfoPage(WellnessSelectedServiceInfo));
 			else
-				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
-			DependencyService.Get<IProgressBar>().Hide();
+			{
+				DependencyService.Get<IProgressBar>().Show();
+				IFittnessAndSpaService service = new FittnessAndSpaService();
+				var response = await service.AddPublicServiceToCartAppAsync(new Models.AddPublicServiceToCartAppRequest()
+				{
+					WellnessId = Helper.Helper.WellnessId,
+					DstrictsUserId = Helper.Helper.LoggedInUserId,
+					DishDetail = WellnessSelectedServiceInfo.DishDetail,
+					DishImage = WellnessSelectedServiceInfo.DishImage,
+					DishName = WellnessSelectedServiceInfo.DishName,
+					Price = WellnessSelectedServiceInfo.DishPrice,
+					Quantity = CompanySize,
+					ServiceType = 5,
+					ItemId = WellnessSelectedServiceInfo.Id,
+					OneShared = WellnessSelectedServiceInfo.OneShared,
+					OneSharedType = WellnessSelectedServiceInfo.OneSharedType,
+					Checkid = Helper.Helper.HotelCheckedIn,
+					OpenEventDate = WellnessSelectedServiceInfo.OpenEventDate,
+					OpenEventTime = WellnessSelectedServiceInfo.OpenEventTime
+				});
+				if (response == 1)
+				{
+					Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
+					{
+						CheckedInId = Helper.Helper.HotelCheckedIn,
+						ServiceType = 5,
+						QloudIdPay = 1,
+						WellnessId = Helper.Helper.WellnessId
+					};
+					string payJson = Newtonsoft.Json.JsonConvert.SerializeObject(payOnRequest);
+					if (Device.RuntimePlatform == Device.iOS)
+						await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
+					else
+						await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
+				}
+				else
+					await Helper.Alert.DisplayAlert("Something went wrong please try again!");
+				DependencyService.Get<IProgressBar>().Hide();
+			}
 		}
 		#endregion
 

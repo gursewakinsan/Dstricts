@@ -18,7 +18,7 @@
 		public int BookingDate { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "booking_employee_id")]
-		public int BookingEmployeeId { get; set; }
+		public int? BookingEmployeeId { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "employee_id")]
 		public int EmployeeId { get; set; }

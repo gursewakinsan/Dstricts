@@ -18,5 +18,6 @@ namespace Dstricts.Interfaces
 		Task<List<Models.EmployeeBookingCalenderInfoAppResponse>> WellnessPrivateCalenderInfoAppAsync(Models.EmployeeBookingCalenderInfoAppRequest request);
 		Task<Models.WellnessSelectedServiceInfoResponse> WellnessSelectedServiceInfoAsync(Models.WellnessSelectedServiceInfoRequest request);
 		Task<int> AddPublicServiceToCartAppAsync(Models.AddPublicServiceToCartAppRequest request);
+		Task<Models.WellnessOpenCalenderInfoResponse> WellnessOpenCalenderInfoAsync(Models.WellnessOpenCalenderInfoRequest request);
 	}
 }

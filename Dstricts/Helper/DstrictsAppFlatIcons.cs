@@ -66,5 +66,6 @@
 		public const string CartOutline = "\U000f0111";
 		public const string MinusBox = "\U000f0375";
 		public const string PlusBoxOutline = "\U000f0704";
+		public const string AvTimer = "\U000f006b";
 	}
 }

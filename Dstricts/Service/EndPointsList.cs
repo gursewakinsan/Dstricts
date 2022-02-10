@@ -75,5 +75,6 @@
 		public const string WellnessPrivateCalenderInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/WellnessPrivateCalenderInfo";
 		public const string WellnessSelectedServiceInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessSelectedServiceInfo";
 		public const string AddPublicServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addPublicServiceToCartApp";
+		public const string WellnessOpenCalenderInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessOpenCalenderInfo";
 	}
 }

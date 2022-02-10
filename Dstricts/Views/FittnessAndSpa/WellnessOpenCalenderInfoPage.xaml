@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.FittnessAndSpa.WellnessOpenCalenderInfoPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<Grid
+		Margin="0,20,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="36" />
+			<RowDefinition Height="34" />
+			<RowDefinition Height="70" />
+			<RowDefinition Height="21" />
+			<RowDefinition Height="1" />
+			<RowDefinition Height="54" />
+			<RowDefinition Height="20" />
+			<RowDefinition Height="22" />
+			<RowDefinition Height="86" />
+			<RowDefinition Height="34" />
+			<RowDefinition Height="1" />
+			<RowDefinition Height="34" />
+			<RowDefinition Height="20" />
+			<RowDefinition Height="32" />
+			<RowDefinition Height="80" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="100" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="100" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Button
+			Grid.Row="0"
+			Grid.Column="3"
+			Padding="0"
+			BackgroundColor="#342B20"
+			CornerRadius="8"
+			FontAttributes="Bold"
+			FontFamily="PoppinsSemiBoldFontFamily"
+			FontSize="12"
+			HeightRequest="36"
+			HorizontalOptions="EndAndExpand"
+			Text="Get Wifi"
+			TextColor="#5DA1A6"
+			WidthRequest="102" />
+
+		<StackLayout
+			Grid.Row="2"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			Spacing="0">
+			<Label
+				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontSize="18"
+				Opacity="0.4"
+				Text="{Binding WellnessName}"
+				TextColor="White"
+				VerticalTextAlignment="Start" />
+
+			<Label
+				FontAttributes="Bold"
+				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontSize="32"
+				Text="{Binding SelectedWellnessServiceInfo.DishName}"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+		</StackLayout>
+
+		<BoxView
+			Grid.Row="4"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#2A2A31" />
+
+		<Label
+			Grid.Row="6"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontAttributes="Bold"
+			FontFamily="{StaticResource PoppinsBoldFontFamily}"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			Text="Pick a date"
+			TextColor="White" />
+
+		<ScrollView
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="4"
+			HorizontalScrollBarVisibility="Never"
+			Orientation="Horizontal">
+			<StackLayout BindableLayout.ItemsSource="{Binding AvailableDatesForbookingList}" Orientation="Horizontal">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<Frame
+							Margin="0,0,16,0"
+							Padding="0"
+							BackgroundColor="Transparent"
+							BorderColor="{Binding PickDateBorderColor}"
+							CornerRadius="16"
+							HasShadow="False"
+							HeightRequest="86"
+							HorizontalOptions="Start"
+							IsClippedToBounds="True"
+							VerticalOptions="Center"
+							WidthRequest="80">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Tapped="PickDateFrameTapped" />
+							</Frame.GestureRecognizers>
+							<StackLayout
+								HorizontalOptions="CenterAndExpand"
+								Spacing="0"
+								VerticalOptions="CenterAndExpand">
+								<StackLayout.GestureRecognizers>
+									<TapGestureRecognizer Tapped="PickDateStackLayoutTapped" />
+								</StackLayout.GestureRecognizers>
+								<Label
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="16"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Text="{Binding DisplayDate}"
+									TextColor="{Binding DisplayDateColor}">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Tapped="PickDateLabelTapped" />
+									</Label.GestureRecognizers>
+								</Label>
+
+								<Label
+									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontSize="12"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Text="{Binding DisplayMonth}"
+									TextColor="{Binding DisplayMonthColor}">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Tapped="PickDateLabelTapped" />
+									</Label.GestureRecognizers>
+								</Label>
+							</StackLayout>
+						</Frame>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
+
+		<BoxView
+			Grid.Row="10"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#2A2A31" />
+
+		<Label
+			Grid.Row="12"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontAttributes="Bold"
+			FontFamily="{StaticResource PoppinsBoldFontFamily}"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			Text="Pick a time"
+			TextColor="White" />
+
+		<Frame
+			Grid.Row="14"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			Padding="20,0,20,0"
+			BackgroundColor="Transparent"
+			BorderColor="#2A2A31"
+			CornerRadius="16"
+			HasShadow="False"
+			IsClippedToBounds="True">
+			<Grid ColumnSpacing="0" VerticalOptions="CenterAndExpand">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="auto" />
+				</Grid.ColumnDefinitions>
+				<Button
+					Grid.Column="0"
+					Padding="0"
+					BackgroundColor="#282732"
+					CornerRadius="20"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="25"
+					HeightRequest="40"
+					HorizontalOptions="CenterAndExpand"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.AvTimer}"
+					TextColor="#6F70FB"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="40" />
+
+				<Label
+					Grid.Column="1"
+					Margin="20,0,0,0"
+					FontAttributes="Bold"
+					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontSize="18"
+					HorizontalTextAlignment="Start"
+					Text="10:30"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<StackLayout
+					Grid.Column="2"
+					HorizontalOptions="EndAndExpand"
+					Spacing="0"
+					VerticalOptions="CenterAndExpand">
+					<Label
+						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontSize="18"
+						Text="90 min"
+						TextColor="White" />
+
+					<Label
+						FontFamily="{StaticResource PoppinsRegularFontFamily}"
+						FontSize="14"
+						Opacity="0.4"
+						Text="Duration"
+						TextColor="White" />
+				</StackLayout>
+			</Grid>
+		</Frame>
+
+		<controls:CustomButton
+			Grid.Row="15"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#6263ED"
+			Command="{Binding WellnessCartBookingTimeUpdateCommand}"
+			CornerRadius="10"
+			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontSize="16"
+			HeightRequest="48"
+			Text="Go to payment"
+			TextColor="White"
+			VerticalOptions="EndAndExpand" />
+	</Grid>
+</ContentPage>

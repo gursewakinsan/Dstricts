@@ -124,5 +124,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.WellnessOpenCalenderInfoResponse> WellnessOpenCalenderInfoAsync(Models.WellnessOpenCalenderInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.WellnessOpenCalenderInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessOpenCalenderInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

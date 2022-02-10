@@ -15,7 +15,7 @@
 		public string WorkTime { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "emp_id")]
-		public int EmpId { get; set; }
+		public int? EmpId { get; set; }
 
 		public bool IsSelected { get; set; }
 
