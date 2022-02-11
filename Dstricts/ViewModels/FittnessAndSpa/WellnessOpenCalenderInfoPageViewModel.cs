@@ -4,6 +4,7 @@ using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 
 namespace Dstricts.ViewModels
 {
@@ -40,7 +41,16 @@ namespace Dstricts.ViewModels
 				response[0].DisplayMonthColor = Color.FromHex("#6263ED");
 			}
 			AvailableDatesForbookingList = new ObservableCollection<Models.AvailableDatesForbookingResponse>(response);
-			//WellnessOpenCalenderInfoCommand.Execute(null);
+			WellnessOpenCalenderInfo = await service.WellnessOpenCalenderInfoAsync(new Models.WellnessOpenCalenderInfoRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn,
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				WellnessId = Helper.Helper.WellnessId,
+				EmployeeId = 0,
+				DateId = DateId
+			});
+			IsBookingTimeSelected = true;
+			WorkTimeSelectedCommand.Execute(null);
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -55,7 +65,7 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IFittnessAndSpaService service = new FittnessAndSpaService();
-			var response = await service.WellnessOpenCalenderInfoAsync(new Models.WellnessOpenCalenderInfoRequest()
+			WellnessOpenCalenderInfo = await service.WellnessOpenCalenderInfoAsync(new Models.WellnessOpenCalenderInfoRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
@@ -63,12 +73,67 @@ namespace Dstricts.ViewModels
 				EmployeeId = 0,
 				DateId = DateId
 			});
-			/*if (response?.Count > 0)
-			{
-			}
-			else
-				await Helper.Alert.DisplayAlert("Something went wrong please try again!");*/
+			IsBookingTimeSelected = true;
+			WorkTimeSelectedCommand.Execute(null);
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Wellness Cart Booking Time Update Command.
+		private ICommand wellnessCartBookingTimeUpdateCommand;
+		public ICommand WellnessCartBookingTimeUpdateCommand
+		{
+			get => wellnessCartBookingTimeUpdateCommand ?? (wellnessCartBookingTimeUpdateCommand = new Command(async () => await ExecuteWellnessCartBookingTimeUpdateCommand()));
+		}
+		private async Task ExecuteWellnessCartBookingTimeUpdateCommand()
+		{
+			if (!IsBookingTimeSelected)
+				await Helper.Alert.DisplayAlert("Please select time.");
+			else
+			{
+				DependencyService.Get<IProgressBar>().Show();
+				IFittnessAndSpaService service = new FittnessAndSpaService();
+				var response = await service.WellnessCartBookingTimeUpdateAsync(new Models.WellnessCartBookingTimeUpdateRequest()
+				{
+					CheckId = Helper.Helper.HotelCheckedIn,
+					DstrictsUserId = Helper.Helper.LoggedInUserId,
+					WellnessId = Helper.Helper.WellnessId,
+					EmployeeId = 0,
+					BookingDate = WellnessOpenCalenderInfo.Date,
+					BookingEmployeeId = 0,
+					BookingTime = WellnessOpenCalenderInfo.WorkTime,
+					TotalBookingTime = WellnessOpenCalenderInfo.TimeRequired
+				});
+				Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
+				{
+					CheckedInId = Helper.Helper.HotelCheckedIn,
+					ServiceType = 5,
+					QloudIdPay = 1,
+					WellnessId = Helper.Helper.WellnessId
+				};
+				string payJson = Newtonsoft.Json.JsonConvert.SerializeObject(payOnRequest);
+				if (Device.RuntimePlatform == Device.iOS)
+					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsAppPayOn/{payJson}");
+				else
+					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
+				DependencyService.Get<IProgressBar>().Hide();
+			}
+		}
+		#endregion
+
+		#region Work Time Selected Command.
+		private ICommand workTimeSelectedCommand;
+		public ICommand WorkTimeSelectedCommand
+		{
+			get => workTimeSelectedCommand ?? (workTimeSelectedCommand = new Command( () => ExecuteWorkTimeSelectedCommand()));
+		}
+		private void ExecuteWorkTimeSelectedCommand()
+		{
+			IsBookingTimeSelected = !IsBookingTimeSelected;
+			if (IsBookingTimeSelected)
+				WorkTimeFrameBorderColor = Color.FromHex("#6263ED");
+			else
+				WorkTimeFrameBorderColor = Color.FromHex("#2A2A31");
 		}
 		#endregion
 
@@ -95,6 +160,29 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private Models.WellnessOpenCalenderInfoResponse wellnessOpenCalenderInfo;
+		public Models.WellnessOpenCalenderInfoResponse WellnessOpenCalenderInfo
+		{
+			get => wellnessOpenCalenderInfo;
+			set
+			{
+				wellnessOpenCalenderInfo = value;
+				OnPropertyChanged("WellnessOpenCalenderInfo");
+			}
+		}
+
+		private Color workTimeFrameBorderColor = Color.FromHex("#2A2A31");
+		public Color WorkTimeFrameBorderColor
+		{
+			get => workTimeFrameBorderColor;
+			set
+			{
+				workTimeFrameBorderColor = value;
+				OnPropertyChanged("WorkTimeFrameBorderColor");
+			}
+		}
+
+		public bool IsBookingTimeSelected { get; set; } = true;
 		public int DateId { get; set; }
 		public string WellnessName => Helper.Helper.WellnessName;
 		#endregion

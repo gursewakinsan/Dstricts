@@ -12,7 +12,7 @@ namespace Dstricts.Service
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<List<Models.FittnessAndSpaCategoryResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedWellnessCategoriesUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<List<Models.FittnessAndSpaCategoryResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedWellnessCategoriesSelectionUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}
@@ -21,7 +21,7 @@ namespace Dstricts.Service
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<List<Models.FittnessAndSpaSelectedCategoryResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedWellnessBookingAppMenuUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<List<Models.FittnessAndSpaSelectedCategoryResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SelectedWellnessBookingAppMenuSelectionUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}
@@ -130,6 +130,15 @@ namespace Dstricts.Service
 			return Task.Factory.StartNew(() =>
 			{
 				var res = RestClient.Post<Models.WellnessOpenCalenderInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessOpenCalenderInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<Models.WellnessServiceInfoCountResponse> WellnessServiceInfoCountAsync(Models.WellnessServiceInfoCountRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.WellnessServiceInfoCountResponse>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessServiceInfoCountUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}

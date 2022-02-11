@@ -38,7 +38,7 @@
 			BackgroundColor="Transparent"
 			BorderColor="#2A2A31"
 			BorderWidth="1"
-			Command="{Binding CloseCommand}"
+			Command="{Binding BackCommand}"
 			CornerRadius="8"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="30"

@@ -190,11 +190,17 @@
 			Grid.ColumnSpan="3"
 			Padding="20,0,20,0"
 			BackgroundColor="Transparent"
-			BorderColor="#2A2A31"
+			BorderColor="{Binding WorkTimeFrameBorderColor}"
 			CornerRadius="16"
 			HasShadow="False"
 			IsClippedToBounds="True">
+			<Frame.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+			</Frame.GestureRecognizers>
 			<Grid ColumnSpacing="0" VerticalOptions="CenterAndExpand">
+				<Grid.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+				</Grid.GestureRecognizers>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="40" />
 					<ColumnDefinition Width="*" />
@@ -204,6 +210,7 @@
 					Grid.Column="0"
 					Padding="0"
 					BackgroundColor="#282732"
+					Command="{Binding WorkTimeSelectedCommand}"
 					CornerRadius="20"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="25"
@@ -221,27 +228,48 @@
 					FontFamily="{StaticResource PoppinsBoldFontFamily}"
 					FontSize="18"
 					HorizontalTextAlignment="Start"
-					Text="10:30"
+					Text="{Binding WellnessOpenCalenderInfo.WorkTime}"
 					TextColor="White"
-					VerticalTextAlignment="Center" />
+					VerticalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
 
 				<StackLayout
 					Grid.Column="2"
 					HorizontalOptions="EndAndExpand"
 					Spacing="0"
 					VerticalOptions="CenterAndExpand">
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+					</StackLayout.GestureRecognizers>
 					<Label
 						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 						FontSize="18"
-						Text="90 min"
-						TextColor="White" />
+						TextColor="White">
+						<Label.FormattedText>
+							<FormattedString>
+								<Span Text="{Binding WellnessOpenCalenderInfo.DisplayDurationMin}" />
+								<Span Text=" " />
+								<Span Text="min" />
+							</FormattedString>
+						</Label.FormattedText>
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
 
 					<Label
 						FontFamily="{StaticResource PoppinsRegularFontFamily}"
 						FontSize="14"
 						Opacity="0.4"
 						Text="Duration"
-						TextColor="White" />
+						TextColor="White">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
 				</StackLayout>
 			</Grid>
 		</Frame>

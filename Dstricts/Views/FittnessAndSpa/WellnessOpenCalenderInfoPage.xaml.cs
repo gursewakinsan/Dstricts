@@ -21,7 +21,7 @@ namespace Dstricts.Views.FittnessAndSpa
 		}
 		#endregion
 
-		#region Pick a date clicked.
+		#region On Appearing.
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
@@ -71,7 +71,7 @@ namespace Dstricts.Views.FittnessAndSpa
 					}
 				}
 				viewModel.DateId = available.DateId;
-				//viewModel.EmployeeBookingCalenderInfoAppCommand.Execute(null);
+				viewModel.WellnessOpenCalenderInfoCommand.Execute(null);
 			}
 		}
 		#endregion

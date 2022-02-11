@@ -21,7 +21,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteOneToOneCommand()
 		{
-			await Task.CompletedTask;
+			Helper.Helper.SelectedServicesType = 1;
+			await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
 		}
 		#endregion
 
@@ -33,7 +34,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecutePrivateBookingCommand()
 		{
-			await Task.CompletedTask;
+			Helper.Helper.SelectedServicesType = 2;
+			await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
 		}
 		#endregion
 
@@ -45,7 +47,21 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecutePublicEventCommand()
 		{
-			await Task.CompletedTask;
+			Helper.Helper.SelectedServicesType = 3;
+			await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
+		}
+		#endregion
+
+		#region Properties.
+		private Models.WellnessServiceInfoCountResponse wellnessServiceInfoCount;
+		public Models.WellnessServiceInfoCountResponse WellnessServiceInfoCount
+		{
+			get => wellnessServiceInfoCount;
+			set
+			{
+				wellnessServiceInfoCount = value;
+				OnPropertyChanged("WellnessServiceInfoCount");
+			}
 		}
 		#endregion
 	}

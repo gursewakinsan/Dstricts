@@ -73,30 +73,30 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteAddPublicServiceToCartAppCommand()
 		{
-			if (WellnessSelectedServiceInfo.RecurringEvent)
-				await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessOpenCalenderInfoPage(WellnessSelectedServiceInfo));
-			else
+			DependencyService.Get<IProgressBar>().Show();
+			IFittnessAndSpaService service = new FittnessAndSpaService();
+			var response = await service.AddPublicServiceToCartAppAsync(new Models.AddPublicServiceToCartAppRequest()
 			{
-				DependencyService.Get<IProgressBar>().Show();
-				IFittnessAndSpaService service = new FittnessAndSpaService();
-				var response = await service.AddPublicServiceToCartAppAsync(new Models.AddPublicServiceToCartAppRequest()
-				{
-					WellnessId = Helper.Helper.WellnessId,
-					DstrictsUserId = Helper.Helper.LoggedInUserId,
-					DishDetail = WellnessSelectedServiceInfo.DishDetail,
-					DishImage = WellnessSelectedServiceInfo.DishImage,
-					DishName = WellnessSelectedServiceInfo.DishName,
-					Price = WellnessSelectedServiceInfo.DishPrice,
-					Quantity = CompanySize,
-					ServiceType = 5,
-					ItemId = WellnessSelectedServiceInfo.Id,
-					OneShared = WellnessSelectedServiceInfo.OneShared,
-					OneSharedType = WellnessSelectedServiceInfo.OneSharedType,
-					Checkid = Helper.Helper.HotelCheckedIn,
-					OpenEventDate = WellnessSelectedServiceInfo.OpenEventDate,
-					OpenEventTime = WellnessSelectedServiceInfo.OpenEventTime
-				});
-				if (response == 1)
+				WellnessId = Helper.Helper.WellnessId,
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				DishDetail = WellnessSelectedServiceInfo.DishDetail,
+				DishImage = WellnessSelectedServiceInfo.DishImage,
+				DishName = WellnessSelectedServiceInfo.DishName,
+				Price = WellnessSelectedServiceInfo.DishPrice,
+				Quantity = CompanySize,
+				ServiceType = 5,
+				ItemId = WellnessSelectedServiceInfo.Id,
+				OneShared = WellnessSelectedServiceInfo.OneShared,
+				OneSharedType = WellnessSelectedServiceInfo.OneSharedType,
+				Checkid = Helper.Helper.HotelCheckedIn,
+				OpenEventDate = WellnessSelectedServiceInfo.OpenEventDate,
+				OpenEventTime = WellnessSelectedServiceInfo.OpenEventTime
+			});
+			if (response == 1)
+			{
+				if (WellnessSelectedServiceInfo.RecurringEvent)
+					await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessOpenCalenderInfoPage(WellnessSelectedServiceInfo));
+				else
 				{
 					Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
 					{
@@ -111,10 +111,10 @@ namespace Dstricts.ViewModels
 					else
 						await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsAppPayOn/{payJson}");
 				}
-				else
-					await Helper.Alert.DisplayAlert("Something went wrong please try again!");
-				DependencyService.Get<IProgressBar>().Hide();
 			}
+			else
+				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 

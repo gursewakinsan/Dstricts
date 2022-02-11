@@ -32,7 +32,8 @@ namespace Dstricts.ViewModels
 			var response = await service.SelectedWellnessCategoriesAsync(new Models.FittnessAndSpaCategoryRequest()
 			{
 				WellnessId = Helper.Helper.WellnessId,
-				DstrictsUserId = Helper.Helper.LoggedInUserId
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				SelectedServicesType = Helper.Helper.SelectedServicesType
 			});
 			if (response?.Count > 0)
 			{
@@ -65,7 +66,8 @@ namespace Dstricts.ViewModels
 			{
 				WellnessId = Helper.Helper.WellnessId,
 				BookableServiceId = BookableServiceId,
-				DstrictsUserId = Helper.Helper.LoggedInUserId
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				SelectedServicesType = Helper.Helper.SelectedServicesType
 			});
 			FittnessAndSpaSelectedCategoryList = new ObservableCollection<Models.FittnessAndSpaSelectedCategoryResponse>(response);
 			DependencyService.Get<IProgressBar>().Hide();
@@ -105,6 +107,20 @@ namespace Dstricts.ViewModels
 		{
 			Helper.Helper.IsFromViewCartButtonClicked = true;
 			await Navigation.PushAsync(new Views.FittnessAndSpa.CartInfoWellnessListPage(AddServiceToCartList));
+		}
+		#endregion
+
+		#region Back Command.
+		private ICommand backCommand;
+		public ICommand BackCommand
+		{
+			get => backCommand ?? (backCommand = new Command(async () => await ExecuteBackCommand()));
+		}
+		private async Task ExecuteBackCommand()
+		{
+			if (Helper.Helper.IsWellnessBookingType)
+				Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+			await Navigation.PopAsync();
 		}
 		#endregion
 

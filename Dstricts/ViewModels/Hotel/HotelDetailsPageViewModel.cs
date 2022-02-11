@@ -209,7 +209,24 @@ namespace Dstricts.ViewModels
 				WellnessId = Helper.Helper.WellnessId,
 				ServiceType = 5
 			});
-			await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
+
+			Models.WellnessServiceInfoCountResponse response = await service.WellnessServiceInfoCountAsync(new Models.WellnessServiceInfoCountRequest()
+			{
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				WellnessId = Helper.Helper.WellnessId
+			});
+
+			if (Convert.ToBoolean(response.OneCart))
+			{
+				Helper.Helper.IsWellnessBookingType = false;
+				Helper.Helper.SelectedServicesType = 1;
+				await Navigation.PushAsync(new Views.FittnessAndSpa.FittnessAndSpaDetailsPage());
+			}
+			else
+			{
+				Helper.Helper.IsWellnessBookingType = true;
+				await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessBookingTypePage(response));
+			}
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

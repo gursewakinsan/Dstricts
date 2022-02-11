@@ -62,8 +62,8 @@
 		public const string PublishedResturantInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/publishedResturantInfo";
 
 		//Fittness & Spa
-		public const string SelectedWellnessCategoriesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessCategories";
-		public const string SelectedWellnessBookingAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessBookingAppMenu";
+		public const string SelectedWellnessCategoriesSelectionUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessCategoriesSelection";
+		public const string SelectedWellnessBookingAppMenuSelectionUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessBookingAppMenuSelection";
 		public const string AddServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addServiceToCartApp";
 		public const string UpdateWellnessCartItemUrl = "https://www.qloudid.com/user/index.php/QloudidApp/UpdateWellnessCartItem";
 		public const string CartInfoWellnessListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/cartInfoWellnessList";
@@ -76,5 +76,6 @@
 		public const string WellnessSelectedServiceInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessSelectedServiceInfo";
 		public const string AddPublicServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addPublicServiceToCartApp";
 		public const string WellnessOpenCalenderInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessOpenCalenderInfo";
+		public const string WellnessServiceInfoCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessServiceInfoCount";
 	}
 }

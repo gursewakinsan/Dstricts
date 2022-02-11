@@ -8,11 +8,12 @@ namespace Dstricts.Views.FittnessAndSpa
 	public partial class WellnessBookingTypePage : ContentPage
 	{
 		WellnessBookingTypeViewModel viewModel;
-		public WellnessBookingTypePage()
+		public WellnessBookingTypePage(Models.WellnessServiceInfoCountResponse wellnessType)
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new WellnessBookingTypeViewModel(this.Navigation);
+			viewModel.WellnessServiceInfoCount = wellnessType;
 		}
 	}
 }
