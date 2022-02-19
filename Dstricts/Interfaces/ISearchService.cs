@@ -8,5 +8,6 @@ namespace Dstricts.Interfaces
 		Task<List<Models.SearchUserResponse>> SearchUserAsync(Models.SearchRequest request);
 		Task<List<Models.SearchCompanyResponse>> SearchCompanyAsync(Models.SearchRequest request);
 		Task<List<Models.SearchResturantResponse>> SearchResturantAsync(Models.SearchRequest request);
+		Task<List<Models.SearchResturantResponse>> SearchWellnessAsync(Models.SearchRequest request);
 	}
 }

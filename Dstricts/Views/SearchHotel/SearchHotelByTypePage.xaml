@@ -6,7 +6,7 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="#FFE3B1" 
+	BackgroundColor="#FFE3B1"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
 		<Grid>
@@ -20,7 +20,11 @@
 				<ColumnDefinition Width="80" />
 			</Grid.ColumnDefinitions>
 
-			<Image Source="searchBG.png" Grid.RowSpan="2" Grid.ColumnSpan="3" Aspect="AspectFill"/>
+			<Image
+				Grid.RowSpan="2"
+				Grid.ColumnSpan="3"
+				Aspect="AspectFill"
+				Source="searchBG.png" />
 
 			<Label
 				Grid.Row="0"
@@ -53,161 +57,215 @@
 				</Label.GestureRecognizers>
 			</Label>
 
-			
-			<StackLayout Spacing="15" VerticalOptions="EndAndExpand" Grid.Row="1"
-				Grid.ColumnSpan="3">
-					<Frame
-						Margin="28,0,28,0"
-						Padding="20,10,20,10"
-						BackgroundColor="Transparent"
-						BorderColor="#757575"
-						CornerRadius="10"
-						HasShadow="False"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Frame.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}" />
-						</Frame.GestureRecognizers>
-						<Grid ColumnSpacing="20">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="48" />
-								<ColumnDefinition Width="*" />
-							</Grid.ColumnDefinitions>
 
-							<BoxView
-								Grid.Row="0"
-								Grid.Column="0"
-								BackgroundColor="#342B20"
-								CornerRadius="16"
-								HeightRequest="48"
-								HorizontalOptions="Center"
-								VerticalOptions="Start"
-								WidthRequest="48" />
-							<Label
-								Grid.Row="0"
-								Grid.Column="0"
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="25"
-								HorizontalTextAlignment="Center"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
-								TextColor="#E08D70"
-								VerticalTextAlignment="Center" />
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				Spacing="15"
+				VerticalOptions="EndAndExpand">
+				<Frame
+					Margin="28,0,28,0"
+					Padding="20,10,20,10"
+					BackgroundColor="Transparent"
+					BorderColor="#757575"
+					CornerRadius="10"
+					HasShadow="False"
+					IsClippedToBounds="True"
+					VerticalOptions="StartAndExpand">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}" />
+					</Frame.GestureRecognizers>
+					<Grid ColumnSpacing="20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="48" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
 
-							<Label
-								Grid.Row="0"
-								Grid.Column="1"
-								FontFamily="SansProBoldFontFamily"
-								FontSize="18"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="People"
-								TextColor="Black"
-								VerticalTextAlignment="Center" />
-						</Grid>
-					</Frame>
+						<BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="#342B20"
+							CornerRadius="16"
+							HeightRequest="48"
+							HorizontalOptions="Center"
+							VerticalOptions="Start"
+							WidthRequest="48" />
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							HorizontalTextAlignment="Center"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+							TextColor="#E08D70"
+							VerticalTextAlignment="Center" />
 
-					<Frame
-						Margin="28,0,28,0"
-						Padding="20,10,20,10"
-						BackgroundColor="Transparent"
-						BorderColor="#757575"
-						CornerRadius="10"
-						HasShadow="False"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Frame.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding SearchHotelByCompanyCommand}" />
-						</Frame.GestureRecognizers>
-						<Grid ColumnSpacing="20">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="48" />
-								<ColumnDefinition Width="*" />
-							</Grid.ColumnDefinitions>
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontFamily="SansProBoldFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="People"
+							TextColor="Black"
+							VerticalTextAlignment="Center" />
+					</Grid>
+				</Frame>
 
-							<BoxView
-								Grid.Row="0"
-								Grid.Column="0"
-								BackgroundColor="#342334"
-								CornerRadius="16"
-								HeightRequest="48"
-								HorizontalOptions="Center"
-								VerticalOptions="Start"
-								WidthRequest="48" />
+				<Frame
+					Margin="28,0,28,0"
+					Padding="20,10,20,10"
+					BackgroundColor="Transparent"
+					BorderColor="#757575"
+					CornerRadius="10"
+					HasShadow="False"
+					IsClippedToBounds="True"
+					VerticalOptions="StartAndExpand">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding SearchHotelByCompanyCommand}" />
+					</Frame.GestureRecognizers>
+					<Grid ColumnSpacing="20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="48" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
 
-							<Label
-								Grid.Row="0"
-								Grid.Column="0"
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="25"
-								HorizontalTextAlignment="Center"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.BankOutline}"
-								TextColor="#BD6DFA"
-								VerticalTextAlignment="Center" />
+						<BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="#342334"
+							CornerRadius="16"
+							HeightRequest="48"
+							HorizontalOptions="Center"
+							VerticalOptions="Start"
+							WidthRequest="48" />
 
-							<Label
-								Grid.Row="0"
-								Grid.Column="1"
-								FontFamily="SansProBoldFontFamily"
-								FontSize="18"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="Business"
-								TextColor="Black"
-								VerticalTextAlignment="Center" />
-						</Grid>
-					</Frame>
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							HorizontalTextAlignment="Center"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BankOutline}"
+							TextColor="#BD6DFA"
+							VerticalTextAlignment="Center" />
 
-					<Frame
-						Margin="28,0,28,20"
-						Padding="20,10,20,10"
-						BackgroundColor="Transparent"
-						BorderColor="#757575"
-						CornerRadius="10"
-						HasShadow="False"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Frame.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}" />
-						</Frame.GestureRecognizers>
-						<Grid ColumnSpacing="20">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="48" />
-								<ColumnDefinition Width="*" />
-							</Grid.ColumnDefinitions>
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontFamily="SansProBoldFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Business"
+							TextColor="Black"
+							VerticalTextAlignment="Center" />
+					</Grid>
+				</Frame>
 
-							<BoxView
-								Grid.Row="0"
-								Grid.Column="0"
-								BackgroundColor="#223426"
-								CornerRadius="16"
-								HeightRequest="48"
-								HorizontalOptions="Center"
-								VerticalOptions="Start"
-								WidthRequest="48" />
+				<Frame
+					Margin="28,0,28,0"
+					Padding="20,10,20,10"
+					BackgroundColor="Transparent"
+					BorderColor="#757575"
+					CornerRadius="10"
+					HasShadow="False"
+					IsClippedToBounds="True"
+					VerticalOptions="StartAndExpand">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}" />
+					</Frame.GestureRecognizers>
+					<Grid ColumnSpacing="20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="48" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
 
-							<Label
-								Grid.Row="0"
-								Grid.Column="0"
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="25"
-								HorizontalTextAlignment="Center"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.FoodForkDrink}"
-								TextColor="#FFFFFF"
-								VerticalTextAlignment="Center" />
+						<BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="#223426"
+							CornerRadius="16"
+							HeightRequest="48"
+							HorizontalOptions="Center"
+							VerticalOptions="Start"
+							WidthRequest="48" />
 
-							<Label
-								Grid.Row="0"
-								Grid.Column="1"
-								FontFamily="SansProBoldFontFamily"
-								FontSize="18"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="{Binding EatAndDrink}"
-								TextColor="Black"
-								VerticalTextAlignment="Center" />
-						</Grid>
-					</Frame>
-				</StackLayout>
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							HorizontalTextAlignment="Center"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.FoodForkDrink}"
+							TextColor="#FFFFFF"
+							VerticalTextAlignment="Center" />
+
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontFamily="SansProBoldFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="{Binding EatAndDrink}"
+							TextColor="Black"
+							VerticalTextAlignment="Center" />
+					</Grid>
+				</Frame>
+
+				<Frame
+					Margin="28,0,28,20"
+					Padding="20,10,20,10"
+					BackgroundColor="Transparent"
+					BorderColor="#757575"
+					CornerRadius="10"
+					HasShadow="False"
+					IsClippedToBounds="True"
+					VerticalOptions="StartAndExpand">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding SearchHotelByWellnessCommand}" />
+					</Frame.GestureRecognizers>
+					<Grid ColumnSpacing="20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="48" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="#394647"
+							CornerRadius="16"
+							HeightRequest="48"
+							HorizontalOptions="Center"
+							VerticalOptions="Start"
+							WidthRequest="48" />
+
+						<Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							HorizontalTextAlignment="Center"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+							TextColor="#3EC4D5"
+							VerticalTextAlignment="Center" />
+
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							FontFamily="SansProBoldFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Wellness"
+							TextColor="Black"
+							VerticalTextAlignment="Center" />
+					</Grid>
+				</Frame>
+			</StackLayout>
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>

@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
-namespace Dstricts.Models
+﻿namespace Dstricts.Models
 {
-	public class AddFoodItemToCartRequest : INotifyPropertyChanged
+	public class AddFoodItemToCartRequest : BaseModel
 	{
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_name")]
 		public string DishName { get; set; }
@@ -37,13 +34,5 @@ namespace Dstricts.Models
 				OnPropertyChanged("Quantity");
 			}
 		}
-
-		#region On Property Changed.
-		public event PropertyChangedEventHandler PropertyChanged;
-		public virtual void OnPropertyChanged([CallerMemberName] string name = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-		}
-		#endregion
 	}
 }

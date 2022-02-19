@@ -56,6 +56,9 @@ namespace Dstricts.ViewModels
 					case 3:
 						SearchHotelByEatAndDrinkCommand.Execute(null);
 						break;
+					case 4:
+						SearchHotelByWellnessCommand.Execute(null);
+						break;
 				}
 			}
 		}
@@ -126,6 +129,39 @@ namespace Dstricts.ViewModels
 			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
 			var response = await service.SearchResturantAsync(new Models.SearchRequest()
+			{
+				Name = SearchText
+			});
+			if (response?.Count > 0)
+			{
+				foreach (var item in response)
+				{
+					SearchSuggestionList.Add(new Models.SearchUserResponse()
+					{
+						Id = item.Id,
+						FirstName = item.FirstName,
+						Name = item.Name,
+						PassportImage = item.PassportImage,
+						UserImage = item.UserImage
+					});
+				}
+			}
+			IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+			//DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Search Hotel By Wellness Command.
+		private ICommand searchHotelByWellnessCommand;
+		public ICommand SearchHotelByWellnessCommand
+		{
+			get => searchHotelByWellnessCommand ?? (searchHotelByWellnessCommand = new Command(async () => await ExecuteSearchHotelByWellnessCommand()));
+		}
+		private async Task ExecuteSearchHotelByWellnessCommand()
+		{
+			//DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchWellnessAsync(new Models.SearchRequest()
 			{
 				Name = SearchText
 			});

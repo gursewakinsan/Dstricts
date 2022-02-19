@@ -33,6 +33,7 @@
 		public const string UsersListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/usersList";
 		public const string CompanyListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/companylist";
 		public const string ResturantSearchListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantSearchList";
+		public const string WellnessSearchListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessSearchList";
 
 		//Resturant
 		public const string ResturantProfileInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resturantProfileInfo";
@@ -77,5 +78,11 @@
 		public const string AddPublicServiceToCartAppUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addPublicServiceToCartApp";
 		public const string WellnessOpenCalenderInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessOpenCalenderInfo";
 		public const string WellnessServiceInfoCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessServiceInfoCount";
+
+		//Book Service
+		public const string WellnessUpdateFollowingUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessUpdateFollowing";
+		public const string WellnessSearchFollowingCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessSearchFollowingCount";
+		public const string SelectedWellnessCategoriesandMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessCategoriesandMenu";
+
 	}
 }

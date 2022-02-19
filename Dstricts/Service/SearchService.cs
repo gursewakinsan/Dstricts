@@ -34,5 +34,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.SearchResturantResponse>> SearchWellnessAsync(Models.SearchRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SearchResturantResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.WellnessSearchListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

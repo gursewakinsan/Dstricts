@@ -52,6 +52,19 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Search Hotel By Wellness Command.
+		private ICommand searchHotelByWellnessCommand;
+		public ICommand SearchHotelByWellnessCommand
+		{
+			get => searchHotelByWellnessCommand ?? (searchHotelByWellnessCommand = new Command(async () => await ExecuteSearchHotelByWellnessCommand()));
+		}
+		private async Task ExecuteSearchHotelByWellnessCommand()
+		{
+			Helper.Helper.SelectSearchType = 4;
+			await Navigation.PushAsync(new Views.SearchHotel.SearchWithHintsPage());
+		}
+		#endregion
+
 		#region Properties.
 		public string EatAndDrink => $"Eat & Drink";
 		#endregion
