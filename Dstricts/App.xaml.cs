@@ -19,6 +19,7 @@ namespace Dstricts
 			}
 			else
 				MainPage = new Views.LoginPage();
+
 		}
 
 		#region Login With Session For iOS.
