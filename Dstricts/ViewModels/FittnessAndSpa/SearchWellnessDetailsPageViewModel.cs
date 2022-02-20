@@ -131,7 +131,7 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("FollowingCount");
 			}
 		}
-
+		public string WellnessName => Helper.Helper.WellnessName;
 		public string PostsAndVideos => "Posts & Videos";
 		public ImageSource Img => ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/dstricts/imagesDesign.png"));
 		#endregion

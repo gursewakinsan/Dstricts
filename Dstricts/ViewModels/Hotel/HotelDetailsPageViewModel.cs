@@ -213,7 +213,8 @@ namespace Dstricts.ViewModels
 			Models.WellnessServiceInfoCountResponse response = await service.WellnessServiceInfoCountAsync(new Models.WellnessServiceInfoCountRequest()
 			{
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
-				WellnessId = Helper.Helper.WellnessId
+				WellnessId = Helper.Helper.WellnessId,
+				CheckId = Helper.Helper.HotelCheckedIn
 			});
 
 			if (Convert.ToBoolean(response.OneCart))

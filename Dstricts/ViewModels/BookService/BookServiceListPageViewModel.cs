@@ -29,7 +29,8 @@ namespace Dstricts.ViewModels
 			WellnessServiceInfoCountInfo = await service.WellnessServiceInfoCountAsync(new Models.WellnessServiceInfoCountRequest()
 			{
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
-				WellnessId = Helper.Helper.WellnessId
+				WellnessId = Helper.Helper.WellnessId,
+				CheckId = 0
 			});
 			if (WellnessServiceInfoCountInfo.OneToOne)
 				OneToOneCommand.Execute(null);
@@ -109,8 +110,29 @@ namespace Dstricts.ViewModels
 				WellnessId = Helper.Helper.WellnessId,
 				SelectedServicesType = SelectedServicesType
 			});
+			int deviceWidth = App.ScreenWidth - 28;
+			ImgWidth = deviceWidth * 40 / 100;
+			foreach (var selectedWellness in response)
+			{
+				selectedWellness.ImgWidth = ImgWidth;
+				foreach (var menu in selectedWellness.MenuInfo)
+					menu.ImgWidth = ImgWidth;
+			}
 			SelectedWellnessCategoriesAndMenuInfo = new ObservableCollection<Models.SelectedWellnessCategoriesAndMenuResponse>(response);
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region View All Wellness Categories And Menu Command.
+		private ICommand viewAllWellnessCategoriesAndMenuCommand;
+		public ICommand ViewAllWellnessCategoriesAndMenuCommand
+		{
+			get => viewAllWellnessCategoriesAndMenuCommand ?? (viewAllWellnessCategoriesAndMenuCommand = new Command(async () => await ExecuteViewAllWellnessCategoriesAndMenuCommand()));
+		}
+		private async Task ExecuteViewAllWellnessCategoriesAndMenuCommand()
+		{
+			Helper.Helper.SelectedServicesType = SelectedServicesType;
+			await Navigation.PushAsync(new Views.BookService.BookServiceDetailsPage());
 		}
 		#endregion
 
@@ -181,7 +203,19 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		public int SelectedServicesType { get; set; }
+		private double imgWidth;
+		public double ImgWidth
+		{
+			get => imgWidth;
+			set
+			{
+				imgWidth = value;
+				OnPropertyChanged("ImgWidth");
+			}
+		}
+
+		public string WellnessName => Helper.Helper.WellnessName;
+		public int SelectedServicesType { get; set; } = 1;
 		#endregion
 	}
 }

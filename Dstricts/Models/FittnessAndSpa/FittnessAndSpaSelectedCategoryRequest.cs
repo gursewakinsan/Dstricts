@@ -13,5 +13,8 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "selected_services_type")]
 		public int SelectedServicesType { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "checkid")]
+		public int CheckId { get; set; }
 	}
 }

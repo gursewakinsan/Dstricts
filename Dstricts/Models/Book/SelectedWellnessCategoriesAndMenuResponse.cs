@@ -15,6 +15,7 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "menu")]
 		public List<Menu> MenuInfo { get; set; }
+		public double ImgWidth { get; set; }
 	}
 
 	public class Menu
@@ -57,5 +58,6 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_image")]
 		public string DishImage { get; set; }
+		public double ImgWidth { get; set; }
 	}
 }

@@ -20,5 +20,10 @@ namespace Dstricts.Views.BookService
 			base.OnAppearing();
 			viewModel.WellnessServiceInfoCountCommand.Execute(null);
 		}
+
+		private void OnViewAllButtonClicked(object sender, System.EventArgs e)
+		{
+			viewModel.ViewAllWellnessCategoriesAndMenuCommand.Execute(null);
+		}
 	}
 }

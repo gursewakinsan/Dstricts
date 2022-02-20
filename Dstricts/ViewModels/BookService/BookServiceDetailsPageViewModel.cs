@@ -3,15 +3,15 @@ using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
 {
-	public class FittnessAndSpaDetailsViewModel : BaseViewModel
+	public class BookServiceDetailsPageViewModel : BaseViewModel
 	{
 		#region Constructor.
-		public FittnessAndSpaDetailsViewModel(INavigation navigation)
+		public BookServiceDetailsPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
 		}
@@ -68,7 +68,7 @@ namespace Dstricts.ViewModels
 				BookableServiceId = BookableServiceId,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
 				SelectedServicesType = Helper.Helper.SelectedServicesType,
-				CheckId = Helper.Helper.HotelCheckedIn
+				CheckId = 0
 			});
 			FittnessAndSpaSelectedCategoryList = new ObservableCollection<Models.FittnessAndSpaSelectedCategoryResponse>(response);
 			DependencyService.Get<IProgressBar>().Hide();

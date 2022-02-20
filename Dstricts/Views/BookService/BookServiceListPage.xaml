@@ -54,7 +54,7 @@
 			FontFamily="{StaticResource PoppinsRegularFontFamily}"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
-			Text="Book"
+			Text="{Binding WellnessName}"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
@@ -211,6 +211,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								BorderWidth="1"
+								Clicked="OnViewAllButtonClicked"
 								CornerRadius="8"
 								FontAttributes="Bold"
 								FontFamily="PoppinsSemiBoldFontFamily"
@@ -229,9 +230,9 @@
 										BackgroundColor="#1F1F23"
 										CornerRadius="12"
 										HasShadow="False"
-										HorizontalOptions="StartAndExpand"
+										HorizontalOptions="Start"
 										IsClippedToBounds="True"
-										WidthRequest="152">
+										WidthRequest="{Binding ImgWidth}">
 										<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 											<Label
 												Padding="0"
@@ -267,7 +268,7 @@
 													Margin="0,0,20,0"
 													HorizontalOptions="StartAndExpand"
 													Spacing="0"
-													WidthRequest="152">
+													WidthRequest="{Binding ImgWidth}">
 													<ImageButton
 														Padding="0"
 														Aspect="AspectFill"
@@ -277,7 +278,7 @@
 														HorizontalOptions="Start"
 														Source="{Binding DishImage}"
 														VerticalOptions="Start"
-														WidthRequest="152" />
+														WidthRequest="{Binding ImgWidth}" />
 
 													<Label
 														Margin="0,5,0,0"
