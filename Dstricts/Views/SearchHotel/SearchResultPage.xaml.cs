@@ -35,6 +35,8 @@ namespace Dstricts.Views.SearchHotel
 			listSearchResult.SelectedItem = null;
 			if (Helper.Helper.SelectSearchType == 3)
 				await Navigation.PushAsync(new SearchRestaurantDetailsPage());
+			else if (Helper.Helper.SelectSearchType == 4)
+				await Navigation.PushAsync(new FittnessAndSpa.SearchWellnessDetailsPage(response));
 		}
 
 		private async void OnSearchSuggestionItemTapped(object sender, ItemTappedEventArgs e)

@@ -102,18 +102,52 @@
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
-		<Button
+		<StackLayout
 			Grid.Row="6"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			Padding="0"
-			BackgroundColor="#6263ED"
-			CornerRadius="12"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
-			FontSize="12"
 			HorizontalOptions="StartAndExpand"
-			Text="1-on-1"
-			TextColor="White" />
+			Orientation="Horizontal"
+			Spacing="10">
+			<Button
+				Padding="0"
+				BackgroundColor="{Binding OneToOneButtonBg}"
+				Command="{Binding OneToOneCommand}"
+				CornerRadius="12"
+				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontSize="12"
+				HorizontalOptions="StartAndExpand"
+				IsVisible="{Binding WellnessServiceInfoCountInfo.OneToOne}"
+				Text="1-on-1"
+				TextColor="White"
+				WidthRequest="79" />
+
+			<Button
+				Padding="0"
+				BackgroundColor="{Binding PrivateServiceButtonBg}"
+				Command="{Binding PrivateServiceCommand}"
+				CornerRadius="12"
+				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontSize="12"
+				HorizontalOptions="StartAndExpand"
+				IsVisible="{Binding WellnessServiceInfoCountInfo.PrivateService}"
+				Text="Private"
+				TextColor="White"
+				WidthRequest="83" />
+
+			<Button
+				Padding="0"
+				BackgroundColor="{Binding PublicServiceButtonBg}"
+				Command="{Binding PublicServiceCommand}"
+				CornerRadius="12"
+				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontSize="12"
+				HorizontalOptions="StartAndExpand"
+				IsVisible="{Binding WellnessServiceInfoCountInfo.PublicService}"
+				Text="Public"
+				TextColor="White"
+				WidthRequest="78" />
+		</StackLayout>
 
 		<Label
 			Grid.Row="8"
@@ -122,7 +156,9 @@
 			FontFamily="{StaticResource PoppinsRegularFontFamily}"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
-			Text="Perfect for 1 person at the time"
+			LineBreakMode="TailTruncation"
+			MaxLines="1"
+			Text="{Binding ServiceTypeText}"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
@@ -132,10 +168,199 @@
 			Grid.ColumnSpan="3"
 			BackgroundColor="#625FDA" />
 
-		<StackLayout
+		<ScrollView
 			Grid.Row="12"
 			Grid.Column="1"
-			Grid.ColumnSpan="3"
-			BackgroundColor="Red" />
+			Grid.ColumnSpan="4"
+			VerticalScrollBarVisibility="Never">
+			<StackLayout BindableLayout.ItemsSource="{Binding SelectedWellnessCategoriesAndMenuInfo}">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="40" />
+								<RowDefinition Height="24" />
+								<RowDefinition Height="250" />
+								<RowDefinition Height="25" />
+								<RowDefinition Height="1" />
+								<RowDefinition Height="25" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="80" />
+								<ColumnDefinition Width="28" />
+							</Grid.ColumnDefinitions>
+
+							<Label
+								Grid.Row="0"
+								Grid.Column="0"
+								FontAttributes="Bold"
+								FontFamily="PoppinsBoldFontFamily"
+								FontSize="20"
+								HorizontalTextAlignment="Start"
+								LineBreakMode="TailTruncation"
+								MaxLines="1"
+								Text="{Binding ServiceCategoryName}"
+								TextColor="White"
+								TextTransform="Uppercase"
+								VerticalTextAlignment="Center" />
+
+							<Button
+								Grid.Row="0"
+								Grid.Column="1"
+								BackgroundColor="Transparent"
+								BorderColor="#2A2A31"
+								BorderWidth="1"
+								CornerRadius="8"
+								FontAttributes="Bold"
+								FontFamily="PoppinsSemiBoldFontFamily"
+								FontSize="12"
+								Text="View all"
+								TextColor="#E08D70" />
+
+							<ScrollView
+								Grid.Row="2"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								HorizontalScrollBarVisibility="Never"
+								Orientation="Horizontal">
+								<StackLayout Orientation="Horizontal" Spacing="20">
+									<Frame
+										BackgroundColor="#1F1F23"
+										CornerRadius="12"
+										HasShadow="False"
+										HorizontalOptions="StartAndExpand"
+										IsClippedToBounds="True"
+										WidthRequest="152">
+										<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+											<Label
+												Padding="0"
+												FontFamily="PoppinsBoldFontFamily"
+												FontSize="100"
+												HorizontalTextAlignment="Center"
+												Text="4"
+												TextColor="White" />
+
+											<Label
+												Padding="0"
+												FontAttributes="Bold"
+												FontFamily="PoppinsBoldFontFamily"
+												FontSize="20"
+												HorizontalTextAlignment="Center"
+												Text="Offers"
+												TextColor="White" />
+
+											<Label
+												Padding="0"
+												FontFamily="{StaticResource PoppinsRegularFontFamily}"
+												FontSize="12"
+												HorizontalTextAlignment="Center"
+												Text="Click here"
+												TextColor="White" />
+										</StackLayout>
+									</Frame>
+
+									<StackLayout BindableLayout.ItemsSource="{Binding MenuInfo}" Orientation="Horizontal">
+										<BindableLayout.ItemTemplate>
+											<DataTemplate>
+												<StackLayout
+													Margin="0,0,20,0"
+													HorizontalOptions="StartAndExpand"
+													Spacing="0"
+													WidthRequest="152">
+													<ImageButton
+														Padding="0"
+														Aspect="AspectFill"
+														BackgroundColor="Transparent"
+														CornerRadius="12"
+														HeightRequest="148"
+														HorizontalOptions="Start"
+														Source="{Binding DishImage}"
+														VerticalOptions="Start"
+														WidthRequest="152" />
+
+													<Label
+														Margin="0,5,0,0"
+														FontFamily="{StaticResource PoppinsRegularFontFamily}"
+														FontSize="14"
+														HorizontalTextAlignment="Start"
+														LineBreakMode="TailTruncation"
+														MaxLines="1"
+														Text="{Binding DishName}"
+														TextColor="White" />
+
+													<Label
+														Margin="0,5,0,5"
+														FontFamily="{StaticResource PoppinsRegularFontFamily}"
+														FontSize="12"
+														HorizontalTextAlignment="Start"
+														LineBreakMode="TailTruncation"
+														MaxLines="1"
+														Opacity="0.7"
+														Text="{Binding DishDetail}"
+														TextColor="White" />
+
+													<Label
+														FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+														FontSize="12"
+														HorizontalTextAlignment="Start"
+														LineBreakMode="TailTruncation"
+														MaxLines="1"
+														TextColor="White">
+														<Label.FormattedText>
+															<FormattedString>
+																<Span Text="{Binding DishPrice}" />
+																<Span Text=" USD/PP" />
+															</FormattedString>
+														</Label.FormattedText>
+													</Label>
+
+													<StackLayout
+														HorizontalOptions="StartAndExpand"
+														Orientation="Horizontal"
+														Spacing="0">
+														<Label
+															FontFamily="{StaticResource MaterialFontFamily}"
+															FontSize="15"
+															Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+															TextColor="#FF9E2A" />
+														<Label
+															FontFamily="{StaticResource MaterialFontFamily}"
+															FontSize="15"
+															Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+															TextColor="#FF9E2A" />
+														<Label
+															FontFamily="{StaticResource MaterialFontFamily}"
+															FontSize="15"
+															Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+															TextColor="#FF9E2A" />
+														<Label
+															FontFamily="{StaticResource MaterialFontFamily}"
+															FontSize="15"
+															Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+															TextColor="#FF9E2A" />
+														<Label
+															FontFamily="{StaticResource MaterialFontFamily}"
+															FontSize="15"
+															Text="{x:Static fontawesome:DstrictsAppFlatIcons.StarOutline}"
+															TextColor="#2A2A31" />
+													</StackLayout>
+												</StackLayout>
+											</DataTemplate>
+										</BindableLayout.ItemTemplate>
+									</StackLayout>
+								</StackLayout>
+							</ScrollView>
+
+							<BoxView
+								Grid.Row="4"
+								Grid.ColumnSpan="3"
+								Margin="0,0,28,0"
+								BackgroundColor="#2A2A31" />
+						</Grid>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
 	</Grid>
 </ContentPage>

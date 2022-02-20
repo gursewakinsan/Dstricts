@@ -10,5 +10,8 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dstricts_user_id")]
 		public int DstrictsUserId { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "checkid")]
+		public int CheckId { get; set; }
 	}
 }

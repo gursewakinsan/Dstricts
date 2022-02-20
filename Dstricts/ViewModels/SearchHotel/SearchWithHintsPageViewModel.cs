@@ -161,9 +161,10 @@ namespace Dstricts.ViewModels
 		{
 			//DependencyService.Get<IProgressBar>().Show();
 			ISearchService service = new SearchService();
-			var response = await service.SearchWellnessAsync(new Models.SearchRequest()
+			var response = await service.SearchWellnessAsync(new Models.SearchWellnessRequest()
 			{
-				Name = SearchText
+				Name = SearchText,
+				DstrictsUserId = Helper.Helper.LoggedInUserId
 			});
 			if (response?.Count > 0)
 			{
@@ -175,7 +176,8 @@ namespace Dstricts.ViewModels
 						FirstName = item.FirstName,
 						Name = item.Name,
 						PassportImage = item.PassportImage,
-						UserImage = item.UserImage
+						UserImage = item.UserImage,
+						IsFollowing = item.IsFollowing
 					});
 				}
 			}

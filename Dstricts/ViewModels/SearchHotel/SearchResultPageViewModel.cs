@@ -84,6 +84,9 @@ namespace Dstricts.ViewModels
 					case 3:
 						await ExecuteSearchHotelByEatAndDrinkCommand();
 						break;
+					case 4:
+						await ExecuteSearchHotelByWellnessCommand();
+						break;
 				}
 			}
 		}
@@ -224,6 +227,63 @@ namespace Dstricts.ViewModels
 							Name = item.Name,
 							PassportImage = item.PassportImage,
 							UserImage = item.UserImage
+						});
+					}
+				}
+			}
+			//DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Search Hotel By Wellness Command.
+		private ICommand searchHotelByWellnessCommand;
+		public ICommand SearchHotelByWellnessCommand
+		{
+			get => searchHotelByWellnessCommand ?? (searchHotelByWellnessCommand = new Command(async () => await ExecuteSearchHotelByWellnessCommand()));
+		}
+		private async Task ExecuteSearchHotelByWellnessCommand()
+		{
+			//DependencyService.Get<IProgressBar>().Show();
+			ISearchService service = new SearchService();
+			var response = await service.SearchWellnessAsync(new Models.SearchWellnessRequest()
+			{
+				Name = SearchText,
+				DstrictsUserId = Helper.Helper.LoggedInUserId
+			});
+			if (response?.Count > 0)
+			{
+				if (IsSearchSuggestion)
+				{
+					if (SearchSuggestionList == null) SearchSuggestionList = new ObservableCollection<Models.SearchUserResponse>();
+					SearchSuggestionList.Clear();
+					foreach (var item in response)
+					{
+						SearchSuggestionList.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage,
+							IsFollowing = item.IsFollowing
+						});
+					}
+					IsSearchSuggestion = SearchSuggestionList.Count > 0 ? true : false;
+				}
+				else
+				{
+					if (SearchResult == null) SearchResult = new ObservableCollection<Models.SearchUserResponse>();
+					SearchResult.Clear();
+					foreach (var item in response)
+					{
+						SearchResult.Add(new Models.SearchUserResponse()
+						{
+							Id = item.Id,
+							FirstName = item.FirstName,
+							Name = item.Name,
+							PassportImage = item.PassportImage,
+							UserImage = item.UserImage,
+							IsFollowing = item.IsFollowing
 						});
 					}
 				}

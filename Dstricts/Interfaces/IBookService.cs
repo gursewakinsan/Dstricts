@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dstricts.Interfaces
 {
@@ -6,6 +7,6 @@ namespace Dstricts.Interfaces
 	{
 		Task<int> WellnessUpdateFollowingAsync(Models.WellnessUpdateFollowingRequest request);
 		Task<int> WellnessSearchFollowingCountAsync(Models.WellnessSearchFollowingCountRequest request);
-		Task<int> SelectedWellnessCategoriesandMenuAsync(Models.SelectedWellnessCategoriesandMenuRequest request);
+		Task<List<Models.SelectedWellnessCategoriesAndMenuResponse>> SelectedWellnessCategoriesandMenuAsync(Models.SelectedWellnessCategoriesandMenuRequest request);
 	}
 }

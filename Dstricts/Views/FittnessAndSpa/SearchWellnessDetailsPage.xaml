@@ -50,7 +50,7 @@
 			FontFamily="{StaticResource PoppinsRegularFontFamily}"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
-			Text="Scandic Camper Hotel"
+			Text="{Binding WellnessSearchInfo.Name}"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
@@ -186,7 +186,7 @@
 							FontFamily="{StaticResource PoppinsRegularFontFamily}"
 							FontSize="16"
 							HorizontalOptions="CenterAndExpand"
-							Text="532"
+							Text="{Binding FollowingCount}"
 							TextColor="White" />
 
 						<Label
@@ -202,17 +202,18 @@
 				<Button
 					Grid.Row="1"
 					Padding="0"
-					BackgroundColor="Transparent"
+					BackgroundColor="{Binding FollowOrFollowingButtonBg}"
 					BorderColor="#2A2A31"
 					BorderWidth="1"
+					Command="{Binding WellnessUpdateFollowingCommand}"
 					CornerRadius="0"
 					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 					FontSize="12"
-					Text="Follow"
+					Text="{Binding FollowOrFollowing}"
 					TextColor="White" />
 			</Grid>
 		</Grid>
-F
+
 		<BoxView
 			Grid.Row="4"
 			Grid.Column="1"
@@ -298,6 +299,7 @@ F
 					Grid.Column="5"
 					Padding="0"
 					BackgroundColor="#242A37"
+					Command="{Binding BookServiceCommand}"
 					CornerRadius="30"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="30"
@@ -313,7 +315,11 @@ F
 					Opacity="0.7"
 					Text="Book"
 					TextColor="White"
-					VerticalTextAlignment="Center" />
+					VerticalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding BookServiceCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
 
 				<Button
 					Grid.Row="0"

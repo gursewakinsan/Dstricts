@@ -1,6 +1,6 @@
 ﻿namespace Dstricts.Models
 {
-	public class SearchUserResponse
+	public class SearchWellnessResponse
 	{
 		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int Id { get; set; }

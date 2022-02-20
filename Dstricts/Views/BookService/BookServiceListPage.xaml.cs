@@ -14,5 +14,11 @@ namespace Dstricts.Views.BookService
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new BookServiceListPageViewModel(this.Navigation);
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.WellnessServiceInfoCountCommand.Execute(null);
+		}
 	}
 }
