@@ -6,7 +6,8 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="#181A1F">
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
 	<Grid
 		Margin="0,32,0,0"
 		ColumnSpacing="0"
@@ -227,6 +228,7 @@
 								Orientation="Horizontal">
 								<StackLayout Orientation="Horizontal" Spacing="20">
 									<Frame
+										Padding="0"
 										BackgroundColor="#1F1F23"
 										CornerRadius="12"
 										HasShadow="False"
