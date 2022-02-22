@@ -212,6 +212,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								BorderWidth="1"
+								ClassId="{Binding ServiceCategoryName}"
 								Clicked="OnViewAllButtonClicked"
 								CornerRadius="8"
 								FontAttributes="Bold"
@@ -271,10 +272,14 @@
 													HorizontalOptions="StartAndExpand"
 													Spacing="0"
 													WidthRequest="{Binding ImgWidth}">
+													<StackLayout.GestureRecognizers>
+														<TapGestureRecognizer Tapped="OnMenuInfoLayoutTapped" />
+													</StackLayout.GestureRecognizers>
 													<ImageButton
 														Padding="0"
 														Aspect="AspectFill"
 														BackgroundColor="Transparent"
+														Clicked="OnDishImageButtonClicked"
 														CornerRadius="12"
 														HeightRequest="148"
 														HorizontalOptions="Start"

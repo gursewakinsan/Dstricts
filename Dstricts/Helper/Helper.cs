@@ -30,6 +30,7 @@ namespace Dstricts.Helper
 		public static int SelectedServicesType { get; set; }
 		public static bool IsFromViewCartButtonClicked { get; set; } = false;
 		public static bool IsWellnessBookingType { get; set; } = false;
+		public static string ServiceCategoryName { get; set; }
 
 		public static string[] ListIconBgColorList =
 		{

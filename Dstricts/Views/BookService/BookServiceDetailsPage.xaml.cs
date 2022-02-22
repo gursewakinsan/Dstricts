@@ -37,9 +37,10 @@ namespace Dstricts.Views.BookService
 
 		private async void OnDishImageClicked(object sender, System.EventArgs e)
 		{
-			/*ImageButton image = sender as ImageButton;
+			ImageButton image = sender as ImageButton;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = image.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else
 				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));*/
@@ -47,9 +48,10 @@ namespace Dstricts.Views.BookService
 
 		private async void OnDishNameTapped(object sender, System.EventArgs e)
 		{
-			/*StackLayout layout = sender as StackLayout;
+			StackLayout layout = sender as StackLayout;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = layout.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else
 				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));*/
@@ -57,9 +59,10 @@ namespace Dstricts.Views.BookService
 
 		private async void OnFittnessAndSpaTapped(object sender, System.EventArgs e)
 		{
-			/*Grid grid = sender as Grid;
+			Grid grid = sender as Grid;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = grid.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
+			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else
 				await Navigation.PushAsync(new AddServiceToCartAppPage(fittnessAndSpa));*/

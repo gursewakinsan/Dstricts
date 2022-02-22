@@ -107,7 +107,7 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteViewCartCommand()
 		{
 			Helper.Helper.IsFromViewCartButtonClicked = true;
-			await Navigation.PushAsync(new Views.FittnessAndSpa.CartInfoWellnessListPage(AddServiceToCartList));
+			await Navigation.PushAsync(new Views.BookService.BookServiceCartInfoListPage(AddServiceToCartList));
 		}
 		#endregion
 

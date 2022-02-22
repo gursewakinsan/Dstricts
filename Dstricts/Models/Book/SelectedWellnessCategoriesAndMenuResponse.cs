@@ -42,10 +42,10 @@ namespace Dstricts.Models
 		public bool IsPhysical { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "one_shared")]
-		public bool OneShared { get; set; }
+		public int OneShared { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "one_shared_type")]
-		public bool OneSharedType { get; set; }
+		public int OneSharedType { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "recurring_event")]
 		public bool RecurringEvent { get; set; }
@@ -58,6 +58,10 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "dish_image")]
 		public string DishImage { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "service_category_name")]
+		public string ServiceCategoryName { get; set; }
+
 		public double ImgWidth { get; set; }
 	}
 }

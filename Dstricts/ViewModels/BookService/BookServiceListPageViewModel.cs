@@ -46,7 +46,7 @@ namespace Dstricts.ViewModels
 		private ICommand oneToOneCommand;
 		public ICommand OneToOneCommand
 		{
-			get => oneToOneCommand ?? (oneToOneCommand = new Command( () =>  ExecuteOneToOneCommand()));
+			get => oneToOneCommand ?? (oneToOneCommand = new Command(() => ExecuteOneToOneCommand()));
 		}
 		private void ExecuteOneToOneCommand()
 		{

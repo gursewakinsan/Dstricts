@@ -83,6 +83,8 @@
 		public const string WellnessUpdateFollowingUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessUpdateFollowing";
 		public const string WellnessSearchFollowingCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/wellnessSearchFollowingCount";
 		public const string SelectedWellnessCategoriesandMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedWellnessCategoriesandMenu";
-
+		public const string DeleteWellnessAllCartItemsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/deleteWellnessAllCartItems";
+		public const string CountWellnessOneToOneAvailableServicesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/countWellnessOneToOneAvailableServices";
 	}
 }
+

@@ -29,7 +29,26 @@ namespace Dstricts.ViewModels
 			{
 				WellnessId = WellnessSearchInfo.Id
 			});
+			await ExecuteDeleteWellnessAllCartItemsCommand();
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Delete Wellness All Cart Items Command.
+		private ICommand deleteWellnessAllCartItemsCommand;
+		public ICommand DeleteWellnessAllCartItemsCommand
+		{
+			get => deleteWellnessAllCartItemsCommand ?? (deleteWellnessAllCartItemsCommand = new Command(async () => await ExecuteDeleteWellnessAllCartItemsCommand()));
+		}
+		private async Task ExecuteDeleteWellnessAllCartItemsCommand()
+		{
+			IBookService service = new BookService();
+			await service.DeleteWellnessAllCartItemsAsync(new Models.DeleteWellnessAllCartItemsRequest()
+			{
+				WellnessId = Helper.Helper.WellnessId,
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				CheckId = 0
+			});
 		}
 		#endregion
 

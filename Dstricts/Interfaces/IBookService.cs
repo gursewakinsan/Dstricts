@@ -8,5 +8,7 @@ namespace Dstricts.Interfaces
 		Task<int> WellnessUpdateFollowingAsync(Models.WellnessUpdateFollowingRequest request);
 		Task<int> WellnessSearchFollowingCountAsync(Models.WellnessSearchFollowingCountRequest request);
 		Task<List<Models.SelectedWellnessCategoriesAndMenuResponse>> SelectedWellnessCategoriesandMenuAsync(Models.SelectedWellnessCategoriesandMenuRequest request);
+		Task<string> DeleteWellnessAllCartItemsAsync(Models.DeleteWellnessAllCartItemsRequest request);
+		Task<int> CountWellnessOneToOneAvailableServicesAsync(Models.CountWellnessOneToOneAvailableServicesRequest request);
 	}
 }
