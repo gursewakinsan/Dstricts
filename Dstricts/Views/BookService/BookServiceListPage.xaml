@@ -9,20 +9,20 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Margin="0,32,0,0"
+		Margin="0,14,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50" />
+			<RowDefinition Height="24" />
 			<RowDefinition Height="25" />
 			<RowDefinition Height="20" />
 			<RowDefinition Height="5" />
 			<RowDefinition Height="35" />
+			<RowDefinition Height="24" />
+			<RowDefinition Height="34" />
 			<RowDefinition Height="25" />
-			<RowDefinition Height="35" />
 			<RowDefinition Height="25" />
-			<RowDefinition Height="25" />
-			<RowDefinition Height="12" />
+			<RowDefinition Height="8" />
 			<RowDefinition Height="1" />
 			<RowDefinition Height="47" />
 			<RowDefinition Height="*" />
@@ -41,7 +41,7 @@
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
@@ -59,23 +59,22 @@
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
-		<Button
+		<Frame
 			Grid.Row="0"
 			Grid.Column="3"
 			Padding="0"
 			BackgroundColor="Transparent"
 			BorderColor="#2A2A31"
-			BorderWidth="1"
-			CornerRadius="0"
-			FontAttributes="Bold"
-			FontFamily="{StaticResource MaterialFontFamily}"
-			FontSize="25"
-			HeightRequest="24"
+			HasShadow="False"
 			HorizontalOptions="EndAndExpand"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
-			TextColor="White"
-			VerticalOptions="CenterAndExpand"
-			WidthRequest="24" />
+			IsClippedToBounds="True"
+			VerticalOptions="CenterAndExpand">
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+				TextColor="White" />
+		</Frame>
 
 		<Label
 			Grid.Row="2"
@@ -109,7 +108,7 @@
 			Grid.ColumnSpan="3"
 			HorizontalOptions="StartAndExpand"
 			Orientation="Horizontal"
-			Spacing="10">
+			Spacing="12">
 			<Button
 				Padding="0"
 				BackgroundColor="{Binding OneToOneButtonBg}"
@@ -179,7 +178,7 @@
 					<DataTemplate>
 						<Grid>
 							<Grid.RowDefinitions>
-								<RowDefinition Height="40" />
+								<RowDefinition Height="34" />
 								<RowDefinition Height="24" />
 								<RowDefinition Height="250" />
 								<RowDefinition Height="25" />
@@ -209,6 +208,7 @@
 							<Button
 								Grid.Row="0"
 								Grid.Column="1"
+								Padding="0"
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								BorderWidth="1"

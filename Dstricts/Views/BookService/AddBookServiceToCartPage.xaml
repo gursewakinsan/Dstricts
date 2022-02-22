@@ -10,9 +10,9 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
-		<Grid Margin="0,32,0,0">
+		<Grid Margin="0,14,0,0">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="50" />
+				<RowDefinition Height="24" />
 				<RowDefinition />
 				<RowDefinition Height="50" />
 			</Grid.RowDefinitions>
@@ -30,7 +30,7 @@
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="25"
 				HorizontalTextAlignment="Start"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 				TextColor="White"
 				VerticalTextAlignment="Center">
 				<Label.GestureRecognizers>
@@ -67,7 +67,7 @@
 
 
 					<Label
-						Margin="0,4,0,0"
+						Margin="0,4,0,21"
 						FontAttributes="Bold"
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
@@ -76,12 +76,6 @@
 						Text="{Binding SelectedFittnessAndSpaInfo.DishName}"
 						TextColor="White"
 						VerticalTextAlignment="Center" />
-
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
 
 					<Grid ColumnSpacing="12" RowSpacing="12">
 						<Grid.RowDefinitions>

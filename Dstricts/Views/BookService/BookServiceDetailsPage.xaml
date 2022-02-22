@@ -10,16 +10,15 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Margin="0,32,0,0"
+		Margin="0,14,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50" />
-			<RowDefinition Height="15" />
+			<RowDefinition Height="24" />
+			<RowDefinition Height="26" />
 			<RowDefinition Height="70" />
-			<RowDefinition Height="20" />
+			<RowDefinition Height="21" />
 			<RowDefinition Height="1" />
-			<RowDefinition Height="20" />
 			<RowDefinition Height="auto" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="auto" />
@@ -37,7 +36,7 @@
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
@@ -55,23 +54,22 @@
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
-		<Button
+		<Frame
 			Grid.Row="0"
 			Grid.Column="3"
 			Padding="0"
 			BackgroundColor="Transparent"
 			BorderColor="#2A2A31"
-			BorderWidth="1"
-			CornerRadius="0"
-			FontAttributes="Bold"
-			FontFamily="{StaticResource MaterialFontFamily}"
-			FontSize="25"
-			HeightRequest="24"
+			HasShadow="False"
 			HorizontalOptions="EndAndExpand"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
-			TextColor="White"
-			VerticalOptions="CenterAndExpand"
-			WidthRequest="24" />
+			IsClippedToBounds="True"
+			VerticalOptions="CenterAndExpand">
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+				TextColor="White" />
+		</Frame>
 
 		<StackLayout
 			Grid.Row="2"
@@ -102,9 +100,10 @@
 			BackgroundColor="#2A2A31" />
 
 		<ScrollView
-			Grid.Row="6"
+			Grid.Row="5"
 			Grid.Column="1"
 			Grid.ColumnSpan="4"
+			Margin="0,25,0,0"
 			HorizontalScrollBarVisibility="Never"
 			IsVisible="{Binding IsSelectedWellnessCategories}"
 			Orientation="Horizontal">
@@ -132,7 +131,7 @@
 		</ScrollView>
 
 		<ScrollView
-			Grid.Row="7"
+			Grid.Row="6"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
 			Margin="0,30,0,0"

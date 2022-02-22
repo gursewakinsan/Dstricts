@@ -11,12 +11,12 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Margin="0,32,0,0"
+		Margin="0,14,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50" />
-			<RowDefinition Height="10" />
+			<RowDefinition Height="24" />
+			<RowDefinition Height="32" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="50" />
 		</Grid.RowDefinitions>
@@ -33,9 +33,9 @@
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 			TextColor="White"
-			VerticalTextAlignment="Center"/>
+			VerticalTextAlignment="Center" />
 
 		<Label
 			x:Name="lblTitle"
@@ -54,20 +54,18 @@
 			VerticalScrollBarVisibility="Never">
 			<Grid HorizontalOptions="StartAndExpand" RowSpacing="0">
 				<Grid.RowDefinitions>
-					<RowDefinition Height="25" />
-					<RowDefinition Height="25" />
+					<RowDefinition Height="24" />
+					<RowDefinition Height="26" />
 					<RowDefinition Height="84" />
-					<RowDefinition Height="26" />
+					<RowDefinition Height="21" />
 					<RowDefinition Height="1" />
-					<RowDefinition Height="26" />
-					<RowDefinition Height="25" />
+					<RowDefinition Height="36" />
+					<RowDefinition Height="24" />
 					<RowDefinition Height="22" />
 					<RowDefinition Height="86" />
-					<RowDefinition Height="26" />
+					<RowDefinition Height="30" />
 					<RowDefinition Height="1" />
-					<RowDefinition Height="26" />
-					<RowDefinition Height="25" />
-					<RowDefinition Height="22" />
+					<RowDefinition Height="32" />
 					<RowDefinition Height="auto" />
 				</Grid.RowDefinitions>
 				<Label
@@ -80,90 +78,79 @@
 					Text="Select calendar"
 					TextColor="White" />
 
-				<Grid
+				<ScrollView
 					Grid.Row="2"
-					ColumnSpacing="0"
-					RowSpacing="0">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="64" />
-						<RowDefinition />
-					</Grid.RowDefinitions>
+					HorizontalScrollBarVisibility="Never"
+					Orientation="Horizontal">
+					<StackLayout BindableLayout.ItemsSource="{Binding SelectEmployeeForSelectedServicesList}" Orientation="Horizontal">
+						<BindableLayout.ItemTemplate>
+							<DataTemplate>
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="64" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="64" />
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
 
-					<ScrollView
-						Grid.Row="0"
-						Grid.Column="0"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
-						<StackLayout BindableLayout.ItemsSource="{Binding SelectEmployeeForSelectedServicesList}" Orientation="Horizontal">
-							<BindableLayout.ItemTemplate>
-								<DataTemplate>
-									<Grid>
-										<Grid.RowDefinitions>
-											<RowDefinition Height="64" />
-											<RowDefinition />
-										</Grid.RowDefinitions>
-										<Grid.ColumnDefinitions>
-											<ColumnDefinition Width="64" />
-											<ColumnDefinition />
-										</Grid.ColumnDefinitions>
+									<BoxView
+										Grid.Row="0"
+										Grid.Column="0"
+										BackgroundColor="{Binding UserImageBorderColor}"
+										CornerRadius="32"
+										HeightRequest="64"
+										HorizontalOptions="CenterAndExpand"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="64" />
 
-										<BoxView
-											Grid.Row="0"
-											Grid.Column="0"
-											BackgroundColor="{Binding UserImageBorderColor}"
-											CornerRadius="32"
-											HeightRequest="64"
-											HorizontalOptions="CenterAndExpand"
-											VerticalOptions="CenterAndExpand"
-											WidthRequest="64" />
+									<BoxView
+										Grid.Row="0"
+										Grid.Column="0"
+										BackgroundColor="#181A1F"
+										CornerRadius="30"
+										HeightRequest="60"
+										HorizontalOptions="CenterAndExpand"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="60" />
 
-										<BoxView
-											Grid.Row="0"
-											Grid.Column="0"
-											BackgroundColor="#181A1F"
-											CornerRadius="30"
-											HeightRequest="60"
-											HorizontalOptions="CenterAndExpand"
-											VerticalOptions="CenterAndExpand"
-											WidthRequest="60" />
+									<ImageButton
+										Grid.Row="0"
+										Grid.Column="0"
+										Padding="0"
+										Aspect="AspectFill"
+										BackgroundColor="#181A1F"
+										BorderColor="#181A1F"
+										Clicked="OnUserImageClicked"
+										CornerRadius="28"
+										HeightRequest="56"
+										HorizontalOptions="CenterAndExpand"
+										Source="{Binding UserImage}"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="56" />
 
-										<ImageButton
-											Grid.Row="0"
-											Grid.Column="0"
-											Padding="0"
-											Aspect="AspectFill"
-											BackgroundColor="#181A1F"
-											BorderColor="#181A1F"
-											Clicked="OnUserImageClicked"
-											CornerRadius="28"
-											HeightRequest="56"
-											HorizontalOptions="CenterAndExpand"
-											Source="{Binding UserImage}"
-											VerticalOptions="CenterAndExpand"
-											WidthRequest="56" />
-
-										<Label
-											Grid.Row="1"
-											Grid.Column="0"
-											FontFamily="PoppinsRegularFontFamily"
-											FontSize="12"
-											HorizontalTextAlignment="Center"
-											LineBreakMode="TailTruncation"
-											MaxLines="1"
-											Opacity="0.7"
-											Text="{Binding Name}"
-											TextColor="White"
-											VerticalTextAlignment="End">
-											<Label.GestureRecognizers>
-												<TapGestureRecognizer Tapped="OnUserNameTapped" />
-											</Label.GestureRecognizers>
-										</Label>
-									</Grid>
-								</DataTemplate>
-							</BindableLayout.ItemTemplate>
-						</StackLayout>
-					</ScrollView>
-				</Grid>
+									<Label
+										Grid.Row="1"
+										Grid.Column="0"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="12"
+										HorizontalTextAlignment="Center"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Opacity="0.7"
+										Text="{Binding Name}"
+										TextColor="White"
+										VerticalTextAlignment="End">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnUserNameTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+								</Grid>
+							</DataTemplate>
+						</BindableLayout.ItemTemplate>
+					</StackLayout>
+				</ScrollView>
 
 				<BoxView
 					Grid.Row="4"
@@ -258,18 +245,9 @@
 					Margin="0,0,28,0"
 					BackgroundColor="#2A2A31" />
 
-				<Label
-					Grid.Row="12"
-					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
-					FontSize="16"
-					HorizontalTextAlignment="Start"
-					Text="Pick a time"
-					TextColor="White" />
-
 				<syncfusion:SfListView
 					x:Name="listView"
-					Grid.Row="14"
+					Grid.Row="12"
 					Margin="0,0,28,10"
 					BackgroundColor="#181A1F"
 					HeightRequest="{Binding EmployeeBookingCalenderHeightRequest}"
