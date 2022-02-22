@@ -9,14 +9,14 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Margin="0,32,0,0"
+		Margin="0,12,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="50" />
+			<RowDefinition Height="30" />
 			<RowDefinition Height="26" />
 			<RowDefinition Height="101" />
-			<RowDefinition Height="18" />
+			<RowDefinition Height="13" />
 			<RowDefinition Height="1" />
 			<RowDefinition Height="24" />
 			<RowDefinition Height="*" />
@@ -34,9 +34,9 @@
 			Grid.Row="0"
 			Grid.Column="1"
 			FontFamily="{StaticResource MaterialFontFamily}"
-			FontSize="25"
+			FontSize="30"
 			HorizontalTextAlignment="Start"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowLeft}"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
@@ -54,23 +54,22 @@
 			TextColor="White"
 			VerticalTextAlignment="Center" />
 
-		<Button
+		<Frame
 			Grid.Row="0"
 			Grid.Column="3"
 			Padding="0"
 			BackgroundColor="Transparent"
 			BorderColor="#2A2A31"
-			BorderWidth="1"
-			CornerRadius="0"
-			FontAttributes="Bold"
-			FontFamily="{StaticResource MaterialFontFamily}"
-			FontSize="25"
-			HeightRequest="24"
+			HasShadow="False"
 			HorizontalOptions="EndAndExpand"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
-			TextColor="White"
-			VerticalOptions="CenterAndExpand"
-			WidthRequest="24" />
+			IsClippedToBounds="True"
+			VerticalOptions="CenterAndExpand">
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+				TextColor="White" />
+		</Frame>
 
 		<Grid
 			Grid.Row="2"
@@ -86,34 +85,40 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 
-			<Button
+			<Grid
 				Grid.Row="0"
 				Grid.Column="0"
-				Padding="0"
-				CornerRadius="33"
-				FontSize="25"
-				HeightRequest="66"
 				HorizontalOptions="StartAndExpand"
 				VerticalOptions="StartAndExpand"
-				WidthRequest="66">
-				<Button.Background>
-					<LinearGradientBrush>
-						<GradientStop Offset="0.1" Color="#6264ED" />
-						<GradientStop Offset="1.0" Color="#49D1EF" />
-					</LinearGradientBrush>
-				</Button.Background>
-			</Button>
+				WidthRequest="75">
+				<Button
+					Grid.Row="0"
+					Grid.Column="0"
+					Padding="0"
+					CornerRadius="37"
+					FontSize="25"
+					HeightRequest="74"
+					HorizontalOptions="CenterAndExpand"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="74">
+					<Button.Background>
+						<LinearGradientBrush>
+							<GradientStop Offset="0.1" Color="#6264ED" />
+							<GradientStop Offset="1.0" Color="#49D1EF" />
+						</LinearGradientBrush>
+					</Button.Background>
+				</Button>
 
-			<BoxView
-				Grid.Row="0"
-				Grid.Column="0"
-				Margin="3,3,0,0"
-				BackgroundColor="#181A1F"
-				CornerRadius="33"
-				HeightRequest="60"
-				HorizontalOptions="StartAndExpand"
-				VerticalOptions="StartAndExpand"
-				WidthRequest="60" />
+				<BoxView
+					Grid.Row="0"
+					Grid.Column="0"
+					BackgroundColor="#181A1F"
+					CornerRadius="35"
+					HeightRequest="70"
+					HorizontalOptions="CenterAndExpand"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="70" />
+			</Grid>
 
 			<Label
 				Grid.Row="1"
@@ -128,7 +133,7 @@
 			<Grid
 				Grid.RowSpan="2"
 				Grid.Column="1"
-				RowSpacing="15">
+				RowSpacing="16">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*" />
 					<RowDefinition Height="35" />
@@ -204,9 +209,9 @@
 					Padding="0"
 					BackgroundColor="{Binding FollowOrFollowingButtonBg}"
 					BorderColor="#2A2A31"
-					BorderWidth="1"
+					BorderWidth="2"
 					Command="{Binding WellnessUpdateFollowingCommand}"
-					CornerRadius="0"
+					CornerRadius="4"
 					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 					FontSize="12"
 					Text="{Binding FollowOrFollowing}"
