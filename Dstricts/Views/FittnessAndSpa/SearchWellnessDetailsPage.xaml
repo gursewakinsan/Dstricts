@@ -133,7 +133,7 @@
 			<Grid
 				Grid.RowSpan="2"
 				Grid.Column="1"
-				RowSpacing="16">
+				RowSpacing="20">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*" />
 					<RowDefinition Height="35" />
