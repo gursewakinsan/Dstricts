@@ -133,7 +133,7 @@
 			<Grid
 				Grid.RowSpan="2"
 				Grid.Column="1"
-				RowSpacing="20">
+				RowSpacing="13">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*" />
 					<RowDefinition Height="35" />
@@ -208,10 +208,11 @@
 					Grid.Row="1"
 					Padding="0"
 					BackgroundColor="{Binding FollowOrFollowingButtonBg}"
-					BorderColor="#2A2A31"
+					BorderColor="#363541"
 					BorderWidth="2"
 					Command="{Binding WellnessUpdateFollowingCommand}"
 					CornerRadius="4"
+					FontAttributes="Bold"
 					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 					FontSize="12"
 					Text="{Binding FollowOrFollowing}"
