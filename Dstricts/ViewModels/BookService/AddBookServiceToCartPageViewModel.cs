@@ -58,7 +58,12 @@ namespace Dstricts.ViewModels
 				if (bookServiceResponse == 0)
 					await Navigation.PushAsync(new Views.BookService.BookServiceTimePage());
 				else
-					await Navigation.PushAsync(new Views.BookService.BookServiceCartInfoListPage(response));
+				{
+					if (Helper.Helper.SelectedServicesType == 2)
+						await Navigation.PushAsync(new Views.BookService.BookServiceTimePage());
+					else
+						await Navigation.PushAsync(new Views.BookService.BookServiceCartInfoListPage(response));
+				}
 			}
 			else
 				await Helper.Alert.DisplayAlert("Something went wrong please try again!");
