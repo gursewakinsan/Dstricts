@@ -50,7 +50,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteOneToOneCommand()
 		{
-			SelectedServicesType = 1;
+			Helper.Helper.SelectedServicesType = 1;
 			ServiceTypeText = "Perfect for 1 person at the time";
 			OneToOneButtonBg = Color.FromHex("#6263ED");
 			PrivateServiceButtonBg = Color.FromHex("#2A2A31");
@@ -67,7 +67,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecutePrivateServiceCommand()
 		{
-			SelectedServicesType = 2;
+			Helper.Helper.SelectedServicesType = 2;
 			ServiceTypeText = "Private for a group of people";
 			OneToOneButtonBg = Color.FromHex("#2A2A31");
 			PrivateServiceButtonBg = Color.FromHex("#6263ED");
@@ -84,7 +84,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecutePublicServiceCommand()
 		{
-			SelectedServicesType = 3;
+			Helper.Helper.SelectedServicesType = 3;
 			ServiceTypeText = "Join a public events with others";
 			OneToOneButtonBg = Color.FromHex("#2A2A31");
 			PrivateServiceButtonBg = Color.FromHex("#2A2A31");
@@ -108,7 +108,7 @@ namespace Dstricts.ViewModels
 				CheckId = 0,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
 				WellnessId = Helper.Helper.WellnessId,
-				SelectedServicesType = SelectedServicesType
+				SelectedServicesType = Helper.Helper.SelectedServicesType
 			});
 			int deviceWidth = App.ScreenWidth - 28;
 			ImgWidth = deviceWidth * 40 / 100;
@@ -131,7 +131,6 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteViewAllWellnessCategoriesAndMenuCommand()
 		{
-			Helper.Helper.SelectedServicesType = SelectedServicesType;
 			await Navigation.PushAsync(new Views.BookService.BookServiceDetailsPage());
 		}
 		#endregion
@@ -215,7 +214,6 @@ namespace Dstricts.ViewModels
 		}
 
 		public string WellnessName => Helper.Helper.WellnessName;
-		public int SelectedServicesType { get; set; } = 1;
 		#endregion
 	}
 }

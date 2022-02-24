@@ -27,7 +27,7 @@ namespace Dstricts.Helper
 		public static int SelectResturantId { get; set; }
 		public static int WellnessId { get; set; }
 		public static string WellnessName { get; set; }
-		public static int SelectedServicesType { get; set; }
+		public static int SelectedServicesType { get; set; } = 1;
 		public static bool IsFromViewCartButtonClicked { get; set; } = false;
 		public static bool IsWellnessBookingType { get; set; } = false;
 		public static string ServiceCategoryName { get; set; }

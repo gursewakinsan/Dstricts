@@ -39,7 +39,12 @@ namespace Dstricts.Views.BookService
 		{
 			ImageButton image = sender as ImageButton;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = image.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			if (Helper.Helper.SelectedServicesType == 3) //If Public service
+				await Navigation.PushAsync(new BookSelectedServiceDetailsInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+
+
 			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else
@@ -50,7 +55,10 @@ namespace Dstricts.Views.BookService
 		{
 			StackLayout layout = sender as StackLayout;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = layout.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			if (Helper.Helper.SelectedServicesType == 3) //If Public service
+				await Navigation.PushAsync(new BookSelectedServiceDetailsInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
 			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else
@@ -61,7 +69,10 @@ namespace Dstricts.Views.BookService
 		{
 			Grid grid = sender as Grid;
 			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = grid.BindingContext as Models.FittnessAndSpaSelectedCategoryResponse;
-			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			if (Helper.Helper.SelectedServicesType == 3) //If Public service
+				await Navigation.PushAsync(new BookSelectedServiceDetailsInfoPage(fittnessAndSpa.Id));
+			else
+				await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
 			/*if (fittnessAndSpa.OneShared == 2 && fittnessAndSpa.OneSharedType == 1)
 				await Navigation.PushAsync(new WellnessSelectedServiceInfoPage(fittnessAndSpa.Id));
 			else

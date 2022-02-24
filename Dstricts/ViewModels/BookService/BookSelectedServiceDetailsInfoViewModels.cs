@@ -88,19 +88,19 @@ namespace Dstricts.ViewModels
 				ItemId = WellnessSelectedServiceInfo.Id,
 				OneShared = WellnessSelectedServiceInfo.OneShared,
 				OneSharedType = WellnessSelectedServiceInfo.OneSharedType,
-				Checkid = Helper.Helper.HotelCheckedIn,
+				Checkid = 0,
 				OpenEventDate = WellnessSelectedServiceInfo.OpenEventDate,
 				OpenEventTime = WellnessSelectedServiceInfo.OpenEventTime
 			});
 			if (response == 1)
 			{
 				if (WellnessSelectedServiceInfo.RecurringEvent)
-					await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessOpenCalenderInfoPage(WellnessSelectedServiceInfo));
+					await Navigation.PushAsync(new Views.BookService.BookOpenCalenderInfoPage(WellnessSelectedServiceInfo));
 				else
 				{
 					Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
 					{
-						CheckedInId = Helper.Helper.HotelCheckedIn,
+						CheckedInId = 0,
 						ServiceType = 5,
 						QloudIdPay = 1,
 						WellnessId = Helper.Helper.WellnessId
@@ -141,6 +141,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 		public string WellnessName => Helper.Helper.WellnessName;
+		public string ServiceCategoryName => Helper.Helper.ServiceCategoryName;
 		public int DishId { get; set; }
 		#endregion
 	}

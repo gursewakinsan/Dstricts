@@ -8,10 +8,10 @@ using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
 {
-	public class WellnessOpenCalenderInfoPageViewModel : BaseViewModel
+	public class BookOpenCalenderInfoPageViewModel : BaseViewModel
 	{
 		#region Constructor.
-		public WellnessOpenCalenderInfoPageViewModel(INavigation navigation)
+		public BookOpenCalenderInfoPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
 		}
@@ -29,7 +29,7 @@ namespace Dstricts.ViewModels
 			IFittnessAndSpaService service = new FittnessAndSpaService();
 			var response = await service.AvailableDatesForbookingAsync(new Models.AvailableDatesForbookingRequest()
 			{
-				CheckId = Helper.Helper.HotelCheckedIn,
+				CheckId = 0,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
 				WellnessId = Helper.Helper.WellnessId
 			});
@@ -43,7 +43,7 @@ namespace Dstricts.ViewModels
 			AvailableDatesForbookingList = new ObservableCollection<Models.AvailableDatesForbookingResponse>(response);
 			WellnessOpenCalenderInfo = await service.WellnessOpenCalenderInfoAsync(new Models.WellnessOpenCalenderInfoRequest()
 			{
-				CheckId = Helper.Helper.HotelCheckedIn,
+				CheckId = 0,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
 				WellnessId = Helper.Helper.WellnessId,
 				EmployeeId = 0,
@@ -67,7 +67,7 @@ namespace Dstricts.ViewModels
 			IFittnessAndSpaService service = new FittnessAndSpaService();
 			WellnessOpenCalenderInfo = await service.WellnessOpenCalenderInfoAsync(new Models.WellnessOpenCalenderInfoRequest()
 			{
-				CheckId = Helper.Helper.HotelCheckedIn,
+				CheckId = 0,
 				DstrictsUserId = Helper.Helper.LoggedInUserId,
 				WellnessId = Helper.Helper.WellnessId,
 				EmployeeId = 0,
@@ -95,7 +95,7 @@ namespace Dstricts.ViewModels
 				IFittnessAndSpaService service = new FittnessAndSpaService();
 				var response = await service.WellnessCartBookingTimeUpdateAsync(new Models.WellnessCartBookingTimeUpdateRequest()
 				{
-					CheckId = Helper.Helper.HotelCheckedIn,
+					CheckId = 0,
 					DstrictsUserId = Helper.Helper.LoggedInUserId,
 					WellnessId = Helper.Helper.WellnessId,
 					EmployeeId = 0,
@@ -106,7 +106,7 @@ namespace Dstricts.ViewModels
 				});
 				Models.PayOnRequest payOnRequest = new Models.PayOnRequest()
 				{
-					CheckedInId = Helper.Helper.HotelCheckedIn,
+					CheckedInId = 0,
 					ServiceType = 5,
 					QloudIdPay = 1,
 					WellnessId = Helper.Helper.WellnessId
@@ -125,7 +125,7 @@ namespace Dstricts.ViewModels
 		private ICommand workTimeSelectedCommand;
 		public ICommand WorkTimeSelectedCommand
 		{
-			get => workTimeSelectedCommand ?? (workTimeSelectedCommand = new Command( () => ExecuteWorkTimeSelectedCommand()));
+			get => workTimeSelectedCommand ?? (workTimeSelectedCommand = new Command(() => ExecuteWorkTimeSelectedCommand()));
 		}
 		private void ExecuteWorkTimeSelectedCommand()
 		{

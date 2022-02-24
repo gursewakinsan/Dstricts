@@ -45,20 +45,24 @@ namespace Dstricts.Views.BookService
 		
 		private async Task GoToAddBookServiceToCartPage(Models.Menu menu)
 		{
-			Helper.Helper.SelectedServicesType = viewModel.SelectedServicesType;
 			Helper.Helper.ServiceCategoryName = menu.ServiceCategoryName;
-			Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = new Models.FittnessAndSpaSelectedCategoryResponse()
+			if (Helper.Helper.SelectedServicesType == 3) //If Public service
+				await Navigation.PushAsync(new BookSelectedServiceDetailsInfoPage(menu.Id));
+			else
 			{
-				DishDetail = menu.DishDetail,
-				DishImage = menu.DishImage,
-				DishName = menu.DishName,
-				DishPrice = menu.DishPrice,
-				Id = menu.Id,
-				OneShared = menu.OneShared,
-				OneSharedType = menu.OneSharedType,
-				RecurringEvent = menu.RecurringEvent,
-			};
-			await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+				Models.FittnessAndSpaSelectedCategoryResponse fittnessAndSpa = new Models.FittnessAndSpaSelectedCategoryResponse()
+				{
+					DishDetail = menu.DishDetail,
+					DishImage = menu.DishImage,
+					DishName = menu.DishName,
+					DishPrice = menu.DishPrice,
+					Id = menu.Id,
+					OneShared = menu.OneShared,
+					OneSharedType = menu.OneSharedType,
+					RecurringEvent = menu.RecurringEvent,
+				};
+				await Navigation.PushAsync(new AddBookServiceToCartPage(fittnessAndSpa));
+			}
 		}
 	}
 }
