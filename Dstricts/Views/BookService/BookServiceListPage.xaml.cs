@@ -14,12 +14,12 @@ namespace Dstricts.Views.BookService
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new BookServiceListPageViewModel(this.Navigation);
+			viewModel.WellnessServiceInfoCountCommand.Execute(null);
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.WellnessServiceInfoCountCommand.Execute(null);
 		}
 
 		private void OnViewAllButtonClicked(object sender, System.EventArgs e)

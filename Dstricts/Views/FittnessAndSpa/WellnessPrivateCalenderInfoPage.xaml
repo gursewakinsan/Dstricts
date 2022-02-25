@@ -30,6 +30,7 @@
 		</Grid.ColumnDefinitions>
 		<Label
 			Grid.Row="0"
+			Margin="-10,0,0,0"
 			Grid.Column="1"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"

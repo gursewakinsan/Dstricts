@@ -31,6 +31,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="1"
+			Margin="-10,0,0,0"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"

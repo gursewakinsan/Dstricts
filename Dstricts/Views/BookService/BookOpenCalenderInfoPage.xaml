@@ -46,11 +46,7 @@
 			HorizontalTextAlignment="Start"
 			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
 			TextColor="White"
-			VerticalTextAlignment="Center">
-			<Label.GestureRecognizers>
-				<TapGestureRecognizer Command="{Binding CloseCommand}" />
-			</Label.GestureRecognizers>
-		</Label>
+			VerticalTextAlignment="Center" />
 
 		<Label
 			Grid.Row="0"
