@@ -76,13 +76,10 @@
 						TextColor="White"
 						VerticalTextAlignment="Center" />
 
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
-					<Grid ColumnSpacing="12" RowSpacing="12">
+					<Grid
+						Margin="0,21,0,0"
+						ColumnSpacing="12"
+						RowSpacing="12">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="244" />
 							<RowDefinition Height="24" />
