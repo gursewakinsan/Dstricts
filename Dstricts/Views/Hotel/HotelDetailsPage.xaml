@@ -971,6 +971,58 @@
 						</StackLayout>
 					</ScrollView>
 					<!--  End Fitness & Spa  -->
+
+					<!--  Start Hotel Venues  -->
+					<Label
+						Margin="0,53,0,32"
+						FontAttributes="Bold"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="24"
+						HorizontalTextAlignment="Start"
+						IsVisible="{Binding IsHotelVenuesList}"
+						MaxLines="1"
+						Text="Venues"
+						TextColor="White" />
+
+					<ScrollView
+						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsHotelVenuesList}"
+						Orientation="Horizontal">
+						<StackLayout BindableLayout.ItemsSource="{Binding HotelDetails.HotelVenues}" Orientation="Horizontal">
+							<BindableLayout.ItemTemplate>
+								<DataTemplate>
+									<StackLayout
+										Margin="0,0,15,0"
+										Spacing="0"
+										WidthRequest="{Binding ImgWidth}">
+										<ImageButton
+											Padding="0"
+											Aspect="AspectFill"
+											BackgroundColor="Transparent"
+											CornerRadius="16"
+											HeightRequest="{Binding ImgHeight}"
+											HorizontalOptions="Center"
+											Source="{Binding ImagePath}"
+											VerticalOptions="Center"
+											WidthRequest="{Binding ImgWidth}" />
+
+										<Label
+											Margin="0,27,0,0"
+											FontAttributes="Bold"
+											FontFamily="PoppinsSemiBoldFontFamily"
+											FontSize="16"
+											HorizontalTextAlignment="Start"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding VenueName}"
+											TextColor="White"
+											VerticalTextAlignment="Start" />
+									</StackLayout>
+								</DataTemplate>
+							</BindableLayout.ItemTemplate>
+						</StackLayout>
+					</ScrollView>
+					<!--  End Hotel Venues  -->
 				</StackLayout>
 			</ScrollView>
 

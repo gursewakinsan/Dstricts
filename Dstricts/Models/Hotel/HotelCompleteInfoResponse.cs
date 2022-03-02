@@ -31,6 +31,9 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "inhouse_fittness")]
 		public List<InhouseFittnessInfo> InhouseFittness { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_venues")]
+		public List<HotelVenue> HotelVenues { get; set; }
 	}
 }
 
@@ -64,6 +67,20 @@ public class InhouseFittnessInfo
 	public string CenterType { get; set; }
 
 	public string ImageUrl { get; set; }
+	public double ImgWidth { get; set; }
+	public double ImgHeight { get; set; }
+}
+
+public class HotelVenue
+{
+	[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
+	public int Id { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "venue_name")]
+	public string VenueName { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "image_path1")]
+	public string ImagePath { get; set; }
 	public double ImgWidth { get; set; }
 	public double ImgHeight { get; set; }
 }

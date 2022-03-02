@@ -77,6 +77,21 @@ namespace Dstricts.ViewModels
 			else
 				IsInhouseFittnessList = false;
 
+			if (response.HotelVenues?.Count > 0)
+			{
+				IsHotelVenuesList = true;
+				int deviceWidth = App.ScreenWidth - 56;
+				int w = deviceWidth * 80 / 100;
+				int h = w * 68 / 100;
+				foreach (var hotelVenues in response.HotelVenues)
+				{
+					hotelVenues.ImgHeight = h;
+					hotelVenues.ImgWidth = w;
+				}
+			}
+			else
+				IsHotelVenuesList = false;
+
 			HotelDetails = response;
 			Helper.Helper.HotelDetails = HotelDetails;
 
@@ -274,6 +289,17 @@ namespace Dstricts.ViewModels
 			{
 				isInhouseFittnessList = value;
 				OnPropertyChanged("IsInhouseFittnessList");
+			}
+		}
+
+		private bool isHotelVenuesList = false;
+		public bool IsHotelVenuesList
+		{
+			get => isHotelVenuesList;
+			set
+			{
+				isHotelVenuesList = value;
+				OnPropertyChanged("IsHotelVenuesList");
 			}
 		}
 
