@@ -257,6 +257,12 @@ namespace Dstricts.Views.Hotel
 			Helper.Helper.WellnessName = info.CenterName;
 			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
 		}
+
+		private async void OnVenuesImageClicked(object sender, System.EventArgs e)
+		{
+			ImageButton button = sender as ImageButton;
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(button.ClassId)));
+		}
 	}
 }
 public class EatAndDrink

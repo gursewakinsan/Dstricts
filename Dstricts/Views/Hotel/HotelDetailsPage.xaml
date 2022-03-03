@@ -999,6 +999,8 @@
 											Padding="0"
 											Aspect="AspectFill"
 											BackgroundColor="Transparent"
+											ClassId="{Binding Id}"
+											Clicked="OnVenuesImageClicked"
 											CornerRadius="16"
 											HeightRequest="{Binding ImgHeight}"
 											HorizontalOptions="Center"
