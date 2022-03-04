@@ -25,10 +25,33 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IVenueService service = new VenueService();
-			VenueInfomationDetail = await service.VenueInfomationDetailAsync(new Models.VenueInfomationDetailRequest()
+			var response = await service.VenueInfomationDetailAsync(new Models.VenueInfomationDetailRequest()
 			{
 				VenueId = VenueId
 			});
+			if (response.FoodTypeDetails?.Count > 0)
+			{
+				foreach (var foodType in response.FoodTypeDetails)
+				{
+					if (foodType.AvailableType.Equals("Yes"))
+						foodType.AvailableTypeBorderColor = Color.FromHex("#6263ED");
+					else
+						foodType.AvailableTypeBorderColor = Color.FromHex("#2A2A31");
+				}
+			}
+
+			if (response.VenueTypeDetails?.Count > 0)
+			{
+				foreach (var venueType in response.VenueTypeDetails)
+				{
+					if (venueType.AvailableType.Equals("Yes"))
+						venueType.AvailableTypeBorderColor = Color.FromHex("#6263ED");
+					else
+						venueType.AvailableTypeBorderColor = Color.FromHex("#2A2A31");
+				}
+			}
+
+			VenueInfomationDetail = response;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

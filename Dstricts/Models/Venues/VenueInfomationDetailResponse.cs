@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Dstricts.Models
 {
@@ -112,9 +113,10 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "available_type")]
 		public string AvailableType { get; set; }
+		public Color AvailableTypeBorderColor { get; set; }
 	}
 
-	public class FoodTypeDetail
+	public class FoodTypeDetail : BaseModel
 	{
 		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
 		public int Id { get; set; }
@@ -124,5 +126,6 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "available_type")]
 		public string AvailableType { get; set; }
+		public Color AvailableTypeBorderColor { get; set; }
 	}
 }

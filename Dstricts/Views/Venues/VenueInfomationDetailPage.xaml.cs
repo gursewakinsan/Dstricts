@@ -19,6 +19,7 @@ namespace Dstricts.Views.Venues
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			lblFoodAndDrinks.Text = "Food & Drinks";
 			viewModel.VenueInfomationDetailCommand.Execute(null);
 		}
 	}
