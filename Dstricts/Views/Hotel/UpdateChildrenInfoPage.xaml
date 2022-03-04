@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Hotel.UpdateChildrenInfoPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<Grid
+		Margin="0,14,0,5"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="50" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="Step 2 of 4"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<ScrollView
+			Grid.Row="1"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			VerticalScrollBarVisibility="Never">
+			<StackLayout Margin="0,18,0,0" Spacing="0">
+				<Label
+					FontAttributes="Bold"
+					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontSize="32"
+					Text="Is this correct?"
+					TextColor="White" />
+
+				<Label
+					Margin="0,22,0,20"
+					FontSize="16"
+					LineBreakMode="TailTruncation"
+					LineHeight="1.2"
+					MaxLines="2"
+					Opacity="0.7"
+					Text="You booked the room for 4 people. Please confirm this or adjust this."
+					TextColor="White" />
+
+				<Label
+					Padding="0"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontSize="150"
+					HorizontalOptions="CenterAndExpand"
+					HorizontalTextAlignment="Center"
+					Text="{Binding ChildrenCount}"
+					TextColor="White"
+					VerticalTextAlignment="Start" />
+
+				<BoxView BackgroundColor="#2A2A31" HeightRequest="1" />
+
+				<Grid Margin="0,38,0,10" HeightRequest="70">
+					<Button
+						Grid.Column="0"
+						BackgroundColor="Transparent"
+						BorderColor="#2A2A31"
+						BorderWidth="1"
+						Command="{Binding RemoveChildrenCommand}"
+						CornerRadius="10"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalOptions="StartAndExpand"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Minus}"
+						TextColor="White"
+						WidthRequest="130" />
+
+					<Button
+						Grid.Column="1"
+						BackgroundColor="Transparent"
+						BorderColor="#2A2A31"
+						BorderWidth="1"
+						Command="{Binding AddChildrenCommand}"
+						CornerRadius="10"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalOptions="EndAndExpand"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+						TextColor="White"
+						WidthRequest="130" />
+				</Grid>
+			</StackLayout>
+		</ScrollView>
+
+		<controls:CustomButton
+			Grid.Row="2"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			BackgroundColor="#6263ED"
+			CornerRadius="10"
+			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontSize="16"
+			Text="Get Started"
+			WidthRequest="114" />
+	</Grid>
+</ContentPage>
