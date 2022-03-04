@@ -20,8 +20,8 @@ namespace Dstricts.Views
 			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
 			lblMedicalAndHealth.Text = "Medical & Health";
 			lblGetPhoneAddressHere.Text = "Get phone & address here";*/
-			BindableLayout.SetItemsSource(cards, new string[10]);
-			BindableLayout.SetItemsSource(listPickDate, new string[10]);
+			//BindableLayout.SetItemsSource(cards, new string[10]);
+			//BindableLayout.SetItemsSource(listPickDate, new string[10]);
 		}
 	}
 }
