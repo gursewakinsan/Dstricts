@@ -178,6 +178,7 @@
 							BackgroundColor="Transparent"
 							BorderColor="#2A2A31"
 							CornerRadius="20"
+							HasShadow="False"
 							IsClippedToBounds="True">
 							<StackLayout
 								HorizontalOptions="CenterAndExpand"
@@ -211,6 +212,7 @@
 							BackgroundColor="Transparent"
 							BorderColor="#2A2A31"
 							CornerRadius="20"
+							HasShadow="False"
 							IsClippedToBounds="True">
 							<StackLayout
 								HorizontalOptions="CenterAndExpand"
@@ -244,6 +246,7 @@
 							BackgroundColor="Transparent"
 							BorderColor="#2A2A31"
 							CornerRadius="20"
+							HasShadow="False"
 							IsClippedToBounds="True">
 							<StackLayout
 								HorizontalOptions="CenterAndExpand"
@@ -318,6 +321,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								CornerRadius="20"
+								HasShadow="False"
 								HeightRequest="86"
 								HorizontalOptions="CenterAndExpand"
 								IsClippedToBounds="True"
@@ -352,6 +356,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								CornerRadius="20"
+								HasShadow="False"
 								HeightRequest="86"
 								HorizontalOptions="CenterAndExpand"
 								IsClippedToBounds="True"
@@ -386,6 +391,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								CornerRadius="20"
+								HasShadow="False"
 								HeightRequest="86"
 								HorizontalOptions="CenterAndExpand"
 								IsClippedToBounds="True"
@@ -420,6 +426,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								CornerRadius="20"
+								HasShadow="False"
 								HeightRequest="86"
 								HorizontalOptions="CenterAndExpand"
 								IsClippedToBounds="True"
@@ -454,6 +461,7 @@
 								BackgroundColor="Transparent"
 								BorderColor="#2A2A31"
 								CornerRadius="20"
+								HasShadow="False"
 								HeightRequest="86"
 								HorizontalOptions="CenterAndExpand"
 								IsClippedToBounds="True"
