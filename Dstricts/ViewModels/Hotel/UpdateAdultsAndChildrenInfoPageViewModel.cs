@@ -15,5 +15,79 @@ namespace Dstricts.ViewModels
 			Navigation = navigation;
 		}
 		#endregion
+
+		#region Add Adults Command.
+		private ICommand addAdultsCommand;
+		public ICommand AddAdultsCommand
+		{
+			get => addAdultsCommand ?? (addAdultsCommand = new Command(() => ExecuteAddAdultsCommand()));
+		}
+		private void ExecuteAddAdultsCommand()
+		{
+			AdultesCount = AdultesCount + 1;
+		}
+		#endregion
+
+		#region Remove Adults Command.
+		private ICommand removeAdultsCommand;
+		public ICommand RemoveAdultsCommand
+		{
+			get => removeAdultsCommand ?? (removeAdultsCommand = new Command(() => ExecuteRemoveAdultsCommand()));
+		}
+		private void ExecuteRemoveAdultsCommand()
+		{
+			if (AdultesCount > 1)
+				AdultesCount = AdultesCount - 1;
+		}
+		#endregion
+
+		#region Add Children Command.
+		private ICommand addChildrenCommand;
+		public ICommand AddChildrenCommand
+		{
+			get => addChildrenCommand ?? (addChildrenCommand = new Command(() => ExecuteAddChildrenCommand()));
+		}
+		private void ExecuteAddChildrenCommand()
+		{
+			ChildrenCount = ChildrenCount + 1;
+		}
+		#endregion
+
+		#region Remove Children Command.
+		private ICommand removeChildrenCommand;
+		public ICommand RemoveChildrenCommand
+		{
+			get => removeChildrenCommand ?? (removeChildrenCommand = new Command(() => ExecuteRemoveChildrenCommand()));
+		}
+		private void ExecuteRemoveChildrenCommand()
+		{
+			if (ChildrenCount > 1)
+				ChildrenCount = ChildrenCount - 1;
+		}
+		#endregion
+
+		#region Properties.
+		private int adultesCount = 1;
+		public int AdultesCount
+		{
+			get => adultesCount;
+			set
+			{
+				adultesCount = value;
+				OnPropertyChanged("AdultesCount");
+			}
+		}
+
+		private int childrenCount = 1;
+		public int ChildrenCount
+		{
+			get => childrenCount;
+			set
+			{
+				childrenCount = value;
+				OnPropertyChanged("ChildrenCount");
+			}
+		}
+		#endregion
 	}
 }
