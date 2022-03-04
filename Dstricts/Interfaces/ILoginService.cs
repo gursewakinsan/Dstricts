@@ -6,5 +6,6 @@ namespace Dstricts.Interfaces
 	{
 		Task<Models.LoginResponse> LoginAsync(Models.LoginRequest request);
 		Task<Models.InterAppSessionResponse> LoginWithSessionAsync(Models.InterAppSessionRequest request);
+		Task<Models.UserDetailsDstrictsResponse> UserDetailsDstrictsAsync(Models.UserDetailsDstrictsRequest request);
 	}
 }

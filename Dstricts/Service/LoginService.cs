@@ -24,5 +24,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.UserDetailsDstrictsResponse> UserDetailsDstrictsAsync(Models.UserDetailsDstrictsRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.UserDetailsDstrictsResponse>(HttpWebRequest.Create(string.Format(EndPointsList.UserDetailsDstrictsUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
