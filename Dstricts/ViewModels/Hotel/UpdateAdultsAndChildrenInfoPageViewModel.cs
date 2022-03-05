@@ -24,7 +24,8 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteAddAdultsCommand()
 		{
-			AdultesCount = AdultesCount + 1;
+			if (AdultesCount < VerifyCheckedInInfo.GuestAdult)
+				AdultesCount = AdultesCount + 1;
 		}
 		#endregion
 
@@ -49,7 +50,8 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteAddChildrenCommand()
 		{
-			ChildrenCount = ChildrenCount + 1;
+			if (ChildrenCount < VerifyCheckedInInfo.GuestChildren)
+				ChildrenCount = ChildrenCount + 1;
 		}
 		#endregion
 
@@ -67,7 +69,7 @@ namespace Dstricts.ViewModels
 		#endregion
 
 		#region Properties.
-		private int adultesCount = 1;
+		private int adultesCount;
 		public int AdultesCount
 		{
 			get => adultesCount;
@@ -78,7 +80,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private int childrenCount = 1;
+		private int childrenCount;
 		public int ChildrenCount
 		{
 			get => childrenCount;
@@ -88,6 +90,8 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("ChildrenCount");
 			}
 		}
+
+		public Models.VerifyCheckedInCodeResponse VerifyCheckedInInfo { get; set; }
 		#endregion
 	}
 }

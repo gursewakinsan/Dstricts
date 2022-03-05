@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-	x:Class="Dstricts.Views.Hotel.UpdateChildrenInfoPage"
+	x:Class="Dstricts.Views.Hotel.UpdateAdultInfoPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:Dstricts.Controls"
@@ -65,12 +65,12 @@
 
 				<Label
 					Margin="0,22,0,20"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
 					MaxLines="2"
 					Opacity="0.7"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
 					Text="You booked the room for 4 people. Please confirm this or adjust this."
 					TextColor="White" />
 
@@ -80,7 +80,7 @@
 					FontSize="150"
 					HorizontalOptions="CenterAndExpand"
 					HorizontalTextAlignment="Center"
-					Text="{Binding ChildrenCount}"
+					Text="{Binding AdultCount}"
 					TextColor="White"
 					VerticalTextAlignment="Start" />
 
@@ -92,7 +92,7 @@
 						BackgroundColor="Transparent"
 						BorderColor="#2A2A31"
 						BorderWidth="1"
-						Command="{Binding RemoveChildrenCommand}"
+						Command="{Binding RemoveAdultsCommand}"
 						CornerRadius="10"
 						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="25"
@@ -106,7 +106,7 @@
 						BackgroundColor="Transparent"
 						BorderColor="#2A2A31"
 						BorderWidth="1"
-						Command="{Binding AddChildrenCommand}"
+						Command="{Binding AddAdultsCommand}"
 						CornerRadius="10"
 						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="25"

@@ -8,11 +8,14 @@ namespace Dstricts.Views.Hotel
 	public partial class UpdateAdultsAndChildrenInfoPage : ContentPage
 	{
 		UpdateAdultsAndChildrenInfoPageViewModel viewModel;
-		public UpdateAdultsAndChildrenInfoPage ()
+		public UpdateAdultsAndChildrenInfoPage (Models.VerifyCheckedInCodeResponse verifyCheckedIn)
 		{
 			InitializeComponent ();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new UpdateAdultsAndChildrenInfoPageViewModel(this.Navigation);
+			viewModel.VerifyCheckedInInfo = verifyCheckedIn;
+			viewModel.AdultesCount = verifyCheckedIn.GuestAdult;
+			viewModel.ChildrenCount = verifyCheckedIn.GuestChildren;
 		}
 	}
 }
