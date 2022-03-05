@@ -1086,7 +1086,11 @@
 					HorizontalTextAlignment="Center"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
 					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
+					VerticalTextAlignment="Center">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToAdultsAndChildrenPageCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
 			</Grid>
 		</Grid>
 

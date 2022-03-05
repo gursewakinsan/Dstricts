@@ -66,19 +66,12 @@ namespace Dstricts.ViewModels
 				CheckId = VerifyCheckedInInfo.Id
 			});
 
-			if (AdultCount == 1)
-			{
-				if (Device.RuntimePlatform == Device.iOS)
-					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
-				else
-					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
-			}
+
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
 			else
-			{
-				VerifyCheckedInInfo.GuestAdult = AdultCount;
-				VerifyCheckedInInfo.GuestChildren = 0;
-				await Navigation.PushAsync(new Views.Hotel.AdultsAndChildrenInfoPage(VerifyCheckedInInfo));
-			}
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
+
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

@@ -15,6 +15,9 @@
 		public const string SelectedRoomServiceAppServesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedRoomServiceAppServes";
 		public const string SelectedRoomServiceServeBasedAppMenuUrl = "https://www.qloudid.com/user/index.php/QloudidApp/selectedRoomServiceServeBasedAppMenu";
 		public const string UpdateGuestRecordUrl = "https://www.qloudid.com/user/index.php/QloudidApp/updateGuestRecord";
+		public const string DependentsListForCheckinDstrictUrl = "https://www.qloudid.com/user/index.php/QloudidApp/dependentsListForCheckinDstrict";
+		public const string AddDependentChekinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addDependentChekin";
+		public const string DependentsCheckedInListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/dependentsCheckedInList";
 
 		//Cart.
 		public const string AddFoodItemToCartUrl = "https://dstricts.com/user/index.php/DstrictsApp/addFoodItemToCart";

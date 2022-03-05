@@ -247,6 +247,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Adults And Children Page Command.
+		private ICommand goToAdultsAndChildrenPageCommand;
+		public ICommand GoToAdultsAndChildrenPageCommand
+		{
+			get => goToAdultsAndChildrenPageCommand ?? (goToAdultsAndChildrenPageCommand = new Command(async () => await ExecuteGoToAdultsAndChildrenPageCommand()));
+		}
+		private async Task ExecuteGoToAdultsAndChildrenPageCommand()
+		{
+			await Navigation.PushAsync(new Views.Hotel.AdultsAndChildrenInfoPage(HotelDetails.GuestChildren, HotelDetails.GuestAdult));
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
 		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo

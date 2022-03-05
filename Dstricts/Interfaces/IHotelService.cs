@@ -21,6 +21,9 @@ namespace Dstricts.Interfaces
 		Task<List<Models.SelectedRoomServiceServeBasedAppMenuResponse>> SelectedRoomServiceServeBasedAppMenuAsync(Models.SelectedRoomServiceServeBasedAppMenuRequest request);
 		Task<int> AddFoodToCartAsync(Models.AddFoodToCartRequest request);
 		Task<int> UpdateGuestRecordAsync(Models.UpdateGuestRecordRequest request);
+		Task<List<Models.DependentsListForCheckinDstrictResponse>> DependentsListForCheckinDstrictAsync(Models.DependentsListForCheckinDstrictRequest request);
+		Task<int> AddDependentChekinAsync(Models.AddDependentChekinRequest request);
+		Task<List<Models.DependentsCheckedInListResponse>> DependentsCheckedInListAsync(Models.DependentsCheckedInListRequest request);
 	}
 }
 

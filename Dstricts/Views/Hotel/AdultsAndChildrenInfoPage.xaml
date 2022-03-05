@@ -171,12 +171,12 @@
 
 				<Label
 					x:Name="lblChildren"
-					Margin="0,42,0,18"
+					Margin="0,42,0,0"
 					FontSize="14"
 					Text="Children"
 					TextColor="White" />
 
-				<StackLayout x:Name="layoutAddChild">
+				<StackLayout BindableLayout.ItemsSource="{Binding DependentsCheckedInList}">
 					<BindableLayout.ItemTemplate>
 						<DataTemplate>
 							<Frame
@@ -199,14 +199,72 @@
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
-										Text="Add a child"
+										Text="{Binding Name}"
 										TextColor="White"
 										VerticalTextAlignment="Center" />
 
 									<Button
 										Grid.Column="1"
 										Padding="0"
+										BackgroundColor="#223426"
+										CornerRadius="22"
+										FontFamily="{StaticResource MaterialFontFamily}"
+										FontSize="20"
+										HeightRequest="44"
+										HorizontalOptions="CenterAndExpand"
+										Text="{x:Static fontawesome:DstrictsAppFlatIcons.Check}"
+										TextColor="#70E090"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="44" />
+								</Grid>
+							</Frame>
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+
+
+				<StackLayout x:Name="layoutAddChild">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate>
+							<Frame
+								Margin="0,18,0,0"
+								Padding="20,0,20,0"
+								BackgroundColor="Transparent"
+								BorderColor="#2A2A31"
+								CornerRadius="16"
+								HasShadow="False"
+								HeightRequest="80"
+								IsClippedToBounds="True">
+								<Frame.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnChildrenTapped" />
+								</Frame.GestureRecognizers>
+								<Grid ColumnSpacing="0" VerticalOptions="CenterAndExpand">
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnChildrenTapped" />
+									</Grid.GestureRecognizers>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition />
+										<ColumnDefinition Width="44" />
+									</Grid.ColumnDefinitions>
+
+									<Label
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="Add a child"
+										TextColor="White"
+										VerticalTextAlignment="Center">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnChildrenTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Button
+										Grid.Column="1"
+										Padding="0"
 										BackgroundColor="#282732"
+										Clicked="OnChildrenTapped"
 										CornerRadius="22"
 										FontFamily="{StaticResource MaterialFontFamily}"
 										FontSize="20"

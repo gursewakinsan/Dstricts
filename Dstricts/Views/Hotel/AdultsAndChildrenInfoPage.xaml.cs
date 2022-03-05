@@ -8,22 +8,31 @@ namespace Dstricts.Views.Hotel
 	public partial class AdultsAndChildrenInfoPage : ContentPage
 	{
 		AdultsAndChildrenInfoPageViewModel viewModel;
-		public AdultsAndChildrenInfoPage(Models.VerifyCheckedInCodeResponse verifyCheckedIn)
+		int guestChildren = 0;
+		int guestAdult = 0;
+		public AdultsAndChildrenInfoPage(int _guestChildren, int _guestAdult)
 		{
+			guestChildren = _guestChildren;
+			guestAdult = _guestAdult;
 			InitializeComponent();
 			BindingContext = viewModel = new AdultsAndChildrenInfoPageViewModel(this.Navigation);
-			viewModel.VerifyCheckedInInfo = verifyCheckedIn;
-			if (verifyCheckedIn.GuestChildren == 0)
+			if (guestChildren == 0)
 				lblChildren.IsVisible = false;
 			else
 				lblChildren.IsVisible = true;
-			viewModel.TotalCount = verifyCheckedIn.GuestAdult + verifyCheckedIn.GuestChildren;
+			viewModel.TotalCount = guestChildren + guestAdult;
 		}
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			BindableLayout.SetItemsSource(layoutInviteAdults, new string[viewModel.VerifyCheckedInInfo.GuestAdult - 1]);
-			BindableLayout.SetItemsSource(layoutAddChild, new string[viewModel.VerifyCheckedInInfo.GuestChildren]);
+			BindableLayout.SetItemsSource(layoutInviteAdults, new string[guestAdult - 1]);
+			BindableLayout.SetItemsSource(layoutAddChild, new string[guestChildren]);
+			viewModel.DependentsCheckedInListCommand.Execute(null);
+		}
+
+		private async void OnChildrenTapped(object sender, System.EventArgs e)
+		{
+			await Navigation.PushAsync(new DependentsListForCheckinPage());
 		}
 	}
 }

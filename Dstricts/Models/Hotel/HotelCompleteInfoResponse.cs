@@ -34,6 +34,12 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_venues")]
 		public List<HotelVenue> HotelVenues { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_adult")]
+		public int GuestAdult { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_children")]
+		public int GuestChildren { get; set; }
 	}
 }
 
