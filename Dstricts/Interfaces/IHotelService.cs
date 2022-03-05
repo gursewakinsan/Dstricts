@@ -20,6 +20,7 @@ namespace Dstricts.Interfaces
 		Task<List<Models.SelectedRoomServiceAppServesResponse>> SelectedRoomServiceAppServesAsync(Models.SelectedRoomServiceAppServesRequest request);
 		Task<List<Models.SelectedRoomServiceServeBasedAppMenuResponse>> SelectedRoomServiceServeBasedAppMenuAsync(Models.SelectedRoomServiceServeBasedAppMenuRequest request);
 		Task<int> AddFoodToCartAsync(Models.AddFoodToCartRequest request);
+		Task<int> UpdateGuestRecordAsync(Models.UpdateGuestRecordRequest request);
 	}
 }
 

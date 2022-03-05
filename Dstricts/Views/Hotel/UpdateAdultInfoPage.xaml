@@ -71,8 +71,15 @@
 					LineHeight="1.2"
 					MaxLines="2"
 					Opacity="0.7"
-					Text="You booked the room for 4 people. Please confirm this or adjust this."
-					TextColor="White" />
+					TextColor="White">
+					<Label.FormattedText>
+						<FormattedString>
+							<Span Text="You booked the room for " />
+							<Span Text="{Binding TotalCount}" />
+							<Span Text=" people. Please confirm this or adjust this." />
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
 
 				<Label
 					Padding="0"
@@ -124,10 +131,11 @@
 			Grid.ColumnSpan="3"
 			Padding="0"
 			BackgroundColor="#6263ED"
+			Command="{Binding UpdateGuestRecordCommand}"
 			CornerRadius="10"
 			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 			FontSize="16"
-			Text="Get Started"
+			Text="Continue"
 			WidthRequest="114" />
 	</Grid>
 </ContentPage>

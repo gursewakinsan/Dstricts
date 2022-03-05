@@ -15,6 +15,7 @@ namespace Dstricts.Views.Hotel
 			BindingContext = viewModel = new UpdateAdultsInfoPageViewModel(this.Navigation);
 			viewModel.VerifyCheckedInInfo = verifyCheckedIn;
 			viewModel.AdultCount = verifyCheckedIn.GuestAdult;
+			viewModel.TotalCount = verifyCheckedIn.GuestAdult;
 		}
 	}
 }

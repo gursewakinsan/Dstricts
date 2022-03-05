@@ -16,6 +16,7 @@ namespace Dstricts.Views.Hotel
 			viewModel.VerifyCheckedInInfo = verifyCheckedIn;
 			viewModel.AdultesCount = verifyCheckedIn.GuestAdult;
 			viewModel.ChildrenCount = verifyCheckedIn.GuestChildren;
+			viewModel.TotalCount = verifyCheckedIn.GuestAdult + verifyCheckedIn.GuestChildren;
 		}
 	}
 }

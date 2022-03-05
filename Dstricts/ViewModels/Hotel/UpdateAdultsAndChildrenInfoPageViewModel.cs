@@ -25,7 +25,10 @@ namespace Dstricts.ViewModels
 		private void ExecuteAddAdultsCommand()
 		{
 			if (AdultesCount < VerifyCheckedInInfo.GuestAdult)
+			{
 				AdultesCount = AdultesCount + 1;
+				TotalCount = TotalCount + 1;
+			}
 		}
 		#endregion
 
@@ -38,7 +41,10 @@ namespace Dstricts.ViewModels
 		private void ExecuteRemoveAdultsCommand()
 		{
 			if (AdultesCount > 1)
+			{
 				AdultesCount = AdultesCount - 1;
+				TotalCount = TotalCount - 1;
+			}
 		}
 		#endregion
 
@@ -51,7 +57,10 @@ namespace Dstricts.ViewModels
 		private void ExecuteAddChildrenCommand()
 		{
 			if (ChildrenCount < VerifyCheckedInInfo.GuestChildren)
+			{
 				ChildrenCount = ChildrenCount + 1;
+				TotalCount = TotalCount + 1;
+			}
 		}
 		#endregion
 
@@ -63,8 +72,46 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteRemoveChildrenCommand()
 		{
-			if (ChildrenCount > 1)
+			if (ChildrenCount > 0)
+			{
 				ChildrenCount = ChildrenCount - 1;
+				TotalCount = TotalCount - 1;
+			}
+		}
+		#endregion
+
+		#region Update Guest Record Command.
+		private ICommand updateGuestRecordCommand;
+		public ICommand UpdateGuestRecordCommand
+		{
+			get => updateGuestRecordCommand ?? (updateGuestRecordCommand = new Command(async() =>await ExecuteUpdateGuestRecordCommand()));
+		}
+		private async Task ExecuteUpdateGuestRecordCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			int response = await service.UpdateGuestRecordAsync(new Models.UpdateGuestRecordRequest()
+			{
+				DstrictsUserId = Helper.Helper.LoggedInUserId,
+				GuestAdult = AdultesCount,
+				GuestChildren = ChildrenCount,
+				CheckId = VerifyCheckedInInfo.Id
+			});
+
+			if (AdultesCount == 1 && ChildrenCount == 0)
+			{
+				if (Device.RuntimePlatform == Device.iOS)
+					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
+				else
+					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/CheckedInHotelId/{VerifyCheckedInInfo.Id}");
+			}
+			else
+			{
+				VerifyCheckedInInfo.GuestAdult = AdultesCount;
+				VerifyCheckedInInfo.GuestChildren = ChildrenCount;
+				await Navigation.PushAsync(new Views.Hotel.AdultsAndChildrenInfoPage(VerifyCheckedInInfo));
+			}
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -91,6 +138,16 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private int totalCount;
+		public int TotalCount
+		{
+			get => totalCount;
+			set
+			{
+				totalCount = value;
+				OnPropertyChanged("TotalCount");
+			}
+		}
 		public Models.VerifyCheckedInCodeResponse VerifyCheckedInInfo { get; set; }
 		#endregion
 	}
