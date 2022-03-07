@@ -27,10 +27,13 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
-			DependentsCheckedInList = await service.DependentsCheckedInListAsync(new Models.DependentsCheckedInListRequest()
+			var responses = await service.DependentsCheckedInListAsync(new Models.DependentsCheckedInListRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn
 			});
+			if (responses?.Count > 0)
+				if (!IsGuestChildren) IsGuestChildren = true;
+			DependentsCheckedInList = responses;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -44,6 +47,17 @@ namespace Dstricts.ViewModels
 			{
 				totalCount = value;
 				OnPropertyChanged("TotalCount");
+			}
+		}
+
+		private bool isGuestChildren;
+		public bool IsGuestChildren
+		{
+			get => isGuestChildren;
+			set
+			{
+				isGuestChildren = value;
+				OnPropertyChanged("IsGuestChildren");
 			}
 		}
 

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Xamarin.Forms;
 using Dstricts.Service;
+using Xamarin.Essentials;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
@@ -48,12 +49,23 @@ namespace Dstricts.ViewModels
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
 			int childId = DependentsListForCheckinInfo.FirstOrDefault(x => x.IsSelect).Id;
-			var responses = await service.AddDependentChekinAsync(new Models.AddDependentChekinRequest()
+			var id = await service.AddDependentChekinAsync(new Models.AddDependentChekinRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn,
 				ChildId = childId
 			});
-			await Helper.Alert.DisplayAlert($"Thanks, your id is {responses}");
+			Models.VerifyDependent verify = new Models.VerifyDependent()
+			{
+				Id = id,
+				CheckId = Helper.Helper.HotelCheckedIn,
+			};
+			string verifyDependentChekIn = Newtonsoft.Json.JsonConvert.SerializeObject(verify);
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/VerifyDependentChekIn/{verifyDependentChekIn}");
+			else
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/VerifyDependentChekIn/{verifyDependentChekIn}");
+
+			await Navigation.PopToRootAsync();
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

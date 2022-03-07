@@ -17,9 +17,9 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent();
 			BindingContext = viewModel = new AdultsAndChildrenInfoPageViewModel(this.Navigation);
 			if (guestChildren == 0)
-				lblChildren.IsVisible = false;
+				viewModel.IsGuestChildren = false;
 			else
-				lblChildren.IsVisible = true;
+				viewModel.IsGuestChildren = true;
 			viewModel.TotalCount = guestChildren + guestAdult;
 		}
 		protected override void OnAppearing()

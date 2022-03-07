@@ -13,12 +13,12 @@ namespace Dstricts.Views.Hotel
 			InitializeComponent ();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new DependentsListForCheckinPageViewModel(this.Navigation);
+			viewModel.DependentsListForCheckinDstrictCommand.Execute(null);
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.DependentsListForCheckinDstrictCommand.Execute(null);
 		}
 
 		private void OnDependentsForCheckinItemTapped(object sender, ItemTappedEventArgs e)

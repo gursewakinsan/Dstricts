@@ -170,9 +170,9 @@
 				</StackLayout>
 
 				<Label
-					x:Name="lblChildren"
 					Margin="0,42,0,0"
 					FontSize="14"
+					IsVisible="{Binding IsGuestChildren}"
 					Text="Children"
 					TextColor="White" />
 
