@@ -24,6 +24,9 @@ namespace Dstricts.Interfaces
 		Task<List<Models.DependentsListForCheckinDstrictResponse>> DependentsListForCheckinDstrictAsync(Models.DependentsListForCheckinDstrictRequest request);
 		Task<int> AddDependentChekinAsync(Models.AddDependentChekinRequest request);
 		Task<List<Models.DependentsCheckedInListResponse>> DependentsCheckedInListAsync(Models.DependentsCheckedInListRequest request);
+		Task<List<Models.CountryCodeListResponse>> CountryCodeListAsync();
+		Task<int> PhoneIinviteAdultForCheckinAsync(Models.PhoneIinviteAdultForCheckinRequest request);
+		Task<int> EmailIinviteAdultForCheckinAsync(Models.EmailIinviteAdultForCheckinRequest request);
 	}
 }
 

@@ -8,6 +8,9 @@
 		public const string CheckedInApartmentListUrl = "https://dstricts.com/user/index.php/DstrictsApp/checkedInApartmentList";
 		public const string UserQueueListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/userQueueList";
 		public const string UserDetailsDstrictsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/userDetailsDstricts";
+		public const string CountryCodeUrl = "https://www.qloudid.com/user/index.php/QloudidApp/countryCode";
+		public const string PhoneIinviteAdultForCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/phoneIinviteAdultForCheckin";
+		public const string EmailIinviteAdultForCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/emailIinviteAdultForCheckin";
 
 		public const string VerifyCheckedInCodeUrl = "https://dstricts.com/user/index.php/DstrictsApp/verifyCode";
 		public const string HotelCompleteInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelCompleteInfo";

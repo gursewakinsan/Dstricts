@@ -68,5 +68,6 @@
 		public const string PlusBoxOutline = "\U000f0704";
 		public const string AvTimer = "\U000f006b";
 		public const string EmailOutline = "\U000f01f0";
+		public const string CellphoneAndroid = "\U000f011d";
 	}
 }

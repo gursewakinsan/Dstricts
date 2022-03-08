@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Hotel.InviteAdultsByPhonePage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<Grid
+		Margin="0,14,0,5"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="Invite adult"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<ScrollView
+			Grid.Row="1"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			VerticalScrollBarVisibility="Never">
+			<StackLayout Margin="0,18,0,0" Spacing="0">
+				<Label
+					FontAttributes="Bold"
+					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontSize="32"
+					Text="Add phone"
+					TextColor="White" />
+
+				<Label
+					Margin="0,22,0,53"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontSize="16"
+					LineBreakMode="TailTruncation"
+					LineHeight="1.2"
+					MaxLines="2"
+					Opacity="0.7"
+					Text="Add the phone number to the person you wish to check-in online"
+					TextColor="White" />
+
+				<Label
+					Margin="0,0,0,18"
+					FontSize="14"
+					Text="Pick one"
+					TextColor="White" />
+
+				<Grid ColumnSpacing="13" RowSpacing="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="56" />
+						<RowDefinition Height="15" />
+						<RowDefinition Height="48" />
+						<RowDefinition Height="50" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="70" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<textinputlayout:SfTextInputLayout
+						Grid.Row="0"
+						Grid.Column="0"
+						ContainerBackgroundColor="Transparent"
+						ContainerType="Outlined"
+						FocusedColor="#6263ED"
+						FocusedStrokeWidth="0.5"
+						HeightRequest="56"
+						Hint="Code"
+						LeadingViewPosition="Inside"
+						OutlineCornerRadius="12"
+						UnfocusedColor="#797A7D"
+						UnfocusedStrokeWidth="0.5">
+						<controls:CustomFloatingLabelEntry
+							BackgroundColor="#F8F8FB"
+							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontSize="16"
+							Placeholder="Code"
+							PlaceholderColor="#797A7D"
+							Text="{Binding CountryCode}"
+							TextColor="White" />
+					</textinputlayout:SfTextInputLayout>
+
+					<textinputlayout:SfTextInputLayout
+						Grid.Row="0"
+						Grid.Column="1"
+						ContainerBackgroundColor="Transparent"
+						ContainerType="Outlined"
+						FocusedColor="#6263ED"
+						FocusedStrokeWidth="0.5"
+						HeightRequest="56"
+						Hint="Mobile number"
+						LeadingViewPosition="Inside"
+						OutlineCornerRadius="12"
+						TrailingViewPosition="Inside"
+						UnfocusedColor="#797A7D"
+						UnfocusedStrokeWidth="0.5">
+						<textinputlayout:SfTextInputLayout.LeadingView>
+							<Label
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneAndroid}"
+								TextColor="#797A7D"
+								VerticalTextAlignment="Center" />
+						</textinputlayout:SfTextInputLayout.LeadingView>
+						<controls:CustomFloatingLabelEntry
+							BackgroundColor="#F8F8FB"
+							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontSize="16"
+							Keyboard="Numeric"
+							Placeholder="Mobile number"
+							PlaceholderColor="#797A7D"
+							Text="{Binding MobileNumber}"
+							TextColor="White" />
+					</textinputlayout:SfTextInputLayout>
+
+					<Label
+						Grid.Row="2"
+						Grid.ColumnSpan="2"
+						FontFamily="{StaticResource PoppinsRegularFontFamily}"
+						FontSize="14"
+						HorizontalTextAlignment="Start"
+						Opacity="0.5"
+						Text="On mobile dont use the 0."
+						TextColor="White"
+						VerticalTextAlignment="Start" />
+
+					<Grid
+						Grid.Row="3"
+						Grid.ColumnSpan="2"
+						ColumnSpacing="20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition Width="110" />
+						</Grid.ColumnDefinitions>
+						<controls:CustomButton
+							Grid.Column="0"
+							BackgroundColor="#6263ED"
+							Command="{Binding SaveMobileNumberCommand}"
+							CornerRadius="10"
+							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontSize="14"
+							Text="Submit"
+							TextColor="White" />
+
+						<controls:CustomButton
+							Grid.Column="1"
+							BackgroundColor="#26272A"
+							Command="{Binding CloseCommand}"
+							CornerRadius="10"
+							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontSize="14"
+							Text="Cancel"
+							TextColor="White" />
+					</Grid>
+				</Grid>
+			</StackLayout>
+		</ScrollView>
+	</Grid>
+</ContentPage>

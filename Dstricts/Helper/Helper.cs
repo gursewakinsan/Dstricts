@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.RegularExpressions;
 
 namespace Dstricts.Helper
 {
@@ -11,6 +11,18 @@ namespace Dstricts.Helper
 		public static string ToJson(this object obj)
 		{
 			return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+		}
+
+		public static bool IsValid(string value)
+		{
+			return CheckEmail(value);
+		}
+		public static bool CheckEmail(string input)
+		{
+			return Regex.IsMatch(input,
+		   @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+		   @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
+		   RegexOptions.IgnoreCase);
 		}
 		public static double DeviceWidth { get; set; }
 		public static bool IsLoggedInUser { get; set; } = false;

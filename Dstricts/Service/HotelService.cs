@@ -178,5 +178,32 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.CountryCodeListResponse>> CountryCodeListAsync()
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.CountryCodeListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CountryCodeUrl)), string.Empty, null);
+				return res;
+			});
+		}
+
+		public Task<int> PhoneIinviteAdultForCheckinAsync(Models.PhoneIinviteAdultForCheckinRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.PhoneIinviteAdultForCheckinUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> EmailIinviteAdultForCheckinAsync(Models.EmailIinviteAdultForCheckinRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.EmailIinviteAdultForCheckinUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
