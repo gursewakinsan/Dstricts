@@ -39,5 +39,37 @@ namespace Dstricts.Views.Hotel
 		{
 			await Navigation.PushAsync(new DependentsListForCheckinPage());
 		}
+
+		private void OnFrameReInviteAdultsTapped(object sender, System.EventArgs e)
+		{
+			Frame frame = sender as Frame;
+			Models.AdultsCheckedInListResponse adults = frame.BindingContext as Models.AdultsCheckedInListResponse;
+			if (!adults.IsConfirmed)
+				viewModel.ResendInvitationCommand.Execute(adults.Id);
+		}
+
+		private void OnGridReInviteAdultsTapped(object sender, System.EventArgs e)
+		{
+			Grid grid = sender as Grid;
+			Models.AdultsCheckedInListResponse adults = grid.BindingContext as Models.AdultsCheckedInListResponse;
+			if (!adults.IsConfirmed)
+				viewModel.ResendInvitationCommand.Execute(adults.Id);
+		}
+
+		private void OnLabelReInviteAdultsTapped(object sender, System.EventArgs e)
+		{
+			Label label = sender as Label;
+			Models.AdultsCheckedInListResponse adults = label.BindingContext as Models.AdultsCheckedInListResponse;
+			if (!adults.IsConfirmed)
+				viewModel.ResendInvitationCommand.Execute(adults.Id);
+		}
+
+		private void OnButtonReInviteAdultsTapped(object sender, System.EventArgs e)
+		{
+			Button button = sender as Button;
+			Models.AdultsCheckedInListResponse adults = button.BindingContext as Models.AdultsCheckedInListResponse;
+			if (!adults.IsConfirmed)
+				viewModel.ResendInvitationCommand.Execute(adults.Id);
+		}
 	}
 }

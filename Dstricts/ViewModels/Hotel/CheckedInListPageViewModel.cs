@@ -89,6 +89,9 @@ namespace Dstricts.ViewModels
 					Helper.Helper.AvalibleQueueId = codeInfo[1];
 					await Navigation.PushAsync(new Views.Queue.AvalibleQueueOnTheLocationPage());
 					break;
+				case "verify_adult_checkin":
+					VerifyUserInvitationInfoCommand.Execute(codeInfo[2]);
+					break;
 			}
 			await Task.CompletedTask;
 		}
@@ -127,6 +130,36 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteSearchCommand()
 		{
 			await Navigation.PushAsync(new Views.SearchHotel.SearchHotelByTypePage());
+		}
+		#endregion
+
+		#region Verify User Invitation Info Command.
+		private ICommand verifyUserInvitationInfoCommand;
+		public ICommand VerifyUserInvitationInfoCommand
+		{
+			get => verifyUserInvitationInfoCommand ?? (verifyUserInvitationInfoCommand = new Command<string>(async (id) => await ExecuteVerifyUserInvitationInfoCommand(id)));
+		}
+		private async Task ExecuteVerifyUserInvitationInfoCommand(string id)
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService hotelService = new HotelService();
+			int code = await hotelService.VerifyUserInvitationInfoAsync(new Models.VerifyUserInvitationInfoRequest()
+			{
+				Id = id,
+				UserId = Helper.Helper.LoggedInUserId
+			});
+			if (code == 0)
+			{
+			}
+			else if (code == 1)
+			{
+			}
+			else
+			{
+				Helper.Helper.VerifyUserInvitationInfoId = id;
+				await Navigation.PushAsync(new Views.Hotel.VerifyUserInvitationInfoCodePage(code));
+			}
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 

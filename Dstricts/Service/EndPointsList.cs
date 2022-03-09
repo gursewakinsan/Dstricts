@@ -11,6 +11,9 @@
 		public const string CountryCodeUrl = "https://www.qloudid.com/user/index.php/QloudidApp/countryCode";
 		public const string PhoneIinviteAdultForCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/phoneIinviteAdultForCheckin";
 		public const string EmailIinviteAdultForCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/emailIinviteAdultForCheckin";
+		public const string AdultsCheckedInListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/adultsCheckedInList";
+		public const string ResendInvitationUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resendInvitation";
+		public const string VerifyUserInvitationInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/verifyUserInvitationInfo";
 
 		public const string VerifyCheckedInCodeUrl = "https://dstricts.com/user/index.php/DstrictsApp/verifyCode";
 		public const string HotelCompleteInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelCompleteInfo";

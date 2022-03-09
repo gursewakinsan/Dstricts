@@ -27,13 +27,47 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IHotelService service = new HotelService();
-			var responses = await service.DependentsCheckedInListAsync(new Models.DependentsCheckedInListRequest()
+			var adultsCheckedInList = await service.AdultsCheckedInListAsync(new Models.AdultsCheckedInListRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn
 			});
-			if (responses?.Count > 0)
+			if (adultsCheckedInList?.Count > 0)
+			{
+				foreach (var item in adultsCheckedInList)
+				{
+					if (item.IsConfirmed)
+						item.FrameBorderColor = Color.FromHex("#406B4B");
+					else
+						item.FrameBorderColor = Color.FromHex("#E53614");
+				}
+			}
+			AdultsCheckedInList = adultsCheckedInList;
+
+			var dependentsCheckedIn = await service.DependentsCheckedInListAsync(new Models.DependentsCheckedInListRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
+			});
+			if (dependentsCheckedIn?.Count > 0)
 				if (!IsGuestChildren) IsGuestChildren = true;
-			DependentsCheckedInList = responses;
+			DependentsCheckedInList = dependentsCheckedIn;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Resend Invitation Command.
+		private ICommand resendInvitationCommand;
+		public ICommand ResendInvitationCommand
+		{
+			get => resendInvitationCommand ?? (resendInvitationCommand = new Command<int>(async (id) => await ExecuteResendInvitationCommand(id)));
+		}
+		private async Task ExecuteResendInvitationCommand(int id)
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			var adultsCheckedInList = await service.ResendInvitationAsync(new Models.ResendInvitationRequest()
+			{
+				Id = id
+			});
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -61,6 +95,17 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private List<Models.AdultsCheckedInListResponse> adultsCheckedInList;
+		public List<Models.AdultsCheckedInListResponse> AdultsCheckedInList
+		{
+			get => adultsCheckedInList;
+			set
+			{
+				adultsCheckedInList = value;
+				OnPropertyChanged("AdultsCheckedInList");
+			}
+		}
+
 		private List<Models.DependentsCheckedInListResponse> dependentsCheckedInList;
 		public List<Models.DependentsCheckedInListResponse> DependentsCheckedInList
 		{
@@ -71,6 +116,7 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("DependentsCheckedInList");
 			}
 		}
+		
 		public string UserName => Helper.Helper.LoggedInUserName;
 		#endregion
 	}

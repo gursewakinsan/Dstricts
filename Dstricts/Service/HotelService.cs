@@ -205,5 +205,34 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.AdultsCheckedInListResponse>> AdultsCheckedInListAsync(Models.AdultsCheckedInListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.AdultsCheckedInListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.AdultsCheckedInListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> ResendInvitationAsync(Models.ResendInvitationRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.ResendInvitationUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> VerifyUserInvitationInfoAsync(Models.VerifyUserInvitationInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.VerifyUserInvitationInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
+
+
