@@ -32,17 +32,29 @@ namespace Dstricts.ViewModels
 			{
 				DependencyService.Get<IProgressBar>().Show();
 				IHotelService service = new HotelService();
-				int response = await service.EmailIinviteAdultForCheckinAsync(new Models.EmailIinviteAdultForCheckinRequest()
+				int id = await service.EmailIinviteAdultForCheckinAsync(new Models.EmailIinviteAdultForCheckinRequest()
 				{
 					Email = EmailAddress,
 					CheckId = Helper.Helper.HotelCheckedIn,
 					UserId = Helper.Helper.LoggedInUserId
 				});
-				if (response == 0)
+				if (id == 0)
 					await Helper.Alert.DisplayAlert("You can't invite your self.");
 				else
 				{
-					
+					Models.VerifyDependent verify = new Models.VerifyDependent()
+					{
+						Id = id,
+						VerificationInfo = 2,
+						CheckId = Helper.Helper.HotelCheckedIn,
+					};
+					string verifyDependentChekIn = Newtonsoft.Json.JsonConvert.SerializeObject(verify);
+					if (Device.RuntimePlatform == Device.iOS)
+						await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/VerifyDependentChekIn/{verifyDependentChekIn}");
+					else
+						await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/VerifyDependentChekIn/{verifyDependentChekIn}");
+
+					await Navigation.PopToRootAsync();
 				}
 				DependencyService.Get<IProgressBar>().Hide();
 			}

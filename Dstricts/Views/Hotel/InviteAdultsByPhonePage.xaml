@@ -104,14 +104,18 @@
 						OutlineCornerRadius="12"
 						UnfocusedColor="#797A7D"
 						UnfocusedStrokeWidth="0.5">
-						<controls:CustomFloatingLabelEntry
-							BackgroundColor="#F8F8FB"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
-							FontSize="16"
-							Placeholder="Code"
-							PlaceholderColor="#797A7D"
-							Text="{Binding CountryCode}"
-							TextColor="White" />
+						<controls:CustomPicker
+							x:Name="pickerType"
+							Title="Code"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HeightRequest="56"
+							ItemDisplayBinding="{Binding CountryCode}"
+							ItemsSource="{Binding CountryCodeList}"
+							SelectedIndexChanged="OnCountryCodeSelectedIndexChanged"
+							SelectedItem="{Binding SelectedCountryCode}"
+							TextColor="White"
+							TitleColor="#6263ED" />
 					</textinputlayout:SfTextInputLayout>
 
 					<textinputlayout:SfTextInputLayout

@@ -6,6 +6,6 @@
 		public int Id { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "country_code")]
-		public int CountryCode { get; set; }
+		public string CountryCode { get; set; }
 	}
 }

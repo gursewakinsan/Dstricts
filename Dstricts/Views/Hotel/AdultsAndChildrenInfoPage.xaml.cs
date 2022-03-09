@@ -30,6 +30,11 @@ namespace Dstricts.Views.Hotel
 			viewModel.DependentsCheckedInListCommand.Execute(null);
 		}
 
+		private async void OnAdultsTapped(object sender, System.EventArgs e)
+		{
+			await Navigation.PushAsync(new InviteAdultsPage());
+		}
+
 		private async void OnChildrenTapped(object sender, System.EventArgs e)
 		{
 			await Navigation.PushAsync(new DependentsListForCheckinPage());

@@ -57,6 +57,7 @@ namespace Dstricts.ViewModels
 			Models.VerifyDependent verify = new Models.VerifyDependent()
 			{
 				Id = id,
+				VerificationInfo = 1,
 				CheckId = Helper.Helper.HotelCheckedIn,
 			};
 			string verifyDependentChekIn = Newtonsoft.Json.JsonConvert.SerializeObject(verify);

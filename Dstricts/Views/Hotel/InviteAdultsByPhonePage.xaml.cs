@@ -14,5 +14,18 @@ namespace Dstricts.Views.Hotel
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new InviteAdultsByPhonePageViewModel(this.Navigation);
 		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			viewModel.CountryCodeListCommand.Execute(null);
+		}
+
+		private void OnCountryCodeSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			Controls.CustomPicker picker = sender as Controls.CustomPicker;
+			if (picker.SelectedIndex == -1)
+				return;
+		}
 	}
 }
