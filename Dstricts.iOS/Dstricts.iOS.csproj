@@ -200,4 +200,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\searchBG.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ErrorMessageBg.png" />
+  </ItemGroup>
 </Project>

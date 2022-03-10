@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-	x:Class="Dstricts.Views.TestPage"
+	x:Class="Dstricts.Views.ErrorMessage.NotAuthorizedForHotelCheckInPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
@@ -23,7 +23,7 @@
 				<Label
 					FontAttributes="Bold"
 					FontFamily="{StaticResource PoppinsBoldFontFamily}"
-					FontSize="32"
+					FontSize="30"
 					HorizontalOptions="StartAndExpand"
 					Text="Not authorized"
 					TextColor="White" />
@@ -72,26 +72,39 @@
 					HasShadow="False"
 					HeightRequest="56"
 					IsClippedToBounds="True">
+					<Frame.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnNotAuthorizedTapped" />
+					</Frame.GestureRecognizers>
 					<StackLayout
 						HorizontalOptions="CenterAndExpand"
 						Orientation="Horizontal"
 						Spacing="8"
 						VerticalOptions="CenterAndExpand">
+						<StackLayout.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnNotAuthorizedTapped" />
+						</StackLayout.GestureRecognizers>
 						<Label
 							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 							FontSize="16"
 							Text="Submit"
-							TextColor="White" />
+							TextColor="White">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnNotAuthorizedTapped" />
+							</Label.GestureRecognizers>
+						</Label>
 
 						<Label
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowRight}"
-							TextColor="White" />
+							TextColor="White">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnNotAuthorizedTapped" />
+							</Label.GestureRecognizers>
+						</Label>
 					</StackLayout>
 				</Frame>
 			</StackLayout>
 		</Frame>
 	</Grid>
 </ContentPage>
-

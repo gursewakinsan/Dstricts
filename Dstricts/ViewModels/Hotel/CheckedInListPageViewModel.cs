@@ -148,12 +148,10 @@ namespace Dstricts.ViewModels
 				Id = id,
 				UserId = Helper.Helper.LoggedInUserId
 			});
-			if (code == 0)
-			{
-			}
-			else if (code == 1)
-			{
-			}
+			if (code == 0) //Not authorized page
+				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.NotAuthorizedForHotelCheckInPage());
+			else if (code == 1) // Already checked-in page
+				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.AlreadyCheckedInForHotelPage());
 			else
 			{
 				Helper.Helper.VerifyUserInvitationInfoId = id;
