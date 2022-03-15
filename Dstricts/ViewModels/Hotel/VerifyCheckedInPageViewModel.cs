@@ -57,6 +57,7 @@ namespace Dstricts.ViewModels
 					Ecode = Password,
 					HotelPropertyType = HotelPropertyType
 				});
+				ClearPassword();
 				if (response.Result == 0)
 					await Navigation.PushAsync(new Views.ErrorMessage.BookingNotAvailablePage());
 				else if (response.Result == 2)
