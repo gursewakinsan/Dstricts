@@ -58,7 +58,9 @@ namespace Dstricts.ViewModels
 					HotelPropertyType = HotelPropertyType
 				});
 				if (response.Result == 0)
-					await Helper.Alert.DisplayAlert("Booking not available with given code!");
+					await Navigation.PushAsync(new Views.ErrorMessage.BookingNotAvailablePage());
+				else if (response.Result == 2)
+					await Navigation.PushAsync(new Views.ErrorMessage.BookingWrongDatePage());
 				else
 				{
 					if (response.GuestChildren == 0 && response.GuestAdult == 1)
