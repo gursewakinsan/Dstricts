@@ -152,6 +152,8 @@ namespace Dstricts.ViewModels
 				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.NotAuthorizedForHotelCheckInPage());
 			else if (code == 1) // Already checked-in page
 				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.AlreadyCheckedInForHotelPage());
+			else if (code == 2) // Wrong date page
+				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.WrongDateForHotelCheckInPage());
 			else
 			{
 				Helper.Helper.VerifyUserInvitationInfoId = id;
