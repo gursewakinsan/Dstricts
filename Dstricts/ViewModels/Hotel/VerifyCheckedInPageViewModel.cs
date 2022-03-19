@@ -62,6 +62,8 @@ namespace Dstricts.ViewModels
 					await Navigation.PushAsync(new Views.ErrorMessage.BookingNotAvailablePage());
 				else if (response.Result == 2)
 					await Navigation.PushAsync(new Views.ErrorMessage.BookingWrongDatePage());
+				else if (response.Result == 3)
+					await Navigation.PushAsync(new Views.ErrorMessage.FrontDeskPage());
 				else
 				{
 					if (response.GuestChildren == 0 && response.GuestAdult == 1)

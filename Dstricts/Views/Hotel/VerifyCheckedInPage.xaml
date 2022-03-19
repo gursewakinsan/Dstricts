@@ -3,13 +3,264 @@
 	x:Class="Dstricts.Views.Hotel.VerifyCheckedInPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
 	xmlns:usercontrols="clr-namespace:Dstricts.UserControls"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
+		Margin="0,14,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Margin="-10,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			LineBreakMode="TailTruncation"
+			MaxLines="1"
+			Text="Scandic Camper Hotel"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<Frame
+			Grid.Row="0"
+			Grid.Column="3"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="#2A2A31"
+			HasShadow="False"
+			HorizontalOptions="EndAndExpand"
+			IsClippedToBounds="True"
+			VerticalOptions="CenterAndExpand">
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+				TextColor="White" />
+		</Frame>
+
+		<ScrollView
+			Grid.Row="1"
+			Grid.ColumnSpan="5"
+			VerticalScrollBarVisibility="Never">
+			<Grid
+				Margin="0,31,0,0"
+				ColumnSpacing="0"
+				RowSpacing="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="28" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="28" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="48" />
+					<RowDefinition Height="9" />
+					<RowDefinition Height="52" />
+					<RowDefinition Height="31" />
+					<RowDefinition Height="auto" />
+					<RowDefinition Height="31" />
+					<RowDefinition Height="18" />
+					<RowDefinition Height="31" />
+					<RowDefinition Height="56" />
+					<RowDefinition Height="31" />
+				</Grid.RowDefinitions>
+
+				<Label
+					Grid.Row="0"
+					Grid.Column="1"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Check-in"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Label
+					Grid.Row="2"
+					Grid.Column="1"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					LineBreakMode="TailTruncation"
+					MaxLines="2"
+					Opacity="0.4"
+					Text="We offer 2 ways for you to check-in. Select the option you prefer the most:)"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Frame
+					Grid.Row="4"
+					Grid.Column="1"
+					Padding="25,49,25,35"
+					BackgroundColor="#282732"
+					CornerRadius="20"
+					HasShadow="False"
+					IsClippedToBounds="True">
+					<Grid ColumnSpacing="0" RowSpacing="0">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="36" />
+							<RowDefinition Height="9" />
+							<RowDefinition Height="48" />
+							<RowDefinition Height="31" />
+							<RowDefinition Height="56" />
+							<RowDefinition Height="36" />
+							<RowDefinition Height="56" />
+						</Grid.RowDefinitions>
+						<Label
+							Grid.Row="0"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="24"
+							HorizontalTextAlignment="Start"
+							LineBreakMode="TailTruncation"
+							MaxLines="1"
+							Text="Online"
+							TextColor="#7D76FF"
+							VerticalTextAlignment="Center" />
+
+						<Label
+							Grid.Row="2"
+							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							LineBreakMode="TailTruncation"
+							MaxLines="2"
+							Opacity="0.4"
+							Text="Add check-in code that we sent to your email address upon booking"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+						<textinputlayout:SfTextInputLayout
+							Grid.Row="4"
+							ContainerBackgroundColor="Transparent"
+							ContainerType="Outlined"
+							FocusedColor="#6263ED"
+							FocusedStrokeWidth="0.5"
+							HeightRequest="56"
+							Hint="Check-in code"
+							LeadingViewPosition="Inside"
+							OutlineCornerRadius="12"
+							TrailingViewPosition="Inside"
+							UnfocusedColor="#797A7D"
+							UnfocusedStrokeWidth="0.5">
+							<controls:CustomFloatingLabelEntry
+								BackgroundColor="#F8F8FB"
+								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontSize="16"
+								Keyboard="Numeric"
+								MaxLength="6"
+								Placeholder="Check-in code"
+								PlaceholderColor="#797A7D"
+								Text="{Binding Password}"
+								TextColor="White" />
+						</textinputlayout:SfTextInputLayout>
+
+						<Button
+							Grid.Row="6"
+							BackgroundColor="#6263ED"
+							Command="{Binding VerifySmsPasswordCommand}"
+							CornerRadius="12"
+							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontSize="16"
+							Text="Verify with Qloud ID"
+							TextColor="White" />
+					</Grid>
+				</Frame>
+
+				<Grid
+					Grid.Row="6"
+					Grid.Column="1"
+					ColumnSpacing="6">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<BoxView
+						Grid.Column="0"
+						BackgroundColor="#2A2A31"
+						HeightRequest="1"
+						VerticalOptions="CenterAndExpand" />
+
+					<Label
+						Grid.Column="1"
+						FontFamily="{StaticResource PoppinsRegularFontFamily}"
+						FontSize="13"
+						HorizontalTextAlignment="Center"
+						Opacity="0.4"
+						Text="or check-in via"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<BoxView
+						Grid.Column="2"
+						BackgroundColor="#2A2A31"
+						HeightRequest="1"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+
+				<Frame
+					Grid.Row="8"
+					Grid.Column="1"
+					Padding="0"
+					BackgroundColor="#342B20"
+					CornerRadius="10"
+					HasShadow="False"
+					IsClippedToBounds="True">
+					<Label
+						Margin="23,0,0,0"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						HorizontalOptions="StartAndExpand"
+						HorizontalTextAlignment="Start"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="Front desk"
+						TextColor="#FF9129"
+						VerticalOptions="CenterAndExpand"
+						VerticalTextAlignment="Center" />
+				</Frame>
+			</Grid>
+		</ScrollView>
+	</Grid>
+
+
+	<!--<Grid
 		Margin="0,32,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
@@ -466,7 +717,7 @@
 				</Label>
 			</Grid>
 		</StackLayout>
-	</Grid>
+	</Grid>-->
 
 
 

@@ -19,7 +19,7 @@ namespace Dstricts.Views.Hotel
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			viewModel.UserDetailsDstrictsCommand.Execute(null);
+			//viewModel.UserDetailsDstrictsCommand.Execute(null);
 		}
 	}
 }

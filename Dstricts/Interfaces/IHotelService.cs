@@ -30,5 +30,6 @@ namespace Dstricts.Interfaces
 		Task<List<Models.AdultsCheckedInListResponse>> AdultsCheckedInListAsync(Models.AdultsCheckedInListRequest request);
 		Task<int> ResendInvitationAsync(Models.ResendInvitationRequest request);
 		Task<int> VerifyUserInvitationInfoAsync(Models.VerifyUserInvitationInfoRequest request);
+		Task<int> VerifyBookingCheckinAsync(Models.VerifyBookingCheckinRequest request);
 	}
 }

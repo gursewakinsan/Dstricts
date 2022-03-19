@@ -232,7 +232,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<int> VerifyBookingCheckinAsync(Models.VerifyBookingCheckinRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.VerifyBookingCheckinUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
-
-

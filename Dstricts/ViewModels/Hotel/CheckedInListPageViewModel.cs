@@ -83,7 +83,10 @@ namespace Dstricts.ViewModels
 			{
 				case "verify_checkin":
 					HotelPropertyType = Convert.ToInt32(codeInfo[1]);
-					GoToVerifyCheckedInCodePageCommand.Execute(null);
+					if (codeInfo.Length == 3)
+						VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+					else
+						GoToVerifyCheckedInCodePageCommand.Execute(null);
 					break;
 				case "getQueue":
 					Helper.Helper.AvalibleQueueId = codeInfo[1];
@@ -163,10 +166,43 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Verify Booking Checkin Command.
+		private ICommand verifyBookingCheckinCommand;
+		public ICommand VerifyBookingCheckinCommand
+		{
+			get => verifyBookingCheckinCommand ?? (verifyBookingCheckinCommand = new Command<string>(async (id) => await ExecuteVerifyBookingCheckinCommand(id)));
+		}
+		private async Task ExecuteVerifyBookingCheckinCommand(string id)
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			var response = await service.VerifyBookingCheckinAsync(new Models.VerifyBookingCheckinRequest()
+			{
+				Id = id,
+				DstrictsUserId = Helper.Helper.LoggedInUserId
+			});
+			if (response == 0)
+				await Navigation.PushAsync(new Views.ErrorMessage.BookingNotAvailablePage());
+			else if (response == 1)
+				GoToVerifyCheckedInCodePageCommand.Execute(null);
+			else if (response == 2)
+				await Navigation.PushAsync(new Views.ErrorMessage.FrontDeskPage());
+			else if (response == 3)
+				await Navigation.PushAsync(new Views.ErrorMessage.AlreadyCheckedInForHotelPage());
+			//In verify_checkin array 3 hai to api call krni hai
+			//TODO https://dstricts.com/user/index.php/DstrictsApp/verifyBookingCheckin
+			//id,jo 3 arrary ki value hai and  dstricts_user_id
+			//after call api if return 0 then navigate to booking not avilable
+			// if 1 then current flow same as
+			// if 3 then naviagte to already checked in page
+			//if 2 then new page "Front desk"
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		public List<Models.UserQueueListResponse> UserQueueList { get; set; }
 		public int HotelPropertyType { get; set; }
 		#endregion
 	}
 }
-

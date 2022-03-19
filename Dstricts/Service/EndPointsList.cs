@@ -14,6 +14,7 @@
 		public const string AdultsCheckedInListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/adultsCheckedInList";
 		public const string ResendInvitationUrl = "https://www.qloudid.com/user/index.php/QloudidApp/resendInvitation";
 		public const string VerifyUserInvitationInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/verifyUserInvitationInfo";
+		public const string VerifyBookingCheckinUrl = "https://dstricts.com/user/index.php/DstrictsApp/verifyBookingCheckin";
 
 		public const string VerifyCheckedInCodeUrl = "https://dstricts.com/user/index.php/DstrictsApp/verifyCode";
 		public const string HotelCompleteInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/hotelCompleteInfo";
