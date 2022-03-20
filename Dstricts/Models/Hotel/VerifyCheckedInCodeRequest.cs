@@ -10,5 +10,8 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "hotel_property_type")]
 		public int HotelPropertyType { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
+		public string VerifyCheckinId { get; set; }
 	}
 }

@@ -78,13 +78,17 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteVerifyQrCodeCommand(string qrCode)
 		{
+			VerifyCheckinId = string.Empty;
 			string[] codeInfo = qrCode.Split('/');
 			switch (codeInfo[0])
 			{
 				case "verify_checkin":
 					HotelPropertyType = Convert.ToInt32(codeInfo[1]);
 					if (codeInfo.Length == 3)
+					{
+						VerifyCheckinId = codeInfo[2];
 						VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+					}
 					else
 						GoToVerifyCheckedInCodePageCommand.Execute(null);
 					break;
@@ -108,7 +112,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToVerifyCheckedInCodePageCommand()
 		{
-			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage(HotelPropertyType));
+			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage(HotelPropertyType, VerifyCheckinId));
 		}
 		#endregion
 
@@ -203,6 +207,7 @@ namespace Dstricts.ViewModels
 		#region Properties.
 		public List<Models.UserQueueListResponse> UserQueueList { get; set; }
 		public int HotelPropertyType { get; set; }
+		public string VerifyCheckinId { get; set; } = string.Empty;
 		#endregion
 	}
 }

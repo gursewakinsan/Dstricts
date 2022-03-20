@@ -8,18 +8,19 @@ namespace Dstricts.Views.Hotel
 	public partial class VerifyCheckedInPage : ContentPage
 	{
 		VerifyCheckedInPageViewModel viewModel;
-		public VerifyCheckedInPage(int hotelPropertyType)
+		public VerifyCheckedInPage(int hotelPropertyType, string verifyCheckinId)
 		{
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new VerifyCheckedInPageViewModel(this.Navigation);
 			viewModel.HotelPropertyType = hotelPropertyType;
+			viewModel.VerifyCheckinId = verifyCheckinId;
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			//viewModel.UserDetailsDstrictsCommand.Execute(null);
+			viewModel.UserDetailsDstrictsCommand.Execute(null);
 		}
 	}
 }

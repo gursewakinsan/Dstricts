@@ -55,7 +55,8 @@ namespace Dstricts.ViewModels
 				{
 					UserId = Helper.Helper.LoggedInUserId,
 					Ecode = Password,
-					HotelPropertyType = HotelPropertyType
+					HotelPropertyType = HotelPropertyType,
+					VerifyCheckinId = VerifyCheckinId
 				});
 				ClearPassword();
 				if (response.Result == 0)
@@ -361,6 +362,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 		public int HotelPropertyType { get; set; }
+		public string VerifyCheckinId { get; set; }
 		#endregion
 	}
 }
