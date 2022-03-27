@@ -70,5 +70,6 @@
 		public const string EmailOutline = "\U000f01f0";
 		public const string CellphoneAndroid = "\U000f011d";
 		public const string ArrowRight = "\U000f0054";
+		public const string CheckboxMarked = "\U000f0132";
 	}
 }

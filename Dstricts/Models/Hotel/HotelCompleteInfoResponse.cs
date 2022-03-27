@@ -40,6 +40,9 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_children")]
 		public int GuestChildren { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "room_name")]
+		public int RoomName { get; set; }
 	}
 }
 

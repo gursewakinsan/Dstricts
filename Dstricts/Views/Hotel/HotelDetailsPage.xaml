@@ -42,13 +42,14 @@
 				Margin="0,0,15,0"
 				Padding="0"
 				BackgroundColor="#342B20"
+				Command="{Binding GoToHotelCheckOutPageCommand}"
 				CornerRadius="8"
 				FontAttributes="Bold"
 				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="12"
 				HeightRequest="32"
 				HorizontalOptions="EndAndExpand"
-				Text="Get Wifi"
+				Text="Check out"
 				TextColor="#5DA1A6"
 				WidthRequest="102" />
 

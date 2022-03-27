@@ -259,6 +259,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Hotel Check Out Page Command.
+		private ICommand goToHotelCheckOutPageCommand;
+		public ICommand GoToHotelCheckOutPageCommand
+		{
+			get => goToHotelCheckOutPageCommand ?? (goToHotelCheckOutPageCommand = new Command(async () => await ExecuteGoToHotelCheckOutPageCommand()));
+		}
+		private async Task ExecuteGoToHotelCheckOutPageCommand()
+		{
+			await Navigation.PushAsync(new Views.Hotel.HotelCheckOutPage());
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
 		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.Hotel.HotelCheckOutPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<Grid
+		Margin="0,14,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Margin="-10,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="{Binding HotelCompleteInfo.HotelName}"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<Frame
+			Grid.Row="0"
+			Grid.Column="3"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="#2A2A31"
+			HasShadow="False"
+			HorizontalOptions="EndAndExpand"
+			IsClippedToBounds="True"
+			VerticalOptions="CenterAndExpand">
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+				TextColor="White" />
+		</Frame>
+
+		<ScrollView
+			Grid.Row="1"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			Margin="0,31,0,0"
+			VerticalScrollBarVisibility="Never">
+			<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+				<Label
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="40"
+					Text="Check out"
+					TextColor="White" />
+
+				<Label
+					Margin="0,9,0,31"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontSize="16"
+					LineBreakMode="TailTruncation"
+					LineHeight="1.2"
+					MaxLines="2"
+					Opacity="0.4"
+					Text="This is an online check out solution for guest that wish to check out."
+					TextColor="White" />
+
+				<Frame
+					Padding="24,49,26,52"
+					BackgroundColor="#282732"
+					CornerRadius="20"
+					HasShadow="False"
+					IsClippedToBounds="True">
+					<StackLayout Spacing="0">
+						<Label
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="24"
+							TextColor="#7D76FF">
+							<Label.FormattedText>
+								<FormattedString>
+									<Span Text="Room " />
+									<Span Text="{Binding HotelCompleteInfo.RoomName}" />
+								</FormattedString>
+							</Label.FormattedText>
+						</Label>
+
+						<Label
+							Margin="0,9,0,25"
+							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontSize="14"
+							LineBreakMode="TailTruncation"
+							LineHeight="1.2"
+							MaxLines="2"
+							Text="Click and mark this checkbox below if you wish to check out."
+							TextColor="White" />
+
+						<Frame
+							Padding="25,0,20,0"
+							BackgroundColor="Transparent"
+							BorderColor="{Binding YesPleaseColor}"
+							CornerRadius="16"
+							HasShadow="False"
+							HeightRequest="71"
+							IsClippedToBounds="True"
+							VerticalOptions="Start">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding YesPleaseClickedCommand}" />
+							</Frame.GestureRecognizers>
+							<Grid VerticalOptions="CenterAndExpand">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="24" />
+								</Grid.ColumnDefinitions>
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding YesPleaseClickedCommand}" />
+								</Grid.GestureRecognizers>
+
+								<Label
+									Grid.Column="0"
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Opacity="{Binding YesPleaseOpacity}"
+									Text="Yes, please"
+									TextColor="White"
+									VerticalTextAlignment="Center">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding YesPleaseClickedCommand}" />
+									</Label.GestureRecognizers>
+								</Label>
+
+								<Label
+									Grid.Column="1"
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="24"
+									HorizontalTextAlignment="End"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxMarked}"
+									TextColor="{Binding YesPleaseColor}"
+									VerticalTextAlignment="Center">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding YesPleaseClickedCommand}" />
+									</Label.GestureRecognizers>
+								</Label>
+							</Grid>
+						</Frame>
+
+						<Frame
+							Margin="0,31,0,0"
+							Padding="0"
+							BackgroundColor="{Binding VerifyWithQloudIdButtonBg}"
+							CornerRadius="12"
+							HasShadow="False"
+							HeightRequest="50"
+							IsClippedToBounds="True"
+							VerticalOptions="Start">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding VerifyWithQloudIdCommand}" />
+							</Frame.GestureRecognizers>
+							<Label
+								FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+								FontSize="16"
+								HorizontalTextAlignment="Center"
+								Opacity="{Binding VerifyWithQloudIdTextOpacity}"
+								Text="Verify with Qloud ID"
+								TextColor="White"
+								VerticalTextAlignment="Center">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding VerifyWithQloudIdCommand}" />
+								</Label.GestureRecognizers>
+							</Label>
+						</Frame>
+					</StackLayout>
+				</Frame>
+			</StackLayout>
+		</ScrollView>
+	</Grid>
+</ContentPage>
