@@ -2,6 +2,7 @@
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using System.Collections.Generic;
+using Xamarin.Forms.PancakeView;
 
 namespace Dstricts.Views.Hotel
 {
@@ -22,19 +23,34 @@ namespace Dstricts.Views.Hotel
 		{
 			base.OnAppearing();
 			viewModel.HotelCompleteInfoCommand.Execute(null);
-			lblEatDrink.Text = $"Eat & Drink";
+			/*lblEatDrink.Text = $"Eat & Drink";
 			lblFitnessSpa.Text = "Fitness & Spa";
 
 			imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
 			imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
 			imgMedia.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/1.png";
-			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";
+			imgBathroom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/7.png";*/
 
 			viewModel.SelectedRoomServiceAppServesCommand.Execute(null);
 
 			//BindRoomServiceInfo();
-			BindEatDrinkAtTheHotelInfo();
+			//BindEatDrinkAtTheHotelInfo();
 			//BindFitnessSpaInfo();
+			int deviceWidth = App.ScreenWidth - 56;
+			int widthUserDetails = deviceWidth * 75 / 100;
+			frameYourDetails.WidthRequest = widthUserDetails;
+			frameGetWiFi.WidthRequest = widthUserDetails;
+			frameCompleteCheckIns.WidthRequest = widthUserDetails;
+			frameRules.WidthRequest = widthUserDetails;
+
+			int widthRoomServices = deviceWidth * 40 / 100;
+			frameAmenities.WidthRequest = widthRoomServices;
+			frameLaundry.WidthRequest = widthRoomServices;
+			frameEatAndDrinks.WidthRequest = widthRoomServices;
+
+			//int widthResturants = deviceWidth * 85 / 100;
+			//frameResturants1.WidthRequest = widthResturants;
+			//frameResturants2.WidthRequest = widthResturants;
 		}
 
 		void BindRoomServiceInfo()
@@ -79,7 +95,7 @@ namespace Dstricts.Views.Hotel
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutRoomService, abcs);
+			//BindableLayout.SetItemsSource(layoutRoomService, abcs);
 		}
 
 		void BindEatDrinkAtTheHotelInfo()
@@ -124,7 +140,7 @@ namespace Dstricts.Views.Hotel
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutEatDrinkAtTheHotel, abcs);
+			//BindableLayout.SetItemsSource(layoutEatDrinkAtTheHotel, abcs);
 		}
 
 		void BindFitnessSpaInfo()
@@ -169,7 +185,7 @@ namespace Dstricts.Views.Hotel
 				ImgWidth = w,
 				ImgHeight = h
 			});
-			BindableLayout.SetItemsSource(layoutFitnessSpa, abcs);
+			//BindableLayout.SetItemsSource(layoutFitnessSpa, abcs);
 		}
 
 		void rr()
@@ -211,42 +227,50 @@ namespace Dstricts.Views.Hotel
 
 		private async void OnRoomServiceImageClicked(object sender, System.EventArgs e)
 		{
-			ImageButton imageButton = sender as ImageButton;
-			var selectedRoomService = imageButton.BindingContext as Models.SelectedRoomServiceAppServesResponse;
-			foreach (var item in viewModel.SelectedRoomServiceAppServesInfo)
+			//ImageButton imageButton = sender as ImageButton;
+			//var selectedRoomService = imageButton.BindingContext as Models.SelectedRoomServiceAppServesResponse;
+			if (viewModel.IsRoomService)
 			{
-				if (item.ServeType.Equals(selectedRoomService.ServeType))
+				var selectedRoomService = viewModel.SelectedRoomServiceAppServesInfo[0];
+				foreach (var item in viewModel.SelectedRoomServiceAppServesInfo)
 				{
-					item.IsSelectedRoomService = true;
-					item.SelectedRoomServiceBg = Color.FromHex("#6263ED");
+					if (item.ServeType.Equals(selectedRoomService.ServeType))
+					{
+						item.IsSelectedRoomService = true;
+						item.SelectedRoomServiceBg = Color.FromHex("#6263ED");
+					}
+					else
+					{
+						item.IsSelectedRoomService = false;
+						item.SelectedRoomServiceBg = Color.FromHex("#2A2A31");
+					}
 				}
-				else
-				{
-					item.IsSelectedRoomService = false;
-					item.SelectedRoomServiceBg = Color.FromHex("#2A2A31");
-				}
+				await Navigation.PushAsync(new SelectedRoomServiceDetailPage(viewModel.SelectedRoomServiceAppServesInfo));
 			}
-			await Navigation.PushAsync(new SelectedRoomServiceDetailPage(viewModel.SelectedRoomServiceAppServesInfo));
 		}
 
 		private async void OnLaundryServiceImageClicked(object sender, System.EventArgs e)
 		{
-			ImageButton imageButton = sender as ImageButton;
-			var selectedLaundryService = imageButton.BindingContext as Models.SelectedLaundaryCategoriesResponse;
-			foreach (var item in viewModel.LaundryServiceInfo)
+			//ImageButton imageButton = sender as ImageButton;
+			//var selectedLaundryService = imageButton.BindingContext as Models.SelectedLaundaryCategoriesResponse;
+			if (viewModel.LaundryServiceInfo?.Count > 0)
 			{
-				if (item.CategoryId.Equals(selectedLaundryService.CategoryId))
+				var selectedLaundryService = viewModel.LaundryServiceInfo[0];
+				foreach (var item in viewModel.LaundryServiceInfo)
 				{
-					item.IsSelectedRoomService = true;
-					item.SelectedRoomServiceBg = Color.FromHex("#6263ED");
+					if (item.CategoryId.Equals(selectedLaundryService.CategoryId))
+					{
+						item.IsSelectedRoomService = true;
+						item.SelectedRoomServiceBg = Color.FromHex("#6263ED");
+					}
+					else
+					{
+						item.IsSelectedRoomService = false;
+						item.SelectedRoomServiceBg = Color.FromHex("#2A2A31");
+					}
 				}
-				else
-				{
-					item.IsSelectedRoomService = false;
-					item.SelectedRoomServiceBg = Color.FromHex("#2A2A31");
-				}
+				await Navigation.PushAsync(new Laundry.LaundryServicePage(viewModel.LaundryServiceInfo));
 			}
-			await Navigation.PushAsync(new Laundry.LaundryServicePage(viewModel.LaundryServiceInfo));
 		}
 
 		private void OnFitnessAndSpaImageClicked(object sender, System.EventArgs e)
@@ -263,6 +287,77 @@ namespace Dstricts.Views.Hotel
 			ImageButton button = sender as ImageButton;
 			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(button.ClassId)));
 		}
+
+		#region On Resturants Clicked.
+		private void OnResturantsClicked(object sender, System.EventArgs e)
+		{
+			viewModel.RoomAndFoodServiceCommand.Execute(null);
+		}
+		#endregion
+
+		#region On Wellness & Fitness Clicked.
+		private void OnGridWellnessAndFitnessClicked(object sender, System.EventArgs e)
+		{
+			Grid control = sender as Grid;
+			InhouseFittnessInfo info = control.BindingContext as InhouseFittnessInfo;
+			Helper.Helper.WellnessId = info.Id;
+			Helper.Helper.WellnessName = info.CenterName;
+			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
+		}
+
+		private void OnPancakeViewWellnessAndFitnessClicked(object sender, System.EventArgs e)
+		{
+			PancakeView control = sender as PancakeView;
+			InhouseFittnessInfo info = control.BindingContext as InhouseFittnessInfo;
+			Helper.Helper.WellnessId = info.Id;
+			Helper.Helper.WellnessName = info.CenterName;
+			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
+		}
+
+		private void OnImageWellnessAndFitnessClicked(object sender, System.EventArgs e)
+		{
+			Image control = sender as Image;
+			InhouseFittnessInfo info = control.BindingContext as InhouseFittnessInfo;
+			Helper.Helper.WellnessId = info.Id;
+			Helper.Helper.WellnessName = info.CenterName;
+			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
+		}
+
+		private void OnLableWellnessAndFitnessClicked(object sender, System.EventArgs e)
+		{
+			Label control = sender as Label;
+			InhouseFittnessInfo info = control.BindingContext as InhouseFittnessInfo;
+			Helper.Helper.WellnessId = info.Id;
+			Helper.Helper.WellnessName = info.CenterName;
+			viewModel.GoToFittnessAndSpaDetailsPageCommand.Execute(null);
+		}
+		#endregion
+
+		#region On Event & Meetings Clicked.
+		private async void OnGridEventAndMeetingsClicked(object sender, System.EventArgs e)
+		{
+			Grid control = sender as Grid;
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(control.ClassId)));
+		}
+
+		private async void OnPancakeViewEventAndMeetingsClicked(object sender, System.EventArgs e)
+		{
+			PancakeView control = sender as PancakeView;
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(control.ClassId)));
+		}
+
+		private async void OnImageEventAndMeetingsClicked(object sender, System.EventArgs e)
+		{
+			Image control = sender as Image;
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(control.ClassId)));
+		}
+
+		private async void OnLableEventAndMeetingsClicked(object sender, System.EventArgs e)
+		{
+			Label control = sender as Label;
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(control.ClassId)));
+		}
+		#endregion
 	}
 }
 public class EatAndDrink

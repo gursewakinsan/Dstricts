@@ -43,6 +43,36 @@ namespace Dstricts.Models
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "room_name")]
 		public int RoomName { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "room_type")]
+		public string RoomType { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "first_name")]
+		public string FirstName { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_available")]
+		public bool WifiAvailable { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_username")]
+		public string WifiUsername { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_password")]
+		public string WifiPassword { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_adult_left")]
+		public int GuestAdultLeft { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_children_left")]
+		public int GuestChildrenLeft { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_checkin_left")]
+		public bool GuestCheckinLeft { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_adult_checkedin")]
+		public int GuestAdultCheckedIn { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_children_checkedin")]
+		public int GuestChildrenCheckedIn { get; set; }
 	}
 }
 
@@ -59,6 +89,8 @@ public class InhouseResturantsInfo
 	[Newtonsoft.Json.JsonProperty(PropertyName = "resturant_type")]
 	public string ResturantType { get; set; }
 	public string ImageUrl { get; set; }
+
+	public double ImgWidth { get; set; }
 }
 
 public class InhouseFittnessInfo

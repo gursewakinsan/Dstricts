@@ -3,13 +3,1365 @@
 	x:Class="Dstricts.Views.Hotel.HotelDetailsPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
-		<Grid>
+		<Grid
+			Margin="0,14,0,0"
+			ColumnSpacing="0"
+			RowSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="28" />
+				<ColumnDefinition Width="70" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="70" />
+				<ColumnDefinition Width="28" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="24" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Margin="-10,0,0,0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontSize="14"
+				HorizontalTextAlignment="Center"
+				Text="{Binding HotelDetails.HotelName}"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="3"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.CartOutline}"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.Column="1"
+				Grid.ColumnSpan="4"
+				Margin="0,31,0,0"
+				VerticalScrollBarVisibility="Never">
+				<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+					<Label
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="18"
+						LineHeight="1.2"
+						Opacity="0.4"
+						Text="Welcome"
+						TextColor="White" />
+
+					<Label
+						Margin="0,9,0,28"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="32"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="{Binding HotelDetails.FirstName}"
+						TextColor="White" />
+
+					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+						<StackLayout Orientation="Horizontal" Spacing="20">
+							<Frame
+								x:Name="frameYourDetails"
+								Padding="24,40,25,33"
+								BackgroundColor="#282732"
+								CornerRadius="20"
+								HasShadow="False"
+								HorizontalOptions="StartAndExpand"
+								IsClippedToBounds="True">
+								<Grid RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="36" />
+										<RowDefinition Height="9" />
+										<RowDefinition Height="72" />
+										<RowDefinition Height="25" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="38" />
+										<RowDefinition Height="40" />
+									</Grid.RowDefinitions>
+									<Label
+										Grid.Row="0"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="24"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Your details"
+										TextColor="White" />
+
+									<Label
+										Grid.Row="2"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="3"
+										Opacity="0.7"
+										Text="This part is about your details. Click on read more button to  find out more."
+										TextColor="White" />
+
+									<Label
+										Grid.Row="4"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										TextColor="White">
+										<Label.FormattedText>
+											<FormattedString>
+												<Span Text="{Binding HotelDetails.CheckinDate}" />
+												<Span Text=" - " />
+												<Span Text="{Binding HotelDetails.CheckoutDate}" />
+											</FormattedString>
+										</Label.FormattedText>
+									</Label>
+
+									<BoxView
+										Grid.Row="6"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Label
+										Grid.Row="8"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										TextColor="White">
+										<Label.FormattedText>
+											<FormattedString>
+												<Span Text="{Binding HotelDetails.GuestAdult}" />
+												<Span Text=" adults &amp; " />
+												<Span Text="{Binding HotelDetails.GuestChildren}" />
+												<Span Text=" child " />
+											</FormattedString>
+										</Label.FormattedText>
+									</Label>
+
+									<BoxView
+										Grid.Row="10"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Label
+										Grid.Row="12"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="{Binding HotelDetails.RoomType}"
+										TextColor="White" />
+
+									<BoxView
+										Grid.Row="14"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Button
+										Grid.Row="16"
+										Padding="0"
+										BackgroundColor="#3EC4D5"
+										CornerRadius="8"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										HorizontalOptions="StartAndExpand"
+										Text="Read more"
+										TextColor="#181A1F"
+										WidthRequest="128" />
+								</Grid>
+							</Frame>
+
+							<Frame
+								x:Name="frameGetWiFi"
+								Padding="24,40,25,33"
+								BackgroundColor="#242A37"
+								CornerRadius="20"
+								HasShadow="False"
+								HorizontalOptions="StartAndExpand"
+								IsClippedToBounds="True"
+								IsVisible="{Binding HotelDetails.WifiAvailable}">
+								<Grid RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="36" />
+										<RowDefinition Height="9" />
+										<RowDefinition Height="72" />
+										<RowDefinition Height="25" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="38" />
+										<RowDefinition Height="40" />
+									</Grid.RowDefinitions>
+									<Label
+										Grid.Row="0"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="24"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Get Wi-Fi"
+										TextColor="#4C7CE5" />
+
+									<Label
+										Grid.Row="2"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="3"
+										Opacity="0.7"
+										Text="Here are the credentials for accessing Wi-Fi."
+										TextColor="White" />
+
+									<StackLayout
+										Grid.Row="4"
+										Orientation="Horizontal"
+										Spacing="20"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="StartAndExpand"
+											LineHeight="1.2"
+											Text="User"
+											TextColor="#4C7CE5" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="EndAndExpand"
+											LineHeight="1.2"
+											Text="{Binding HotelDetails.WifiUsername}"
+											TextColor="White" />
+									</StackLayout>
+
+									<BoxView
+										Grid.Row="6"
+										BackgroundColor="White"
+										Opacity="0.2" />
+
+									<StackLayout
+										Grid.Row="8"
+										Orientation="Horizontal"
+										Spacing="20"
+										VerticalOptions="EndAndExpand">
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="StartAndExpand"
+											LineHeight="1.2"
+											Text="Pass:"
+											TextColor="#4C7CE5"
+											VerticalOptions="EndAndExpand" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontSize="14"
+											HorizontalOptions="EndAndExpand"
+											LineHeight="1.2"
+											Text="{Binding HotelDetails.WifiPassword}"
+											TextColor="White"
+											VerticalOptions="EndAndExpand" />
+									</StackLayout>
+
+									<BoxView
+										Grid.Row="10"
+										BackgroundColor="White"
+										Opacity="0.2" />
+
+									<Button
+										Grid.Row="16"
+										Padding="0"
+										BackgroundColor="#4C7CE5"
+										CornerRadius="8"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										HorizontalOptions="StartAndExpand"
+										Text="Click, if connected"
+										TextColor="White"
+										WidthRequest="175" />
+								</Grid>
+							</Frame>
+
+							<Frame
+								x:Name="frameCompleteCheckIns"
+								Padding="24,40,25,33"
+								BackgroundColor="#342334"
+								CornerRadius="20"
+								HasShadow="False"
+								HorizontalOptions="StartAndExpand"
+								IsClippedToBounds="True"
+								IsVisible="{Binding HotelDetails.GuestCheckinLeft}">
+								<Grid RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="36" />
+										<RowDefinition Height="9" />
+										<RowDefinition Height="72" />
+										<RowDefinition Height="25" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="38" />
+										<RowDefinition Height="40" />
+									</Grid.RowDefinitions>
+									<Label
+										Grid.Row="0"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="24"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Complete check-ins"
+										TextColor="White" />
+
+									<Label
+										Grid.Row="2"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="3"
+										Opacity="0.7"
+										Text="All your guests has not checked-in yet. Please complete check-in flow for all of them"
+										TextColor="White" />
+
+									<StackLayout
+										Grid.Row="4"
+										Orientation="Horizontal"
+										Spacing="20"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="StartAndExpand"
+											LineHeight="1.2"
+											Text="Checked in"
+											TextColor="#995A9C" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="EndAndExpand"
+											LineBreakMode="TailTruncation"
+											LineHeight="1.2"
+											MaxLines="1"
+											TextColor="White">
+											<Label.FormattedText>
+												<FormattedString>
+													<Span Text="{Binding HotelDetails.GuestAdultCheckedIn}" />
+													<Span Text=" adult &amp; " />
+													<Span Text="{Binding HotelDetails.GuestChildrenCheckedIn}" />
+													<Span Text=" children" />
+												</FormattedString>
+											</Label.FormattedText>
+										</Label>
+									</StackLayout>
+
+									<BoxView
+										Grid.Row="6"
+										BackgroundColor="White"
+										Opacity="0.2" />
+
+									<StackLayout
+										Grid.Row="8"
+										Orientation="Horizontal"
+										Spacing="20"
+										VerticalOptions="EndAndExpand">
+										<Label
+											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontSize="14"
+											HorizontalOptions="StartAndExpand"
+											LineHeight="1.2"
+											Text="Left"
+											TextColor="#995A9C"
+											VerticalOptions="EndAndExpand" />
+
+										<Label
+											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontSize="14"
+											HorizontalOptions="EndAndExpand"
+											LineHeight="1.2"
+											TextColor="White"
+											VerticalOptions="EndAndExpand">
+											<Label.FormattedText>
+												<FormattedString>
+													<Span Text="{Binding HotelDetails.GuestAdultLeft}" />
+													<Span Text=" adult &amp; " />
+													<Span Text="{Binding HotelDetails.GuestChildrenLeft}" />
+													<Span Text=" children" />
+												</FormattedString>
+											</Label.FormattedText>
+										</Label>
+									</StackLayout>
+
+									<BoxView
+										Grid.Row="10"
+										BackgroundColor="White"
+										Opacity="0.2" />
+
+									<Button
+										Grid.Row="16"
+										Padding="0"
+										BackgroundColor="#D23CE6"
+										Command="{Binding GoToAdultsAndChildrenPageCommand}"
+										CornerRadius="8"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										HorizontalOptions="StartAndExpand"
+										Text="Complete remaining"
+										TextColor="White"
+										WidthRequest="203" />
+								</Grid>
+							</Frame>
+
+							<Frame
+								x:Name="frameRules"
+								Margin="0,0,28,0"
+								Padding="24,40,25,33"
+								BackgroundColor="#342B20"
+								CornerRadius="20"
+								HasShadow="False"
+								HorizontalOptions="StartAndExpand"
+								IsClippedToBounds="True">
+								<Grid RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="36" />
+										<RowDefinition Height="9" />
+										<RowDefinition Height="72" />
+										<RowDefinition Height="25" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="10" />
+										<RowDefinition Height="24" />
+										<RowDefinition Height="13" />
+										<RowDefinition Height="1" />
+										<RowDefinition Height="38" />
+										<RowDefinition Height="40" />
+									</Grid.RowDefinitions>
+									<Label
+										Grid.Row="0"
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="24"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Rules"
+										TextColor="White" />
+
+									<Label
+										Grid.Row="2"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="3"
+										Opacity="0.7"
+										Text="Here are rules we expect our guest to follow to make sure everybody has a pleasant stay"
+										TextColor="White" />
+
+									<Label
+										Grid.Row="4"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="No smoking"
+										TextColor="White" />
+
+									<BoxView
+										Grid.Row="6"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Label
+										Grid.Row="8"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Check-in at 3pm"
+										TextColor="White" />
+
+									<BoxView
+										Grid.Row="10"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Label
+										Grid.Row="12"
+										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontSize="14"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										Text="Check out at 11am"
+										TextColor="White" />
+
+									<BoxView
+										Grid.Row="14"
+										BackgroundColor="White"
+										HorizontalOptions="StartAndExpand"
+										Opacity="0.2"
+										WidthRequest="197" />
+
+									<Button
+										Grid.Row="16"
+										Padding="0"
+										BackgroundColor="#FF9129"
+										CornerRadius="8"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										HorizontalOptions="StartAndExpand"
+										Text="Late check out?"
+										TextColor="#181A1F"
+										WidthRequest="158" />
+								</Grid>
+							</Frame>
+						</StackLayout>
+					</ScrollView>
+
+					<Label
+						Margin="0,57,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Find us"
+						TextColor="White" />
+
+					<Frame
+						Margin="0,0,28,0"
+						Padding="17,28,20,31"
+						BackgroundColor="#F4B400"
+						CornerRadius="10"
+						HasShadow="False"
+						IsClippedToBounds="True">
+						<Grid ColumnSpacing="33" RowSpacing="0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="75" />
+							</Grid.ColumnDefinitions>
+
+							<StackLayout
+								Grid.Row="0"
+								Grid.Column="0"
+								Spacing="1">
+								<Label
+									FontFamily="{StaticResource PoppinsBoldFontFamily}"
+									FontSize="24"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									Text="Address"
+									TextColor="#181A1F" />
+
+								<Label
+									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontSize="13"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									MaxLines="2"
+									Text="{Binding HotelDetails.VisitingAddress}"
+									TextColor="#181A1F" />
+							</StackLayout>
+
+							<Frame
+								Grid.Row="0"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="#4E8AF4"
+								CornerRadius="8"
+								HasShadow="False"
+								HeightRequest="75"
+								IsClippedToBounds="True"
+								VerticalOptions="CenterAndExpand">
+								<StackLayout
+									HorizontalOptions="CenterAndExpand"
+									Spacing="0"
+									VerticalOptions="CenterAndExpand">
+									<Label
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										MaxLines="1"
+										Text="Go to"
+										TextColor="White" />
+
+									<Label
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="14"
+										MaxLines="1"
+										Text="map"
+										TextColor="White" />
+								</StackLayout>
+							</Frame>
+						</Grid>
+					</Frame>
+
+					<Label
+						Margin="0,57,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Order"
+						TextColor="White" />
+
+					<Grid
+						Margin="0,0,18,0"
+						ColumnSpacing="19"
+						HeightRequest="178">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Frame
+							Grid.Column="0"
+							Padding="17,25,17,21"
+							BackgroundColor="#282732"
+							BorderColor="#45C366"
+							CornerRadius="10"
+							HasShadow="False"
+							IsClippedToBounds="True">
+							<Grid RowSpacing="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="28" />
+									<RowDefinition Height="7" />
+									<RowDefinition Height="45" />
+									<RowDefinition Height="16" />
+									<RowDefinition Height="36" />
+								</Grid.RowDefinitions>
+								<Label
+									Grid.Row="0"
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="18"
+									Text="Clean Room"
+									TextColor="White" />
+
+								<Label
+									Grid.Row="2"
+									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontSize="13"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									MaxLines="2"
+									Opacity="0.7"
+									Text="Your room is up for cleaning."
+									TextColor="White" />
+
+								<Button
+									Grid.Row="4"
+									Padding="0"
+									BackgroundColor="#E53614"
+									CornerRadius="8"
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="12"
+									HorizontalOptions="StartAndExpand"
+									Text="Regret"
+									TextColor="White"
+									WidthRequest="77" />
+							</Grid>
+						</Frame>
+
+						<Frame
+							Grid.Column="1"
+							Padding="17,25,17,21"
+							BackgroundColor="#282732"
+							CornerRadius="10"
+							HasShadow="False"
+							IsClippedToBounds="True">
+							<Grid RowSpacing="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="28" />
+									<RowDefinition Height="7" />
+									<RowDefinition Height="45" />
+									<RowDefinition Height="16" />
+									<RowDefinition Height="36" />
+								</Grid.RowDefinitions>
+								<Label
+									Grid.Row="0"
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="18"
+									LineBreakMode="TailTruncation"
+									MaxLines="1"
+									Text="Don't Disturb"
+									TextColor="White" />
+
+								<Label
+									Grid.Row="2"
+									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontSize="13"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									MaxLines="2"
+									Opacity="0.7"
+									Text="Click to activate this request"
+									TextColor="White" />
+
+								<Button
+									Grid.Row="4"
+									Padding="0"
+									BackgroundColor="#406B4B"
+									CornerRadius="8"
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="12"
+									HorizontalOptions="StartAndExpand"
+									Text="Activate it"
+									TextColor="White"
+									WidthRequest="86" />
+							</Grid>
+						</Frame>
+					</Grid>
+
+					<Frame
+						Margin="0,22,28,0"
+						Padding="17,28,20,31"
+						BackgroundColor="#A97282"
+						CornerRadius="10"
+						HasShadow="False"
+						IsClippedToBounds="True">
+						<Grid ColumnSpacing="33" RowSpacing="0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="75" />
+							</Grid.ColumnDefinitions>
+
+							<StackLayout
+								Grid.Row="0"
+								Grid.Column="0"
+								Spacing="1">
+								<Label
+									FontFamily="{StaticResource PoppinsBoldFontFamily}"
+									FontSize="24"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									Text="Problems"
+									TextColor="White" />
+
+								<Label
+									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontSize="13"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									MaxLines="2"
+									Opacity="0.7"
+									Text="If you have a problem. Create a ticket for help!"
+									TextColor="White" />
+							</StackLayout>
+
+							<Frame
+								Grid.Row="0"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="#E94975"
+								CornerRadius="8"
+								HasShadow="False"
+								HeightRequest="75"
+								IsClippedToBounds="True"
+								VerticalOptions="CenterAndExpand">
+								<Label
+									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontSize="14"
+									HorizontalOptions="CenterAndExpand"
+									MaxLines="1"
+									Text="Create"
+									TextColor="White"
+									VerticalOptions="CenterAndExpand" />
+							</Frame>
+						</Grid>
+					</Frame>
+
+					<Label
+						Margin="0,71,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Room services"
+						TextColor="White" />
+
+					<ScrollView
+						HeightRequest="204"
+						HorizontalScrollBarVisibility="Never"
+						Orientation="Horizontal">
+						<StackLayout Orientation="Horizontal" Spacing="20">
+							<controls:CustomFrame
+								x:Name="frameAmenities"
+								Padding="10,0,10,0"
+								BackgroundColor="#342B20"
+								CornerRadius="12,12,0,0"
+								HorizontalOptions="StartAndExpand">
+								<controls:CustomFrame.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
+								</controls:CustomFrame.GestureRecognizers>
+								<StackLayout
+									HorizontalOptions="CenterAndExpand"
+									Spacing="0"
+									VerticalOptions="CenterAndExpand">
+									<StackLayout.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
+									</StackLayout.GestureRecognizers>
+									<Label
+										Margin="0,-25,0,0"
+										Padding="0"
+										FontAttributes="Bold"
+										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontSize="80"
+										HorizontalOptions="CenterAndExpand"
+										Text="25"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Label
+										Margin="0,-25,0,0"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="16"
+										HorizontalOptions="CenterAndExpand"
+										HorizontalTextAlignment="Center"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="2"
+										Text="Free amenities to your room"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
+										</Label.GestureRecognizers>
+									</Label>
+								</StackLayout>
+							</controls:CustomFrame>
+
+							<controls:CustomFrame
+								x:Name="frameLaundry"
+								Padding="10,0,10,0"
+								BackgroundColor="#342B20"
+								CornerRadius="12,12,0,0"
+								HorizontalOptions="StartAndExpand">
+								<controls:CustomFrame.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnLaundryServiceImageClicked" />
+								</controls:CustomFrame.GestureRecognizers>
+								<StackLayout
+									HorizontalOptions="CenterAndExpand"
+									Spacing="0"
+									VerticalOptions="CenterAndExpand">
+									<StackLayout.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnLaundryServiceImageClicked" />
+									</StackLayout.GestureRecognizers>
+									<Label
+										Margin="0,-25,0,0"
+										Padding="0"
+										FontAttributes="Bold"
+										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontSize="80"
+										HorizontalOptions="CenterAndExpand"
+										Text="12"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLaundryServiceImageClicked" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Label
+										Margin="0,-25,0,0"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="16"
+										HorizontalOptions="CenterAndExpand"
+										HorizontalTextAlignment="Center"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="2"
+										Text="Free laundry to your room"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLaundryServiceImageClicked" />
+										</Label.GestureRecognizers>
+									</Label>
+								</StackLayout>
+							</controls:CustomFrame>
+
+							<controls:CustomFrame
+								x:Name="frameEatAndDrinks"
+								Margin="0,0,28,0"
+								Padding="10,0,10,0"
+								BackgroundColor="#342B20"
+								CornerRadius="12,12,0,0"
+								HorizontalOptions="StartAndExpand">
+								<controls:CustomFrame.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnRoomServiceImageClicked" />
+								</controls:CustomFrame.GestureRecognizers>
+								<StackLayout
+									HorizontalOptions="CenterAndExpand"
+									Spacing="0"
+									VerticalOptions="CenterAndExpand">
+									<StackLayout.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnRoomServiceImageClicked" />
+									</StackLayout.GestureRecognizers>
+									<Label
+										Margin="0,-25,0,0"
+										Padding="0"
+										FontAttributes="Bold"
+										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontSize="80"
+										HorizontalOptions="CenterAndExpand"
+										Text="10"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnRoomServiceImageClicked" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Label
+										Margin="0,-25,0,0"
+										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontSize="16"
+										HorizontalOptions="CenterAndExpand"
+										HorizontalTextAlignment="Center"
+										LineBreakMode="TailTruncation"
+										LineHeight="1.2"
+										MaxLines="2"
+										Text="Free Eat &amp; Drink to your room"
+										TextColor="#E08D70">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnRoomServiceImageClicked" />
+										</Label.GestureRecognizers>
+									</Label>
+								</StackLayout>
+							</controls:CustomFrame>
+						</StackLayout>
+					</ScrollView>
+
+					<Label
+						Margin="0,75,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						IsVisible="{Binding IsInhouseResturantsList}"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Resturants"
+						TextColor="White" />
+
+					<ScrollView
+						HeightRequest="258"
+						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsInhouseResturantsList}"
+						Orientation="Horizontal">
+						<StackLayout
+							BindableLayout.ItemsSource="{Binding HotelDetails.InhouseResturants}"
+							Orientation="Horizontal"
+							Spacing="20">
+							<BindableLayout.ItemTemplate>
+								<DataTemplate>
+									<Grid RowSpacing="0" WidthRequest="{Binding ImgWidth}">
+										<Grid.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnResturantsClicked" />
+										</Grid.GestureRecognizers>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="191" />
+											<RowDefinition Height="14" />
+											<RowDefinition Height="24" />
+											<RowDefinition Height="8" />
+											<RowDefinition Height="12" />
+										</Grid.RowDefinitions>
+										<pancakeview:PancakeView
+											Grid.Row="0"
+											Padding="0"
+											BackgroundColor="#342B20"
+											CornerRadius="12,12,0,0"
+											IsClippedToBounds="True">
+											<pancakeview:PancakeView.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnResturantsClicked" />
+											</pancakeview:PancakeView.GestureRecognizers>
+											<Image Aspect="AspectFill" Source="{Binding ImageUrl}">
+												<Image.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnResturantsClicked" />
+												</Image.GestureRecognizers>
+											</Image>
+										</pancakeview:PancakeView>
+
+										<Label
+											Grid.Row="2"
+											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontSize="16"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding ResturantType}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnResturantsClicked" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<StackLayout
+											Grid.Row="4"
+											HorizontalOptions="StartAndExpand"
+											Orientation="Horizontal"
+											Spacing="1">
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.StarOutline}"
+												TextColor="#2A2A31" />
+										</StackLayout>
+									</Grid>
+
+								</DataTemplate>
+							</BindableLayout.ItemTemplate>
+						</StackLayout>
+					</ScrollView>
+
+					<Label
+						Margin="0,85,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						IsVisible="{Binding IsInhouseFittnessList}"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Wellness &amp; Fitness"
+						TextColor="White" />
+
+					<ScrollView
+						HeightRequest="258"
+						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsInhouseFittnessList}"
+						Orientation="Horizontal">
+						<StackLayout
+							BindableLayout.ItemsSource="{Binding HotelDetails.InhouseFittness}"
+							Orientation="Horizontal"
+							Spacing="20">
+							<BindableLayout.ItemTemplate>
+								<DataTemplate>
+									<Grid RowSpacing="0" WidthRequest="{Binding ImgWidth}">
+										<Grid.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnGridWellnessAndFitnessClicked" />
+										</Grid.GestureRecognizers>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="191" />
+											<RowDefinition Height="14" />
+											<RowDefinition Height="24" />
+											<RowDefinition Height="8" />
+											<RowDefinition Height="12" />
+										</Grid.RowDefinitions>
+										<pancakeview:PancakeView
+											Grid.Row="0"
+											Padding="0"
+											CornerRadius="12,12,0,0"
+											IsClippedToBounds="True">
+											<pancakeview:PancakeView.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnPancakeViewWellnessAndFitnessClicked" />
+											</pancakeview:PancakeView.GestureRecognizers>
+											<Image Aspect="AspectFill" Source="{Binding ImageUrl}">
+												<Image.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnImageWellnessAndFitnessClicked" />
+												</Image.GestureRecognizers>
+											</Image>
+										</pancakeview:PancakeView>
+
+										<Label
+											Grid.Row="2"
+											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontSize="16"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding CenterName}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLableWellnessAndFitnessClicked" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<StackLayout
+											Grid.Row="4"
+											HorizontalOptions="StartAndExpand"
+											Orientation="Horizontal"
+											Spacing="1">
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.StarOutline}"
+												TextColor="#2A2A31" />
+										</StackLayout>
+									</Grid>
+
+								</DataTemplate>
+							</BindableLayout.ItemTemplate>
+						</StackLayout>
+					</ScrollView>
+
+					<Label
+						Margin="0,85,0,16"
+						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontSize="20"
+						IsVisible="{Binding IsHotelVenuesList}"
+						LineBreakMode="TailTruncation"
+						LineHeight="1.2"
+						Text="Event &amp; Meetings"
+						TextColor="White" />
+
+					<ScrollView
+						HeightRequest="258"
+						HorizontalScrollBarVisibility="Never"
+						IsVisible="{Binding IsHotelVenuesList}"
+						Orientation="Horizontal">
+						<StackLayout
+							BindableLayout.ItemsSource="{Binding HotelDetails.HotelVenues}"
+							Orientation="Horizontal"
+							Spacing="20">
+							<BindableLayout.ItemTemplate>
+								<DataTemplate>
+									<Grid
+										ClassId="{Binding Id}"
+										RowSpacing="0"
+										WidthRequest="{Binding ImgWidth}">
+										<Grid.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnGridEventAndMeetingsClicked" />
+										</Grid.GestureRecognizers>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="191" />
+											<RowDefinition Height="14" />
+											<RowDefinition Height="24" />
+											<RowDefinition Height="8" />
+											<RowDefinition Height="12" />
+										</Grid.RowDefinitions>
+										<pancakeview:PancakeView
+											Grid.Row="0"
+											Padding="0"
+											BackgroundColor="#342B20"
+											ClassId="{Binding Id}"
+											CornerRadius="12,12,0,0"
+											IsClippedToBounds="True">
+											<pancakeview:PancakeView.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnPancakeViewEventAndMeetingsClicked" />
+											</pancakeview:PancakeView.GestureRecognizers>
+											<Image
+												Aspect="AspectFill"
+												ClassId="{Binding Id}"
+												Source="{Binding ImagePath}">
+												<Image.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnImageEventAndMeetingsClicked" />
+												</Image.GestureRecognizers>
+											</Image>
+										</pancakeview:PancakeView>
+
+										<Label
+											Grid.Row="2"
+											ClassId="{Binding Id}"
+											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontSize="16"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding VenueName}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLableEventAndMeetingsClicked" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<StackLayout
+											Grid.Row="4"
+											HorizontalOptions="StartAndExpand"
+											Orientation="Horizontal"
+											Spacing="1">
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Star}"
+												TextColor="#FF9E2A" />
+											<Label
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="12"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.StarOutline}"
+												TextColor="#2A2A31" />
+										</StackLayout>
+									</Grid>
+
+								</DataTemplate>
+							</BindableLayout.ItemTemplate>
+						</StackLayout>
+					</ScrollView>
+
+					<BoxView HeightRequest="25" />
+				</StackLayout>
+			</ScrollView>
+
+			<Grid
+				Grid.Row="2"
+				Grid.Column="1"
+				Grid.ColumnSpan="3">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition Width="134" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+
+				<Label
+					Grid.Column="0"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="25"
+					HorizontalTextAlignment="Start"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Button
+					Grid.Column="1"
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="White"
+					BorderWidth="2"
+					CornerRadius="10"
+					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontSize="12"
+					HeightRequest="45"
+					Text="Scan QR Code"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand" />
+
+				<Label
+					Grid.Column="2"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="25"
+					HorizontalTextAlignment="End"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageTextOutline}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+			</Grid>
+
+		</Grid>
+
+		<!--<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="32" />
 				<RowDefinition />
@@ -764,7 +2116,9 @@
 						</StackLayout>
 					</Grid>
 
-					<!--  Start Laundry service  -->
+					-->
+		<!--  Start Laundry service  -->
+		<!--
 					<Label
 						Margin="0,53,0,32"
 						FontAttributes="Bold"
@@ -813,9 +2167,11 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-					<!--  End Laundry service  -->
+					-->
+		<!--  End Laundry service  -->
 
-					<!--  Start Room service  -->
+		<!--  Start Room service  -->
+		<!--
 					<Label
 						Margin="0,53,0,32"
 						FontAttributes="Bold"
@@ -870,9 +2226,11 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-					<!--  End Room service  -->
+					-->
+		<!--  End Room service  -->
 
-					<!--  Start Eat & Drink  -->
+		<!--  Start Eat & Drink  -->
+		<!--
 					<Label
 						x:Name="lblEatDrink"
 						Margin="0,53,0,32"
@@ -919,9 +2277,11 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-					<!--  End Eat & Drink  -->
+					-->
+		<!--  End Eat & Drink  -->
 
-					<!--  Start Fitness & Spa  -->
+		<!--  Start Fitness & Spa  -->
+		<!--
 					<Label
 						x:Name="lblFitnessSpa"
 						Margin="0,53,0,32"
@@ -971,9 +2331,11 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-					<!--  End Fitness & Spa  -->
+					-->
+		<!--  End Fitness & Spa  -->
 
-					<!--  Start Hotel Venues  -->
+		<!--  Start Hotel Venues  -->
+		<!--
 					<Label
 						Margin="0,53,0,32"
 						FontAttributes="Bold"
@@ -1025,7 +2387,9 @@
 							</BindableLayout.ItemTemplate>
 						</StackLayout>
 					</ScrollView>
-					<!--  End Hotel Venues  -->
+					-->
+		<!--  End Hotel Venues  -->
+		<!--
 				</StackLayout>
 			</ScrollView>
 
@@ -1093,7 +2457,7 @@
 					</Label.GestureRecognizers>
 				</Label>
 			</Grid>
-		</Grid>
+		</Grid>-->
 
 
 		<!--<Grid>

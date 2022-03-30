@@ -36,7 +36,19 @@ namespace Dstricts.ViewModels
 			if (response.InhouseResturants?.Count > 0)
 			{
 				IsInhouseResturantsList = true;
-				InhouseResturantsInfo inhouseResturantsInfo = new InhouseResturantsInfo()
+				int deviceWidth = App.ScreenWidth - 56;
+				int widthResturants = 0;
+				if (response.InhouseResturants.Count == 1)
+					widthResturants = deviceWidth;
+				else
+					widthResturants = deviceWidth * 85 / 100;
+				foreach (var item in response.InhouseResturants)
+				{
+					item.ImgWidth = widthResturants;
+					item.ImageUrl = "https://www.elitetraveler.com/wp-content/uploads/2007/02/Alain-Ducasse-scaled.jpg";
+				}
+				
+				/*InhouseResturantsInfo inhouseResturantsInfo = new InhouseResturantsInfo()
 				{
 					ResturantType = "Room Service",
 					ImageUrl = "https://media.istockphoto.com/photos/beautiful-woman-laying-and-enjoying-breakfast-in-bed-picture-id1151357999?k=20&m=1151357999&s=612x612&w=0&h=SegUpGW4gDuhfuYyp_P5oIzz4Za4w9bk_uEIwwyrz5k="
@@ -44,7 +56,7 @@ namespace Dstricts.ViewModels
 				foreach (var resturants in response.InhouseResturants)
 					if (!string.IsNullOrWhiteSpace(resturants.ResturantType))
 						resturants.ImageUrl = "https://www.elitetraveler.com/wp-content/uploads/2007/02/Alain-Ducasse-scaled.jpg";
-				response.InhouseResturants.Insert(0, inhouseResturantsInfo);
+				response.InhouseResturants.Insert(0, inhouseResturantsInfo);*/
 			}
 			else
 				IsInhouseResturantsList = false;
@@ -52,7 +64,21 @@ namespace Dstricts.ViewModels
 			//Fittness
 			if (response.InhouseFittness?.Count > 0)
 			{
+				IsInhouseFittnessList = true;
 				int deviceWidth = App.ScreenWidth - 56;
+				int widthFittness = 0;
+				if (response.InhouseFittness.Count == 1)
+					widthFittness = deviceWidth;
+				else
+					widthFittness = deviceWidth * 85 / 100;
+
+				foreach (var fittness in response.InhouseFittness)
+				{
+					fittness.ImgWidth = widthFittness;
+					fittness.ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg";
+				}
+
+				/*int deviceWidth = App.ScreenWidth - 56;
 				int w = deviceWidth * 80 / 100;
 				int h = w * 68 / 100;
 
@@ -61,7 +87,7 @@ namespace Dstricts.ViewModels
 					fittness.ImgHeight = h;
 					fittness.ImgWidth = w;
 					fittness.ImageUrl = "https://ychef.files.bbci.co.uk/1376x774/p07ztf1q.jpg";
-				}
+				}*/
 
 				/*IsInhouseFittnessList = true;
 				InhouseFittnessInfo inhouseFittnessInfo = new InhouseFittnessInfo()
@@ -81,18 +107,27 @@ namespace Dstricts.ViewModels
 			{
 				IsHotelVenuesList = true;
 				int deviceWidth = App.ScreenWidth - 56;
+				int widthVenues = 0;
+				if (response.HotelVenues.Count == 1)
+					widthVenues = deviceWidth;
+				else
+					widthVenues = deviceWidth * 85 / 100;
+				foreach (var hotelVenues in response.HotelVenues)
+					hotelVenues.ImgWidth = widthVenues;
+
+				/*int deviceWidth = App.ScreenWidth - 56;
 				int w = deviceWidth * 80 / 100;
 				int h = w * 68 / 100;
 				foreach (var hotelVenues in response.HotelVenues)
 				{
 					hotelVenues.ImgHeight = h;
 					hotelVenues.ImgWidth = w;
-				}
+				}*/
 			}
 			else
 				IsHotelVenuesList = false;
 
-			HotelDetails = response;
+			HotelDetails = response; 
 			Helper.Helper.HotelDetails = HotelDetails;
 
 			#region Amenities Service.
