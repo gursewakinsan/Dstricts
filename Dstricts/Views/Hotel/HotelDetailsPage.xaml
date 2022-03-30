@@ -892,7 +892,6 @@
 									</Label>
 
 									<Label
-										Margin="0,-25,0,0"
 										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
@@ -902,6 +901,12 @@
 										MaxLines="2"
 										Text="Free amenities to your room"
 										TextColor="#E08D70">
+										<Label.Margin>
+											<OnPlatform x:TypeArguments="Thickness">
+												<On Platform="iOS" Value="0,0,0,0" />
+												<On Platform="Android" Value="0,-25,0,0" />
+											</OnPlatform>
+										</Label.Margin>
 										<Label.GestureRecognizers>
 											<TapGestureRecognizer Command="{Binding SelectedGuestServiceCommand}" CommandParameter="0" />
 										</Label.GestureRecognizers>
@@ -940,7 +945,6 @@
 									</Label>
 
 									<Label
-										Margin="0,-25,0,0"
 										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
@@ -950,6 +954,12 @@
 										MaxLines="2"
 										Text="Free laundry to your room"
 										TextColor="#E08D70">
+										<Label.Margin>
+											<OnPlatform x:TypeArguments="Thickness">
+												<On Platform="iOS" Value="0,0,0,0" />
+												<On Platform="Android" Value="0,-25,0,0" />
+											</OnPlatform>
+										</Label.Margin>
 										<Label.GestureRecognizers>
 											<TapGestureRecognizer Tapped="OnLaundryServiceImageClicked" />
 										</Label.GestureRecognizers>
@@ -989,7 +999,6 @@
 									</Label>
 
 									<Label
-										Margin="0,-25,0,0"
 										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
@@ -999,6 +1008,12 @@
 										MaxLines="2"
 										Text="Free Eat &amp; Drink to your room"
 										TextColor="#E08D70">
+										<Label.Margin>
+											<OnPlatform x:TypeArguments="Thickness">
+												<On Platform="iOS" Value="0,0,0,0" />
+												<On Platform="Android" Value="0,-25,0,0" />
+											</OnPlatform>
+										</Label.Margin>
 										<Label.GestureRecognizers>
 											<TapGestureRecognizer Tapped="OnRoomServiceImageClicked" />
 										</Label.GestureRecognizers>
