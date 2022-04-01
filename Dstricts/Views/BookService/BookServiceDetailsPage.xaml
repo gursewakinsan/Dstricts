@@ -47,7 +47,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="{Binding WellnessName}"
@@ -77,7 +77,7 @@
 			Grid.ColumnSpan="3"
 			Spacing="0">
 			<Label
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="18"
 				Opacity="0.4"
 				Text="View"
@@ -86,7 +86,7 @@
 
 			<Label
 				FontAttributes="Bold"
-				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontFamily="PoppinsBoldFontFamily"
 				FontSize="32"
 				Text="All services"
 				TextColor="White"
@@ -118,7 +118,7 @@
 							ClassId="{Binding Id}"
 							Clicked="OnFittnessAndSpaCategoryClicked"
 							CornerRadius="12"
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="12"
 							HeightRequest="36"
 							HorizontalOptions="Start"
@@ -182,7 +182,7 @@
 									</StackLayout.GestureRecognizers>
 									<Label
 										FontAttributes="Bold"
-										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontFamily="PoppinsBoldFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
@@ -190,7 +190,7 @@
 										TextColor="White" />
 
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="12"
 										LineBreakMode="TailTruncation"
 										MaxLines="3"
@@ -223,7 +223,7 @@
 			BackgroundColor="#6263ED"
 			Command="{Binding ViewCartCommand}"
 			CornerRadius="10"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="16"
 			HeightRequest="48"
 			IsVisible="{Binding IsCartInfoWellnessList}"

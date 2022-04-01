@@ -42,7 +42,7 @@
 
 				<Label
 					Margin="0,30,0,10"
-					FontFamily="{StaticResource SFProSemiboldFontFamily}"
+					FontFamily="SFProSemiboldFontFamily"
 					FontSize="24"
 					HorizontalOptions="CenterAndExpand"
 					Text="Login successful"
@@ -50,7 +50,7 @@
 
 				<Label
 					x:Name="lblMessage"
-					FontFamily="{StaticResource SFProRegularFontFamily}"
+					FontFamily="SFProRegularFontFamily"
 					FontSize="18"
 					HorizontalOptions="CenterAndExpand"
 					HorizontalTextAlignment="Center"
@@ -66,7 +66,7 @@
 					BorderWidth="1"
 					Clicked="OnCloseButtonClicked"
 					CornerRadius="25"
-					FontFamily="{StaticResource SFProRegularFontFamily}"
+					FontFamily="SFProRegularFontFamily"
 					FontSize="17"
 					HeightRequest="50"
 					Text="Close"

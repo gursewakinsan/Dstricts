@@ -43,7 +43,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="Step 2 of 4"
@@ -58,7 +58,7 @@
 			<StackLayout Margin="0,18,0,0" Spacing="0">
 				<Label
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="32"
 					Text="Is this correct?"
 					TextColor="White" />
@@ -113,7 +113,7 @@
 							Spacing="0"
 							VerticalOptions="CenterAndExpand">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="50"
 								HeightRequest="60"
 								HorizontalOptions="CenterAndExpand"
@@ -123,7 +123,7 @@
 								VerticalTextAlignment="Center" />
 
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalOptions="CenterAndExpand"
 								HorizontalTextAlignment="Center"
@@ -184,7 +184,7 @@
 							Spacing="0"
 							VerticalOptions="CenterAndExpand">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="50"
 								HeightRequest="60"
 								HorizontalOptions="CenterAndExpand"
@@ -194,7 +194,7 @@
 								VerticalTextAlignment="Center" />
 
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalOptions="CenterAndExpand"
 								HorizontalTextAlignment="Center"
@@ -248,7 +248,7 @@
 			BackgroundColor="#6263ED"
 			Command="{Binding UpdateGuestRecordCommand}"
 			CornerRadius="10"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="16"
 			Text="Continue"
 			WidthRequest="114" />

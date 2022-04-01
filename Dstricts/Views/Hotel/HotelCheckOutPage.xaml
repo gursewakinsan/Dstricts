@@ -42,7 +42,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="{Binding HotelCompleteInfo.HotelName}"
@@ -82,7 +82,7 @@
 
 				<Label
 					Margin="0,9,0,31"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
@@ -113,7 +113,7 @@
 
 						<Label
 							Margin="0,9,0,25"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="14"
 							LineBreakMode="TailTruncation"
 							LineHeight="1.2"
@@ -144,7 +144,7 @@
 
 								<Label
 									Grid.Column="0"
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="16"
 									HorizontalTextAlignment="Start"
 									Opacity="{Binding YesPleaseOpacity}"
@@ -184,7 +184,7 @@
 								<TapGestureRecognizer Command="{Binding VerifyWithQloudIdCommand}" />
 							</Frame.GestureRecognizers>
 							<Label
-								FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+								FontFamily="PoppinsSemiBoldFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Opacity="{Binding VerifyWithQloudIdTextOpacity}"

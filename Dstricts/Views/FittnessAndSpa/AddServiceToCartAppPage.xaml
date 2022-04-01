@@ -187,7 +187,7 @@
 				BackgroundColor="#6263ED"
 				Command="{Binding AddServiceToCartAppCommand}"
 				CornerRadius="10"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="16"
 				HeightRequest="48"
 				Text="Book"

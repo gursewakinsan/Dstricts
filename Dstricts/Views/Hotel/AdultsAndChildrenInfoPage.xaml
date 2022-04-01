@@ -40,7 +40,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="Step 3 of 4"
@@ -55,14 +55,14 @@
 			<StackLayout Margin="0,18,0,0" Spacing="0">
 				<Label
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="32"
 					Text="Is this correct?"
 					TextColor="White" />
 
 				<Label
 					Margin="0,22,0,53"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
@@ -100,7 +100,7 @@
 						</Grid.ColumnDefinitions>
 
 						<Label
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="16"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
@@ -150,7 +150,7 @@
 
 									<Label
 										Grid.Column="0"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="16"
 										IsVisible="{Binding IsConfirmed}"
 										LineBreakMode="TailTruncation"
@@ -161,7 +161,7 @@
 
 									<Label
 										Grid.Column="0"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										IsVisible="{Binding IsConfirmed, Converter={StaticResource InverseBoolConverter}}"
 										LineBreakMode="TailTruncation"
@@ -180,7 +180,7 @@
 										BackgroundColor="#E53614"
 										Clicked="OnButtonReInviteAdultsTapped"
 										CornerRadius="20"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="12"
 										HeightRequest="40"
 										HorizontalOptions="EndAndExpand"
@@ -236,7 +236,7 @@
 									</Grid.ColumnDefinitions>
 
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
@@ -254,7 +254,7 @@
 										BackgroundColor="#282732"
 										Clicked="OnAdultsTapped"
 										CornerRadius="20"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="12"
 										HeightRequest="40"
 										HorizontalOptions="CenterAndExpand"
@@ -294,7 +294,7 @@
 									</Grid.ColumnDefinitions>
 
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
@@ -347,7 +347,7 @@
 									</Grid.ColumnDefinitions>
 
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"

@@ -40,7 +40,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="Invite adult"
@@ -55,14 +55,14 @@
 			<StackLayout Margin="0,18,0,0" Spacing="0">
 				<Label
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="32"
 					Text="Invite adult"
 					TextColor="White" />
 
 				<Label
 					Margin="0,22,0,53"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
@@ -98,7 +98,7 @@
 						</Grid.ColumnDefinitions>
 
 						<Label
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="16"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
@@ -147,7 +147,7 @@
 						</Grid.ColumnDefinitions>
 
 						<Label
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="16"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"

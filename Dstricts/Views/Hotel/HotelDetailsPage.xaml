@@ -46,7 +46,7 @@
 			<Label
 				Grid.Row="0"
 				Grid.Column="2"
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="14"
 				HorizontalTextAlignment="Center"
 				Text="{Binding HotelDetails.HotelName}"
@@ -132,7 +132,7 @@
 
 									<Label
 										Grid.Row="2"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -143,7 +143,7 @@
 
 									<Label
 										Grid.Row="4"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -166,7 +166,7 @@
 
 									<Label
 										Grid.Row="8"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -190,7 +190,7 @@
 
 									<Label
 										Grid.Row="12"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -209,7 +209,7 @@
 										Padding="0"
 										BackgroundColor="#3EC4D5"
 										CornerRadius="8"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Read more"
@@ -259,7 +259,7 @@
 
 									<Label
 										Grid.Row="2"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -274,7 +274,7 @@
 										Spacing="20"
 										VerticalOptions="CenterAndExpand">
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
 											LineHeight="1.2"
@@ -282,7 +282,7 @@
 											TextColor="#4C7CE5" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
 											LineHeight="1.2"
@@ -301,7 +301,7 @@
 										Spacing="20"
 										VerticalOptions="EndAndExpand">
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
 											LineHeight="1.2"
@@ -310,7 +310,7 @@
 											VerticalOptions="EndAndExpand" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
 											LineHeight="1.2"
@@ -329,7 +329,7 @@
 										Padding="0"
 										BackgroundColor="#4C7CE5"
 										CornerRadius="8"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Click, if connected"
@@ -379,7 +379,7 @@
 
 									<Label
 										Grid.Row="2"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -394,7 +394,7 @@
 										Spacing="20"
 										VerticalOptions="CenterAndExpand">
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
 											LineHeight="1.2"
@@ -402,7 +402,7 @@
 											TextColor="#995A9C" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
 											LineBreakMode="TailTruncation"
@@ -431,7 +431,7 @@
 										Spacing="20"
 										VerticalOptions="EndAndExpand">
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
 											LineHeight="1.2"
@@ -440,7 +440,7 @@
 											VerticalOptions="EndAndExpand" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
 											LineHeight="1.2"
@@ -468,7 +468,7 @@
 										BackgroundColor="#D23CE6"
 										Command="{Binding GoToAdultsAndChildrenPageCommand}"
 										CornerRadius="8"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Complete remaining"
@@ -518,7 +518,7 @@
 
 									<Label
 										Grid.Row="2"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -529,7 +529,7 @@
 
 									<Label
 										Grid.Row="4"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -545,7 +545,7 @@
 
 									<Label
 										Grid.Row="8"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -561,7 +561,7 @@
 
 									<Label
 										Grid.Row="12"
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -580,7 +580,7 @@
 										Padding="0"
 										BackgroundColor="#FF9129"
 										CornerRadius="8"
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Late check out?"
@@ -593,7 +593,7 @@
 
 					<Label
 						Margin="0,57,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
 						LineHeight="1.2"
@@ -621,7 +621,7 @@
 								Grid.Column="0"
 								Spacing="1">
 								<Label
-									FontFamily="{StaticResource PoppinsBoldFontFamily}"
+									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -629,7 +629,7 @@
 									TextColor="#181A1F" />
 
 								<Label
-									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -653,14 +653,14 @@
 									Spacing="0"
 									VerticalOptions="CenterAndExpand">
 									<Label
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										MaxLines="1"
 										Text="Go to"
 										TextColor="White" />
 
 									<Label
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="14"
 										MaxLines="1"
 										Text="map"
@@ -672,7 +672,7 @@
 
 					<Label
 						Margin="0,57,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
 						LineHeight="1.2"
@@ -706,14 +706,14 @@
 								</Grid.RowDefinitions>
 								<Label
 									Grid.Row="0"
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
 									Text="Clean Room"
 									TextColor="White" />
 
 								<Label
 									Grid.Row="2"
-									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -727,7 +727,7 @@
 									Padding="0"
 									BackgroundColor="#E53614"
 									CornerRadius="8"
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="12"
 									HorizontalOptions="StartAndExpand"
 									Text="Regret"
@@ -753,7 +753,7 @@
 								</Grid.RowDefinitions>
 								<Label
 									Grid.Row="0"
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
 									LineBreakMode="TailTruncation"
 									MaxLines="1"
@@ -762,7 +762,7 @@
 
 								<Label
 									Grid.Row="2"
-									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -776,7 +776,7 @@
 									Padding="0"
 									BackgroundColor="#406B4B"
 									CornerRadius="8"
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="12"
 									HorizontalOptions="StartAndExpand"
 									Text="Activate it"
@@ -807,7 +807,7 @@
 								Grid.Column="0"
 								Spacing="1">
 								<Label
-									FontFamily="{StaticResource PoppinsBoldFontFamily}"
+									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -815,7 +815,7 @@
 									TextColor="White" />
 
 								<Label
-									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
 									LineHeight="1.2"
@@ -836,7 +836,7 @@
 								IsClippedToBounds="True"
 								VerticalOptions="CenterAndExpand">
 								<Label
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="14"
 									HorizontalOptions="CenterAndExpand"
 									MaxLines="1"
@@ -849,7 +849,7 @@
 
 					<Label
 						Margin="0,71,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
 						LineHeight="1.2"
@@ -881,7 +881,7 @@
 										Margin="0,-25,0,0"
 										Padding="0"
 										FontAttributes="Bold"
-										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontFamily="PoppinsBoldFontFamily"
 										FontSize="80"
 										HorizontalOptions="CenterAndExpand"
 										Text="25"
@@ -892,7 +892,7 @@
 									</Label>
 
 									<Label
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
@@ -934,7 +934,7 @@
 										Margin="0,-25,0,0"
 										Padding="0"
 										FontAttributes="Bold"
-										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontFamily="PoppinsBoldFontFamily"
 										FontSize="80"
 										HorizontalOptions="CenterAndExpand"
 										Text="12"
@@ -945,7 +945,7 @@
 									</Label>
 
 									<Label
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
@@ -988,7 +988,7 @@
 										Margin="0,-25,0,0"
 										Padding="0"
 										FontAttributes="Bold"
-										FontFamily="{StaticResource PoppinsBoldFontFamily}"
+										FontFamily="PoppinsBoldFontFamily"
 										FontSize="80"
 										HorizontalOptions="CenterAndExpand"
 										Text="10"
@@ -999,7 +999,7 @@
 									</Label>
 
 									<Label
-										FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="16"
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
@@ -1025,7 +1025,7 @@
 
 					<Label
 						Margin="0,75,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						IsVisible="{Binding IsInhouseResturantsList}"
 						LineBreakMode="TailTruncation"
@@ -1073,7 +1073,7 @@
 
 										<Label
 											Grid.Row="2"
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="16"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
@@ -1124,7 +1124,7 @@
 
 					<Label
 						Margin="0,85,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						IsVisible="{Binding IsInhouseFittnessList}"
 						LineBreakMode="TailTruncation"
@@ -1171,7 +1171,7 @@
 
 										<Label
 											Grid.Row="2"
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="16"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
@@ -1222,7 +1222,7 @@
 
 					<Label
 						Margin="0,85,0,16"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						IsVisible="{Binding IsHotelVenuesList}"
 						LineBreakMode="TailTruncation"
@@ -1278,7 +1278,7 @@
 										<Label
 											Grid.Row="2"
 											ClassId="{Binding Id}"
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="16"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
@@ -1357,7 +1357,7 @@
 					BorderColor="White"
 					BorderWidth="2"
 					CornerRadius="10"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HeightRequest="45"
 					Text="Scan QR Code"

@@ -34,8 +34,8 @@
 		</Grid.ColumnDefinitions>
 		<Label
 			Grid.Row="0"
-			Margin="-10,0,0,0"
 			Grid.Column="1"
+			Margin="-10,0,0,0"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"
@@ -68,7 +68,7 @@
 			Grid.ColumnSpan="3"
 			Spacing="0">
 			<Label
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="18"
 				Opacity="0.4"
 				Text="Wellness"
@@ -77,7 +77,7 @@
 
 			<Label
 				FontAttributes="Bold"
-				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontFamily="PoppinsBoldFontFamily"
 				FontSize="32"
 				Text="Welcome"
 				TextColor="White"
@@ -95,7 +95,7 @@
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
 			FontAttributes="Bold"
-			FontFamily="{StaticResource PoppinsBoldFontFamily}"
+			FontFamily="PoppinsBoldFontFamily"
 			FontSize="20"
 			HorizontalTextAlignment="Start"
 			Text="Booking type"
@@ -105,7 +105,7 @@
 			Grid.Row="8"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
 			Opacity="0.4"
@@ -149,7 +149,7 @@
 						</StackLayout.GestureRecognizers>
 						<Label
 							FontAttributes="Bold"
-							FontFamily="{StaticResource PoppinsBoldFontFamily}"
+							FontFamily="PoppinsBoldFontFamily"
 							FontSize="18"
 							Text="One  (1-1)"
 							TextColor="White">
@@ -159,7 +159,7 @@
 						</Label>
 
 						<Label
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="14"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
@@ -218,7 +218,7 @@
 						</StackLayout.GestureRecognizers>
 						<Label
 							FontAttributes="Bold"
-							FontFamily="{StaticResource PoppinsBoldFontFamily}"
+							FontFamily="PoppinsBoldFontFamily"
 							FontSize="18"
 							Text="Private booking"
 							TextColor="White">
@@ -228,7 +228,7 @@
 						</Label>
 
 						<Label
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="14"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"
@@ -287,7 +287,7 @@
 						</StackLayout.GestureRecognizers>
 						<Label
 							FontAttributes="Bold"
-							FontFamily="{StaticResource PoppinsBoldFontFamily}"
+							FontFamily="PoppinsBoldFontFamily"
 							FontSize="18"
 							Text="Public event"
 							TextColor="White">
@@ -297,7 +297,7 @@
 						</Label>
 
 						<Label
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="14"
 							LineBreakMode="TailTruncation"
 							MaxLines="1"

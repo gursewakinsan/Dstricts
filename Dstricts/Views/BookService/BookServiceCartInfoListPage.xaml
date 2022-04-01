@@ -41,7 +41,7 @@
 			<Label
 				Grid.Row="0"
 				Grid.Column="2"
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="14"
 				HorizontalTextAlignment="Center"
 				Text="Checkout"
@@ -113,7 +113,7 @@
 											TextColor="White" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="12"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
@@ -122,7 +122,7 @@
 											TextColor="White" />
 
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="12"
 											LineBreakMode="TailTruncation"
 											MaxLines="1"
@@ -259,7 +259,7 @@
 				BackgroundColor="#6263ED"
 				Command="{Binding BookTimeCommand}"
 				CornerRadius="10"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="16"
 				HeightRequest="48"
 				Text="Book a time"

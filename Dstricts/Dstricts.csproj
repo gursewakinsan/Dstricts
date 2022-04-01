@@ -234,17 +234,33 @@
     <None Remove="AppFonts\" />
     <None Remove="AppFonts\JosefinSansRegular.ttf" />
     <None Remove="AppFonts\JosefinSansSemiBold.ttf" />
+    <None Remove="AppFonts\PoppinsBold.ttf" />
+    <None Remove="AppFonts\PoppinsRegular.ttf" />
+    <None Remove="AppFonts\PoppinsSemiBold.ttf" />
     <None Remove="AppFonts\SansProBold.ttf" />
     <None Remove="AppFonts\SansProRegular.ttf" />
     <None Remove="AppFonts\SansProSemiBold.ttf" />
+    <None Remove="AppFonts\SFProDisplayBold.ttf" />
+    <None Remove="AppFonts\SFProDisplayLight.ttf" />
+    <None Remove="AppFonts\SFProDisplayMedium.ttf" />
+    <None Remove="AppFonts\SFProDisplayRegular.ttf" />
+    <None Remove="AppFonts\SFProDisplaySemibold.ttf" />
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />
     <EmbeddedResource Include="AppFonts\JosefinSansSemiBold.ttf" />
+    <EmbeddedResource Include="AppFonts\PoppinsBold.ttf" />
+    <EmbeddedResource Include="AppFonts\PoppinsRegular.ttf" />
+    <EmbeddedResource Include="AppFonts\PoppinsSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\SansProBold.ttf" />
     <EmbeddedResource Include="AppFonts\SansProRegular.ttf" />
     <EmbeddedResource Include="AppFonts\SansProSemiBold.ttf" />
+    <EmbeddedResource Include="AppFonts\SFProDisplayBold.ttf" />
+    <EmbeddedResource Include="AppFonts\SFProDisplayLight.ttf" />
+    <EmbeddedResource Include="AppFonts\SFProDisplayMedium.ttf" />
+    <EmbeddedResource Include="AppFonts\SFProDisplayRegular.ttf" />
+    <EmbeddedResource Include="AppFonts\SFProDisplaySemibold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
   </ItemGroup>
 </Project>

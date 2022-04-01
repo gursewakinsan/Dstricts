@@ -42,7 +42,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="Invite adult"
@@ -57,14 +57,14 @@
 			<StackLayout Margin="0,18,0,0" Spacing="0">
 				<Label
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="32"
 					Text="Add phone"
 					TextColor="White" />
 
 				<Label
 					Margin="0,22,0,53"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
@@ -142,7 +142,7 @@
 						</textinputlayout:SfTextInputLayout.LeadingView>
 						<controls:CustomFloatingLabelEntry
 							BackgroundColor="#F8F8FB"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							Keyboard="Numeric"
 							Placeholder="Mobile number"
@@ -154,7 +154,7 @@
 					<Label
 						Grid.Row="2"
 						Grid.ColumnSpan="2"
-						FontFamily="{StaticResource PoppinsRegularFontFamily}"
+						FontFamily="PoppinsRegularFontFamily"
 						FontSize="14"
 						HorizontalTextAlignment="Start"
 						Opacity="0.5"
@@ -175,7 +175,7 @@
 							BackgroundColor="#6263ED"
 							Command="{Binding SaveMobileNumberCommand}"
 							CornerRadius="10"
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="14"
 							Text="Submit"
 							TextColor="White" />
@@ -185,7 +185,7 @@
 							BackgroundColor="#26272A"
 							Command="{Binding CloseCommand}"
 							CornerRadius="10"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="14"
 							Text="Cancel"
 							TextColor="White" />

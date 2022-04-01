@@ -52,7 +52,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="{Binding WellnessName}"
@@ -80,7 +80,7 @@
 			Grid.Row="2"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
 			Opacity="0.4"
@@ -114,7 +114,7 @@
 				BackgroundColor="{Binding OneToOneButtonBg}"
 				Command="{Binding OneToOneCommand}"
 				CornerRadius="12"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="12"
 				HorizontalOptions="StartAndExpand"
 				IsVisible="{Binding WellnessServiceInfoCountInfo.OneToOne}"
@@ -127,7 +127,7 @@
 				BackgroundColor="{Binding PrivateServiceButtonBg}"
 				Command="{Binding PrivateServiceCommand}"
 				CornerRadius="12"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="12"
 				HorizontalOptions="StartAndExpand"
 				IsVisible="{Binding WellnessServiceInfoCountInfo.PrivateService}"
@@ -140,7 +140,7 @@
 				BackgroundColor="{Binding PublicServiceButtonBg}"
 				Command="{Binding PublicServiceCommand}"
 				CornerRadius="12"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="12"
 				HorizontalOptions="StartAndExpand"
 				IsVisible="{Binding WellnessServiceInfoCountInfo.PublicService}"
@@ -153,7 +153,7 @@
 			Grid.Row="8"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
 			LineBreakMode="TailTruncation"
@@ -256,7 +256,7 @@
 
 											<Label
 												Padding="0"
-												FontFamily="{StaticResource PoppinsRegularFontFamily}"
+												FontFamily="PoppinsRegularFontFamily"
 												FontSize="12"
 												HorizontalTextAlignment="Center"
 												Text="Click here"
@@ -289,7 +289,7 @@
 
 													<Label
 														Margin="0,5,0,0"
-														FontFamily="{StaticResource PoppinsRegularFontFamily}"
+														FontFamily="PoppinsRegularFontFamily"
 														FontSize="14"
 														HorizontalTextAlignment="Start"
 														LineBreakMode="TailTruncation"
@@ -299,7 +299,7 @@
 
 													<Label
 														Margin="0,5,0,5"
-														FontFamily="{StaticResource PoppinsRegularFontFamily}"
+														FontFamily="PoppinsRegularFontFamily"
 														FontSize="12"
 														HorizontalTextAlignment="Start"
 														LineBreakMode="TailTruncation"
@@ -309,7 +309,7 @@
 														TextColor="White" />
 
 													<Label
-														FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+														FontFamily="PoppinsSemiBoldFontFamily"
 														FontSize="12"
 														HorizontalTextAlignment="Start"
 														LineBreakMode="TailTruncation"

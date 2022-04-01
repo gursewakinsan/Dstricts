@@ -77,7 +77,7 @@
 							Padding="0"
 							BackgroundColor="Transparent"
 							Command="{Binding LoginWithQloudIdAppCommand}"
-							FontFamily="{StaticResource SFProSemiboldFontFamily}"
+							FontFamily="SFProSemiboldFontFamily"
 							Text="Login With QloudID"
 							TextColor="White"
 							WidthRequest="160" />

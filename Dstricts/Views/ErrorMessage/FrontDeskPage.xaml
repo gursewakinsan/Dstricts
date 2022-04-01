@@ -22,7 +22,7 @@
 			<StackLayout Spacing="0">
 				<Label
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="30"
 					HorizontalOptions="StartAndExpand"
 					Text="Front desk"
@@ -30,7 +30,7 @@
 
 				<Label
 					Margin="0,10,0,20"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
 					LineBreakMode="TailTruncation"
 					LineHeight="1.2"
@@ -84,7 +84,7 @@
 							<TapGestureRecognizer Tapped="OnFrontDeskTapped" />
 						</StackLayout.GestureRecognizers>
 						<Label
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="16"
 							Text="Submit"
 							TextColor="White">

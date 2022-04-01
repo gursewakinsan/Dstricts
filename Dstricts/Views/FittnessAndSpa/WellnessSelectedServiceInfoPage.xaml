@@ -207,7 +207,7 @@
 							VerticalOptions="Center">
 							<Label
 								FontAttributes="Bold"
-								FontFamily="{StaticResource PoppinsBoldFontFamily}"
+								FontFamily="PoppinsBoldFontFamily"
 								FontSize="16"
 								LineBreakMode="TailTruncation"
 								MaxLines="1"
@@ -215,7 +215,7 @@
 								TextColor="White" />
 
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="12"
 								LineBreakMode="TailTruncation"
 								MaxLines="1"
@@ -239,7 +239,7 @@
 							VerticalOptions="Center">
 							<Label
 								FontAttributes="Bold"
-								FontFamily="{StaticResource PoppinsBoldFontFamily}"
+								FontFamily="PoppinsBoldFontFamily"
 								FontSize="16"
 								LineBreakMode="TailTruncation"
 								MaxLines="1"
@@ -247,7 +247,7 @@
 								TextColor="White" />
 
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="12"
 								LineBreakMode="TailTruncation"
 								MaxLines="1"
@@ -264,7 +264,7 @@
 
 					<Label
 						FontAttributes="Bold"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="16"
 						LineBreakMode="TailTruncation"
 						MaxLines="1"
@@ -298,7 +298,7 @@
 							BorderColor="#6263ED"
 							BorderWidth="1"
 							CornerRadius="12"
-							FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="20"
 							Text="{Binding CompanySize}"
 							TextColor="White" />
@@ -328,7 +328,7 @@
 				BackgroundColor="#6263ED"
 				Command="{Binding AddPublicServiceToCartAppCommand}"
 				CornerRadius="10"
-				FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+				FontFamily="PoppinsSemiBoldFontFamily"
 				FontSize="16"
 				HeightRequest="48"
 				Text="Book"

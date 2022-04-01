@@ -41,7 +41,7 @@
 			x:Name="lblTitle"
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			TextColor="White"
@@ -72,7 +72,7 @@
 					Grid.Row="0"
 					Grid.Column="0"
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Select calendar"
@@ -164,7 +164,7 @@
 					<Label
 						x:Name="lblDateTimeText"
 						FontAttributes="Bold"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="16"
 						HorizontalOptions="StartAndExpand"
 						HorizontalTextAlignment="Start"
@@ -172,7 +172,7 @@
 						TextColor="White" />
 
 					<Label
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="16"
 						HorizontalOptions="EndAndExpand"
 						HorizontalTextAlignment="End"
@@ -211,7 +211,7 @@
 											<TapGestureRecognizer Tapped="PickDateStackLayoutTapped" />
 										</StackLayout.GestureRecognizers>
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="16"
 											HorizontalOptions="CenterAndExpand"
 											HorizontalTextAlignment="Center"
@@ -223,7 +223,7 @@
 										</Label>
 
 										<Label
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="12"
 											HorizontalOptions="CenterAndExpand"
 											HorizontalTextAlignment="Center"
@@ -290,7 +290,7 @@
 			BackgroundColor="#6263ED"
 			Command="{Binding WellnessCartBookingTimeUpdateCommand}"
 			CornerRadius="10"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="16"
 			HeightRequest="48"
 			Text="Go to payment"

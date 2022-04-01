@@ -30,8 +30,8 @@
 		</Grid.ColumnDefinitions>
 		<Label
 			Grid.Row="0"
-			Margin="-10,0,0,0"
 			Grid.Column="1"
+			Margin="-10,0,0,0"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
 			HorizontalTextAlignment="Start"
@@ -63,7 +63,7 @@
 			Grid.ColumnSpan="3"
 			Spacing="0">
 			<Label
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="18"
 				Opacity="0.4"
 				Text="Selected"
@@ -72,7 +72,7 @@
 
 			<Label
 				FontAttributes="Bold"
-				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontFamily="PoppinsBoldFontFamily"
 				FontSize="32"
 				Text="Services"
 				TextColor="White"
@@ -107,7 +107,7 @@
 					Grid.Row="0"
 					Grid.Column="0"
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Pick a calendar"
@@ -201,7 +201,7 @@
 					Orientation="Horizontal">
 					<Label
 						FontAttributes="Bold"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="16"
 						HorizontalOptions="StartAndExpand"
 						HorizontalTextAlignment="Start"
@@ -209,7 +209,7 @@
 						TextColor="White" />
 
 					<Label
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="16"
 						HorizontalOptions="EndAndExpand"
 						HorizontalTextAlignment="End"
@@ -247,7 +247,7 @@
 											<TapGestureRecognizer Tapped="PickDateStackLayoutTapped" />
 										</StackLayout.GestureRecognizers>
 										<Label
-											FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="16"
 											HorizontalOptions="CenterAndExpand"
 											HorizontalTextAlignment="Center"
@@ -259,7 +259,7 @@
 										</Label>
 
 										<Label
-											FontFamily="{StaticResource PoppinsRegularFontFamily}"
+											FontFamily="PoppinsRegularFontFamily"
 											FontSize="12"
 											HorizontalOptions="CenterAndExpand"
 											HorizontalTextAlignment="Center"
@@ -284,7 +284,7 @@
 				<Label
 					Grid.Row="12"
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Pick a time"
@@ -332,7 +332,7 @@
 					BackgroundColor="#6263ED"
 					Command="{Binding WellnessCartBookingTimeUpdateCommand}"
 					CornerRadius="10"
-					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HeightRequest="48"
 					Text="Go to payment"

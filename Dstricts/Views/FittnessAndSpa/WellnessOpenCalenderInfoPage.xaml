@@ -74,7 +74,7 @@
 			Grid.ColumnSpan="3"
 			Spacing="0">
 			<Label
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="18"
 				Opacity="0.4"
 				Text="{Binding WellnessName}"
@@ -83,7 +83,7 @@
 
 			<Label
 				FontAttributes="Bold"
-				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontFamily="PoppinsBoldFontFamily"
 				FontSize="32"
 				Text="{Binding SelectedWellnessServiceInfo.DishName}"
 				TextColor="White"
@@ -101,7 +101,7 @@
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
 			FontAttributes="Bold"
-			FontFamily="{StaticResource PoppinsBoldFontFamily}"
+			FontFamily="PoppinsBoldFontFamily"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
 			Text="Pick a date"
@@ -139,7 +139,7 @@
 									<TapGestureRecognizer Tapped="PickDateStackLayoutTapped" />
 								</StackLayout.GestureRecognizers>
 								<Label
-									FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="16"
 									HorizontalOptions="CenterAndExpand"
 									HorizontalTextAlignment="Center"
@@ -151,7 +151,7 @@
 								</Label>
 
 								<Label
-									FontFamily="{StaticResource PoppinsRegularFontFamily}"
+									FontFamily="PoppinsRegularFontFamily"
 									FontSize="12"
 									HorizontalOptions="CenterAndExpand"
 									HorizontalTextAlignment="Center"
@@ -179,7 +179,7 @@
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
 			FontAttributes="Bold"
-			FontFamily="{StaticResource PoppinsBoldFontFamily}"
+			FontFamily="PoppinsBoldFontFamily"
 			FontSize="16"
 			HorizontalTextAlignment="Start"
 			Text="Pick a time"
@@ -226,7 +226,7 @@
 					Grid.Column="1"
 					Margin="20,0,0,0"
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsBoldFontFamily}"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="18"
 					HorizontalTextAlignment="Start"
 					Text="{Binding WellnessOpenCalenderInfo.WorkTime}"
@@ -246,7 +246,7 @@
 						<TapGestureRecognizer Command="{Binding WorkTimeSelectedCommand}" />
 					</StackLayout.GestureRecognizers>
 					<Label
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="18"
 						TextColor="White">
 						<Label.FormattedText>
@@ -262,7 +262,7 @@
 					</Label>
 
 					<Label
-						FontFamily="{StaticResource PoppinsRegularFontFamily}"
+						FontFamily="PoppinsRegularFontFamily"
 						FontSize="14"
 						Opacity="0.4"
 						Text="Duration"
@@ -282,7 +282,7 @@
 			BackgroundColor="#6263ED"
 			Command="{Binding WellnessCartBookingTimeUpdateCommand}"
 			CornerRadius="10"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="16"
 			HeightRequest="48"
 			Text="Go to payment"

@@ -31,7 +31,7 @@
 			Padding="0"
 			BackgroundColor="#342B20"
 			CornerRadius="12"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="12"
 			HeightRequest="32"
 			HorizontalOptions="EndAndExpand"
@@ -51,7 +51,7 @@
 				<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 					<Label
 						FontAttributes="Bold"
-						FontFamily="{StaticResource PoppinsBoldFontFamily}"
+						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						Text="Check-in code"
 						TextColor="White" />
@@ -63,8 +63,8 @@
 						TextColor="White">
 						<Label.FormattedText>
 							<FormattedString>
-								<Span FontFamily="{StaticResource PoppinsRegularFontFamily}" Text="Enter the check-in code we sent to " />
-								<Span FontFamily="{StaticResource PoppinsSemiBoldFontFamily}" Text="{Binding UserEmail}" />
+								<Span FontFamily="PoppinsRegularFontFamily" Text="Enter the check-in code we sent to " />
+								<Span FontFamily="PoppinsSemiBoldFontFamily" Text="{Binding UserEmail}" />
 								<Span Text=" 👋" />
 							</FormattedString>
 						</Label.FormattedText>
@@ -83,7 +83,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password1}"
@@ -100,7 +100,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password2}"
@@ -117,7 +117,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password3}"
@@ -134,7 +134,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password4}"
@@ -151,7 +151,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password5}"
@@ -168,7 +168,7 @@
 							CornerRadius="10"
 							IsClippedToBounds="True">
 							<Label
-								FontFamily="{StaticResource PoppinsRegularFontFamily}"
+								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Center"
 								Text="{Binding Password6}"
@@ -199,7 +199,7 @@
 						WidthRequest="91" />
 					<Label
 						Grid.Row="0"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="1"
@@ -223,7 +223,7 @@
 					<Label
 						Grid.Row="0"
 						Grid.Column="1"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="2"
@@ -246,7 +246,7 @@
 					<Label
 						Grid.Row="0"
 						Grid.Column="2"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="3"
@@ -269,7 +269,7 @@
 					<Label
 						Grid.Row="1"
 						Grid.Column="0"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="4"
@@ -292,7 +292,7 @@
 					<Label
 						Grid.Row="1"
 						Grid.Column="1"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="5"
@@ -315,7 +315,7 @@
 					<Label
 						Grid.Row="1"
 						Grid.Column="2"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="6"
@@ -338,7 +338,7 @@
 					<Label
 						Grid.Row="2"
 						Grid.Column="0"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="7"
@@ -361,7 +361,7 @@
 					<Label
 						Grid.Row="2"
 						Grid.Column="1"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="8"
@@ -384,7 +384,7 @@
 					<Label
 						Grid.Row="2"
 						Grid.Column="2"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="9"
@@ -432,7 +432,7 @@
 					<Label
 						Grid.Row="3"
 						Grid.Column="1"
-						FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="0"

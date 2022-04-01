@@ -49,7 +49,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			Text="{Binding WellnessName}"
@@ -125,7 +125,7 @@
 			<Label
 				Grid.Row="1"
 				Grid.Column="0"
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="12"
 				HorizontalTextAlignment="Start"
 				Text="Open to 11pm"
@@ -148,7 +148,7 @@
 						Spacing="5">
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalOptions="CenterAndExpand"
 							Text="924"
@@ -156,7 +156,7 @@
 
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="13"
 							HorizontalOptions="CenterAndExpand"
 							Text="Posts"
@@ -169,7 +169,7 @@
 						Spacing="5">
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalOptions="CenterAndExpand"
 							Text="42,9 k"
@@ -177,7 +177,7 @@
 
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="13"
 							HorizontalOptions="CenterAndExpand"
 							Text="Followers"
@@ -190,7 +190,7 @@
 						Spacing="5">
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalOptions="CenterAndExpand"
 							Text="{Binding FollowingCount}"
@@ -198,7 +198,7 @@
 
 						<Label
 							Grid.Column="0"
-							FontFamily="{StaticResource PoppinsRegularFontFamily}"
+							FontFamily="PoppinsRegularFontFamily"
 							FontSize="13"
 							HorizontalOptions="CenterAndExpand"
 							Text="Following"
@@ -215,7 +215,7 @@
 					Command="{Binding WellnessUpdateFollowingCommand}"
 					CornerRadius="4"
 					FontAttributes="Bold"
-					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="12"
 					Text="{Binding FollowOrFollowing}"
 					TextColor="White" />
@@ -272,7 +272,7 @@
 				<Label
 					Grid.Row="2"
 					Grid.Column="1"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Opacity="0.7"
@@ -294,7 +294,7 @@
 				<Label
 					Grid.Row="2"
 					Grid.Column="3"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Opacity="0.7"
@@ -317,7 +317,7 @@
 				<Label
 					Grid.Row="2"
 					Grid.Column="5"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Opacity="0.7"
@@ -343,7 +343,7 @@
 				<Label
 					Grid.Row="2"
 					Grid.Column="7"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Opacity="0.7"
@@ -361,7 +361,7 @@
 					Grid.Row="6"
 					Grid.Column="1"
 					Grid.ColumnSpan="7"
-					FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="{Binding PostsAndVideos}"
@@ -372,7 +372,7 @@
 					Grid.Row="7"
 					Grid.Column="1"
 					Grid.ColumnSpan="7"
-					FontFamily="{StaticResource PoppinsRegularFontFamily}"
+					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Start"
 					Opacity="0.4"
@@ -416,7 +416,7 @@
 				BorderColor="White"
 				BorderWidth="2"
 				CornerRadius="10"
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="12"
 				HeightRequest="45"
 				Text="Scan QR Code"

@@ -51,7 +51,7 @@
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
 			LineBreakMode="TailTruncation"
@@ -83,7 +83,7 @@
 			Grid.ColumnSpan="3"
 			Spacing="0">
 			<Label
-				FontFamily="{StaticResource PoppinsRegularFontFamily}"
+				FontFamily="PoppinsRegularFontFamily"
 				FontSize="18"
 				Opacity="0.4"
 				Text="Select"
@@ -92,7 +92,7 @@
 
 			<Label
 				FontAttributes="Bold"
-				FontFamily="{StaticResource PoppinsBoldFontFamily}"
+				FontFamily="PoppinsBoldFontFamily"
 				FontSize="32"
 				Text="A child"
 				TextColor="White"
@@ -109,7 +109,7 @@
 			Grid.Row="6"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="18"
 			Text="Children"
 			TextColor="White"
@@ -119,7 +119,7 @@
 			Grid.Row="7"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			FontFamily="{StaticResource PoppinsRegularFontFamily}"
+			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			Opacity="0.4"
 			Text="Select a child at a time and submit."
@@ -170,7 +170,7 @@
 									Grid.Column="1"
 									VerticalOptions="StartAndExpand">
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
 										MaxLines="1"
@@ -178,7 +178,7 @@
 										TextColor="White" />
 
 									<Label
-										FontFamily="{StaticResource PoppinsRegularFontFamily}"
+										FontFamily="PoppinsRegularFontFamily"
 										FontSize="12"
 										LineBreakMode="TailTruncation"
 										LineHeight="1.2"
@@ -212,7 +212,7 @@
 			BackgroundColor="#6263ED"
 			Command="{Binding AddDependentChekinCommand}"
 			CornerRadius="10"
-			FontFamily="{StaticResource PoppinsSemiBoldFontFamily}"
+			FontFamily="PoppinsSemiBoldFontFamily"
 			IsVisible="False"
 			Text="Submit"
 			TextColor="White" />
