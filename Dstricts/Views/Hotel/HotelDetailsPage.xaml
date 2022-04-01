@@ -69,24 +69,24 @@
 				Grid.Row="1"
 				Grid.Column="1"
 				Grid.ColumnSpan="4"
-				Margin="0,31,0,0"
+				Margin="0,26,0,0"
 				VerticalScrollBarVisibility="Never">
 				<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 					<Label
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="18"
-						LineHeight="1.2"
+						LineHeight="1.845"
 						Opacity="0.4"
 						Text="Welcome"
 						TextColor="White" />
 
 					<Label
-						Margin="0,9,0,28"
+						Margin="0,4,0,28"
 						FontAttributes="Bold"
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="2.6"
 						Text="{Binding HotelDetails.FirstName}"
 						TextColor="White" />
 
@@ -100,53 +100,32 @@
 								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True">
-								<Grid RowSpacing="0">
-									<Grid.RowDefinitions>
-										<RowDefinition Height="36" />
-										<RowDefinition Height="9" />
-										<RowDefinition Height="72" />
-										<RowDefinition Height="25" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="38" />
-										<RowDefinition Height="40" />
-									</Grid.RowDefinitions>
+								<StackLayout>
 									<Label
-										Grid.Row="0"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="2.25"
 										Text="Your details"
 										TextColor="White" />
 
 									<Label
-										Grid.Row="2"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.5"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="This part is about your details. Click on read more button to  find out more."
 										TextColor="White" />
 
 									<Label
-										Grid.Row="4"
+										Margin="0,10,0,13"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										TextColor="White">
 										<Label.FormattedText>
 											<FormattedString>
@@ -158,18 +137,19 @@
 									</Label>
 
 									<BoxView
-										Grid.Row="6"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Label
-										Grid.Row="8"
+										Margin="0,10,0,10"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										TextColor="White">
 										<Label.FormattedText>
 											<FormattedString>
@@ -182,30 +162,32 @@
 									</Label>
 
 									<BoxView
-										Grid.Row="10"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Label
-										Grid.Row="12"
+										Margin="0,10,0,10"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										Text="{Binding HotelDetails.RoomType}"
 										TextColor="White" />
 
 									<BoxView
-										Grid.Row="14"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Button
-										Grid.Row="16"
+										Margin="0,38,0,0"
 										Padding="0"
 										BackgroundColor="#3EC4D5"
 										CornerRadius="8"
@@ -215,7 +197,7 @@
 										Text="Read more"
 										TextColor="#181A1F"
 										WidthRequest="128" />
-								</Grid>
+								</StackLayout>
 							</Frame>
 
 							<Frame
@@ -227,49 +209,28 @@
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
 								IsVisible="{Binding HotelDetails.WifiAvailable}">
-								<Grid RowSpacing="0">
-									<Grid.RowDefinitions>
-										<RowDefinition Height="36" />
-										<RowDefinition Height="9" />
-										<RowDefinition Height="72" />
-										<RowDefinition Height="25" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="38" />
-										<RowDefinition Height="40" />
-									</Grid.RowDefinitions>
+								<StackLayout>
 									<Label
-										Grid.Row="0"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="2.25"
 										Text="Get Wi-Fi"
 										TextColor="#4C7CE5" />
 
 									<Label
-										Grid.Row="2"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.5"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="Here are the credentials for accessing Wi-Fi."
 										TextColor="White" />
 
 									<StackLayout
-										Grid.Row="4"
+										Margin="0,49,0,9"
 										Orientation="Horizontal"
 										Spacing="20"
 										VerticalOptions="CenterAndExpand">
@@ -277,7 +238,7 @@
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="User"
 											TextColor="#4C7CE5" />
 
@@ -285,18 +246,19 @@
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="{Binding HotelDetails.WifiUsername}"
 											TextColor="White" />
 									</StackLayout>
 
 									<BoxView
-										Grid.Row="6"
 										BackgroundColor="White"
-										Opacity="0.2" />
+										HeightRequest="1"
+										Opacity="0.2"
+										VerticalOptions="StartAndExpand" />
 
 									<StackLayout
-										Grid.Row="8"
+										Margin="0,11,0,10"
 										Orientation="Horizontal"
 										Spacing="20"
 										VerticalOptions="EndAndExpand">
@@ -304,7 +266,7 @@
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="Pass:"
 											TextColor="#4C7CE5"
 											VerticalOptions="EndAndExpand" />
@@ -313,19 +275,20 @@
 											FontFamily="PoppinsRegularFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="{Binding HotelDetails.WifiPassword}"
 											TextColor="White"
 											VerticalOptions="EndAndExpand" />
 									</StackLayout>
 
 									<BoxView
-										Grid.Row="10"
 										BackgroundColor="White"
-										Opacity="0.2" />
+										HeightRequest="1"
+										Opacity="0.2"
+										VerticalOptions="StartAndExpand" />
 
 									<Button
-										Grid.Row="16"
+										Margin="0,84,0,0"
 										Padding="0"
 										BackgroundColor="#4C7CE5"
 										CornerRadius="8"
@@ -335,7 +298,7 @@
 										Text="Click, if connected"
 										TextColor="White"
 										WidthRequest="175" />
-								</Grid>
+								</StackLayout>
 							</Frame>
 
 							<Frame
@@ -347,49 +310,28 @@
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
 								IsVisible="{Binding HotelDetails.GuestCheckinLeft}">
-								<Grid RowSpacing="0">
-									<Grid.RowDefinitions>
-										<RowDefinition Height="36" />
-										<RowDefinition Height="9" />
-										<RowDefinition Height="72" />
-										<RowDefinition Height="25" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="38" />
-										<RowDefinition Height="40" />
-									</Grid.RowDefinitions>
+								<StackLayout>
 									<Label
-										Grid.Row="0"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="2.25"
 										Text="Complete check-ins"
 										TextColor="White" />
 
 									<Label
-										Grid.Row="2"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.5"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="All your guests has not checked-in yet. Please complete check-in flow for all of them"
 										TextColor="White" />
 
 									<StackLayout
-										Grid.Row="4"
+										Margin="0,14,0,9"
 										Orientation="Horizontal"
 										Spacing="20"
 										VerticalOptions="CenterAndExpand">
@@ -397,7 +339,7 @@
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="Checked in"
 											TextColor="#995A9C" />
 
@@ -406,7 +348,7 @@
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
 											LineBreakMode="TailTruncation"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											MaxLines="1"
 											TextColor="White">
 											<Label.FormattedText>
@@ -421,12 +363,13 @@
 									</StackLayout>
 
 									<BoxView
-										Grid.Row="6"
 										BackgroundColor="White"
-										Opacity="0.2" />
+										HeightRequest="1"
+										Opacity="0.2"
+										VerticalOptions="StartAndExpand" />
 
 									<StackLayout
-										Grid.Row="8"
+										Margin="0,11,0,10"
 										Orientation="Horizontal"
 										Spacing="20"
 										VerticalOptions="EndAndExpand">
@@ -434,7 +377,7 @@
 											FontFamily="PoppinsSemiBoldFontFamily"
 											FontSize="14"
 											HorizontalOptions="StartAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											Text="Left"
 											TextColor="#995A9C"
 											VerticalOptions="EndAndExpand" />
@@ -443,7 +386,7 @@
 											FontFamily="PoppinsRegularFontFamily"
 											FontSize="14"
 											HorizontalOptions="EndAndExpand"
-											LineHeight="1.2"
+											LineHeight="1.4875"
 											TextColor="White"
 											VerticalOptions="EndAndExpand">
 											<Label.FormattedText>
@@ -458,12 +401,13 @@
 									</StackLayout>
 
 									<BoxView
-										Grid.Row="10"
 										BackgroundColor="White"
-										Opacity="0.2" />
+										HeightRequest="1"
+										Opacity="0.2"
+										VerticalOptions="StartAndExpand" />
 
 									<Button
-										Grid.Row="16"
+										Margin="0,84,0,0"
 										Padding="0"
 										BackgroundColor="#D23CE6"
 										Command="{Binding GoToAdultsAndChildrenPageCommand}"
@@ -474,7 +418,7 @@
 										Text="Complete remaining"
 										TextColor="White"
 										WidthRequest="203" />
-								</Grid>
+								</StackLayout>
 							</Frame>
 
 							<Frame
@@ -486,97 +430,77 @@
 								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True">
-								<Grid RowSpacing="0">
-									<Grid.RowDefinitions>
-										<RowDefinition Height="36" />
-										<RowDefinition Height="9" />
-										<RowDefinition Height="72" />
-										<RowDefinition Height="25" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="10" />
-										<RowDefinition Height="24" />
-										<RowDefinition Height="13" />
-										<RowDefinition Height="1" />
-										<RowDefinition Height="38" />
-										<RowDefinition Height="40" />
-									</Grid.RowDefinitions>
+								<StackLayout>
 									<Label
-										Grid.Row="0"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
-										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="2.25"
 										Text="Rules"
 										TextColor="White" />
 
 									<Label
-										Grid.Row="2"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.5"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="Here are rules we expect our guest to follow to make sure everybody has a pleasant stay"
 										TextColor="White" />
 
 									<Label
-										Grid.Row="4"
+										Margin="0,10,0,13"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
-										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										Text="No smoking"
 										TextColor="White" />
 
 									<BoxView
-										Grid.Row="6"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Label
-										Grid.Row="8"
+										Margin="0,10,0,10"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										Text="Check-in at 3pm"
 										TextColor="White" />
 
 									<BoxView
-										Grid.Row="10"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Label
-										Grid.Row="12"
+										Margin="0,10,0,10"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="14"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.4875"
 										Text="Check out at 11am"
 										TextColor="White" />
 
 									<BoxView
-										Grid.Row="14"
 										BackgroundColor="White"
+										HeightRequest="1"
 										HorizontalOptions="StartAndExpand"
 										Opacity="0.2"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="197" />
 
 									<Button
-										Grid.Row="16"
+										Margin="0,38,0,0"
 										Padding="0"
 										BackgroundColor="#FF9129"
 										CornerRadius="8"
@@ -586,7 +510,7 @@
 										Text="Late check out?"
 										TextColor="#181A1F"
 										WidthRequest="158" />
-								</Grid>
+								</StackLayout>
 							</Frame>
 						</StackLayout>
 					</ScrollView>
@@ -596,7 +520,7 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Find us"
 						TextColor="White" />
 
@@ -619,12 +543,12 @@
 							<StackLayout
 								Grid.Row="0"
 								Grid.Column="0"
-								Spacing="1">
+								Spacing="4">
 								<Label
 									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
 									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="2.25"
 									Text="Address"
 									TextColor="#181A1F" />
 
@@ -632,7 +556,7 @@
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="1.21875"
 									MaxLines="2"
 									Text="{Binding HotelDetails.VisitingAddress}"
 									TextColor="#181A1F" />
@@ -675,14 +599,11 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Order"
 						TextColor="White" />
 
-					<Grid
-						Margin="0,0,18,0"
-						ColumnSpacing="19"
-						HeightRequest="178">
+					<Grid Margin="0,0,18,0" ColumnSpacing="19">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*" />
 							<ColumnDefinition Width="*" />
@@ -696,44 +617,37 @@
 							CornerRadius="10"
 							HasShadow="False"
 							IsClippedToBounds="True">
-							<Grid RowSpacing="0">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="28" />
-									<RowDefinition Height="7" />
-									<RowDefinition Height="45" />
-									<RowDefinition Height="16" />
-									<RowDefinition Height="36" />
-								</Grid.RowDefinitions>
+							<StackLayout>
 								<Label
-									Grid.Row="0"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
+									LineHeight="1.845"
 									Text="Clean Room"
 									TextColor="White" />
 
 								<Label
-									Grid.Row="2"
+									Margin="0,7,0,16"
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="1.21875"
 									MaxLines="2"
 									Opacity="0.7"
 									Text="Your room is up for cleaning."
 									TextColor="White" />
 
 								<Button
-									Grid.Row="4"
 									Padding="0"
 									BackgroundColor="#E53614"
 									CornerRadius="8"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="12"
+									HeightRequest="36"
 									HorizontalOptions="StartAndExpand"
 									Text="Regret"
 									TextColor="White"
 									WidthRequest="77" />
-							</Grid>
+							</StackLayout>
 						</Frame>
 
 						<Frame
@@ -743,46 +657,39 @@
 							CornerRadius="10"
 							HasShadow="False"
 							IsClippedToBounds="True">
-							<Grid RowSpacing="0">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="28" />
-									<RowDefinition Height="7" />
-									<RowDefinition Height="45" />
-									<RowDefinition Height="16" />
-									<RowDefinition Height="36" />
-								</Grid.RowDefinitions>
+							<StackLayout>
 								<Label
-									Grid.Row="0"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
 									LineBreakMode="TailTruncation"
+									LineHeight="1.6875"
 									MaxLines="1"
 									Text="Don't Disturb"
 									TextColor="White" />
 
 								<Label
-									Grid.Row="2"
+									Margin="0,7,0,16"
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="1.21875"
 									MaxLines="2"
 									Opacity="0.7"
 									Text="Click to activate this request"
 									TextColor="White" />
 
 								<Button
-									Grid.Row="4"
 									Padding="0"
 									BackgroundColor="#406B4B"
 									CornerRadius="8"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="12"
+									HeightRequest="36"
 									HorizontalOptions="StartAndExpand"
 									Text="Activate it"
 									TextColor="White"
 									WidthRequest="86" />
-							</Grid>
+							</StackLayout>
 						</Frame>
 					</Grid>
 
@@ -805,12 +712,11 @@
 							<StackLayout
 								Grid.Row="0"
 								Grid.Column="0"
-								Spacing="1">
+								Spacing="4">
 								<Label
 									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
-									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="2.25"
 									Text="Problems"
 									TextColor="White" />
 
@@ -818,7 +724,7 @@
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
+									LineHeight="1.21875"
 									MaxLines="2"
 									Opacity="0.7"
 									Text="If you have a problem. Create a ticket for help!"
@@ -839,6 +745,7 @@
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="14"
 									HorizontalOptions="CenterAndExpand"
+									LineHeight="1.4875"
 									MaxLines="1"
 									Text="Create"
 									TextColor="White"
@@ -852,7 +759,7 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="20"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Room services"
 						TextColor="White" />
 
@@ -897,7 +804,7 @@
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.64"
 										MaxLines="2"
 										Text="Free amenities to your room"
 										TextColor="#E08D70">
@@ -950,7 +857,7 @@
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.64"
 										MaxLines="2"
 										Text="Free laundry to your room"
 										TextColor="#E08D70">
@@ -1004,7 +911,7 @@
 										HorizontalOptions="CenterAndExpand"
 										HorizontalTextAlignment="Center"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.2"
+										LineHeight="1.64"
 										MaxLines="2"
 										Text="Free Eat &amp; Drink to your room"
 										TextColor="#E08D70">
@@ -1029,7 +936,7 @@
 						FontSize="20"
 						IsVisible="{Binding IsInhouseResturantsList}"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Resturants"
 						TextColor="White" />
 
@@ -1128,7 +1035,7 @@
 						FontSize="20"
 						IsVisible="{Binding IsInhouseFittnessList}"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Wellness &amp; Fitness"
 						TextColor="White" />
 
@@ -1226,7 +1133,7 @@
 						FontSize="20"
 						IsVisible="{Binding IsHotelVenuesList}"
 						LineBreakMode="TailTruncation"
-						LineHeight="1.2"
+						LineHeight="1.875"
 						Text="Event &amp; Meetings"
 						TextColor="White" />
 

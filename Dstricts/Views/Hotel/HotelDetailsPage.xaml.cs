@@ -37,8 +37,9 @@ namespace Dstricts.Views.Hotel
 			//BindEatDrinkAtTheHotelInfo();
 			//BindFitnessSpaInfo();
 			int deviceWidth = App.ScreenWidth - 56;
-			int widthUserDetails = deviceWidth * 75 / 100;
+			int widthUserDetails = deviceWidth * 83 / 100;
 			frameYourDetails.WidthRequest = widthUserDetails;
+
 			frameGetWiFi.WidthRequest = widthUserDetails;
 			frameCompleteCheckIns.WidthRequest = widthUserDetails;
 			frameRules.WidthRequest = widthUserDetails;
