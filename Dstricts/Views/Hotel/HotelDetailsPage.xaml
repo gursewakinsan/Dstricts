@@ -72,31 +72,32 @@
 				Margin="0,26,0,0"
 				VerticalScrollBarVisibility="Never">
 				<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
-					<Label Margin="0,5,0,5"
+					<StackLayout VerticalOptions="Start" HeightRequest="76">
+						<Label 
 						FontFamily="PoppinsSemiBoldFontFamily"
-						FontSize="18"
-						LineHeight="1.1"
+						FontSize="18" VerticalOptions="StartAndExpand"
 						Opacity="0.4" 
 						Text="Welcome"
 						TextColor="White" />
 
 					<Label
-						Margin="0,0,0,33"
 						FontAttributes="Bold"
 						FontFamily="PoppinsBoldFontFamily"
-						FontSize="32"
-						LineBreakMode="TailTruncation" VerticalTextAlignment="Start"
-						LineHeight="1.1" VerticalOptions="StartAndExpand"
+						FontSize="32" Margin="0,0,0,6"
+						LineBreakMode="TailTruncation" 
+						 VerticalOptions="EndAndExpand"
 						Text="{Binding HotelDetails.FirstName}"
 						TextColor="White" />
+					</StackLayout>
+					
 
-					<ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+					<ScrollView Margin="0,28,0,0" HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
 						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20">
 							<Frame
 								x:Name="frameYourDetails"
 								Padding="24,40,25,33"
 								BackgroundColor="#282732"
-								CornerRadius="20"
+								CornerRadius="12"
 								HasShadow="False" VerticalOptions="StartAndExpand"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True">
@@ -114,7 +115,7 @@
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.5"
+										LineHeight="1.2"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="This part is about your details. Click on read more button to  find out more."
@@ -201,7 +202,7 @@
 								x:Name="frameGetWiFi"
 								Padding="24,40,25,33"
 								BackgroundColor="#242A37"
-								CornerRadius="20"
+								CornerRadius="12"
 								HasShadow="False" VerticalOptions="StartAndExpand"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
@@ -220,7 +221,7 @@
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.5"
+										LineHeight="1.2"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="Here are the credentials for accessing Wi-Fi."
@@ -302,7 +303,7 @@
 								x:Name="frameCompleteCheckIns"
 								Padding="24,40,25,33"
 								BackgroundColor="#342334"
-								CornerRadius="20" VerticalOptions="StartAndExpand"
+								CornerRadius="12" VerticalOptions="StartAndExpand"
 								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
@@ -320,7 +321,7 @@
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.5"
+										LineHeight="1.2"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="All your guests has not checked-in yet. Please complete check-in flow for all of them"
@@ -418,7 +419,7 @@
 								Margin="0,0,28,0"
 								Padding="24,40,25,33"
 								BackgroundColor="#342B20"
-								CornerRadius="20"
+								CornerRadius="12"
 								HasShadow="False" VerticalOptions="StartAndExpand"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True">
@@ -435,7 +436,7 @@
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="16"
 										LineBreakMode="TailTruncation"
-										LineHeight="1.5"
+										LineHeight="1.2"
 										MaxLines="3"
 										Opacity="0.7"
 										Text="Here are rules we expect our guest to follow to make sure everybody has a pleasant stay"
@@ -589,17 +590,18 @@
 						Text="Order"
 						TextColor="White" />
 
-					<Grid Margin="0,0,18,0" ColumnSpacing="19">
+					<Grid Margin="0,0,28,0" ColumnSpacing="19">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*" />
 							<ColumnDefinition Width="*" />
 						</Grid.ColumnDefinitions>
 
-						<Frame
+						<BoxView Grid.Column="0" CornerRadius="10" BackgroundColor="#45C366"/>
+
+						<Frame Margin="3"
 							Grid.Column="0"
 							Padding="17,25,17,21"
 							BackgroundColor="#282732"
-							BorderColor="#45C366"
 							CornerRadius="10"
 							HasShadow="False"
 							IsClippedToBounds="True">
