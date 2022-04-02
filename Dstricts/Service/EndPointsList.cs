@@ -100,6 +100,9 @@
 
 		//Venue Service
 		public const string VenueInfomationDetailUrl = "https://www.qloudid.com/user/index.php/QloudidApp/venueInfomationDetail";
+
+		//Visitors
+		public const string InvitedVisitorsMeetingListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/invitedVisitorsMeetingList";
 	}
 }
 

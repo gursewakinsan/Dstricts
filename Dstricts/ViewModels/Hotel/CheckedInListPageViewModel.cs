@@ -99,6 +99,9 @@ namespace Dstricts.ViewModels
 				case "verify_adult_checkin":
 					VerifyUserInvitationInfoCommand.Execute(codeInfo[2]);
 					break;
+				case "verify_visitor":
+					InvitedVisitorsMeetingListCommand.Execute(codeInfo[2]);
+					break;
 			}
 			await Task.CompletedTask;
 		}
@@ -200,6 +203,29 @@ namespace Dstricts.ViewModels
 			// if 1 then current flow same as
 			// if 3 then naviagte to already checked in page
 			//if 2 then new page "Front desk"
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Invited Visitors Meeting List Command.
+		private ICommand invitedVisitorsMeetingListCommand;
+		public ICommand InvitedVisitorsMeetingListCommand
+		{
+			get => invitedVisitorsMeetingListCommand ?? (invitedVisitorsMeetingListCommand = new Command<string>(async (locationId) => await ExecuteInvitedVisitorsMeetingListCommand(locationId)));
+		}
+		private async Task ExecuteInvitedVisitorsMeetingListCommand(string locationId)
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IVisitorsService service = new VisitorsService();
+			var response = await service.InvitedVisitorsMeetingListAsync(new Models.InvitedVisitorsMeetingListRequest()
+			{
+				LocationId = locationId,
+				UserId = Helper.Helper.LoggedInUserId,
+			});
+			if (response?.Count > 0)
+				await Navigation.PushAsync(new Views.Visitors.InvitedVisitorsMeetingListPage(response));
+			else
+				await Navigation.PushAsync(new Views.ErrorMessage.InvitedVisitorsMeetingListNotAvailablePage());
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
