@@ -105,14 +105,19 @@
 				<StackLayout Margin="0,31,0,0" BindableLayout.ItemsSource="{Binding InvitedVisitorsMeetingList}">
 					<BindableLayout.ItemTemplate>
 						<DataTemplate>
+
+						<Grid Margin="0,0,0,20">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="80"/>
+							</Grid.RowDefinitions>
+							<BoxView Grid.Row="0" CornerRadius="16" BackgroundColor="{Binding VisitorsCardBorderColor}"/>
+
 							<Frame
-								Margin="0,0,0,20"
+								Grid.Row="0"
 								Padding="28,0,25,0"
-								BackgroundColor="Transparent"
-								BorderColor="{Binding VisitorsCardBorderColor}"
-								CornerRadius="16"
-								HasShadow="False"
-								HeightRequest="86"
+								BackgroundColor="#181A1F"
+								HasShadow="False" Margin="2"
+								HeightRequest="86" CornerRadius="16"
 								IsClippedToBounds="True"
 								VerticalOptions="StartAndExpand">
 								<Frame.GestureRecognizers>
@@ -128,7 +133,7 @@
 									</Grid.GestureRecognizers>
 									<Label
 										Grid.Column="0"
-										FontFamily="SansProSemiBoldFontFamily"
+										FontFamily="PoppinsSemiBoldFontFamily"
 										FontSize="18"
 										HorizontalTextAlignment="Start"
 										LineBreakMode="TailTruncation"
@@ -165,6 +170,8 @@
 									</Label>
 								</Grid>
 							</Frame>
+						</Grid>
+							
 						</DataTemplate>
 					</BindableLayout.ItemTemplate>
 				</StackLayout>
