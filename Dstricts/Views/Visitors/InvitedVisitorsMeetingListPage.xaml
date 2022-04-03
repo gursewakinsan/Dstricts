@@ -2,13 +2,188 @@
 <ContentPage
 	x:Class="Dstricts.Views.Visitors.InvitedVisitorsMeetingListPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-	<ContentPage.Content>
-		<StackLayout>
-			<Label
-				HorizontalOptions="CenterAndExpand"
-				Text="Welcome to Xamarin.Forms!"
-				VerticalOptions="CenterAndExpand" />
-		</StackLayout>
-	</ContentPage.Content>
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+	<Grid
+		Margin="0,14,0,5"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="70" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Margin="-10,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="Dstricts"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<ScrollView
+			Grid.Row="1"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			VerticalScrollBarVisibility="Never">
+			<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+				<StackLayout
+					Margin="0,26,0,0"
+					HeightRequest="108"
+					HorizontalOptions="StartAndExpand"
+					Spacing="0">
+					<Label
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						Opacity="0.4"
+						Text="Your meetings today at"
+						TextColor="White"
+						VerticalTextAlignment="Start" />
+
+					<Label
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="32"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="{Binding InvitedVisitorsMeetingInfo.Address}"
+						TextColor="White"
+						VerticalTextAlignment="End" />
+				</StackLayout>
+
+				<Label
+					Margin="0,48,0,3"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Pick one"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+				<Label
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					LineBreakMode="TailTruncation"
+					MaxLines="2"
+					Opacity="0.4"
+					Text="Select the person you will meet and to notify your arrival."
+					TextColor="White"
+					VerticalTextAlignment="Start" />
+
+				<StackLayout Margin="0,31,0,0" BindableLayout.ItemsSource="{Binding InvitedVisitorsMeetingList}">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate>
+							<Frame
+								Margin="0,0,0,20"
+								Padding="28,0,25,0"
+								BackgroundColor="Transparent"
+								BorderColor="{Binding VisitorsCardBorderColor}"
+								CornerRadius="16"
+								HasShadow="False"
+								HeightRequest="86"
+								IsClippedToBounds="True"
+								VerticalOptions="StartAndExpand">
+								<Frame.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnFrameVisitorsItemTapped" />
+								</Frame.GestureRecognizers>
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="24" />
+									</Grid.ColumnDefinitions>
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnGridVisitorsItemTapped" />
+									</Grid.GestureRecognizers>
+									<Label
+										Grid.Column="0"
+										FontFamily="SansProSemiBoldFontFamily"
+										FontSize="18"
+										HorizontalTextAlignment="Start"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Opacity="{Binding VisitorsNameTextOpacity}"
+										Text="{Binding Name}"
+										TextColor="White"
+										VerticalTextAlignment="Center">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelVisitorsItemTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<BoxView
+										Grid.Column="1"
+										BackgroundColor="White"
+										HeightRequest="15"
+										HorizontalOptions="CenterAndExpand"
+										Opacity="{Binding VisitorsNameTextOpacity}"
+										VerticalOptions="CenterAndExpand"
+										WidthRequest="15" />
+
+									<Label
+										Grid.Column="1"
+										FontFamily="{StaticResource MaterialFontFamily}"
+										FontSize="24"
+										HorizontalTextAlignment="End"
+										Text="{x:Static fontawesome:DstrictsAppFlatIcons.CheckboxMarked}"
+										TextColor="{Binding VisitorsCardBorderColor}"
+										VerticalTextAlignment="Center">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelVisitorsItemTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+								</Grid>
+							</Frame>
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+
+		<controls:CustomButton
+			Grid.Row="2"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#5663FF"
+			Command="{Binding SumbitSelectedInvitedVisitorsCommand}"
+			CornerRadius="10"
+			FontFamily="PoppinsSemiBoldFontFamily"
+			FontSize="16"
+			HeightRequest="50"
+			IsVisible="{Binding IsVisibleSubmit}"
+			Text="Submit"
+			TextColor="White"
+			VerticalOptions="EndAndExpand" />
+	</Grid>
 </ContentPage>

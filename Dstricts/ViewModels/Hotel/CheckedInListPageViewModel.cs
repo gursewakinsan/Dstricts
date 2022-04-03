@@ -223,7 +223,15 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId,
 			});
 			if (response?.Count > 0)
+			{
+				foreach (var visitors in response)
+				{
+					visitors.IsSelectedVisitors = false;
+					visitors.VisitorsCardBorderColor = Color.FromHex("#363541");
+					visitors.VisitorsNameTextOpacity = 0.4;
+				}
 				await Navigation.PushAsync(new Views.Visitors.InvitedVisitorsMeetingListPage(response));
+			}
 			else
 				await Navigation.PushAsync(new Views.ErrorMessage.InvitedVisitorsMeetingListNotAvailablePage());
 			DependencyService.Get<IProgressBar>().Hide();
