@@ -59,13 +59,13 @@
 			<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 				<StackLayout
 					Margin="0,26,0,0"
-					HeightRequest="108"
+					HeightRequest="72"
 					HorizontalOptions="StartAndExpand"
 					Spacing="0">
 					<Label
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="16"
-						Opacity="0.4"
+						Opacity="0.4" VerticalOptions="StartAndExpand"
 						Text="Your meetings today at"
 						TextColor="White"
 						VerticalTextAlignment="Start" />
@@ -75,7 +75,7 @@
 						FontFamily="PoppinsBoldFontFamily"
 						FontSize="32"
 						LineBreakMode="TailTruncation"
-						MaxLines="1"
+						MaxLines="1" VerticalOptions="EndAndExpand"
 						Text="{Binding InvitedVisitorsMeetingInfo.Address}"
 						TextColor="White"
 						VerticalTextAlignment="End" />
@@ -85,7 +85,7 @@
 					Margin="0,48,0,3"
 					FontAttributes="Bold"
 					FontFamily="PoppinsBoldFontFamily"
-					FontSize="32"
+					FontSize="20" HeightRequest="30"
 					LineBreakMode="TailTruncation"
 					MaxLines="1"
 					Text="Pick one"
@@ -95,9 +95,9 @@
 				<Label
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="16"
-					LineBreakMode="TailTruncation"
-					MaxLines="2"
-					Opacity="0.4"
+					LineBreakMode="TailTruncation" HeightRequest="43"
+					MaxLines="2" 
+					Opacity="0.4" LineHeight="0.95"
 					Text="Select the person you will meet and to notify your arrival."
 					TextColor="White"
 					VerticalTextAlignment="Start" />

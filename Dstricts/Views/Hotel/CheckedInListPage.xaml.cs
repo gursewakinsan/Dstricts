@@ -109,6 +109,7 @@ namespace Dstricts.Views.Hotel
 			};
 			scanPage.IsScanning = true;
 			await Navigation.PushModalAsync(scanPage);
+			//viewModel.InvitedVisitorsMeetingListCommand.Execute("clBsMkdxdkd2UG5vR1d0TWQ2UEFKdz09");
 		}
 	}
 }
