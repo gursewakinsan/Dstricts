@@ -1,5 +1,6 @@
 ﻿using UIKit;
 using Foundation;
+using System.Linq;
 
 namespace Dstricts.iOS
 {
@@ -27,7 +28,15 @@ namespace Dstricts.iOS
 		public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 		{
 			var App = (App)Xamarin.Forms.Application.Current;
-			App.LoginWithSession(url.PathComponents[1]);
+			if (!string.IsNullOrWhiteSpace(url.Path))
+			{
+				if (url.PathComponents.Count() == 4)
+				{
+					App.InvitedVisitorsMeetingListCommand.Execute(url.PathComponents[3]);
+				}
+				else
+					App.LoginWithSession(url.PathComponents[1]);
+			}
 			return false;
 		}
 	}
