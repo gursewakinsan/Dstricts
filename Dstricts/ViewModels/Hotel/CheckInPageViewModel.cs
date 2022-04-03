@@ -37,6 +37,11 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
+			var responseCheckedInMeetingList = await service.CheckedInMeetingListAsync(new Models.CheckedInMeetingListRequest()
+			{
+				UserId = Helper.Helper.LoggedInUserId
+			});
+
 			if (responseCheckedIn?.Count > 0)
 			{
 				foreach (var item in responseCheckedIn)

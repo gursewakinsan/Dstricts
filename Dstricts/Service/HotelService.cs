@@ -17,6 +17,15 @@ namespace Dstricts.Service
 			});
 		}
 
+		public Task<List<Models.CheckedInMeetingListResponse>> CheckedInMeetingListAsync(Models.CheckedInMeetingListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.CheckedInMeetingListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CheckedInMeetingListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
 		public Task<List<Models.CheckedInResponse>> CheckedInApartmentAsync(Models.CheckedInRequest request)
 		{
 			return Task.Factory.StartNew(() =>
