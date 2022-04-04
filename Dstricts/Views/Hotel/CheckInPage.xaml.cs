@@ -16,12 +16,15 @@ namespace Dstricts.Views.Hotel
 			BindingContext = viewModel = new CheckInPageViewModel(this.Navigation);
 		}
 
+		#region On Appearing.
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
 			viewModel.GetCheckInCommand.Execute(null);
 		}
+		#endregion
 
+		#region On Check In List Item Tapped.
 		private async void OnGridCheckInTapped(object sender, System.EventArgs e)
 		{
 			Grid grid = sender as Grid;
@@ -42,6 +45,12 @@ namespace Dstricts.Views.Hotel
 			Models.CheckedInResponse checkedIn = frame.BindingContext as Models.CheckedInResponse;
 			await OnCheckInListClicked(checkedIn);
 		}
+		private async void OnButtonCheckInTapped(object sender, System.EventArgs e)
+		{
+			Button button = sender as Button;
+			Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
+			await OnCheckInListClicked(checkedIn);
+		}
 		private async Task OnCheckInListClicked(Models.CheckedInResponse checkedIn)
 		{
 			if (checkedIn.Enc == 0) //Queue
@@ -55,5 +64,6 @@ namespace Dstricts.Views.Hotel
 			else if (checkedIn.Enc == 2) //Apartment
 				await Navigation.PushAsync(new Apartment.QloudIdApartmentDetailsPage(checkedIn));
 		}
+		#endregion
 	}
 }

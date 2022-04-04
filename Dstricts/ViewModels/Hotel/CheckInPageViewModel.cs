@@ -32,6 +32,10 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
+			responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 1" });
+			responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 2" });
+			responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 3" });
+
 			var responseCheckedInApartment = await service.CheckedInApartmentAsync(new Models.CheckedInRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId
@@ -41,6 +45,11 @@ namespace Dstricts.ViewModels
 			{
 				UserId = Helper.Helper.LoggedInUserId
 			});
+			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() {Name = "Name 1",CompanyName= "CompanyName 1" });
+			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 2", CompanyName = "CompanyName 2" });
+			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 3", CompanyName = "CompanyName 3" });
+			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 4", CompanyName = "CompanyName 4" });
+			CheckedInMeetingList = responseCheckedInMeetingList;
 
 			if (responseCheckedIn?.Count > 0)
 			{
@@ -92,6 +101,17 @@ namespace Dstricts.ViewModels
 			{
 				checkInList = value;
 				OnPropertyChanged("CheckInList");
+			}
+		}
+
+		private List<Models.CheckedInMeetingListResponse> checkedInMeetingList;
+		public List<Models.CheckedInMeetingListResponse> CheckedInMeetingList
+		{
+			get => checkedInMeetingList;
+			set
+			{
+				checkedInMeetingList = value;
+				OnPropertyChanged("CheckedInMeetingList");
 			}
 		}
 		#endregion
