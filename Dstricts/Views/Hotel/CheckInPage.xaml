@@ -44,7 +44,7 @@
 				HorizontalTextAlignment="Center"
 				Text="Check-in"
 				TextColor="White"
-				VerticalTextAlignment="Center" />
+				VerticalTextAlignment="End" />
 
 			<Button
 				Grid.Row="0"
@@ -318,7 +318,10 @@
 						</BindableLayout.ItemTemplate>
 					</StackLayout>
 
-					<StackLayout Margin="0,10,0,0"  BindableLayout.ItemsSource="{Binding CheckedInMeetingList}" Orientation="Vertical">
+					<StackLayout
+						Margin="0,10,0,0"
+						BindableLayout.ItemsSource="{Binding CheckedInMeetingList}"
+						Orientation="Vertical">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
 								<textinputlayout:SfTextInputLayout
@@ -456,10 +459,11 @@
 				</StackLayout>
 			</ScrollView>
 
-			<Grid IsVisible="False"
+			<Grid
 				Grid.Row="2"
 				Grid.ColumnSpan="3"
 				ColumnSpacing="5"
+				IsVisible="False"
 				RowSpacing="0">
 				<Label
 					Grid.Row="0"
@@ -525,12 +529,23 @@
 					VerticalTextAlignment="Center" />
 			</Grid>
 
-			<Button Padding="0" Grid.Column="1" CornerRadius="10" BorderColor="White"
-				Grid.Row="2" TextColor="White" FontFamily="PoppinsRegularFontFamily"
-				HeightRequest="45" BorderWidth="2"
-				VerticalOptions="EndAndExpand" FontSize="12"
-				Text="Scan QR Code" WidthRequest="134"
-				HorizontalOptions="CenterAndExpand"/>
+			<Button
+				Grid.Row="2"
+				Grid.Column="1"
+				Padding="0"
+				BackgroundColor="Transparent"
+				BorderColor="White"
+				BorderWidth="2"
+				Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+				CornerRadius="10"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HeightRequest="45"
+				HorizontalOptions="CenterAndExpand"
+				Text="Scan QR Code"
+				TextColor="White"
+				VerticalOptions="CenterAndExpand"
+				WidthRequest="134" />
 		</Grid>
 	</ContentPage.Content>
 </ContentPage>
