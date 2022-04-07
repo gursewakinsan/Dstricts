@@ -85,6 +85,9 @@
     <EmbeddedResource Update="Views\ErrorMessage\NotAuthorizedForHotelCheckInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ErrorMessage\VerifyCheckedInCodeNotAuthorizedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ErrorMessage\WrongDateForHotelCheckInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
