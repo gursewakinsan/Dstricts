@@ -299,7 +299,7 @@
 										<RowDefinition Height="15" />
 										<RowDefinition Height="24" />
 										<RowDefinition Height="13" />
-										<RowDefinition Height="40" />
+										<RowDefinition Height="auto" />
 										<RowDefinition Height="25" />
 										<RowDefinition Height="24" />
 										<RowDefinition Height="14" />
