@@ -24,6 +24,7 @@ namespace Dstricts.Views.Hotel
 		{
 			base.OnAppearing();
 			viewModel.UserQueueListCommand.Execute(null);
+			//rr();
 		}
 
 		void rr()
@@ -35,7 +36,7 @@ namespace Dstricts.Views.Hotel
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/5.webp" });
 			CardsImages.Add(new Images() { URL = "https://www.gstatic.com/webp/gallery/2.webp" });
 
-			demoCardsList.Add(new DemoCards()
+			/*demoCardsList.Add(new DemoCards()
 			{
 				UserImage = "https://www.photodoozy.com/uploads/pak-army-handsome-boy-hd-stylish-dp-2020-photodoozy.jpg",
 				CardsImage = CardsImages,
@@ -46,6 +47,22 @@ namespace Dstricts.Views.Hotel
 				UserImage = "https://images.pexels.com/photos/1190208/pexels-photo-1190208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 				CardsImage = CardsImages,
 				ImgURL= "https://www.gstatic.com/webp/gallery/4.webp"
+			});*/
+
+
+			demoCardsList.Add(new DemoCards()
+			{
+				UserImage = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png",
+				//CardsImage = CardsImages,
+				ImgURL = "frontPage1.png",
+				CommentImgURL = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"
+			});
+			demoCardsList.Add(new DemoCards()
+			{
+				UserImage = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png",
+				//CardsImage = CardsImages,
+				ImgURL = "frontPage2.png",
+				CommentImgURL = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"
 			});
 			BindableLayout.SetItemsSource(cards, demoCardsList);
 		}
@@ -117,6 +134,7 @@ public class DemoCards
 {
 	public string UserImage { get; set; }
 	public string ImgURL { get; set; }
+	public string CommentImgURL { get; set; }
 	public List<Images> CardsImage { get; set; }
 }
 public class Images

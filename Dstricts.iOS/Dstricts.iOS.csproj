@@ -198,4 +198,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\ErrorMessageBg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\frontPage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\frontPage2.png" />
+  </ItemGroup>
 </Project>
