@@ -291,7 +291,7 @@
 								HasShadow="False"
 								IsClippedToBounds="True"
 								VerticalOptions="StartAndExpand">
-								<Grid ColumnSpacing="0" RowSpacing="10">
+								<Grid ColumnSpacing="0" RowSpacing="0">
 									<Grid.RowDefinitions>
 										<RowDefinition Height="40" />
 										<RowDefinition Height="10" />
@@ -313,6 +313,8 @@
 										<ColumnDefinition Width="40" />
 										<ColumnDefinition Width="28" />
 									</Grid.ColumnDefinitions>
+
+
 									<ImageButton
 										Grid.Row="0"
 										Grid.Column="1"
