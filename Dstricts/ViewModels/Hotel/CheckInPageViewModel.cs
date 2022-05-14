@@ -5,6 +5,7 @@ using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 
 namespace Dstricts.ViewModels
 {
@@ -153,6 +154,14 @@ namespace Dstricts.ViewModels
 				await Navigation.PushAsync(new Views.ErrorMessage.FrontDeskPage());
 			else if (response == 3)
 				await Navigation.PushAsync(new Views.ErrorMessage.AlreadyCheckedInForHotelPage());
+			else if (response == 4)
+			{
+				//Missing some info go to qloudid app.
+				if (Device.RuntimePlatform == Device.iOS)
+					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/ShowMissingPreCheckInInfoPage/{id}");
+				else
+					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/ShowMissingPreCheckInInfoPage/{id}");
+			}
 			//In verify_checkin array 3 hai to api call krni hai
 			//TODO https://dstricts.com/user/index.php/DstrictsApp/verifyBookingCheckin
 			//id,jo 3 arrary ki value hai and  dstricts_user_id
