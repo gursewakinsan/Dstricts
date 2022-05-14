@@ -206,6 +206,14 @@ namespace Dstricts.ViewModels
 				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.AlreadyCheckedInForHotelPage());
 			else if (code == 2) // Wrong date page
 				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.WrongDateForHotelCheckInPage());
+			else if (code == 4)
+			{
+				//Missing some info go to qloudid app.
+				if (Device.RuntimePlatform == Device.iOS)
+					await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/ShowMissingPreCheckInInfoPage/{id}");
+				else
+					await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/ShowMissingPreCheckInInfoPage/{id}");
+			}
 			else
 			{
 				Helper.Helper.VerifyUserInvitationInfoId = id;
