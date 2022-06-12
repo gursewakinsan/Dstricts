@@ -3,9 +3,10 @@
 	x:Class="Dstricts.Views.Hotel.CheckInPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
@@ -92,33 +93,37 @@
 					</StackLayout>
 
 					<Grid Margin="0,58,0,33">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="90"/>
-				</Grid.RowDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="90" />
+						</Grid.RowDefinitions>
 
-					<textinputlayout:SfTextInputLayout
-						Grid.Row="0"
-						ContainerBackgroundColor="Transparent"
-						ContainerType="Outlined"
-						FocusedColor="#6263ED"
-						FocusedStrokeWidth="2"
-						HeightRequest="86"
-						Hint="Landlord" VerticalOptions="FillAndExpand"
-						OutlineCornerRadius="16"
-						UnfocusedColor="#6263ED"
-						UnfocusedStrokeWidth="2">
-						<textinputlayout:SfTextInputLayout.HintLabelStyle>
-							<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
-						</textinputlayout:SfTextInputLayout.HintLabelStyle>
-						<Entry HeightRequest="55" IsReadOnly="True"
-							TextColor="Transparent" Text="test" />
-					</textinputlayout:SfTextInputLayout>
+						<textinputlayout:SfTextInputLayout
+							Grid.Row="0"
+							ContainerBackgroundColor="Transparent"
+							ContainerType="Outlined"
+							FocusedColor="#6263ED"
+							FocusedStrokeWidth="2"
+							HeightRequest="86"
+							Hint="Landlord"
+							OutlineCornerRadius="16"
+							UnfocusedColor="#6263ED"
+							UnfocusedStrokeWidth="2"
+							VerticalOptions="FillAndExpand">
+							<textinputlayout:SfTextInputLayout.HintLabelStyle>
+								<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
+							</textinputlayout:SfTextInputLayout.HintLabelStyle>
+							<Entry
+								HeightRequest="55"
+								IsReadOnly="True"
+								Text="test"
+								TextColor="Transparent" />
+						</textinputlayout:SfTextInputLayout>
 
-						<Grid HeightRequest="45"
-			Margin="27,27,31,0"  
-			VerticalOptions="StartAndExpand"
-			Grid.Row="0"
-							>
+						<Grid
+							Grid.Row="0"
+							Margin="27,27,31,0"
+							HeightRequest="45"
+							VerticalOptions="StartAndExpand">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="45" />
@@ -129,7 +134,8 @@
 								HeightRequest="45"
 								Spacing="0"
 								VerticalOptions="CenterAndExpand">
-								<Label Margin="0,4,0,0"
+								<Label
+									Margin="0,4,0,0"
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="12"
 									LineBreakMode="TailTruncation"
@@ -139,7 +145,8 @@
 									TextColor="White"
 									VerticalOptions="Start" />
 
-								<Label Margin="0,0,0,5"
+								<Label
+									Margin="0,0,0,5"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
 									LineBreakMode="TailTruncation"
@@ -164,18 +171,19 @@
 								VerticalOptions="CenterAndExpand"
 								WidthRequest="45" />
 						</Grid>
-				</Grid>
+					</Grid>
 
 
 
 					<textinputlayout:SfTextInputLayout
 						Margin="0,58,0,41"
-						Padding="0" IsVisible="False"
+						Padding="0"
 						ContainerBackgroundColor="Transparent"
 						ContainerType="Outlined"
 						FocusedColor="#6263ED"
 						FocusedStrokeWidth="2"
 						Hint="Landlord"
+						IsVisible="False"
 						OutlineCornerRadius="16"
 						UnfocusedColor="#6263ED"
 						UnfocusedStrokeWidth="2">
@@ -236,92 +244,98 @@
 					<StackLayout BindableLayout.ItemsSource="{Binding CheckInList}" Orientation="Vertical">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
-									<Grid Margin="0,0,0,33">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="90"/>
-				</Grid.RowDefinitions>
+								<Grid Margin="0,0,0,33">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="90" />
+									</Grid.RowDefinitions>
 
-					<textinputlayout:SfTextInputLayout
-						Grid.Row="0"
-						ContainerBackgroundColor="Transparent"
-						ContainerType="Outlined"
-						FocusedColor="#FF9129"
-						FocusedStrokeWidth="2"
-						HeightRequest="86"
-						Hint="Hotel" VerticalOptions="FillAndExpand"
-						OutlineCornerRadius="16"
-						UnfocusedColor="#FF9129"
-						UnfocusedStrokeWidth="2">
-						<textinputlayout:SfTextInputLayout.HintLabelStyle>
-							<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
-						</textinputlayout:SfTextInputLayout.HintLabelStyle>
-						<Entry HeightRequest="55" IsReadOnly="True"
-							TextColor="Transparent" Text="test" />
-					</textinputlayout:SfTextInputLayout>
+									<textinputlayout:SfTextInputLayout
+										Grid.Row="0"
+										ContainerBackgroundColor="Transparent"
+										ContainerType="Outlined"
+										FocusedColor="#FF9129"
+										FocusedStrokeWidth="2"
+										HeightRequest="86"
+										Hint="Hotel"
+										OutlineCornerRadius="16"
+										UnfocusedColor="#FF9129"
+										UnfocusedStrokeWidth="2"
+										VerticalOptions="FillAndExpand">
+										<textinputlayout:SfTextInputLayout.HintLabelStyle>
+											<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
+										</textinputlayout:SfTextInputLayout.HintLabelStyle>
+										<Entry
+											HeightRequest="55"
+											IsReadOnly="True"
+											Text="test"
+											TextColor="Transparent" />
+									</textinputlayout:SfTextInputLayout>
 
-						<Grid HeightRequest="45"
-			Margin="27,27,31,0"  
-			VerticalOptions="StartAndExpand"
-			Grid.Row="0"
-							>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="45" />
-							</Grid.ColumnDefinitions>
-							<Grid.GestureRecognizers>
+									<Grid
+										Grid.Row="0"
+										Margin="27,27,31,0"
+										HeightRequest="45"
+										VerticalOptions="StartAndExpand">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="45" />
+										</Grid.ColumnDefinitions>
+										<Grid.GestureRecognizers>
 											<TapGestureRecognizer Tapped="OnGridCheckInTapped" />
 										</Grid.GestureRecognizers>
-							<StackLayout
-								Grid.Row="0"
-								Grid.Column="0"
-								HeightRequest="45"
-								Spacing="0"
-								VerticalOptions="CenterAndExpand">
-								<Label Margin="0,4,0,0"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="12"
-									LineBreakMode="TailTruncation"
-									MaxLines="1"
-									Opacity="0.7"
-									Text="Guest"
-									TextColor="White"
-									VerticalOptions="Start">
-									<Label.GestureRecognizers>
+										<StackLayout
+											Grid.Row="0"
+											Grid.Column="0"
+											HeightRequest="45"
+											Spacing="0"
+											VerticalOptions="CenterAndExpand">
+											<Label
+												Margin="0,4,0,0"
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="12"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Opacity="0.7"
+												Text="Guest"
+												TextColor="White"
+												VerticalOptions="Start">
+												<Label.GestureRecognizers>
 													<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
 												</Label.GestureRecognizers>
-								</Label>
+											</Label>
 
-								<Label Margin="0,0,0,5"
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="18"
-									LineBreakMode="TailTruncation"
-									MaxLines="1"
-									Text="{Binding PropertyNickName}"
-									TextColor="White"
-									VerticalOptions="Start">
-									<Label.GestureRecognizers>
+											<Label
+												Margin="0,0,0,5"
+												FontFamily="PoppinsSemiBoldFontFamily"
+												FontSize="18"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Text="{Binding PropertyNickName}"
+												TextColor="White"
+												VerticalOptions="Start">
+												<Label.GestureRecognizers>
 													<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
 												</Label.GestureRecognizers>
-								</Label>
-							</StackLayout>
+											</Label>
+										</StackLayout>
 
-							<Button
-								Grid.Row="0"
-								Grid.Column="1"
-								Padding="0"
-								BackgroundColor="#342B20"
-								CornerRadius="12"
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="25"
-								Clicked="OnButtonCheckInTapped"
-								HeightRequest="45"
-								HorizontalOptions="CenterAndExpand"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-								TextColor="#FFAC3D"
-								VerticalOptions="CenterAndExpand"
-								WidthRequest="45" />
-						</Grid>
-				</Grid>
+										<Button
+											Grid.Row="0"
+											Grid.Column="1"
+											Padding="0"
+											BackgroundColor="#342B20"
+											Clicked="OnButtonCheckInTapped"
+											CornerRadius="12"
+											FontFamily="{StaticResource MaterialFontFamily}"
+											FontSize="25"
+											HeightRequest="45"
+											HorizontalOptions="CenterAndExpand"
+											Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+											TextColor="#FFAC3D"
+											VerticalOptions="CenterAndExpand"
+											WidthRequest="45" />
+									</Grid>
+								</Grid>
 
 
 
@@ -405,85 +419,90 @@
 						</BindableLayout.ItemTemplate>
 					</StackLayout>
 
-					<StackLayout
-						BindableLayout.ItemsSource="{Binding CheckedInMeetingList}"
-						Orientation="Vertical">
+					<StackLayout BindableLayout.ItemsSource="{Binding CheckedInMeetingList}" Orientation="Vertical">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
 								<Grid Margin="0,0,0,33">
-				<Grid.RowDefinitions>
-					<RowDefinition Height="90"/>
-				</Grid.RowDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="90" />
+									</Grid.RowDefinitions>
 
-					<textinputlayout:SfTextInputLayout
-						Grid.Row="0"
-						ContainerBackgroundColor="Transparent"
-						ContainerType="Outlined"
-						FocusedColor="#525388"
-						FocusedStrokeWidth="2"
-						HeightRequest="86"
-						Hint="Appointment" VerticalOptions="FillAndExpand"
-						OutlineCornerRadius="16"
-						UnfocusedColor="#525388"
-						UnfocusedStrokeWidth="2">
-						<textinputlayout:SfTextInputLayout.HintLabelStyle>
-							<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
-						</textinputlayout:SfTextInputLayout.HintLabelStyle>
-						<Entry HeightRequest="55" IsReadOnly="True"
-							TextColor="Transparent" Text="test" />
-					</textinputlayout:SfTextInputLayout>
+									<textinputlayout:SfTextInputLayout
+										Grid.Row="0"
+										ContainerBackgroundColor="Transparent"
+										ContainerType="Outlined"
+										FocusedColor="#525388"
+										FocusedStrokeWidth="2"
+										HeightRequest="86"
+										Hint="Appointment"
+										OutlineCornerRadius="16"
+										UnfocusedColor="#525388"
+										UnfocusedStrokeWidth="2"
+										VerticalOptions="FillAndExpand">
+										<textinputlayout:SfTextInputLayout.HintLabelStyle>
+											<textinputlayout:LabelStyle FontFamily="PoppinsSemiBoldFontFamily" FontSize="16" />
+										</textinputlayout:SfTextInputLayout.HintLabelStyle>
+										<Entry
+											HeightRequest="55"
+											IsReadOnly="True"
+											Text="test"
+											TextColor="Transparent" />
+									</textinputlayout:SfTextInputLayout>
 
-						<Grid HeightRequest="45"
-			Margin="27,27,31,0"  
-			VerticalOptions="StartAndExpand"
-			Grid.Row="0">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="45" />
-							</Grid.ColumnDefinitions>
-							
-							<StackLayout
-								Grid.Row="0"
-								Grid.Column="0"
-								HeightRequest="45"
-								Spacing="0"
-								VerticalOptions="CenterAndExpand">
-								<Label Margin="0,4,0,0"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="12"
-									LineBreakMode="TailTruncation"
-									MaxLines="1"
-									Opacity="0.7"
-									Text="{Binding Name}"
-									TextColor="White"
-									VerticalOptions="Start"/>
+									<Grid
+										Grid.Row="0"
+										Margin="27,27,31,0"
+										HeightRequest="45"
+										VerticalOptions="StartAndExpand">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="45" />
+										</Grid.ColumnDefinitions>
 
-								<Label Margin="0,0,0,5"
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="18"
-									LineBreakMode="TailTruncation"
-									MaxLines="1"
-									Text="{Binding CompanyName}"
-									TextColor="White"
-									VerticalOptions="Start"/>
-							</StackLayout>
+										<StackLayout
+											Grid.Row="0"
+											Grid.Column="0"
+											HeightRequest="45"
+											Spacing="0"
+											VerticalOptions="CenterAndExpand">
+											<Label
+												Margin="0,4,0,0"
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="12"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Opacity="0.7"
+												Text="{Binding Name}"
+												TextColor="White"
+												VerticalOptions="Start" />
 
-							<Button
-								Grid.Row="0"
-								Grid.Column="1"
-								Padding="0"
-								BackgroundColor="#282732"
-								CornerRadius="12"
-								FontFamily="{StaticResource MaterialFontFamily}"
-								FontSize="25"
-								HeightRequest="45"
-								HorizontalOptions="CenterAndExpand"
-								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-								TextColor="#7D76FF"
-								VerticalOptions="CenterAndExpand"
-								WidthRequest="45" />
-						</Grid>
-				</Grid>
+											<Label
+												Margin="0,0,0,5"
+												FontFamily="PoppinsSemiBoldFontFamily"
+												FontSize="18"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Text="{Binding CompanyName}"
+												TextColor="White"
+												VerticalOptions="Start" />
+										</StackLayout>
+
+										<Button
+											Grid.Row="0"
+											Grid.Column="1"
+											Padding="0"
+											BackgroundColor="#282732"
+											CornerRadius="12"
+											FontFamily="{StaticResource MaterialFontFamily}"
+											FontSize="25"
+											HeightRequest="45"
+											HorizontalOptions="CenterAndExpand"
+											Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+											TextColor="#7D76FF"
+											VerticalOptions="CenterAndExpand"
+											WidthRequest="45" />
+									</Grid>
+								</Grid>
 							</DataTemplate>
 						</BindableLayout.ItemTemplate>
 					</StackLayout>

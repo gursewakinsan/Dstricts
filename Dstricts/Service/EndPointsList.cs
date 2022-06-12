@@ -104,6 +104,9 @@
 
 		//Visitors
 		public const string InvitedVisitorsMeetingListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/invitedVisitorsMeetingList";
+
+		//Apartment
+		public const string ApartmentDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoDstrictApp";
 	}
 }
 

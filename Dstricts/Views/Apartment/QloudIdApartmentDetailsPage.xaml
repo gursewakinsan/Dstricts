@@ -9,7 +9,588 @@
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
-		<Grid>
+		<Grid
+			Margin="0,14,0,2"
+			ColumnSpacing="0"
+			RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="28" />
+				<ColumnDefinition Width="40" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="40" />
+				<ColumnDefinition Width="28" />
+			</Grid.ColumnDefinitions>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Margin="-7,0,0,0"
+				Padding="0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="Start"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+				TextColor="White"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="2"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="16"
+				HorizontalTextAlignment="Center"
+				Text="{Binding ApartmentDetails.PropertyNickName}"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+			<Label
+				Grid.Row="0"
+				Grid.Column="3"
+				Padding="0"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				HorizontalTextAlignment="End"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.CartOutline}"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+			<ScrollView
+				Grid.Row="1"
+				Grid.Column="1"
+				Grid.ColumnSpan="3"
+				VerticalScrollBarVisibility="Never">
+				<Grid
+					Margin="0,26,0,0"
+					ColumnSpacing="0"
+					RowSpacing="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30" />
+						<RowDefinition Height="45" />
+						<RowDefinition Height="28" />
+						<RowDefinition Height="435" />
+						<RowDefinition Height="68" />
+						<RowDefinition Height="33" />
+						<RowDefinition Height="17" />
+						<RowDefinition Height="auto" />
+						<RowDefinition Height="49" />
+						<RowDefinition Height="33" />
+						<RowDefinition Height="17" />
+						<RowDefinition Height="auto" />
+						<RowDefinition Height="49" />
+						<RowDefinition Height="33" />
+						<RowDefinition Height="17" />
+						<RowDefinition Height="auto" />
+
+						<RowDefinition Height="50" />
+					</Grid.RowDefinitions>
+					<Label
+						Grid.Row="0"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="18"
+						HorizontalTextAlignment="Start"
+						Opacity="0.42"
+						Text="Welcome"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						Grid.Row="1"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="32"
+						HorizontalTextAlignment="Start"
+						Text="{Binding ApartmentDetailInfo.GuestName}"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Frame
+						Grid.Row="3"
+						Padding="24,40,18,33"
+						BackgroundColor="#4285F4"
+						CornerRadius="12"
+						HasShadow="False"
+						IsClippedToBounds="True">
+						<Grid ColumnSpacing="0" RowSpacing="0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="30" />
+								<RowDefinition Height="5" />
+								<RowDefinition Height="46" />
+								<RowDefinition Height="23" />
+								<RowDefinition Height="15" />
+								<RowDefinition Height="5" />
+								<RowDefinition Height="70" />
+								<RowDefinition Height="16" />
+								<RowDefinition Height="15" />
+								<RowDefinition Height="5" />
+								<RowDefinition Height="55" />
+								<RowDefinition Height="33" />
+								<RowDefinition Height="40" />
+							</Grid.RowDefinitions>
+							<Label
+								Grid.Row="0"
+								FontAttributes="Bold"
+								FontFamily="PoppinsBoldFontFamily"
+								FontSize="24"
+								HorizontalTextAlignment="Start"
+								Text="Good to know"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								Grid.Row="2"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="15"
+								HorizontalTextAlignment="Start"
+								LineHeight="1.2"
+								Text="Find out more about Casa Madrid under 'My pages'"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Label
+								Grid.Row="4"
+								FontAttributes="Bold"
+								FontFamily="PoppinsBoldFontFamily"
+								FontSize="12"
+								HorizontalTextAlignment="Start"
+								Text="Address"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Frame
+								Grid.Row="6"
+								Padding="14,0,14,0"
+								BackgroundColor="#2065D9"
+								CornerRadius="6"
+								HasShadow="False"
+								IsClippedToBounds="True">
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									LineBreakMode="TailTruncation"
+									LineHeight="1.2"
+									MaxLines="2"
+									TextColor="White"
+									VerticalTextAlignment="Center">
+									<Label.FormattedText>
+										<FormattedString>
+											<Span Text="{Binding ApartmentDetailInfo.Address}" />
+											<Span Text=" " />
+											<Span Text="{Binding ApartmentDetailInfo.PortNumber}" />
+											<Span Text=", " />
+											<Span Text="{Binding ApartmentDetailInfo.ZipCode}" />
+											<Span Text=" " />
+											<Span Text="{Binding ApartmentDetailInfo.City}" />
+										</FormattedString>
+									</Label.FormattedText>
+								</Label>
+							</Frame>
+
+							<Label
+								Grid.Row="8"
+								FontAttributes="Bold"
+								FontFamily="PoppinsBoldFontFamily"
+								FontSize="12"
+								HorizontalTextAlignment="Start"
+								Text="Entrance code"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+							<Frame
+								Grid.Row="10"
+								Padding="14,0,14,0"
+								BackgroundColor="#2065D9"
+								CornerRadius="6"
+								HasShadow="False"
+								IsClippedToBounds="True">
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="18"
+									HorizontalTextAlignment="Start"
+									LineBreakMode="TailTruncation"
+									Text="{Binding ApartmentDetailInfo.EntryCode}"
+									TextColor="White"
+									VerticalTextAlignment="Center" />
+							</Frame>
+
+							<Button
+								Grid.Row="12"
+								Padding="0"
+								BackgroundColor="#F4B400"
+								Command="{Binding GoToMyPageCommand}"
+								CornerRadius="8"
+								FontFamily="PoppinsSemiBoldFontFamily"
+								FontSize="14"
+								HorizontalOptions="StartAndExpand"
+								Text="Go to 'My pages'"
+								TextColor="#181A1F"
+								WidthRequest="170" />
+						</Grid>
+					</Frame>
+
+					<Label
+						Grid.Row="5"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						Text="Community"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Grid
+						Grid.Row="7"
+						ColumnSpacing="19"
+						RowSpacing="20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="120" />
+							<RowDefinition Height="120" />
+							<RowDefinition Height="120" />
+						</Grid.RowDefinitions>
+						<Frame
+							Grid.Row="0"
+							Grid.Column="0"
+							Padding="14"
+							BackgroundColor="#242A37"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Parking"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="299 places"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#242A37"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Swim"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="1 Pool"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="1"
+							Grid.Column="0"
+							Padding="14"
+							BackgroundColor="#242A37"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Jacuzzi"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="2 Jacuzzi"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="1"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#242A37"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Laundry"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="1 Laundry room"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="2"
+							Grid.ColumnSpan="2"
+							Padding="14"
+							BackgroundColor="#242A37"
+							CornerRadius="10">
+							<StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Clubroom"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalOptions="EndAndExpand"
+									Opacity="0.42"
+									Text="1 room"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+					</Grid>
+
+					<Label
+						Grid.Row="9"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						Text="Support"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Grid
+						Grid.Row="11"
+						ColumnSpacing="19"
+						RowSpacing="20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="120" />
+							<RowDefinition Height="120" />
+						</Grid.RowDefinitions>
+
+						<Frame
+							Grid.Row="0"
+							Grid.RowSpan="2"
+							Grid.Column="0"
+							Padding="14"
+							BackgroundColor="#F4B400"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Report a problem"
+									TextColor="#181A1F"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalOptions="Start"
+									Opacity="0.70"
+									Text="299 places"
+									TextColor="#181A1F"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#F4B400"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									Margin="0,0,50,0"
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Lost &amp; Found"
+									TextColor="#181A1F"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.70"
+									Text="1 Pool"
+									TextColor="#181A1F"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="1"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#F4B400"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="FAQ"
+									TextColor="#181A1F"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.70"
+									Text="1 Laundry room"
+									TextColor="#181A1F"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+					</Grid>
+
+					<Label
+						Grid.Row="13"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						Text="Assistance"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
+					<Grid
+						Grid.Row="15"
+						ColumnSpacing="19"
+						RowSpacing="20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="120" />
+							<RowDefinition Height="120" />
+						</Grid.RowDefinitions>
+
+						<Frame
+							Grid.Row="0"
+							Grid.RowSpan="2"
+							Grid.Column="0"
+							Padding="14"
+							BackgroundColor="#DB4437"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Medical"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalOptions="Start"
+									Opacity="0.70"
+									Text="299 places"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="0"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#DB4437"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Polica"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.70"
+									Text="1 Pool"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+
+						<Frame
+							Grid.Row="1"
+							Grid.Column="1"
+							Padding="14"
+							BackgroundColor="#DB4437"
+							CornerRadius="10">
+							<StackLayout>
+								<Label
+									FontFamily="PoppinsSemiBoldFontFamily"
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Road Help"
+									TextColor="White"
+									VerticalOptions="StartAndExpand" />
+
+								<Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									HorizontalTextAlignment="Start"
+									Opacity="0.70"
+									Text="1 Laundry room"
+									TextColor="White"
+									VerticalOptions="EndAndExpand" />
+							</StackLayout>
+						</Frame>
+					</Grid>
+				</Grid>
+			</ScrollView>
+		</Grid>
+
+
+
+		<!--<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="32" />
 				<RowDefinition />
@@ -923,6 +1504,6 @@
 					TextColor="#5B5B79"
 					VerticalTextAlignment="Center" />
 			</Grid>
-		</Grid>
+		</Grid>-->
 	</ContentPage.Content>
 </ContentPage>
