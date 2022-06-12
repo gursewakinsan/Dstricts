@@ -14,6 +14,18 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "port_number")]
 		public string PortNumber { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "you_address")] 
+		public string YouAddress { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "you_city")]
+		public string YouCity { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "you_zipcode")]
+		public string YouZipCode { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "you_port_number")]
+		public string YouPortNumber { get; set; }
+
 		[Newtonsoft.Json.JsonProperty(PropertyName = "invoice_address")]
 		public string InvoiceAddress { get; set; }
 

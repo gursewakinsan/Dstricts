@@ -712,9 +712,9 @@
 						VerticalTextAlignment="Center">
 						<Label.FormattedText>
 							<FormattedString>
-								<Span Text="{Binding ApartmentDetailInfo.Address}" />
+								<Span Text="{Binding ApartmentDetailInfo.YouAddress}" />
 								<Span Text=" " />
-								<Span Text="{Binding ApartmentDetailInfo.PortNumber}" />
+								<Span Text="{Binding ApartmentDetailInfo.YouPortNumber}" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
@@ -729,7 +729,7 @@
 						VerticalTextAlignment="Center">
 						<Label.FormattedText>
 							<FormattedString>
-								<Span Text="{Binding ApartmentDetailInfo.ZipCode}" />
+								<Span Text="{Binding ApartmentDetailInfo.YouZipCode}" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
@@ -744,7 +744,7 @@
 						VerticalTextAlignment="Center">
 						<Label.FormattedText>
 							<FormattedString>
-								<Span Text="{Binding ApartmentDetailInfo.City}" />
+								<Span Text="{Binding ApartmentDetailInfo.YouCity}" />
 							</FormattedString>
 						</Label.FormattedText>
 					</Label>
