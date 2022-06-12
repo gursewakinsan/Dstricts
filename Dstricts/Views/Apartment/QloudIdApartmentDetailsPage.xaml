@@ -16,6 +16,8 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="40" />
 				<RowDefinition Height="*" />
+				<RowDefinition Height="5" />
+				<RowDefinition Height="45" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="28" />
@@ -216,7 +218,7 @@
 									FontSize="18"
 									HorizontalTextAlignment="Start"
 									LineBreakMode="TailTruncation"
-									Text="{Binding ApartmentDetailInfo.EntryCode}"
+									Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"
 									TextColor="White"
 									VerticalTextAlignment="Center" />
 							</Frame>
@@ -586,6 +588,52 @@
 					</Grid>
 				</Grid>
 			</ScrollView>
+
+			<Grid
+				Grid.Row="3"
+				Grid.Column="1"
+				Grid.ColumnSpan="3">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="134" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Label
+					Grid.Column="0"
+					Padding="0"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="20"
+					HorizontalTextAlignment="Start"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+				<Button
+					Grid.Column="1"
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="White"
+					BorderWidth="2"
+					CornerRadius="10"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HeightRequest="45"
+					HorizontalOptions="CenterAndExpand"
+					Text="Scan QR Code"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="134" />
+
+				<Label
+					Grid.Column="2"
+					Padding="0"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="20"
+					HorizontalTextAlignment="End"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageTextOutline}"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+			</Grid>
 		</Grid>
 
 

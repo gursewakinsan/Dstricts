@@ -42,7 +42,8 @@
 		public string CreatedOn { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "entry_code")]
-		public object EntryCode { get; set; }
+		public string EntryCode { get; set; }
+		public string DisplayEntryCode => string.IsNullOrWhiteSpace(EntryCode) ? "Not required" : EntryCode;
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "property_layout")]
 		public int PropertyLayout { get; set; }
@@ -179,7 +180,7 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "district_sale")]
 		public int DistrictSale { get; set; }
 
-		[Newtonsoft.Json.JsonProperty(PropertyName = "CardDetail")]
+		[Newtonsoft.Json.JsonProperty(PropertyName = "card_detail")]
 		public string CardDetail { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "duration")]
