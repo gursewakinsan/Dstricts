@@ -10,7 +10,287 @@
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
-	<ContentPage.Content>
+	<Grid
+		Margin="0,22,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40" />
+			<RowDefinition Height="31" />
+			<RowDefinition Height="40" />
+			<RowDefinition Height="16" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="8" />
+			<RowDefinition Height="1" />
+			<RowDefinition Height="41" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="56" />
+			<RowDefinition Height="45" />
+			<RowDefinition Height="5" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="40" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="40" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2" />
+
+		<Button
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			Command="{Binding CloseCommand}"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White" />
+
+		<Image
+			Grid.Row="0"
+			Grid.Column="3"
+			Aspect="AspectFit"
+			BackgroundColor="Transparent"
+			HeightRequest="40"
+			HorizontalOptions="EndAndExpand"
+			Source="iconSmallLogo.png"
+			VerticalOptions="CenterAndExpand"
+			WidthRequest="40" />
+
+		<Label
+			Grid.Row="2"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontAttributes="Bold"
+			FontFamily="PoppinsBoldFontFamily"
+			FontSize="32"
+			HorizontalTextAlignment="Start"
+			Text="Check-in's"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<Label
+			Grid.Row="4"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			Text="Click to visit a check-in point."
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<BoxView
+			Grid.Row="6"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#2A2A31" />
+
+		<!--<CarouselView
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="4"
+			BackgroundColor="Transparent"
+			HorizontalScrollBarVisibility="Never"
+			ItemsSource="{Binding CheckInList}"
+			PeekAreaInsets="0,0,80,0"
+			RemainingItemsThreshold="1">
+			<CarouselView.ItemsLayout>
+				<LinearItemsLayout ItemSpacing="16" Orientation="Horizontal" />
+			</CarouselView.ItemsLayout>
+			<CarouselView.ItemTemplate>-->
+
+		<StackLayout
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BindableLayout.ItemsSource="{Binding CheckInList}"
+			IsVisible="{Binding IsListOneRecord, Converter={StaticResource InverseBoolConverter}}"
+			Orientation="Horizontal"
+			Spacing="16">
+			<BindableLayout.ItemTemplate>
+				<DataTemplate>
+					<Frame
+						Padding="0"
+						BackgroundColor="Transparent"
+						CornerRadius="16"
+						HasShadow="False"
+						IsClippedToBounds="True">
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnFrameCheckInTapped" />
+						</Frame.GestureRecognizers>
+						<Grid>
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnGridCheckInTapped" />
+							</Grid.GestureRecognizers>
+
+							<Image Aspect="AspectFill" Source="{Binding ImagePath}">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnImageCheckInTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+
+							<Grid
+								BackgroundColor="#25313D"
+								HeightRequest="62"
+								Opacity="0.75"
+								VerticalOptions="EndAndExpand">
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnGridCheckInTapped" />
+								</Grid.GestureRecognizers>
+								<StackLayout
+									Margin="15,0,15,0"
+									Spacing="0"
+									VerticalOptions="CenterAndExpand">
+									<Label
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="16"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="{Binding PropertyNickName}"
+										TextColor="White">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Label
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="12"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="{Binding BookingOverdate}"
+										TextColor="White">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+								</StackLayout>
+							</Grid>
+						</Grid>
+					</Frame>
+				</DataTemplate>
+			</BindableLayout.ItemTemplate>
+		</StackLayout>
+
+		<ScrollView
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="4"
+			Padding="0,0,28,0"
+			HorizontalScrollBarVisibility="Never"
+			IsVisible="{Binding IsListOneRecord}"
+			Orientation="Horizontal">
+			<StackLayout
+				BindableLayout.ItemsSource="{Binding CheckInList}"
+				Orientation="Horizontal"
+				Spacing="16">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<Frame
+							Padding="0"
+							BackgroundColor="Transparent"
+							CornerRadius="16"
+							HasShadow="False"
+							IsClippedToBounds="True">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnFrameCheckInTapped" />
+							</Frame.GestureRecognizers>
+
+							<Grid>
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnGridCheckInTapped" />
+								</Grid.GestureRecognizers>
+
+								<Image Aspect="AspectFill" Source="{Binding ImagePath}">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnImageCheckInTapped" />
+									</Image.GestureRecognizers>
+								</Image>
+
+								<Grid
+									BackgroundColor="#25313D"
+									HeightRequest="62"
+									Opacity="0.75"
+									VerticalOptions="EndAndExpand">
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnGridCheckInTapped" />
+									</Grid.GestureRecognizers>
+
+									<StackLayout
+										Margin="15,0,15,0"
+										Spacing="0"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsBoldFontFamily"
+											FontSize="16"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding PropertyNickName}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<Label
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="12"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding BookingOverdate}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+									</StackLayout>
+								</Grid>
+							</Grid>
+						</Frame>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
+
+
+		<!--</CarouselView.ItemTemplate>
+		</CarouselView>-->
+
+
+		<Button
+			Grid.Row="10"
+			Grid.Column="2"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			BorderWidth="2"
+			Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+			CornerRadius="10"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="12"
+			HeightRequest="45"
+			HorizontalOptions="CenterAndExpand"
+			Text="Scan QR Code"
+			TextColor="White"
+			VerticalOptions="CenterAndExpand"
+			WidthRequest="134" />
+	</Grid>
+
+
+	<!--<ContentPage.Content>
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="24" />
@@ -335,14 +615,14 @@
 											VerticalOptions="CenterAndExpand"
 											WidthRequest="45" />
 									</Grid>
-								</Grid>
+								</Grid>-->
 
 
 
 
 
 
-								<!--<Grid
+	<!--<Grid
 									Margin="0,0,0,20"
 									Padding="20,0,20,0"
 									ColumnSpacing="15"
@@ -415,7 +695,7 @@
 										</Label.GestureRecognizers>
 									</Label>
 								</Grid>-->
-							</DataTemplate>
+	<!--</DataTemplate>
 						</BindableLayout.ItemTemplate>
 					</StackLayout>
 
@@ -662,5 +942,5 @@
 				VerticalOptions="CenterAndExpand"
 				WidthRequest="134" />
 		</Grid>
-	</ContentPage.Content>
+	</ContentPage.Content>-->
 </ContentPage>

@@ -43,15 +43,17 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
-			var responseCheckedInMeetingList = await service.CheckedInMeetingListAsync(new Models.CheckedInMeetingListRequest()
+			/*var responseCheckedInMeetingList = await service.CheckedInMeetingListAsync(new Models.CheckedInMeetingListRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId
-			});
+			});*/
+
 			/*responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 1", CompanyName = "CompanyName 1" });
 			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 2", CompanyName = "CompanyName 2" });
 			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 3", CompanyName = "CompanyName 3" });
 			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 4", CompanyName = "CompanyName 4" });*/
-			CheckedInMeetingList = responseCheckedInMeetingList;
+			
+			//CheckedInMeetingList = responseCheckedInMeetingList;
 
 			if (responseCheckedIn?.Count > 0)
 			{
@@ -67,7 +69,7 @@ namespace Dstricts.ViewModels
 						checkIns.Add(item);
 			}
 
-			if (checkIns?.Count > 1)
+			/*if (checkIns?.Count > 1)
 			{
 				int index = 0;
 				foreach (var item in checkIns)
@@ -76,7 +78,20 @@ namespace Dstricts.ViewModels
 					item.FirstLetterText = Helper.Helper.ListIconTextColorList[index];
 					index = index + 1;
 				}
+			}*/
+
+			int deviceWidth = App.ScreenWidth - 56;
+			int imgWidth = deviceWidth * 74 / 100;
+
+			if (checkIns?.Count > 1)
+			{
+				foreach (var item in checkIns)
+					item.ImgWidth = imgWidth;
+				IsListOneRecord = true;
 			}
+			else if (checkIns?.Count == 1)
+				IsListOneRecord = false;
+
 			CheckInList = checkIns;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -274,6 +289,17 @@ namespace Dstricts.ViewModels
 			{
 				checkedInMeetingList = value;
 				OnPropertyChanged("CheckedInMeetingList");
+			}
+		}
+
+		private bool isListOneRecord;
+		public bool IsListOneRecord
+		{
+			get => isListOneRecord;
+			set
+			{
+				isListOneRecord = value;
+				OnPropertyChanged("IsListOneRecord");
 			}
 		}
 

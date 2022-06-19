@@ -23,6 +23,9 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "room_service")]
 		public bool RoomService { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "booking_overdate")]
+		public string BookingOverdate { get; set; }
+
 		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
 
 		private string firstLetterBg;
@@ -46,5 +49,7 @@
 				OnPropertyChanged("FirstLetterText");
 			}
 		}
+
+		public double ImgWidth { get; set; }
 	}
 }

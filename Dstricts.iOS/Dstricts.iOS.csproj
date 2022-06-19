@@ -204,4 +204,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\frontPage2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconSmallLogo.png" />
+  </ItemGroup>
 </Project>

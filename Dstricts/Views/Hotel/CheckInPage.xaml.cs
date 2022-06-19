@@ -59,6 +59,13 @@ namespace Dstricts.Views.Hotel
 			Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
 			await OnCheckInListClicked(checkedIn);
 		}
+
+		private async void OnImageCheckInTapped(object sender, EventArgs e)
+		{
+			Image button = sender as Image;
+			Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
+			await OnCheckInListClicked(checkedIn);
+		}
 		private async Task OnCheckInListClicked(Models.CheckedInResponse checkedIn)
 		{
 			if (checkedIn.Enc == 0) //Queue
@@ -119,5 +126,7 @@ namespace Dstricts.Views.Hotel
 			await Navigation.PushModalAsync(scanPage);
 		}
 		#endregion
+
+		
 	}
 }
