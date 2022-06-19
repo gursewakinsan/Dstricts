@@ -198,8 +198,8 @@
 				Spacing="16">
 				<BindableLayout.ItemTemplate>
 					<DataTemplate>
-						<Frame
-							Padding="0"
+						<Frame HorizontalOptions="StartAndExpand"
+							Padding="0" WidthRequest="{Binding ImgWidth}"
 							BackgroundColor="Transparent"
 							CornerRadius="16"
 							HasShadow="False"

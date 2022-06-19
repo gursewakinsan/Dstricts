@@ -81,7 +81,7 @@ namespace Dstricts.ViewModels
 			}*/
 
 			int deviceWidth = App.ScreenWidth - 56;
-			int imgWidth = deviceWidth * 74 / 100;
+			int imgWidth = deviceWidth * 80 / 100;
 
 			if (checkIns?.Count > 1)
 			{
