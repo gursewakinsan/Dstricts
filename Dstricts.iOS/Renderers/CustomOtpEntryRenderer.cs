@@ -1,0 +1,19 @@
+﻿using UIKit;
+using Xamarin.Forms;
+using Dstricts.Controls;
+using Dstricts.iOS.Renderers;
+using Xamarin.Forms.Platform.iOS;
+
+[assembly: ExportRenderer(typeof(CustomOtpEntry), typeof(CustomOtpEntryRenderer))]
+namespace Dstricts.iOS.Renderers
+{
+	public class CustomOtpEntryRenderer : EditorRenderer
+	{
+		protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+		{
+			base.OnElementChanged(e);
+			if (Control != null)
+				Control.TintColor = UIColor.Clear;
+		}
+	}
+}

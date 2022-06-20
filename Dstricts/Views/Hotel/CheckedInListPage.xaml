@@ -47,7 +47,7 @@
 					HasShadow="False"
 					IsClippedToBounds="True">
 					<Frame.GestureRecognizers>
-						<TapGestureRecognizer Command="{Binding SearchCommand}" />
+						<TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
 					</Frame.GestureRecognizers>
 					<Label
 						FontFamily="{StaticResource MaterialFontFamily}"
@@ -55,7 +55,7 @@
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
 						TextColor="White">
 						<Label.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding SearchCommand}" />
+							<TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
 						</Label.GestureRecognizers>
 					</Label>
 				</Frame>
@@ -116,11 +116,10 @@
 						</Grid.ColumnDefinitions>
 
 						<Button
-							x:Name="btnOpenCameraToScanQrCode"
 							Grid.Row="0"
 							Grid.Column="0"
 							Padding="0"
-							Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+							Command="{Binding SearchCommand}"
 							CornerRadius="28"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="30"
@@ -153,7 +152,7 @@
 							Grid.Column="0"
 							Padding="0"
 							BackgroundColor="#181A1F"
-							Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+							Command="{Binding SearchCommand}"
 							CornerRadius="25"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
@@ -226,6 +225,7 @@
 									Grid.Column="1"
 									Padding="0"
 									BackgroundColor="#242A37"
+									Command="{Binding GoToBookPageCommand}"
 									CornerRadius="28"
 									FontFamily="{StaticResource MaterialFontFamily}"
 									FontSize="25"

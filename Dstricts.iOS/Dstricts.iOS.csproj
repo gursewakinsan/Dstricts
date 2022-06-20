@@ -75,6 +75,7 @@
     <Compile Include="Renderers\CustomEntryRenderer.cs" />
     <Compile Include="Renderers\CustomFloatingLabelEntryRenderer.cs" />
     <Compile Include="Renderers\CustomFrameRenderer.cs" />
+    <Compile Include="Renderers\CustomOtpEntryRenderer.cs" />
     <Compile Include="Renderers\CustomPickerRenderer.cs" />
     <Compile Include="Services\ProgressBar.cs" />
     <None Include="Entitlements.plist" />
@@ -206,5 +207,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconSmallLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconOtpPinPage.png" />
   </ItemGroup>
 </Project>

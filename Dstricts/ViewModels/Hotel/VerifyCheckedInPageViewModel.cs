@@ -48,7 +48,7 @@ namespace Dstricts.ViewModels
 				await Helper.Alert.DisplayAlert("Code is required.");
 			else
 			{
-				if (Password.Length < 6) return;
+				if (Password.Length < 4) return;
 				DependencyService.Get<IProgressBar>().Show();
 				IHotelService service = new HotelService();
 				Models.VerifyCheckedInCodeResponse response = await service.VerifyCheckedInCodeAsync(new Models.VerifyCheckedInCodeRequest()

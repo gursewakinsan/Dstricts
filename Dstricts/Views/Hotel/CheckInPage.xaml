@@ -198,12 +198,14 @@
 				Spacing="16">
 				<BindableLayout.ItemTemplate>
 					<DataTemplate>
-						<Frame HorizontalOptions="StartAndExpand"
-							Padding="0" WidthRequest="{Binding ImgWidth}"
+						<Frame
+							Padding="0"
 							BackgroundColor="Transparent"
 							CornerRadius="16"
 							HasShadow="False"
-							IsClippedToBounds="True">
+							HorizontalOptions="StartAndExpand"
+							IsClippedToBounds="True"
+							WidthRequest="{Binding ImgWidth}">
 							<Frame.GestureRecognizers>
 								<TapGestureRecognizer Tapped="OnFrameCheckInTapped" />
 							</Frame.GestureRecognizers>

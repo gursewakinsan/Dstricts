@@ -52,6 +52,19 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Book Page Command.
+		private ICommand goToBookPageCommand;
+		public ICommand GoToBookPageCommand
+		{
+			get => goToBookPageCommand ?? (goToBookPageCommand = new Command(async () => await ExecuteGoToBookPageCommand()));
+		}
+		private async Task ExecuteGoToBookPageCommand()
+		{
+			await Task.CompletedTask;
+			//await Navigation.PushAsync(new Views.FittnessAndSpa.WellnessBookingTypePage());
+		}
+		#endregion
+
 		#region User Queue List Command.
 		private ICommand userQueueListCommand;
 		public ICommand UserQueueListCommand
