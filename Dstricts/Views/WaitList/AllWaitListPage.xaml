@@ -8,7 +8,393 @@
 	ios:Page.UseSafeArea="True"
 	BackgroundColor="#181A1F"
 	NavigationPage.HasNavigationBar="False">
-	<ContentPage.Content>
+	<Grid
+		Margin="0,22,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40" />
+			<RowDefinition Height="31" />
+			<RowDefinition Height="40" />
+			<RowDefinition Height="16" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="8" />
+			<RowDefinition Height="1" />
+			<RowDefinition Height="41" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="32" />
+			<RowDefinition Height="45" />
+			<RowDefinition Height="36" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="40" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="40" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+		<Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2" />
+
+		<Button
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			Command="{Binding CloseCommand}"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White" />
+
+		<Image
+			Grid.Row="0"
+			Grid.Column="3"
+			Aspect="AspectFit"
+			BackgroundColor="Transparent"
+			HeightRequest="40"
+			HorizontalOptions="EndAndExpand"
+			Source="iconSmallLogo.png"
+			VerticalOptions="CenterAndExpand"
+			WidthRequest="40" />
+
+		<Label
+			Grid.Row="2"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontAttributes="Bold"
+			FontFamily="PoppinsBoldFontFamily"
+			FontSize="32"
+			HorizontalTextAlignment="Start"
+			Text="Waitlist"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<Label
+			Grid.Row="4"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			Text="Click to view your queue in line"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<BoxView
+			Grid.Row="6"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BackgroundColor="#2A2A31" />
+
+		<StackLayout
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			BindableLayout.ItemsSource="{Binding AllWaitListInfo}"
+			IsVisible="{Binding IsListOneRecord, Converter={StaticResource InverseBoolConverter}}"
+			Orientation="Horizontal"
+			Spacing="16">
+			<BindableLayout.ItemTemplate>
+				<DataTemplate>
+					<Frame
+						Padding="0"
+						BackgroundColor="Transparent"
+						CornerRadius="16"
+						HasShadow="False"
+						HorizontalOptions="FillAndExpand"
+						IsClippedToBounds="True">
+						<Frame.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnFrameAllWaitListTapped" />
+						</Frame.GestureRecognizers>
+						<Grid>
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnGridAllWaitListTapped" />
+							</Grid.GestureRecognizers>
+
+							<Image Aspect="AspectFill" Source="{Binding ImagePath}">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnImageAllWaitListTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+
+							<Grid
+								BackgroundColor="#25313D"
+								Opacity="0.75"
+								VerticalOptions="EndAndExpand">
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnGridAllWaitListTapped" />
+								</Grid.GestureRecognizers>
+
+								<Grid.RowDefinitions>
+									<RowDefinition Height="16" />
+									<RowDefinition Height="22" />
+									<RowDefinition Height="12" />
+									<RowDefinition Height="56" />
+									<RowDefinition Height="16" />
+								</Grid.RowDefinitions>
+
+								<StackLayout
+									Grid.Row="1"
+									Margin="16,0,16,0"
+									Orientation="Horizontal"
+									Spacing="0">
+									<Label
+										FontAttributes="Bold"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="16"
+										HorizontalOptions="StartAndExpand"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="{Binding PropertyNickName}"
+										TextColor="White"
+										VerticalOptions="CenterAndExpand">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+
+									<Label
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="14"
+										HorizontalOptions="EndAndExpand"
+										LineBreakMode="TailTruncation"
+										MaxLines="1"
+										Text="Open"
+										TextColor="#FF8A5D"
+										VerticalOptions="CenterAndExpand">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+										</Label.GestureRecognizers>
+									</Label>
+								</StackLayout>
+
+								<Frame
+									Grid.Row="3"
+									Margin="16,0,39,0"
+									Padding="0"
+									BackgroundColor="Transparent"
+									BorderColor="#737B8C"
+									CornerRadius="28"
+									HasShadow="False"
+									IsClippedToBounds="True">
+									<Frame.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnFrameAllWaitListTapped" />
+									</Frame.GestureRecognizers>
+									<StackLayout
+										HorizontalOptions="CenterAndExpand"
+										Orientation="Horizontal"
+										Spacing="5"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											Padding="0"
+											FontFamily="{StaticResource MaterialFontFamily}"
+											FontSize="23"
+											Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"
+											TextColor="White">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsBoldFontFamily"
+											FontSize="17"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											TextColor="White"
+											VerticalOptions="CenterAndExpand">
+											<Label.FormattedText>
+												<FormattedString>
+													<Span Text="{Binding WaitingCount}" />
+													<Span Text=" Before" />
+												</FormattedString>
+											</Label.FormattedText>
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+									</StackLayout>
+								</Frame>
+							</Grid>
+						</Grid>
+					</Frame>
+				</DataTemplate>
+			</BindableLayout.ItemTemplate>
+		</StackLayout>
+
+		<ScrollView
+			Grid.Row="8"
+			Grid.Column="1"
+			Grid.ColumnSpan="4"
+			Padding="0,0,28,0"
+			HorizontalScrollBarVisibility="Never"
+			IsVisible="{Binding IsListOneRecord}"
+			Orientation="Horizontal">
+			<StackLayout
+				BindableLayout.ItemsSource="{Binding AllWaitListInfo}"
+				Orientation="Horizontal"
+				Spacing="16">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<Frame
+							Padding="0"
+							BackgroundColor="Transparent"
+							CornerRadius="16"
+							HasShadow="False"
+							HorizontalOptions="StartAndExpand"
+							IsClippedToBounds="True"
+							WidthRequest="{Binding ImgWidth}">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnFrameAllWaitListTapped" />
+							</Frame.GestureRecognizers>
+
+							<Grid>
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnGridAllWaitListTapped" />
+								</Grid.GestureRecognizers>
+
+								<Image Aspect="AspectFill" Source="{Binding ImagePath}">
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnImageAllWaitListTapped" />
+									</Image.GestureRecognizers>
+								</Image>
+
+								<Grid
+									BackgroundColor="#25313D"
+									Opacity="0.75"
+									VerticalOptions="EndAndExpand">
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnGridAllWaitListTapped" />
+									</Grid.GestureRecognizers>
+
+									<Grid.RowDefinitions>
+										<RowDefinition Height="16" />
+										<RowDefinition Height="22" />
+										<RowDefinition Height="12" />
+										<RowDefinition Height="56" />
+										<RowDefinition Height="16" />
+									</Grid.RowDefinitions>
+
+									<StackLayout
+										Grid.Row="1"
+										Margin="16,0,16,0"
+										Orientation="Horizontal"
+										Spacing="0">
+										<Label
+											FontAttributes="Bold"
+											FontFamily="PoppinsBoldFontFamily"
+											FontSize="16"
+											HorizontalOptions="StartAndExpand"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="{Binding PropertyNickName}"
+											TextColor="White"
+											VerticalOptions="CenterAndExpand">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+
+										<Label
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="14"
+											HorizontalOptions="EndAndExpand"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Text="Open"
+											TextColor="#FF8A5D"
+											VerticalOptions="CenterAndExpand">
+											<Label.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+											</Label.GestureRecognizers>
+										</Label>
+									</StackLayout>
+
+									<Frame
+										Grid.Row="3"
+										Margin="16,0,39,0"
+										Padding="0"
+										BackgroundColor="Transparent"
+										BorderColor="#737B8C"
+										CornerRadius="28"
+										HasShadow="False"
+										IsClippedToBounds="True">
+										<Frame.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnFrameAllWaitListTapped" />
+										</Frame.GestureRecognizers>
+										<StackLayout
+											HorizontalOptions="CenterAndExpand"
+											Orientation="Horizontal"
+											Spacing="5"
+											VerticalOptions="CenterAndExpand">
+											<Label
+												Padding="0"
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="23"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"
+												TextColor="White">
+												<Label.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+												</Label.GestureRecognizers>
+											</Label>
+
+											<Label
+												FontAttributes="Bold"
+												FontFamily="PoppinsBoldFontFamily"
+												FontSize="17"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												TextColor="White"
+												VerticalOptions="CenterAndExpand">
+												<Label.FormattedText>
+													<FormattedString>
+														<Span Text="{Binding WaitingCount}" />
+														<Span Text=" Before" />
+													</FormattedString>
+												</Label.FormattedText>
+												<Label.GestureRecognizers>
+													<TapGestureRecognizer Tapped="OnLabelAllWaitListTapped" />
+												</Label.GestureRecognizers>
+											</Label>
+										</StackLayout>
+									</Frame>
+								</Grid>
+							</Grid>
+						</Frame>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
+
+		<Button
+			Grid.Row="10"
+			Grid.Column="2"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			BorderWidth="2"
+			CornerRadius="10"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="12"
+			HeightRequest="45"
+			HorizontalOptions="CenterAndExpand"
+			Text="Scan QR Code"
+			TextColor="White"
+			VerticalOptions="CenterAndExpand"
+			WidthRequest="134" />
+	</Grid>
+
+
+	<!--<ContentPage.Content>
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="32" />
@@ -189,5 +575,5 @@
 				</ScrollView>
 			</StackLayout>
 		</Grid>
-	</ContentPage.Content>
+	</ContentPage.Content>-->
 </ContentPage>

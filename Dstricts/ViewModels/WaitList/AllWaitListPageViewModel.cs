@@ -27,6 +27,17 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("AllWaitListInfo");
 			}
 		}
+
+		private bool isListOneRecord;
+		public bool IsListOneRecord
+		{
+			get => isListOneRecord;
+			set
+			{
+				isListOneRecord = value;
+				OnPropertyChanged("IsListOneRecord");
+			}
+		}
 		#endregion
 	}
 }

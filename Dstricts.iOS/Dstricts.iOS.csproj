@@ -211,4 +211,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconOtpPinPage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EmptyWaitListBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\WaitListImage.png" />
+  </ItemGroup>
 </Project>

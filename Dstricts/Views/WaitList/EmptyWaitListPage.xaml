@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Dstricts.Views.WaitList.EmptyWaitListPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="#A3AEB4"
+	NavigationPage.HasNavigationBar="False">
+	<Grid>
+		<Image Aspect="AspectFill" Source="EmptyWaitListBG.png" />
+
+		<Grid
+			Margin="0,22,0,0"
+			ColumnSpacing="0"
+			RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="25" />
+				<RowDefinition Height="55" />
+				<RowDefinition Height="7" />
+				<RowDefinition Height="25" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="45" />
+				<RowDefinition Height="33" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="28" />
+				<ColumnDefinition Width="40" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="40" />
+				<ColumnDefinition Width="28" />
+			</Grid.ColumnDefinitions>
+
+			<Frame
+				Grid.Row="0"
+				Grid.Column="1"
+				Padding="0"
+				BackgroundColor="Transparent"
+				BorderColor="#5B5B79"
+				CornerRadius="8"
+				IsClippedToBounds="True" />
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="1"
+				Padding="0"
+				BackgroundColor="Transparent"
+				Command="{Binding CloseCommand}"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+				TextColor="#181A1F" />
+
+			<Image
+				Grid.Row="0"
+				Grid.Column="3"
+				Aspect="AspectFit"
+				BackgroundColor="Transparent"
+				HeightRequest="40"
+				HorizontalOptions="EndAndExpand"
+				Source="iconSmallLogo.png"
+				VerticalOptions="CenterAndExpand"
+				WidthRequest="40" />
+
+			<Label
+				Grid.Row="2"
+				Grid.Column="1"
+				Grid.ColumnSpan="3"
+				Padding="0"
+				FontAttributes="Bold"
+				FontFamily="PoppinsBoldFontFamily"
+				FontSize="45"
+				HorizontalTextAlignment="Start"
+				Text="Waitlist"
+				TextColor="Black"
+				VerticalTextAlignment="Center" />
+
+			<Label
+				Grid.Row="4"
+				Grid.Column="1"
+				Grid.ColumnSpan="3"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="20"
+				HorizontalTextAlignment="Start"
+				Text="Scan QR code and stand in line"
+				TextColor="Black"
+				VerticalTextAlignment="Center" />
+
+			<Button
+				Grid.Row="6"
+				Grid.Column="2"
+				Padding="0"
+				BackgroundColor="Black"
+				BorderColor="White"
+				BorderWidth="2"
+				Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+				CornerRadius="10"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HeightRequest="45"
+				HorizontalOptions="CenterAndExpand"
+				Text="Scan QR Code"
+				TextColor="White"
+				VerticalOptions="CenterAndExpand"
+				WidthRequest="134" />
+		</Grid>
+	</Grid>
+</ContentPage>

@@ -62,6 +62,8 @@ namespace Dstricts.Models
 			}
 		}
 
+		public double ImgWidth { get; set; }
+
 		#region On Property Changed.
 		public event PropertyChangedEventHandler PropertyChanged;
 		public virtual void OnPropertyChanged([CallerMemberName] string name = "")

@@ -125,6 +125,7 @@
 						BackgroundColor="Transparent"
 						CornerRadius="16"
 						HasShadow="False"
+						HorizontalOptions="FillAndExpand"
 						IsClippedToBounds="True">
 						<Frame.GestureRecognizers>
 							<TapGestureRecognizer Tapped="OnFrameCheckInTapped" />

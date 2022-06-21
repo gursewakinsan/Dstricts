@@ -15,6 +15,10 @@ namespace Dstricts.Views.WaitList
 			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new AllWaitListPageViewModel(this.Navigation);
+			if (allWaitList.Count > 1)
+				viewModel.IsListOneRecord = true;
+			else if (allWaitList.Count == 1)
+				viewModel.IsListOneRecord = false;
 			viewModel.AllWaitListInfo = allWaitList;
 		}
 
@@ -36,6 +40,36 @@ namespace Dstricts.Views.WaitList
 		private async void OnFrameAllWaitListTapped(object sender, EventArgs e)
 		{
 			Frame frame = sender as Frame;
+			Models.UserQueueListResponse selectedWaitList = frame.BindingContext as Models.UserQueueListResponse;
+			if (!selectedWaitList.IsServiced)
+			{
+				if (selectedWaitList.WaitingCount > 0)
+					await Navigation.PushAsync(new AllWaitListDetailPage(selectedWaitList));
+				else
+					await Navigation.PushAsync(new AllWaitListDetailBeforeZeroPage(selectedWaitList));
+			}
+			else
+				await Navigation.PushAsync(new AllWaitListDetailInServicingPage(selectedWaitList));
+		}
+
+		private async void OnImageAllWaitListTapped(object sender, EventArgs e)
+		{
+			Image frame = sender as Image;
+			Models.UserQueueListResponse selectedWaitList = frame.BindingContext as Models.UserQueueListResponse;
+			if (!selectedWaitList.IsServiced)
+			{
+				if (selectedWaitList.WaitingCount > 0)
+					await Navigation.PushAsync(new AllWaitListDetailPage(selectedWaitList));
+				else
+					await Navigation.PushAsync(new AllWaitListDetailBeforeZeroPage(selectedWaitList));
+			}
+			else
+				await Navigation.PushAsync(new AllWaitListDetailInServicingPage(selectedWaitList));
+		}
+
+		private async void OnLabelAllWaitListTapped(object sender, EventArgs e)
+		{
+			Label frame = sender as Label;
 			Models.UserQueueListResponse selectedWaitList = frame.BindingContext as Models.UserQueueListResponse;
 			if (!selectedWaitList.IsServiced)
 			{

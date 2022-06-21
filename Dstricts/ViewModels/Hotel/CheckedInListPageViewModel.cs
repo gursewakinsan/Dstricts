@@ -40,15 +40,26 @@ namespace Dstricts.ViewModels
 		{
 			if (UserQueueList?.Count > 0)
 			{
-				int index = 0;
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 80 / 100;
+
 				foreach (var waitList in UserQueueList)
 				{
-					waitList.FirstLetterBg = Helper.Helper.ListIconBgColorList[index];
-					waitList.FirstLetterText = Helper.Helper.ListIconTextColorList[index];
-					index = index + 1;
+					waitList.ImgWidth = imgWidth;
+					waitList.ImagePath = "WaitListImage.png";
 				}
-				await Navigation.PushAsync(new Views.WaitList.AllWaitListPage(UserQueueList));
+
+					/*int index = 0;
+					foreach (var waitList in UserQueueList)
+					{
+						waitList.FirstLetterBg = Helper.Helper.ListIconBgColorList[index];
+						waitList.FirstLetterText = Helper.Helper.ListIconTextColorList[index];
+						index = index + 1;
+					}*/
+					await Navigation.PushAsync(new Views.WaitList.AllWaitListPage(UserQueueList));
 			}
+			else
+				await Navigation.PushAsync(new Views.WaitList.EmptyWaitListPage());
 		}
 		#endregion
 
