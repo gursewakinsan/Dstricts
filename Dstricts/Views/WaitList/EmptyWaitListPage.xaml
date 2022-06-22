@@ -5,15 +5,13 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
-	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	ios:Page.UseSafeArea="True"
 	BackgroundColor="#A3AEB4"
 	NavigationPage.HasNavigationBar="False">
 	<Grid>
 		<Image Aspect="AspectFill" Source="EmptyWaitListBG.png" />
 
 		<Grid
-			Margin="0,22,0,0"
+			Margin="0,55,0,40"
 			ColumnSpacing="0"
 			RowSpacing="0">
 			<Grid.RowDefinitions>
@@ -24,7 +22,6 @@
 				<RowDefinition Height="25" />
 				<RowDefinition Height="*" />
 				<RowDefinition Height="45" />
-				<RowDefinition Height="33" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="28" />
@@ -37,7 +34,7 @@
 			<Frame
 				Grid.Row="0"
 				Grid.Column="1"
-				Padding="0"
+				Padding="0" HasShadow="False" 
 				BackgroundColor="Transparent"
 				BorderColor="#5B5B79"
 				CornerRadius="8"
