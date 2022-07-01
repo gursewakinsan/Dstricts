@@ -71,5 +71,9 @@
 		public const string CellphoneAndroid = "\U000f011d";
 		public const string ArrowRight = "\U000f0054";
 		public const string CheckboxMarked = "\U000f0132";
+
+		public const string HomeVariant = "\U000f02de";
+		public const string PlusBox = "\U000f0416";
+		public const string Soundcloud = "\U000f04c0";
 	}
 }

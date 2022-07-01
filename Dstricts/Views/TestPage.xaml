@@ -3,43 +3,186 @@
 	x:Class="Dstricts.Views.TestPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
 	ios:Page.UseSafeArea="True"
-	BackgroundColor="White"
+	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
-	<StackLayout Padding="20" VerticalOptions="CenterAndExpand">
-		<textinputlayout:SfTextInputLayout
-			ContainerBackgroundColor="Transparent"
-			ContainerType="Outlined"
-			FocusedColor="#6263ED"
-			FocusedStrokeWidth="1"
-			Hint="Type"
-			OutlineCornerRadius="12"
-			TrailingViewPosition="Inside"
-			UnfocusedColor="#6263ED"
-			UnfocusedStrokeWidth="1">
-			<Grid HeightRequest="86" VerticalOptions="CenterAndExpand">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="44" />
-				</Grid.ColumnDefinitions>
-				<StackLayout
-					Grid.Row="0"
-					Grid.Column="0"
-					BackgroundColor="Red"
-					HeightRequest="44"
-					VerticalOptions="CenterAndExpand" />
+	<Grid
+		Margin="0,12,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="29" />
+			<RowDefinition Height="102" />
+			<RowDefinition Height="26" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="100" />
+		</Grid.ColumnDefinitions>
+		<Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
 
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="Scandic Camper Hotel"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<Grid
+			Grid.Row="2"
+			Grid.ColumnSpan="3"
+			Margin="28,0,0,0"
+			ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="76" />
+				<ColumnDefinition Width="21" />
+				<ColumnDefinition Width="76" />
+				<ColumnDefinition Width="19" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="76" />
+				<RowDefinition Height="8" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Button
+				Grid.Row="0"
+				Grid.Column="0"
+				BackgroundColor="Transparent"
+				BorderColor="#737B8C"
+				BorderWidth="1"
+				CornerRadius="38"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="24"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
+				TextColor="White" />
+
+			<Button
+				Grid.Row="0"
+				Grid.Column="2"
+				BackgroundColor="Transparent"
+				BorderColor="#737B8C"
+				BorderWidth="1"
+				CornerRadius="38"
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="24"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+				TextColor="White" />
+
+			<controls:CustomFrame
+				Grid.Row="0"
+				Grid.Column="4"
+				Padding="0"
+				BackgroundColor="White"
+				CornerRadius="38,0,38,0">
 				<StackLayout
-					Grid.Row="0"
-					Grid.Column="1"
-					BackgroundColor="Green"
-					HeightRequest="44"
-					VerticalOptions="CenterAndExpand" />
-			</Grid>
-		</textinputlayout:SfTextInputLayout>
-	</StackLayout>
+					Margin="0,0,23,0"
+					HorizontalOptions="EndAndExpand"
+					Orientation="Horizontal"
+					Spacing="6"
+					VerticalOptions="CenterAndExpand">
+					<Label
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="30"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+						TextColor="#363541"
+						VerticalTextAlignment="Center" />
+
+					<Label
+						Grid.Row="0"
+						Grid.Column="1"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Center"
+						Text="Guests"
+						TextColor="#363541"
+						VerticalTextAlignment="Center" />
+				</StackLayout>
+			</controls:CustomFrame>
+
+			<Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="0"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="Center"
+				Text="Social"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+
+			<Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="2"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="Center"
+				Text="Services"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+
+			<Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="4"
+				Margin="0,0,28,0"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="End"
+				Text="Check-in"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+		</Grid>
+
+		<ImageButton
+			Grid.Row="4"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			Aspect="AspectFill"
+			CornerRadius="35"
+			HorizontalOptions="FillAndExpand"
+			Source="EmptyWaitListBG.png"
+			VerticalOptions="FillAndExpand" />
+
+		<Button
+			Grid.Row="4"
+			Grid.ColumnSpan="3"
+			Margin="0,0,0,28"
+			BackgroundColor="#0060FF"
+			BorderColor="White"
+			BorderWidth="2"
+			CornerRadius="10"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="12"
+			HeightRequest="55"
+			HorizontalOptions="CenterAndExpand"
+			Text="Scan QR Code"
+			TextColor="White"
+			VerticalOptions="EndAndExpand"
+			WidthRequest="145" />
+	</Grid>
 </ContentPage>
 
