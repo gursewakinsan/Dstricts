@@ -167,10 +167,31 @@
 			Source="EmptyWaitListBG.png"
 			VerticalOptions="FillAndExpand" />
 
+		<StackLayout
+			Spacing="0"
+			Grid.Row="4"
+			Margin="28,30,28,0"
+			VerticalOptions="StartAndExpand"
+			Grid.ColumnSpan="3">
+				<Label
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="40"
+					Text="Check-in"
+					TextColor="Black" />
+
+				<Label
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="16" MaxLines="2"
+					LineBreakMode="TailTruncation"
+					LineHeight="1.2"
+					Text="Scan the QR code at this hotel under self service kiosk or turn to front desk."
+					TextColor="Black" />
+		</StackLayout>
+
 		<Button
 			Grid.Row="4"
 			Grid.ColumnSpan="3"
-			Margin="0,0,0,28"
+			Margin="0,0,0,18"
 			BackgroundColor="#0060FF"
 			BorderColor="White"
 			BorderWidth="2"
