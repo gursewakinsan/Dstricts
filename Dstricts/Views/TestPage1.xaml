@@ -94,8 +94,7 @@
 				Grid.Row="0"
 				Grid.Column="4"
 				Padding="0"
-				BackgroundColor="Transparent"
-				BorderColor="#737B8C"
+				BackgroundColor="White"
 				CornerRadius="38,0,38,0"
 				HasShadow="False"
 				IsClippedToBounds="True">
@@ -109,7 +108,7 @@
 						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="30"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
-						TextColor="White"
+						TextColor="#282A34"
 						VerticalTextAlignment="Center" />
 
 					<Label
@@ -119,7 +118,7 @@
 						FontSize="16"
 						HorizontalTextAlignment="Center"
 						Text="Guests"
-						TextColor="White"
+						TextColor="#282A34"
 						VerticalTextAlignment="Center" />
 				</StackLayout>
 			</controls:CustomFrame>
