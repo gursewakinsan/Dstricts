@@ -22,7 +22,7 @@ namespace Dstricts
 				MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 			}
 			else*/
-				MainPage = new NavigationPage(new Views.TestPage());
+				MainPage = new NavigationPage(new Views.TestPage3());
 		}
 
 		#region Login With Session For iOS.

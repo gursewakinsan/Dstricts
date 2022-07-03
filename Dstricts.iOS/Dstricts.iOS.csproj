@@ -217,4 +217,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\WaitListImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b1.png" />
+  </ItemGroup>
 </Project>

@@ -96,7 +96,9 @@
 				Grid.Column="4"
 				Padding="0"
 				BackgroundColor="White"
-				CornerRadius="38,0,38,0">
+				CornerRadius="38,0,38,0"
+				HasShadow="False"
+				IsClippedToBounds="True">
 				<StackLayout
 					Margin="0,0,23,0"
 					HorizontalOptions="EndAndExpand"
@@ -168,24 +170,25 @@
 			VerticalOptions="FillAndExpand" />
 
 		<StackLayout
-			Spacing="0"
 			Grid.Row="4"
+			Grid.ColumnSpan="3"
 			Margin="28,30,28,0"
-			VerticalOptions="StartAndExpand"
-			Grid.ColumnSpan="3">
-				<Label
-					FontFamily="PoppinsBoldFontFamily"
-					FontSize="40"
-					Text="Check-in"
-					TextColor="Black" />
+			Spacing="0"
+			VerticalOptions="StartAndExpand">
+			<Label
+				FontFamily="PoppinsBoldFontFamily"
+				FontSize="40"
+				Text="Check-in"
+				TextColor="Black" />
 
-				<Label
-					FontFamily="PoppinsSemiBoldFontFamily"
-					FontSize="16" MaxLines="2"
-					LineBreakMode="TailTruncation"
-					LineHeight="1.2"
-					Text="Scan the QR code at this hotel under self service kiosk or turn to front desk."
-					TextColor="Black" />
+			<Label
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="16"
+				LineBreakMode="TailTruncation"
+				LineHeight="1.2"
+				MaxLines="2"
+				Text="Scan the QR code at this hotel under self service kiosk or turn to front desk."
+				TextColor="Black" />
 		</StackLayout>
 
 		<Button

@@ -75,5 +75,8 @@
 		public const string HomeVariant = "\U000f02de";
 		public const string PlusBox = "\U000f0416";
 		public const string Soundcloud = "\U000f04c0";
+
+		public const string FloorLampVariant = "\U000f1041";
+		public const string WallSconceRound = "\U000f0748";
 	}
 }
