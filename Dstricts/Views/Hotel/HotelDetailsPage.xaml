@@ -72,41 +72,50 @@
 				Margin="0,26,0,0"
 				VerticalScrollBarVisibility="Never">
 				<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
-					<StackLayout VerticalOptions="Start" HeightRequest="76">
-						<Label 
-						FontFamily="PoppinsSemiBoldFontFamily"
-						FontSize="18" VerticalOptions="StartAndExpand"
-						Opacity="0.4" 
-						Text="Welcome"
-						TextColor="White" />
+					<StackLayout HeightRequest="76" VerticalOptions="Start">
+						<Label
+							FontFamily="PoppinsSemiBoldFontFamily"
+							FontSize="18"
+							Opacity="0.4"
+							Text="Welcome"
+							TextColor="White"
+							VerticalOptions="StartAndExpand" />
 
-					<Label
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="32" Margin="0,0,0,6"
-						LineBreakMode="TailTruncation" 
-						 VerticalOptions="EndAndExpand"
-						Text="{Binding HotelDetails.FirstName}"
-						TextColor="White" />
+						<Label
+							Margin="0,0,0,6"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="32"
+							LineBreakMode="TailTruncation"
+							Text="{Binding HotelDetails.FirstName}"
+							TextColor="White"
+							VerticalOptions="EndAndExpand" />
 					</StackLayout>
-					
 
-					<ScrollView Margin="0,28,0,0" HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20">
+
+					<ScrollView
+						Margin="0,28,0,0"
+						HorizontalScrollBarVisibility="Never"
+						Orientation="Horizontal">
+						<StackLayout
+							Orientation="Horizontal"
+							Spacing="20"
+							VerticalOptions="Start">
 							<Frame
 								x:Name="frameYourDetails"
 								Padding="24,40,25,33"
 								BackgroundColor="#282732"
 								CornerRadius="12"
-								HasShadow="False" VerticalOptions="StartAndExpand"
+								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
-								IsClippedToBounds="True">
-								<StackLayout VerticalOptions="StartAndExpand" Spacing="0">
+								IsClippedToBounds="True"
+								VerticalOptions="StartAndExpand">
+								<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 									<Label
+										Margin="0,6,0,6"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
-										Margin="0,6,0,6"
 										LineBreakMode="TailTruncation"
 										Text="Your details"
 										TextColor="White" />
@@ -190,10 +199,11 @@
 										BackgroundColor="#3EC4D5"
 										CornerRadius="8"
 										FontFamily="PoppinsSemiBoldFontFamily"
-										FontSize="14" VerticalOptions="Start"
+										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Read more"
 										TextColor="#181A1F"
+										VerticalOptions="Start"
 										WidthRequest="128" />
 								</StackLayout>
 							</Frame>
@@ -203,16 +213,17 @@
 								Padding="24,40,25,33"
 								BackgroundColor="#242A37"
 								CornerRadius="12"
-								HasShadow="False" VerticalOptions="StartAndExpand"
+								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
-								IsVisible="{Binding HotelDetails.WifiAvailable}">
+								IsVisible="{Binding HotelDetails.WifiAvailable}"
+								VerticalOptions="StartAndExpand">
 								<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 									<Label
+										Margin="0,6,0,6"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
-										Margin="0,6,0,6" 
 										LineBreakMode="TailTruncation"
 										Text="Get Wi-Fi"
 										TextColor="#4C7CE5" />
@@ -303,16 +314,18 @@
 								x:Name="frameCompleteCheckIns"
 								Padding="24,40,25,33"
 								BackgroundColor="#342334"
-								CornerRadius="12" VerticalOptions="StartAndExpand"
+								CornerRadius="12"
 								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
 								IsClippedToBounds="True"
-								IsVisible="{Binding HotelDetails.GuestCheckinLeft}">
+								IsVisible="{Binding HotelDetails.GuestCheckinLeft}"
+								VerticalOptions="StartAndExpand">
 								<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 									<Label
+										Margin="0,6,0,6"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
-										FontSize="24" Margin="0,6,0,6"
+										FontSize="24"
 										LineBreakMode="TailTruncation"
 										Text="Complete check-ins"
 										TextColor="White" />
@@ -406,10 +419,11 @@
 										Command="{Binding GoToAdultsAndChildrenPageCommand}"
 										CornerRadius="8"
 										FontFamily="PoppinsSemiBoldFontFamily"
-										FontSize="14" VerticalOptions="StartAndExpand"
+										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Complete remaining"
 										TextColor="White"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="203" />
 								</StackLayout>
 							</Frame>
@@ -420,16 +434,17 @@
 								Padding="24,40,25,33"
 								BackgroundColor="#342B20"
 								CornerRadius="12"
-								HasShadow="False" VerticalOptions="StartAndExpand"
+								HasShadow="False"
 								HorizontalOptions="StartAndExpand"
-								IsClippedToBounds="True">
+								IsClippedToBounds="True"
+								VerticalOptions="StartAndExpand">
 								<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
 									<Label
+										Margin="0,6,0,6"
 										FontAttributes="Bold"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="24"
 										Text="Rules"
-										Margin="0,6,0,6"
 										TextColor="White" />
 
 									<Label
@@ -495,10 +510,11 @@
 										BackgroundColor="#FF9129"
 										CornerRadius="8"
 										FontFamily="PoppinsSemiBoldFontFamily"
-										FontSize="14" VerticalOptions="StartAndExpand"
+										FontSize="14"
 										HorizontalOptions="StartAndExpand"
 										Text="Late check out?"
 										TextColor="#181A1F"
+										VerticalOptions="StartAndExpand"
 										WidthRequest="158" />
 								</StackLayout>
 							</Frame>
@@ -535,8 +551,9 @@
 								Grid.Column="0"
 								Spacing="4">
 								<Label
+									Margin="0,5,0,0"
 									FontFamily="PoppinsBoldFontFamily"
-									FontSize="24" Margin="0,5,0,0"
+									FontSize="24"
 									LineBreakMode="TailTruncation"
 									Text="Address"
 									TextColor="#181A1F" />
@@ -545,7 +562,8 @@
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
 									LineBreakMode="TailTruncation"
-									MaxLines="2" LineHeight="1.2"
+									LineHeight="1.2"
+									MaxLines="2"
 									Text="{Binding HotelDetails.VisitingAddress}"
 									TextColor="#181A1F" />
 							</StackLayout>
@@ -596,10 +614,14 @@
 							<ColumnDefinition Width="*" />
 						</Grid.ColumnDefinitions>
 
-						<BoxView Grid.Column="0" CornerRadius="10" BackgroundColor="#45C366"/>
-
-						<Frame Margin="3"
+						<BoxView
 							Grid.Column="0"
+							BackgroundColor="#45C366"
+							CornerRadius="10" />
+
+						<Frame
+							Grid.Column="0"
+							Margin="3"
 							Padding="17,25,17,21"
 							BackgroundColor="#282732"
 							CornerRadius="10"
@@ -607,8 +629,9 @@
 							IsClippedToBounds="True">
 							<StackLayout>
 								<Label
+									Margin="0,6,0,6"
 									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="18" Margin="0,6,0,6"
+									FontSize="18"
 									Text="Clean Room"
 									TextColor="White" />
 
@@ -646,10 +669,10 @@
 							IsClippedToBounds="True">
 							<StackLayout>
 								<Label
+									Margin="0,6,0,6"
 									FontFamily="PoppinsSemiBoldFontFamily"
 									FontSize="18"
 									LineBreakMode="TailTruncation"
-									Margin="0,6,0,6"
 									MaxLines="1"
 									Text="Don't Disturb"
 									TextColor="White" />
@@ -701,9 +724,9 @@
 								Grid.Column="0"
 								Spacing="4">
 								<Label
+									Margin="0,5,0,0"
 									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
-									Margin="0,5,0,0"
 									Text="Problems"
 									TextColor="White" />
 

@@ -36,7 +36,7 @@
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
-				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
 			</Label.GestureRecognizers>
 		</Label>
 
@@ -73,6 +73,7 @@
 				BackgroundColor="Transparent"
 				BorderColor="#737B8C"
 				BorderWidth="1"
+				Clicked="Button_Clicked"
 				CornerRadius="38"
 				FontFamily="{StaticResource MaterialFontFamily}"
 				FontSize="24"

@@ -37,7 +37,7 @@
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
-				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
 			</Label.GestureRecognizers>
 		</Label>
 

@@ -23,6 +23,16 @@ namespace Dstricts.Views
 			//BindableLayout.SetItemsSource(cards, new string[10]);
 			//BindableLayout.SetItemsSource(listPickDate, new string[10]);
 		}
+
+		private async void Button_Clicked(object sender, System.EventArgs e)
+		{
+			await Navigation.PushAsync(new TestPage3());
+		}
+
+		private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
 	}
 }
 

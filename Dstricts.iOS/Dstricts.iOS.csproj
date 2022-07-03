@@ -220,4 +220,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\b1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconWelness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconMeetingAndEvents.PNG" />
+  </ItemGroup>
 </Project>
