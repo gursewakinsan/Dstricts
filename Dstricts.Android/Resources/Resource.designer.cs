@@ -17217,7 +17217,7 @@ namespace Dstricts.Droid
 			public const int iconBack = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int iconMeetingAndEvents = 2131165337;
+			public const int iconMeeting = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
 			public const int iconOtpPinPage = 2131165338;

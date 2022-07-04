@@ -83,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\Fonts\materialdesignicons-webfont.ttf" />
     <BundleResource Include="Resources\splashLogo_1.png" />
+    <BundleResource Include="Resources\iconMeeting.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -222,8 +223,5 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconWelness.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconMeetingAndEvents.png" />
   </ItemGroup>
 </Project>
