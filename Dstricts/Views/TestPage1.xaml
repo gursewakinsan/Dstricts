@@ -36,7 +36,7 @@
 			TextColor="White"
 			VerticalTextAlignment="Center">
 			<Label.GestureRecognizers>
-				<TapGestureRecognizer Command="{Binding CloseCommand}" />
+				<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
 			</Label.GestureRecognizers>
 		</Label>
 
@@ -839,8 +839,9 @@
 											<ImageButton
 												Grid.Row="0"
 												Aspect="AspectFill"
+												BackgroundColor="Red"
 												CornerRadius="12"
-												HeightRequest="148" BackgroundColor="Red"
+												HeightRequest="148"
 												HorizontalOptions="CenterAndExpand"
 												Source="iconMeeting.png"
 												VerticalOptions="CenterAndExpand"

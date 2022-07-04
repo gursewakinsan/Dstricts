@@ -39,6 +39,11 @@ namespace Dstricts.Views
 		{
 			await Navigation.PushAsync(new TestPage());
 		}
+
+		private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
 	}
 }
 class DemoData

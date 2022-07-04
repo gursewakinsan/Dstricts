@@ -224,4 +224,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconWelness.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconBuildingWithGarden.png" />
+  </ItemGroup>
 </Project>
