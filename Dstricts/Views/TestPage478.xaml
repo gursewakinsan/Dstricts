@@ -187,19 +187,19 @@
 						<RowDefinition Height="33" />
 						<RowDefinition Height="27" />
 						<RowDefinition Height="10" />
-						<RowDefinition Height="40" />
+						<RowDefinition Height="45" />
 						<RowDefinition Height="26" />
 						<RowDefinition Height="1" />
 						<RowDefinition Height="26" />
 						<RowDefinition Height="27" />
 						<RowDefinition Height="10" />
-						<RowDefinition Height="40" />
+						<RowDefinition Height="45" />
 						<RowDefinition Height="26" />
 						<RowDefinition Height="1" />
 						<RowDefinition Height="26" />
 						<RowDefinition Height="27" />
 						<RowDefinition Height="10" />
-						<RowDefinition Height="72" />
+						<RowDefinition Height="88" />
 						<RowDefinition Height="40" />
 						<RowDefinition Height="auto" />
 
@@ -217,7 +217,7 @@
 					<StackLayout
 						Grid.Row="0"
 						Grid.Column="1"
-						Margin="0,0,75,0"
+						Margin="0,0,50,0"
 						HorizontalOptions="StartAndExpand">
 						<Label
 							FontFamily="PoppinsSemiBoldFontFamily"
@@ -744,7 +744,7 @@
 										WidthRequest="190">
 										<Grid.RowDefinitions>
 											<RowDefinition Height="148" />
-											<RowDefinition Height="*" />
+											<RowDefinition Height="60" />
 										</Grid.RowDefinitions>
 										<ImageButton
 											Grid.Row="0"
