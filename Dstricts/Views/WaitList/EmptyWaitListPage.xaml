@@ -5,9 +5,268 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
-	BackgroundColor="#A3AEB4"
+	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
-	<Grid>
+	<Grid
+		Padding="0,15,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="28" />
+			<RowDefinition Height="102" />
+			<RowDefinition Height="29" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="120" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Padding="28,0,0,0"
+			FontFamily="PoppinsSemiBoldFontFamily"
+			FontSize="22"
+			HorizontalTextAlignment="Start"
+			Text="Dstricts"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+		<StackLayout
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0,0,28,0"
+			HorizontalOptions="EndAndExpand"
+			Orientation="Horizontal"
+			Spacing="30"
+			VerticalOptions="CenterAndExpand">
+			<Frame
+				Padding="0"
+				BackgroundColor="Transparent"
+				BorderColor="#3C3D42"
+				HasShadow="False"
+				IsClippedToBounds="True">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
+				</Frame.GestureRecognizers>
+				<Label
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="25"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+					TextColor="White">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
+					</Label.GestureRecognizers>
+				</Label>
+			</Frame>
+
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
+				TextColor="White" />
+
+			<Label
+				FontFamily="{StaticResource MaterialFontFamily}"
+				FontSize="25"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
+				TextColor="White" />
+		</StackLayout>
+
+		<ScrollView
+			Grid.Row="2"
+			Grid.ColumnSpan="2"
+			Margin="28,0,0,0"
+			HorizontalScrollBarVisibility="Never"
+			Orientation="Horizontal">
+			<Grid ColumnSpacing="0" RowSpacing="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="76" />
+					<ColumnDefinition Width="20" />
+					<ColumnDefinition Width="76" />
+					<ColumnDefinition Width="20" />
+					<ColumnDefinition Width="76" />
+					<ColumnDefinition Width="19" />
+					<ColumnDefinition Width="76" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="76" />
+					<RowDefinition Height="8" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Button
+					Grid.Row="0"
+					Grid.Column="0"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
+					TextColor="White" />
+
+				<Button
+					Grid.Row="0"
+					Grid.Column="2"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding GoToCheckInCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+					TextColor="White" />
+
+				<Button
+					Grid.Row="0"
+					Grid.Column="4"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding GoToBookPageCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
+					TextColor="White" />
+
+				<Button
+					Grid.Row="0"
+					Grid.Column="6"
+					BackgroundColor="White"
+					Command="{Binding GoToAllWaitCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+					TextColor="#282A34" />
+
+				<Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Social"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+				<Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="2"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Check-in"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+				<Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="4"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Book"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+				<Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="6"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Waitlist"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+			</Grid>
+		</ScrollView>
+
+		<Grid Grid.Row="4" Grid.ColumnSpan="2">
+			<ImageButton
+				Aspect="AspectFill"
+				CornerRadius="38"
+				Source="EmptyWaitListBG.png" />
+
+			<Grid
+				Margin="0,40,0,0"
+				ColumnSpacing="0"
+				RowSpacing="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="55" />
+					<RowDefinition Height="3" />
+					<RowDefinition Height="48" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="45" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="28" />
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="28" />
+				</Grid.ColumnDefinitions>
+
+
+				<Label
+					Grid.Row="0"
+					Grid.Column="1"
+					Grid.ColumnSpan="3"
+					Padding="0"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="45"
+					HorizontalTextAlignment="Start"
+					Text="Waitlist"
+					TextColor="Black"
+					VerticalTextAlignment="Center" />
+
+				<Label
+					Grid.Row="2"
+					Grid.Column="1"
+					Grid.ColumnSpan="3"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					Text="Scan the QR code at this apartment and get yourself checked-in."
+					TextColor="Black"
+					VerticalTextAlignment="Center" />
+
+				<Button
+					Grid.Row="4"
+					Grid.Column="2"
+					Padding="0"
+					BackgroundColor="Black"
+					BorderColor="White"
+					BorderWidth="2"
+					Clicked="OnBtnOpenCameraToScanQrCodeClicked"
+					CornerRadius="10"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HeightRequest="45"
+					HorizontalOptions="CenterAndExpand"
+					Text="Scan QR Code"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand"
+					WidthRequest="134" />
+			</Grid>
+		</Grid>
+	</Grid>
+
+
+
+	<!--<Grid>
 		<Image Aspect="AspectFill" Source="EmptyWaitListBG.png" />
 
 		<Grid
@@ -34,10 +293,11 @@
 			<Frame
 				Grid.Row="0"
 				Grid.Column="1"
-				Padding="0" HasShadow="False" 
+				Padding="0"
 				BackgroundColor="Transparent"
 				BorderColor="#5B5B79"
 				CornerRadius="8"
+				HasShadow="False"
 				IsClippedToBounds="True" />
 
 			<Button
@@ -104,5 +364,5 @@
 				VerticalOptions="CenterAndExpand"
 				WidthRequest="134" />
 		</Grid>
-	</Grid>
+	</Grid>-->
 </ContentPage>

@@ -92,6 +92,7 @@ namespace Dstricts.ViewModels
 			else if (checkIns?.Count == 1)
 				IsListOneRecord = false;
 
+
 			CheckInList = checkIns;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
