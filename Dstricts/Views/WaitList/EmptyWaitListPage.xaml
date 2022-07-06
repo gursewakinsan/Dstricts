@@ -6,6 +6,8 @@
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	BackgroundColor="#282A34"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
 		Padding="0,15,0,0"
@@ -209,6 +211,7 @@
 					<RowDefinition Height="48" />
 					<RowDefinition Height="*" />
 					<RowDefinition Height="45" />
+					<RowDefinition Height="10" />
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="28" />
