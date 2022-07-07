@@ -205,7 +205,7 @@
 				CornerRadius="38,38,0,0"
 				HasShadow="False"
 				IsClippedToBounds="True">
-				<ScrollView Margin="0,24,0,0" VerticalScrollBarVisibility="Never">
+				<ScrollView VerticalScrollBarVisibility="Never">
 					<StackLayout x:Name="cards">
 						<BindableLayout.ItemTemplate>
 							<DataTemplate>
@@ -219,6 +219,7 @@
 									VerticalOptions="StartAndExpand">
 									<Grid ColumnSpacing="0" RowSpacing="0">
 										<Grid.RowDefinitions>
+											<RowDefinition Height="28" />
 											<RowDefinition Height="40" />
 											<RowDefinition Height="10" />
 											<RowDefinition Height="468" />
@@ -242,7 +243,7 @@
 
 
 										<ImageButton
-											Grid.Row="0"
+											Grid.Row="1"
 											Grid.Column="1"
 											Padding="0"
 											Aspect="AspectFill"
@@ -255,7 +256,7 @@
 											WidthRequest="40" />
 
 										<StackLayout
-											Grid.Row="0"
+											Grid.Row="1"
 											Grid.Column="2"
 											Margin="18,0,0,0"
 											HorizontalOptions="StartAndExpand"
@@ -280,7 +281,7 @@
 										</StackLayout>
 
 										<Button
-											Grid.Row="0"
+											Grid.Row="1"
 											Grid.Column="3"
 											Padding="0"
 											BackgroundColor="Transparent"
@@ -291,7 +292,7 @@
 											VerticalOptions="StartAndExpand" />
 
 										<Frame
-											Grid.Row="2"
+											Grid.Row="3"
 											Grid.ColumnSpan="5"
 											Padding="0"
 											BackgroundColor="Transparent"
@@ -306,7 +307,7 @@
 										</Frame>
 
 										<StackLayout
-											Grid.Row="4"
+											Grid.Row="5"
 											Grid.Column="1"
 											Grid.ColumnSpan="2"
 											HorizontalOptions="StartAndExpand"
@@ -338,7 +339,7 @@
 										</StackLayout>
 
 										<Label
-											Grid.Row="4"
+											Grid.Row="5"
 											Grid.Column="3"
 											FontFamily="{StaticResource MaterialFontFamily}"
 											FontSize="24"
@@ -350,7 +351,7 @@
 											VerticalTextAlignment="Center" />
 
 										<Label
-											Grid.Row="6"
+											Grid.Row="7"
 											Grid.Column="1"
 											Grid.ColumnSpan="3"
 											FontFamily="PoppinsRegularFontFamily"
@@ -365,7 +366,7 @@
 											VerticalTextAlignment="Center" />
 
 										<Grid
-											Grid.Row="8"
+											Grid.Row="9"
 											Grid.Column="1"
 											Grid.ColumnSpan="3">
 											<Grid.ColumnDefinitions>
@@ -402,7 +403,7 @@
 										</Grid>
 
 										<BoxView
-											Grid.Row="10"
+											Grid.Row="11"
 											Grid.Column="1"
 											Grid.ColumnSpan="3"
 											BackgroundColor="White"

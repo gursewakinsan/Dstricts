@@ -7,10 +7,10 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	BackgroundColor="#282A34"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	ios:Page.UseSafeArea="True"
+	ios:Page.UseSafeArea="False"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Padding="0,15,0,0"
+		Padding="0,60,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
@@ -212,7 +212,7 @@
 					<RowDefinition Height="48" />
 					<RowDefinition Height="*" />
 					<RowDefinition Height="45" />
-					<RowDefinition Height="10" />
+					<RowDefinition Height="28" />
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="28" />

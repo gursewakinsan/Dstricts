@@ -282,6 +282,39 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region User Queue List Command.
+		private ICommand userQueueListCommand;
+		public ICommand UserQueueListCommand
+		{
+			get => userQueueListCommand ?? (userQueueListCommand = new Command(async () => await ExecuteUserQueueListCommand()));
+
+		}
+		private async Task ExecuteUserQueueListCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IHotelService service = new HotelService();
+			var UserQueueList = await service.UserQueueListAsync(new Models.UserQueueListRequest()
+			{
+				UserId = Helper.Helper.LoggedInUserId
+			});
+			if (UserQueueList?.Count > 0)
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 80 / 100;
+
+				foreach (var waitList in UserQueueList)
+				{
+					waitList.ImgWidth = imgWidth;
+					waitList.ImagePath = "WaitListImage.png";
+				}
+				await Navigation.PushAsync(new Views.WaitList.AllWaitListPage(UserQueueList));
+			}
+			else
+				await Navigation.PushAsync(new Views.WaitList.EmptyWaitListPage());
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.CheckedInResponse> checkInList;
 		public List<Models.CheckedInResponse> CheckInList
