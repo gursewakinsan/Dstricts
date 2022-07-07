@@ -18,6 +18,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Social Command.
+		private ICommand socialCommand;
+		public ICommand SocialCommand
+		{
+			get => socialCommand ?? (socialCommand = new Command(() => ExecuteSocialCommand()));
+		}
+		private void ExecuteSocialCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+		}
+		#endregion
+
 		#region Verify QR Code Command.
 		private ICommand verifyQrCodeCommand;
 		public ICommand VerifyQrCodeCommand
@@ -175,6 +187,18 @@ namespace Dstricts.ViewModels
 			else
 				await Navigation.PushAsync(new Views.ErrorMessage.InvitedVisitorsMeetingListNotAvailablePage());
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Check In Command.
+		private ICommand checkInCommand;
+		public ICommand CheckInCommand
+		{
+			get => checkInCommand ?? (checkInCommand = new Command(async () => await ExecuteCheckInCommand()));
+		}
+		private async Task ExecuteCheckInCommand()
+		{
+			await Navigation.PushAsync(new Views.Hotel.CheckInPage());
 		}
 		#endregion
 

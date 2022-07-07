@@ -18,6 +18,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Social Command.
+		private ICommand socialCommand;
+		public ICommand SocialCommand
+		{
+			get => socialCommand ?? (socialCommand = new Command(() => ExecuteGoToCheckInCommand()));
+		}
+		private void ExecuteGoToCheckInCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+		}
+		#endregion
+
 		#region Get Check In Command.
 		private ICommand getCheckInCommand;
 		public ICommand GetCheckInCommand

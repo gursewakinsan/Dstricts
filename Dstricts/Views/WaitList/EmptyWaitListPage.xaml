@@ -104,6 +104,7 @@
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
+					Command="{Binding SocialCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
@@ -116,10 +117,10 @@
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
-					Command="{Binding GoToCheckInCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+					Command="{Binding CheckInCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
 					TextColor="White" />
 

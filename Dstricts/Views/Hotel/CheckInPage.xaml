@@ -106,6 +106,7 @@
 					BorderColor="#737B8C"
 					BorderWidth="1"
 					CornerRadius="38"
+					Command="{Binding SocialCommand}"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
