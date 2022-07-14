@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dstricts.Views.DesignTestPages.TestPage503"
+             xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid Margin="28,22,28,0" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Clicked="Button_Clicked" Grid.Row="0" BorderWidth="1" Grid.Column="0" BackgroundColor="Transparent" Opacity="0.2" CornerRadius="8" BorderColor="White"/>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Center"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="End"
+			Text="Casa Madrid" HorizontalOptions="EndAndExpand"
+			TextColor="White" 
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedNext"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+					Grid.Row="2"
+					Grid.ColumnSpan="2"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					Text="Community"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+        <ScrollView VerticalScrollBarVisibility="Never" Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid RowSpacing="0" ColumnSpacing="0" Margin="0,69,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Frame CornerRadius="16" BackgroundColor="#242A37" IsClippedToBounds="True" HasShadow="False" Padding="20" Grid.Row="0">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					Text="Stroller room"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                        <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471"/>
+
+                        <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="16" BackgroundColor="#242A37" IsClippedToBounds="True" HasShadow="False" Padding="20" Grid.Row="2">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="14"
+					HorizontalTextAlignment="Start"
+					Text="Bicycle room"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                        <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471"/>
+
+                        <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="16" BackgroundColor="#242A37" IsClippedToBounds="True" HasShadow="False" Padding="20" Grid.Row="4">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					Text="Parking"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                        <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471"/>
+
+                        <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="16" BackgroundColor="#242A37" IsClippedToBounds="True" HasShadow="False" Padding="20" Grid.Row="6">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="14"
+					HorizontalTextAlignment="Start"
+					Text="Basement"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                        <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471"/>
+
+                        <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="16" BackgroundColor="#242A37" IsClippedToBounds="True" HasShadow="False" Padding="20" Grid.Row="8">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="16"
+					HorizontalTextAlignment="Start"
+					Text="Storage"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                        <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471"/>
+
+                        <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+               
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>
