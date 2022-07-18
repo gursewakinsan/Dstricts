@@ -210,11 +210,11 @@
 							TextColor="White"
 							VerticalTextAlignment="End" />
 
-                    <Button TextColor="Black"
+                    <Button TextColor="#1B242D"
                         Grid.Row="2" BackgroundColor="White"
                         Padding="0"
                         FontSize="16"
-                        FontFamily="PoppinsBoldFontFamily"
+                        FontFamily="ManropeRegularFontFamily"
                         Text="Create a ticket >"
                         CornerRadius="8"
                         WidthRequest="198"
