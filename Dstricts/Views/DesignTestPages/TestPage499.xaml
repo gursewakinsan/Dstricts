@@ -201,7 +201,7 @@
                     </Grid.RowDefinitions>
                         <Label 
                             Grid.Row="0"
-							FontFamily="PoppinsRegularFontFamily"
+							FontFamily="PoppinsSemiBoldFontFamily"
 							FontSize="48"
 							HorizontalTextAlignment="Start"
 							LineBreakMode="TailTruncation"
@@ -222,7 +222,7 @@
 
                     <Label
                             Grid.Row="4"
-							FontFamily="PoppinsRegularFontFamily"
+							FontFamily="PoppinsBoldFontFamily"
 							FontSize="20"
 							HorizontalTextAlignment="Start"
 							Text="Tickets"
@@ -231,7 +231,7 @@
 
                     <Label
                             Grid.Row="6"
-							FontFamily="PoppinsRegularFontFamily"
+							FontFamily="PoppinsMediumFontFamily"
 							FontSize="15"
 							HorizontalTextAlignment="Start"
 							Text="Click to read your tickets."

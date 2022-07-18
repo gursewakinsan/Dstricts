@@ -53,7 +53,7 @@
 					Grid.Row="2"
 					Grid.ColumnSpan="2"
 					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
+					FontFamily="PoppinsBoldFontFamily"
 					FontSize="32"
 					HorizontalTextAlignment="Start"
 					Text="Community"
@@ -88,7 +88,7 @@
                         <Label
 					Grid.Row="0"
 					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Stroller room"
@@ -172,7 +172,7 @@
                         <Label
 					Grid.Row="0"
 					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Parking"
@@ -256,7 +256,7 @@
                         <Label
 					Grid.Row="0"
 					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
+					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
 					Text="Storage"
