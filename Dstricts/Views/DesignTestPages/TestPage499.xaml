@@ -180,7 +180,7 @@
 			HasShadow="False"
 			IsClippedToBounds="True">
             <controls:CustomFrame.Background>
-                <LinearGradientBrush>
+                <LinearGradientBrush EndPoint="0,0.5">
                     <GradientStop Offset="0.1" Color="#101011" />
                     <GradientStop Offset="1.0" Color="#2F314B" />
                 </LinearGradientBrush>
@@ -188,7 +188,7 @@
             <ScrollView VerticalScrollBarVisibility="Never">
                 <Grid RowSpacing="0" ColumnSpacing='0' Margin="28,68,28,28">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="116"/>
                         <RowDefinition Height="17"/>
                         <RowDefinition Height="48"/>
                         <RowDefinition Height="*"/>
@@ -197,12 +197,12 @@
                         <RowDefinition Height="18"/>
                         <RowDefinition Height="31"/>
                         <RowDefinition Height="100"/>
-						<RowDefinition Height="50"/>
+						<RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
                         <Label 
                             Grid.Row="0"
 							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="48"
+							FontSize="41"
 							HorizontalTextAlignment="Start"
 							LineBreakMode="TailTruncation"
 							MaxLines="2"
