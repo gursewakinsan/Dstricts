@@ -21,5 +21,10 @@ namespace Dstricts.Views.DesignTestPages
         {
             await Navigation.PushAsync(new DesignTestPages.TestPage502());
         }
+
+        async void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

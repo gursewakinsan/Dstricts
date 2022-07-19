@@ -92,6 +92,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+					Clicked="Button_Clicked"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 

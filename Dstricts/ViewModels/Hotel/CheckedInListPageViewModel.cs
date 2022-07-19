@@ -279,6 +279,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Test Design Pages Command.
+		private ICommand goToTestDesignPagesCommand;
+		public ICommand GoToTestDesignPagesCommand
+		{
+			get => goToTestDesignPagesCommand ?? (goToTestDesignPagesCommand = new Command(async () => await ExecuteGoToTestDesignPagesCommand()));
+		}
+		private async Task ExecuteGoToTestDesignPagesCommand()
+		{
+			await Navigation.PushAsync(new Views.TestPage1());
+		}
+		#endregion
+
 		#region Properties.
 		public List<Models.UserQueueListResponse> UserQueueList { get; set; }
 		public int HotelPropertyType { get; set; }

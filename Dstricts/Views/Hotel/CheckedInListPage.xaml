@@ -70,7 +70,11 @@
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="25"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
-					TextColor="White" />
+					TextColor="White">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToTestDesignPagesCommand}"/>
+				</Label.GestureRecognizers>
+			</Label>
 
 				<Label
 					FontFamily="{StaticResource MaterialFontFamily}"
