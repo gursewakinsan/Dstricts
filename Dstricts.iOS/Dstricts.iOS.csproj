@@ -227,4 +227,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconBuildingWithGarden.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imgBalcony.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imgBathroom.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imgGuestRoom.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imgHotelView.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imgkitchen.jpeg" />
+  </ItemGroup>
 </Project>

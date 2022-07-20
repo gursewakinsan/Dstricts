@@ -248,5 +248,11 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "price")]
 		public object Price { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "check_in_date")]
+		public string CheckInDate { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "checked_out_date")]
+		public string CheckedOutDate { get; set; }
 	}
 }

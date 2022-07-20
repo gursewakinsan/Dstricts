@@ -79,5 +79,6 @@
 		public const string FloorLampVariant = "\U000f1041";
 		public const string WallSconceRound = "\U000f0748";
 		public const string CellphoneIphone = "\U000f0120";
+		public const string Settings = "\U000f0493";
 	}
 }

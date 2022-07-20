@@ -287,7 +287,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToTestDesignPagesCommand()
 		{
-			await Navigation.PushAsync(new Views.TestPage1());
+			await Navigation.PushAsync(new Views.TestPage478());
 		}
 		#endregion
 
