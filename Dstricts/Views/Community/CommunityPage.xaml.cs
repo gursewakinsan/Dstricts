@@ -33,11 +33,10 @@ namespace Dstricts.Views.Community
 			BindableLayout.SetItemsSource(listWellness, demos);
 			BindableLayout.SetItemsSource(listThingsToDo, demos);
 		}
-		
 
-		private async void Button_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new TestPage484());
-		}
-	}
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+			await Navigation.PopAsync();
+        }
+    }
 }
