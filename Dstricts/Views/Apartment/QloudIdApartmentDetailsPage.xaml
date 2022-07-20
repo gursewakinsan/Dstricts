@@ -191,7 +191,7 @@
                     <Grid ColumnSpacing="0" RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="6" />
+                            <RowDefinition Height="0" />
                             <RowDefinition Height="20" />
                             <RowDefinition Height="34" />
                             <RowDefinition Height="119" />
@@ -226,9 +226,9 @@
                         </Grid.ColumnDefinitions>
 
                         <StackLayout
-						Grid.Row="0" Spacing="0"
-						Grid.Column="1"
-						Margin="0,31,50,0"
+						Grid.Row="0" Spacing="1"
+						Grid.Column="1" 
+						Margin="0,31,50,5"
 						HorizontalOptions="StartAndExpand">
                             <Label
 							FontFamily="PoppinsSemiBoldFontFamily"
@@ -275,6 +275,7 @@
                         </StackLayout>
 
                         <Button
+							Margin="0,20,0,0"
 						Grid.Row="0"
 						Grid.Column="2"
 						BackgroundColor="Transparent"
@@ -289,6 +290,7 @@
 						VerticalOptions="CenterAndExpand" />
 
                         <Button
+							Margin="0,20,0,0"
 						Grid.Row="0"
 						Grid.Column="4"
 						BackgroundColor="Transparent"
@@ -347,7 +349,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0">
+                            <StackLayout Grid.Column="0" Spacing="0">
                                 <Label
 								FontAttributes="Bold"
 								FontFamily="PoppinsBoldFontFamily"
@@ -360,24 +362,29 @@
 								VerticalTextAlignment="Start" />
 
                                 <Label
-                                 VerticalOptions="EndAndExpand"
+                                VerticalOptions="EndAndExpand"
 								FontAttributes="Bold"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="2"
+								Text="{Binding ApartmentDetailInfo.CheckInDate}"
 								TextColor="Black"
-								VerticalTextAlignment="End">
-									<Label.FormattedText>
-									<FormattedString>
-								<Span Text="{Binding ApartmentDetailInfo.CheckInDate}"/>
-								<Span Text="  11am"/>
-							</FormattedString>
-								</Label.FormattedText>
-								</Label>
+								VerticalTextAlignment="End"/>
+
+								<Label
+                                VerticalOptions="EndAndExpand"
+								FontAttributes="Bold"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								MaxLines="2"
+								Text="11am"
+								TextColor="Black"
+								VerticalTextAlignment="End"/>
                             </StackLayout>
 
-                            <StackLayout Grid.Column="1">
+                            <StackLayout Grid.Column="1" Spacing="0">
                                 <Label
 								FontAttributes="Bold"
 								FontFamily="PoppinsBoldFontFamily"
@@ -390,21 +397,26 @@
 								VerticalTextAlignment="Start" />
 
                                 <Label
-                                 VerticalOptions="EndAndExpand"
+                                VerticalOptions="EndAndExpand"
 								FontAttributes="Bold"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="2"
+								Text="{Binding ApartmentDetailInfo.CheckedOutDate}"
 								TextColor="Black"
-								VerticalTextAlignment="End">
-									<Label.FormattedText>
-									<FormattedString>
-								<Span Text="{Binding ApartmentDetailInfo.CheckedOutDate}"/>
-								<Span Text="  3pm"/>
-							</FormattedString>
-								</Label.FormattedText>
-								</Label>
+								VerticalTextAlignment="End"/>
+
+								<Label
+                                VerticalOptions="EndAndExpand"
+								FontAttributes="Bold"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								MaxLines="2"
+								Text="3pm"
+								TextColor="Black"
+								VerticalTextAlignment="End"/>
                             </StackLayout>
                         </Grid>
 
