@@ -179,19 +179,19 @@
     <AndroidResource Include="Resources\drawable\iconBuildingWithGarden.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imgBalcony.jpeg" />
+    <AndroidResource Include="Resources\drawable\imgBalcony.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imgBathroom.jpeg" />
+    <AndroidResource Include="Resources\drawable\imgBathroom.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imgGuestRoom.jpeg" />
+    <AndroidResource Include="Resources\drawable\imgGuestRoom.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imgHotelView.jpeg" />
+    <AndroidResource Include="Resources\drawable\imgHotelView.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imgkitchen.jpeg" />
+    <AndroidResource Include="Resources\drawable\imgkitchen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

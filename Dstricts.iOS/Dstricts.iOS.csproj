@@ -228,18 +228,18 @@
     <BundleResource Include="Resources\iconBuildingWithGarden.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\imgBalcony.jpeg" />
+    <BundleResource Include="Resources\imgBalcony.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\imgBathroom.jpeg" />
+    <BundleResource Include="Resources\imgBathroom.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\imgGuestRoom.jpeg" />
+    <BundleResource Include="Resources\imgGuestRoom.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\imgHotelView.jpeg" />
+    <BundleResource Include="Resources\imgHotelView.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\imgkitchen.jpeg" />
+    <BundleResource Include="Resources\imgkitchen.png" />
   </ItemGroup>
 </Project>
