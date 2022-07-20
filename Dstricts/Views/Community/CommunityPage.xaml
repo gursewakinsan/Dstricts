@@ -79,6 +79,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+					Command="{Binding SocailClickCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 
@@ -89,6 +90,7 @@
 					BorderColor="#737B8C"
 					BorderWidth="1"
 					CornerRadius="38"
+					Clicked="TapGestureRecognizer_Tapped"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
@@ -113,6 +115,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+					Command="{Binding GoTo499PageCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
 					TextColor="White" />
 

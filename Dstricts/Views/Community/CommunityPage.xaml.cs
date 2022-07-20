@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Dstricts.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,10 +9,13 @@ namespace Dstricts.Views.Community
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CommunityPage : ContentPage
     {
-        public CommunityPage()
+		CommunityPageViewModel viewModel;
+		public CommunityPage()
         {
             InitializeComponent();
-        }
+			NavigationPage.SetBackButtonTitle(this, "");
+			BindingContext = viewModel = new CommunityPageViewModel(this.Navigation);
+		}
 
 		protected override void OnAppearing()
 		{

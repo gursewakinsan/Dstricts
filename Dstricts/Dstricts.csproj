@@ -292,6 +292,7 @@
     <None Remove="AppFonts\SFProDisplaySemibold.ttf" />
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
     <None Remove="AppFonts\PoppinsMedium.ttf" />
+    <None Remove="ViewModels\Community\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />
@@ -309,5 +310,8 @@
     <EmbeddedResource Include="AppFonts\SFProDisplaySemibold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
     <EmbeddedResource Include="AppFonts\PoppinsMedium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Community\" />
   </ItemGroup>
 </Project>

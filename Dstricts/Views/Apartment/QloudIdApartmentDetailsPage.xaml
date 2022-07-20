@@ -88,6 +88,7 @@
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
+					Command="{Binding SocailClickCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
@@ -126,6 +127,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+						Command="{Binding GoTo499PageCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
 					TextColor="White" />
 
@@ -224,7 +226,7 @@
                         </Grid.ColumnDefinitions>
 
                         <StackLayout
-						Grid.Row="0"
+						Grid.Row="0" Spacing="0"
 						Grid.Column="1"
 						Margin="0,31,50,0"
 						HorizontalOptions="StartAndExpand">
@@ -233,8 +235,20 @@
 							FontSize="18"
 							HorizontalTextAlignment="Start"
 							Text="Here we are"
+								VerticalOptions="StartAndExpand"
 							TextColor="White"
 							VerticalTextAlignment="Start" />
+
+							 <Label
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="13"
+							HorizontalTextAlignment="Start"
+							LineBreakMode="TailTruncation"
+							Opacity="0.70"
+							Text="{Binding ApartmentDetailInfo.HostName}"
+							TextColor="White"
+							VerticalTextAlignment="Start"/>
+
 
                             <Label
 							FontFamily="PoppinsRegularFontFamily"
@@ -352,9 +366,15 @@
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="2"
-								Text="{Binding ApartmentDetailInfo.CheckInDate}"
 								TextColor="Black"
-								VerticalTextAlignment="End" />
+								VerticalTextAlignment="End">
+									<Label.FormattedText>
+									<FormattedString>
+								<Span Text="{Binding ApartmentDetailInfo.CheckInDate}"/>
+								<Span Text="  11am"/>
+							</FormattedString>
+								</Label.FormattedText>
+								</Label>
                             </StackLayout>
 
                             <StackLayout Grid.Column="1">
@@ -376,9 +396,15 @@
 								FontSize="16"
 								HorizontalTextAlignment="Start"
 								MaxLines="2"
-								Text="{Binding ApartmentDetailInfo.CheckedOutDate}"
 								TextColor="Black"
-								VerticalTextAlignment="End" />
+								VerticalTextAlignment="End">
+									<Label.FormattedText>
+									<FormattedString>
+								<Span Text="{Binding ApartmentDetailInfo.CheckedOutDate}"/>
+								<Span Text="  3pm"/>
+							</FormattedString>
+								</Label.FormattedText>
+								</Label>
                             </StackLayout>
                         </Grid>
 
