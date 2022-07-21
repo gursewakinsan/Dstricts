@@ -10,7 +10,7 @@
 	ios:Page.UseSafeArea="False"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Padding="0,15,0,0"
+		Padding="0,50,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
