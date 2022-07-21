@@ -10,7 +10,7 @@
 	ios:Page.UseSafeArea="False"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Padding="0,60,0,0"
+		Padding="0,15,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
@@ -77,54 +77,54 @@
 				TextColor="White" />
 		</StackLayout>
 
-		<ScrollView
+        <ScrollView
 			Grid.Row="2"
 			Grid.ColumnSpan="2"
 			Margin="28,0,0,0"
 			HorizontalScrollBarVisibility="Never"
 			Orientation="Horizontal">
-			<Grid ColumnSpacing="0" RowSpacing="0">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="20" />
-					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="20" />
-					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="19" />
-					<ColumnDefinition Width="76" />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="76" />
-					<RowDefinition Height="8" />
-					<RowDefinition Height="*" />
-				</Grid.RowDefinitions>
-				<Button
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="19" />
+                    <ColumnDefinition Width="76" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76" />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button
 					Grid.Row="0"
 					Grid.Column="0"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
-					Command="{Binding SocialCommand}"
 					CornerRadius="38"
+					Command="{Binding SocailClickCommand}"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 
-				<Button
+                <Button
 					Grid.Row="0"
 					Grid.Column="2"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
+					Command="{Binding GoToCheckInCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
-					Command="{Binding CheckInCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
 					TextColor="White" />
 
-				<Button
+                <Button
 					Grid.Row="0"
 					Grid.Column="4"
 					BackgroundColor="Transparent"
@@ -137,18 +137,18 @@
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
 					TextColor="White" />
 
-				<Button
+                <Button
 					Grid.Row="0"
 					Grid.Column="6"
 					BackgroundColor="White"
-					Command="{Binding GoToAllWaitCommand}"
+					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
 					TextColor="#282A34" />
 
-				<Label
+                <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="0"
@@ -159,7 +159,7 @@
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
-				<Label
+                <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="2"
@@ -170,7 +170,7 @@
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
-				<Label
+                <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="4"
@@ -183,7 +183,7 @@
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
-				<Label
+                <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="6"
@@ -193,10 +193,10 @@
 					Text="Waitlist"
 					TextColor="White"
 					VerticalTextAlignment="End" />
-			</Grid>
-		</ScrollView>
+            </Grid>
+        </ScrollView>
 
-		<Grid Grid.Row="4" Grid.ColumnSpan="2">
+        <Grid Grid.Row="4" Grid.ColumnSpan="2">
 			<ImageButton
 				Aspect="AspectFill"
 				CornerRadius="38"
@@ -251,7 +251,7 @@
 					Grid.Row="4"
 					Grid.Column="2"
 					Padding="0"
-					BackgroundColor="Black"
+					BackgroundColor="#0060FF"
 					BorderColor="White"
 					BorderWidth="2"
 					Clicked="OnBtnOpenCameraToScanQrCodeClicked"
@@ -264,7 +264,7 @@
 					TextColor="White"
 					VerticalOptions="CenterAndExpand"
 					WidthRequest="134" />
-			</Grid>
+            </Grid>
 		</Grid>
 	</Grid>
 

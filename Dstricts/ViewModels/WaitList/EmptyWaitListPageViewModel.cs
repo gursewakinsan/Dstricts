@@ -18,18 +18,6 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Social Command.
-		private ICommand socialCommand;
-		public ICommand SocialCommand
-		{
-			get => socialCommand ?? (socialCommand = new Command(() => ExecuteSocialCommand()));
-		}
-		private void ExecuteSocialCommand()
-		{
-			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
-		}
-		#endregion
-
 		#region Verify QR Code Command.
 		private ICommand verifyQrCodeCommand;
 		public ICommand VerifyQrCodeCommand
@@ -190,15 +178,27 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Check In Command.
-		private ICommand checkInCommand;
-		public ICommand CheckInCommand
+		#region Socail Click Command .
+		private ICommand socailClickCommand;
+		public ICommand SocailClickCommand
 		{
-			get => checkInCommand ?? (checkInCommand = new Command(async () => await ExecuteCheckInCommand()));
+			get => socailClickCommand ?? (socailClickCommand = new Command(() => ExecuteSocailClickCommand()));
 		}
-		private async Task ExecuteCheckInCommand()
+		private void ExecuteSocailClickCommand()
 		{
-			await Navigation.PushAsync(new Views.Hotel.CheckInPage());
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+		}
+		#endregion
+
+		#region Go To Check In Command.
+		private ICommand goToCheckInCommand;
+		public ICommand GoToCheckInCommand
+		{
+			get => goToCheckInCommand ?? (goToCheckInCommand = new Command(() => ExecuteGoToCheckInCommand()));
+		}
+		private void ExecuteGoToCheckInCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckInPage());
 		}
 		#endregion
 
