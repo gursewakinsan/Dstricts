@@ -13,6 +13,13 @@ namespace Dstricts.Droid
 				  DataPathPrefix = "/session",
 				  AutoVerify = true,
 				  Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable })]
+
+	[IntentFilter(new[] { Intent.ActionView },
+				  DataScheme = "http",
+				  DataHost = "dstrictsapp.com",
+				  DataPathPrefix = "/verify_checkin",
+				  AutoVerify = true,
+				  Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable })]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
