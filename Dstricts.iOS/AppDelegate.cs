@@ -34,6 +34,10 @@ namespace Dstricts.iOS
 				{
 					App.InvitedVisitorsMeetingListCommand.Execute(url.PathComponents[3]);
 				}
+				if (url.PathComponents.Count() == 2 || url.PathComponents.Count() == 3)
+				{
+					App.CheckInFunctionality(url.ResourceSpecifier);
+				}
 				else
 					App.LoginWithSession(url.PathComponents[1]);
 			}

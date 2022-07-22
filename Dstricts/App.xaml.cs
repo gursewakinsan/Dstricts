@@ -45,6 +45,13 @@ namespace Dstricts
 		}
 		#endregion
 
+		#region Login With Session For iOS.
+		public void CheckInFunctionality(string info)
+		{
+			VerifyQrCodeCommand.Execute(info.Remove(0, 2));
+		}
+		#endregion
+
 		#region Login With Session For Android.
 		protected override void OnAppLinkRequestReceived(Uri uri)
 		{

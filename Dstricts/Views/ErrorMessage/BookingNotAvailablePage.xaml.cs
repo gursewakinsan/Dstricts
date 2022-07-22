@@ -12,9 +12,9 @@ namespace Dstricts.Views.ErrorMessage
 			InitializeComponent ();
 		}
 
-		private async void OnNotAvailableTapped(object sender, EventArgs e)
+		private void OnNotAvailableTapped(object sender, EventArgs e)
 		{
-			await Navigation.PopAsync();
+			Application.Current.MainPage = new NavigationPage(new Hotel.CheckedInListPage());
 		}
 	}
 }
