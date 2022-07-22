@@ -243,7 +243,7 @@
 					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					HorizontalTextAlignment="Start"
-					Text="Scan the QR code at this apartment and get yourself checked-in."
+					Text="Scan the QR code and stand in line"
 					TextColor="Black"
 					VerticalTextAlignment="Center" />
 

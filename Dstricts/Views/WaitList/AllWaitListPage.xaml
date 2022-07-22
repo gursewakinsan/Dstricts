@@ -502,6 +502,7 @@
 					CornerRadius="10"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
+					Clicked="OnBtnOpenCameraToScanQrCodeClicked"
 					HeightRequest="45"
 					HorizontalOptions="CenterAndExpand"
 					Text="Scan QR Code"
