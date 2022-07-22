@@ -48,7 +48,14 @@ namespace Dstricts
 		#region Login With Session For iOS.
 		public void CheckInFunctionality(string info)
 		{
-			VerifyQrCodeCommand.Execute(info.Remove(0, 2));
+			if (Application.Current.Properties.ContainsKey("UserId"))
+			{
+				Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
+				Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
+				VerifyQrCodeCommand.Execute(info.Remove(0, 2));
+			}
+			else
+				MainPage = new NavigationPage(new Views.LoginPage());
 		}
 		#endregion
 
