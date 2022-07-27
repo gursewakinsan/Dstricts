@@ -34,9 +34,10 @@ namespace Dstricts.Views.Community
 			BindableLayout.SetItemsSource(listThingsToDo, demos);
 		}
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-			await Navigation.PopAsync();
-        }
-    }
+			Application.Current.MainPage = new NavigationPage(new Views.Apartment.QloudIdApartmentDetailsPage(Helper.Helper.ApartmentCheckedIn));
+
+		}
+	}
 }

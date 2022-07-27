@@ -49,6 +49,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Apartment Page Command. 
+		private ICommand goToApartmentPageCommand;
+		public ICommand GoToApartmentPageCommand
+		{
+			get => goToApartmentPageCommand ?? (goToApartmentPageCommand = new Command( () =>  ExecuteGoToApartmentPageCommand()));
+		}
+		private void ExecuteGoToApartmentPageCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Apartment.QloudIdApartmentDetailsPage(Helper.Helper.ApartmentCheckedIn));
+		}
+		#endregion
+
 		#region Properties.
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion

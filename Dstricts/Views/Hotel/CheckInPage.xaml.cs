@@ -70,6 +70,7 @@ namespace Dstricts.Views.Hotel
 		{
 			Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 			Helper.Helper.PropertyNickName = checkedIn.PropertyNickName;
+			Helper.Helper.ApartmentCheckedIn = checkedIn;
 			if (checkedIn.Enc == 0) //Queue
 				await Navigation.PushAsync(new Queue.UserQueueWaitingDetailPage(checkedIn.Id));
 			else if (checkedIn.Enc == 1) //Hotel
