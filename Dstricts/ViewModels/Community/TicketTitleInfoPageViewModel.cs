@@ -28,7 +28,7 @@ namespace Dstricts.ViewModels
 			ICommunityService service = new CommunityService();
 			TicketTitleInfoList = await service.GetTicketTitleInfoAsync(new Models.TicketTitleInfoRequest()
 			{
-				TicketType = TicketType
+				TicketType = Helper.Helper.TicketType
 			});
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -45,9 +45,6 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("TicketTitleInfoList");
 			}
 		}
-
-        public string TicketType { get; set; }
-
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}

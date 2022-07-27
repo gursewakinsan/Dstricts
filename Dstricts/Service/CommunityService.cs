@@ -8,11 +8,11 @@ namespace Dstricts.Service
 {
     public class CommunityService : ICommunityService
     {
-		public Task<bool> GetCommunityInfoAsync(Models.CommunityInfoRequest request)
+		public Task<int> GetCommunityInfoAsync(Models.CommunityInfoRequest request)
 		{
 			return Task.Factory.StartNew(() =>
 			{
-				var res = RestClient.Post<bool>(HttpWebRequest.Create(string.Format(EndPointsList.GetCommunityInfoUrl)), string.Empty, request.ToJson());
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.GetCommunityInfoUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}
@@ -31,6 +31,15 @@ namespace Dstricts.Service
 			return Task.Factory.StartNew(() =>
 			{
 				var res = RestClient.Post<List<Models.TicketSubTitleInfoResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.GetTicketSubTitleInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<int> CreateCommunityTicketAsync(Models.CreateCommunityTicketRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.CreateCommunityTicketUrl)), string.Empty, request.ToJson());
 				return res;
 			});
 		}

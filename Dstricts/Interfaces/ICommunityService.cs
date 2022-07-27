@@ -5,8 +5,9 @@ namespace Dstricts.Interfaces
 {
     public interface ICommunityService
     {
-        Task<bool> GetCommunityInfoAsync(Models.CommunityInfoRequest request);
+        Task<int> GetCommunityInfoAsync(Models.CommunityInfoRequest request);
         Task<List<Models.TicketTitleInfoResponse>> GetTicketTitleInfoAsync(Models.TicketTitleInfoRequest request);
         Task<List<Models.TicketSubTitleInfoResponse>> GetTicketSubTitleInfoAsync(Models.TicketSubTitleInfoRequest request);
+        Task<int> CreateCommunityTicketAsync(Models.CreateCommunityTicketRequest request);
     }
 }

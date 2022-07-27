@@ -79,7 +79,7 @@
                             HasShadow="False" 
                             Padding="20" Margin="0,0,0,13">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                <TapGestureRecognizer Tapped="OnFrameTapped"/>
                             </Frame.GestureRecognizers>
                             <Grid VerticalOptions="CenterAndExpand">
                                 <Grid.RowDefinitions>
@@ -91,7 +91,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                    <TapGestureRecognizer Tapped="OnGridTapped"/>
                                 </Grid.GestureRecognizers>
 
                                 <Label
@@ -104,7 +104,7 @@
 					                TextColor="White"
 					                VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                        <TapGestureRecognizer Tapped="OnLabelTapped"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
@@ -118,7 +118,7 @@
                                     CornerRadius="20"
                                     BackgroundColor="#4FD471">
                                     <BoxView.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                        <TapGestureRecognizer Tapped="OnBoxViewTapped"/>
                                     </BoxView.GestureRecognizers>
                                 </BoxView>
 
@@ -132,7 +132,7 @@
 			                        TextColor="White"
 			                        VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                        <TapGestureRecognizer Tapped="OnLabelTapped"/>
                                     </Label.GestureRecognizers>
                                 </Label>
                             </Grid>

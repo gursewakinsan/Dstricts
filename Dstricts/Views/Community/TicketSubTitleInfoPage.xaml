@@ -114,21 +114,80 @@
 					TextColor="White"
 					VerticalTextAlignment="Center" />
 
-                <Editor Grid.ColumnSpan="3"
+                <Frame 
+                    Grid.ColumnSpan="3" 
+                    BackgroundColor="Transparent" 
+                    IsClippedToBounds="True"
+                    Grid.Row="4"
+                    Padding="0"
+                    HasShadow="False"
+                    CornerRadius="12"
+                    BorderColor="White" 
+                    Opacity="0.10"/>
+
+                <Grid 
+                    Margin="16,5,16,5"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="3" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+
+                    <controls:CustomPicker
+						x:Name="pickerType"
+						Title="Type"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="14"
+						ItemDisplayBinding="{Binding TicketSubtitle}"
+						ItemsSource="{Binding TicketSubTitleInfoList}"
+						SelectedItem="{Binding SelectedTicketSubTitleInfo}"
+						TextColor="White"
+						TitleColor="#6263ED" />
+
+                    <Label
+			            Grid.Row="0"
+			            Grid.Column="1"
+			            Padding="0"
+			            FontFamily="{StaticResource MaterialFontFamily}"
+			            FontSize="25"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+			            Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
+			            TextColor="#6263ED"/>
+                </Grid>
+
+                <Frame 
+                    Grid.ColumnSpan="3" 
+                    BackgroundColor="Transparent" 
+                    IsClippedToBounds="True"
+                    Grid.Row="6"
+                    HasShadow="False"
+                    CornerRadius="12"
+                    BorderColor="White" 
+                    Opacity="0.10"/>
+
+                <Editor
+                    Margin="16"
+                    Grid.ColumnSpan="3"
                     Grid.Row="6" 
+                    FontSize="14"
+                    Text="{Binding ProblemDescription}"
+                    TextColor="White"
+                    FontFamily="PoppinsRegularFontFamily"
+                    PlaceholderColor="#636c72"
                     Placeholder="Describe the problem with words."/>
 
                 <controls:CustomButton
 					Grid.ColumnSpan="3"
                     Grid.Row="8"
 					BackgroundColor="#4285F4"
-					Command="{Binding SaveMobileNumberCommand}"
+					Command="{Binding CreateTicketCommand}"
 					CornerRadius="10"
 					FontFamily="PoppinsSemiBoldFontFamily"
 					FontSize="16"
 					Text="Submit"
 					TextColor="White" />
-
             </Grid>
         </ScrollView>
     </Grid>

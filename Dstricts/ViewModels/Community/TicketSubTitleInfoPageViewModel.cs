@@ -16,20 +16,52 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Get Ticket Title Info Command.
-		private ICommand getTicketTitleInfoCommand;
-		public ICommand GetTicketTitleInfoCommand
+		#region Get Ticket Sub Title Info Command.
+		private ICommand getTicketSubTitleInfoCommand;
+		public ICommand GetTicketSubTitleInfoCommand
 		{
-			get => getTicketTitleInfoCommand ?? (getTicketTitleInfoCommand = new Command(async () => await ExecuteGetTicketTitleInfoCommand()));
+			get => getTicketSubTitleInfoCommand ?? (getTicketSubTitleInfoCommand = new Command(async () => await ExecuteGetTicketSubTitleInfoCommand()));
 		}
-		private async Task ExecuteGetTicketTitleInfoCommand()
+		private async Task ExecuteGetTicketSubTitleInfoCommand()
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ICommunityService service = new CommunityService();
 			TicketSubTitleInfoList = await service.GetTicketSubTitleInfoAsync(new Models.TicketSubTitleInfoRequest()
 			{
+				TicketId = Helper.Helper.TicketId
 			});
+			if (TicketSubTitleInfoList?.Count > 0)
+				SelectedTicketSubTitleInfo = TicketSubTitleInfoList[0];
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Create Ticket Command.
+		private ICommand createTicketCommand;
+		public ICommand CreateTicketCommand
+		{
+			get => createTicketCommand ?? (createTicketCommand = new Command(async () => await ExecuteCreateTicketCommand()));
+		}
+		private async Task ExecuteCreateTicketCommand()
+		{
+			if (string.IsNullOrWhiteSpace(ProblemDescription))
+				await Helper.Alert.DisplayAlert("Description is required.");
+			else
+			{
+				DependencyService.Get<IProgressBar>().Show();
+				ICommunityService service = new CommunityService();
+				int response = await service.CreateCommunityTicketAsync(new Models.CreateCommunityTicketRequest()
+				{
+					ProblemDescription = ProblemDescription,
+					CheckId = Helper.Helper.HotelCheckedIn,
+					TicketType = Helper.Helper.TicketType,
+					TicketId = Helper.Helper.TicketId,
+					SubTicketId = SelectedTicketSubTitleInfo.Id,
+					CommunityId = Helper.Helper.CommunityId
+				});
+				DependencyService.Get<IProgressBar>().Hide();
+				Application.Current.MainPage = new NavigationPage(new Views.Apartment.SupportPage());
+			}
 		}
 		#endregion
 
@@ -44,6 +76,30 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("TicketSubTitleInfoList");
 			}
 		}
+
+		private Models.TicketSubTitleInfoResponse selectedTicketSubTitleInfo;
+		public Models.TicketSubTitleInfoResponse SelectedTicketSubTitleInfo
+		{
+			get => selectedTicketSubTitleInfo;
+			set
+			{
+				selectedTicketSubTitleInfo = value;
+				OnPropertyChanged("SelectedTicketSubTitleInfo");
+			}
+		}
+
+
+		private string problemDescription;
+		public string ProblemDescription
+		{
+			get => problemDescription;
+			set
+			{
+				problemDescription = value;
+				OnPropertyChanged("ProblemDescription");
+			}
+		}
 		#endregion
 	}
 }
+

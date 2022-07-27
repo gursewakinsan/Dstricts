@@ -25,10 +25,11 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ICommunityService service = new CommunityService();
-			IsCommunityVisible = await service.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
+			Helper.Helper.CommunityId = await service.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
 			{
 				CheckId = Helper.Helper.HotelCheckedIn
 			});
+			IsCommunityVisible = Helper.Helper.CommunityId > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion

@@ -46,6 +46,11 @@ namespace Dstricts.Helper
 		public static bool IsWellnessBookingType { get; set; } = false;
 		public static string ServiceCategoryName { get; set; }
 
+        public static int TicketType { get; set; }
+		public static int TicketId { get; set; }
+		public static int CommunityId { get; set; }
+		
+
 		public static string[] ListIconBgColorList =
 		{
 			"#223426", "#282732", "#342334", "#FC7125",

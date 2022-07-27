@@ -112,6 +112,7 @@
 		public const string GetCommunityInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityInfo";
 		public const string GetTicketTitleInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getTicketTitleInfo";
 		public const string GetTicketSubTitleInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getTicketSubTitleInfo";
+		public const string CreateCommunityTicketUrl = "https://www.qloudid.com/user/index.php/QloudidApp/createCommunityTicket";
 	}
 }
 
