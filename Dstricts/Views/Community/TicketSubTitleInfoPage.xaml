@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Community.TicketSubTitleInfoPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Margin="0,22,0,2"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="28" />
+        </Grid.ColumnDefinitions>
+
+        <Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="2"
+			Grid.ColumnSpan="2"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="End"
+			Text="Casa Madrid"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <ScrollView
+			Grid.Row="1"
+			Grid.Column="1"
+			Grid.ColumnSpan="3"
+			VerticalScrollBarVisibility="Never">
+            <Grid
+				Margin="0,31,0,0"
+				ColumnSpacing="0"
+				RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="69" />
+                    <RowDefinition Height="27" />
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="56" />
+                    <RowDefinition Height="34" />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="74" />
+                    <RowDefinition Height="68" />
+                </Grid.RowDefinitions>
+
+                <Label
+					Grid.Row="0"
+					Grid.ColumnSpan="3"
+					FontAttributes="Bold"
+					FontFamily="PoppinsBoldFontFamily"
+					FontSize="32"
+					HorizontalTextAlignment="Start"
+					Text="Bedroom"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                <Label
+					Grid.Row="2"
+					Grid.ColumnSpan="3"
+					FontAttributes="Bold"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="18"
+					HorizontalTextAlignment="Start"
+					Text="Type of problem"
+					TextColor="White"
+					VerticalTextAlignment="Center" />
+
+                <Editor Grid.ColumnSpan="3"
+                    Grid.Row="6" 
+                    Placeholder="Describe the problem with words."/>
+
+                <controls:CustomButton
+					Grid.ColumnSpan="3"
+                    Grid.Row="8"
+					BackgroundColor="#4285F4"
+					Command="{Binding SaveMobileNumberCommand}"
+					CornerRadius="10"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="16"
+					Text="Submit"
+					TextColor="White" />
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -119,17 +119,17 @@
 					TextColor="White" />
 
                     <Button
-					Grid.Row="0"
-					Grid.Column="6"
-					BackgroundColor="Transparent"
-					BorderColor="#737B8C"
-					BorderWidth="1"
-					CornerRadius="38"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="24"
-						Command="{Binding GoTo499PageCommand}"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
-					TextColor="White" />
+						Grid.Row="0"
+						Grid.Column="6"
+						BackgroundColor="Transparent"
+						BorderColor="#737B8C"
+						BorderWidth="1"
+						CornerRadius="38"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="24"
+						Command="{Binding GoToSupportPageCommand}"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+						TextColor="White" />
 
                     <Label
 					Grid.Row="1"

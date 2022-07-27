@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Community.TicketTitleInfoPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid Margin="28,22,28,0" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button 
+            Command="{Binding CloseCommand}" 
+            Grid.Row="0" 
+            BorderWidth="1" 
+            Grid.Column="0" 
+            BackgroundColor="Transparent"
+            Opacity="0.2" 
+            CornerRadius="8" 
+            BorderColor="White"/>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Center"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="End"
+			Text="{Binding DisplayPropertyNickName}" 
+            HorizontalOptions="EndAndExpand"
+			TextColor="White" 
+			VerticalTextAlignment="Center"/>
+
+        <Label
+			Grid.Row="2"
+			Grid.ColumnSpan="2"
+			Grid.Column="0"
+			FontFamily="PoppinsBoldFontFamily"
+			FontSize="32"
+            x:Name="lblTitle"
+			HorizontalTextAlignment="Start"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <ScrollView 
+            VerticalScrollBarVisibility="Never"  
+            Grid.Row="3"
+            Grid.ColumnSpan="2">
+            <StackLayout BindableLayout.ItemsSource="{Binding TicketTitleInfoList}" Margin="0,65,0,0">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame 
+                            CornerRadius="16" 
+                            BackgroundColor="#242A37" 
+                            IsClippedToBounds="True" 
+                            HasShadow="False" 
+                            Padding="20" Margin="0,0,0,13">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                </Grid.GestureRecognizers>
+
+                                <Label
+					                Grid.Row="0"
+					                Grid.Column="0"
+					                FontFamily="PoppinsSemiBoldFontFamily"
+					                FontSize="16"
+					                HorizontalTextAlignment="Start"
+					                Text="{Binding TicketTitle}"
+					                TextColor="White"
+					                VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <BoxView 
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="CenterAndExpand"
+			                        Grid.Row="0"
+			                        Grid.Column="1"
+                                    CornerRadius="20"
+                                    BackgroundColor="#4FD471">
+                                    <BoxView.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                    </BoxView.GestureRecognizers>
+                                </BoxView>
+
+                                <Label
+			                        Grid.Row="0"
+			                        Grid.Column="1"
+			                        FontFamily="{StaticResource MaterialFontFamily}"
+			                        FontSize="20"
+			                        HorizontalTextAlignment="Center"
+			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			                        TextColor="White"
+			                        VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TicketTitleInfoCommand}" CommandParameter="1"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

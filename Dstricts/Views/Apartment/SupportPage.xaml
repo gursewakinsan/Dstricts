@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Apartment.SupportPage" 
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="False"
+	BackgroundColor="#282A34"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Margin="0,55,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="102" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="{Binding DisplayPropertyNickName}"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25" Margin="0,0,28,0"
+			HorizontalTextAlignment="End"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+			TextColor="White"
+			VerticalTextAlignment="Center"/>
+
+        <ScrollView
+			Grid.Row="2"
+			Grid.ColumnSpan="3"
+			Margin="28,0,0,0"
+			HorizontalScrollBarVisibility="Never"
+			Orientation="Horizontal">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="19" />
+                    <ColumnDefinition Width="76" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76" />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button
+					Grid.Row="0"
+					Grid.Column="0"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+                    Command="{Binding SocailClickCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="2"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="4"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+                    Command="{Binding GoToCommunityPageCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="6"
+					BackgroundColor="White"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+					TextColor="#070707" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Social"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="2"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Apartment"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="4"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Community"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="6"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Support"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+            </Grid>
+        </ScrollView>
+
+        <controls:CustomFrame
+			Grid.Row="4"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			CornerRadius="38,38,0,0"
+			HasShadow="False"
+			IsClippedToBounds="True">
+            <controls:CustomFrame.Background>
+                <LinearGradientBrush EndPoint="0,0.5">
+                    <GradientStop Offset="0.1" Color="#101011" />
+                    <GradientStop Offset="1.0" Color="#2F314B" />
+                </LinearGradientBrush>
+            </controls:CustomFrame.Background>
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="0" ColumnSpacing='0' Margin="28,68,28,28">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="116"/>
+                        <RowDefinition Height="17"/>
+                        <RowDefinition Height="48"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="23"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="31"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Label 
+                        Grid.Row="0"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="41"
+						HorizontalTextAlignment="Start"
+						LineBreakMode="TailTruncation"
+						MaxLines="2"
+						Text="Do You    Need Help?"
+						TextColor="White"
+						VerticalTextAlignment="End" />
+
+                    <Button 
+                        TextColor="#1B242D"
+                        Grid.Row="2" 
+                        BackgroundColor="White"
+                        Padding="0"
+                        FontSize="16"
+                        Command="{Binding GoTocreateTicketPageCommand}"
+                        FontFamily="ManropeRegularFontFamily"
+                        Text="Create a ticket >"
+                        CornerRadius="8"
+                        WidthRequest="198"
+                        HorizontalOptions="StartAndExpand"/>
+
+                    <Label
+                            Grid.Row="4"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="20"
+							HorizontalTextAlignment="Start"
+							Text="Tickets"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                    <Label
+                            Grid.Row="6"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="15"
+							HorizontalTextAlignment="Start"
+							Text="Click to read your tickets."
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                    <Grid Grid.Row="8" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="65"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="16"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Button
+                            BorderWidth="2"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            CornerRadius="10"
+                            Text="1"
+                            Padding="0"
+                            FontSize="25"
+                            FontFamily="PoppinsRegularFontFamily"
+                            TextColor="White"/>
+
+                        <Label
+                            Grid.Column="0"
+                            Grid.Row="2"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="New"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Button
+                            BorderWidth="2"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            Grid.Column="2" 
+                            CornerRadius="10"
+                            Text="0"
+                            Padding="0"
+                            FontSize="25"
+                            FontFamily="PoppinsRegularFontFamily"
+                            TextColor="White"/>
+
+                        <Label
+                            Grid.Column="2"
+                            Grid.Row="2"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="Ongoing"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Button
+                            BorderWidth="2"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            Grid.Column="4" 
+                            CornerRadius="10"
+                            Text="5"
+                            Padding="0"
+                            FontSize="25"
+                            FontFamily="PoppinsRegularFontFamily"
+                            TextColor="White"/>
+
+                        <Label
+                            Grid.Column="4"
+                            Grid.Row="2"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="Finished"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </controls:CustomFrame>
+    </Grid>
+</ContentPage>

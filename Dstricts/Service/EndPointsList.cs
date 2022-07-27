@@ -107,6 +107,11 @@
 
 		//Apartment
 		public const string ApartmentDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoDstrictApp";
+
+		//Community
+		public const string GetCommunityInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityInfo";
+		public const string GetTicketTitleInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getTicketTitleInfo";
+		public const string GetTicketSubTitleInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getTicketSubTitleInfo";
 	}
 }
 

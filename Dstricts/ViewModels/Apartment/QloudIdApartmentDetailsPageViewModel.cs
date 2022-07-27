@@ -59,15 +59,15 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
-		#region Go To 499 Page Command.
-		private ICommand goTo499PageCommand;
-		public ICommand GoTo499PageCommand
+		#region Go To Support Page Command.
+		private ICommand goToSupportPageCommand;
+		public ICommand GoToSupportPageCommand
 		{
-			get => goTo499PageCommand ?? (goTo499PageCommand = new Command(async () => await ExecuteGoTo499PageCommand()));
+			get => goToSupportPageCommand ?? (goToSupportPageCommand = new Command(async () => await ExecuteGoToSupportPageCommand()));
 		}
-		private async Task ExecuteGoTo499PageCommand()
+		private async Task ExecuteGoToSupportPageCommand()
 		{
-			await Navigation.PushAsync(new Views.DesignTestPages.TestPage499());
+			await Navigation.PushAsync(new Views.Apartment.SupportPage());
 		}
 		#endregion
 
