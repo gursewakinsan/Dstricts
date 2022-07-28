@@ -46,7 +46,7 @@ namespace Dstricts.Views.Community
 
         async void OnItemTapped(Models.TicketTitleInfoResponse ticketTitle)
         {
-            Helper.Helper.TicketId = ticketTitle.Id;
+            Helper.Helper.TicketTitleInfo = ticketTitle;
             await Navigation.PushAsync(new TicketSubTitleInfoPage());
         }
     }

@@ -47,7 +47,7 @@ namespace Dstricts.Helper
 		public static string ServiceCategoryName { get; set; }
 
         public static int TicketType { get; set; }
-		public static int TicketId { get; set; }
+		public static Models.TicketTitleInfoResponse TicketTitleInfo { get; set; }
 		public static int CommunityId { get; set; }
 		public static Models.CheckedInResponse ApartmentCheckedIn { get; set; }
 
