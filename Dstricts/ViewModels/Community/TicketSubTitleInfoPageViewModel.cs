@@ -129,7 +129,7 @@ namespace Dstricts.ViewModels
 			set
 			{
 				image_3 = value;
-				OnPropertyChanged("Image_2");
+				OnPropertyChanged("Image_3");
 			}
 		}
 
@@ -198,7 +198,7 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("Image_9");
 			}
 		}
-		public string TicketTitle => Helper.Helper.TicketTitleInfo.TicketTitle;
+		public string TicketTitle;// => Helper.Helper.TicketTitleInfo.TicketTitle;
 		#endregion
 	}
 }
