@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
+using Plugin.Media;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Plugin.Media.Abstractions;
 
 namespace Dstricts.Views.Community
 {
@@ -13,6 +16,8 @@ namespace Dstricts.Views.Community
     public partial class TicketSubTitleInfoPage : ContentPage
     {
         #region Variables.
+        private IMedia _mediaPicker;
+        ImageSource _imageSource;
         TicketSubTitleInfoPageViewModel viewModel;
         #endregion
 
@@ -29,7 +34,90 @@ namespace Dstricts.Views.Community
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            viewModel.GetTicketSubTitleInfoCommand.Execute(null);
+           // viewModel.GetTicketSubTitleInfoCommand.Execute(null);
+        }
+        #endregion
+
+        #region Setup.
+        private async void Setup()
+        {
+            if (_mediaPicker != null) return;
+            await CrossMedia.Current.Initialize();
+            _mediaPicker = CrossMedia.Current;
+        }
+        #endregion
+
+        #region Take Photo.
+        private async Task TakePhoto(int selectedImage)
+        {
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
+                return;
+            }
+            Setup();
+            _imageSource = null;
+            try
+            {
+                var mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    PhotoSize = PhotoSize.Medium,
+                    CompressionQuality = 90,
+                });
+
+                if (mediaFile != null)
+                {
+                    switch (selectedImage)
+                    {
+                        case 1:
+                            img1.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_1 = true;
+                            break;
+                        case 2:
+                            img2.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_2 = true;
+                            break;
+                        case 3:
+                            img3.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_3 = true;
+                            break;
+                        case 4:
+                            img4.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_4 = true;
+                            break;
+                        case 5:
+                            img5.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_5 = true;
+                            break;
+                        case 6:
+                            img6.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_6 = true;
+                            break;
+                        case 7:
+                            img7.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_7 = true;
+                            break;
+                        case 8:
+                            img8.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_8 = true;
+                            break;
+                        case 9:
+                            img9.Source = ImageSource.FromStream(mediaFile.GetStream);
+                            viewModel.Image_9 = true;
+                            break;
+                    }
+                }
+
+                /*(imgUser.Source = ImageSource.FromStream(mediaFile.GetStream);
+                var memoryStream = new MemoryStream();
+                await mediaFile.GetStream().CopyToAsync(memoryStream);
+                byte[] imageAsByte = memoryStream.ToArray();
+                viewModel.UserImageData = imageAsByte;*/
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
         #endregion
 
@@ -639,47 +727,128 @@ namespace Dstricts.Views.Community
         #region On Image Clicked.
         private async void OnImg1Clicked(object sender, EventArgs e)
         {
-            await SelectImages(1);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(1);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(1);
+                    break;
+            }
         }
 
         private async void OnImg2Clicked(object sender, EventArgs e)
         {
-            await SelectImages(2);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(2);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(2);
+                    break;
+            }
         }
 
         private async void OnImg3Clicked(object sender, EventArgs e)
         {
-            await SelectImages(3);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(3);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(3);
+                    break;
+            }
         }
 
         private async void OnImg4Clicked(object sender, EventArgs e)
         {
-            await SelectImages(4);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(4);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(4);
+                    break;
+            }
         }
 
         private async void OnImg5Clicked(object sender, EventArgs e)
         {
-            await SelectImages(5);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(5);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(5);
+                    break;
+            }
         }
 
         private async void OnImg6Clicked(object sender, EventArgs e)
         {
-            await SelectImages(6);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(6);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(6);
+                    break;
+            }
         }
 
         private async void OnImg7Clicked(object sender, EventArgs e)
         {
-            await SelectImages(7);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(7);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(7);
+                    break;
+            }
         }
 
         private async void OnImg8Clicked(object sender, EventArgs e)
         {
-            await SelectImages(8);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(8);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(8);
+                    break;
+            }
         }
 
         private async void OnImg9Clicked(object sender, EventArgs e)
         {
-            await SelectImages(9);
+            string result = await DisplayActionSheet("Select", "Cancel", null, "Take Photo", "Pick Photo");
+            switch (result)
+            {
+                case "Take Photo":
+                    await TakePhoto(9);
+                    break;
+                case "Pick Photo":
+                    await SelectImages(9);
+                    break;
+            }
         }
         #endregion
 
