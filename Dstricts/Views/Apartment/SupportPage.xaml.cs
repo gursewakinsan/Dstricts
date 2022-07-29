@@ -14,5 +14,10 @@ namespace Dstricts.Views.Apartment
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new SupportPageViewModel(this.Navigation);
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            viewModel.ApartmentCommunityTicketCreatedCountCommand.Execute(null);
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 
@@ -10,6 +12,24 @@ namespace Dstricts.ViewModels
 		public SupportPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+		}
+		#endregion
+
+		#region Apartment Community Ticket Created Count Command. 
+		private ICommand apartmentCommunityTicketCreatedCountCommand;
+		public ICommand ApartmentCommunityTicketCreatedCountCommand
+		{
+			get => apartmentCommunityTicketCreatedCountCommand ?? (apartmentCommunityTicketCreatedCountCommand = new Command(async () => await ExecuteApartmentCommunityTicketCreatedCountCommand()));
+		}
+		private async Task ExecuteApartmentCommunityTicketCreatedCountCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			ICommunityService service = new CommunityService();
+			ApartmentCommunityTicketInfo = await service.ApartmentCommunityTicketCreatedCountAsync(new Models.ApartmentCommunityTicketCreatedCountRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
+			});
+			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -62,6 +82,17 @@ namespace Dstricts.ViewModels
 		#endregion
 
 		#region Properties.
+		private Models.ApartmentCommunityTicketCreatedCountResponse apartmentCommunityTicketInfo;
+		public Models.ApartmentCommunityTicketCreatedCountResponse ApartmentCommunityTicketInfo
+        {
+			get => apartmentCommunityTicketInfo;
+			set
+			{
+				apartmentCommunityTicketInfo = value;
+				OnPropertyChanged("ApartmentCommunityTicketInfo");
+			}
+		}
+
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}

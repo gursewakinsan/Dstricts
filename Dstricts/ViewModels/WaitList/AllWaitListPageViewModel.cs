@@ -58,11 +58,14 @@ namespace Dstricts.ViewModels
 					HotelPropertyType = Convert.ToInt32(codeInfo[1]);
 					if (codeInfo.Length == 3)
 					{
-						VerifyCheckinId = codeInfo[2];
-						VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+						if (codeInfo[1] == "1")
+							GoToVerifyCheckedInCodePageCommand.Execute(null);
+						else
+						{
+							VerifyCheckinId = codeInfo[2];
+							VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+						}
 					}
-					else
-						GoToVerifyCheckedInCodePageCommand.Execute(null);
 					break;
 				case "getQueue":
 					Helper.Helper.AvalibleQueueId = codeInfo[1];

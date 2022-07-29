@@ -10,5 +10,6 @@ namespace Dstricts.Interfaces
         Task<List<Models.TicketSubTitleInfoResponse>> GetTicketSubTitleInfoAsync(Models.TicketSubTitleInfoRequest request);
         Task<int> CreateCommunityTicketAsync(Models.CreateCommunityTicketRequest request);
         Task<int> AddCommunityTicketImageAsync(Models.AddCommunityTicketImageRequest request);
+        Task<Models.ApartmentCommunityTicketCreatedCountResponse> ApartmentCommunityTicketCreatedCountAsync(Models.ApartmentCommunityTicketCreatedCountRequest request);
     }
 }

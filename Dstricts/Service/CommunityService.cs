@@ -52,5 +52,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.ApartmentCommunityTicketCreatedCountResponse> ApartmentCommunityTicketCreatedCountAsync(Models.ApartmentCommunityTicketCreatedCountRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.ApartmentCommunityTicketCreatedCountResponse>(HttpWebRequest.Create(string.Format(EndPointsList.ApartmentCommunityTicketCreatedCountUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
