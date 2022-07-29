@@ -43,5 +43,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<int> AddCommunityTicketImageAsync(Models.AddCommunityTicketImageRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddCommunityTicketImageUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

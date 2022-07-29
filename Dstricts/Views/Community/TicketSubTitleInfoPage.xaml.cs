@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Plugin.Media.Abstractions;
+using System.IO;
 
 namespace Dstricts.Views.Community
 {
@@ -27,6 +28,7 @@ namespace Dstricts.Views.Community
             InitializeComponent();
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new TicketSubTitleInfoPageViewModel(this.Navigation);
+            viewModel.GetTicketSubTitleInfoCommand.Execute(null);
         }
         #endregion
 
@@ -34,7 +36,6 @@ namespace Dstricts.Views.Community
         protected override void OnAppearing()
         {
             base.OnAppearing();
-           // viewModel.GetTicketSubTitleInfoCommand.Execute(null);
         }
         #endregion
 
@@ -106,13 +107,36 @@ namespace Dstricts.Views.Community
                             viewModel.Image_9 = true;
                             break;
                     }
-                }
 
-                /*(imgUser.Source = ImageSource.FromStream(mediaFile.GetStream);
-                var memoryStream = new MemoryStream();
-                await mediaFile.GetStream().CopyToAsync(memoryStream);
-                byte[] imageAsByte = memoryStream.ToArray();
-                viewModel.UserImageData = imageAsByte;*/
+                    var stream = mediaFile.GetStream();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await stream.CopyToAsync(memoryStream);
+                        byte[] imageAsByte = memoryStream.ToArray();
+                        byte[] aa = await DependencyService.Get<Interfaces.IImageResizerService>().ResizeImage(imageAsByte, 600, 500);
+                        if (viewModel.ImageDataInfo == null)
+                            viewModel.ImageDataInfo = new List<ImageData>();
+                        var data = viewModel.ImageDataInfo.FirstOrDefault(x => x.ImageId.Equals(selectedImage));
+                        if (data != null)
+                        {
+                            data.ImageBytes = aa;
+                        }
+                        else
+                        {
+                            viewModel.ImageDataInfo.Add(new ImageData()
+                            {
+                                ImageBytes = aa,
+                                ImageId = selectedImage,
+                            });
+                        }
+                    }
+
+                    /*(imgUser.Source = ImageSource.FromStream(mediaFile.GetStream);
+                    var memoryStream = new MemoryStream();
+                    await mediaFile.GetStream().CopyToAsync(memoryStream);
+                    byte[] imageAsByte = memoryStream.ToArray();
+                    viewModel.UserImageData = imageAsByte;*/
+                }
             }
             catch (Exception ex)
             {
@@ -715,6 +739,34 @@ namespace Dstricts.Views.Community
                             }
                             break;
                     }
+
+                    int index = selectedImage;
+                    foreach (var imageStream in result)
+                    {
+                        var stream = await imageStream.OpenReadAsync();
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await stream.CopyToAsync(memoryStream);
+                            byte[] imageAsByte = memoryStream.ToArray();
+                            byte[] aa = await DependencyService.Get<Interfaces.IImageResizerService>().ResizeImage(imageAsByte, 600, 500);
+                            if (viewModel.ImageDataInfo == null)
+                                viewModel.ImageDataInfo = new List<ImageData>();
+                            var data = viewModel.ImageDataInfo.FirstOrDefault(x => x.ImageId.Equals(index));
+                            if (data != null)
+                            {
+                                data.ImageBytes = aa;
+                            }
+                            else
+                            {
+                                viewModel.ImageDataInfo.Add(new ImageData()
+                                {
+                                    ImageBytes = aa,
+                                    ImageId = index,
+                                });
+                            }
+                            index = index + 1;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -857,54 +909,63 @@ namespace Dstricts.Views.Community
         {
             img1.Source = null;
             viewModel.Image_1 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 1);
         }
 
         private void OnImg2RemovedTapped(object sender, EventArgs e)
         {
             img2.Source = null;
             viewModel.Image_2 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 2);
         }
 
         private void OnImg3RemovedTapped(object sender, EventArgs e)
         {
             img3.Source = null;
             viewModel.Image_3 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 3);
         }
 
         private void OnImg4RemovedTapped(object sender, EventArgs e)
         {
             img4.Source = null;
             viewModel.Image_4 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 4);
         }
 
         private void OnImg5RemovedTapped(object sender, EventArgs e)
         {
             img5.Source = null;
             viewModel.Image_5 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 5);
         }
 
         private void OnImg6RemovedTapped(object sender, EventArgs e)
         {
             img6.Source = null;
             viewModel.Image_6 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 6);
         }
 
         private void OnImg7RemovedTapped(object sender, EventArgs e)
         {
             img7.Source = null;
             viewModel.Image_7 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 7);
         }
 
         private void OnImg8RemovedTapped(object sender, EventArgs e)
         {
             img8.Source = null;
             viewModel.Image_8 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 8);
         }
 
         private void OnImg9RemovedTapped(object sender, EventArgs e)
         {
             img9.Source = null;
             viewModel.Image_9 = false;
+            viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 9);
         }
         #endregion
 

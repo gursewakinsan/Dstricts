@@ -78,6 +78,7 @@
     <Compile Include="Renderers\CustomFrameRenderer.cs" />
     <Compile Include="Renderers\CustomOtpEntryRenderer.cs" />
     <Compile Include="Renderers\CustomPickerRenderer.cs" />
+    <Compile Include="Services\ImageResizerService.cs" />
     <Compile Include="Services\ProgressBar.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

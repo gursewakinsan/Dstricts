@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.IO;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -36,6 +38,20 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		private byte[] ReadStream(Stream input)
+		{
+			byte[] buffer = new byte[16 * 1024];
+			using (MemoryStream ms = new MemoryStream())
+			{
+				int read;
+				while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+				{
+					ms.Write(buffer, 0, read);
+				}
+				return ms.ToArray();
+			}
+		}
+
 		#region Create Ticket Command.
 		private ICommand createTicketCommand;
 		public ICommand CreateTicketCommand
@@ -59,6 +75,21 @@ namespace Dstricts.ViewModels
 					SubTicketId = SelectedTicketSubTitleInfo.Id,
 					CommunityId = Helper.Helper.CommunityId
 				});
+
+				if (ImageDataInfo?.Count > 0)
+				{
+					foreach (var item in ImageDataInfo)
+					{
+						if (item.ImageId <= 9)
+						{
+							var imgResponse = await service.AddCommunityTicketImageAsync(new Models.AddCommunityTicketImageRequest()
+							{
+								ProblemId = response,
+								ImageData = Convert.ToBase64String(item.ImageBytes)
+							});
+						}
+					}
+				}
 				DependencyService.Get<IProgressBar>().Hide();
 				Application.Current.MainPage = new NavigationPage(new Views.Apartment.SupportPage());
 			}
@@ -198,8 +229,14 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("Image_9");
 			}
 		}
-		public string TicketTitle;// => Helper.Helper.TicketTitleInfo.TicketTitle;
-		#endregion
-	}
+		public string TicketTitle => Helper.Helper.TicketTitleInfo.TicketTitle;
+        public List<ImageData> ImageDataInfo { get; set; }
+        #endregion
+    }
 }
 
+public class ImageData
+{
+    public int ImageId { get; set; }
+	public byte[] ImageBytes { get; set; }
+}

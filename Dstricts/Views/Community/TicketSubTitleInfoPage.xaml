@@ -59,12 +59,12 @@
 			Grid.Row="0"
 			Grid.Column="3"
 			BackgroundColor="#4285F4"
-			Command="{Binding CreateTicketCommand}"
 			CornerRadius="10"
 			FontFamily="PoppinsSemiBoldFontFamily"
 			FontSize="16"
 			Text="Done"
             Padding="0"
+            Command="{Binding CreateTicketCommand}"
 			TextColor="White" />
 
         <ScrollView
