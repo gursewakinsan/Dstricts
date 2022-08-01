@@ -1,12 +1,223 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dstricts.Views.Community.TenantsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Community.TenantsPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:Dstricts.Controls"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#282A34"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Margin="0,12,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="7" />
+            <RowDefinition Height="56" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+			HorizontalTextAlignment="Center"
+			Text="Tenants"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            Margin="0,0,28,0"
+			HorizontalTextAlignment="End"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+			TextColor="White"
+			VerticalTextAlignment="Center"/>
+
+        <Frame 
+            BackgroundColor="#1F1F1F"
+            Margin="28,0,28,0"
+            CornerRadius="8"
+            Padding="0"
+            IsClippedToBounds="True"
+            HasShadow="False"
+            Grid.Row="2"
+            Grid.ColumnSpan="3">
+            <Grid Margin="16,0,16,0" RowSpacing="0" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+			        Grid.Column="0"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Start"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+			        TextColor="#737B8C"
+			        VerticalTextAlignment="Center"/>
+
+                <controls:CustomEntry 
+                    Grid.Column="1"
+                    FontSize="14"
+                    PlaceholderColor="#737B8C"
+                    TextColor="White"
+                    Placeholder="Search"
+                    FontFamily="PoppinsRegularFontFamily"
+                    BackgroundColor="Transparent"/>
+            </Grid>
+        </Frame>
+
+        <Label
+			Grid.Row="4"
+			Grid.Column="0"
+			FontFamily="PoppinsSemiBoldFontFamily"
+			FontSize="14"
+            Margin="28,0,0,0"
+            Grid.ColumnSpan="2"
+			HorizontalTextAlignment="Start"
+			Text="Ports"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <ScrollView
+            Grid.ColumnSpan="3"
+            Grid.Row="6"
+            HorizontalScrollBarVisibility="Never" 
+            Orientation="Horizontal">
+            <StackLayout 
+                HorizontalOptions="StartAndExpand"
+                BindableLayout.ItemsSource="{Binding TenantInfo}"
+                Margin="28,0,0,0"
+                Orientation="Horizontal" 
+                Spacing="0">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Clicked="OnPortClicked"
+                            Margin="0,0,21,0"
+                            BorderWidth="1"
+                            CornerRadius="28"
+                            WidthRequest="56"
+                            HeightRequest="56"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding PortNumber}"
+                            BorderColor="{Binding PortNumberBorder}"
+                            BackgroundColor="{Binding PortNumberBg}"
+                            TextColor="{Binding PortNumberTextColor}"
+                            FontFamily="PoppinsRegularFontFamily"
+                            FontSize="24"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+
+        <controls:CustomFrame
+			Grid.Row="8"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			CornerRadius="38,38,0,0"
+			HasShadow="False"
+            BackgroundColor="#1B1D24"
+			IsClippedToBounds="True">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <StackLayout 
+                    Margin="0,38,0,0"
+                    VerticalOptions="StartAndExpand"
+                    BindableLayout.ItemsSource="{Binding SelectedTenantInfo}"
+                    Spacing="0">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="28,0,28,20" ColumnSpacing="12" HeightRequest="48">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="44"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ImageButton 
+                                    Grid.Column="0" 
+                                    HeightRequest="44"
+                                    WidthRequest="44"
+                                    CornerRadius="22"
+                                    Padding="0"
+                                    Aspect="AspectFill"
+                                    Source="{Binding ImagePath}"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand"/>
+
+                                <StackLayout 
+                                    Spacing="5"
+                                    Grid.Column="1" 
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label
+			                            FontFamily="PoppinsSemiBoldFontFamily"
+			                            FontSize="14"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="White"
+                                        MaxLines="1"
+                                        LineBreakMode="TailTruncation"
+			                            VerticalTextAlignment="Start">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding FirstName}"/>
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding LastName}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label
+			                            FontFamily="PoppinsRegularFontFamily"
+			                            FontSize="14"
+			                            HorizontalTextAlignment="Start"
+			                            Text="Ports"
+                                        Opacity="0.42"
+			                            TextColor="White"
+			                            VerticalTextAlignment="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Floor "/>
+                                                <Span Text="{Binding FloorNumber}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </controls:CustomFrame>
+    </Grid>
 </ContentPage>

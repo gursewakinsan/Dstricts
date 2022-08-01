@@ -30,7 +30,22 @@ namespace Dstricts.ViewModels
 			{
 				CommunityId = Helper.Helper.CommunityId
 			});
-			TenantInfo = new ObservableCollection<Models.CommunityAvailableTenantsInfoResponse>(response);
+			if (response?.Count > 0)
+			{
+                foreach (var tenant in response)
+                {
+					tenant.IsSelected = false;
+					tenant.PortNumberTextColor = Color.White;
+					tenant.PortNumberBg = Color.Transparent;
+					tenant.PortNumberBorder = Color.FromHex("#737B8C");
+				}
+				response[0].IsSelected = true;
+				response[0].PortNumberTextColor = Color.Black;
+				response[0].PortNumberBg = Color.White;
+				response[0].PortNumberBorder = Color.White;
+				SelectedTenantInfo = new ObservableCollection<Models.Tenant>(response[0].TenantsList);
+				TenantInfo = new ObservableCollection<Models.CommunityAvailableTenantsInfoResponse>(response);
+			}
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -44,6 +59,17 @@ namespace Dstricts.ViewModels
 			{
 				tenantInfo = value;
 				OnPropertyChanged("TenantInfo");
+			}
+		}
+
+		private ObservableCollection<Models.Tenant> selectedTenantInfo;
+		public ObservableCollection<Models.Tenant> SelectedTenantInfo
+		{
+			get => selectedTenantInfo;
+			set
+			{
+				selectedTenantInfo = value;
+				OnPropertyChanged("SelectedTenantInfo");
 			}
 		}
 		#endregion

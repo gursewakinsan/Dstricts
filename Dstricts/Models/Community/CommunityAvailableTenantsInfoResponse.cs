@@ -2,7 +2,7 @@
 
 namespace Dstricts.Models
 {
-    public class CommunityAvailableTenantsInfoResponse
+    public class CommunityAvailableTenantsInfoResponse : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
@@ -12,6 +12,38 @@ namespace Dstricts.Models
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "tenants")]
         public List<Tenant> TenantsList { get; set; }
+
+        private Xamarin.Forms.Color portNumberTextColor;
+        public Xamarin.Forms.Color PortNumberTextColor
+        {
+            get => portNumberTextColor;
+            set
+            {
+                portNumberTextColor = value;
+                OnPropertyChanged("PortNumberTextColor");
+            }
+        }
+        private Xamarin.Forms.Color portNumberBg;
+        public Xamarin.Forms.Color PortNumberBg
+        {
+            get => portNumberBg;
+            set
+            {
+                portNumberBg = value;
+                OnPropertyChanged("PortNumberBg");
+            }
+        }
+        private Xamarin.Forms.Color portNumberBorder;
+        public Xamarin.Forms.Color PortNumberBorder
+        {
+            get => portNumberBorder;
+            set
+            {
+                portNumberBorder = value;
+                OnPropertyChanged("PortNumberBorder");
+            }
+        }
+        public bool IsSelected { get; set; }
     }
 
     public class Tenant
