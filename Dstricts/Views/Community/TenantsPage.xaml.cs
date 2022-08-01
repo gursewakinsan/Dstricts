@@ -40,6 +40,7 @@ namespace Dstricts.Views.Community
                 response.PortNumberTextColor = Color.Black;
                 response.PortNumberBg = Color.White;
                 response.PortNumberBorder = Color.White;
+                viewModel.CopySelectedTenantInfo = response.TenantsList;
                 viewModel.SelectedTenantInfo = new System.Collections.ObjectModel.ObservableCollection<Models.Tenant>(response.TenantsList);
             }
         }

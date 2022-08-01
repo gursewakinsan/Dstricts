@@ -90,6 +90,9 @@
                 <controls:CustomEntry 
                     Grid.Column="1"
                     FontSize="14"
+                    Text="{Binding SearchText}"
+                    ReturnType="Search"
+                    ReturnCommand="{Binding SearchCommand}"
                     PlaceholderColor="#737B8C"
                     TextColor="White"
                     Placeholder="Search"

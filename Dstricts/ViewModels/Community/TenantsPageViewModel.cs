@@ -1,8 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
@@ -43,10 +45,31 @@ namespace Dstricts.ViewModels
 				response[0].PortNumberTextColor = Color.Black;
 				response[0].PortNumberBg = Color.White;
 				response[0].PortNumberBorder = Color.White;
+				CopySelectedTenantInfo = response[0].TenantsList;
 				SelectedTenantInfo = new ObservableCollection<Models.Tenant>(response[0].TenantsList);
 				TenantInfo = new ObservableCollection<Models.CommunityAvailableTenantsInfoResponse>(response);
 			}
 			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Search Command.
+		private ICommand searchCommand;
+		public ICommand SearchCommand
+		{
+			get => searchCommand ?? (searchCommand = new Command( () => ExecuteSearchCommand()));
+		}
+		private void ExecuteSearchCommand()
+		{
+			if (string.IsNullOrWhiteSpace(SearchText)) return;
+			else
+			{
+				if (CopySelectedTenantInfo?.Count > 0)
+				{
+					var result = CopySelectedTenantInfo.Where(x => x.SearchTextFrom.ToLower().Contains(SearchText)).ToList();
+					SelectedTenantInfo = new ObservableCollection<Models.Tenant>(result);
+				}
+			}
 		}
 		#endregion
 
@@ -70,6 +93,19 @@ namespace Dstricts.ViewModels
 			{
 				selectedTenantInfo = value;
 				OnPropertyChanged("SelectedTenantInfo");
+			}
+		}
+
+		public List<Models.Tenant> CopySelectedTenantInfo { get; set; }
+
+		private string searchText;
+		public string SearchText
+		{
+			get => searchText;
+			set
+			{
+				searchText = value;
+				OnPropertyChanged("SearchText");
 			}
 		}
 		#endregion

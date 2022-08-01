@@ -63,6 +63,8 @@ namespace Dstricts.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "floor_number")]
         public int FloorNumber { get; set; }
 
+        public string SearchTextFrom => $"{FirstName} {LastName} Floor {FloorNumber}";
+
 
         /*
         [Newtonsoft.Json.JsonProperty(PropertyName = "community_id")]
