@@ -45,8 +45,10 @@
 			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
-			Text="Casa Madrid"
+			Text="{Binding DisplayPropertyNickName}"
 			TextColor="White"
+            MaxLines="1"
+            LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center" />
 
         <ScrollView
@@ -175,8 +177,8 @@
 			CornerRadius="38,38,0,0"
 			HasShadow="False"
 			IsClippedToBounds="True">
-            <ScrollView Margin="0,35,0,0" VerticalScrollBarVisibility="Never">
-                <Grid ColumnSpacing="0" RowSpacing="0">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,35,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="6" />
@@ -191,15 +193,9 @@
                         <RowDefinition Height="78" />
                         <RowDefinition Height="29" />
                         <RowDefinition Height="auto" />
-                        <RowDefinition Height="52" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="27" />
+                        
                         <RowDefinition Height="auto" />
-                        <RowDefinition Height="51" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="27" />
                         <RowDefinition Height="auto" />
-
 
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
@@ -224,9 +220,22 @@
 							LineHeight="1.1"
 							MaxLines="3"
 							Opacity="0.70"
-							Text="Madrid Community Torsgatan 64a 112 32 Stockholm"
 							TextColor="White"
-							VerticalTextAlignment="End" />
+							VerticalTextAlignment="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CommunityDetailInfo.SocietyName}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{Binding CommunityDetailInfo.StreetAddress}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{Binding CommunityDetailInfo.PortNumber}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{Binding CommunityDetailInfo.ZipCode}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{Binding CommunityDetailInfo.City}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
 
                     <Button
@@ -263,9 +272,15 @@
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="13"
 						HorizontalTextAlignment="Start"
-						Text="Entre code: 8912"
 						TextColor="#6ADC86"
-						VerticalTextAlignment="Center" />
+						VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Entre code: "/>
+                                <Span Text="{Binding CommunityDetailInfo.EntryCode}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
                     <Label
 						Grid.Row="2"
@@ -302,7 +317,7 @@
 						HorizontalScrollBarVisibility="Never"
 						Orientation="Horizontal">
                         <StackLayout
-							x:Name="layoutImages"
+                            BindableLayout.ItemsSource="{Binding CommunityDetailInfo.ImagesList}"
 							Orientation="Horizontal"
 							Spacing="16">
                             <BindableLayout.ItemTemplate>
@@ -312,7 +327,7 @@
 										Aspect="AspectFill"
 										CornerRadius="16"
 										HorizontalOptions="Start"
-										Source="iconBuildingWithGarden.png"
+										Source="{Binding BuildingPhotoPath}"
 										WidthRequest="{Binding ImgWidth}" />
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
@@ -343,7 +358,7 @@
 						LineHeight="1.1"
 						MaxLines="3"
 						Opacity="0.42"
-						Text="Casa Madrid community is located in the beautiful surrounding of Stockholm and its surrounding ilands."
+						Text="{Binding CommunityDetailInfo.Description}"
 						TextColor="White"
 						VerticalTextAlignment="Start" />
 
@@ -382,10 +397,10 @@
                         </Grid.ColumnDefinitions>
 
                         <BoxView
-						Grid.Row="0"
-                        Grid.Column="0"
-						Grid.ColumnSpan="3"
-						BackgroundColor="#2A2A31" />
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
+							BackgroundColor="#2A2A31" />
 
                         <Label
                             Grid.Row="2"
@@ -421,10 +436,10 @@
                         <BoxView
                              HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-						Grid.Row="4"
-                        Grid.Column="0"
-						Grid.ColumnSpan="3"
-						BackgroundColor="#2A2A31" />
+							Grid.Row="4"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
+							BackgroundColor="#2A2A31" />
 
                         <Label
                             Grid.Row="6"
@@ -460,10 +475,10 @@
                         <BoxView
                              HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-						Grid.Row="8"
-                        Grid.Column="0"
-						Grid.ColumnSpan="3"
-						BackgroundColor="#2A2A31" />
+							Grid.Row="8"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
+							BackgroundColor="#2A2A31" />
 
                         <Label
                             Grid.Row="10"
@@ -499,10 +514,10 @@
                         <BoxView
                              HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-						Grid.Row="12"
-                        Grid.Column="0"
-						Grid.ColumnSpan="3"
-						BackgroundColor="#2A2A31" />
+							Grid.Row="12"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
+							BackgroundColor="#2A2A31" />
 
                         <Label
                             Grid.Row="14"
@@ -538,153 +553,172 @@
                         <BoxView
                             HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-						Grid.Row="16"
-                        Grid.Column="0"
-						Grid.ColumnSpan="3"
-						BackgroundColor="#2A2A31" />
+							Grid.Row="16"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
+							BackgroundColor="#2A2A31" />
                     </Grid>
 
-                    <Label
-						Grid.Row="14"
+                    <Grid 
+                        IsVisible="{Binding IsBookAvailable}"
+                        Margin="0,52,0,0"
+                        RowSpacing="0"
+                        Grid.Row="13"
 						Grid.Column="1"
-						Grid.ColumnSpan="4"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="Book"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
+						Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label
+							Grid.Row="0"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="20"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Book"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
 
-                    <ScrollView
-						Grid.Row="16"
+                        <ScrollView
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
+                            <StackLayout
+                                BindableLayout.ItemsSource="{Binding ApartmentCommunityBookList}"
+								x:Name="listWellness"
+								Margin="0,0,28,0"
+								HorizontalOptions="Start"
+								Orientation="Horizontal"
+								Spacing="16">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="0"
+											RowSpacing="16"
+											WidthRequest="190">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="60" />
+                                            </Grid.RowDefinitions>
+                                            <ImageButton
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="148"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}" />
+
+                                            <StackLayout
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+                                                <Label
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+													Text="{Binding AmenityName}"
+													TextColor="White" />
+
+                                                <Label
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </Grid>
+
+                    <Grid 
+                        IsVisible="{Binding IsThingsToDoAvailable}"
+                        Margin="0,52,0,0"
+                        RowSpacing="0"
+                        Grid.Row="14"
 						Grid.Column="1"
-						Grid.ColumnSpan="5"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
-                        <StackLayout
-							x:Name="listWellness"
-							Margin="0,0,28,0"
-							HorizontalOptions="Start"
-							Orientation="Horizontal"
-							Spacing="16">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid
-										ColumnSpacing="0"
-										RowSpacing="16"
-										WidthRequest="190">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="148" />
-                                            <RowDefinition Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <ImageButton
-											Grid.Row="0"
-											Aspect="AspectFill"
-											CornerRadius="12"
-											HeightRequest="148"
-											HorizontalOptions="CenterAndExpand"
-											Source="imgGuestRoom.png"
-											VerticalOptions="CenterAndExpand"
-											WidthRequest="{Binding ItemWidth}" />
+						Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label
+							Grid.Row="0"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="20"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Things to do"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
 
-                                        <StackLayout
-											Grid.Row="1"
-											HorizontalOptions="StartAndExpand"
-											Spacing="2">
-                                            <Label
-												FontFamily="PoppinsSemiBoldFontFamily"
-												FontSize="14"
-												Text="Clubhouse"
-												TextColor="White" />
+                        <ScrollView
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
+                            <StackLayout
+                                BindableLayout.ItemsSource="{Binding CommunityAmenityList}"
+								Margin="0,0,28,0"
+								HorizontalOptions="Start"
+								Orientation="Horizontal"
+								Spacing="16">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="0"
+											RowSpacing="16"
+											WidthRequest="190">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="60" />
+                                            </Grid.RowDefinitions>
+                                            <ImageButton
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="148"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}" />
 
-                                            <Label
-												Padding="0"
-												FontFamily="PoppinsRegularFontFamily"
-												FontSize="12"
-												LineBreakMode="TailTruncation"
-												MaxLines="2"
-												Opacity="0.70"
-												Text="Book the clubhouse for small gatherings"
-												TextColor="White" />
-                                        </StackLayout>
-                                    </Grid>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
-                    </ScrollView>
+                                            <StackLayout
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+                                                <Label
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+													Text="{Binding AmenityName}"
+													TextColor="White" />
 
-                    <Label
-						Grid.Row="18"
-						Grid.Column="1"
-						Grid.ColumnSpan="4"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="Things to do"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-                    <ScrollView
-						Grid.Row="20"
-						Grid.Column="1"
-						Grid.ColumnSpan="5"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
-                        <StackLayout
-							x:Name="listThingsToDo"
-							Margin="0,0,28,0"
-							HorizontalOptions="Start"
-							Orientation="Horizontal"
-							Spacing="16">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid
-										ColumnSpacing="0"
-										RowSpacing="16"
-										WidthRequest="190">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="148" />
-                                            <RowDefinition Height="60" />
-                                        </Grid.RowDefinitions>
-                                        <ImageButton
-											Grid.Row="0"
-											Aspect="AspectFill"
-											CornerRadius="12"
-											HeightRequest="148"
-											HorizontalOptions="CenterAndExpand"
-											Source="iconWelness.png"
-											VerticalOptions="CenterAndExpand"
-											WidthRequest="{Binding ItemWidth}" />
-
-                                        <StackLayout
-											Grid.Row="1"
-											HorizontalOptions="StartAndExpand"
-											Spacing="2">
-                                            <Label
-												FontFamily="PoppinsSemiBoldFontFamily"
-												FontSize="14"
-												Text="Swimming pool"
-												TextColor="White" />
-
-                                            <Label
-												Padding="0"
-												FontFamily="PoppinsRegularFontFamily"
-												FontSize="12"
-												LineBreakMode="TailTruncation"
-												MaxLines="2"
-												Opacity="0.70"
-												Text="How was the sea food in Barcelona, Spain"
-												TextColor="White" />
-                                        </StackLayout>
-                                    </Grid>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
-                    </ScrollView>
+                                                <Label
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="How was the sea food in Barcelona, Spain"
+													TextColor="White" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </Grid>
                 </Grid>
             </ScrollView>
         </controls:CustomFrame>

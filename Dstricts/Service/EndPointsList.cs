@@ -115,6 +115,8 @@
 		public const string CreateCommunityTicketUrl = "https://www.qloudid.com/user/index.php/QloudidApp/createCommunityTicket";
 		public const string AddCommunityTicketImageUrl = "https://www.qloudid.com/user/index.php/QloudidApp/addCommunityTicketImage";
 		public const string ApartmentCommunityTicketCreatedCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityTicketCreatedCount";
+		public const string GetCommunityDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityDetailInfo";
+		public const string ApartmentCommunityAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityAmenities";
 	}
 }
 

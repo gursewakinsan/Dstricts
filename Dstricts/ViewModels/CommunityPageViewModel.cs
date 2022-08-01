@@ -1,6 +1,9 @@
 ﻿using Xamarin.Forms;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dstricts.ViewModels
 {
@@ -35,6 +38,112 @@ namespace Dstricts.ViewModels
 		{
 			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 		}
+		#endregion
+
+		#region Get Community Detail Info Command.
+		private ICommand getCommunityDetailInfoCommand;
+		public ICommand GetCommunityDetailInfoCommand
+		{
+			get => getCommunityDetailInfoCommand ?? (getCommunityDetailInfoCommand = new Command(async () => await ExecuteGetCommunityDetailInfoCommand()));
+		}
+		private async Task ExecuteGetCommunityDetailInfoCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			ICommunityService service = new CommunityService();
+			var response = await service.GetCommunityDetailInfoAsync(new Models.GetCommunityDetailInfoRequest()
+			{
+				CommunityId = Helper.Helper.CommunityId
+			});
+			if (response.ImagesList?.Count > 0)
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in response.ImagesList)
+					item.ImgWidth = imgWidth;
+			}
+			CommunityDetailInfo = response;
+
+			var responseApartmentCommunityAmenities = await service.ApartmentCommunityAmenitiesAsync(new Models.ApartmentCommunityAmenitiesRequest()
+			{
+				CommunityId = Helper.Helper.CommunityId
+			});
+			if(responseApartmentCommunityAmenities !=null)
+            {
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in responseApartmentCommunityAmenities.BookList)
+					item.ItemWidth = imgWidth; 
+
+				foreach (var item in responseApartmentCommunityAmenities.CommunityAmenityList)
+					item.ItemWidth = imgWidth;
+
+				ApartmentCommunityBookList = responseApartmentCommunityAmenities.BookList;
+				CommunityAmenityList = responseApartmentCommunityAmenities.CommunityAmenityList;
+			}
+			IsBookAvailable = ApartmentCommunityBookList?.Count > 0 ? true : false;
+			IsThingsToDoAvailable = CommunityAmenityList?.Count > 0 ? true : false;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Properties.
+		private Models.GetCommunityDetailInfoResponse communityDetailInfo;
+		public Models.GetCommunityDetailInfoResponse CommunityDetailInfo
+		{
+			get => communityDetailInfo;
+			set
+			{
+				communityDetailInfo = value;
+				OnPropertyChanged("CommunityDetailInfo");
+			}
+		}
+
+		private List<Models.ApartmentCommunityBook> apartmentCommunityBookList;
+		public List<Models.ApartmentCommunityBook> ApartmentCommunityBookList
+		{
+			get => apartmentCommunityBookList;
+			set
+			{
+				apartmentCommunityBookList = value;
+				OnPropertyChanged("ApartmentCommunityBookList");
+			}
+		}
+
+		private List<Models.CommunityAmenity> communityAmenityList;
+		public List<Models.CommunityAmenity> CommunityAmenityList
+		{
+			get => communityAmenityList;
+			set
+			{
+				communityAmenityList = value;
+				OnPropertyChanged("CommunityAmenityList");
+			}
+		}
+
+		private bool isBookAvailable;
+		public bool IsBookAvailable
+		{
+			get => isBookAvailable;
+			set
+			{
+				isBookAvailable = value;
+				OnPropertyChanged("IsBookAvailable");
+			}
+		}
+
+		private bool isThingsToDoAvailable;
+		public bool IsThingsToDoAvailable
+		{
+			get => isThingsToDoAvailable;
+			set
+			{
+				isThingsToDoAvailable = value;
+				OnPropertyChanged("IsThingsToDoAvailable");
+			}
+		}
+
+
+		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}
 }

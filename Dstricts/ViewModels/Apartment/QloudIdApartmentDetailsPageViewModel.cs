@@ -30,6 +30,13 @@ namespace Dstricts.ViewModels
 			{
 				Id = ApartmentDetails.QloudCheckOutId
 			});
+
+			ICommunityService communityService = new CommunityService();
+			Helper.Helper.CommunityId = await communityService.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
+			});
+
 			BindListDecorated();
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -43,7 +50,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToCommunityPageCommand()
 		{
-			await Navigation.PushAsync(new Views.Community.CommunityPage());
+			if (Helper.Helper.CommunityId > 0)
+				await Navigation.PushAsync(new Views.Community.CommunityPage());
 		}
 		#endregion
 

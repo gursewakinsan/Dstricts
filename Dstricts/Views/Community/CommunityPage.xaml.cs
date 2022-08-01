@@ -20,7 +20,8 @@ namespace Dstricts.Views.Community
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			int deviceWidth = App.ScreenWidth - 56;
+			viewModel.GetCommunityDetailInfoCommand.Execute(null);
+			/*int deviceWidth = App.ScreenWidth - 56;
 			int imgWidth = deviceWidth * 90 / 100;
 
 			List<DemoData> demos = new List<DemoData>();
@@ -29,9 +30,8 @@ namespace Dstricts.Views.Community
 				demos.Add(new DemoData { ItemWidth = imgWidth });
 			}
 
-			BindableLayout.SetItemsSource(layoutImages, demos);
 			BindableLayout.SetItemsSource(listWellness, demos);
-			BindableLayout.SetItemsSource(listThingsToDo, demos);
+			BindableLayout.SetItemsSource(listThingsToDo, demos);*/
 		}
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

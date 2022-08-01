@@ -61,5 +61,24 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.GetCommunityDetailInfoResponse> GetCommunityDetailInfoAsync(Models.GetCommunityDetailInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.GetCommunityDetailInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.GetCommunityDetailInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+
+		public Task<Models.ApartmentCommunityAmenitiesResponse> ApartmentCommunityAmenitiesAsync(Models.ApartmentCommunityAmenitiesRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.ApartmentCommunityAmenitiesResponse>(HttpWebRequest.Create(string.Format(EndPointsList.ApartmentCommunityAmenitiesUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
+
