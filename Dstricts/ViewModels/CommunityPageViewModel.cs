@@ -40,6 +40,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Tenants Page Command.
+		private ICommand goToTenantsPageCommand;
+		public ICommand GoToTenantsPageCommand
+		{
+			get => goToTenantsPageCommand ?? (goToTenantsPageCommand = new Command(async () => await ExecuteGoToTenantsPageCommand()));
+		}
+		private async Task ExecuteGoToTenantsPageCommand()
+		{
+			await Navigation.PushAsync(new Views.Community.TenantsPage());
+		}
+		#endregion
+
 		#region Get Community Detail Info Command.
 		private ICommand getCommunityDetailInfoCommand;
 		public ICommand GetCommunityDetailInfoCommand

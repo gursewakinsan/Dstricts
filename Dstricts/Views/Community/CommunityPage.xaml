@@ -488,7 +488,11 @@
 							HorizontalTextAlignment="Center"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
 							TextColor="#7090E0"
-							VerticalTextAlignment="Center"/>
+							VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToTenantsPageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <Label
                              Grid.Row="10"
@@ -498,7 +502,11 @@
 							HorizontalTextAlignment="Start"
 							Text="Tenants"
 							TextColor="White"
-							VerticalTextAlignment="Center" />
+							VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToTenantsPageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <Label
                              Grid.Row="10"

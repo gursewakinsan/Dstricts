@@ -79,6 +79,15 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.CommunityAvailableTenantsInfoResponse>> CommunityAvailableTenantsInfoAsync(Models.CommunityAvailableTenantsInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.CommunityAvailableTenantsInfoResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CommunityAvailableTenantsInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
 

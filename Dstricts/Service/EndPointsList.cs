@@ -117,6 +117,7 @@
 		public const string ApartmentCommunityTicketCreatedCountUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityTicketCreatedCount";
 		public const string GetCommunityDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityDetailInfo";
 		public const string ApartmentCommunityAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityAmenities";
+		public const string CommunityAvailableTenantsInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/communityAvailableTenantsInfo";
 	}
 }
 
