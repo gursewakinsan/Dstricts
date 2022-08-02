@@ -64,7 +64,7 @@
 			VerticalTextAlignment="Center"/>
 
         <Frame 
-            BackgroundColor="#1F1F1F"
+            BackgroundColor="#5E6170"
             Margin="28,0,28,0"
             CornerRadius="8"
             Padding="0"
@@ -84,7 +84,7 @@
 			        FontSize="20"
 			        HorizontalTextAlignment="Start"
 			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
-			        TextColor="#737B8C"
+			        TextColor="#C3C4C7"
 			        VerticalTextAlignment="Center"/>
 
                 <controls:CustomEntry 
@@ -93,7 +93,7 @@
                     Text="{Binding SearchText}"
                     ReturnType="Search"
                     ReturnCommand="{Binding SearchCommand}"
-                    PlaceholderColor="#737B8C"
+                    PlaceholderColor="#C3C4C7"
                     TextColor="White"
                     Placeholder="Search"
                     FontFamily="PoppinsRegularFontFamily"
@@ -140,7 +140,7 @@
                             BackgroundColor="{Binding PortNumberBg}"
                             TextColor="{Binding PortNumberTextColor}"
                             FontFamily="PoppinsRegularFontFamily"
-                            FontSize="24"/>
+                            FontSize="16"/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
