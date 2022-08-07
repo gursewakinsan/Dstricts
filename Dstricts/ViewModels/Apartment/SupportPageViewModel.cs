@@ -53,7 +53,8 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToCommunityPageCommand()
 		{
-			await Navigation.PushAsync(new Views.Community.CommunityPage());
+			if (Helper.Helper.CommunityId > 0)
+				await Navigation.PushAsync(new Views.Community.CommunityPage());
 		}
 		#endregion
 
