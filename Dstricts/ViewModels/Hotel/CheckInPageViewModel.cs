@@ -46,26 +46,16 @@ namespace Dstricts.ViewModels
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
-			/*responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 1" });
-			responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 2" });
-			responseCheckedIn.Add(new Models.CheckedInResponse() { PropertyNickName = "Hotel 3" });*/
-
 			var responseCheckedInApartment = await service.CheckedInApartmentAsync(new Models.CheckedInRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId
 			});
 
-			/*var responseCheckedInMeetingList = await service.CheckedInMeetingListAsync(new Models.CheckedInMeetingListRequest()
+			var responseCheckedInOwnerApartment = await service.CheckedInOwnerApartmentAsync(new Models.CheckedInRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId
-			});*/
+			});
 
-			/*responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 1", CompanyName = "CompanyName 1" });
-			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 2", CompanyName = "CompanyName 2" });
-			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 3", CompanyName = "CompanyName 3" });
-			responseCheckedInMeetingList.Add(new Models.CheckedInMeetingListResponse() { Name = "Name 4", CompanyName = "CompanyName 4" });*/
-			
-			//CheckedInMeetingList = responseCheckedInMeetingList;
 
 			if (responseCheckedIn?.Count > 0)
 			{
@@ -81,16 +71,13 @@ namespace Dstricts.ViewModels
 						checkIns.Add(item);
 			}
 
-			/*if (checkIns?.Count > 1)
+			if (responseCheckedInOwnerApartment?.Count > 0)
 			{
-				int index = 0;
-				foreach (var item in checkIns)
-				{
-					item.FirstLetterBg = Helper.Helper.ListIconBgColorList[index];
-					item.FirstLetterText = Helper.Helper.ListIconTextColorList[index];
-					index = index + 1;
-				}
-			}*/
+				foreach (var item in responseCheckedInOwnerApartment)
+					if (item != null)
+						checkIns.Add(item);
+			}
+
 
 			int deviceWidth = App.ScreenWidth - 56;
 			int imgWidth = deviceWidth * 80 / 100;

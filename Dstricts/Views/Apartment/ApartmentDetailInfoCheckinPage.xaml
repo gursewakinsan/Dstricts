@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Apartment.ApartmentDetailInfoCheckinPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid Margin="28,22,28,0" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            Command="{Binding CloseCommand}" 
+            Grid.Row="0" 
+            BorderWidth="1" 
+            Grid.Column="0" 
+            BackgroundColor="Transparent"
+            Opacity="0.2" 
+            CornerRadius="8" 
+            BorderColor="White"/>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Center"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="End"
+			Text="Check-in" 
+            HorizontalOptions="EndAndExpand"
+			TextColor="White" 
+			VerticalTextAlignment="Center"/>
+
+        <Label
+			Grid.Row="2"
+			Grid.ColumnSpan="2"
+			Grid.Column="0"
+			FontFamily="PoppinsBoldFontFamily"
+			FontSize="40"
+			HorizontalTextAlignment="Start"
+			Text="{Binding ApartmentDetailInfo.DisplayName}"
+			TextColor="White"
+            MaxLines="1"
+            LineBreakMode="TailTruncation"
+			VerticalTextAlignment="Center" />
+
+        <Label
+			Grid.Row="4"
+			Grid.ColumnSpan="2"
+			Grid.Column="0"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			TextColor="White"
+            MaxLines="2"
+            LineBreakMode="TailTruncation"
+            LineHeight="1.2"
+            Opacity="0.70"
+			VerticalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Check-in to "/>
+                    <Span Text="{Binding ApartmentDetailInfo.DisplayName}"/>
+                    <Span Text=" to explore and receive information. "/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label
+			Grid.Row="6"
+			Grid.ColumnSpan="2"
+			Grid.Column="0"
+			FontFamily="PoppinsSemiBoldFontFamily"
+			FontSize="16"
+			HorizontalTextAlignment="Start"
+			Text="Check-in as"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <Frame 
+            CornerRadius="16" 
+            BackgroundColor="#242A37" 
+            IsClippedToBounds="True"
+            HasShadow="False"
+            Padding="20"
+            Grid.Row="8" 
+            Grid.ColumnSpan="2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HabitantCommand}"/>
+            </Frame.GestureRecognizers>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding HabitantCommand}"/>
+                </Grid.GestureRecognizers>
+
+                <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="18"
+					HorizontalTextAlignment="Start"
+					Text="Habitant"
+					TextColor="White"
+					VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HabitantCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HabitantCommand}" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+
+                <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HabitantCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Frame>
+
+        <Frame 
+            CornerRadius="16" 
+            BackgroundColor="#242A37" 
+            IsClippedToBounds="True"
+            HasShadow="False"
+            Padding="20"
+            Grid.Row="10" 
+            Grid.ColumnSpan="2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GuestsCommand}" />
+            </Frame.GestureRecognizers>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GuestsCommand}"/>
+                </Grid.GestureRecognizers>
+
+                <Label
+					Grid.Row="0"
+					Grid.Column="0"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					FontSize="18"
+					HorizontalTextAlignment="Start"
+					Text="Guests"
+					TextColor="White"
+					VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GuestsCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <BoxView 
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+			        Grid.Row="0"
+			        Grid.Column="1"
+                    CornerRadius="20"
+                    BackgroundColor="#4FD471">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GuestsCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+
+                <Label
+			        Grid.Row="0"
+			        Grid.Column="1"
+			        FontFamily="{StaticResource MaterialFontFamily}"
+			        FontSize="20"
+			        HorizontalTextAlignment="Center"
+			        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			        TextColor="White"
+			        VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GuestsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

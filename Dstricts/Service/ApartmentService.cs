@@ -15,5 +15,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.ApartmentDetailInfoCheckinResponse> ApartmentDetailInfoCheckinAsync(Models.ApartmentDetailInfoCheckinRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.ApartmentDetailInfoCheckinResponse>(HttpWebRequest.Create(string.Format(EndPointsList.ApartmentDetailInfoCheckinUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

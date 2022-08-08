@@ -35,6 +35,15 @@ namespace Dstricts.Service
 			});
 		}
 
+		public Task<List<Models.CheckedInResponse>> CheckedInOwnerApartmentAsync(Models.CheckedInRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.CheckedInResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.CheckedInOwnerApartmentListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
+		
 		public Task<List<Models.UserQueueListResponse>> UserQueueListAsync(Models.UserQueueListRequest request)
 		{
 			return Task.Factory.StartNew(() =>

@@ -7,6 +7,7 @@ namespace Dstricts.Interfaces
 	{
 		Task<List<Models.CheckedInResponse>> CheckedInHotelAsync(Models.CheckedInRequest request);
 		Task<List<Models.CheckedInResponse>> CheckedInApartmentAsync(Models.CheckedInRequest request);
+		Task<List<Models.CheckedInResponse>> CheckedInOwnerApartmentAsync(Models.CheckedInRequest request);
 		Task<List<Models.CheckedInMeetingListResponse>> CheckedInMeetingListAsync(Models.CheckedInMeetingListRequest request);
 		Task<List<Models.UserQueueListResponse>> UserQueueListAsync(Models.UserQueueListRequest request);
 		Task<Models.VerifyCheckedInCodeResponse> VerifyCheckedInCodeAsync(Models.VerifyCheckedInCodeRequest request);

@@ -51,6 +51,9 @@ namespace Dstricts.Helper
 		public static int CommunityId { get; set; }
 		public static Models.CheckedInResponse ApartmentCheckedIn { get; set; }
 
+		public static string VerifyCheckinId { get; set; }
+		public static int HotelPropertyType { get; set; }
+
 
 		public static string[] ListIconBgColorList =
 		{

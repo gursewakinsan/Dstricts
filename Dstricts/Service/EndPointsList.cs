@@ -6,6 +6,7 @@
 		public const string VerifyInterAppSessionUrl = "https://www.qloudid.com/user/index.php/QloudidApp/verifyInterAppSession";
 		public const string CheckedInHotelListUrl = "https://dstricts.com/user/index.php/DstrictsApp/checkedInhotelList";
 		public const string CheckedInApartmentListUrl = "https://dstricts.com/user/index.php/DstrictsApp/checkedInApartmentList";
+		public const string CheckedInOwnerApartmentListUrl = "https://dstricts.com/user/index.php/DstrictsApp/checkedInOwnerApartmentList";
 		public const string CheckedInMeetingListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/checkedInMeetingList";
 		public const string UserQueueListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/userQueueList";
 		public const string UserDetailsDstrictsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/userDetailsDstricts";
@@ -107,6 +108,7 @@
 
 		//Apartment
 		public const string ApartmentDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoDstrictApp";
+		public const string ApartmentDetailInfoCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoCheckin";
 
 		//Community
 		public const string GetCommunityInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityInfo";
