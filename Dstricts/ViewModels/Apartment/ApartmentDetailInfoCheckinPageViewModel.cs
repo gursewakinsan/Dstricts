@@ -50,7 +50,7 @@ namespace Dstricts.ViewModels
 			else
 			{
 				if (ApartmentDetailInfo.OwnerCheckedIn == 1)
-					Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.NotOwnerOfPropertyPage());
+					Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.AlreadyCheckedInPropertyPage());
 				else
 				{
 					if (Device.RuntimePlatform == Device.iOS)

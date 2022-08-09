@@ -123,6 +123,7 @@ namespace Dstricts.ViewModels
 			{
 				case "verify_checkin":
 					HotelPropertyType = Convert.ToInt32(codeInfo[1]);
+					Helper.Helper.HotelPropertyType = HotelPropertyType;
 					if (codeInfo.Length == 3)
 					{
 						if (codeInfo[1] == "1")
@@ -130,7 +131,9 @@ namespace Dstricts.ViewModels
 						else
 						{
 							VerifyCheckinId = codeInfo[2];
-							VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+							//VerifyBookingCheckinCommand.Execute(codeInfo[2]);
+							Helper.Helper.VerifyCheckinId = VerifyCheckinId;
+							await Navigation.PushAsync(new Views.Apartment.ApartmentDetailInfoCheckinPage());
 						}
 					}
 					break;
