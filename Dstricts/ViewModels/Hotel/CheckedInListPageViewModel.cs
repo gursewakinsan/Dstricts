@@ -113,7 +113,10 @@ namespace Dstricts.ViewModels
 					if (codeInfo.Length == 3)
 					{
 						if (codeInfo[1] == "1")
+						{
+							VerifyCheckinId = codeInfo[2];
 							GoToVerifyCheckedInCodePageCommand.Execute(null);
+						}
 						else
 						{
 							VerifyCheckinId = codeInfo[2];

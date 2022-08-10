@@ -71,7 +71,7 @@ namespace Dstricts.ViewModels
 		private void ExecuteGuestsCommand()
 		{
 			if (ApartmentDetailInfo.QloudCheckoutId == "0")
-				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.AlreadyCheckedInPropertyPage());
+				Application.Current.MainPage = new NavigationPage(new Views.ErrorMessage.BookingNotAvailablePage());
 			else
 				VerifyBookingCheckinCommand.Execute(null);
 		}
@@ -127,7 +127,7 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToVerifyCheckedInCodePageCommand()
 		{
-			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage(Helper.Helper.HotelPropertyType, Helper.Helper.VerifyCheckinId));
+			await Navigation.PushAsync(new Views.Hotel.VerifyCheckedInPage(Helper.Helper.HotelPropertyType, ApartmentDetailInfo.QloudCheckoutId));
 		}
 		#endregion
 
