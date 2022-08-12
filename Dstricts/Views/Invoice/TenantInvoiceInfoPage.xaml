@@ -5,11 +5,11 @@
     x:Class="Dstricts.Views.Invoice.TenantInvoiceInfoPage"
     xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:Dstricts.Controls"
-    ios:Page.UseSafeArea="False"
+    ios:Page.UseSafeArea="True"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
     <Grid
-		Margin="0,55,0,0"
+		Margin="0,14,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
         <Grid.RowDefinitions>
@@ -40,11 +40,11 @@
         </Label>
 
         <Label
-            x:Name="lblHeader"
 			Grid.Row="0"
 			Grid.Column="1"
 			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
+            Text="{Binding PropertyNickName}"
 			HorizontalTextAlignment="Center"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
@@ -392,6 +392,7 @@
                                             Text="Pay now"
                                             FontSize="14"
                                             TextColor="White"
+                                            Clicked="OnPayNowClicked"
                                             BackgroundColor="#E53614"
                                             FontFamily="PoppinsSemiBoldFontFamily"/>
 

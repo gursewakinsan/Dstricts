@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using Dstricts.Service;
+using Xamarin.Essentials;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
@@ -38,6 +39,29 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Tenant Invoice Pay Now Command.
+		private ICommand tenantInvoicePayNowCommand;
+		public ICommand TenantInvoicePayNowCommand
+		{
+			get => tenantInvoicePayNowCommand ?? (tenantInvoicePayNowCommand = new Command<Models.PaidUnpaid>(async (paidUnpaid) => await ExecuteTenantInvoicePayNowCommand(paidUnpaid)));
+		}
+		private async Task ExecuteTenantInvoicePayNowCommand(Models.PaidUnpaid paidUnpaid)
+		{
+			Models.TenantInvoicePayNow payNowRequest = new Models.TenantInvoicePayNow()
+			{
+				PropertyNickName = PropertyNickName,
+				InvoiceMonth = paidUnpaid.InvoiceMonth,
+				TenantInvoiceInfoId = paidUnpaid.Id,
+				TotalAmount = paidUnpaid.TotalAmount
+			};
+			string payNowJson = Newtonsoft.Json.JsonConvert.SerializeObject(payNowRequest);
+			if (Device.RuntimePlatform == Device.iOS)
+				await Launcher.OpenAsync($"QloudidUrl://DstrictsApp/DstrictsTenantInvoicePayNow/{payNowJson}");
+			else
+				await Launcher.OpenAsync($"https://qloudid.com/ip/DstrictsApp/DstrictsTenantInvoicePayNow/{payNowJson}");
+		}
+		#endregion
+
 		#region Properties.
 		private Models.TenantInvoiceInfoResponse tenantInvoiceInfo;
 		public Models.TenantInvoiceInfoResponse TenantInvoiceInfo
@@ -61,7 +85,18 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		public int EmptyImageWidth => App.ScreenWidth - 56;
+		private string propertyNickName;
+		public string PropertyNickName
+		{
+			get => propertyNickName;
+			set
+			{
+				propertyNickName = value;
+				OnPropertyChanged("PropertyNickName");
+			}
+		}
+
+        public int EmptyImageWidth => App.ScreenWidth - 56;
 		public int DisplayCurrentYear => System.DateTime.Now.Year;
 		public int BuildingId { get; set; }
         #endregion

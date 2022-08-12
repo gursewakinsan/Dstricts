@@ -14,13 +14,19 @@ namespace Dstricts.Views.Invoice
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new TenantInvoiceInfoPageViewModel(this.Navigation);
             viewModel.BuildingId = buildingId;
-            lblHeader.Text = propertyNickName;
+            viewModel.PropertyNickName = propertyNickName;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             viewModel.TenantInvoiceInfoCommand.Execute(null);
+        }
+
+        private void OnPayNowClicked(object sender, System.EventArgs e)
+        {
+            Button button = sender as Button;
+            viewModel.TenantInvoicePayNowCommand.Execute(button.BindingContext as Models.PaidUnpaid);
         }
     }
 }
