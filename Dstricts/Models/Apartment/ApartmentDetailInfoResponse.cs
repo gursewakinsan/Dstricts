@@ -254,5 +254,11 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "checked_out_date")]
 		public string CheckedOutDate { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "payment")]
+		public bool IsPayment { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "building_id")]
+		public int BuildingId { get; set; }
 	}
 }

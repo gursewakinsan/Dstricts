@@ -91,6 +91,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Tenant Invoice Info Command.
+		private ICommand goToTenantInvoiceInfoCommand;
+		public ICommand GoToTenantInvoiceInfoCommand
+		{
+			get => goToTenantInvoiceInfoCommand ?? (goToTenantInvoiceInfoCommand = new Command(async () => await ExecuteGoToTenantInvoiceInfoCommand()));
+		}
+		private async Task ExecuteGoToTenantInvoiceInfoCommand()
+		{
+			await Navigation.PushAsync(new Views.Invoice.TenantInvoiceInfoPage(ApartmentDetailInfo.BuildingId, ApartmentDetails.PropertyNickName));
+		}
+		#endregion
+
 		void BindListDecorated()
 		{
 			List<Models.CheckedInResponse> listDecorated = new List<Models.CheckedInResponse>();

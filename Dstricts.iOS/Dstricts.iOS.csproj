@@ -247,4 +247,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\imgkitchen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconNoImage.png" />
+  </ItemGroup>
 </Project>
