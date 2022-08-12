@@ -43,6 +43,19 @@ namespace Dstricts
 				MainPage = new Views.LoginPage();
 			//MainPage = new Views.LoginPage();
 		}
+
+		public void LoginWithSession()
+		{
+			if (Application.Current.Properties.ContainsKey("UserId"))
+			{
+				Helper.Helper.LoggedInUserId = Convert.ToInt32(Application.Current.Properties["UserId"]);
+				Helper.Helper.LoggedInUserName = $"{Application.Current.Properties["UserName"]}";
+				MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+			}
+			else
+				MainPage = new Views.LoginPage();
+			//MainPage = new Views.LoginPage();
+		}
 		#endregion
 
 		#region Login With Session For iOS.

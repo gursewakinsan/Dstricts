@@ -39,7 +39,12 @@ namespace Dstricts.iOS
 					App.CheckInFunctionality(url.ResourceSpecifier);
 				}
 				else
-					App.LoginWithSession(url.PathComponents[1]);
+				{
+					if (url.PathComponents.Count() == 1)
+						App.LoginWithSession();
+					else
+						App.LoginWithSession(url.PathComponents[1]);
+				}
 			}
 			return false;
 		}
