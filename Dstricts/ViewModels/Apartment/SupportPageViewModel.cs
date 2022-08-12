@@ -82,6 +82,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Tenant Invoice Info Command.
+		private ICommand goToTenantInvoiceInfoCommand;
+		public ICommand GoToTenantInvoiceInfoCommand
+		{
+			get => goToTenantInvoiceInfoCommand ?? (goToTenantInvoiceInfoCommand = new Command(async () => await ExecuteGoToTenantInvoiceInfoCommand()));
+		}
+		private async Task ExecuteGoToTenantInvoiceInfoCommand()
+		{
+			await Navigation.PushAsync(new Views.Invoice.TenantInvoiceInfoPage(Helper.Helper.BuildingId, Helper.Helper.PropertyNickName));
+		}
+		#endregion
+
 		#region Properties.
 		private Models.ApartmentCommunityTicketCreatedCountResponse apartmentCommunityTicketInfo;
 		public Models.ApartmentCommunityTicketCreatedCountResponse ApartmentCommunityTicketInfo
@@ -94,6 +106,7 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		public bool IsPayment => Helper.Helper.IsPayment;
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}

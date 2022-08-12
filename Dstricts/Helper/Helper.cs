@@ -54,8 +54,11 @@ namespace Dstricts.Helper
 		public static string VerifyCheckinId { get; set; }
 		public static int HotelPropertyType { get; set; }
 
+        public static bool IsPayment { get; set; }
+        public static int BuildingId { get; set; }
 
-		public static string[] ListIconBgColorList =
+
+        public static string[] ListIconBgColorList =
 		{
 			"#223426", "#282732", "#342334", "#FC7125",
 			"#223426", "#282732", "#342334", "#FC7125",

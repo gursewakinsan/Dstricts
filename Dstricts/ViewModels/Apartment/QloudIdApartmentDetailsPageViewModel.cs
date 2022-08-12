@@ -36,7 +36,8 @@ namespace Dstricts.ViewModels
 			{
 				CheckId = Helper.Helper.HotelCheckedIn
 			});
-
+			Helper.Helper.IsPayment = ApartmentDetailInfo.IsPayment;
+			Helper.Helper.BuildingId = ApartmentDetailInfo.BuildingId;
 			BindListDecorated();
 			DependencyService.Get<IProgressBar>().Hide();
 		}

@@ -89,6 +89,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+                    Command="{Binding SocailClickCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 
@@ -111,6 +112,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+                    Command="{Binding GoToCommunityPageCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
 					TextColor="White" />
 
@@ -123,6 +125,7 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
+                    Command="{Binding GoToSupportPageCommand}"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
 					TextColor="White" />
 
@@ -133,7 +136,7 @@
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
-					Text="Ticket"
+					Text="Social"
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
@@ -157,7 +160,7 @@
 					HorizontalTextAlignment="Center"
 					LineBreakMode="TailTruncation"
 					MaxLines="1"
-					Text="Finished"
+					Text="Community"
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
@@ -168,7 +171,7 @@
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
-					Text="Cancelled"
+					Text="Support"
 					TextColor="White"
 					VerticalTextAlignment="End" />
             </Grid>

@@ -70,6 +70,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="20" />
+
+                    <ColumnDefinition Width="auto" />
+                    
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="76" />
@@ -94,9 +97,48 @@
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 
+                <Grid IsVisible="{Binding IsPayment}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="76" />
+                        <RowDefinition Height="8" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="Transparent"
+							BorderColor="#737B8C"
+							BorderWidth="1"
+							CornerRadius="38"
+                            Command="{Binding GoToTenantInvoiceInfoCommand}"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="24"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
+							TextColor="White" />
+
+                    <Label
+							Grid.Row="2"
+							Grid.Column="0"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="Payment"
+							TextColor="White"
+							VerticalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToTenantInvoiceInfoCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+
                 <Button
 					Grid.Row="0"
-					Grid.Column="2"
+					Grid.Column="3"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -109,7 +151,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="4"
+					Grid.Column="5"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -122,7 +164,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="6"
+					Grid.Column="7"
 					BackgroundColor="White"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
@@ -131,50 +173,50 @@
 					TextColor="#070707" />
 
                 <Label
-					Grid.Row="1"
-					Grid.RowSpan="2"
-					Grid.Column="0"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					Text="Social"
-					TextColor="White"
-					VerticalTextAlignment="End" />
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="0"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Social"
+						TextColor="White"
+						VerticalTextAlignment="End" />
 
                 <Label
-					Grid.Row="1"
-					Grid.RowSpan="2"
-					Grid.Column="2"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					Text="Apartment"
-					TextColor="White"
-					VerticalTextAlignment="End" />
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="3"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Apartment"
+						TextColor="White"
+						VerticalTextAlignment="End" />
 
                 <Label
-					Grid.Row="1"
-					Grid.RowSpan="2"
-					Grid.Column="4"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					LineBreakMode="TailTruncation"
-					MaxLines="1"
-					Text="Community"
-					TextColor="White"
-					VerticalTextAlignment="End" />
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="5"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="Community"
+						TextColor="White"
+						VerticalTextAlignment="End" />
 
                 <Label
-					Grid.Row="1"
-					Grid.RowSpan="2"
-					Grid.Column="6"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HorizontalTextAlignment="Center"
-					Text="Support"
-					TextColor="White"
-					VerticalTextAlignment="End" />
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="7"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Support"
+						TextColor="White"
+						VerticalTextAlignment="End" />
             </Grid>
         </ScrollView>
 
