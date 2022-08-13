@@ -72,6 +72,8 @@
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="19" />
                     <ColumnDefinition Width="76" />
                 </Grid.ColumnDefinitions>
@@ -100,12 +102,25 @@
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
 					TextColor="#181A1F" />
+
+                 <Button
+					Grid.Row="0"
+					Grid.Column="4"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+					Command="{Binding GoToApartmentPageCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+					TextColor="White" />
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="4"
+					Grid.Column="6"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -118,7 +133,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="6"
+					Grid.Column="8"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -152,9 +167,20 @@
 					VerticalTextAlignment="End" />
 
                 <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="4"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Apartment"
+						TextColor="White"
+						VerticalTextAlignment="End" />
+
+                <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
-					Grid.Column="4"
+					Grid.Column="6"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
@@ -167,7 +193,7 @@
                 <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
-					Grid.Column="6"
+					Grid.Column="8"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
