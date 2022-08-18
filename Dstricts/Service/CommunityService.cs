@@ -88,6 +88,15 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.SocietyRulesListResponse>> SocietyRulesListAsync(Models.SocietyRulesListRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.SocietyRulesListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.SocietyRulesListUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
 
