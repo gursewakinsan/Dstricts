@@ -186,8 +186,7 @@
                                             HorizontalTextAlignment="Start"
                                             VerticalTextAlignment="Start"
 			                                TextColor="#B2B2B2"
-                                            MaxLines="4"
-                                            LineBreakMode="TailTruncation" />
+                                            LineHeight="1.2" />
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
