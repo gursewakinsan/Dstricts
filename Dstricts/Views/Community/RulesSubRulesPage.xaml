@@ -111,7 +111,7 @@
             Grid.Row="7" 
             Grid.ColumnSpan="5" 
             Grid.Column="0">
-            <StackLayout VerticalOptions="StartAndExpand" BindableLayout.ItemsSource="{Binding SocietyRulesList}" Margin="0,61,0,0">
+            <StackLayout VerticalOptions="StartAndExpand" Spacing="0" BindableLayout.ItemsSource="{Binding SocietyRulesList}" Margin="0,61,0,0">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Grid RowSpacing="0" ColumnSpacing="0">
@@ -171,7 +171,8 @@
                                 </Label.GestureRecognizers>
                             </Label>
 
-                            <StackLayout 
+                            <StackLayout
+                                Spacing="0"
                                 VerticalOptions="StartAndExpand" 
                                 IsVisible="{Binding IsShowSubRules}"
                                 BindableLayout.ItemsSource="{Binding SubRules}" 
