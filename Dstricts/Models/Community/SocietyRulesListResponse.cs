@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace Dstricts.Models
 {
-    public class SocietyRulesListResponse
+    public class SocietyRulesListResponse : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
         public int iId { get; set; }
@@ -12,6 +13,28 @@ namespace Dstricts.Models
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "subrules")]
         public List<SubRule> SubRules { get; set; }
+
+        public bool isShowSubRules = false;
+        public bool IsShowSubRules
+        {
+            get=> isShowSubRules;
+            set
+            {
+                isShowSubRules = value;
+                OnPropertyChanged("IsShowSubRules");
+            }
+        }
+
+        public Color ruleBg = Color.FromHex("#181A1F");
+        public Color RuleBg
+        {
+            get => ruleBg;
+            set
+            {
+                ruleBg = value;
+                OnPropertyChanged("RuleBg");
+            }
+        }
     }
 
     public class SubRule

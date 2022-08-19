@@ -441,15 +441,14 @@
 
                             <RowDefinition Height="1"/>
                             <RowDefinition Height="13"/>
+
+                            <RowDefinition Height="auto"/>
+
                             <RowDefinition Height="44"/>
                             <RowDefinition Height="13"/>
 
                             <RowDefinition Height="1"/>
-                            <RowDefinition Height="13"/>
-                            <RowDefinition Height="44"/>
-                            <RowDefinition Height="13"/>
-
-                            <RowDefinition Height="1"/>
+                            
                             <RowDefinition Height="13"/>
                             <RowDefinition Height="44"/>
                             <RowDefinition Height="13"/>
@@ -506,47 +505,80 @@
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />
 
-                        <Label
-                            Grid.Row="6"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="20"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
-							TextColor="#7090E0"
-							VerticalTextAlignment="Center"/>
+                        <Grid 
+                            Grid.Row="6" 
+                            RowSpacing="0" 
+                            ColumnSpacing="28" 
+                            Grid.ColumnSpan="3" 
+                            IsVisible="{Binding IsCommunityRules}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToRulesSubRulesPageViewCommand}"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="13"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="13"/>
+                            </Grid.RowDefinitions>
+                            <Label
+								Grid.Row="0"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+								TextColor="#7090E0"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToRulesSubRulesPageViewCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								Text="Community rules"
+								TextColor="White"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToRulesSubRulesPageViewCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToRulesSubRulesPageViewCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <BoxView
+								HorizontalOptions="EndAndExpand"
+								WidthRequest="256"
+								Grid.Row="2"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								BackgroundColor="#2A2A31" />
+                        </Grid>
 
                         <Label
-                             Grid.Row="6"
-							Grid.Column="1"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="16"
-							HorizontalTextAlignment="Start"
-							Text="Community rules"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-                        <Label
-                             Grid.Row="6"
-							Grid.Column="2"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-							TextColor="White"
-                            Opacity="0.70"
-							VerticalTextAlignment="Center"/>
-
-                        <BoxView
-                             HorizontalOptions="EndAndExpand"
-                            WidthRequest="256"
-							Grid.Row="8"
-							Grid.Column="0"
-							Grid.ColumnSpan="3"
-							BackgroundColor="#2A2A31" />
-
-                        <Label
-                            Grid.Row="10"
+                            Grid.Row="7"
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="20"
@@ -560,7 +592,7 @@
                         </Label>
 
                         <Label
-                             Grid.Row="10"
+                             Grid.Row="7"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
@@ -574,7 +606,7 @@
                         </Label>
 
                         <Label
-                             Grid.Row="10"
+                             Grid.Row="7"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
@@ -587,13 +619,13 @@
                         <BoxView
                              HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-							Grid.Row="12"
+							Grid.Row="9"
 							Grid.Column="0"
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />
 
                         <Label
-                            Grid.Row="14"
+                            Grid.Row="11"
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="20"
@@ -603,7 +635,7 @@
 							VerticalTextAlignment="Center"/>
 
                         <Label
-                             Grid.Row="14"
+                             Grid.Row="11"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
@@ -613,7 +645,7 @@
 							VerticalTextAlignment="Center" />
 
                         <Label
-                             Grid.Row="14"
+                             Grid.Row="11"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
@@ -626,7 +658,7 @@
                         <BoxView
                             HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-							Grid.Row="16"
+							Grid.Row="13"
 							Grid.Column="0"
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />

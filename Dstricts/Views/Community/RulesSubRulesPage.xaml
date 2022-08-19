@@ -1,12 +1,202 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dstricts.Views.Community.RulesSubRulesPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Community.RulesSubRulesPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Margin="0,22,0,2"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="21" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="16" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="81" />
+            <ColumnDefinition Width="28" />
+        </Grid.ColumnDefinitions>
+        <Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+            x:Name="lblSocietyName"
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+            Padding="0"
+            MaxLines="1"
+            LineBreakMode="TailTruncation"
+            Grid.ColumnSpan="2"
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="Center"
+            Margin="20,0,0,0"
+			TextColor="White" />
+
+        <Label
+		    Grid.Row="2"
+            Grid.Column="1"
+		    Grid.ColumnSpan="2"
+		    FontAttributes="Bold"
+		    FontFamily="PoppinsBoldFontFamily"
+		    FontSize="40"
+		    HorizontalTextAlignment="Start"
+		    Text="Rules"
+		    TextColor="White"
+		    VerticalTextAlignment="Center" />
+
+        <Label
+			 Grid.Row="4"
+            Grid.Column="1"
+		    Grid.ColumnSpan="2"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="16"
+			Text="General community rules"
+            Padding="0"
+            HorizontalTextAlignment="Start"
+            VerticalTextAlignment="Center"
+			TextColor="#B2B2B2" />
+
+        <BoxView  
+            Grid.Row="6"
+            Grid.Column="1"
+		    Grid.ColumnSpan="3"
+            Opacity="0.10"
+            BackgroundColor="White"/>
+
+        <ScrollView 
+            VerticalScrollBarVisibility="Never" 
+            Grid.Row="7" 
+            Grid.ColumnSpan="5" 
+            Grid.Column="0">
+            <StackLayout VerticalOptions="StartAndExpand" BindableLayout.ItemsSource="{Binding SocietyRulesList}" Margin="0,61,0,0">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="28"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="28"/>
+                            </Grid.ColumnDefinitions>
+                            <BoxView BackgroundColor="{Binding RuleBg}" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2"/>
+                            <Label
+			                    Grid.Row="0"
+                                Grid.Column="1"
+			                    FontFamily="PoppinsMediumFontFamily"
+			                    FontSize="14"
+			                    Text="{Binding RuleName}"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+			                    TextColor="White"
+                                MaxLines="1"
+                                LineBreakMode="TailTruncation" />
+
+                            <Label
+			                    Grid.Row="0"
+			                    Grid.Column="2"
+			                    BackgroundColor="Transparent"
+			                    FontFamily="{StaticResource MaterialFontFamily}"
+			                    FontSize="25"
+			                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
+                                HorizontalTextAlignment="End"
+                                VerticalTextAlignment="Center"
+			                    TextColor="#B2B2B2"
+                                IsVisible="{Binding IsShowSubRules, Converter={StaticResource InverseBoolConverter}}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnRuleTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+			                    Grid.Row="0"
+			                    Grid.Column="2"
+			                    BackgroundColor="Transparent"
+			                    FontFamily="{StaticResource MaterialFontFamily}"
+			                    FontSize="25"
+                                IsVisible="{Binding IsShowSubRules}"
+			                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronUp}"
+                                HorizontalTextAlignment="End"
+                                VerticalTextAlignment="Center"
+			                    TextColor="#4FD471">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnRuleTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <StackLayout 
+                                VerticalOptions="StartAndExpand" 
+                                IsVisible="{Binding IsShowSubRules}"
+                                BindableLayout.ItemsSource="{Binding SubRules}" 
+                                Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label
+                                            Margin="0,0,0,18"
+			                                FontFamily="PoppinsMediumFontFamily"
+			                                FontSize="14"
+			                                Text="{Binding SubRuleName}"
+                                            HorizontalTextAlignment="Start"
+                                            VerticalTextAlignment="Start"
+			                                TextColor="#B2B2B2"
+                                            MaxLines="4"
+                                            LineBreakMode="TailTruncation" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+
+                            <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#2F3135"/>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

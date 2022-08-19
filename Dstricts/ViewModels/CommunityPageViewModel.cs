@@ -94,6 +94,13 @@ namespace Dstricts.ViewModels
 			}
 			IsBookAvailable = ApartmentCommunityBookList?.Count > 0 ? true : false;
 			IsThingsToDoAvailable = CommunityAmenityList?.Count > 0 ? true : false;
+
+			SocietyRulesList = await service.SocietyRulesListAsync(new Models.SocietyRulesListRequest()
+			{
+				CommunityId = Helper.Helper.CommunityId
+			});
+			IsCommunityRules = SocietyRulesList?.Count > 0 ? true : false;
+
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -107,6 +114,18 @@ namespace Dstricts.ViewModels
 		private async Task ExecuteGoToTenantInvoiceInfoCommand()
 		{
 			await Navigation.PushAsync(new Views.Invoice.TenantInvoiceInfoPage(Helper.Helper.BuildingId, Helper.Helper.PropertyNickName));
+		}
+		#endregion
+
+		#region Go To Rules Sub Rules Page View Command.
+		private ICommand goToRulesSubRulesPageViewCommand;
+		public ICommand GoToRulesSubRulesPageViewCommand
+		{
+			get => goToRulesSubRulesPageViewCommand ?? (goToRulesSubRulesPageViewCommand = new Command(async () => await ExecuteGoToRulesSubRulesPageViewCommand()));
+		}
+		private async Task ExecuteGoToRulesSubRulesPageViewCommand()
+		{
+			await Navigation.PushAsync(new Views.Community.RulesSubRulesPage(SocietyRulesList, CommunityDetailInfo.SocietyName));
 		}
 		#endregion
 
@@ -166,6 +185,18 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private bool isCommunityRules;
+		public bool IsCommunityRules
+		{
+			get => isCommunityRules;
+			set
+			{
+				isCommunityRules = value;
+				OnPropertyChanged("IsCommunityRules");
+			}
+		}
+
+		public List<Models.SocietyRulesListResponse> SocietyRulesList { get; set; }
 		public bool IsPayment => Helper.Helper.IsPayment;
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion

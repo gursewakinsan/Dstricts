@@ -50,6 +50,7 @@
 		public const string HomeOutline = "\U000f06a1";
 		public const string AccountOutline = "\U000f0013";
 		public const string ChevronDown = "\U000f0140";
+		public const string ChevronUp = "\U000f0143";
 		public const string ShareVariant = "\U000f0497";
 		public const string PhoneOutline = "\U000f0df0";
 		public const string MessageTextOutline = "\U000f036a";
