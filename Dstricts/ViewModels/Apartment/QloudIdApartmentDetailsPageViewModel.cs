@@ -30,6 +30,7 @@ namespace Dstricts.ViewModels
 			{
 				Id = ApartmentDetails.QloudCheckOutId
 			});
+			Helper.Helper.ApartmentDetailInfo = ApartmentDetailInfo;
 
 			ICommunityService communityService = new CommunityService();
 			Helper.Helper.CommunityId = await communityService.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
@@ -38,6 +39,18 @@ namespace Dstricts.ViewModels
 			});
 			Helper.Helper.IsPayment = ApartmentDetailInfo.IsPayment;
 			Helper.Helper.BuildingId = ApartmentDetailInfo.BuildingId;
+
+			ShowPaymentTab = ShowBookingTab = false;
+			if (!Helper.Helper.IsGuest)
+			{
+				if (Helper.Helper.IsPayment)
+					ShowPaymentTab = true;
+				else
+					ShowPaymentTab = false;
+			}
+			else
+				ShowBookingTab = true;
+
 			BindListDecorated();
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -198,6 +211,28 @@ namespace Dstricts.ViewModels
 			{
 				listDecorated = value;
 				OnPropertyChanged("ListDecorated");
+			}
+		}
+
+		private bool showPaymentTab;
+		public bool ShowPaymentTab
+		{
+			get => showPaymentTab;
+			set
+			{
+				showPaymentTab = value;
+				OnPropertyChanged("ShowPaymentTab");
+			}
+		}
+
+		private bool showBookingTab;
+		public bool ShowBookingTab
+		{
+			get => showBookingTab;
+			set
+			{
+				showBookingTab = value;
+				OnPropertyChanged("ShowBookingTab");
 			}
 		}
 

@@ -97,7 +97,7 @@
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
 					TextColor="White" />
 
-                <Grid IsVisible="{Binding IsPayment}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ColumnSpacing="0" RowSpacing="0">
+                <Grid IsVisible="{Binding ShowPaymentTab}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ColumnSpacing="0" RowSpacing="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="76" />
                         <ColumnDefinition Width="20" />
@@ -131,6 +131,44 @@
 							VerticalTextAlignment="End">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding GoToTenantInvoiceInfoCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid IsVisible="{Binding ShowBookingTab}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="76" />
+                        <RowDefinition Height="8" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button
+							Grid.Row="0"
+							Grid.Column="0"
+							BackgroundColor="Transparent"
+							BorderColor="#737B8C"
+							BorderWidth="1"
+							CornerRadius="38"
+                            Command="{Binding GoToMyPageCommand}"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="24"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BookmarkPlusOutline}"
+							TextColor="White" />
+
+                    <Label
+							Grid.Row="2"
+							Grid.Column="0"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="12"
+							HorizontalTextAlignment="Center"
+							Text="Booking"
+							TextColor="White"
+							VerticalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToMyPageCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>

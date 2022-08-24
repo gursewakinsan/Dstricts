@@ -14,6 +14,7 @@ namespace Dstricts.Views.Apartment
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new QloudIdApartmentDetailsPageViewModel(this.Navigation);
 			viewModel.ApartmentDetails = apartmentDetails;
+			Helper.Helper.IsGuest = apartmentDetails.IsGuest;
 		}
 
 		protected override void OnAppearing()

@@ -12,6 +12,16 @@ namespace Dstricts.ViewModels
 		public SupportPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+			ShowPaymentTab = ShowBookingTab = false;
+			if (!Helper.Helper.IsGuest)
+			{
+				if (Helper.Helper.IsPayment)
+					ShowPaymentTab = true;
+				else
+					ShowPaymentTab = false;
+			}
+			else
+				ShowBookingTab = true;
 		}
 		#endregion
 
@@ -94,6 +104,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To My Page Command.
+		private ICommand goToMyPageCommand;
+		public ICommand GoToMyPageCommand
+		{
+			get => goToMyPageCommand ?? (goToMyPageCommand = new Command(async () => await ExecuteGoToMyPageCommand()));
+		}
+		private async Task ExecuteGoToMyPageCommand()
+		{
+			await Navigation.PushAsync(new Views.Apartment.MyPageInfo(Helper.Helper.ApartmentDetailInfo));
+		}
+		#endregion
+
 		#region Properties.
 		private Models.ApartmentCommunityTicketCreatedCountResponse apartmentCommunityTicketInfo;
 		public Models.ApartmentCommunityTicketCreatedCountResponse ApartmentCommunityTicketInfo
@@ -106,7 +128,27 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		public bool IsPayment => Helper.Helper.IsPayment;
+		private bool showPaymentTab;
+		public bool ShowPaymentTab
+		{
+			get => showPaymentTab;
+			set
+			{
+				showPaymentTab = value;
+				OnPropertyChanged("ShowPaymentTab");
+			}
+		}
+
+		private bool showBookingTab;
+		public bool ShowBookingTab
+		{
+			get => showBookingTab;
+			set
+			{
+				showBookingTab = value;
+				OnPropertyChanged("ShowBookingTab");
+			}
+		}
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}

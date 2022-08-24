@@ -26,6 +26,9 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "booking_overdate")]
 		public string BookingOverdate { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "guest")]
+		public bool IsGuest { get; set; }
+
 		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
 
 		private string firstLetterBg;
