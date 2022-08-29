@@ -50,7 +50,7 @@ namespace Dstricts.Models
         public string EntryCode { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "wifi_available")]
-        public int WifiAvailable { get; set; }
+        public bool IsWifiAvailable { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "wifi_username")]
         public string WifiUsername { get; set; }

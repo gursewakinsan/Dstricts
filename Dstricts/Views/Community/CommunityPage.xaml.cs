@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using Dstricts.ViewModels;
 using Xamarin.Forms;
+using Dstricts.ViewModels;
 using Xamarin.Forms.Xaml;
 
 namespace Dstricts.Views.Community

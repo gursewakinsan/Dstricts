@@ -512,20 +512,28 @@
 							HorizontalTextAlignment="Center"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
 							TextColor="#7090E0"
-							VerticalTextAlignment="Center"/>
+							VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <Label
-                             Grid.Row="2"
+                            Grid.Row="2"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
 							HorizontalTextAlignment="Start"
 							Text="Community Wi-Fi"
 							TextColor="White"
-							VerticalTextAlignment="Center" />
+							VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <Label
-                             Grid.Row="2"
+                            Grid.Row="2"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
@@ -533,10 +541,14 @@
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
 							TextColor="White"
                             Opacity="0.70"
-							VerticalTextAlignment="Center"/>
+							VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
                         <BoxView
-                             HorizontalOptions="EndAndExpand"
+                            HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
 							Grid.Row="4"
 							Grid.Column="0"

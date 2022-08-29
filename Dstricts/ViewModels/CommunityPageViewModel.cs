@@ -151,6 +151,19 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To Community Wifi Page Command.
+		private ICommand goToCommunityWifiPageCommand;
+		public ICommand GoToCommunityWifiPageCommand
+		{
+			get => goToCommunityWifiPageCommand ?? (goToCommunityWifiPageCommand = new Command(async () => await ExecuteGoToCommunityWifiPageCommand()));
+		}
+		private async Task ExecuteGoToCommunityWifiPageCommand()
+		{
+			if (CommunityDetailInfo.IsWifiAvailable)
+				await Navigation.PushAsync(new Views.Community.CommunityWifiPage(CommunityDetailInfo.WifiUsername, CommunityDetailInfo.WifiPassword));
+		}
+		#endregion
+
 		#region Properties.
 		private Models.GetCommunityDetailInfoResponse communityDetailInfo;
 		public Models.GetCommunityDetailInfoResponse CommunityDetailInfo
