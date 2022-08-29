@@ -101,7 +101,7 @@
 		    Grid.ColumnSpan="2"
 			FontFamily="PoppinsRegularFontFamily"
 			FontSize="16"
-			Text="This is for the house Wi-Fi"
+			Text="Here is the Wif-Fi for the apartment"
             Padding="0"
             HorizontalTextAlignment="Start"
             VerticalTextAlignment="Center"
