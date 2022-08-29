@@ -117,6 +117,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To House Rules Page Command.
+		private ICommand goToHouseRulesPageCommand;
+		public ICommand GoToHouseRulesPageCommand
+		{
+			get => goToHouseRulesPageCommand ?? (goToHouseRulesPageCommand = new Command(async () => await ExecuteGoToHouseRulesPageCommand()));
+		}
+		private async Task ExecuteGoToHouseRulesPageCommand()
+		{
+			await Navigation.PushAsync(new Views.Apartment.HouseRulesPage());
+		}
+		#endregion
+
 		void BindListDecorated()
 		{
 			List<Models.CheckedInResponse> listDecorated = new List<Models.CheckedInResponse>();

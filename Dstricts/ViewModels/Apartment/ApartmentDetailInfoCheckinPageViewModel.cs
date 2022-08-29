@@ -1,11 +1,9 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Dstricts.Service;
 using Xamarin.Essentials;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace Dstricts.ViewModels
 {

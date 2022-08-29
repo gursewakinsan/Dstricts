@@ -618,45 +618,45 @@
                                 <ColumnDefinition Width="20"/>
                             </Grid.ColumnDefinitions>
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer />
+                                <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
                             </Grid.GestureRecognizers>
                             <Label
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="20"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
-							TextColor="#7090E0"
-							VerticalTextAlignment="Center">
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+								TextColor="#7090E0"
+								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer />
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
                                 </Label.GestureRecognizers>
                             </Label>
 
                             <Label
-							Grid.Column="1"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="16"
-							HorizontalTextAlignment="Start"
-							Text="House rules"
-							TextColor="White"
-							VerticalTextAlignment="Center">
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								Text="House rules"
+								TextColor="White"
+								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer />
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
                                 </Label.GestureRecognizers>
                             </Label>
 
                             <Label
-							Grid.Column="2"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-							TextColor="White"
-                            Opacity="0.70"
-							VerticalTextAlignment="Center">
+								Grid.Column="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer />
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
                                 </Label.GestureRecognizers>
                             </Label>
                         </Grid>

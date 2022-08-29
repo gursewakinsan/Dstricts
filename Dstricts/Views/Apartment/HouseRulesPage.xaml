@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Apartment.HouseRulesPage"
+     xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#181A1F"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Margin="0,22,0,2"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="81" />
+            <ColumnDefinition Width="28" />
+        </Grid.ColumnDefinitions>
+        <Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ScrollView
+            Grid.Row="1"
+			Grid.Column="1"
+            Grid.ColumnSpan="3"
+            VerticalScrollBarVisibility="Never">
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="21" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="16" />
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="53" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="22" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="31" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="22" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="31" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label
+		            Grid.Row="1"
+		            FontAttributes="Bold"
+		            FontFamily="PoppinsBoldFontFamily"
+		            FontSize="40"
+		            HorizontalTextAlignment="Start"
+		            Text="House rules"
+		            TextColor="White"
+		            VerticalTextAlignment="Center" />
+
+                <Label
+			        Grid.Row="3"
+			        FontFamily="PoppinsRegularFontFamily"
+			        FontSize="18"
+			        Text="Follow these house rules please"
+                    Padding="0"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+			        TextColor="White" />
+
+                <BoxView  
+                    Grid.Row="5"
+                    Opacity="0.10"
+                    BackgroundColor="White"/>
+
+                <Label
+			        Grid.Row="7"
+			        FontFamily="PoppinsSemiBoldFontFamily"
+			        FontSize="20"
+			        Text="Family rules"
+                    Padding="0"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+			        TextColor="White" />
+
+                <Label
+			        Grid.Row="9"
+			        FontFamily="PoppinsRegularFontFamily"
+			        FontSize="14"
+			        Text="Following are allowed to stay"
+                    Padding="0"
+                    Opacity="0.70"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+			        TextColor="White" />
+
+                <StackLayout
+                    Grid.Row="11"
+                    Spacing="12"
+                    HorizontalOptions="StartAndExpand"
+                    Orientation="Horizontal">
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Children"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#45C366"
+                        WidthRequest="93"
+                        IsVisible="{Binding ApartmentDetailInfo.IsChildrenAllowed}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Children"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#242A37"
+                        WidthRequest="93"
+                        IsVisible="{Binding ApartmentDetailInfo.IsChildrenAllowed, Converter={StaticResource InverseBoolConverter}}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Infants"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#45C366"
+                        WidthRequest="83"
+                        IsVisible="{Binding ApartmentDetailInfo.IsInfantsAllowed}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Infants"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#242A37"
+                        WidthRequest="83"
+                        IsVisible="{Binding ApartmentDetailInfo.IsInfantsAllowed, Converter={StaticResource InverseBoolConverter}}"/>
+                </StackLayout>
+
+                <BoxView  
+                    Grid.Row="13"
+                    Opacity="0.10"
+                    BackgroundColor="White"/>
+
+                <Label
+			        Grid.Row="15"
+			        FontFamily="PoppinsSemiBoldFontFamily"
+			        FontSize="20"
+			        Text="Services"
+                    Padding="0"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+			        TextColor="White" />
+
+                <Label
+			        Grid.Row="17"
+			        FontFamily="PoppinsRegularFontFamily"
+			        FontSize="14"
+			        Text="Following are permitted"
+                    Padding="0"
+                    Opacity="0.70"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+			        TextColor="White" />
+
+                <StackLayout
+                    Grid.Row="19"
+                    Spacing="12"
+                    HorizontalOptions="StartAndExpand"
+                    Orientation="Horizontal">
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Smoking"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#45C366"
+                        WidthRequest="94"
+                        IsVisible="{Binding ApartmentDetailInfo.IsSmokingAllowed}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Smoking"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#242A37"
+                        WidthRequest="94"
+                        IsVisible="{Binding ApartmentDetailInfo.IsSmokingAllowed, Converter={StaticResource InverseBoolConverter}}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Parties/Events"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#45C366"
+                        WidthRequest="129"
+                        IsVisible="{Binding ApartmentDetailInfo.IsEventsAllowed}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Parties/Events"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#242A37"
+                        WidthRequest="129"
+                        IsVisible="{Binding ApartmentDetailInfo.IsEventsAllowed, Converter={StaticResource InverseBoolConverter}}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Pets"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#45C366"
+                        WidthRequest="66"
+                        IsVisible="{Binding ApartmentDetailInfo.IsPetsAllowed}"/>
+
+                    <controls:CustomButton
+                        CornerRadius="12"
+                        Padding="0"
+                        Text="Pets"
+                        FontSize="12"
+                        TextColor="White"
+                        FontFamily="PoppinsSemiBoldFontFamily"
+                        BackgroundColor="#242A37"
+                        WidthRequest="66"
+                        IsVisible="{Binding ApartmentDetailInfo.IsPetsAllowed, Converter={StaticResource InverseBoolConverter}}"/>
+                </StackLayout>
+
+                <BoxView  
+                    Grid.Row="21"
+                    Opacity="0.10"
+                    BackgroundColor="White"/>
+
+                <Grid 
+                    Grid.Row="23"
+                    RowSpacing="0" 
+                    ColumnSpacing="0" 
+                    IsVisible="{Binding ApartmentDetailInfo.IsQuiteHrs}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="16"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="16"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Label
+			            Grid.Row="0"
+			            FontFamily="PoppinsSemiBoldFontFamily"
+			            FontSize="20"
+			            Text="Quiet hours"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+			            TextColor="White" />
+
+                    <Label
+			            Grid.Row="2"
+			            FontFamily="PoppinsRegularFontFamily"
+			            FontSize="14"
+			            Text="Quiet hours are a specific time when the noise level must be kept to a minimum to not disturb other residents living in the building"
+                        Opacity="0.70"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+			            TextColor="White" />
+
+                    <Label
+			            Grid.Row="4"
+			            FontFamily="PoppinsSemiBoldFontFamily"
+			            FontSize="20"
+			            Text="Hours"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+			            TextColor="White" />
+
+                    <BoxView  
+                        Grid.Row="6"
+                        Opacity="0.10"
+                        BackgroundColor="White"/>
+
+                    <Grid
+                        Margin="40,0,0,0"
+                        Grid.Row="7"
+                        RowSpacing="0" 
+                        ColumnSpacing="0"
+                        IsVisible="{Binding ApartmentDetailInfo.IsQuiteHrsMonFri}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+			                Grid.Row="0"
+                            Grid.Column="0"
+			                FontFamily="PoppinsRegularFontFamily"
+			                FontSize="14"
+			                Text="Mon-Fri"
+                            Opacity="0.42"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+			                TextColor="White" />
+
+                        <Label
+			                Grid.Row="0"
+                            Grid.Column="1"
+			                FontFamily="PoppinsRegularFontFamily"
+			                FontSize="14"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="Center"
+			                TextColor="White">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding ApartmentDetailInfo.QuiteHrsMonFriOpen}"/>
+                                    <Span Text=" - "/>
+                                    <Span Text="{Binding ApartmentDetailInfo.QuiteHrsMonFriClose}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <BoxView  
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Opacity="0.10"
+                            BackgroundColor="White"/>
+                    </Grid>
+
+                    <Grid 
+                        Margin="40,0,0,0"
+                        Grid.Row="8"
+                        RowSpacing="0" 
+                        ColumnSpacing="0"
+                        IsVisible="{Binding ApartmentDetailInfo.IsQuiteHrsSatSun}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+			                Grid.Row="0"
+                            Grid.Column="0"
+			                FontFamily="PoppinsRegularFontFamily"
+			                FontSize="14"
+			                Text="Sat-Sun"
+                            Opacity="0.42"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+			                TextColor="White" />
+
+                        <Label
+			                Grid.Row="0"
+                            Grid.Column="1"
+			                FontFamily="PoppinsRegularFontFamily"
+			                FontSize="14"
+			                Text="10am-9:30am"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="Center"
+			                TextColor="White">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding ApartmentDetailInfo.QuiteHrsSatSunOpen}"/>
+                                    <Span Text=" - "/>
+                                    <Span Text="{Binding ApartmentDetailInfo.QuiteHrsSatSunClose}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <BoxView  
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Opacity="0.10"
+                            BackgroundColor="White"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

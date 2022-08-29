@@ -88,19 +88,19 @@
 		public string DepartureTime { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "children_allowed")]
-		public int ChildrenAllowed { get; set; }
+		public bool IsChildrenAllowed { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "infants_allowed")]
-		public int InfantsAllowed { get; set; }
+		public bool IsInfantsAllowed { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "smoking_allowed")]
-		public int SmokingAllowed { get; set; }
+		public bool IsSmokingAllowed { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "events_allowed")]
-		public int EventsAllowed { get; set; }
+		public bool IsEventsAllowed { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "pets_allowed")]
-		public int PetsAllowed { get; set; }
+		public bool IsPetsAllowed { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "cleening_fee_applicable")]
 		public int CleeningFeeApplicable { get; set; }
@@ -260,5 +260,30 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "building_id")]
 		public int BuildingId { get; set; }
+
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs")]
+		public bool IsQuiteHrs { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_mon_fri")]
+		public bool IsQuiteHrsMonFri { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_sat_sun")]
+		public bool IsQuiteHrsSatSun { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_mon_fri_open")]
+		public string QuiteHrsMonFriOpen { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_mon_fri_close")]
+		public string QuiteHrsMonFriClose { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_sat_sun_open")]
+		public string QuiteHrsSatSunOpen { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "quite_hrs_sat_sun_close")]
+		public string QuiteHrsSatSunClose { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "description")]
+		public string Description { get; set; }
 	}
 }
