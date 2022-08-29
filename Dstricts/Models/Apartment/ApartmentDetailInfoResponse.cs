@@ -285,5 +285,15 @@
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "description")]
 		public string Description { get; set; }
+
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_available")]
+		public bool IsWifiAvailable { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_username")]
+		public string WifiUserName { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "wifi_password")]
+		public string WifiPassword { get; set; }
 	}
 }

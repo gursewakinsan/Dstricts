@@ -129,6 +129,19 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Go To House Wifi Page Command.
+		private ICommand goToHouseWifiPageCommand;
+		public ICommand GoToHouseWifiPageCommand
+		{
+			get => goToHouseWifiPageCommand ?? (goToHouseWifiPageCommand = new Command(async () => await ExecuteGoToHouseWifiPageCommand()));
+		}
+		private async Task ExecuteGoToHouseWifiPageCommand()
+		{
+			if (ApartmentDetailInfo.IsWifiAvailable)
+				await Navigation.PushAsync(new Views.Apartment.HouseWifiPage(ApartmentDetailInfo.WifiUserName, ApartmentDetailInfo.WifiPassword));
+		}
+		#endregion
+
 		void BindListDecorated()
 		{
 			List<Models.CheckedInResponse> listDecorated = new List<Models.CheckedInResponse>();

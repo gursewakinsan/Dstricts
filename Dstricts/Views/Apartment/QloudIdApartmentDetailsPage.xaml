@@ -565,6 +565,9 @@
 							Grid.Row="8"  
 							Grid.Column="1"
 							Grid.ColumnSpan="4">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="20"/>
                                 <ColumnDefinition Width="*"/>
@@ -577,7 +580,11 @@
 								HorizontalTextAlignment="Center"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
 								TextColor="#7090E0"
-								VerticalTextAlignment="Center"/>
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
 
                             <Label
 								Grid.Column="1"
@@ -586,7 +593,11 @@
 								HorizontalTextAlignment="Start"
 								Text="House Wi-Fi"
 								TextColor="White"
-								VerticalTextAlignment="Center" />
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
 
                             <Label
 								Grid.Column="2"
@@ -596,7 +607,11 @@
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
 								TextColor="White"
 								Opacity="0.70"
-								VerticalTextAlignment="Center"/>
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
                         </Grid>
 
                         <BoxView
