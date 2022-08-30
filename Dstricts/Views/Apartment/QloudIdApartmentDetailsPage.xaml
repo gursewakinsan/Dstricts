@@ -277,10 +277,10 @@
                             <RowDefinition Height="78" />
                             <RowDefinition Height="28" />
                             <RowDefinition Height="1" />
-                            <RowDefinition Height="18" />
-                            <RowDefinition Height="44" />
-                            <RowDefinition Height="14" />
-                            <RowDefinition Height="1" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
                             <RowDefinition Height="13" />
                             <RowDefinition Height="44" />
                             <RowDefinition Height="13" />
@@ -561,6 +561,7 @@
 							BackgroundColor="#2A2A31" />
 
                         <Grid 
+                            IsVisible="{Binding ApartmentDetailInfo.IsWifiAvailable}"
 							ColumnSpacing="28"
 							Grid.Row="8"  
 							Grid.Column="1"
@@ -573,7 +574,14 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="20"/>
                             </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13" />
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
                             <Label
+                                Grid.Row="1"
 								Grid.Column="0"
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="20"
@@ -587,6 +595,7 @@
                             </Label>
 
                             <Label
+                                 Grid.Row="1"
 								Grid.Column="1"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
@@ -600,6 +609,7 @@
                             </Label>
 
                             <Label
+                                 Grid.Row="1"
 								Grid.Column="2"
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="25"
@@ -612,15 +622,15 @@
                                     <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
                                 </Label.GestureRecognizers>
                             </Label>
-                        </Grid>
 
-                        <BoxView
-							Grid.Row="10"
-							Grid.Column="1"
-							Grid.ColumnSpan="4"
+                            <BoxView
+							Grid.Row="3"
+							Grid.Column="0"
+							Grid.ColumnSpan="3"
 							WidthRequest="252"
 							HorizontalOptions="EndAndExpand"
 							BackgroundColor="#2A2A31" />
+                        </Grid>
 
                         <Grid 
 							ColumnSpacing="28"

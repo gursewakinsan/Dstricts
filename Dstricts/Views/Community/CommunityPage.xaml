@@ -473,11 +473,11 @@
 						Grid.ColumnSpan="4">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1"/>
-                            <RowDefinition Height="13"/>
-                            <RowDefinition Height="44"/>
-                            <RowDefinition Height="13"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
 
-                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="13"/>
 
                             <RowDefinition Height="auto"/>
@@ -504,8 +504,25 @@
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />
 
-                        <Label
-                            Grid.Row="2"
+                        <Grid 
+                            Grid.Row="2" 
+                            RowSpacing="0" 
+                            Grid.ColumnSpan="3" 
+                            ColumnSpacing="28" 
+                            IsVisible="{Binding CommunityDetailInfo.IsWifiAvailable}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13"/>
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="13"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Grid.Row="1"
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="20"
@@ -513,13 +530,13 @@
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
 							TextColor="#7090E0"
 							VerticalTextAlignment="Center">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
-                            </Label.GestureRecognizers>
-                        </Label>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                        <Label
-                            Grid.Row="2"
+                            <Label
+                            Grid.Row="1"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
 							FontSize="16"
@@ -527,13 +544,13 @@
 							Text="Community Wi-Fi"
 							TextColor="White"
 							VerticalTextAlignment="Center">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
-                            </Label.GestureRecognizers>
-                        </Label>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                        <Label
-                            Grid.Row="2"
+                            <Label
+                            Grid.Row="1"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="25"
@@ -542,18 +559,21 @@
 							TextColor="White"
                             Opacity="0.70"
 							VerticalTextAlignment="Center">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
-                            </Label.GestureRecognizers>
-                        </Label>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToCommunityWifiPageCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                        <BoxView
+                            <BoxView
                             HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
-							Grid.Row="4"
+							Grid.Row="3"
 							Grid.Column="0"
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />
+                        </Grid>
+
+                       
 
                         <Grid 
                             Grid.Row="6" 
