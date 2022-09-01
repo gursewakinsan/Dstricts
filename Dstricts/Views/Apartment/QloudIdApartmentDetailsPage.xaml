@@ -271,7 +271,7 @@
                     <Grid ColumnSpacing="0" RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="31" />
+                            <RowDefinition Height="39" />
                             <RowDefinition Height="36" />
                             <RowDefinition Height="7" />
                             <RowDefinition Height="78" />
@@ -301,7 +301,7 @@
                             <ColumnDefinition Width="28" />
                         </Grid.ColumnDefinitions>
 
-                        <Grid 
+                        <!--<Grid 
                             IsVisible="{Binding ShowBookingTab}"
                             RowSpacing="0" 
                             ColumnSpacing="0" 
@@ -523,10 +523,135 @@
 									VerticalTextAlignment="End"/>
                                 </StackLayout>
                             </Grid>
-                        </Grid>
-                        
+                        </Grid>-->
 
-                        <Label
+
+                        <controls:CustomFrame
+							Grid.Row="0"
+                            Grid.Column="0" 
+                            Grid.ColumnSpan="6" 
+							Padding="0,35,0,0"
+							BackgroundColor="#1B1D24"
+							CornerRadius="38,38,0,0"
+							HasShadow="False"
+							IsClippedToBounds="True">
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="0,0.5">
+                                    <GradientStop Offset="0.1" Color="#5E5F67" />
+                                    <GradientStop Offset="1.0" Color="#1B1D24" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <Grid RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="9"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="23"/>
+                                    <RowDefinition Height="63"/>
+                                    <RowDefinition Height="44"/>
+                                    <RowDefinition Height="63"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="28"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="28"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+									Grid.Row="0"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="4"
+									FontAttributes="Bold"
+									FontFamily="PoppinsBoldFontFamily"
+									FontSize="24"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="How to switch"
+									TextColor="White"/>
+
+                                <Label
+									Grid.Row="2"
+									Grid.Column="1"
+									Grid.ColumnSpan="4"
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="Click on the box for instructions"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+                                <Button 
+                                    Grid.Row="4" 
+                                    Grid.Column="1"
+                                    BorderWidth="2"
+                                    BorderColor="White"
+                                    CornerRadius="10"
+                                    Padding="0"
+                                    FontSize="12"
+                                    TextColor="White"
+                                    FontFamily="PoppinsRegularFontFamily"
+                                    Text="Power on &amp; Off"
+                                    BackgroundColor="Transparent"/>
+
+                                <Button 
+                                    Grid.Row="4" 
+                                    Grid.Column="3"
+                                    BorderWidth="2"
+                                    BorderColor="White"
+                                    CornerRadius="10"
+                                    Padding="0"
+                                    FontSize="12"
+                                    TextColor="White"
+                                    FontFamily="PoppinsRegularFontFamily"
+                                    Text="Water on &amp; Off"
+                                    BackgroundColor="Transparent"/>
+
+                                <Button 
+                                    Grid.Row="4" 
+                                    Grid.Column="5"
+                                    BorderWidth="2"
+                                    BorderColor="White"
+                                    CornerRadius="10"
+                                    Padding="0"
+                                    FontSize="12"
+                                    TextColor="White"
+                                    FontFamily="PoppinsRegularFontFamily"
+                                    Text="Alarm on &amp; Off"
+                                    BackgroundColor="Transparent"/>
+
+                                <StackLayout 
+                                    Padding="28,0,28,0"
+                                    Grid.Row="6"
+									Grid.Column="0"
+									Grid.ColumnSpan="7"
+                                    Orientation="Horizontal"
+                                    Spacing="20"
+                                    BackgroundColor="#45C366">
+                                    <Label
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="18"
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+										Text="Entre code"
+										TextColor="Black"/>
+
+                                    <Label
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="18"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+										Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"
+										TextColor="Black"/>
+                                </StackLayout>
+                            </Grid>
+                        </controls:CustomFrame>
+
+
+                            <Label
 							Grid.Row="2"
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
