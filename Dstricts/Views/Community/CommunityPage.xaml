@@ -50,6 +50,16 @@
             MaxLines="1"
             LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center" />
+		<Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            Margin="0,0,28,0"
+			HorizontalTextAlignment="End"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+			TextColor="White"
+			VerticalTextAlignment="Center"/>
 
         <ScrollView
 			Grid.Row="2"
