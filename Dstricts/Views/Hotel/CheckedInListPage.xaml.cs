@@ -130,12 +130,35 @@ namespace Dstricts.Views.Hotel
 		}
 	}
 }
-public class DemoCards
+public class DemoCards : Dstricts.Models.BaseModel
 {
 	public string UserImage { get; set; }
 	public string ImgURL { get; set; }
 	public string CommentImgURL { get; set; }
 	public List<Images> CardsImage { get; set; }
+
+
+	private Color gradientTopColor;
+	public Color GradientTopColor
+	{
+		get=> gradientTopColor;
+		set
+		{
+			gradientTopColor = value;
+			OnPropertyChanged("GradientTopColor");
+		}
+	}
+
+	private Color gradientBottomColor;
+	public Color GradientBottomColor 
+	{
+		get => gradientBottomColor;
+		set
+		{
+			gradientBottomColor = value;
+			OnPropertyChanged("GradientBottomColor");
+		}
+	}
 }
 public class Images
 {

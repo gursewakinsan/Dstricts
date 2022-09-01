@@ -101,7 +101,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteSocailClickCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+			Application.Current.MainPage = new NavigationPage(new Views.Apartment.SocialPage());
 		}
 		#endregion
 
@@ -139,6 +139,18 @@ namespace Dstricts.ViewModels
 		{
 			if (ApartmentDetailInfo.IsWifiAvailable)
 				await Navigation.PushAsync(new Views.Apartment.HouseWifiPage(ApartmentDetailInfo.WifiUserName, ApartmentDetailInfo.WifiPassword));
+		}
+		#endregion
+
+		#region Back Command.
+		private ICommand backCommand;
+		public ICommand BackCommand
+		{
+			get => backCommand ?? (backCommand = new Command(() => ExecuteBackCommand()));
+		}
+		private void ExecuteBackCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckInPage());
 		}
 		#endregion
 
