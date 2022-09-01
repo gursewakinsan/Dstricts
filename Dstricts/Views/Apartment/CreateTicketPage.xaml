@@ -55,6 +55,8 @@
 			Text="{Binding DisplayPropertyNickName}" 
             HorizontalOptions="EndAndExpand"
 			TextColor="White" 
+            MaxLines="1"
+            LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center"/>
 
         <Label

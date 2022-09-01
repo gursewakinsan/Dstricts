@@ -35,7 +35,7 @@
 			TextColor="White"
 			VerticalTextAlignment="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                <TapGestureRecognizer Command="{Binding BackCommand}" />
             </Label.GestureRecognizers>
         </Label>
 
@@ -45,8 +45,10 @@
 			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
 			HorizontalTextAlignment="Center"
-			Text="{Binding ApartmentDetailInfo.PropertyNickName}"
+			Text="{Binding DisplayPropertyNickName}"
 			TextColor="White"
+             MaxLines="1"
+            LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center" />
 
         <Label

@@ -5,11 +5,11 @@
     xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	ios:Page.UseSafeArea="False"
+	ios:Page.UseSafeArea="True"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
     <Grid
-		Margin="0,55,0,0"
+		Margin="0,12,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
         <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
 			TextColor="White"
 			VerticalTextAlignment="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+                <TapGestureRecognizer Command="{Binding BackCommand}"/>
             </Label.GestureRecognizers>
         </Label>
 
@@ -48,6 +48,8 @@
 			HorizontalTextAlignment="Center"
 			Text="{Binding DisplayPropertyNickName}"
 			TextColor="White"
+            MaxLines="1"
+            LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center" />
 
         <Label

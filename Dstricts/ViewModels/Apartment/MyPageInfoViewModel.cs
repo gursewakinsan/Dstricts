@@ -62,6 +62,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Back Command.
+		private ICommand backCommand;
+		public ICommand BackCommand
+		{
+			get => backCommand ?? (backCommand = new Command(() => ExecuteBackCommand()));
+		}
+		private void ExecuteBackCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckInPage());
+		}
+		#endregion
+
 		#region Properties.
 		private Models.CheckedInResponse apartmentDetails;
 		public Models.CheckedInResponse ApartmentDetails
@@ -86,6 +98,7 @@ namespace Dstricts.ViewModels
 		}
 
 		public string UserName => Helper.Helper.LoggedInUserName;
+		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		#endregion
 	}
 }

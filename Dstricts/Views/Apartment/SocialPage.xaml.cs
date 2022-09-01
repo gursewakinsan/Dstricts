@@ -29,6 +29,9 @@ namespace Dstricts.Views.Apartment
 
             imgUserImage1.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png"));
             imgCommentImgURL1.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"));
+
+            imgUserImage2.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png"));
+            imgCommentImgURL2.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"));
         }
 
         private void OnBtnOpenCameraToScanQrCodeClicked(object sender, System.EventArgs e)

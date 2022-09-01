@@ -164,6 +164,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Back Command.
+		private ICommand backCommand;
+		public ICommand BackCommand
+		{
+			get => backCommand ?? (backCommand = new Command(() => ExecuteBackCommand()));
+		}
+		private void ExecuteBackCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckInPage());
+		}
+		#endregion
+
 		#region Properties.
 		private Models.GetCommunityDetailInfoResponse communityDetailInfo;
 		public Models.GetCommunityDetailInfoResponse CommunityDetailInfo
