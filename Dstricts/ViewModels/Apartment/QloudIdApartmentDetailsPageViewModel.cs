@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -51,6 +52,15 @@ namespace Dstricts.ViewModels
 			else
 				ShowBookingTab = true;
 
+			var responses = await service.GetSratedDetailAsync(new Models.GetSratedDetailRequest()
+			{
+				ApartmentId = Helper.Helper.ApartmentCheckedIn.Id
+			});
+			if (responses?.Count > 0)
+			{
+				HowToSwitchInfo = responses.Where(x => x.IsSwitchOn == true).ToList();
+				HowToUseInfo = responses.Where(x => x.IsSwitchOn == false).ToList();
+			}
 			BindListDecorated();
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -226,6 +236,28 @@ namespace Dstricts.ViewModels
 			{
 				apartmentDetails = value;
 				OnPropertyChanged("ApartmentDetails");
+			}
+		}
+
+		private List<Models.GetSratedDetailResponse> howToSwitchInfo;
+		public List<Models.GetSratedDetailResponse> HowToSwitchInfo
+		{
+			get => howToSwitchInfo;
+			set
+			{
+				howToSwitchInfo = value;
+				OnPropertyChanged("HowToSwitchInfo");
+			}
+		}
+
+		private List<Models.GetSratedDetailResponse> howToUseInfo;
+		public List<Models.GetSratedDetailResponse> HowToUseInfo
+		{
+			get => howToUseInfo;
+			set
+			{
+				howToUseInfo = value;
+				OnPropertyChanged("HowToUseInfo");
 			}
 		}
 

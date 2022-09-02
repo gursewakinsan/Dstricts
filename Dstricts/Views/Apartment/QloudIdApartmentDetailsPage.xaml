@@ -289,8 +289,15 @@
                             <RowDefinition Height="36" />
                             <RowDefinition Height="28" />
                             <RowDefinition Height="406" />
-
-                            <RowDefinition Height="10" />
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="44" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="18" />
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="22" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="28" />
@@ -553,17 +560,12 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="28"/>
-                                    <ColumnDefinition Width="80"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="80"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="80"/>
                                     <ColumnDefinition Width="28"/>
                                 </Grid.ColumnDefinitions>
                                 <Label
 									Grid.Row="0"
                                     Grid.Column="1"
-                                    Grid.ColumnSpan="4"
 									FontAttributes="Bold"
 									FontFamily="PoppinsBoldFontFamily"
 									FontSize="24"
@@ -575,7 +577,6 @@
                                 <Label
 									Grid.Row="2"
 									Grid.Column="1"
-									Grid.ColumnSpan="4"
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="14"
 									HorizontalTextAlignment="Start"
@@ -584,50 +585,37 @@
 									TextColor="White"
 									VerticalTextAlignment="Start" />
 
-                                <Button 
-                                    Grid.Row="4" 
-                                    Grid.Column="1"
-                                    BorderWidth="2"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    Padding="0"
-                                    FontSize="12"
-                                    TextColor="White"
-                                    FontFamily="PoppinsRegularFontFamily"
-                                    Text="Power on &amp; Off"
-                                    BackgroundColor="Transparent"/>
-
-                                <Button 
-                                    Grid.Row="4" 
-                                    Grid.Column="3"
-                                    BorderWidth="2"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    Padding="0"
-                                    FontSize="12"
-                                    TextColor="White"
-                                    FontFamily="PoppinsRegularFontFamily"
-                                    Text="Water on &amp; Off"
-                                    BackgroundColor="Transparent"/>
-
-                                <Button 
-                                    Grid.Row="4" 
-                                    Grid.Column="5"
-                                    BorderWidth="2"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    Padding="0"
-                                    FontSize="12"
-                                    TextColor="White"
-                                    FontFamily="PoppinsRegularFontFamily"
-                                    Text="Alarm on &amp; Off"
-                                    BackgroundColor="Transparent"/>
-
+                                <ScrollView HorizontalScrollBarVisibility="Never" Grid.Row="4" Grid.Column="1">
+                                    <StackLayout
+                                        Orientation="Horizontal"
+                                        BindableLayout.ItemsSource="{Binding HowToSwitchInfo}"
+                                        HorizontalOptions="StartAndExpand" Spacing="39">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button 
+													BorderWidth="2"
+													BorderColor="White"
+													CornerRadius="10"
+													Padding="0"
+													FontSize="12"
+													TextColor="White"
+													FontFamily="PoppinsRegularFontFamily"
+													Text="{Binding DisplayGetStartedTitle}"
+                                                    HorizontalOptions="Start"
+                                                    VerticalOptions="Center"
+                                                    HeightRequest="63"
+                                                    WidthRequest="80"
+                                                    Clicked="OnHowToSwitchInfoItemClicked"
+													BackgroundColor="Transparent"/>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                </ScrollView>
                                 <StackLayout 
                                     Padding="28,0,28,0"
                                     Grid.Row="6"
 									Grid.Column="0"
-									Grid.ColumnSpan="7"
+									Grid.ColumnSpan="3"
                                     Orientation="Horizontal"
                                     Spacing="20"
                                     BackgroundColor="#45C366">
@@ -890,6 +878,87 @@
                             </StackLayout>
                         </ScrollView>
 
+
+                        <BoxView
+							Grid.Row="20"
+							Grid.Column="1"
+							Grid.ColumnSpan="4"
+							BackgroundColor="#2A2A31" />
+
+                        <Label
+							Grid.Row="22"
+							Grid.Column="1"
+							Grid.ColumnSpan="4"
+							FontAttributes="Bold"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="20"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="How to use"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+							Grid.Row="24"
+							Grid.Column="1"
+							Grid.ColumnSpan="4"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							LineBreakMode="TailTruncation"
+							LineHeight="1.2"
+							MaxLines="2"
+							Opacity="0.42"
+							Text="Instructions on how to use the amenities below in the right way"
+							TextColor="White"
+							VerticalTextAlignment="Start" />
+
+                        <ScrollView 
+                            HorizontalScrollBarVisibility="Never" 
+                            Grid.Row="26" Grid.Column="1"
+							Grid.ColumnSpan="5" Orientation="Horizontal">
+                            <StackLayout
+								Orientation="Horizontal"
+								BindableLayout.ItemsSource="{Binding HowToUseInfo}"
+								HorizontalOptions="StartAndExpand" Spacing="0">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid RowSpacing="0" ColumnSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="148"/>
+                                                <RowDefinition Height="20"/>
+                                                <RowDefinition Height="20"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="182"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ImageButton 
+                                                Grid.Row="0" 
+                                                Grid.Column="0" 
+                                                Aspect="AspectFill" 
+                                                Padding="0"
+                                                CornerRadius="12"
+												Clicked="OnHowToUseInfoItemClicked"
+                                                BackgroundColor="Transparent"
+                                                Source="{Binding MannualImage}"/>
+
+                                            <Label
+												Grid.Row="2"
+												Grid.Column="0"
+												FontFamily="PoppinsMediumFontFamily"
+												FontSize="14"
+												HorizontalTextAlignment="Start"
+												LineBreakMode="TailTruncation"
+												MaxLines="1"
+												Text="{Binding GetStartedTitle}"
+												TextColor="White"
+												VerticalTextAlignment="Start" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
                     </Grid>
                 </ScrollView>
             </controls:CustomFrame>

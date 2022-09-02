@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dstricts.Interfaces
 {
@@ -6,5 +7,6 @@ namespace Dstricts.Interfaces
 	{
 		Task<Models.ApartmentDetailInfoResponse> ApartmentDetailInfoAsync(Models.ApartmentDetailInfoRequest request);
 		Task<Models.ApartmentDetailInfoCheckinResponse> ApartmentDetailInfoCheckinAsync(Models.ApartmentDetailInfoCheckinRequest request);
+		Task<List<Models.GetSratedDetailResponse>> GetSratedDetailAsync(Models.GetSratedDetailRequest request);
 	}
 }

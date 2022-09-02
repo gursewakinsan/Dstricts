@@ -29,5 +29,37 @@ namespace Dstricts.Views.Apartment
 			lblMedicalAndHealth.Text = "Medical & Health";
 			lblGetPhoneAddressHere.Text = "Get phone & address here";*/
 		}
-	}
+
+		#region On How To Switch Info Item Clicked.
+		private async void OnHowToSwitchInfoItemClicked(object sender, System.EventArgs e)
+        {
+			Button button = sender as Button;
+			Models.GetSratedDetailResponse response = button.BindingContext as Models.GetSratedDetailResponse;
+            foreach (var switchInfo in viewModel.HowToSwitchInfo)
+            {
+				if (switchInfo.Id.Equals(response.Id))
+					switchInfo.IsSelected = true;
+				else
+					switchInfo.IsSelected = false;
+			}
+			await Navigation.PushAsync(new HowToSwitchPage(viewModel.HowToSwitchInfo));
+		}
+		#endregion
+
+		#region On How To Use Info Item Clicked.
+		private async void OnHowToUseInfoItemClicked(object sender, System.EventArgs e)
+        {
+			ImageButton imageButton = sender as ImageButton;
+			Models.GetSratedDetailResponse response = imageButton.BindingContext as Models.GetSratedDetailResponse;
+			foreach (var switchInfo in viewModel.HowToUseInfo)
+			{
+				if (switchInfo.Id.Equals(response.Id))
+					switchInfo.IsSelected = true;
+				else
+					switchInfo.IsSelected = false;
+			}
+			await Navigation.PushAsync(new HowToSwitchPage(viewModel.HowToUseInfo));
+		}
+        #endregion
+    }
 }

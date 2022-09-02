@@ -110,6 +110,7 @@
 		public const string CheckedInOwnerApartmentListUrl = "https://dstricts.com/user/index.php/DstrictsApp/checkedInOwnerApartmentList";
 		public const string ApartmentDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoDstrictApp";
 		public const string ApartmentDetailInfoCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoCheckin";
+		public const string GetSratedDetailUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getsratedDetail";
 
 		//Community
 		public const string GetCommunityInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityInfo";
