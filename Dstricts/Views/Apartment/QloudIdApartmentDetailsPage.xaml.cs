@@ -44,6 +44,20 @@ namespace Dstricts.Views.Apartment
 			}
 			await Navigation.PushAsync(new HowToSwitchPage(viewModel.HowToSwitchInfo));
 		}
+
+		async void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
+		{
+			Label label = sender as Label;
+			Models.GetSratedDetailResponse response = label.BindingContext as Models.GetSratedDetailResponse;
+			foreach (var switchInfo in viewModel.HowToSwitchInfo)
+			{
+				if (switchInfo.Id.Equals(response.Id))
+					switchInfo.IsSelected = true;
+				else
+					switchInfo.IsSelected = false;
+			}
+			await Navigation.PushAsync(new HowToSwitchPage(viewModel.HowToSwitchInfo));
+		}
 		#endregion
 
 		#region On How To Use Info Item Clicked.

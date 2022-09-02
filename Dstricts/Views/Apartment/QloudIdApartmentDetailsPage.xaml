@@ -592,21 +592,38 @@
                                         HorizontalOptions="StartAndExpand" Spacing="39">
                                         <BindableLayout.ItemTemplate>
                                             <DataTemplate>
-                                                <Button 
-													BorderWidth="2"
-													BorderColor="White"
-													CornerRadius="10"
-													Padding="0"
-													FontSize="12"
-													TextColor="White"
-													FontFamily="PoppinsRegularFontFamily"
-													Text="{Binding DisplayGetStartedTitle}"
-                                                    HorizontalOptions="Start"
-                                                    VerticalOptions="Center"
-                                                    HeightRequest="63"
-                                                    WidthRequest="80"
-                                                    Clicked="OnHowToSwitchInfoItemClicked"
-													BackgroundColor="Transparent"/>
+												<Grid RowSpacing="0" ColumnSpacing="0">
+													<Grid.ColumnDefinitions>
+														<ColumnDefinition Width="80"/>
+													</Grid.ColumnDefinitions>
+													<Grid.RowDefinitions>
+														<RowDefinition Height="63"/>
+													</Grid.RowDefinitions>
+													<Button
+														Grid.Row="0"
+														Grid.Column="0"
+														BorderWidth="2"
+														BorderColor="White"
+														CornerRadius="10"
+														Padding="0"
+														FontFamily="PoppinsRegularFontFamily"
+														Clicked="OnHowToSwitchInfoItemClicked"
+														BackgroundColor="Transparent"/>
+
+													<Label
+														VerticalTextAlignment="Center"
+														HorizontalTextAlignment="Center"
+														FontFamily="PoppinsRegularFontFamily"
+														FontSize="12"
+														Grid.Row="0"
+														Grid.Column="0"
+														Text="{Binding DisplayGetStartedTitle}"
+														TextColor="White">
+														<Label.GestureRecognizers>
+															<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+														</Label.GestureRecognizers>
+														</Label>
+												</Grid>
                                             </DataTemplate>
                                         </BindableLayout.ItemTemplate>
                                     </StackLayout>
