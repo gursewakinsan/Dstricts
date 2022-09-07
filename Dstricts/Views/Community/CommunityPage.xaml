@@ -876,17 +876,25 @@
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="{Binding ItemWidth}" />
+												WidthRequest="{Binding ItemWidth}" 
+                                                Clicked="OnAmenityImageClicked" />
 
                                             <StackLayout
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnAmenityStackLayoutClicked"/>
+                                                </StackLayout.GestureRecognizers>
                                                 <Label
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
-													TextColor="White" />
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnAmenityLabelClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
 
                                                 <Label
 													Padding="0"
@@ -896,7 +904,11 @@
 													MaxLines="2"
 													Opacity="0.70"
 													Text="How was the sea food in Barcelona, Spain"
-													TextColor="White" />
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnAmenityLabelClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
                                             </StackLayout>
                                         </Grid>
                                     </DataTemplate>

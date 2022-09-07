@@ -38,5 +38,22 @@ namespace Dstricts.Views.Community
 			Application.Current.MainPage = new NavigationPage(new Views.Apartment.QloudIdApartmentDetailsPage(Helper.Helper.ApartmentCheckedIn));
 
 		}
-	}
+
+		#region On Amenity Item Clicked.
+		private async void OnAmenityImageClicked(object sender, EventArgs e)
+        {
+			await Navigation.PushAsync(new SelectedAmenityDetailPage());
+        }
+
+        private async void OnAmenityStackLayoutClicked(object sender, EventArgs e)
+        {
+			await Navigation.PushAsync(new SelectedAmenityDetailPage());
+		}
+
+        private async void OnAmenityLabelClicked(object sender, EventArgs e)
+        {
+			await Navigation.PushAsync(new SelectedAmenityDetailPage());
+		}
+        #endregion
+    }
 }
