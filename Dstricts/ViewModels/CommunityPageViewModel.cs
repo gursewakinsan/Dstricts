@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
@@ -23,6 +24,10 @@ namespace Dstricts.ViewModels
 			}
 			else
 				ShowBookingTab = true;
+			HowToContactList = new List<HowToContact>();
+			HowToContactList.Add(new HowToContact() {DisplayTitle = $"Your{Environment.NewLine}Neighbour" });
+			HowToContactList.Add(new HowToContact() { DisplayTitle = $"Your{Environment.NewLine}Board" });
+			HowToContactList.Add(new HowToContact() { DisplayTitle = $"Your{Environment.NewLine}Security" });
 		}
 		#endregion
 
@@ -99,11 +104,21 @@ namespace Dstricts.ViewModels
 				foreach (var item in responseApartmentCommunityAmenities.CommunityAmenityList)
 					item.ItemWidth = imgWidth;
 
+				foreach (var item in responseApartmentCommunityAmenities.CommunityChildrenAmenityList)
+					item.ItemWidth = imgWidth;
+
+				foreach (var item in responseApartmentCommunityAmenities.BuildingAmenityList)
+					item.ItemWidth = imgWidth;
+
 				ApartmentCommunityBookList = responseApartmentCommunityAmenities.BookList;
 				CommunityAmenityList = responseApartmentCommunityAmenities.CommunityAmenityList;
+				CommunityChildrenAmenityList = responseApartmentCommunityAmenities.CommunityChildrenAmenityList;
+				BuildingAmenityList = responseApartmentCommunityAmenities.BuildingAmenityList;
 			}
 			IsBookAvailable = ApartmentCommunityBookList?.Count > 0 ? true : false;
 			IsThingsToDoAvailable = CommunityAmenityList?.Count > 0 ? true : false;
+			IsCommunityChildrenAmenityList = CommunityChildrenAmenityList?.Count > 0 ? true : false;
+			IsBuildingAmenityList = BuildingAmenityList?.Count > 0 ? true : false;
 
 			SocietyRulesList = await service.SocietyRulesListAsync(new Models.SocietyRulesListRequest()
 			{
@@ -188,8 +203,8 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private List<Models.ApartmentCommunityBook> apartmentCommunityBookList;
-		public List<Models.ApartmentCommunityBook> ApartmentCommunityBookList
+		private List<Models.ApartmentCommunity> apartmentCommunityBookList;
+		public List<Models.ApartmentCommunity> ApartmentCommunityBookList
 		{
 			get => apartmentCommunityBookList;
 			set
@@ -199,8 +214,63 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private List<Models.CommunityAmenity> communityAmenityList;
-		public List<Models.CommunityAmenity> CommunityAmenityList
+		private List<HowToContact> howToContactList;
+		public List<HowToContact> HowToContactList
+		{
+			get => howToContactList;
+			set
+			{
+				howToContactList = value;
+				OnPropertyChanged("HowToContactList");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> communityChildrenAmenityList;
+		public List<Models.ApartmentCommunity> CommunityChildrenAmenityList
+		{
+			get => communityChildrenAmenityList;
+			set
+			{
+				communityChildrenAmenityList = value;
+				OnPropertyChanged("CommunityChildrenAmenityList");
+			}
+		}
+
+		private bool isCommunityChildrenAmenityList;
+		public bool IsCommunityChildrenAmenityList
+		{
+			get => isCommunityChildrenAmenityList;
+			set
+			{
+				isCommunityChildrenAmenityList = value;
+				OnPropertyChanged("IsCommunityChildrenAmenityList");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> buildingAmenityList;
+		public List<Models.ApartmentCommunity> BuildingAmenityList
+		{
+			get => buildingAmenityList;
+			set
+			{
+				buildingAmenityList = value;
+				OnPropertyChanged("BuildingAmenityList");
+			}
+		}
+
+		private bool isBuildingAmenityList;
+		public bool IsBuildingAmenityList
+		{
+			get => isBuildingAmenityList;
+			set
+			{
+				isBuildingAmenityList = value;
+				OnPropertyChanged("IsBuildingAmenityList");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> communityAmenityList;
+		public List<Models.ApartmentCommunity> CommunityAmenityList
 		{
 			get => communityAmenityList;
 			set
@@ -269,4 +339,9 @@ namespace Dstricts.ViewModels
 		public List<Models.SocietyRulesListResponse> SocietyRulesList { get; set; }
 		#endregion
 	}
+}
+
+public class HowToContact
+{
+    public string DisplayTitle { get; set; }
 }

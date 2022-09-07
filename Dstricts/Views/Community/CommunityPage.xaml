@@ -273,20 +273,23 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="6" />
                         <RowDefinition Height="20" />
-                        <RowDefinition Height="27" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="44" />
-                        <RowDefinition Height="406" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="278" />
                         <RowDefinition Height="51" />
                         <RowDefinition Height="36" />
                         <RowDefinition Height="7" />
                         <RowDefinition Height="78" />
                         <RowDefinition Height="29" />
                         <RowDefinition Height="auto" />
-                        
-                        <RowDefinition Height="auto" />
+
                         <RowDefinition Height="auto" />
 
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -297,7 +300,7 @@
                         <ColumnDefinition Width="65" />
                         <ColumnDefinition Width="28" />
                     </Grid.ColumnDefinitions>
-                    <StackLayout
+                    <!--<StackLayout
 						Grid.Row="0"
 						Grid.Column="1"
 						Margin="0,0,20,0"
@@ -420,7 +423,125 @@
                     <BoxView
 						Grid.Row="4"
 						Grid.ColumnSpan="6"
-						BackgroundColor="#2A2A31" />
+						BackgroundColor="#2A2A31" />-->
+
+                    <controls:CustomFrame
+							Grid.Row="0"
+                            Grid.Column="0" 
+                            Grid.ColumnSpan="6" 
+							Padding="0,35,0,0"
+							BackgroundColor="#1B1D24"
+							CornerRadius="38,38,0,0"
+							HasShadow="False"
+							IsClippedToBounds="True">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="0,0.5">
+                                <GradientStop Offset="0.1" Color="#5E5F67" />
+                                <GradientStop Offset="1.0" Color="#1B1D24" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="9"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="23"/>
+                                <RowDefinition Height="63"/>
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="63"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="28"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="28"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+									Grid.Row="0"
+                                    Grid.Column="1"
+									FontAttributes="Bold"
+									FontFamily="PoppinsBoldFontFamily"
+									FontSize="24"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="How to contact"
+									TextColor="White"/>
+
+                            <Label
+									Grid.Row="2"
+									Grid.Column="1"
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="Click on below boxes for contacting"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+                            <ScrollView HorizontalScrollBarVisibility="Never" Grid.Row="4" Grid.Column="1">
+                                <StackLayout
+                                        Orientation="Horizontal"
+                                        BindableLayout.ItemsSource="{Binding HowToContactList}"
+                                        HorizontalOptions="StartAndExpand" Spacing="39">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="0" ColumnSpacing="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="63"/>
+                                                </Grid.RowDefinitions>
+                                                <Button
+														Grid.Row="0"
+														Grid.Column="0"
+														BorderWidth="2"
+														BorderColor="White"
+														CornerRadius="10"
+														Padding="0"
+														FontFamily="PoppinsRegularFontFamily"
+														BackgroundColor="Transparent"/>
+
+                                                <Label
+														VerticalTextAlignment="Center"
+														HorizontalTextAlignment="Center"
+														FontFamily="PoppinsRegularFontFamily"
+														FontSize="12"
+														Grid.Row="0"
+														Grid.Column="0"
+														Text="{Binding DisplayTitle}"
+														TextColor="White"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                            
+                            <StackLayout 
+                                    Padding="28,0,28,0"
+                                    Grid.Row="6"
+									Grid.Column="0"
+									Grid.ColumnSpan="3"
+                                    Orientation="Horizontal"
+                                    Spacing="20"
+                                    BackgroundColor="#45C366">
+                                <Label
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="18"
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+										Text="Entre code"
+										TextColor="Black"/>
+
+                                <Label
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="18"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+										Text="{Binding CommunityDetailInfo.EntryCode}"
+										TextColor="Black"/>
+                            </StackLayout>
+                        </Grid>
+                    </controls:CustomFrame>
 
                     <ScrollView
 						Grid.Row="6"
@@ -438,7 +559,7 @@
                                     <ImageButton
 										Padding="0"
 										Aspect="AspectFill"
-										CornerRadius="16"
+										CornerRadius="12"
 										HorizontalOptions="Start"
 										Source="{Binding BuildingPhotoPath}"
 										WidthRequest="{Binding ImgWidth}" />
@@ -744,30 +865,77 @@
 							BackgroundColor="#2A2A31" />
                     </Grid>
 
+                    <Label
+                        Margin="0,47,0,0"
+						Grid.Row="13"
+						Grid.Column="1"
+						Grid.ColumnSpan="4"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						HorizontalTextAlignment="Start"
+						MaxLines="1"
+						Text="Guests perks"
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+
                     <Grid 
                         IsVisible="{Binding IsBookAvailable}"
                         Margin="0,52,0,0"
                         RowSpacing="0"
-                        Grid.Row="13"
+                        ColumnSpacing="0"
+                        Grid.Row="14"
 						Grid.Column="1"
 						Grid.ColumnSpan="5">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
                         <Label
+                            Grid.Column="0"
 							Grid.Row="0"
-							FontAttributes="Bold"
-							FontFamily="PoppinsBoldFontFamily"
-							FontSize="20"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="18"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
-							Text="Book"
+							Text="Book" 
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="This apartment belongs to Casa Madrid community. Casa Madrid has following to offer its members and guests" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,41"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Row="0"
+							Grid.Column="1"
+                            Grid.RowSpan="2"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="40" 
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+							TextColor="White"
+                            Opacity="0.70"
+							VerticalTextAlignment="Start"/>
+
                         <ScrollView
+                            Grid.ColumnSpan="2"
 							Grid.Row="2"
 							HorizontalScrollBarVisibility="Never"
 							Orientation="Horizontal">
@@ -786,7 +954,7 @@
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="148" />
-                                                <RowDefinition Height="60" />
+                                                <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <ImageButton
 												Grid.Row="0"
@@ -802,13 +970,13 @@
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
-                                                <Label
+                                                <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
 													TextColor="White" />
 
-                                                <Label
+                                                <Label IsVisible="False"
 													Padding="0"
 													FontFamily="PoppinsRegularFontFamily"
 													FontSize="12"
@@ -823,32 +991,68 @@
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
                         </ScrollView>
+
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
                     </Grid>
 
                     <Grid 
                         IsVisible="{Binding IsThingsToDoAvailable}"
                         Margin="0,52,0,0"
                         RowSpacing="0"
-                        Grid.Row="14"
+                        ColumnSpacing="0"
+                        Grid.Row="15"
 						Grid.Column="1"
 						Grid.ColumnSpan="5">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
                         <Label
+                            Grid.Column="0"
 							Grid.Row="0"
-							FontAttributes="Bold"
-							FontFamily="PoppinsBoldFontFamily"
-							FontSize="20"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="18"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Things to do"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="This apartment belongs to Casa Madrid community. Casa Madrid has following to offer its members and guests" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,41"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Row="0"
+							Grid.Column="1"
+                            Grid.RowSpan="2"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="40" 
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+							TextColor="White"
+                            Opacity="0.70"
+							VerticalTextAlignment="Start"/>
+
                         <ScrollView
+                            Grid.ColumnSpan="3"
 							Grid.Row="2"
 							HorizontalScrollBarVisibility="Never"
 							Orientation="Horizontal">
@@ -866,7 +1070,7 @@
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="148" />
-                                                <RowDefinition Height="60" />
+                                                <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <ImageButton
 												Grid.Row="0"
@@ -875,9 +1079,9 @@
 												HeightRequest="148"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
+                                                Clicked="OnAmenityImageClicked"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="{Binding ItemWidth}" 
-                                                Clicked="OnAmenityImageClicked" />
+												WidthRequest="{Binding ItemWidth}" />
 
                                             <StackLayout
 												Grid.Row="1"
@@ -886,7 +1090,7 @@
                                                 <StackLayout.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="OnAmenityStackLayoutClicked"/>
                                                 </StackLayout.GestureRecognizers>
-                                                <Label
+                                                <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
@@ -896,25 +1100,255 @@
                                                     </Label.GestureRecognizers>
                                                 </Label>
 
-                                                <Label
+                                                <Label IsVisible="False"
 													Padding="0"
 													FontFamily="PoppinsRegularFontFamily"
 													FontSize="12"
 													LineBreakMode="TailTruncation"
 													MaxLines="2"
 													Opacity="0.70"
-													Text="How was the sea food in Barcelona, Spain"
-													TextColor="White">
-                                                    <Label.GestureRecognizers>
-                                                        <TapGestureRecognizer Tapped="OnAmenityLabelClicked"/>
-                                                    </Label.GestureRecognizers>
-                                                </Label>
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
                                             </StackLayout>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
                         </ScrollView>
+
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                    </Grid>
+
+                    <Grid 
+                        IsVisible="{Binding IsCommunityChildrenAmenityList}"
+                        Margin="0,52,0,0"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        Grid.Row="16"
+						Grid.Column="1"
+						Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="0"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Children activities"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="This apartment belongs to Casa Madrid community. Casa Madrid has following to offer its members and guests" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,41"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Row="0"
+							Grid.Column="1"
+                            Grid.RowSpan="2"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="40" 
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+							TextColor="White"
+                            Opacity="0.70"
+							VerticalTextAlignment="Start"/>
+
+                        <ScrollView
+                            Grid.ColumnSpan="3"
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
+                            <StackLayout
+                                BindableLayout.ItemsSource="{Binding CommunityChildrenAmenityList}"
+								Margin="0,0,28,0"
+								HorizontalOptions="Start"
+								Orientation="Horizontal"
+								Spacing="16">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="0"
+											RowSpacing="16"
+											WidthRequest="190">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <ImageButton
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="148"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}" />
+
+                                            <StackLayout
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+                                                <Label 
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+													Text="{Binding AmenityName}"
+													TextColor="White"/>
+
+                                                <Label IsVisible="False"
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                    </Grid>
+
+                    <Grid 
+                        IsVisible="{Binding IsBuildingAmenityList}"
+                        Margin="0,52,0,0"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        Grid.Row="17"
+						Grid.Column="1"
+						Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="0"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Adult indoor activity"
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="This apartment belongs to Casa Madrid community. Casa Madrid has following to offer its members and guests" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,41"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Row="0"
+							Grid.Column="1"
+                            Grid.RowSpan="2"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="40" 
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+							TextColor="White"
+                            Opacity="0.70"
+							VerticalTextAlignment="Start"/>
+
+                        <ScrollView
+                            Grid.ColumnSpan="3"
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
+                            <StackLayout
+                                BindableLayout.ItemsSource="{Binding BuildingAmenityList}"
+								Margin="0,0,28,0"
+								HorizontalOptions="Start"
+								Orientation="Horizontal"
+								Spacing="16">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="0"
+											RowSpacing="16"
+											WidthRequest="190">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <ImageButton
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="148"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}" />
+
+                                            <StackLayout
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+                                                <Label 
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+													Text="{Binding AmenityName}"
+													TextColor="White"/>
+
+                                                <Label IsVisible="False"
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
                     </Grid>
                 </Grid>
             </ScrollView>
