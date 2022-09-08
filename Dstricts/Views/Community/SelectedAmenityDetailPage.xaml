@@ -15,8 +15,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
             <RowDefinition Height="21" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="16" />
+            <RowDefinition Height="55" />
+            <RowDefinition Height="11" />
             <RowDefinition Height="26" />
             <RowDefinition Height="8" />
             <RowDefinition Height="1" />
@@ -69,7 +69,7 @@
 		    FontFamily="PoppinsBoldFontFamily"
 		    FontSize="40"
 		    HorizontalTextAlignment="Start"
-		    Text="Pool"
+		    Text="{Binding CommunitySelectedAmenitiesInfoList.CommunityAminityName}"
 		    TextColor="White"
 		    VerticalTextAlignment="Center" />
 
@@ -93,33 +93,33 @@
             Opacity="0.10"
             BackgroundColor="White"/>
 
-        <StackLayout  
+        <ScrollView 
+            HorizontalScrollBarVisibility="Never" 
             Grid.Row="8"
             Grid.Column="1"
-		    Grid.ColumnSpan="3" 
-            Orientation="Horizontal" 
-            Spacing="22" 
-            HorizontalOptions="StartAndExpand">
-            <Button 
-                Text="Pool 1" 
-                TextColor="White" 
-                FontSize="12" 
-                BackgroundColor="#45C366" 
-                Padding="10,0,10,0" 
-                WidthRequest="74" 
-                CornerRadius="12" 
-                FontFamily="PoppinsSemiBoldFontFamily"/>
-
-            <Button 
-                Text="Children pool" 
-                TextColor="White" 
-                FontSize="12" 
-                BackgroundColor="#242A37" 
-                Padding="10,0,10,0" 
-                WidthRequest="122" 
-                CornerRadius="12" 
-                FontFamily="PoppinsSemiBoldFontFamily"/>
-        </StackLayout>
+		    Grid.ColumnSpan="3" >
+            <StackLayout
+                Orientation="Horizontal"
+                BindableLayout.ItemsSource="{Binding CommunityList}"
+                HorizontalOptions="StartAndExpand" Spacing="18">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Button 
+						    CornerRadius="10"
+						    Padding="10,0,10,0"
+						    FontSize="12"
+						    TextColor="White"
+						    FontFamily="PoppinsSemiBoldFontFamily"
+						    Text="{Binding AmenityName}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            HeightRequest="36"
+                            Clicked="OnCommunityListButtonClicked"
+						    BackgroundColor="{Binding ButtonBg}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
 
         <ScrollView  
             Padding="0,30,0,0"
@@ -138,6 +138,10 @@
                     <RowDefinition Height="29"/>
                     <RowDefinition Height="1"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+                    <RowDefinition Height="48"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="34"/>
                     <RowDefinition Height="1"/>
@@ -151,13 +155,45 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="28"/>
                 </Grid.ColumnDefinitions>
-                
-                <ImageButton 
+               
+                <ScrollView 
+                    HorizontalScrollBarVisibility="Never" 
                     Grid.Column="1"
-                    Grid.Row="0" 
-                    CornerRadius="12" 
-                    BackgroundColor="Black" 
-                    Aspect="AspectFill"/>
+                    Grid.Row="0" Orientation="Horizontal">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        BindableLayout.ItemsSource="{Binding CommunitySelectedAmenitiesInfoList.Images}"
+                        HorizontalOptions="StartAndExpand" Spacing="0">
+                        <BindableLayout.EmptyView>
+                            <Button 
+							    CornerRadius="12"
+                                Text="No image"
+                                TextColor="White"
+                                FontSize="16" 
+                                WidthRequest="{Binding NoImageWidth}"
+                                FontFamily="PoppinsRegularFontFamily"
+							    BackgroundColor="#242A37"/>
+                        </BindableLayout.EmptyView>
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="182"/>
+                                        <ColumnDefinition Width="18"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ImageButton 
+                                        Grid.Column="0"
+									    CornerRadius="12"
+                                        Aspect="AspectFill"
+                                        HeightRequest="148"
+                                        WidthRequest="182"
+                                        Source="{Binding ImagePath}"
+									    BackgroundColor="Transparent"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </ScrollView>
 
                 <Label
                     Grid.Column="1"
@@ -176,7 +212,7 @@
 			        FontFamily="PoppinsRegularFontFamily"
 			        FontSize="14"
                     MaxLines="3" LineBreakMode="TailTruncation"
-			        Text="Beskriv steg för steg var du var och vad du gjorde i systemet innan och fram till att felet uppstod? "
+			        Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityDescription}"
                     Padding="0" LineHeight="1.2"
                     HorizontalTextAlignment="Start"
                     VerticalTextAlignment="Center"
@@ -199,107 +235,158 @@
                     Opacity="0.10"
                     BackgroundColor="White"/>
 
-                <Grid RowSpacing="0" ColumnSpacing="0"  Grid.Column="1"  Grid.Row="9" Margin="68,0,0,0">
+                <Grid
+                    Margin="40,0,0,0"
+                    Grid.Column="1"  
+                    Grid.Row="9"
+                    RowSpacing="0" 
+                    ColumnSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="60"/>
                         <RowDefinition Height="1"/>
-                        
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="1"/>
-                        
-                        <RowDefinition Height="45"/>
-                        <RowDefinition Height="1"/>
-
-                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="65"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-
                     <Label
 			            Grid.Row="0"
                         Grid.Column="0"
 			            FontFamily="PoppinsRegularFontFamily"
 			            FontSize="14"
 			            Text="Months"
+                        Opacity="0.42"
                         HorizontalTextAlignment="Start"
                         VerticalTextAlignment="Center"
-			            TextColor="White" Opacity="0.42" />
+			            TextColor="White" />
 
                     <Label
 			            Grid.Row="0"
                         Grid.Column="1"
 			            FontFamily="PoppinsRegularFontFamily"
 			            FontSize="14"
-			            Text="Mar - Oct"
                         HorizontalTextAlignment="End"
                         VerticalTextAlignment="Center"
-			            TextColor="White" />
+			            TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityOpenMonth}"/>
+                                <Span Text=" - "/>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityCloseMonth}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
                     <BoxView  
+                        Grid.ColumnSpan="2"
                         Grid.Row="1"
                         Opacity="0.10"
-                        Grid.ColumnSpan="2"
                         BackgroundColor="White"/>
+                </Grid>
 
+                <Grid
+                    Margin="40,0,0,0"
+                    Grid.Column="1"  
+                    Grid.Row="10"
+                    RowSpacing="0" 
+                    ColumnSpacing="0"
+                    IsVisible="{Binding CommunitySelectedAmenitiesInfoList.IsAmenityHrsMonFri}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <Label
-			            Grid.Row="2"
+			            Grid.Row="0"
                         Grid.Column="0"
 			            FontFamily="PoppinsRegularFontFamily"
 			            FontSize="14"
-			            Text="Mon-Frid"
+			            Text="Mon-Fri"
+                        Opacity="0.42"
                         HorizontalTextAlignment="Start"
-                        VerticalTextAlignment="Center"
-			            TextColor="White" Opacity="0.42" />
-
-                    <Label
-			            Grid.Row="2"
-                        Grid.Column="1"
-			            FontFamily="PoppinsRegularFontFamily"
-			            FontSize="14"
-			            Text="10am-9:30am"
-                        HorizontalTextAlignment="End"
                         VerticalTextAlignment="Center"
 			            TextColor="White" />
 
+                    <Label
+			            Grid.Row="0"
+                        Grid.Column="1"
+			            FontFamily="PoppinsRegularFontFamily"
+			            FontSize="14"
+                        HorizontalTextAlignment="End"
+                        VerticalTextAlignment="Center"
+			            TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityHrsMonFriOpen}"/>
+                                <Span Text=" - "/>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityHrsMonFriClose}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
                     <BoxView  
-                        Grid.Row="3"
-                        Opacity="0.10"
                         Grid.ColumnSpan="2"
+                        Grid.Row="1"
+                        Opacity="0.10"
                         BackgroundColor="White"/>
+                </Grid>
 
+                <Grid
+                    Margin="40,0,0,0"
+                    Grid.Column="1"  
+                    Grid.Row="11"
+                    RowSpacing="0" 
+                    ColumnSpacing="0"
+                    IsVisible="{Binding CommunitySelectedAmenitiesInfoList.IsAmenityHrsSatSun}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <Label
-			            Grid.Row="4"
+			            Grid.Row="0"
                         Grid.Column="0"
 			            FontFamily="PoppinsRegularFontFamily"
 			            FontSize="14"
 			            Text="Sat-Sun"
+                        Opacity="0.42"
                         HorizontalTextAlignment="Start"
-                        VerticalTextAlignment="Center"
-			            TextColor="White" Opacity="0.42" />
-
-                    <Label
-			            Grid.Row="4"
-                        Grid.Column="1"
-			            FontFamily="PoppinsRegularFontFamily"
-			            FontSize="14"
-			            Text="10am-9:30am"
-                        HorizontalTextAlignment="End"
                         VerticalTextAlignment="Center"
 			            TextColor="White" />
 
+                    <Label
+			            Grid.Row="0"
+                        Grid.Column="1"
+			            FontFamily="PoppinsRegularFontFamily"
+			            FontSize="14"
+                        HorizontalTextAlignment="End"
+                        VerticalTextAlignment="Center"
+			            TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityHrsSatSunOpen}"/>
+                                <Span Text=" - "/>
+                                <Span Text="{Binding CommunitySelectedAmenitiesInfoList.AmenityHrsSatSunClose}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
                     <BoxView  
-                        Grid.Row="5"
                         Grid.ColumnSpan="2"
+                        Grid.Row="1"
                         Opacity="0.10"
                         BackgroundColor="White"/>
                 </Grid>
 
                 <Label
-                     Grid.Column="1"
-		            Grid.Row="10"
+                    Grid.Column="1"
+		            Grid.Row="13"
 		            FontAttributes="Bold"
 		            FontFamily="PoppinsBoldFontFamily"
 		            FontSize="20"
@@ -310,152 +397,102 @@
 
                 <BoxView 
                      Grid.Column="1"
-                    Grid.Row="12"
+                    Grid.Row="15"
                     Opacity="0.10"
                     BackgroundColor="White"/>
 
-                <StackLayout Grid.Row="14"  Grid.ColumnSpan="3" VerticalOptions="StartAndExpand" Spacing="0">
-                    <Grid RowSpacing="0" ColumnSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="28"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="28"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Column="1"
-		                    Grid.Row="0"
-		                    FontAttributes="Bold"
-		                    FontFamily="PoppinsMediumFontFamily"
-		                    FontSize="14"
-		                    HorizontalTextAlignment="Start"
-		                    Text="Shower before entering"
-		                    TextColor="#797A7D"
-		                    VerticalTextAlignment="Center" />
+                <StackLayout 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="17"
+                    VerticalOptions="StartAndExpand" 
+                    Spacing="0" 
+                    BindableLayout.ItemsSource="{Binding CommunitySelectedAmenitiesRulesInfo}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="28"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="28"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView BackgroundColor="{Binding RuleBg}" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2"/>
+                                <Label
+			                        Grid.Row="0"
+                                    Grid.Column="1"
+			                        FontFamily="PoppinsMediumFontFamily"
+			                        FontSize="14"
+			                        Text="{Binding RuleHeading}"
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center"
+			                        TextColor="White"
+                                    MaxLines="1"
+                                    LineBreakMode="TailTruncation" />
 
-                        <Label
-			                Grid.Row="0"
-			                Grid.Column="2"
-			                Padding="0"
-			                FontFamily="{StaticResource MaterialFontFamily}"
-			                FontSize="25"
-                            HorizontalTextAlignment="End"
-                            VerticalTextAlignment="Center" 
-			                Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
-			                TextColor="#797A7D"/>
+                                <Label
+			                        Grid.Row="0"
+			                        Grid.Column="2"
+			                        BackgroundColor="Transparent"
+			                        FontFamily="{StaticResource MaterialFontFamily}"
+			                        FontSize="25"
+			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+			                        TextColor="#B2B2B2"
+                                    IsVisible="{Binding IsShowSubRules, Converter={StaticResource InverseBoolConverter}}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnRuleTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
-                        <BoxView 
-                            Grid.Column="1"
-                            Grid.Row="3"
-                            Grid.ColumnSpan="2"
-                            Opacity="0.10"
-                            BackgroundColor="White"/>
-                    </Grid>
+                                <Label
+			                        Grid.Row="0"
+			                        Grid.Column="2"
+			                        BackgroundColor="Transparent"
+			                        FontFamily="{StaticResource MaterialFontFamily}"
+			                        FontSize="25"
+                                    IsVisible="{Binding IsShowSubRules}"
+			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronUp}"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+			                        TextColor="#4FD471">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnRuleTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
-                    <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="#242A37">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="28"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="28"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Column="1"
-		                    Grid.Row="0"
-		                    FontAttributes="Bold"
-		                    FontFamily="PoppinsMediumFontFamily"
-		                    FontSize="14"
-		                    HorizontalTextAlignment="Start"
-		                    Text="Privacy"
-		                    TextColor="#797A7D"
-		                    VerticalTextAlignment="Center" />
+                                <StackLayout
+                                    Spacing="0"
+                                    VerticalOptions="StartAndExpand" 
+                                    IsVisible="{Binding IsShowSubRules}"
+                                    BindableLayout.ItemsSource="{Binding SubRules}" 
+                                    Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label
+                                            Margin="0,0,0,18"
+			                                FontFamily="PoppinsMediumFontFamily"
+			                                FontSize="14"
+			                                Text="{Binding CommunityRule}"
+                                            HorizontalTextAlignment="Start"
+                                            VerticalTextAlignment="Start"
+			                                TextColor="#B2B2B2"
+                                            LineHeight="1.2" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
 
-                        <Label
-			                Grid.Row="0"
-			                Grid.Column="2"
-			                Padding="0"
-			                FontFamily="{StaticResource MaterialFontFamily}"
-			                FontSize="25"
-                            HorizontalTextAlignment="End"
-                            VerticalTextAlignment="Center" 
-			                Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronUp}"
-			                TextColor="#4FD471"/>
-
-                        <Label
-                            Grid.Column="1"
-		                    Grid.Row="2"
-		                    FontAttributes="Bold"
-		                    FontFamily="PoppinsRegularFontFamily"
-		                    FontSize="14" LineHeight="1.2"
-		                    HorizontalTextAlignment="Start"
-		                    Text="No activities shall be carried out in any part of the Master community that may unreasonable interfere with a resident right of privacy within that residents residence"
-		                    TextColor="#797A7D" Margin="0,0,0,20"
-		                    VerticalTextAlignment="Center" />
-
-                        <BoxView 
-                            Grid.Column="1"
-                            Grid.Row="3"
-                            Grid.ColumnSpan="2"
-                            Opacity="0.10"
-                            BackgroundColor="White"/>
-                    </Grid>
-
-                    <Grid RowSpacing="0" ColumnSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="1"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="28"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="28"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Column="1"
-		                    Grid.Row="0"
-		                    FontAttributes="Bold"
-		                    FontFamily="PoppinsMediumFontFamily"
-		                    FontSize="14"
-		                    HorizontalTextAlignment="Start"
-		                    Text="Community staff"
-		                    TextColor="#797A7D"
-		                    VerticalTextAlignment="Center" />
-
-                        <Label
-			                Grid.Row="0"
-			                Grid.Column="2"
-			                Padding="0"
-			                FontFamily="{StaticResource MaterialFontFamily}"
-			                FontSize="25"
-                            HorizontalTextAlignment="End"
-                            VerticalTextAlignment="Center" 
-			                Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
-			                TextColor="#797A7D"/>
-
-                        <BoxView 
-                            Grid.Column="1"
-                            Grid.Row="3"
-                            Grid.ColumnSpan="2"
-                            Opacity="0.10"
-                            BackgroundColor="White"/>
-                    </Grid>
+                                <BoxView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="#2F3135"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </StackLayout>
-               
             </Grid>
         </ScrollView>
     </Grid>

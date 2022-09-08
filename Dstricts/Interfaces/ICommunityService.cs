@@ -15,6 +15,7 @@ namespace Dstricts.Interfaces
         Task<Models.ApartmentCommunityAmenitiesResponse> ApartmentCommunityAmenitiesAsync(Models.ApartmentCommunityAmenitiesRequest request);
         Task<List<Models.CommunityAvailableTenantsInfoResponse>> CommunityAvailableTenantsInfoAsync(Models.CommunityAvailableTenantsInfoRequest request);
         Task<List<Models.SocietyRulesListResponse>> SocietyRulesListAsync(Models.SocietyRulesListRequest request);
-
+        Task<List<Models.CommunitySelectedAmenitiesRulesInfoResponse>> CommunitySelectedAmenitiesRulesInfoAsync(Models.CommunitySelectedAmenitiesRulesInfoRequest request);
+        Task<Models.CommunitySelectedAmenitiesInfoResponse> CommunitySelectedAmenitiesInfoAsync(Models.CommunitySelectedAmenitiesInfoRequest request);
     }
 }

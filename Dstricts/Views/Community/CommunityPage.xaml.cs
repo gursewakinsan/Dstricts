@@ -5,13 +5,13 @@ using Xamarin.Forms.Xaml;
 
 namespace Dstricts.Views.Community
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CommunityPage : ContentPage
-    {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class CommunityPage : ContentPage
+	{
 		CommunityPageViewModel viewModel;
 		public CommunityPage()
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
 			NavigationPage.SetBackButtonTitle(this, "");
 			BindingContext = viewModel = new CommunityPageViewModel(this.Navigation);
 		}
@@ -33,27 +33,72 @@ namespace Dstricts.Views.Community
 			BindableLayout.SetItemsSource(listThingsToDo, demos);*/
 		}
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
 			Application.Current.MainPage = new NavigationPage(new Views.Apartment.QloudIdApartmentDetailsPage(Helper.Helper.ApartmentCheckedIn));
 
 		}
 
-		#region On Amenity Item Clicked.
-		private async void OnAmenityImageClicked(object sender, EventArgs e)
-        {
-			await Navigation.PushAsync(new SelectedAmenityDetailPage());
-        }
-
-        private async void OnAmenityStackLayoutClicked(object sender, EventArgs e)
-        {
-			await Navigation.PushAsync(new SelectedAmenityDetailPage());
+		#region On Children Activities Clicked.
+		private void OnChildrenActivitiesImageClicked(object sender, EventArgs e)
+		{
+			ImageButton control = (ImageButton)sender;
+			OnChildrenActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
 		}
 
-        private async void OnAmenityLabelClicked(object sender, EventArgs e)
-        {
-			await Navigation.PushAsync(new SelectedAmenityDetailPage());
+		private void OnChildrenActivitiesStackLayoutClicked(object sender, EventArgs e)
+		{
+			StackLayout control = (StackLayout)sender;
+			OnChildrenActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
 		}
-        #endregion
+
+		private void OnChildrenActivitiesLabelClicked(object sender, EventArgs e)
+		{
+			Label control = (Label)sender;
+			OnChildrenActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+		async void OnChildrenActivitiesClicked(Models.ApartmentCommunity community)
+		{
+			foreach (var amenity in viewModel.CommunityChildrenAmenityList)
+			{
+				if (amenity.Id.Equals(community.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.CommunityChildrenAmenityList));
+		}
+		#endregion
+
+		#region On Adult Outdoor Activities Clicked.
+		private void OnAdultOutdoorActivitiesImageClicked(object sender, EventArgs e)
+		{
+			ImageButton control = (ImageButton)sender;
+			OnAdultOutdoorActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+		private void OnAdultOutdoorActivitiesStackLayoutClicked(object sender, EventArgs e)
+		{
+			StackLayout control = (StackLayout)sender;
+			OnAdultOutdoorActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+		private void OnAdultOutdoorActivitiesLabelClicked(object sender, EventArgs e)
+		{
+			Label control = (Label)sender;
+			OnAdultOutdoorActivitiesClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+		async void OnAdultOutdoorActivitiesClicked(Models.ApartmentCommunity community)
+		{
+			foreach (var amenity in viewModel.CommunityAmenityList)
+			{
+				if (amenity.Id.Equals(community.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.CommunityAmenityList));
+		}
+		#endregion
     }
 }

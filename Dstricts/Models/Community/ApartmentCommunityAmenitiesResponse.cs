@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace Dstricts.Models
 {
@@ -17,7 +18,7 @@ namespace Dstricts.Models
         public List<ApartmentCommunity> BuildingAmenityList { get; set; }
     }
 
-    public class ApartmentCommunity
+    public class ApartmentCommunity : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
@@ -35,5 +36,32 @@ namespace Dstricts.Models
         public int Community { get; set; }
 
         public int ItemWidth { get; set; }
+
+
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get => isSelected;
+            set
+            {
+                isSelected = value;
+                if (isSelected)
+                    ButtonBg = Color.FromHex("#45C366");
+                else
+                    ButtonBg = Color.FromHex("#242A37");
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
+        private Color buttonBg;
+        public Color ButtonBg
+        {
+            get => buttonBg;
+            set
+            {
+                buttonBg = value;
+                OnPropertyChanged("ButtonBg");
+            }
+        }
     }
 }

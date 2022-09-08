@@ -123,6 +123,8 @@
 		public const string ApartmentCommunityAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityAmenities";
 		public const string CommunityAvailableTenantsInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/communityAvailableTenantsInfo";
 		public const string SocietyRulesListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/societyRulesList";
+		public const string CommunitySelectedAmenitiesRulesInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/communitySelectedAmenitiesRulesInfo";
+		public const string CommunitySelectedAmenitiesInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/communitySelectedAmenitiesInfo";
 
 		//Invoice
 		public const string TenantInvoiceInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/tenantInvoiceInfo";

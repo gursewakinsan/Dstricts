@@ -1022,7 +1022,7 @@
 							FontSize="18"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
-							Text="Things to do"
+							Text="Adult outdoor activities"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
@@ -1079,7 +1079,7 @@
 												HeightRequest="148"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
-                                                Clicked="OnAmenityImageClicked"
+                                                Clicked="OnAdultOutdoorActivitiesImageClicked"
 												VerticalOptions="CenterAndExpand"
 												WidthRequest="{Binding ItemWidth}" />
 
@@ -1088,7 +1088,7 @@
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
                                                 <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="OnAmenityStackLayoutClicked"/>
+                                                    <TapGestureRecognizer Tapped="OnAdultOutdoorActivitiesStackLayoutClicked"/>
                                                 </StackLayout.GestureRecognizers>
                                                 <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
@@ -1096,7 +1096,7 @@
 													Text="{Binding AmenityName}"
 													TextColor="White">
                                                     <Label.GestureRecognizers>
-                                                        <TapGestureRecognizer Tapped="OnAmenityLabelClicked"/>
+                                                        <TapGestureRecognizer Tapped="OnAdultOutdoorActivitiesLabelClicked"/>
                                                     </Label.GestureRecognizers>
                                                 </Label>
 
@@ -1203,6 +1203,7 @@
 												HeightRequest="148"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
+                                                Clicked="OnChildrenActivitiesImageClicked"
 												VerticalOptions="CenterAndExpand"
 												WidthRequest="{Binding ItemWidth}" />
 
@@ -1210,11 +1211,18 @@
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnChildrenActivitiesStackLayoutClicked"/>
+                                                </StackLayout.GestureRecognizers>
                                                 <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
-													TextColor="White"/>
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnChildrenActivitiesLabelClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
 
                                                 <Label IsVisible="False"
 													Padding="0"
