@@ -145,7 +145,7 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="34"/>
                     <RowDefinition Height="1"/>
-                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="5"/>
                     <RowDefinition Height="auto"/>
 
                     <RowDefinition Height="50"/>
