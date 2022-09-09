@@ -99,6 +99,22 @@ namespace Dstricts.Views.Community
 			}
 			await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.CommunityAmenityList));
 		}
-		#endregion
+        #endregion
+
+        private void OnHowToContactListButtonClicked(object sender, EventArgs e)
+        {
+			Button control = sender as Button;
+			HowToContact model = control.BindingContext as HowToContact;
+			if (model.Id == 1)
+				viewModel.GoToTenantsPageCommand.Execute(null);
+		}
+
+        private void OnHowToContactListLabelClicked(object sender, EventArgs e)
+        {
+			Label control = sender as Label;
+			HowToContact model = control.BindingContext as HowToContact;
+			if (model.Id == 1)
+				viewModel.GoToTenantsPageCommand.Execute(null);
+		}
     }
 }

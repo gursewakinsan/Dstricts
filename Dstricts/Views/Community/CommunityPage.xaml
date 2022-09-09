@@ -492,24 +492,29 @@
                                                     <RowDefinition Height="63"/>
                                                 </Grid.RowDefinitions>
                                                 <Button
-														Grid.Row="0"
-														Grid.Column="0"
-														BorderWidth="2"
-														BorderColor="White"
-														CornerRadius="10"
-														Padding="0"
-														FontFamily="PoppinsRegularFontFamily"
-														BackgroundColor="Transparent"/>
+													Grid.Row="0"
+													Grid.Column="0"
+													BorderWidth="2"
+													BorderColor="White"
+													CornerRadius="10"
+													Padding="0"
+													Clicked="OnHowToContactListButtonClicked"
+													FontFamily="PoppinsRegularFontFamily"
+													BackgroundColor="Transparent"/>
 
                                                 <Label
-														VerticalTextAlignment="Center"
-														HorizontalTextAlignment="Center"
-														FontFamily="PoppinsRegularFontFamily"
-														FontSize="12"
-														Grid.Row="0"
-														Grid.Column="0"
-														Text="{Binding DisplayTitle}"
-														TextColor="White"/>
+													VerticalTextAlignment="Center"
+													HorizontalTextAlignment="Center"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													Grid.Row="0"
+													Grid.Column="0"
+													Text="{Binding DisplayTitle}"
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnHowToContactListLabelClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
                                             </Grid>
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
@@ -613,15 +618,15 @@
 
                             <RowDefinition Height="auto"/>
 
-                            <RowDefinition Height="44"/>
-                            <RowDefinition Height="13"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
 
-                            <RowDefinition Height="1"/>
-                            
-                            <RowDefinition Height="13"/>
-                            <RowDefinition Height="44"/>
-                            <RowDefinition Height="13"/>
-                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20"/>
@@ -778,7 +783,7 @@
 								BackgroundColor="#2A2A31" />
                         </Grid>
 
-                        <Label
+                        <Label IsVisible="False"
                             Grid.Row="7"
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
@@ -792,7 +797,7 @@
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Label
+                        <Label IsVisible="False"
                              Grid.Row="7"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
@@ -806,7 +811,7 @@
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Label
+                        <Label IsVisible="False"
                              Grid.Row="7"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
@@ -817,7 +822,7 @@
                             Opacity="0.70"
 							VerticalTextAlignment="Center"/>
 
-                        <BoxView
+                        <BoxView IsVisible="False"
                              HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
 							Grid.Row="9"
@@ -825,7 +830,7 @@
 							Grid.ColumnSpan="3"
 							BackgroundColor="#2A2A31" />
 
-                        <Label
+                        <Label IsVisible="False"
                             Grid.Row="11"
 							Grid.Column="0"
 							FontFamily="{StaticResource MaterialFontFamily}"
@@ -835,7 +840,7 @@
 							TextColor="#7090E0"
 							VerticalTextAlignment="Center"/>
 
-                        <Label
+                        <Label IsVisible="False"
                              Grid.Row="11"
 							Grid.Column="1"
 							FontFamily="PoppinsRegularFontFamily"
@@ -845,7 +850,7 @@
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
-                        <Label
+                        <Label IsVisible="False"
                              Grid.Row="11"
 							Grid.Column="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
@@ -856,7 +861,7 @@
                             Opacity="0.70"
 							VerticalTextAlignment="Center"/>
 
-                        <BoxView
+                        <BoxView IsVisible="False"
                             HorizontalOptions="EndAndExpand"
                             WidthRequest="256"
 							Grid.Row="13"

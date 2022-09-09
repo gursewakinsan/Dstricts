@@ -25,9 +25,9 @@ namespace Dstricts.ViewModels
 			else
 				ShowBookingTab = true;
 			HowToContactList = new List<HowToContact>();
-			HowToContactList.Add(new HowToContact() {DisplayTitle = $"Your{Environment.NewLine}Neighbour" });
-			HowToContactList.Add(new HowToContact() { DisplayTitle = $"Your{Environment.NewLine}Board" });
-			HowToContactList.Add(new HowToContact() { DisplayTitle = $"Your{Environment.NewLine}Security" });
+			HowToContactList.Add(new HowToContact() { Id = 1, DisplayTitle = $"Your{Environment.NewLine}Neighbour" });
+			HowToContactList.Add(new HowToContact() { Id = 2, DisplayTitle = $"Your{Environment.NewLine}Board" });
+			HowToContactList.Add(new HowToContact() { Id = 3, DisplayTitle = $"Your{Environment.NewLine}Security" });
 		}
 		#endregion
 
@@ -343,5 +343,6 @@ namespace Dstricts.ViewModels
 
 public class HowToContact
 {
+    public int Id { get; set; }
     public string DisplayTitle { get; set; }
 }
