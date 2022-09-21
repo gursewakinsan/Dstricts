@@ -153,19 +153,21 @@ namespace Dstricts.ViewModels
 			});
 			TrashAndRecycle = trashAndRecycle;
 
+			int dWidth = App.ScreenWidth - 56;
+			int width = dWidth * 90 / 100;
 			var storageList = new List<Models.ApartmentCommunity>();
 			storageList.Add(new Models.ApartmentCommunity()
 			{
 				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/6.png",
 				AmenityName = "Bicycle room",
-				ItemWidth = App.ScreenWidth - 56
+				ItemWidth = width
 			});
 
 			storageList.Add(new Models.ApartmentCommunity()
 			{
 				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/5.png",
 				AmenityName = "Stroller",
-				ItemWidth = App.ScreenWidth - 56
+				ItemWidth = width
 			});
 			StorageList = storageList;
 

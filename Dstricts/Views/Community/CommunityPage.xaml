@@ -1859,6 +1859,8 @@
 							Orientation="Horizontal">
                             <StackLayout
                                 BindableLayout.ItemsSource="{Binding StorageList}"
+                                HorizontalOptions="Start"
+                                Margin="0,0,28,0"
 								Orientation="Horizontal"
 								Spacing="16">
                                 <BindableLayout.ItemTemplate>
@@ -1871,9 +1873,6 @@
                                                 <RowDefinition Height="148" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="{Binding ItemWidth}"/>
-                                            </Grid.ColumnDefinitions>
                                             <ImageButton
 												Grid.Row="0"
 												Aspect="AspectFill"
