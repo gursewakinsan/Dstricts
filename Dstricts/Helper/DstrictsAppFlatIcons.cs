@@ -82,5 +82,6 @@
 		public const string WallSconceRound = "\U000f0748";
 		public const string CellphoneIphone = "\U000f0120";
 		public const string Settings = "\U000f0493";
+		public const string FlagOutline = "\U000f023d";
 	}
 }

@@ -126,6 +126,49 @@ namespace Dstricts.ViewModels
 			});
 			IsCommunityRules = SocietyRulesList?.Count > 0 ? true : false;
 
+			var eatAndDrinkList = new List<Models.ApartmentCommunity>();
+			eatAndDrinkList.Add(new Models.ApartmentCommunity()
+			{
+				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/3.png",
+				AmenityName = "Cocktail Bar",
+				ItemWidth = App.ScreenWidth - 56
+			});
+			EatAndDrinkList = eatAndDrinkList;
+
+			var parkeringList = new List<Models.ApartmentCommunity>();
+			parkeringList.Add(new Models.ApartmentCommunity()
+			{
+				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/8.png",
+				AmenityName = "Garage",
+				ItemWidth = App.ScreenWidth - 56
+			});
+			ParkeringList = parkeringList;
+
+			var trashAndRecycle = new List<Models.ApartmentCommunity>();
+			trashAndRecycle.Add(new Models.ApartmentCommunity()
+			{
+				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/7.png",
+				AmenityName = "Trash & Recycle",
+				ItemWidth = App.ScreenWidth - 56
+			});
+			TrashAndRecycle = trashAndRecycle;
+
+			var storageList = new List<Models.ApartmentCommunity>();
+			storageList.Add(new Models.ApartmentCommunity()
+			{
+				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/6.png",
+				AmenityName = "Bicycle room",
+				ItemWidth = App.ScreenWidth - 56
+			});
+
+			storageList.Add(new Models.ApartmentCommunity()
+			{
+				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/5.png",
+				AmenityName = "Stroller",
+				ItemWidth = App.ScreenWidth - 56
+			});
+			StorageList = storageList;
+
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -280,6 +323,50 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private List<Models.ApartmentCommunity> eatAndDrinkList;
+		public List<Models.ApartmentCommunity> EatAndDrinkList
+		{
+			get => eatAndDrinkList;
+			set
+			{
+				eatAndDrinkList = value;
+				OnPropertyChanged("EatAndDrinkList");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> parkeringList;
+		public List<Models.ApartmentCommunity> ParkeringList
+		{
+			get => parkeringList;
+			set
+			{
+				parkeringList = value;
+				OnPropertyChanged("ParkeringList");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> trashAndRecycle;
+		public List<Models.ApartmentCommunity> TrashAndRecycle
+		{
+			get => trashAndRecycle;
+			set
+			{
+				trashAndRecycle = value;
+				OnPropertyChanged("TrashAndRecycle");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> storageList;
+		public List<Models.ApartmentCommunity> StorageList
+		{
+			get => storageList;
+			set
+			{
+				storageList = value;
+				OnPropertyChanged("StorageList");
+			}
+		}
+
 		private bool isBookAvailable;
 		public bool IsBookAvailable
 		{
@@ -337,6 +424,9 @@ namespace Dstricts.ViewModels
 		}
 		public string DisplayPropertyNickName => Helper.Helper.PropertyNickName;
 		public List<Models.SocietyRulesListResponse> SocietyRulesList { get; set; }
+
+		public string Bracelet => "https://www.qloudid.com/html/usercontent/images/amenities/bg/2.png";
+		public string TheTag => "https://www.qloudid.com/html/usercontent/images/amenities/bg/1.png";
 		#endregion
 	}
 }
