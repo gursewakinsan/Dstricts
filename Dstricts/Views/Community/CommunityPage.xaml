@@ -50,6 +50,7 @@
             MaxLines="1"
             LineBreakMode="TailTruncation"
 			VerticalTextAlignment="Center" />
+        
 		<Label
 			Grid.Row="0"
 			Grid.Column="2"
@@ -276,7 +277,7 @@
                         <RowDefinition Height="20" />
                         <RowDefinition Height="0" />
                         <RowDefinition Height="0" />
-                        <RowDefinition Height="278" />
+                        <RowDefinition Height="255" />
                         <RowDefinition Height="51" />
                         <RowDefinition Height="36" />
                         <RowDefinition Height="7" />
@@ -1159,14 +1160,14 @@
 											RowSpacing="27"
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="146" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <ImageButton
 												Grid.Row="0"
 												Aspect="AspectFill"
 												CornerRadius="12"
-												HeightRequest="148"
+												HeightRequest="146"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
@@ -1272,7 +1273,7 @@
 											RowSpacing="27"
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="200" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
@@ -1282,7 +1283,7 @@
 												Grid.Row="0"
 												Aspect="AspectFill"
 												CornerRadius="12"
-												HeightRequest="148"
+												HeightRequest="200"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
@@ -1388,7 +1389,7 @@
 											RowSpacing="27"
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="200" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
@@ -1398,7 +1399,7 @@
 												Grid.Row="0"
 												Aspect="AspectFill"
 												CornerRadius="12"
-												HeightRequest="148"
+												HeightRequest="200"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
@@ -1983,7 +1984,7 @@
 											RowSpacing="27"
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="148" />
+                                                <RowDefinition Height="168" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
@@ -1993,7 +1994,7 @@
 												Grid.Row="0"
 												Aspect="AspectFill"
 												CornerRadius="12"
-												HeightRequest="148"
+												HeightRequest="168"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
