@@ -278,7 +278,7 @@
                         <RowDefinition Height="0" />
                         <RowDefinition Height="0" />
                         <RowDefinition Height="255" />
-                        <RowDefinition Height="51" />
+                        <RowDefinition Height="55" />
                         <RowDefinition Height="36" />
                         <RowDefinition Height="7" />
                         <RowDefinition Height="78" />
@@ -434,7 +434,7 @@
 							Grid.Row="0"
                             Grid.Column="0" 
                             Grid.ColumnSpan="6" 
-							Padding="0,35,0,0"
+							Padding="0,40,0,0"
 							BackgroundColor="#1B1D24"
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
@@ -448,9 +448,9 @@
                         <Grid RowSpacing="0" ColumnSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
-                                <RowDefinition Height="5"/>
-                                <RowDefinition Height="42"/>
-                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="9"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="28"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="44"/>
                                 <RowDefinition Height="1"/>
@@ -475,7 +475,7 @@
 									Grid.Row="2"
 									Grid.Column="1"
 									FontFamily="PoppinsRegularFontFamily"
-									FontSize="14" LineHeight="1.1"
+									FontSize="14" LineHeight="1.2"
 									HorizontalTextAlignment="Start"
 									Opacity="0.42"
 									Text="Dont forget to wear community bracelet and the tag on common areas at all times."
@@ -1329,7 +1329,7 @@
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="40"/>
                             <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -1390,7 +1390,7 @@
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="200" />
-                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="20" />
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="{Binding ItemWidth}"/>
@@ -1809,7 +1809,7 @@
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="40"/>
                             <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -1872,7 +1872,7 @@
 											WidthRequest="190">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="148" />
-                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="20" />
                                             </Grid.RowDefinitions>
                                             <ImageButton
 												Grid.Row="0"
