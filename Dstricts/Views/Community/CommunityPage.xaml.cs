@@ -116,5 +116,37 @@ namespace Dstricts.Views.Community
 			if (model.Id == 1)
 				viewModel.GoToTenantsPageCommand.Execute(null);
 		}
-    }
+
+		#region On Eat & Drink Image Clicked
+		private void OnEatAndDrinkImageClicked(object sender, EventArgs e)
+        {
+			ImageButton control = (ImageButton)sender;
+			OnEatAndDrinkClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+        private void OnEatAndDrinkStackLayoutClicked(object sender, EventArgs e)
+        {
+			StackLayout control = (StackLayout)sender;
+			OnEatAndDrinkClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+        private void OnEatAndDrinkLabelClicked(object sender, EventArgs e)
+        {
+			Label control = (Label)sender;
+			OnEatAndDrinkClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+		async void OnEatAndDrinkClicked(Models.ApartmentCommunity community)
+		{
+			foreach (var amenity in viewModel.EatAndDrinkList)
+			{
+				if (amenity.Id.Equals(community.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.EatAndDrinkList));
+		}
+		#endregion
+	}
 }

@@ -164,7 +164,7 @@
                     <StackLayout
                         Orientation="Horizontal"
                         BindableLayout.ItemsSource="{Binding CommunitySelectedAmenitiesInfoList.Images}"
-                        HorizontalOptions="StartAndExpand" Spacing="0">
+                        HorizontalOptions="FillAndExpand" Spacing="0">
                         <BindableLayout.EmptyView>
                             <Button 
 							    CornerRadius="12"
@@ -179,15 +179,15 @@
                             <DataTemplate>
                                 <Grid ColumnSpacing="0">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="182"/>
+                                        <ColumnDefinition Width="{Binding ItemWidth}"/>
                                         <ColumnDefinition Width="18"/>
                                     </Grid.ColumnDefinitions>
-                                    <ImageButton 
+                                    <ImageButton HorizontalOptions="FillAndExpand"
                                         Grid.Column="0"
 									    CornerRadius="12"
                                         Aspect="AspectFill"
                                         HeightRequest="148"
-                                        WidthRequest="182"
+                                        WidthRequest="{Binding ItemWidth}"
                                         Source="{Binding ImagePath}"
 									    BackgroundColor="Transparent"/>
                                 </Grid>

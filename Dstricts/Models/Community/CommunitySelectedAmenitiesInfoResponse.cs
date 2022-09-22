@@ -65,5 +65,6 @@ namespace Dstricts.Models
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "image_path")]
         public string ImagePath { get; set; }
+        public int ItemWidth { get; set; }
     }
 }

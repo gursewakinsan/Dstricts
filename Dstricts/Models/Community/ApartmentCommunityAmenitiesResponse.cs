@@ -16,6 +16,9 @@ namespace Dstricts.Models
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "building_amenity")]
         public List<ApartmentCommunity> BuildingAmenityList { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "community_eat_drink_amenity")]
+        public List<ApartmentCommunity> CommunityEatDrinkAmenityList { get; set; }
     }
 
     public class ApartmentCommunity : BaseModel

@@ -110,15 +110,20 @@ namespace Dstricts.ViewModels
 				foreach (var item in responseApartmentCommunityAmenities.BuildingAmenityList)
 					item.ItemWidth = imgWidth;
 
+				foreach (var item in responseApartmentCommunityAmenities.CommunityEatDrinkAmenityList)
+					item.ItemWidth = imgWidth+38;
+
 				ApartmentCommunityBookList = responseApartmentCommunityAmenities.BookList;
 				CommunityAmenityList = responseApartmentCommunityAmenities.CommunityAmenityList;
 				CommunityChildrenAmenityList = responseApartmentCommunityAmenities.CommunityChildrenAmenityList;
 				BuildingAmenityList = responseApartmentCommunityAmenities.BuildingAmenityList;
+				EatAndDrinkList = responseApartmentCommunityAmenities.CommunityEatDrinkAmenityList;
 			}
 			IsBookAvailable = ApartmentCommunityBookList?.Count > 0 ? true : false;
 			IsThingsToDoAvailable = CommunityAmenityList?.Count > 0 ? true : false;
 			IsCommunityChildrenAmenityList = CommunityChildrenAmenityList?.Count > 0 ? true : false;
 			IsBuildingAmenityList = BuildingAmenityList?.Count > 0 ? true : false;
+			IsEatDrinkAmenityList = EatAndDrinkList?.Count > 0 ? true : false;
 
 			SocietyRulesList = await service.SocietyRulesListAsync(new Models.SocietyRulesListRequest()
 			{
@@ -126,14 +131,14 @@ namespace Dstricts.ViewModels
 			});
 			IsCommunityRules = SocietyRulesList?.Count > 0 ? true : false;
 
-			var eatAndDrinkList = new List<Models.ApartmentCommunity>();
+			/*var eatAndDrinkList = new List<Models.ApartmentCommunity>();
 			eatAndDrinkList.Add(new Models.ApartmentCommunity()
 			{
 				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/3.png",
 				AmenityName = "Cocktail Bar",
 				ItemWidth = App.ScreenWidth - 56
 			});
-			EatAndDrinkList = eatAndDrinkList;
+			EatAndDrinkList = eatAndDrinkList;*/
 
 			var parkeringList = new List<Models.ApartmentCommunity>();
 			parkeringList.Add(new Models.ApartmentCommunity()
@@ -311,6 +316,17 @@ namespace Dstricts.ViewModels
 			{
 				isBuildingAmenityList = value;
 				OnPropertyChanged("IsBuildingAmenityList");
+			}
+		}
+
+		private bool isEatDrinkAmenityList;
+		public bool IsEatDrinkAmenityList
+		{
+			get => isEatDrinkAmenityList;
+			set
+			{
+				isEatDrinkAmenityList = value;
+				OnPropertyChanged("IsEatDrinkAmenityList");
 			}
 		}
 

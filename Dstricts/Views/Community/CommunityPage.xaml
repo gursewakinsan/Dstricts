@@ -1208,7 +1208,8 @@
                         ColumnSpacing="0"
                         Grid.Row="16"
 						Grid.Column="1"
-						Grid.ColumnSpan="5">
+						Grid.ColumnSpan="5" 
+                        IsVisible="{Binding IsEatDrinkAmenityList}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
@@ -1258,7 +1259,7 @@
 							VerticalTextAlignment="Start"/>
 
                         <ScrollView
-                            Grid.ColumnSpan="2"
+                            Grid.ColumnSpan="3"
 							Grid.Row="2"
 							HorizontalScrollBarVisibility="Never"
 							Orientation="Horizontal">
@@ -1287,17 +1288,25 @@
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
+                                                Clicked="OnEatAndDrinkImageClicked"
 												WidthRequest="{Binding ItemWidth}" />
 
                                             <StackLayout
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnEatAndDrinkStackLayoutClicked"/>
+                                                </StackLayout.GestureRecognizers>
                                                 <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
-													TextColor="White" />
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnEatAndDrinkStackLayoutClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
 
                                                 <Label IsVisible="False"
 													Padding="0"
@@ -2026,7 +2035,7 @@
                             </StackLayout>
                         </ScrollView>
 
-                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                        <BoxView Grid.Row="4" IsVisible="False" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
                     </Grid>
                 </Grid>
             </ScrollView>

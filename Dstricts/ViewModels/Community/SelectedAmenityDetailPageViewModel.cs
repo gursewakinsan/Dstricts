@@ -27,10 +27,14 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ICommunityService service = new CommunityService();
-			CommunitySelectedAmenitiesInfoList = await service.CommunitySelectedAmenitiesInfoAsync(new Models.CommunitySelectedAmenitiesInfoRequest()
+			var communitySelectedAmenitiesInfoList = await service.CommunitySelectedAmenitiesInfoAsync(new Models.CommunitySelectedAmenitiesInfoRequest()
 			{
 				CommunityDetailId = CommunityDetailId
 			});
+			if (communitySelectedAmenitiesInfoList?.Images?.Count == 1)
+				communitySelectedAmenitiesInfoList.Images[0].ItemWidth = App.ScreenWidth - 50;
+			CommunitySelectedAmenitiesInfoList = communitySelectedAmenitiesInfoList;
+
 			CommunitySelectedAmenitiesRulesInfo = await service.CommunitySelectedAmenitiesRulesInfoAsync(new Models.CommunitySelectedAmenitiesRulesInfoRequest()
 			{
 				CommunityDetailId = CommunityDetailId
