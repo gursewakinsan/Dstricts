@@ -140,14 +140,36 @@ namespace Dstricts.ViewModels
 			});
 			EatAndDrinkList = eatAndDrinkList;*/
 
-			var parkeringList = new List<Models.ApartmentCommunity>();
+
+			var parkeringList = await service.ApartmentCommunityParkingsAsync(new Models.CommunityAvailableTenantsInfoRequest()
+			{
+				CommunityId = Helper.Helper.CommunityId
+			});
+			if (parkeringList?.Count > 0)
+			{
+				if (parkeringList.Count == 1)
+				{
+					parkeringList[0].ItemWidth = App.ScreenWidth - 50;
+				}
+				else
+				{
+					int deviceWidth = App.ScreenWidth - 56;
+					int imgWidth = deviceWidth * 90 / 100;
+					foreach (var item in parkeringList)
+						item.ItemWidth = imgWidth;
+				}
+			}
+			ParkeringList = parkeringList;
+			IsParkeringList = ParkeringList?.Count > 0 ? true : false;
+
+			/*var parkeringList = new List<Models.ApartmentCommunity>();
 			parkeringList.Add(new Models.ApartmentCommunity()
 			{
 				ImagePath = "https://www.qloudid.com/html/usercontent/images/amenities/bg/8.png",
 				AmenityName = "Garage",
 				ItemWidth = App.ScreenWidth - 56
 			});
-			ParkeringList = parkeringList;
+			ParkeringList = parkeringList;*/
 
 			var trashAndRecycle = new List<Models.ApartmentCommunity>();
 			trashAndRecycle.Add(new Models.ApartmentCommunity()
@@ -330,6 +352,17 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private bool isParkeringList;
+		public bool IsParkeringList
+		{
+			get => isParkeringList;
+			set
+			{
+				isParkeringList = value;
+				OnPropertyChanged("IsParkeringList");
+			}
+		}
+
 		private List<Models.ApartmentCommunity> communityAmenityList;
 		public List<Models.ApartmentCommunity> CommunityAmenityList
 		{
@@ -352,8 +385,8 @@ namespace Dstricts.ViewModels
 			}
 		}
 
-		private List<Models.ApartmentCommunity> parkeringList;
-		public List<Models.ApartmentCommunity> ParkeringList
+		private List<Models.ApartmentCommunityParkingsResponse> parkeringList;
+		public List<Models.ApartmentCommunityParkingsResponse> ParkeringList
 		{
 			get => parkeringList;
 			set

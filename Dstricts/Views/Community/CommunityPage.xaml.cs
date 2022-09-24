@@ -117,7 +117,7 @@ namespace Dstricts.Views.Community
 				viewModel.GoToTenantsPageCommand.Execute(null);
 		}
 
-		#region On Eat & Drink Image Clicked
+		#region On Eat & Drink Image Clicked.
 		private void OnEatAndDrinkImageClicked(object sender, EventArgs e)
         {
 			ImageButton control = (ImageButton)sender;
@@ -146,6 +146,38 @@ namespace Dstricts.Views.Community
 					amenity.IsSelected = false;
 			}
 			await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.EatAndDrinkList));
+		}
+		#endregion
+
+		#region On Parkering Image Clicked
+		private void OnImageButtonParkeringListClicked(object sender, EventArgs e)
+        {
+			ImageButton control = (ImageButton)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+        private void OnStackLayoutParkeringListClicked(object sender, EventArgs e)
+        {
+			StackLayout control = (StackLayout)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+        private void OnLabelParkeringListClicked(object sender, EventArgs e)
+        {
+			Label control = (Label)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+		async void OnParkeringClicked(Models.ApartmentCommunityParkingsResponse parking)
+		{
+			foreach (var amenity in viewModel.ParkeringList)
+			{
+				if (amenity.Id.Equals(parking.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new SelectedParkingDetailPage(viewModel.ParkeringList));
 		}
 		#endregion
 	}

@@ -1328,6 +1328,7 @@
                     </Grid>
 
                     <Grid 
+                        IsVisible="{Binding IsParkeringList}"
                         Margin="0,40,0,0"
                         RowSpacing="0"
                         ColumnSpacing="0"
@@ -1412,17 +1413,25 @@
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
 												VerticalOptions="CenterAndExpand"
-												WidthRequest="{Binding ItemWidth}" />
+												WidthRequest="{Binding ItemWidth}" 
+                                                Clicked="OnImageButtonParkeringListClicked"/>
 
                                             <StackLayout
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnStackLayoutParkeringListClicked"/>
+                                                </StackLayout.GestureRecognizers>
                                                 <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
-													Text="{Binding AmenityName}"
-													TextColor="White" />
+													Text="{Binding BuildingName}"
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnLabelParkeringListClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
 
                                                 <Label IsVisible="False"
 													Padding="0"
