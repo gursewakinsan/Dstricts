@@ -1078,7 +1078,7 @@
 						Grid.Column="1"
 						Grid.ColumnSpan="4"
 						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
+						FontSize="24"
 						HorizontalTextAlignment="Start"
 						MaxLines="1"
 						Text="Guests perks"
@@ -1384,7 +1384,7 @@
 							VerticalTextAlignment="Start"/>
 
                         <ScrollView
-                            Grid.ColumnSpan="2"
+                            Grid.ColumnSpan="3"
 							Grid.Row="2"
 							HorizontalScrollBarVisibility="Never"
 							Orientation="Horizontal">
@@ -1402,9 +1402,6 @@
                                                 <RowDefinition Height="200" />
                                                 <RowDefinition Height="20" />
                                             </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="{Binding ItemWidth}"/>
-                                            </Grid.ColumnDefinitions>
                                             <ImageButton
 												Grid.Row="0"
 												Aspect="AspectFill"
