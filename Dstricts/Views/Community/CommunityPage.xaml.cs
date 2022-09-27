@@ -185,31 +185,46 @@ namespace Dstricts.Views.Community
 		private void OnFitnessCenterImageButtonClicked(object sender, EventArgs e)
         {
 			ImageButton control = (ImageButton)sender;
-			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
 		}
 
         private void OnFitnessCenterStackLayoutClicked(object sender, EventArgs e)
         {
 			StackLayout control = (StackLayout)sender;
-			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
 		}
 
         private void OnFitnessCenterLabelClicked(object sender, EventArgs e)
         {
 			Label control = (Label)sender;
-			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
 		}
 
-		async void OnFitnessCenterClicked(Models.ApartmentCommunity community)
+		async void OnFitnessCenterClicked(Models.ApartmentCommunity community, string selectedApartment)
 		{
-			foreach (var amenity in viewModel.BuildingAmenityList)
-			{
-				if (amenity.Id.Equals(community.Id))
-					amenity.IsSelected = true;
-				else
-					amenity.IsSelected = false;
+            switch (selectedApartment)
+            {
+				case "BookAmenities":
+					foreach (var amenity in viewModel.ApartmentCommunityBookList)
+					{
+						if (amenity.Id.Equals(community.Id))
+							amenity.IsSelected = true;
+						else
+							amenity.IsSelected = false;
+					}
+					await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.ApartmentCommunityBookList));
+					break;
+				case "FitnessCenter":
+					foreach (var amenity in viewModel.BuildingAmenityList)
+					{
+						if (amenity.Id.Equals(community.Id))
+							amenity.IsSelected = true;
+						else
+							amenity.IsSelected = false;
+					}
+					await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.BuildingAmenityList));
+					break;
 			}
-			await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.BuildingAmenityList));
 		}
 		#endregion
 	}
