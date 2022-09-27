@@ -180,5 +180,37 @@ namespace Dstricts.Views.Community
 			await Navigation.PushAsync(new SelectedParkingDetailPage(viewModel.ParkeringList));
 		}
 		#endregion
+
+		#region On Fitness Center Image Clicked
+		private void OnFitnessCenterImageButtonClicked(object sender, EventArgs e)
+        {
+			ImageButton control = (ImageButton)sender;
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+        private void OnFitnessCenterStackLayoutClicked(object sender, EventArgs e)
+        {
+			StackLayout control = (StackLayout)sender;
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+        private void OnFitnessCenterLabelClicked(object sender, EventArgs e)
+        {
+			Label control = (Label)sender;
+			OnFitnessCenterClicked(control.BindingContext as Models.ApartmentCommunity);
+		}
+
+		async void OnFitnessCenterClicked(Models.ApartmentCommunity community)
+		{
+			foreach (var amenity in viewModel.BuildingAmenityList)
+			{
+				if (amenity.Id.Equals(community.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.BuildingAmenityList));
+		}
+		#endregion
 	}
 }

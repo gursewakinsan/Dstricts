@@ -1533,6 +1533,7 @@
 												HeightRequest="148"
 												HorizontalOptions="CenterAndExpand"
 												Source="{Binding ImagePath}"
+                                                Clicked="OnFitnessCenterImageButtonClicked"
 												VerticalOptions="CenterAndExpand"
 												WidthRequest="{Binding ItemWidth}" />
 
@@ -1540,11 +1541,18 @@
 												Grid.Row="1"
 												HorizontalOptions="StartAndExpand"
 												Spacing="2">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnFitnessCenterStackLayoutClicked"/>
+                                                </StackLayout.GestureRecognizers>
                                                 <Label 
 													FontFamily="PoppinsSemiBoldFontFamily"
 													FontSize="14"
 													Text="{Binding AmenityName}"
-													TextColor="White"/>
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnFitnessCenterLabelClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
 
                                                 <Label IsVisible="False"
 													Padding="0"

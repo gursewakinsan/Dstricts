@@ -127,6 +127,7 @@
 		public const string CommunitySelectedAmenitiesInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/communitySelectedAmenitiesInfo";
 		public const string ApartmentCommunityParkingsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentCommunityParkings";
 		public const string BuildingSelectedParkingInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/buildingSelectedParkingInfo";
+		public const string BuildingSelectedAmenitiesInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/buildingSelectedAmenitiesInfo";
 
 		//Invoice
 		public const string TenantInvoiceInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/tenantInvoiceInfo";

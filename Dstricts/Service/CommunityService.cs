@@ -133,6 +133,15 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<Models.BuildingSelectedAmenitiesInfoResponse> BuildingSelectedAmenitiesInfoAsync(Models.BuildingSelectedAmenitiesInfoRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<Models.BuildingSelectedAmenitiesInfoResponse>(HttpWebRequest.Create(string.Format(EndPointsList.BuildingSelectedAmenitiesInfoUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }
 
