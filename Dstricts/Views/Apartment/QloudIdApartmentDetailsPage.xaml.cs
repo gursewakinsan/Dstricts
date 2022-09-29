@@ -108,7 +108,7 @@ namespace Dstricts.Views.Apartment
 						else
 							amenity.IsSelected = false;
 					}
-					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.AmenitiesListInfo));
+					await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.AmenitiesListInfo));
 					break;
 
 				case "Storage":
@@ -119,7 +119,7 @@ namespace Dstricts.Views.Apartment
 						else
 							amenity.IsSelected = false;
 					}
-					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.StorageAmenitiesListInfo));
+					await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.StorageAmenitiesListInfo));
 					break;
 
 				case "TrashAndRecycle":
@@ -130,7 +130,7 @@ namespace Dstricts.Views.Apartment
 						else
 							amenity.IsSelected = false;
 					}
-					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.TrashRecycleListInfo));
+					await Navigation.PushAsync(new BuildingSelectedAmenitiesInfoPage(viewModel.TrashRecycleListInfo));
 					break;
 			}
 		}

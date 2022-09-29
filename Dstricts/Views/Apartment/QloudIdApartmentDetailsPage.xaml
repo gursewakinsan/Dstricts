@@ -1112,6 +1112,7 @@
 													Source="{Binding ImagePath}"
 													VerticalOptions="CenterAndExpand"
 													ClassId="Amenities"
+                                                    BackgroundColor="Transparent"
 													Clicked="OnAmenitiesImageButtonClicked"
 													WidthRequest="{Binding ItemWidth}" />
 
@@ -1219,7 +1220,8 @@
                                                     <RowDefinition Height="20" />
                                                 </Grid.RowDefinitions>
                                                 <ImageButton
-													Grid.Row="0" BackgroundColor="Red"
+													Grid.Row="0" 
+                                                    BackgroundColor="Transparent"
 													Aspect="AspectFill"
 													CornerRadius="12"
 													HeightRequest="200"
@@ -1339,6 +1341,7 @@
 													Source="{Binding ImagePath}"
 													VerticalOptions="CenterAndExpand"
 													ClassId="Storage"
+                                                    BackgroundColor="Transparent"
 													Clicked="OnAmenitiesImageButtonClicked"
 													WidthRequest="{Binding ItemWidth}" />
 
@@ -1456,6 +1459,7 @@
 													Source="{Binding ImagePath}"
 													VerticalOptions="CenterAndExpand"
 													ClassId="TrashAndRecycle"
+                                                    BackgroundColor="Transparent"
 													Clicked="OnAmenitiesImageButtonClicked"
 													WidthRequest="{Binding ItemWidth}" />
 
