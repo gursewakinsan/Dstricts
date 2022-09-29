@@ -317,7 +317,7 @@
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
 							IsClippedToBounds="True"
-							IsVisible="{Binding SelectedCheckedIn.IsOwner, Converter={StaticResource InverseBoolConverter}}">
+							IsVisible="{Binding SelectedCheckedIn.IsGuest, Converter={StaticResource InverseBoolConverter}}">
                             <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,0.5">
                                     <GradientStop Offset="0.1" Color="#5E5F67" />
@@ -414,7 +414,7 @@
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
 							IsClippedToBounds="True"
-							IsVisible="{Binding SelectedCheckedIn.IsOwner}">
+							IsVisible="{Binding SelectedCheckedIn.IsGuest}">
                             <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,0.5">
                                     <GradientStop Offset="0.1" Color="#5E5F67" />
