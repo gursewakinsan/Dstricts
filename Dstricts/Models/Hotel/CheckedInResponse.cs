@@ -29,6 +29,12 @@
 		[Newtonsoft.Json.JsonProperty(PropertyName = "guest")]
 		public bool IsGuest { get; set; }
 
+		[Newtonsoft.Json.JsonProperty(PropertyName = "building_id")]
+		public int BuildingId { get; set; }
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "is_owner")]
+		public bool IsOwner { get; set; }
+
 		public string FirstLetterName => System.Globalization.StringInfo.GetNextTextElement(PropertyNickName, 0).ToUpper();
 
 		private string firstLetterBg;

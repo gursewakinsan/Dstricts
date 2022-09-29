@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
+using Dstricts.Views.Community;
 
 namespace Dstricts.Views.Apartment
 {
@@ -74,6 +75,97 @@ namespace Dstricts.Views.Apartment
 			}
 			await Navigation.PushAsync(new HowToSwitchPage(viewModel.HowToUseInfo));
 		}
-        #endregion
-    }
+		#endregion
+
+		#region On Amenities Clicked.
+		private void OnAmenitiesImageButtonClicked(object sender, System.EventArgs e)
+        {
+			ImageButton control = (ImageButton)sender;
+			OnAmenitiesClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
+		}
+
+        private void OnAmenitiesStackLayoutClicked(object sender, System.EventArgs e)
+        {
+			StackLayout control = (StackLayout)sender;
+			OnAmenitiesClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
+		}
+
+        private void OnAmenitiesLabelClicked(object sender, System.EventArgs e)
+        {
+			Label control = (Label)sender;
+			OnAmenitiesClicked(control.BindingContext as Models.ApartmentCommunity, control.ClassId);
+		}
+
+		async void OnAmenitiesClicked(Models.ApartmentCommunity community, string selectedCommunity)
+		{
+            switch (selectedCommunity)
+            {
+				case "Amenities":
+					foreach (var amenity in viewModel.AmenitiesListInfo)
+					{
+						if (amenity.Id.Equals(community.Id))
+							amenity.IsSelected = true;
+						else
+							amenity.IsSelected = false;
+					}
+					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.AmenitiesListInfo));
+					break;
+
+				case "Storage":
+					foreach (var amenity in viewModel.StorageAmenitiesListInfo)
+					{
+						if (amenity.Id.Equals(community.Id))
+							amenity.IsSelected = true;
+						else
+							amenity.IsSelected = false;
+					}
+					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.StorageAmenitiesListInfo));
+					break;
+
+				case "TrashAndRecycle":
+					foreach (var amenity in viewModel.TrashRecycleListInfo)
+					{
+						if (amenity.Id.Equals(community.Id))
+							amenity.IsSelected = true;
+						else
+							amenity.IsSelected = false;
+					}
+					await Navigation.PushAsync(new SelectedAmenityDetailPage(viewModel.TrashRecycleListInfo));
+					break;
+			}
+		}
+		#endregion
+
+		#region On Parkering Image Clicked
+		private void OnImageButtonParkeringListClicked(object sender, System.EventArgs e)
+		{
+			ImageButton control = (ImageButton)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+		private void OnStackLayoutParkeringListClicked(object sender, System.EventArgs e)
+		{
+			StackLayout control = (StackLayout)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+		private void OnLabelParkeringListClicked(object sender, System.EventArgs e)
+		{
+			Label control = (Label)sender;
+			OnParkeringClicked(control.BindingContext as Models.ApartmentCommunityParkingsResponse);
+		}
+
+		async void OnParkeringClicked(Models.ApartmentCommunityParkingsResponse parking)
+		{
+			foreach (var amenity in viewModel.ParkeringList)
+			{
+				if (amenity.Id.Equals(parking.Id))
+					amenity.IsSelected = true;
+				else
+					amenity.IsSelected = false;
+			}
+			await Navigation.PushAsync(new SelectedParkingDetailPage(viewModel.ParkeringList));
+		}
+		#endregion
+	}
 }

@@ -8,5 +8,7 @@ namespace Dstricts.Interfaces
 		Task<Models.ApartmentDetailInfoResponse> ApartmentDetailInfoAsync(Models.ApartmentDetailInfoRequest request);
 		Task<Models.ApartmentDetailInfoCheckinResponse> ApartmentDetailInfoCheckinAsync(Models.ApartmentDetailInfoCheckinRequest request);
 		Task<List<Models.GetSratedDetailResponse>> GetSratedDetailAsync(Models.GetSratedDetailRequest request);
+		Task<Models.ApartmentCommunityAmenitiesResponse> ApartmentBuildingAmenitiesAsync(Models.ApartmentBuildingAmenitiesRequest request);
+		Task<List<Models.ApartmentCommunityParkingsResponse>> ApartmentBuildingParkingsAsync(Models.ApartmentBuildingAmenitiesRequest request);
 	}
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using ZXing.Net.Mobile.Forms;
@@ -60,7 +59,7 @@ namespace Dstricts.Views.Hotel
 			await OnCheckInListClicked(checkedIn);
 		}
 
-		private async void OnImageCheckInTapped(object sender, EventArgs e)
+		private async void OnImageCheckInTapped(object sender, System.EventArgs e)
 		{
 			Image button = sender as Image;
 			Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
@@ -84,7 +83,7 @@ namespace Dstricts.Views.Hotel
 		#endregion
 
 		#region Scan QR Code.
-		private void OnBackClicked(object sender, EventArgs e)
+		private void OnBackClicked(object sender, System.EventArgs e)
 		{
 			Device.BeginInvokeOnMainThread(async () =>
 			{
@@ -93,7 +92,7 @@ namespace Dstricts.Views.Hotel
 			});
 		}
 
-		private async void OnBtnOpenCameraToScanQrCodeClicked(object sender, EventArgs e)
+		private async void OnBtnOpenCameraToScanQrCodeClicked(object sender, System.EventArgs e)
 		{
 			var customOverlay = new StackLayout
 			{

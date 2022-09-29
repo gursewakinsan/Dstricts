@@ -271,31 +271,31 @@
                     <Grid ColumnSpacing="0" RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="39" />
-                            <RowDefinition Height="36" />
-                            <RowDefinition Height="7" />
-                            <RowDefinition Height="78" />
-                            <RowDefinition Height="28" />
-                            <RowDefinition Height="1" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="13" />
-                            <RowDefinition Height="44" />
-                            <RowDefinition Height="13" />
-                            <RowDefinition Height="1" />
-                            <RowDefinition Height="51" />
-                            <RowDefinition Height="36" />
-                            <RowDefinition Height="28" />
-                            <RowDefinition Height="406" />
-                            <RowDefinition Height="45" />
-                            <RowDefinition Height="1" />
-                            <RowDefinition Height="44" />
+                            <RowDefinition Height="50" />
                             <RowDefinition Height="25" />
-                            <RowDefinition Height="18" />
-                            <RowDefinition Height="45" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="auto" />
                             <RowDefinition Height="22" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="63" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="20" />
                         </Grid.RowDefinitions>
@@ -308,231 +308,6 @@
                             <ColumnDefinition Width="28" />
                         </Grid.ColumnDefinitions>
 
-                        <!--<Grid 
-                            IsVisible="{Binding ShowBookingTab}"
-                            RowSpacing="0" 
-                            ColumnSpacing="0" 
-                            Grid.Row="0"
-                            Grid.Column="0" 
-                            Grid.ColumnSpan="6" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="28" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="65" />
-                                <ColumnDefinition Width="31" />
-                                <ColumnDefinition Width="65" />
-                                <ColumnDefinition Width="28" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="0" />
-                                <RowDefinition Height="20" />
-                                <RowDefinition Height="34" />
-                                <RowDefinition Height="119" />
-                                <RowDefinition Height="20" />
-                            </Grid.RowDefinitions>
-                            <StackLayout
-								Grid.Row="0" Spacing="1"
-								Grid.Column="1" 
-								Margin="0,31,50,5"
-								HorizontalOptions="StartAndExpand">
-                                <Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="18"
-									HorizontalTextAlignment="Start"
-									Text="Here we are"
-									VerticalOptions="StartAndExpand"
-									TextColor="White"
-									VerticalTextAlignment="Start" />
-
-                                <Label
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="13"
-								HorizontalTextAlignment="Start"
-								LineBreakMode="TailTruncation"
-								Opacity="0.70"
-								Text="{Binding ApartmentDetailInfo.HostName}"
-								TextColor="White"
-								VerticalTextAlignment="Start"/>
-
-
-                                <Label
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="13"
-								HorizontalTextAlignment="Start"
-								LineBreakMode="TailTruncation"
-								LineHeight="1.1"
-								MaxLines="3"
-								Opacity="0.70"
-								TextColor="White"
-								VerticalTextAlignment="End">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding ApartmentDetailInfo.Address}" />
-                                            <Span Text=" " />
-                                            <Span Text="{Binding ApartmentDetailInfo.PortNumber}" />
-                                            <Span Text=", " />
-                                            <Span Text="{Binding ApartmentDetailInfo.ZipCode}" />
-                                            <Span Text=" " />
-                                            <Span Text="{Binding ApartmentDetailInfo.City}" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </StackLayout>
-
-                            <Button
-							Margin="0,20,0,0"
-							Grid.Row="0"
-							Grid.Column="2"
-							BackgroundColor="Transparent"
-							BorderColor="#737B8C"
-							BorderWidth="1"
-							CornerRadius="10"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="25"
-							HeightRequest="65"
-							Text="A"
-							TextColor="White"
-							VerticalOptions="CenterAndExpand" />
-
-                            <Button
-							Margin="0,20,0,0"
-							Grid.Row="0"
-							Grid.Column="4"
-							BackgroundColor="Transparent"
-							BorderColor="#737B8C"
-							BorderWidth="1"
-							CornerRadius="10"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="25"
-							HeightRequest="65"
-							Text="4"
-							TextColor="White"
-							VerticalOptions="CenterAndExpand" />
-
-                            <Label
-							Grid.Row="2"
-							Grid.Column="1"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="13"
-							MaxLines="1"
-							LineBreakMode="TailTruncation"
-							HorizontalTextAlignment="Start"
-							TextColor="#6ADC86"
-							VerticalTextAlignment="Center">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Entre code : "/>
-                                        <Span Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-
-                            <Label
-							Grid.Row="2"
-							Grid.Column="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							LineBreakMode="TailTruncation"
-							Text="Call"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-                            <Label
-							Grid.Row="2"
-							Grid.Column="4"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							LineBreakMode="TailTruncation"
-							Text="Chat"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-                            <Grid 
-                            Grid.Row="4"
-                            Grid.Column="0" 
-                            Grid.ColumnSpan="6" 
-                            BackgroundColor="#9DD21F" 
-                            Padding="28,20,28,20">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Spacing="0">
-                                    <Label
-									FontAttributes="Bold"
-									FontFamily="PoppinsBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="Check-in"
-									TextColor="Black"
-									VerticalOptions="StartAndExpand"
-									VerticalTextAlignment="Start" />
-
-                                    <Label
-									VerticalOptions="EndAndExpand"
-									FontAttributes="Bold"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="2"
-									Text="{Binding ApartmentDetailInfo.CheckInDate}"
-									TextColor="Black"
-									VerticalTextAlignment="End"/>
-
-                                    <Label
-									VerticalOptions="EndAndExpand"
-									FontAttributes="Bold"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="2"
-									Text="11am"
-									TextColor="Black"
-									VerticalTextAlignment="End"/>
-                                </StackLayout>
-
-                                <StackLayout Grid.Column="1" Spacing="0">
-                                    <Label
-									FontAttributes="Bold"
-									FontFamily="PoppinsBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="1"
-									Text="Checkout"
-									TextColor="Black"
-									VerticalOptions="StartAndExpand"
-									VerticalTextAlignment="Start" />
-
-                                    <Label
-									VerticalOptions="EndAndExpand"
-									FontAttributes="Bold"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="2"
-									Text="{Binding ApartmentDetailInfo.CheckedOutDate}"
-									TextColor="Black"
-									VerticalTextAlignment="End"/>
-
-                                    <Label
-									VerticalOptions="EndAndExpand"
-									FontAttributes="Bold"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									MaxLines="2"
-									Text="3pm"
-									TextColor="Black"
-									VerticalTextAlignment="End"/>
-                                </StackLayout>
-                            </Grid>
-                        </Grid>-->
-
-
                         <controls:CustomFrame
 							Grid.Row="0"
                             Grid.Column="0" 
@@ -541,7 +316,8 @@
 							BackgroundColor="#1B1D24"
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
-							IsClippedToBounds="True">
+							IsClippedToBounds="True"
+							IsVisible="{Binding SelectedCheckedIn.IsGuest, Converter={StaticResource InverseBoolConverter}}">
                             <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,0.5">
                                     <GradientStop Offset="0.1" Color="#5E5F67" />
@@ -554,8 +330,6 @@
                                     <RowDefinition Height="9"/>
                                     <RowDefinition Height="20"/>
                                     <RowDefinition Height="23"/>
-                                    <RowDefinition Height="63"/>
-                                    <RowDefinition Height="44"/>
                                     <RowDefinition Height="63"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
@@ -603,7 +377,7 @@
 														Grid.Row="0"
 														Grid.Column="0"
 														BorderWidth="2"
-														BorderColor="White"
+														BorderColor="#F4B400"
 														CornerRadius="10"
 														Padding="0"
 														FontFamily="PoppinsRegularFontFamily"
@@ -613,7 +387,7 @@
 													<Label
 														VerticalTextAlignment="Center"
 														HorizontalTextAlignment="Center"
-														FontFamily="PoppinsRegularFontFamily"
+														FontFamily="PoppinsBoldFontFamily"
 														FontSize="12"
 														Grid.Row="0"
 														Grid.Column="0"
@@ -628,41 +402,116 @@
                                         </BindableLayout.ItemTemplate>
                                     </StackLayout>
                                 </ScrollView>
-                                <StackLayout 
-                                    Padding="28,0,28,0"
-                                    Grid.Row="6"
-									Grid.Column="0"
-									Grid.ColumnSpan="3"
-                                    Orientation="Horizontal"
-                                    Spacing="20"
-                                    BackgroundColor="#45C366">
-                                    <Label
-										FontFamily="PoppinsBoldFontFamily"
-										FontSize="18"
-                                        HorizontalOptions="StartAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-										Text="Entre code"
-										TextColor="Black"/>
-
-                                    <Label
-										FontFamily="PoppinsRegularFontFamily"
-										FontSize="18"
-                                        HorizontalOptions="EndAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-										Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"
-										TextColor="Black"/>
-                                </StackLayout>
                             </Grid>
                         </controls:CustomFrame>
 
+                        <controls:CustomFrame
+							Grid.Row="0"
+                            Grid.Column="0" 
+                            Grid.ColumnSpan="6" 
+							Padding="0,35,0,0"
+							BackgroundColor="#1B1D24"
+							CornerRadius="38,38,0,0"
+							HasShadow="False"
+							IsClippedToBounds="True"
+							IsVisible="{Binding SelectedCheckedIn.IsGuest}">
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="0,0.5">
+                                    <GradientStop Offset="0.1" Color="#5E5F67" />
+                                    <GradientStop Offset="1.0" Color="#1B1D24" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <Grid RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="9"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="23"/>
+                                    <RowDefinition Height="63"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="28"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="28"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+									Grid.Row="0"
+                                    Grid.Column="1"
+									FontAttributes="Bold"
+									FontFamily="PoppinsBoldFontFamily"
+									FontSize="24"
+									HorizontalTextAlignment="Start"
+									MaxLines="1"
+									Text="Profile"
+									TextColor="White"/>
 
-                            <Label
+                                <Label
+									Grid.Row="2"
+									Grid.Column="1"
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="14"
+									HorizontalTextAlignment="Start"
+									Opacity="0.42"
+									Text="Click on each profile to get more information"
+									TextColor="White"
+									VerticalTextAlignment="Start" />
+
+                                <Grid Grid.Row="4" Grid.Column="1" RowSpacing="0" ColumnSpacing="17">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="63"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="95"/>
+                                        <ColumnDefinition Width="95"/>
+                                        <ColumnDefinition Width="95"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button
+										Grid.Row="0"
+										Grid.Column="0"
+										CornerRadius="10"
+										Padding="0"
+                                        Text="Owner"
+                                        FontSize="14"
+                                        TextColor="Black"
+										FontFamily="PoppinsBoldFontFamily"
+										BackgroundColor="#F4B400"/>
+
+                                    <Button
+										Grid.Row="0"
+										Grid.Column="1"
+										CornerRadius="10"
+										Padding="0"
+                                        Text="Rent out"
+                                        FontSize="12"
+                                        TextColor="White"
+                                        BorderWidth="2"
+                                        BorderColor="White"
+										FontFamily="PoppinsBoldFontFamily"
+										BackgroundColor="Transparent"/>
+
+                                    <Button
+										Grid.Row="0"
+										Grid.Column="2"
+										CornerRadius="10"
+										Padding="0"
+                                        Text="Selling"
+                                        FontSize="12"
+                                        TextColor="White"
+                                        BorderWidth="2"
+                                        BorderColor="White"
+										FontFamily="PoppinsBoldFontFamily"
+										BackgroundColor="Transparent"/>
+                                </Grid>
+                            </Grid>
+                        </controls:CustomFrame>
+
+                        <Label
 							Grid.Row="2"
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
 							FontAttributes="Bold"
 							FontFamily="PoppinsBoldFontFamily"
-							FontSize="24"
+							FontSize="20"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
 							Text="Welcome"
@@ -674,10 +523,10 @@
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
 							FontFamily="PoppinsRegularFontFamily"
-							FontSize="16"
+							FontSize="14"
 							HorizontalTextAlignment="Start"
 							LineBreakMode="TailTruncation"
-							LineHeight="1.1"
+							LineHeight="1.2"
 							MaxLines="3"
 							Opacity="0.42"
 							Text="{Binding ApartmentDetailInfo.ApartmentDescription}"
@@ -717,7 +566,7 @@
 								FontSize="20"
 								HorizontalTextAlignment="Center"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
-								TextColor="#7090E0"
+								TextColor="#F4B400"
 								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding GoToHouseWifiPageCommand}" />
@@ -762,33 +611,41 @@
 							BackgroundColor="#2A2A31" />
                         </Grid>
 
-                        <Grid 
+                        <Grid
 							ColumnSpacing="28"
-							Grid.Row="12"  
+							Grid.Row="9"  
 							Grid.Column="1"
 							Grid.ColumnSpan="4">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="20"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="20"/>
                             </Grid.ColumnDefinitions>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
-                            </Grid.GestureRecognizers>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13" />
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
                             <Label
+                                Grid.Row="1"
 								Grid.Column="0"
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="20"
 								HorizontalTextAlignment="Center"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
-								TextColor="#7090E0"
+								TextColor="#F4B400"
 								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
                                 </Label.GestureRecognizers>
                             </Label>
 
                             <Label
+                                 Grid.Row="1"
 								Grid.Column="1"
 								FontFamily="PoppinsRegularFontFamily"
 								FontSize="16"
@@ -797,11 +654,12 @@
 								TextColor="White"
 								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
                                 </Label.GestureRecognizers>
                             </Label>
 
                             <Label
+                                 Grid.Row="1"
 								Grid.Column="2"
 								FontFamily="{StaticResource MaterialFontFamily}"
 								FontSize="25"
@@ -811,99 +669,268 @@
 								Opacity="0.70"
 								VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}"/>
+                                    <TapGestureRecognizer Command="{Binding GoToHouseRulesPageCommand}" />
                                 </Label.GestureRecognizers>
                             </Label>
+
+                            <BoxView
+								Grid.Row="3"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								WidthRequest="252"
+								HorizontalOptions="EndAndExpand"
+								BackgroundColor="#2A2A31" />
                         </Grid>
 
-                        <BoxView
-						Grid.Row="14"
-                        Grid.Column="1"
-						Grid.ColumnSpan="4"
-                        WidthRequest="252"
-                        HorizontalOptions="EndAndExpand"
-						BackgroundColor="#2A2A31" />
+                        <Grid
+							ColumnSpacing="28"
+							Grid.Row="10"  
+							Grid.Column="1"
+							Grid.ColumnSpan="4" 
+                            IsVisible="{Binding SelectedCheckedIn.IsGuest}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer  />
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13" />
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="1"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+								TextColor="#F4B400"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                        <Label
-						Grid.Row="16"
-						Grid.Column="1"
-						Grid.ColumnSpan="4"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="Decorated"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								Text="Tenants"
+								TextColor="White"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                        <ScrollView
-						Grid.Row="18"
-						Grid.Column="1"
-						Grid.ColumnSpan="5"
-						Padding="0,0,28,28"
-						HorizontalScrollBarVisibility="Never"
-						Orientation="Horizontal">
-                            <StackLayout
-							BindableLayout.ItemsSource="{Binding ListDecorated}"
-							Orientation="Horizontal"
-							Spacing="16">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <Frame
-										Padding="0"
-										BackgroundColor="Transparent"
-										CornerRadius="16"
-										HasShadow="False"
-										HorizontalOptions="StartAndExpand"
-										IsClippedToBounds="True"
-										WidthRequest="{Binding ImgWidth}">
-                                            <Grid>
-                                                <Image Aspect="AspectFill" Source="{Binding ImagePath}"/>
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
 
-                                                <Grid
-												BackgroundColor="#25313D"
-												HeightRequest="62"
-												Opacity="0.75"
-												VerticalOptions="EndAndExpand">
-                                                    <StackLayout
-													Margin="15,0,15,0"
-													Spacing="0"
-													VerticalOptions="CenterAndExpand">
-                                                        <Label
-														FontAttributes="Bold"
-														FontFamily="PoppinsBoldFontFamily"
-														FontSize="16"
-														LineBreakMode="TailTruncation"
-														MaxLines="1"
-														Text="{Binding PropertyNickName}"
-														TextColor="White"/>
+                            <BoxView
+								Grid.Row="3"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								WidthRequest="252"
+								HorizontalOptions="EndAndExpand"
+								BackgroundColor="#2A2A31" />
+                        </Grid>
 
-                                                        <Label
-														FontFamily="PoppinsRegularFontFamily"
-														FontSize="12"
-														LineBreakMode="TailTruncation"
-														MaxLines="1"
-														Text="{Binding BookingOverdate}"
-														TextColor="White"/>
-                                                    </StackLayout>
-                                                </Grid>
-                                            </Grid>
-                                        </Frame>
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
+                        <Grid
+							ColumnSpacing="28"
+							Grid.Row="11"  
+							Grid.Column="1"
+							Grid.ColumnSpan="4">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer  />
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13" />
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="1"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+								TextColor="#F4B400"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								Text="Guests"
+								TextColor="White"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <BoxView
+								Grid.Row="3"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								WidthRequest="252"
+								HorizontalOptions="EndAndExpand"
+								BackgroundColor="#2A2A31" />
+                        </Grid>
+
+                        <Grid
+							ColumnSpacing="28"
+							Grid.Row="12"  
+							Grid.Column="1"
+							Grid.ColumnSpan="4">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer  />
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="13" />
+                                <RowDefinition Height="44"/>
+                                <RowDefinition Height="0" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="1"
+								Grid.Column="0"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="20"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+								TextColor="#F4B400"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="16"
+								HorizontalTextAlignment="Start"
+								Text="Amenities"
+								TextColor="White"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+                                 Grid.Row="1"
+								Grid.Column="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								HorizontalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <BoxView
+								Grid.Row="3"
+								Grid.Column="0"
+								Grid.ColumnSpan="3"
+								WidthRequest="252"
+								HorizontalOptions="EndAndExpand"
+								BackgroundColor="#2A2A31" />
+                        </Grid>
+
+                        <Frame 
+                            IsClippedToBounds="True"
+                            HasShadow="False"
+							Grid.Row="14"  
+							Grid.Column="1"
+							Grid.ColumnSpan="4"
+                            BackgroundColor="White" 
+                            CornerRadius="6">
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+									FontFamily="PoppinsBoldFontFamily"
+									FontSize="18"
+									HorizontalOptions="StartAndExpand"
+									VerticalOptions="CenterAndExpand"
+									Text="Entre code"
+									TextColor="Black"/>
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="18"
+									HorizontalOptions="EndAndExpand"
+									VerticalOptions="CenterAndExpand"
+									Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"
+									TextColor="Black"/>
                             </StackLayout>
-                        </ScrollView>
-
+                        </Frame>
 
                         <BoxView
-							Grid.Row="20"
+							Grid.Row="16"
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
 							BackgroundColor="#2A2A31" />
 
                         <Label
-							Grid.Row="22"
+							Grid.Row="18"
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
 							FontAttributes="Bold"
@@ -911,12 +938,12 @@
 							FontSize="20"
 							HorizontalTextAlignment="Start"
 							MaxLines="1"
-							Text="How to use"
+							Text="Manuals"
 							TextColor="White"
 							VerticalTextAlignment="Center" />
 
                         <Label
-							Grid.Row="24"
+							Grid.Row="20"
 							Grid.Column="1"
 							Grid.ColumnSpan="4"
 							FontFamily="PoppinsRegularFontFamily"
@@ -926,1607 +953,542 @@
 							LineHeight="1.2"
 							MaxLines="2"
 							Opacity="0.42"
-							Text="Instructions on how to use the amenities below in the right way"
+							Text="Below you will find manuals for how to operate each device."
 							TextColor="White"
 							VerticalTextAlignment="Start" />
 
-                        <ScrollView 
-                            HorizontalScrollBarVisibility="Never" 
-                            Grid.Row="26" Grid.Column="1"
-							Grid.ColumnSpan="5" Orientation="Horizontal">
-                            <StackLayout
-								Orientation="Horizontal"
-								BindableLayout.ItemsSource="{Binding HowToUseInfo}"
-								HorizontalOptions="StartAndExpand" Spacing="0">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid RowSpacing="0" ColumnSpacing="0">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="148"/>
-                                                <RowDefinition Height="20"/>
-                                                <RowDefinition Height="20"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="182"/>
-                                                <ColumnDefinition Width="20"/>
-                                            </Grid.ColumnDefinitions>
-                                            <ImageButton 
-                                                Grid.Row="0" 
-                                                Grid.Column="0" 
-                                                Aspect="AspectFill" 
-                                                Padding="0"
-                                                CornerRadius="12"
-												Clicked="OnHowToUseInfoItemClicked"
-                                                BackgroundColor="Transparent"
-                                                Source="{Binding MannualImage}"/>
+                        <Grid 
+                            Margin="0,27,0,33"
+                            Grid.Row="21"
+							Grid.Column="1"
+							Grid.ColumnSpan="4" 
+                            RowSpacing="18" 
+                            ColumnSpacing="39">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="63"/>
+                                <RowDefinition Height="18"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Button 
+                                Grid.Row="0" 
+                                Grid.Column="0" 
+                                CornerRadius="10"
+                                BorderWidth="2"
+                                TextColor="White"
+                                FontSize="25"
+                                Padding="0"
+                                BorderColor="#F4B400"
+                                BackgroundColor="Transparent"
+                                FontFamily="{StaticResource MaterialFontFamily}"
+                                Text="{x:Static fontawesome:DstrictsAppFlatIcons.Dishwasher}"/>
 
-                                            <Label
-												Grid.Row="2"
-												Grid.Column="0"
-												FontFamily="PoppinsMediumFontFamily"
-												FontSize="14"
-												HorizontalTextAlignment="Start"
-												LineBreakMode="TailTruncation"
-												MaxLines="1"
-												Text="{Binding GetStartedTitle}"
-												TextColor="White"
-												VerticalTextAlignment="Start" />
-                                        </Grid>
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
-                            </StackLayout>
-                        </ScrollView>
+                            <Label
+								Grid.Row="1"
+								Grid.Column="0"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="12"
+								HorizontalTextAlignment="Center"
+								Text="Dish machine"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                            <Button 
+                                Grid.Row="0" 
+                                Grid.Column="1" 
+                                CornerRadius="10"
+                                BorderWidth="2"
+                                TextColor="White"
+                                FontSize="25"
+                                Padding="0"
+                                BorderColor="#F4B400"
+                                BackgroundColor="Transparent"
+                                FontFamily="{StaticResource MaterialFontFamily}"
+                                Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountCircleOutline}"/>
+
+                            <Label
+								Grid.Row="1"
+								Grid.Column="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="12"
+								HorizontalTextAlignment="Center"
+								Text="Wash machine"
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                        </Grid>
+
+                        <BoxView
+							Grid.Row="22"
+							Grid.Column="1"
+							Grid.ColumnSpan="4"
+							BackgroundColor="#2A2A31" />
+
+                        <Grid 
+							IsVisible="{Binding IsAmenitiesListInfo}"
+							Margin="0,40,0,0"
+							RowSpacing="0"
+							ColumnSpacing="0"
+							Grid.Row="23"
+							Grid.Column="1"
+							Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="0"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+								<Label
+								Grid.Column="0"
+								Grid.Row="0"
+								FontFamily="PoppinsMediumFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="Amenities" 
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Column="0"
+								Grid.Row="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HorizontalTextAlignment="Start"
+								Text="Here are building indoor amenities to use and enjoy." 
+								TextColor="White"
+								Opacity="0.42"
+								Margin="0,10,45,30"
+								LineHeight="1.2"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Grid.RowSpan="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="40" 
+								HorizontalTextAlignment="Start"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Start"/>
+
+                            <ScrollView
+								Grid.ColumnSpan="2"
+								Grid.Row="2"
+								HorizontalScrollBarVisibility="Never"
+								Orientation="Horizontal">
+                                <StackLayout
+									BindableLayout.ItemsSource="{Binding AmenitiesListInfo}"
+									Margin="0,0,28,0"
+									HorizontalOptions="Start"
+									Orientation="Horizontal"
+									Spacing="16">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid
+												ColumnSpacing="0"
+												RowSpacing="27"
+												WidthRequest="190">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="148" />
+                                                    <RowDefinition Height="50" />
+                                                </Grid.RowDefinitions>
+                                                <ImageButton
+													Grid.Row="0"
+													Aspect="AspectFill"
+													CornerRadius="12"
+													HeightRequest="148"
+													HorizontalOptions="CenterAndExpand"
+													Source="{Binding ImagePath}"
+													VerticalOptions="CenterAndExpand"
+													ClassId="Amenities"
+													Clicked="OnAmenitiesImageButtonClicked"
+													WidthRequest="{Binding ItemWidth}" />
+
+                                                <StackLayout
+													Grid.Row="1"
+													HorizontalOptions="StartAndExpand"
+													Spacing="2" 
+													ClassId="Amenities">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnAmenitiesStackLayoutClicked"/>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label 
+														FontFamily="PoppinsSemiBoldFontFamily"
+														FontSize="14"
+														Text="{Binding AmenityName}"
+														TextColor="White" 
+														ClassId="Amenities">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnAmenitiesLabelClicked"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+
+                            <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                        </Grid>
+
+                        <Grid 
+							IsVisible="{Binding IsParkeringList}"
+							Margin="0,40,0,0"
+							RowSpacing="0"
+							ColumnSpacing="0"
+							Grid.Row="24"
+							Grid.Column="1"
+							Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+								Grid.Column="0"
+								Grid.Row="0"
+								FontFamily="PoppinsMediumFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="Parkering" 
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Column="0"
+								Grid.Row="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HorizontalTextAlignment="Start"
+								Text="Make sure you take your time and try our Eat &amp; Drink place" 
+								TextColor="White"
+								Opacity="0.42"
+								Margin="0,10,45,30"
+								LineHeight="1.2"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Grid.RowSpan="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="40" 
+								HorizontalTextAlignment="Start"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Start"/>
+
+                            <ScrollView
+								Grid.ColumnSpan="2"
+								Grid.Row="2"
+                                Grid.Column="0"
+								HorizontalScrollBarVisibility="Never"
+								Orientation="Horizontal">
+                                <StackLayout
+									BindableLayout.ItemsSource="{Binding ParkeringList}"
+									Orientation="Horizontal"
+									Spacing="16">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid
+												ColumnSpacing="0"
+												RowSpacing="27">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="200" />
+                                                    <RowDefinition Height="20" />
+                                                </Grid.RowDefinitions>
+                                                <ImageButton
+													Grid.Row="0" BackgroundColor="Red"
+													Aspect="AspectFill"
+													CornerRadius="12"
+													HeightRequest="200"
+                                                    WidthRequest="{Binding ItemWidth}"
+													Source="{Binding ImagePath}"
+													Clicked="OnImageButtonParkeringListClicked"/>
+
+                                                <StackLayout
+													Grid.Row="1"
+													HorizontalOptions="StartAndExpand"
+													Spacing="2">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnStackLayoutParkeringListClicked"/>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label 
+														FontFamily="PoppinsSemiBoldFontFamily"
+														FontSize="14"
+														Text="{Binding BuildingName}"
+														TextColor="White">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnLabelParkeringListClicked"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+
+                            <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                        </Grid>
+
+                        <Grid 
+							IsVisible="{Binding IsStorageAmenitiesListInfo}"
+							Margin="0,40,0,0"
+							RowSpacing="0"
+							ColumnSpacing="0"
+							Grid.Row="25"
+							Grid.Column="1"
+							Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="0"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+								Grid.Column="0"
+								Grid.Row="0"
+								FontFamily="PoppinsMediumFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="Storage" 
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Column="0"
+								Grid.Row="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HorizontalTextAlignment="Start"
+								Text="Below listed are storages availble for you as tenant" 
+								TextColor="White"
+								Opacity="0.42"
+								Margin="0,10,45,30"
+								LineHeight="1.2"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Grid.RowSpan="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="40" 
+								HorizontalTextAlignment="Start"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Start"/>
+
+                            <ScrollView
+								Grid.ColumnSpan="2"
+								Grid.Row="2"
+								HorizontalScrollBarVisibility="Never"
+								Orientation="Horizontal">
+                                <StackLayout
+									BindableLayout.ItemsSource="{Binding StorageAmenitiesListInfo}"
+									Margin="0,0,28,0"
+									HorizontalOptions="Start"
+									Orientation="Horizontal"
+									Spacing="16">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid
+												ColumnSpacing="0"
+												RowSpacing="27"
+												WidthRequest="190">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="148" />
+                                                    <RowDefinition Height="50" />
+                                                </Grid.RowDefinitions>
+                                                <ImageButton
+													Grid.Row="0"
+													Aspect="AspectFill"
+													CornerRadius="12"
+													HeightRequest="148"
+													HorizontalOptions="CenterAndExpand"
+													Source="{Binding ImagePath}"
+													VerticalOptions="CenterAndExpand"
+													ClassId="Storage"
+													Clicked="OnAmenitiesImageButtonClicked"
+													WidthRequest="{Binding ItemWidth}" />
+
+                                                <StackLayout
+													Grid.Row="1"
+													HorizontalOptions="StartAndExpand"
+													Spacing="2" 
+													ClassId="Storage">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnAmenitiesStackLayoutClicked"/>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label 
+														FontFamily="PoppinsSemiBoldFontFamily"
+														FontSize="14"
+														Text="{Binding AmenityName}"
+														TextColor="White" 
+														ClassId="Storage">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnAmenitiesLabelClicked"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+
+                            <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                        </Grid>
+
+                        <Grid 
+							IsVisible="{Binding IsTrashRecycleListInfo}"
+							Margin="0,40,0,0"
+							RowSpacing="0"
+							ColumnSpacing="0"
+							Grid.Row="26"
+							Grid.Column="1"
+							Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="0"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+								Grid.Column="0"
+								Grid.Row="0"
+								FontFamily="PoppinsMediumFontFamily"
+								FontSize="18"
+								HorizontalTextAlignment="Start"
+								MaxLines="1"
+								Text="Trash &amp; Recycle" 
+								TextColor="White"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Column="0"
+								Grid.Row="1"
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HorizontalTextAlignment="Start"
+								Text="This is where you can throw your trash. Dont forget to recycle:)" 
+								TextColor="White"
+								Opacity="0.42"
+								Margin="0,10,45,30"
+								LineHeight="1.2"
+								VerticalTextAlignment="Center" />
+
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Grid.RowSpan="2"
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="40" 
+								HorizontalTextAlignment="Start"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+								TextColor="White"
+								Opacity="0.70"
+								VerticalTextAlignment="Start"/>
+
+                            <ScrollView
+								Grid.ColumnSpan="2"
+								Grid.Row="2"
+								HorizontalScrollBarVisibility="Never"
+								Orientation="Horizontal">
+                                <StackLayout
+									BindableLayout.ItemsSource="{Binding TrashRecycleListInfo}"
+									Margin="0,0,28,0"
+									HorizontalOptions="Start"
+									Orientation="Horizontal"
+									Spacing="16">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid
+												ColumnSpacing="0"
+												RowSpacing="27"
+												WidthRequest="190">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="148" />
+                                                    <RowDefinition Height="50" />
+                                                </Grid.RowDefinitions>
+                                                <ImageButton
+													Grid.Row="0"
+													Aspect="AspectFill"
+													CornerRadius="12"
+													HeightRequest="148"
+													HorizontalOptions="CenterAndExpand"
+													Source="{Binding ImagePath}"
+													VerticalOptions="CenterAndExpand"
+													ClassId="TrashAndRecycle"
+													Clicked="OnAmenitiesImageButtonClicked"
+													WidthRequest="{Binding ItemWidth}" />
+
+                                                <StackLayout
+													Grid.Row="1"
+													HorizontalOptions="StartAndExpand"
+													Spacing="2" 
+													ClassId="TrashAndRecycle">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnAmenitiesStackLayoutClicked"/>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label 
+														FontFamily="PoppinsSemiBoldFontFamily"
+														FontSize="14"
+														Text="{Binding AmenityName}"
+														TextColor="White" 
+														ClassId="TrashAndRecycle">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnAmenitiesLabelClicked"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+
+                            <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                        </Grid>
                     </Grid>
                 </ScrollView>
             </controls:CustomFrame>
-
         </Grid>
-
-
-
-        <!--<Grid
-			Margin="0,14,0,2"
-			ColumnSpacing="0"
-			RowSpacing="0">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="40" />
-				<RowDefinition Height="*" />
-				<RowDefinition Height="5" />
-				<RowDefinition Height="45" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="28" />
-				<ColumnDefinition Width="40" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="40" />
-				<ColumnDefinition Width="28" />
-			</Grid.ColumnDefinitions>
-
-			<Label
-				Grid.Row="0"
-				Grid.Column="1"
-				Margin="-7,0,0,0"
-				Padding="0"
-				FontFamily="{StaticResource MaterialFontFamily}"
-				FontSize="25"
-				HorizontalTextAlignment="Start"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
-				TextColor="White"
-				VerticalTextAlignment="Center">
-				<Label.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding CloseCommand}" />
-				</Label.GestureRecognizers>
-			</Label>
-
-			<Label
-				Grid.Row="0"
-				Grid.Column="2"
-				FontFamily="PoppinsRegularFontFamily"
-				FontSize="16"
-				HorizontalTextAlignment="Center"
-				Text="{Binding ApartmentDetails.PropertyNickName}"
-				TextColor="White"
-				VerticalTextAlignment="Center" />
-
-			<Label
-				Grid.Row="0"
-				Grid.Column="3"
-				Padding="0"
-				FontFamily="{StaticResource MaterialFontFamily}"
-				FontSize="25"
-				HorizontalTextAlignment="End"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.CartOutline}"
-				TextColor="White"
-				VerticalTextAlignment="Center" />
-
-			<ScrollView
-				Grid.Row="1"
-				Grid.Column="1"
-				Grid.ColumnSpan="3"
-				VerticalScrollBarVisibility="Never">
-				<Grid
-					Margin="0,26,0,0"
-					ColumnSpacing="0"
-					RowSpacing="0">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="30" />
-						<RowDefinition Height="45" />
-						<RowDefinition Height="28" />
-						<RowDefinition Height="435" />
-						<RowDefinition Height="68" />
-						<RowDefinition Height="33" />
-						<RowDefinition Height="17" />
-						<RowDefinition Height="auto" />
-						<RowDefinition Height="49" />
-						<RowDefinition Height="33" />
-						<RowDefinition Height="17" />
-						<RowDefinition Height="auto" />
-						<RowDefinition Height="49" />
-						<RowDefinition Height="33" />
-						<RowDefinition Height="17" />
-						<RowDefinition Height="auto" />
-
-						<RowDefinition Height="50" />
-					</Grid.RowDefinitions>
-					<Label
-						Grid.Row="0"
-						FontFamily="PoppinsSemiBoldFontFamily"
-						FontSize="18"
-						HorizontalTextAlignment="Start"
-						Opacity="0.42"
-						Text="Welcome"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Label
-						Grid.Row="1"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="32"
-						HorizontalTextAlignment="Start"
-						Text="{Binding ApartmentDetailInfo.GuestName}"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Frame
-						Grid.Row="3"
-						Padding="24,40,18,33"
-						BackgroundColor="#4285F4"
-						CornerRadius="12"
-						HasShadow="False"
-						IsClippedToBounds="True">
-						<Grid ColumnSpacing="0" RowSpacing="0">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="30" />
-								<RowDefinition Height="5" />
-								<RowDefinition Height="46" />
-								<RowDefinition Height="23" />
-								<RowDefinition Height="15" />
-								<RowDefinition Height="5" />
-								<RowDefinition Height="70" />
-								<RowDefinition Height="16" />
-								<RowDefinition Height="15" />
-								<RowDefinition Height="5" />
-								<RowDefinition Height="55" />
-								<RowDefinition Height="33" />
-								<RowDefinition Height="40" />
-							</Grid.RowDefinitions>
-							<Label
-								Grid.Row="0"
-								FontAttributes="Bold"
-								FontFamily="PoppinsBoldFontFamily"
-								FontSize="24"
-								HorizontalTextAlignment="Start"
-								Text="Good to know"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
-
-							<Label
-								Grid.Row="2"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="15"
-								HorizontalTextAlignment="Start"
-								LineHeight="1.2"
-								Text="Find out more about Casa Madrid under 'My pages'"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
-
-							<Label
-								Grid.Row="4"
-								FontAttributes="Bold"
-								FontFamily="PoppinsBoldFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								Text="Address"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
-
-							<Frame
-								Grid.Row="6"
-								Padding="14,0,14,0"
-								BackgroundColor="#2065D9"
-								CornerRadius="6"
-								HasShadow="False"
-								IsClippedToBounds="True">
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="14"
-									HorizontalTextAlignment="Start"
-									LineBreakMode="TailTruncation"
-									LineHeight="1.2"
-									MaxLines="2"
-									TextColor="White"
-									VerticalTextAlignment="Center">
-									<Label.FormattedText>
-										<FormattedString>
-											<Span Text="{Binding ApartmentDetailInfo.Address}" />
-											<Span Text=" " />
-											<Span Text="{Binding ApartmentDetailInfo.PortNumber}" />
-											<Span Text=", " />
-											<Span Text="{Binding ApartmentDetailInfo.ZipCode}" />
-											<Span Text=" " />
-											<Span Text="{Binding ApartmentDetailInfo.City}" />
-										</FormattedString>
-									</Label.FormattedText>
-								</Label>
-							</Frame>
-
-							<Label
-								Grid.Row="8"
-								FontAttributes="Bold"
-								FontFamily="PoppinsBoldFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								Text="Entrance code"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
-
-							<Frame
-								Grid.Row="10"
-								Padding="14,0,14,0"
-								BackgroundColor="#2065D9"
-								CornerRadius="6"
-								HasShadow="False"
-								IsClippedToBounds="True">
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="18"
-									HorizontalTextAlignment="Start"
-									LineBreakMode="TailTruncation"
-									Text="{Binding ApartmentDetailInfo.DisplayEntryCode}"
-									TextColor="White"
-									VerticalTextAlignment="Center" />
-							</Frame>
-
-							<Button
-								Grid.Row="12"
-								Padding="0"
-								BackgroundColor="#F4B400"
-								Command="{Binding GoToMyPageCommand}"
-								CornerRadius="8"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="14"
-								HorizontalOptions="StartAndExpand"
-								Text="Go to 'My pages'"
-								TextColor="#181A1F"
-								WidthRequest="170" />
-						</Grid>
-					</Frame>
-
-					<Label
-						Grid.Row="5"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						Text="Community"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Grid
-						Grid.Row="7"
-						ColumnSpacing="19"
-						RowSpacing="20">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="120" />
-							<RowDefinition Height="120" />
-							<RowDefinition Height="120" />
-						</Grid.RowDefinitions>
-						<Frame
-							Grid.Row="0"
-							Grid.Column="0"
-							Padding="14"
-							BackgroundColor="#242A37"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Parking"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.42"
-									Text="299 places"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="0"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#242A37"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Swim"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.42"
-									Text="1 Pool"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="1"
-							Grid.Column="0"
-							Padding="14"
-							BackgroundColor="#242A37"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Jacuzzi"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.42"
-									Text="2 Jacuzzi"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="1"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#242A37"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Laundry"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.42"
-									Text="1 Laundry room"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="2"
-							Grid.ColumnSpan="2"
-							Padding="14"
-							BackgroundColor="#242A37"
-							CornerRadius="10">
-							<StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Clubroom"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalOptions="EndAndExpand"
-									Opacity="0.42"
-									Text="1 room"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-					</Grid>
-
-					<Label
-						Grid.Row="9"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						Text="Support"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Grid
-						Grid.Row="11"
-						ColumnSpacing="19"
-						RowSpacing="20">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="120" />
-							<RowDefinition Height="120" />
-						</Grid.RowDefinitions>
-
-						<Frame
-							Grid.Row="0"
-							Grid.RowSpan="2"
-							Grid.Column="0"
-							Padding="14"
-							BackgroundColor="#F4B400"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Report a problem"
-									TextColor="#181A1F"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalOptions="Start"
-									Opacity="0.70"
-									Text="299 places"
-									TextColor="#181A1F"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="0"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#F4B400"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									Margin="0,0,50,0"
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Lost &amp; Found"
-									TextColor="#181A1F"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.70"
-									Text="1 Pool"
-									TextColor="#181A1F"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="1"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#F4B400"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="FAQ"
-									TextColor="#181A1F"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.70"
-									Text="1 Laundry room"
-									TextColor="#181A1F"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-					</Grid>
-
-					<Label
-						Grid.Row="13"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="20"
-						HorizontalTextAlignment="Start"
-						Text="Assistance"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<Grid
-						Grid.Row="15"
-						ColumnSpacing="19"
-						RowSpacing="20">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="120" />
-							<RowDefinition Height="120" />
-						</Grid.RowDefinitions>
-
-						<Frame
-							Grid.Row="0"
-							Grid.RowSpan="2"
-							Grid.Column="0"
-							Padding="14"
-							BackgroundColor="#DB4437"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Medical"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalOptions="Start"
-									Opacity="0.70"
-									Text="299 places"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="0"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#DB4437"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Polica"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.70"
-									Text="1 Pool"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-
-						<Frame
-							Grid.Row="1"
-							Grid.Column="1"
-							Padding="14"
-							BackgroundColor="#DB4437"
-							CornerRadius="10">
-							<StackLayout>
-								<Label
-									FontFamily="PoppinsSemiBoldFontFamily"
-									FontSize="16"
-									HorizontalTextAlignment="Start"
-									Text="Road Help"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-								<Label
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="13"
-									HorizontalTextAlignment="Start"
-									Opacity="0.70"
-									Text="1 Laundry room"
-									TextColor="White"
-									VerticalOptions="EndAndExpand" />
-							</StackLayout>
-						</Frame>
-					</Grid>
-				</Grid>
-			</ScrollView>
-
-			<Grid
-				Grid.Row="3"
-				Grid.Column="1"
-				Grid.ColumnSpan="3">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="134" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-				<Label
-					Grid.Column="0"
-					Padding="0"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="20"
-					HorizontalTextAlignment="Start"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"
-					TextColor="White"
-					VerticalTextAlignment="Center" />
-
-				<Button
-					Grid.Column="1"
-					Padding="0"
-					BackgroundColor="Transparent"
-					BorderColor="White"
-					BorderWidth="2"
-					CornerRadius="10"
-					FontFamily="PoppinsRegularFontFamily"
-					FontSize="12"
-					HeightRequest="45"
-					HorizontalOptions="CenterAndExpand"
-					Text="Scan QR Code"
-					TextColor="White"
-					VerticalOptions="CenterAndExpand"
-					WidthRequest="134" />
-
-				<Label
-					Grid.Column="2"
-					Padding="0"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="20"
-					HorizontalTextAlignment="End"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageTextOutline}"
-					TextColor="White"
-					VerticalTextAlignment="Center" />
-			</Grid>
-		</Grid>-->
-
-
-
-        <!--<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="32" />
-				<RowDefinition />
-				<RowDefinition Height="44" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="117" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="117" />
-			</Grid.ColumnDefinitions>
-			<Label
-				Grid.Row="0"
-				Grid.Column="0"
-				Margin="15,0,0,0"
-				FontFamily="{StaticResource MaterialFontFamily}"
-				FontSize="25"
-				HorizontalTextAlignment="Start"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
-				TextColor="White"
-				VerticalTextAlignment="Center">
-				<Label.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding CloseCommand}" />
-				</Label.GestureRecognizers>
-			</Label>
-
-			<Button
-				Grid.Row="0"
-				Grid.Column="2"
-				Margin="0,0,15,0"
-				Padding="0"
-				BackgroundColor="#342B20"
-				CornerRadius="8"
-				FontAttributes="Bold"
-				FontFamily="PoppinsSemiBoldFontFamily"
-				FontSize="12"
-				HeightRequest="32"
-				HorizontalOptions="EndAndExpand"
-				Text="Get Wifi"
-				TextColor="#5DA1A6"
-				WidthRequest="102" />
-
-			<ScrollView
-				Grid.Row="1"
-				Grid.ColumnSpan="3"
-				VerticalScrollBarVisibility="Never">
-				<StackLayout
-					Padding="28,16,28,0"
-					Spacing="0"
-					VerticalOptions="StartAndExpand">
-					<StackLayout Orientation="Horizontal" Spacing="5">
-						<Label
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="16"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="4,6 Stars - "
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="16"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="17k reviews"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</StackLayout>
-					<Label
-						Margin="0,4,0,0"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="32"
-						HorizontalTextAlignment="Start"
-						LineBreakMode="TailTruncation"
-						MaxLines="1"
-						Text="{Binding ApartmentDetails.PropertyNickName}"
-						TextColor="White"
-						VerticalTextAlignment="Center" />
-
-					<BoxView
-						Margin="0,28,0,28"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
-					<Frame
-						Padding="0"
-						BackgroundColor="Transparent"
-						BorderColor="Transparent"
-						CornerRadius="16"
-						HasShadow="False"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Image
-							x:Name="imgVacation"
-							Aspect="AspectFill"
-							HeightRequest="244" />
-					</Frame>
-
-					<Label
-						Margin="0,31,0,7"
-						FontAttributes="Bold"
-						FontFamily="PoppinsBoldFontFamily"
-						FontSize="24"
-						HorizontalTextAlignment="Start"
-						MaxLines="1"
-						Text="About"
-						TextColor="White" />
-
-					<Label
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="16"
-						HorizontalTextAlignment="Start"
-						LineHeight="1.4"
-						MaxLines="2"
-						Opacity="0.5"
-						Text="Welcome to our place. We hope you will enjoy your stay with us"
-						TextColor="White" />
-
-					<Grid ColumnSpacing="16" RowSpacing="0">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="auto" />
-							<RowDefinition Height="44" />
-							<RowDefinition Height="auto" />
-							<RowDefinition Height="44" />
-							<RowDefinition Height="auto" />
-							<RowDefinition Height="44" />
-							<RowDefinition Height="auto" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="44" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="20" />
-						</Grid.ColumnDefinitions>
-						<BoxView
-							Grid.Row="0"
-							Grid.ColumnSpan="3"
-							Margin="0,28,0,13"
-							BackgroundColor="White"
-							HeightRequest="1"
-							Opacity="0.2" />
-
-						<BoxView
-							Grid.Row="1"
-							Grid.Column="0"
-							BackgroundColor="#2A2A31"
-							CornerRadius="16" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="20"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Information}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="1"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							Text="About this place"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="2"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Center"
-							Opacity="0.7"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<BoxView
-							Grid.Row="2"
-							Grid.ColumnSpan="3"
-							Margin="0,13,0,13"
-							BackgroundColor="White"
-							HeightRequest="1"
-							Opacity="0.2" />
-
-						<BoxView
-							Grid.Row="3"
-							Grid.Column="0"
-							BackgroundColor="#2A2A31"
-							CornerRadius="16" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="20"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Information}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="1"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							Text="Your host"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="2"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Center"
-							Opacity="0.7"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<BoxView
-							Grid.Row="4"
-							Grid.ColumnSpan="3"
-							Margin="0,13,0,13"
-							BackgroundColor="White"
-							HeightRequest="1"
-							Opacity="0.2" />
-
-						<BoxView
-							Grid.Row="5"
-							Grid.Column="0"
-							BackgroundColor="#2A2A31"
-							CornerRadius="16" />
-
-						<Label
-							Grid.Row="5"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="20"
-							HorizontalTextAlignment="Center"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Information}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="5"
-							Grid.Column="1"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							Text="Your reservation details"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="5"
-							Grid.Column="2"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Center"
-							Opacity="0.7"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<BoxView
-							Grid.Row="6"
-							Grid.ColumnSpan="3"
-							Margin="0,13,0,34"
-							BackgroundColor="White"
-							HeightRequest="1"
-							Opacity="0.2" />
-
-					</Grid>
-
-					<Grid ColumnSpacing="0" RowSpacing="20">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="34" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="auto" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="80" />
-						</Grid.ColumnDefinitions>
-						<Label
-							Grid.Row="0"
-							Grid.Column="0"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="18"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="Rules"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Button
-							Grid.Row="0"
-							Grid.Column="2"
-							BackgroundColor="Transparent"
-							BorderColor="White"
-							BorderWidth="1"
-							CornerRadius="8"
-							FontSize="14"
-							Opacity="0.2" />
-
-						<Label
-							Grid.Row="0"
-							Grid.Column="2"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							MaxLines="1"
-							Text="View all"
-							TextColor="#E08D70"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.VectorTriangle}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="Check-in is after 3pm"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="2"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.StorefrontOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="2"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="Check-out is at 11am"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="No smoking"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="4"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="4"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.5"
-							Text="Not for infants under 2 years"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</Grid>
-
-					<Frame
-						Margin="0,42,0,34"
-						Padding="0"
-						BackgroundColor="#E53614"
-						BorderColor="#E53614"
-						CornerRadius="16"
-						HasShadow="False"
-						HeightRequest="55"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Label
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="14"
-							HorizontalOptions="CenterAndExpand"
-							MaxLines="1"
-							Text="Report a problem"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</Frame>
-
-					<BoxView
-						Margin="0,0,0,44"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
-					<Grid Margin="0,0,0,32">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="32" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition />
-							<ColumnDefinition Width="80" />
-						</Grid.ColumnDefinitions>
-						<Label
-							Grid.Row="0"
-							Grid.Column="0"
-							FontAttributes="Bold"
-							FontFamily="PoppinsBoldFontFamily"
-							FontSize="24"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="Guest service"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Button
-							Grid.Row="0"
-							Grid.Column="1"
-							BackgroundColor="Transparent"
-							BorderColor="White"
-							BorderWidth="1"
-							CornerRadius="8"
-							FontSize="14"
-							Opacity="0.2" />
-
-						<Label
-							Grid.Row="0"
-							Grid.Column="1"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							MaxLines="1"
-							Text="View all"
-							TextColor="#E08D70"
-							VerticalTextAlignment="Center" />
-					</Grid>
-
-					<Grid ColumnSpacing="15">
-						<StackLayout
-							Grid.Row="0"
-							Grid.Column="0"
-							Spacing="0">
-							<Frame
-								Padding="0"
-								BackgroundColor="Transparent"
-								BorderColor="Transparent"
-								CornerRadius="16"
-								HasShadow="False"
-								IsClippedToBounds="True"
-								VerticalOptions="StartAndExpand">
-								<Image
-									x:Name="imgRoom"
-									Aspect="AspectFill"
-									BackgroundColor="Black"
-									HeightRequest="145"
-									WidthRequest="152" />
-							</Frame>
-							<Label
-								Margin="0,12,0,0"
-								FontAttributes="Bold"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="16"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="Laundry"
-								TextColor="White" />
-
-							<Label
-								Margin="0,4,0,27"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Opacity="0.5"
-								TextColor="White">
-								<Label.FormattedText>
-									<FormattedString>
-										<Span Text="29" />
-										<Span Text=" items" />
-									</FormattedString>
-								</Label.FormattedText>
-							</Label>
-
-							<Frame
-								Padding="0"
-								BackgroundColor="Transparent"
-								BorderColor="Transparent"
-								CornerRadius="16"
-								HasShadow="False"
-								IsClippedToBounds="True"
-								VerticalOptions="StartAndExpand">
-								<Image
-									x:Name="imgMedia"
-									Aspect="AspectFill"
-									BackgroundColor="Black"
-									HeightRequest="237"
-									WidthRequest="152" />
-							</Frame>
-
-							<Label
-								Margin="0,12,0,0"
-								FontAttributes="Bold"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="16"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="Pool area"
-								TextColor="White" />
-
-							<Label
-								Margin="0,4,0,0"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Opacity="0.5"
-								TextColor="White">
-								<Label.FormattedText>
-									<FormattedString>
-										<Span Text="29" />
-										<Span Text=" items" />
-									</FormattedString>
-								</Label.FormattedText>
-							</Label>
-						</StackLayout>
-
-						<StackLayout
-							Grid.Row="0"
-							Grid.Column="1"
-							Spacing="0">
-							<Frame
-								Padding="0"
-								BackgroundColor="Transparent"
-								BorderColor="Transparent"
-								CornerRadius="16"
-								HasShadow="False"
-								IsClippedToBounds="True"
-								VerticalOptions="StartAndExpand">
-								<Image
-									x:Name="imgBed"
-									Aspect="AspectFill"
-									BackgroundColor="Black"
-									HeightRequest="237"
-									WidthRequest="152" />
-							</Frame>
-
-							<Label
-								Margin="0,12,0,0"
-								FontAttributes="Bold"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="16"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="Clubhouse"
-								TextColor="White" />
-
-							<Label
-								Margin="0,4,0,27"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Opacity="0.5"
-								TextColor="White">
-								<Label.FormattedText>
-									<FormattedString>
-										<Span Text="29" />
-										<Span Text=" items" />
-									</FormattedString>
-								</Label.FormattedText>
-							</Label>
-
-							<Frame
-								Padding="0"
-								BackgroundColor="Transparent"
-								BorderColor="Transparent"
-								CornerRadius="16"
-								HasShadow="False"
-								IsClippedToBounds="True"
-								VerticalOptions="StartAndExpand">
-								<Image
-									x:Name="imgBathroom"
-									Aspect="AspectFill"
-									BackgroundColor="Black"
-									HeightRequest="145"
-									WidthRequest="152" />
-							</Frame>
-							<Label
-								Margin="0,12,0,0"
-								FontAttributes="Bold"
-								FontFamily="PoppinsSemiBoldFontFamily"
-								FontSize="16"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Text="Fitness"
-								TextColor="White" />
-
-							<Label
-								Margin="0,4,0,0"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Start"
-								MaxLines="1"
-								Opacity="0.5"
-								TextColor="White">
-								<Label.FormattedText>
-									<FormattedString>
-										<Span Text="29" />
-										<Span Text=" items" />
-									</FormattedString>
-								</Label.FormattedText>
-							</Label>
-						</StackLayout>
-					</Grid>
-
-					<BoxView
-						Margin="0,39,0,35"
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-
-					<Grid ColumnSpacing="0" RowSpacing="20">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="34" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-							<RowDefinition Height="26" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="40" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="80" />
-						</Grid.ColumnDefinitions>
-						<Label
-							Grid.Row="0"
-							Grid.Column="0"
-							Grid.ColumnSpan="2"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="18"
-							HorizontalTextAlignment="Start"
-							MaxLines="1"
-							Text="Important numbers"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Button
-							Grid.Row="0"
-							Grid.Column="2"
-							BackgroundColor="Transparent"
-							BorderColor="White"
-							BorderWidth="1"
-							CornerRadius="8"
-							FontSize="14"
-							Opacity="0.2" />
-
-						<Label
-							Grid.Row="0"
-							Grid.Column="2"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="12"
-							HorizontalTextAlignment="Center"
-							MaxLines="1"
-							Text="View all"
-							TextColor="#E08D70"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.VectorTriangle}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="1"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.4"
-							Text="Alarm number"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="2"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.StorefrontOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="2"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.4"
-							Text="Police"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="3"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							x:Name="lblMedicalAndHealth"
-							Grid.Row="3"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.4"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="4"
-							Grid.Column="0"
-							FontFamily="{StaticResource MaterialFontFamily}"
-							FontSize="25"
-							HorizontalTextAlignment="Start"
-							Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-
-						<Label
-							Grid.Row="4"
-							Grid.Column="1"
-							Grid.ColumnSpan="2"
-							FontFamily="PoppinsRegularFontFamily"
-							FontSize="14"
-							HorizontalTextAlignment="Start"
-							LineBreakMode="TailTruncation"
-							MaxLines="1"
-							Opacity="0.4"
-							Text="Traffic"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</Grid>
-
-					<Frame
-						Margin="0,42,0,34"
-						Padding="0"
-						BackgroundColor="#E53614"
-						BorderColor="#E53614"
-						CornerRadius="16"
-						HasShadow="False"
-						HeightRequest="55"
-						IsClippedToBounds="True"
-						VerticalOptions="StartAndExpand">
-						<Label
-							x:Name="lblGetPhoneAddressHere"
-							FontAttributes="Bold"
-							FontFamily="PoppinsSemiBoldFontFamily"
-							FontSize="14"
-							HorizontalOptions="CenterAndExpand"
-							MaxLines="1"
-							TextColor="White"
-							VerticalTextAlignment="Center" />
-					</Frame>
-
-					<BoxView
-						BackgroundColor="White"
-						HeightRequest="1"
-						Opacity="0.2" />
-				</StackLayout>
-			</ScrollView>
-
-			<Grid
-				Grid.Row="2"
-				Grid.ColumnSpan="3"
-				ColumnSpacing="5"
-				RowSpacing="0">
-				<Label
-					Grid.Row="0"
-					Grid.Column="0"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="1"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Button
-					Grid.Row="0"
-					Grid.Column="2"
-					Padding="0"
-					BackgroundColor="#6263ED"
-					CornerRadius="22"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HeightRequest="44"
-					HorizontalOptions="CenterAndExpand"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
-					TextColor="White"
-					VerticalOptions="CenterAndExpand"
-					WidthRequest="44" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="3"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.BellOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-
-				<Label
-					Grid.Row="0"
-					Grid.Column="4"
-					FontFamily="{StaticResource MaterialFontFamily}"
-					FontSize="25"
-					HorizontalTextAlignment="Center"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
-					TextColor="#5B5B79"
-					VerticalTextAlignment="Center" />
-			</Grid>
-		</Grid>-->
     </ContentPage.Content>
 </ContentPage>

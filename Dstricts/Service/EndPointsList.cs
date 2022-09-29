@@ -111,6 +111,8 @@
 		public const string ApartmentDetailInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoDstrictApp";
 		public const string ApartmentDetailInfoCheckinUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentDetailInfoCheckin";
 		public const string GetSratedDetailUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getsratedDetail";
+		public const string ApartmentBuildingAmenitiesUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentBuildingAmenities";
+		public const string ApartmentBuildingParkingsUrl = "https://www.qloudid.com/user/index.php/QloudidApp/apartmentBuildingParkings";
 
 		//Community
 		public const string GetCommunityInfoUrl = "https://www.qloudid.com/user/index.php/QloudidApp/getCommunityInfo";

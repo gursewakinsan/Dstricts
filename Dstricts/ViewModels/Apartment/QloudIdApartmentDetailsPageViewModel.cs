@@ -54,7 +54,7 @@ namespace Dstricts.ViewModels
 
 			var responses = await service.GetSratedDetailAsync(new Models.GetSratedDetailRequest()
 			{
-				ApartmentId = Helper.Helper.ApartmentCheckedIn.Id
+				ApartmentId = SelectedCheckedIn.Id
 			});
 			if (responses?.Count > 0)
 			{
@@ -62,6 +62,44 @@ namespace Dstricts.ViewModels
 				HowToUseInfo = responses.Where(x => x.IsSwitchOn == false).ToList();
 			}
 			BindListDecorated();
+			Models.ApartmentCommunityAmenitiesResponse response = null;
+			if (SelectedCheckedIn.BuildingId > 0)
+			{
+				response = await service.ApartmentBuildingAmenitiesAsync(new Models.ApartmentBuildingAmenitiesRequest()
+				{
+					BuildingId = SelectedCheckedIn.BuildingId,
+				});
+
+				var parkeringList = await service.ApartmentBuildingParkingsAsync(new Models.ApartmentBuildingAmenitiesRequest()
+				{
+					BuildingId = SelectedCheckedIn.BuildingId
+				});
+				if (parkeringList?.Count > 0)
+					parkeringList[0].ItemWidth = App.ScreenWidth - 50;
+				ParkeringList = parkeringList;
+			}
+
+			if (response != null)
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in response.AmenitiesList)
+					item.ItemWidth = imgWidth;
+
+				foreach (var item in response.StorageAmenitiesList)
+					item.ItemWidth = imgWidth;
+				
+				foreach (var item in response.TrashRecycleList)
+					item.ItemWidth = imgWidth;
+
+				AmenitiesListInfo = response.AmenitiesList;
+				StorageAmenitiesListInfo = response.StorageAmenitiesList;
+				TrashRecycleListInfo = response.TrashRecycleList;
+			}
+			IsAmenitiesListInfo = AmenitiesListInfo?.Count > 0 ? true : false;
+			IsStorageAmenitiesListInfo = StorageAmenitiesListInfo?.Count > 0 ? true : false;
+			IsTrashRecycleListInfo = TrashRecycleListInfo?.Count > 0 ? true : false;
+			IsParkeringList = ParkeringList?.Count > 0 ? true : false;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -305,8 +343,117 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private List<Models.ApartmentCommunity> amenitiesListInfo;
+		public List<Models.ApartmentCommunity> AmenitiesListInfo
+		{
+			get => amenitiesListInfo;
+			set
+			{
+				amenitiesListInfo = value;
+				OnPropertyChanged("AmenitiesListInfo");
+			}
+		}
 
+		private bool isAmenitiesListInfo;
+		public bool IsAmenitiesListInfo
+		{
+			get => isAmenitiesListInfo;
+			set
+			{
+				isAmenitiesListInfo = value;
+				OnPropertyChanged("IsAmenitiesListInfo");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> storageAmenitiesListInfo;
+		public List<Models.ApartmentCommunity> StorageAmenitiesListInfo
+		{
+			get => storageAmenitiesListInfo;
+			set
+			{
+				storageAmenitiesListInfo = value;
+				OnPropertyChanged("StorageAmenitiesListInfo");
+			}
+		}
+
+		private bool isStorageAmenitiesListInfo;
+		public bool IsStorageAmenitiesListInfo
+		{
+			get => isStorageAmenitiesListInfo;
+			set
+			{
+				isStorageAmenitiesListInfo = value;
+				OnPropertyChanged("IsStorageAmenitiesListInfo");
+			}
+		}
+
+		private List<Models.ApartmentCommunity> trashRecycleListInfo;
+		public List<Models.ApartmentCommunity> TrashRecycleListInfo
+		{
+			get => trashRecycleListInfo;
+			set
+			{
+				trashRecycleListInfo = value;
+				OnPropertyChanged("TrashRecycleListInfo");
+			}
+		}
+
+		private bool isTrashRecycleListInfo;
+		public bool IsTrashRecycleListInfo
+		{
+			get => isTrashRecycleListInfo;
+			set
+			{
+				isTrashRecycleListInfo = value;
+				OnPropertyChanged("IsTrashRecycleListInfo");
+			}
+		}
+
+		private Models.BuildingSelectedParkingInfoResponse buildingSelectedParkingInfo;
+		public Models.BuildingSelectedParkingInfoResponse BuildingSelectedParkingInfo
+		{
+			get => buildingSelectedParkingInfo;
+			set
+			{
+				buildingSelectedParkingInfo = value;
+				OnPropertyChanged("BuildingSelectedParkingInfo");
+			}
+		}
+
+		private bool isBuildingSelectedParkingInfo;
+		public bool IsBuildingSelectedParkingInfo
+		{
+			get => isBuildingSelectedParkingInfo;
+			set
+			{
+				isBuildingSelectedParkingInfo = value;
+				OnPropertyChanged("IsBuildingSelectedParkingInfo");
+			}
+		}
+
+		private List<Models.ApartmentCommunityParkingsResponse> parkeringList;
+		public List<Models.ApartmentCommunityParkingsResponse> ParkeringList
+		{
+			get => parkeringList;
+			set
+			{
+				parkeringList = value;
+				OnPropertyChanged("ParkeringList");
+			}
+		}
+
+		private bool isParkeringList;
+		public bool IsParkeringList
+		{
+			get => isParkeringList;
+			set
+			{
+				isParkeringList = value;
+				OnPropertyChanged("IsParkeringList");
+			}
+		}
 		public string UserName => Helper.Helper.LoggedInUserName;
+		public Models.CheckedInResponse SelectedCheckedIn => Helper.Helper.ApartmentCheckedIn;
 		#endregion
 	}
 }

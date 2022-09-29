@@ -83,5 +83,8 @@
 		public const string CellphoneIphone = "\U000f0120";
 		public const string Settings = "\U000f0493";
 		public const string FlagOutline = "\U000f023d";
+
+		public const string AccountCircleOutline = "\U000f0b55";
+		public const string Dishwasher = "\U000f0aac";
 	}
 }
