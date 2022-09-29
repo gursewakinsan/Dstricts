@@ -25,6 +25,8 @@ namespace Dstricts.Models
 
         public string DisplayGetStartedTitle => $"{GetStartedTitle}{System.Environment.NewLine}on & Off";
 
+        public string ButtonTextIcon { get; set; }
+
         private bool isSelected;
         public bool IsSelected
         {

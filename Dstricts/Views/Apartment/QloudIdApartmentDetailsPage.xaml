@@ -317,7 +317,7 @@
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
 							IsClippedToBounds="True"
-							IsVisible="{Binding SelectedCheckedIn.IsGuest, Converter={StaticResource InverseBoolConverter}}">
+							IsVisible="{Binding SelectedCheckedIn.IsOwner, Converter={StaticResource InverseBoolConverter}}">
                             <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,0.5">
                                     <GradientStop Offset="0.1" Color="#5E5F67" />
@@ -414,7 +414,7 @@
 							CornerRadius="38,38,0,0"
 							HasShadow="False"
 							IsClippedToBounds="True"
-							IsVisible="{Binding SelectedCheckedIn.IsGuest}">
+							IsVisible="{Binding SelectedCheckedIn.IsOwner}">
                             <Frame.Background>
                                 <LinearGradientBrush EndPoint="0,0.5">
                                     <GradientStop Offset="0.1" Color="#5E5F67" />
@@ -957,68 +957,60 @@
 							TextColor="White"
 							VerticalTextAlignment="Start" />
 
-                        <Grid 
+                        <ScrollView 
                             Margin="0,27,0,33"
+                            HorizontalScrollBarVisibility="Never" 
                             Grid.Row="21"
 							Grid.Column="1"
-							Grid.ColumnSpan="4" 
-                            RowSpacing="18" 
-                            ColumnSpacing="39">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="63"/>
-                                <RowDefinition Height="18"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="90"/>
-                                <ColumnDefinition Width="90"/>
-                            </Grid.ColumnDefinitions>
-                            <Button 
-                                Grid.Row="0" 
-                                Grid.Column="0" 
-                                CornerRadius="10"
-                                BorderWidth="2"
-                                TextColor="White"
-                                FontSize="25"
-                                Padding="0"
-                                BorderColor="#F4B400"
-                                BackgroundColor="Transparent"
-                                FontFamily="{StaticResource MaterialFontFamily}"
-                                Text="{x:Static fontawesome:DstrictsAppFlatIcons.Dishwasher}"/>
+							Grid.ColumnSpan="4"
+							Orientation="Horizontal">
+                            <StackLayout
+								Orientation="Horizontal"
+								BindableLayout.ItemsSource="{Binding HowToUseInfo}"
+								HorizontalOptions="StartAndExpand" Spacing="0">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid 
+											RowSpacing="18" 
+											ColumnSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="63"/>
+                                                <RowDefinition Height="18"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="39"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button 
+												Grid.Row="0" 
+												Grid.Column="0" 
+												CornerRadius="10"
+												BorderWidth="2"
+												TextColor="White"
+												FontSize="25"
+												Padding="0"
+												BorderColor="#F4B400"
+												BackgroundColor="Transparent"
+                                                Clicked="OnHowToUseInfoItemClicked"
+												FontFamily="{StaticResource MaterialFontFamily}"
+												Text="{Binding ButtonTextIcon}"/>
 
-                            <Label
-								Grid.Row="1"
-								Grid.Column="0"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Center"
-								Text="Dish machine"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
+                                            <Label
+												Grid.Row="1"
+												Grid.Column="0"
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="12"
+												HorizontalTextAlignment="Center"
+												Text="{Binding GetStartedTitle}"
+												TextColor="White"
+												VerticalTextAlignment="Center" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
 
-                            <Button 
-                                Grid.Row="0" 
-                                Grid.Column="1" 
-                                CornerRadius="10"
-                                BorderWidth="2"
-                                TextColor="White"
-                                FontSize="25"
-                                Padding="0"
-                                BorderColor="#F4B400"
-                                BackgroundColor="Transparent"
-                                FontFamily="{StaticResource MaterialFontFamily}"
-                                Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountCircleOutline}"/>
-
-                            <Label
-								Grid.Row="1"
-								Grid.Column="1"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="12"
-								HorizontalTextAlignment="Center"
-								Text="Wash machine"
-								TextColor="White"
-								VerticalTextAlignment="Center" />
-
-                        </Grid>
+                       
 
                         <BoxView
 							Grid.Row="22"

@@ -64,7 +64,7 @@ namespace Dstricts.Views.Apartment
 		#region On How To Use Info Item Clicked.
 		private async void OnHowToUseInfoItemClicked(object sender, System.EventArgs e)
         {
-			ImageButton imageButton = sender as ImageButton;
+			Button imageButton = sender as Button;
 			Models.GetSratedDetailResponse response = imageButton.BindingContext as Models.GetSratedDetailResponse;
 			foreach (var switchInfo in viewModel.HowToUseInfo)
 			{

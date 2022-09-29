@@ -59,7 +59,15 @@ namespace Dstricts.ViewModels
 			if (responses?.Count > 0)
 			{
 				HowToSwitchInfo = responses.Where(x => x.IsSwitchOn == true).ToList();
-				HowToUseInfo = responses.Where(x => x.IsSwitchOn == false).ToList();
+				var howToUseInfo = responses.Where(x => x.IsSwitchOn == false).ToList();
+                foreach (var item in howToUseInfo)
+                {
+					if (item.GetStartedTitle.Contains("Dish machine"))
+						item.ButtonTextIcon = Helper.DstrictsAppFlatIcons.Dishwasher;
+					else if (item.GetStartedTitle.Contains("Washing machine"))
+						item.ButtonTextIcon = Helper.DstrictsAppFlatIcons.AccountCircleOutline;
+				}
+				HowToUseInfo = howToUseInfo;
 			}
 			BindListDecorated();
 			Models.ApartmentCommunityAmenitiesResponse response = null;
