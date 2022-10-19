@@ -98,7 +98,7 @@
                 <Button
 					Grid.Row="0"
 					Grid.Column="2"
-					BackgroundColor="#FFCCD2"
+					BackgroundColor="White"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
@@ -240,7 +240,7 @@
                                     BorderWidth="3"
                                     VerticalOptions="FillAndExpand"
                                     HorizontalOptions="FillAndExpand"
-                                    BorderColor="#FFCCD2"/>
+                                    BorderColor="#F4B400"/>
 
                                 <StackLayout
                                     Spacing="0"
@@ -255,12 +255,12 @@
                                         VerticalOptions="CenterAndExpand"/>
 
                                     <Label
-                                        Margin="0,12,0,12"
+                                        Margin="0,12,0,5"
 		                                FontFamily="PoppinsSemiBoldFontFamily"
-		                                FontSize="16"
+		                                FontSize="20"
                                         HorizontalOptions="CenterAndExpand"
                                         HorizontalTextAlignment="Center"
-		                                Text="No unpaid invoices"
+		                                Text="Invoices"
 		                                TextColor="White"/>
 
                                     <Label
@@ -268,23 +268,21 @@
 		                                FontSize="12"
                                         HorizontalOptions="CenterAndExpand"
                                         HorizontalTextAlignment="Center"
-		                                Text="You have zero"
-		                                TextColor="#9CA4AB"/>
-
-                                    <Label Margin="0,2,0,0"
-		                                FontFamily="PoppinsRegularFontFamily"
-		                                FontSize="12"
-                                        HorizontalOptions="CenterAndExpand"
-                                        HorizontalTextAlignment="Center"
-		                                Text="unpaid invoices"
+		                                Text="You have zero unpaid invoices"
 		                                TextColor="#9CA4AB"/>
                                 </StackLayout>
                             </Grid>
                         </BindableLayout.EmptyView>
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <StackLayout Spacing="0">
-                                    <Grid BackgroundColor="#E9B1B8" RowSpacing="0" ColumnSpacing="0" Padding="28">
+                                <Frame 
+                                    IsClippedToBounds="True" 
+                                    HasShadow="False" 
+                                    BorderColor="#F4B400"
+                                    Margin="28,0,28,28"
+                                    CornerRadius="10"
+                                    BackgroundColor="#242A37">
+                                    <Grid RowSpacing="0" ColumnSpacing="0" Padding="23">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="32"/>
                                             <RowDefinition Height="1"/>
@@ -311,13 +309,13 @@
 							                Text="To pay"
                                             Grid.Row="0"
                                             Grid.Column="0"
-							                TextColor="Black"
+							                TextColor="White"
                                             HorizontalTextAlignment="Start"
                                             VerticalTextAlignment="Center"/>
 
                                         <BoxView 
                                             Grid.Row="1"
-                                            BackgroundColor="Black"
+                                            BackgroundColor="White"
                                             Grid.ColumnSpan="2"/>
 
                                         <Label
@@ -326,8 +324,8 @@
 							                Text="Latest"
                                             Grid.Row="2"
                                             Grid.Column="0"
-							                TextColor="Black"
-                                            Margin="68,0,0,0"
+							                TextColor="White"
+                                            Margin="58,0,0,0"
                                             HorizontalTextAlignment="Start"
                                             VerticalTextAlignment="Center"/>
 
@@ -337,14 +335,14 @@
 							                Text="{Binding Latest}"
                                             Grid.Row="2"
                                             Grid.Column="1"
-							                TextColor="Black"
+							                TextColor="White"
                                             HorizontalTextAlignment="End"
                                             VerticalTextAlignment="Center"/>
 
                                         <BoxView
-                                            Margin="68,0,0,0"
+                                            Margin="58,0,0,0"
                                             Grid.Row="3"
-                                            BackgroundColor="Black"
+                                            BackgroundColor="#B4B4B4"
                                             Grid.ColumnSpan="2"/>
 
                                         <Label
@@ -353,8 +351,8 @@
 							                Text="Amount"
                                             Grid.Row="4"
                                             Grid.Column="0"
-							                TextColor="Black"
-                                            Margin="68,0,0,0"
+							                TextColor="White"
+                                            Margin="58,0,0,0"
                                             HorizontalTextAlignment="Start"
                                             VerticalTextAlignment="Center"/>
 
@@ -363,7 +361,7 @@
 							                FontSize="16"
                                             Grid.Row="4"
                                             Grid.Column="1"
-							                TextColor="Black"
+							                TextColor="White"
                                             HorizontalTextAlignment="End"
                                             VerticalTextAlignment="Center">
                                             <Label.FormattedText>
@@ -375,9 +373,9 @@
                                         </Label>
 
                                         <BoxView
-                                            Margin="68,0,0,0"
+                                            Margin="58,0,0,0"
                                             Grid.Row="5"
-                                            BackgroundColor="Black"
+                                            BackgroundColor="#B4B4B4"
                                             Grid.ColumnSpan="2"/>
 
                                         <Label
@@ -386,8 +384,8 @@
 							                Text="Check invoice"
                                             Grid.Row="6"
                                             Grid.Column="0"
-							                TextColor="Black"
-                                            Margin="68,0,0,0"
+							                TextColor="White"
+                                            Margin="58,0,0,0"
                                             HorizontalTextAlignment="Start"
                                             VerticalTextAlignment="Center"/>
 
@@ -396,7 +394,7 @@
 							                FontSize="16"
                                             Grid.Row="6"
                                             Grid.Column="1"
-							                TextColor="Black"
+							                TextColor="White"
                                             HorizontalTextAlignment="End"
                                             VerticalTextAlignment="Center">
                                             <Label.FormattedText>
@@ -408,9 +406,9 @@
                                         </Label>
 
                                         <BoxView
-                                            Margin="68,0,0,0"
+                                            Margin="58,0,0,0"
                                             Grid.Row="7"
-                                            BackgroundColor="Black"
+                                            BackgroundColor="#B4B4B4"
                                             Grid.ColumnSpan="2"/>
 
                                         <Button 
@@ -420,9 +418,9 @@
                                             CornerRadius="10"
                                             Text="Pay now"
                                             FontSize="14"
-                                            TextColor="White"
+                                            TextColor="Black"
                                             Clicked="OnPayNowClicked"
-                                            BackgroundColor="#E53614"
+                                            BackgroundColor="#F4B400"
                                             FontFamily="PoppinsSemiBoldFontFamily"/>
 
                                         <StackLayout 
@@ -441,7 +439,6 @@
 							                    FontSize="13"
 							                    Text="or pay with"
 							                    TextColor="White"
-                                                BackgroundColor="Black"
                                                 Padding="8,0,8,0"
                                                 TextTransform="Uppercase"
                                                 HorizontalTextAlignment="End"
@@ -465,15 +462,13 @@
                                             BackgroundColor="#374657"
                                             FontFamily="PoppinsSemiBoldFontFamily"/>
                                     </Grid>
-                                    <BoxView HeightRequest="2" BackgroundColor="White"/>
-                                    <BoxView HeightRequest="20"/>
-                                </StackLayout>
+                                </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
 
                     <Label
-                        Margin="28,49,0,21"
+                        Margin="28,49,0,0"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="16"
 						TextColor="White"
@@ -486,54 +481,59 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <StackLayout Spacing="0" BackgroundColor="#242A37" Padding="0,10,0,10" IsVisible="{Binding IsPaidListEmpty}">
-                        <BoxView Margin="28,0,28,0" HeightRequest="1" BackgroundColor="White" Opacity="0.42"/>
+                    <StackLayout Spacing="0" Padding="0,0,0,10" IsVisible="{Binding IsPaidListEmpty}">
+                        <BoxView Margin="28,20,28,20" HeightRequest="1" BackgroundColor="White" Opacity="0.10"/>
                         <StackLayout BindableLayout.ItemsSource="{Binding TenantInvoiceInfo.Paid}" HorizontalOptions="StartAndExpand">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid RowSpacing="0" ColumnSpacing="20" Margin="28,0,28,0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="69"/>
-                                            <RowDefinition Height="1"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="24"/>
-                                        </Grid.ColumnDefinitions>
+                                    <Frame 
+                                        IsClippedToBounds="True" 
+                                        HasShadow="False" 
+                                        CornerRadius="12"
+                                        BackgroundColor="#242A37" 
+                                        Margin="28,0,28,16" Padding="23,23,31,23">
+                                        <Grid RowSpacing="0" ColumnSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="40"/>
+                                                <ColumnDefinition Width="24"/>
+                                            </Grid.ColumnDefinitions>
 
-                                        <Label
-			                                Grid.Row="0"
-			                                Grid.Column="0"
-			                                FontFamily="PoppinsRegularFontFamily"
-			                                FontSize="14"
-			                                HorizontalTextAlignment="Start"
-			                                Text="{Binding InvoiceMonth}"
-			                                TextColor="White"
-			                                VerticalTextAlignment="Center"/>
+                                            <Label
+			                                    Grid.Row="0"
+			                                    Grid.Column="0"
+			                                    FontFamily="PoppinsBoldFontFamily"
+			                                    FontSize="14"
+			                                    HorizontalTextAlignment="Start"
+			                                    Text="{Binding InvoiceMonth}"
+			                                    TextColor="White"
+			                                    VerticalTextAlignment="Center"/>
 
-                                        <Label
-			                                Grid.Row="0"
-			                                Grid.Column="1"
-			                                FontFamily="PoppinsRegularFontFamily"
-			                                FontSize="14"
-			                                HorizontalTextAlignment="Center"
-			                                Text="Paid"
-			                                TextColor="White"
-			                                VerticalTextAlignment="Center"/>
+                                            <Label
+			                                    Grid.Row="0"
+			                                    Grid.Column="1"
+			                                    FontFamily="PoppinsRegularFontFamily"
+			                                    FontSize="14"
+			                                    HorizontalTextAlignment="Center"
+			                                    Text="Paid"
+			                                    TextColor="White"
+			                                    VerticalTextAlignment="Center"/>
 
-                                        <Label
-			                                Grid.Row="0"
-			                                Grid.Column="2"
-			                                FontFamily="{StaticResource MaterialFontFamily}"
-			                                FontSize="25"
-			                                HorizontalTextAlignment="End"
-			                                Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-			                                TextColor="White"
-			                                VerticalTextAlignment="Center"/>
-
-                                        <BoxView Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="White" Opacity="0.42"/>
-                                    </Grid>
+                                            <Label
+			                                    Grid.Row="0"
+			                                    Grid.Column="2"
+			                                    FontFamily="{StaticResource MaterialFontFamily}"
+			                                    FontSize="25"
+			                                    HorizontalTextAlignment="End"
+			                                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+			                                    TextColor="#E9B1B8"
+			                                    VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                    </Frame>
+                                       
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
