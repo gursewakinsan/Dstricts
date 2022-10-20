@@ -39,12 +39,12 @@ namespace Dstricts.ViewModels
 					tenant.IsSelected = false;
 					tenant.PortNumberTextColor = Color.White;
 					tenant.PortNumberBg = Color.Transparent;
-					tenant.PortNumberBorder = Color.FromHex("#737B8C");
+					tenant.PortNumberBorder = Color.FromHex("#F4B400");
 				}
 				response[0].IsSelected = true;
 				response[0].PortNumberTextColor = Color.Black;
-				response[0].PortNumberBg = Color.White;
-				response[0].PortNumberBorder = Color.White;
+				response[0].PortNumberBg = Color.FromHex("#F4B400");
+				response[0].PortNumberBorder = Color.FromHex("#F4B400");
 				CopySelectedTenantInfo = response[0].TenantsList;
 				SelectedTenantInfo = new ObservableCollection<Models.Tenant>(response[0].TenantsList);
 				TenantInfo = new ObservableCollection<Models.CommunityAvailableTenantsInfoResponse>(response);

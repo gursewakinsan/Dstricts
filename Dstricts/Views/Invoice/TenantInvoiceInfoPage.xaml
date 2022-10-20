@@ -214,17 +214,17 @@
             <ScrollView VerticalScrollBarVisibility="Never">
                 <StackLayout VerticalOptions="StartAndExpand" Spacing="0" Padding="0,0,0,20">
                     <Label
-                        Margin="28,47,0,12"
+                        Margin="28,45,0,8"
 						FontFamily="PoppinsSemiBoldFontFamily"
-						FontSize="16"
+						FontSize="20"
 						Text="Invoices"
 						TextColor="White"
                         HorizontalOptions="StartAndExpand"/>
                     
                     <Label
-                        Margin="28,0,28,25"
+                        Margin="28,0,28,33"
 						FontFamily="PoppinsRegularFontFamily"
-						FontSize="14"
+						FontSize="15"
 						Text="It can take a couple of days for a paid invoices to show up as paid."
 						TextColor="White"
                         Opacity="0.42"
@@ -280,11 +280,11 @@
                                     HasShadow="False" 
                                     BorderColor="#F4B400"
                                     Margin="28,0,28,28"
-                                    CornerRadius="10"
+                                    CornerRadius="10" Padding="24"
                                     BackgroundColor="#242A37">
-                                    <Grid RowSpacing="0" ColumnSpacing="0" Padding="23">
+                                    <Grid RowSpacing="0" ColumnSpacing="0">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="32"/>
+                                            <RowDefinition Height="34"/>
                                             <RowDefinition Height="1"/>
                                             <RowDefinition Height="44"/>
                                             <RowDefinition Height="1"/>
@@ -292,7 +292,7 @@
                                             <RowDefinition Height="1"/>
                                             <RowDefinition Height="44"/>
                                             <RowDefinition Height="1"/>
-                                            <RowDefinition Height="41"/>
+                                            <RowDefinition Height="40"/>
                                             <RowDefinition Height="54"/>
                                             <RowDefinition Height="24"/>
                                             <RowDefinition Height="18"/>
@@ -468,7 +468,7 @@
                     </StackLayout>
 
                     <Label
-                        Margin="28,49,0,0"
+                        Margin="28,45,0,0"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="16"
 						TextColor="White"

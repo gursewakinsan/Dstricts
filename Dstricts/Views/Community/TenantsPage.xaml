@@ -1,77 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Dstricts.Views.Community.TenantsPage"
     xmlns:fontawesome="clr-namespace:Dstricts.Helper"
-	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:controls="clr-namespace:Dstricts.Controls"
     ios:Page.UseSafeArea="False"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
     <Grid
-		Margin="0,50,0,0"
+		Margin="0,22,0,2"
 		ColumnSpacing="0"
 		RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="24" />
-            <RowDefinition Height="22" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="31" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="23" />
-            <RowDefinition Height="24" />
-            <RowDefinition Height="7" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="0" />
+            <RowDefinition Height="0" />
             <RowDefinition Height="56" />
             <RowDefinition Height="28" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="28" />
+            <ColumnDefinition Width="40" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="28" />
         </Grid.ColumnDefinitions>
+        <Frame
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
+			BorderColor="White"
+			CornerRadius="8"
+			IsClippedToBounds="True"
+			Opacity="0.2">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
         <Label
 			Grid.Row="0"
-			Grid.Column="0"
-			Margin="18,0,0,0"
+			Grid.Column="1"
+			Padding="0"
+			BackgroundColor="Transparent"
 			FontFamily="{StaticResource MaterialFontFamily}"
 			FontSize="25"
-			HorizontalTextAlignment="Start"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
 			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
-			TextColor="White"
-			VerticalTextAlignment="Center">
+			TextColor="White">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
             </Label.GestureRecognizers>
         </Label>
 
         <Label
 			Grid.Row="0"
-			Grid.Column="1"
+			Grid.Column="2"
 			FontFamily="PoppinsRegularFontFamily"
-			FontSize="14"
-			HorizontalTextAlignment="Center"
-			Text="Tenants"
+			FontSize="16"
+			HorizontalTextAlignment="End"
+			Text="Neighbors"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
-
-        <Label
-			Grid.Row="0"
-			Grid.Column="2"
-			FontFamily="{StaticResource MaterialFontFamily}"
-			FontSize="25"
-            Margin="0,0,28,0"
-			HorizontalTextAlignment="End"
-			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
-			TextColor="White"
-			VerticalTextAlignment="Center"/>
-
+        
         <Frame 
             BackgroundColor="#5E6170"
-            Margin="28,0,28,0"
             CornerRadius="8"
             Padding="0"
             IsClippedToBounds="True"
             HasShadow="False"
             Grid.Row="2"
-            Grid.ColumnSpan="3">
+            Grid.Column="1"
+            Grid.ColumnSpan="2">
             <Grid Margin="16,0,16,0" RowSpacing="0" ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="18"/>
@@ -148,7 +155,7 @@
 
         <controls:CustomFrame
 			Grid.Row="8"
-			Grid.ColumnSpan="3"
+			Grid.ColumnSpan="4"
 			Padding="0"
 			CornerRadius="38,38,0,0"
 			HasShadow="False"

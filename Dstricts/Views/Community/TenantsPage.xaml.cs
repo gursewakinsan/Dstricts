@@ -34,12 +34,12 @@ namespace Dstricts.Views.Community
                     tenant.IsSelected = false;
                     tenant.PortNumberTextColor = Color.White;
                     tenant.PortNumberBg = Color.Transparent;
-                    tenant.PortNumberBorder = Color.FromHex("#737B8C");
+                    tenant.PortNumberBorder = Color.FromHex("#F4B400");
                 }
                 response.IsSelected = true;
                 response.PortNumberTextColor = Color.Black;
-                response.PortNumberBg = Color.White;
-                response.PortNumberBorder = Color.White;
+                response.PortNumberBg = Color.FromHex("#F4B400");
+                response.PortNumberBorder = Color.FromHex("#F4B400");
                 viewModel.CopySelectedTenantInfo = response.TenantsList;
                 viewModel.SelectedTenantInfo = new System.Collections.ObjectModel.ObservableCollection<Models.Tenant>(response.TenantsList);
             }
