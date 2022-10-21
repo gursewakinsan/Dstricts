@@ -311,10 +311,10 @@ namespace Dstricts.ViewModels
 		void BindFreeAmenities()
         {
 			GuestServicesList = new List<Models.GuestServices>();
-			GuestServicesList.Add(new Models.GuestServices() { Id = 0, ServiceName = "Room" });
-			GuestServicesList.Add(new Models.GuestServices() { Id = 1, ServiceName = "Bed" });
-			GuestServicesList.Add(new Models.GuestServices() { Id = 2, ServiceName = "Bathroom" });
-			GuestServicesList.Add(new Models.GuestServices() { Id = 3, ServiceName = "Media" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 0, ServiceName = "Room", AmenitiesIcons = Helper.DstrictsAppFlatIcons.AccountOutline });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 1, ServiceName = "Bed", AmenitiesIcons = Helper.DstrictsAppFlatIcons.HomeOutline });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 2, ServiceName = "Bathroom", AmenitiesIcons = Helper.DstrictsAppFlatIcons.FlagOutline });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 3, ServiceName = "Media", AmenitiesIcons = Helper.DstrictsAppFlatIcons.FlagOutline });
 		}
 		#endregion
 

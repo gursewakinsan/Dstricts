@@ -753,7 +753,7 @@
                                                         BackgroundColor="Transparent"
                                                         FontFamily="{StaticResource MaterialFontFamily}"
                                                         Clicked="OnFreeAmenitiesClicked"
-														Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"/>
+														Text="{Binding AmenitiesIcons}"/>
 
                                                     <Label
 														Grid.Row="1" 

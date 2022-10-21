@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
-namespace Dstricts.Models
+﻿namespace Dstricts.Models
 {
-	public class GuestServices : INotifyPropertyChanged
+	public class GuestServices : BaseModel
 	{
 		public int Id { get; set; }
 		public string ServiceName { get; set; }
@@ -32,12 +29,6 @@ namespace Dstricts.Models
 			}
 		}
 
-		#region On Property Changed.
-		public event PropertyChangedEventHandler PropertyChanged;
-		public virtual void OnPropertyChanged([CallerMemberName] string name = "")
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-		}
-		#endregion
-	}
+        public string AmenitiesIcons { get; set; }
+    }
 }
