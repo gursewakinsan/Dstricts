@@ -23,8 +23,14 @@ namespace Dstricts.Views.Hotel
 		{
 			base.OnAppearing();
 			viewModel.HotelCompleteInfoCommand.Execute(null);
+
+			imgEatAndDrinkMenu.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/eatanddrink.png";
+			imgLaundry.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/laundary.png";
+
 			/*lblEatDrink.Text = $"Eat & Drink";
 			lblFitnessSpa.Text = "Fitness & Spa";
+
+
 
 			imgRoom.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/4.png";
 			imgBed.Source = "https://www.qloudid.com/html/usercontent/images/dstricts/5.png";
@@ -38,7 +44,7 @@ namespace Dstricts.Views.Hotel
 			//BindFitnessSpaInfo();
 			int deviceWidth = App.ScreenWidth - 56;
 			int widthUserDetails = deviceWidth * 80 / 100;
-			frameYourDetails.WidthRequest = widthUserDetails;
+			/*frameYourDetails.WidthRequest = widthUserDetails;
 
 			frameGetWiFi.WidthRequest = widthUserDetails;
 			frameCompleteCheckIns.WidthRequest = widthUserDetails;
@@ -47,7 +53,7 @@ namespace Dstricts.Views.Hotel
 			int widthRoomServices = deviceWidth * 40 / 100;
 			frameAmenities.WidthRequest = widthRoomServices;
 			frameLaundry.WidthRequest = widthRoomServices;
-			frameEatAndDrinks.WidthRequest = widthRoomServices;
+			frameEatAndDrinks.WidthRequest = widthRoomServices;*/
 
 			//int widthResturants = deviceWidth * 85 / 100;
 			//frameResturants1.WidthRequest = widthResturants;
@@ -358,8 +364,15 @@ namespace Dstricts.Views.Hotel
 			Label control = sender as Label;
 			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(System.Convert.ToInt32(control.ClassId)));
 		}
-		#endregion
-	}
+        #endregion
+
+        private void OnFreeAmenitiesClicked(object sender, System.EventArgs e)
+        {
+			Button button = sender as Button;
+			Models.GuestServices services = button.BindingContext as Models.GuestServices;
+			viewModel.SelectedGuestServiceCommand.Execute(services.Id);
+		}
+    }
 }
 public class EatAndDrink
 {

@@ -66,14 +66,38 @@ namespace Dstricts.Models
 		public int GuestChildrenLeft { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_checkin_left")]
-		public bool GuestCheckinLeft { get; set; }
+		public int GuestCheckinLeft { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_adult_checkedin")]
 		public int GuestAdultCheckedIn { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "guest_children_checkedin")]
 		public int GuestChildrenCheckedIn { get; set; }
-	}
+
+		[Newtonsoft.Json.JsonProperty(PropertyName = "room_types")]
+		public List<RoomType> RoomTypes { get; set; }
+
+		public bool IsGuestCheckinLeft => GuestCheckinLeft > 0 ? true : false;
+		public string DisplayGuestCheckinLeft => $"{GuestCheckinLeft} Left";
+    }
+}
+
+public class RoomType
+{
+	[Newtonsoft.Json.JsonProperty(PropertyName = "id")]
+	public int Id { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "room_type_name")]
+	public int RoomTypeName { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "room_type")]
+	public string Room_Type { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "is_available")]
+	public bool IsAvailable { get; set; }
+
+	[Newtonsoft.Json.JsonProperty(PropertyName = "image_path1")]
+	public string ImagePath { get; set; }
 }
 
 public class HotelImages

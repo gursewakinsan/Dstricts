@@ -14,6 +14,7 @@ namespace Dstricts.ViewModels
 		public HotelDetailsPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+			BindFreeAmenities();
 		}
 		#endregion
 
@@ -235,11 +236,11 @@ namespace Dstricts.ViewModels
 		private ICommand selectedGuestServiceCommand;
 		public ICommand SelectedGuestServiceCommand
 		{
-			get => selectedGuestServiceCommand ?? (selectedGuestServiceCommand = new Command<string>(async (id) => await ExecuteSelectedGuestServiceCommand(id)));
+			get => selectedGuestServiceCommand ?? (selectedGuestServiceCommand = new Command<int>(async (id) => await ExecuteSelectedGuestServiceCommand(id)));
 		}
-		private async Task ExecuteSelectedGuestServiceCommand(string id)
+		private async Task ExecuteSelectedGuestServiceCommand(int id)
 		{
-			await Navigation.PushAsync(new Views.Amenities.AmenitiesServicePage(Convert.ToInt32(id)));
+			await Navigation.PushAsync(new Views.Amenities.AmenitiesServicePage(id));
 		}
 		#endregion
 
@@ -306,7 +307,41 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Bind Free amenities.
+		void BindFreeAmenities()
+        {
+			GuestServicesList = new List<Models.GuestServices>();
+			GuestServicesList.Add(new Models.GuestServices() { Id = 0, ServiceName = "Room" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 1, ServiceName = "Bed" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 2, ServiceName = "Bathroom" });
+			GuestServicesList.Add(new Models.GuestServices() { Id = 3, ServiceName = "Media" });
+		}
+		#endregion
+
+		#region Socail Click Command.
+		private ICommand socailClickCommand;
+		public ICommand SocailClickCommand
+		{
+			get => socailClickCommand ?? (socailClickCommand = new Command(() => ExecuteSocailClickCommand()));
+		}
+		private void ExecuteSocailClickCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Apartment.SocialPage());
+		}
+		#endregion
+
 		#region Properties.
+		private List<Models.GuestServices> guestServicesList;
+		public List<Models.GuestServices> GuestServicesList
+		{
+			get => guestServicesList;
+			set
+			{
+				guestServicesList = value;
+				OnPropertyChanged("GuestServicesList");
+			}
+		}
+
 		private List<Models.SelectedRoomServiceAppServesResponse> selectedRoomServiceAppServesInfo;
 		public List<Models.SelectedRoomServiceAppServesResponse> SelectedRoomServiceAppServesInfo
 		{

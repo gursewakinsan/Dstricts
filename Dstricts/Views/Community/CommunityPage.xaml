@@ -956,14 +956,14 @@
 
                     <Grid Margin="0,40,0,0" RowSpacing="0" ColumnSpacing="0" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="0"/>
                             <RowDefinition Height="35"/>
                             <RowDefinition Height="36"/>
                             <RowDefinition Height="7"/>
                             <RowDefinition Height="50"/>
                             <RowDefinition Height="33"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
                         <BoxView
@@ -986,7 +986,7 @@
 							FontSize="16"
 							HorizontalTextAlignment="Start"
 							LineBreakMode="TailTruncation"
-							LineHeight="1.1"
+							LineHeight="1.2"
 							MaxLines="2"
 							Opacity="0.42"
 							Text="Easily reach your neighbor, board of directors and security guard from here."
@@ -1010,7 +1010,9 @@
                                 CornerRadius="38" 
                                 TextColor="White"
                                 FontSize="24"
-                                BackgroundColor="#C26979" 
+                                BorderWidth="2"
+                                BorderColor="#F4B400"
+                                BackgroundColor="Transparent" 
                                 Command="{Binding GoToTenantsPageCommand}"
                                 FontFamily="{StaticResource MaterialFontFamily}"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"/>
@@ -1031,7 +1033,9 @@
                                 CornerRadius="38" 
                                 TextColor="White"
                                 FontSize="24"
-                                BackgroundColor="#453E72" 
+                                BorderWidth="2"
+                                BorderColor="#F4B400"
+                                BackgroundColor="Transparent" 
                                 FontFamily="{StaticResource MaterialFontFamily}"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"/>
 
@@ -1051,7 +1055,9 @@
                                 CornerRadius="38" 
                                 TextColor="White"
                                 FontSize="24"
-                                BackgroundColor="#6B723E" 
+                                BorderWidth="2"
+                                BorderColor="#F4B400"
+                                BackgroundColor="Transparent" 
                                 FontFamily="{StaticResource MaterialFontFamily}"
 								Text="{x:Static fontawesome:DstrictsAppFlatIcons.FlagOutline}"/>
 
