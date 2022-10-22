@@ -128,6 +128,26 @@ namespace Dstricts.ViewModels
 			else
 				IsHotelVenuesList = false;
 
+			if (response?.RoomTypes?.Count == 1)
+				response.RoomTypes[0].ItemWidth = App.ScreenWidth - 50;
+			else
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in response.RoomTypes)
+					item.ItemWidth = imgWidth;
+			}
+
+			if (response?.GuestPerkObjects?.Count == 1)
+				response.RoomTypes[0].ItemWidth = App.ScreenWidth - 50;
+			else
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in response.GuestPerkObjects)
+					item.ItemWidth = imgWidth;
+			}
+
 			HotelDetails = response; 
 			Helper.Helper.HotelDetails = HotelDetails;
 
@@ -327,6 +347,18 @@ namespace Dstricts.ViewModels
 		private void ExecuteSocailClickCommand()
 		{
 			Application.Current.MainPage = new NavigationPage(new Views.Apartment.SocialPage());
+		}
+		#endregion
+
+		#region Hotel Command.
+		private ICommand hotelCommand;
+		public ICommand HotelCommand
+		{
+			get => hotelCommand ?? (hotelCommand = new Command(() => ExecuteHotelCommand()));
+		}
+		private void ExecuteHotelCommand()
+		{
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.HotelPage());
 		}
 		#endregion
 
