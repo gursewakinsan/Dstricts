@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace Dstricts.ViewModels
 {
@@ -20,7 +21,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteSocailClickCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.Apartment.SocialPage());
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 		}
 		#endregion
 
@@ -28,11 +29,11 @@ namespace Dstricts.ViewModels
 		private ICommand yourRoomCommand;
 		public ICommand YourRoomCommand
 		{
-			get => yourRoomCommand ?? (yourRoomCommand = new Command(() => ExecuteYourRoomCommand()));
+			get => yourRoomCommand ?? (yourRoomCommand = new Command(async() =>await ExecuteYourRoomCommand()));
 		}
-		private void ExecuteYourRoomCommand()
+		private async Task ExecuteYourRoomCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.Hotel.HotelDetailsPage());
+			await Navigation.PopAsync();
 		}
 		#endregion
 

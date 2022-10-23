@@ -210,7 +210,6 @@
                         <RowDefinition Height="40" />
                         <RowDefinition Height="35" />
                         <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -666,17 +665,18 @@
 						Text="Book a room"
 						TextColor="White"/>
 
-                    <Grid 
-									Grid.Row="12"
+                    <Grid
+                        Margin="0,29,0,0"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        Grid.Row="12"
 						Grid.Column="1"
-						Grid.ColumnSpan="5"
-									RowSpacing="0"
-									ColumnSpacing="0" Margin="0,29,0,0">
+						Grid.ColumnSpan="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="206"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
                             <RowDefinition Height="1"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -685,7 +685,7 @@
                             <ColumnDefinition Width="20"/>
                         </Grid.ColumnDefinitions>
                         <Label
-							Grid.Column="0"
+                            Grid.Column="0"
 							Grid.Row="0"
 							FontFamily="PoppinsMediumFontFamily"
 							FontSize="18"
@@ -696,70 +696,82 @@
 							VerticalTextAlignment="Center" />
 
                         <Label
-								Grid.Column="0"
-								Grid.Row="1"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="14"
-								HorizontalTextAlignment="Start"
-								Text="You will be able to book following service from your smartphone" 
-								TextColor="White"
-								Opacity="0.42"
-								Margin="0,10,45,30"
-								LineHeight="1.2"
-								VerticalTextAlignment="Center" />
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="You will be able to book following service from your smartphone" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,30"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
 
                         <Label
-							Grid.Row="0"
+                            Grid.Row="0"
 							Grid.Column="1"
-							Grid.RowSpan="2"
+                            Grid.RowSpan="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="40" 
 							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
 							TextColor="White"
-							Opacity="0.70"
+                            Opacity="0.70"
 							VerticalTextAlignment="Start"/>
 
                         <ScrollView
-								Grid.ColumnSpan="2"
-								Grid.Row="2"
-								HorizontalScrollBarVisibility="Never"
-								Orientation="Horizontal">
+                            Grid.ColumnSpan="3"
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
                             <StackLayout
-									BindableLayout.ItemsSource="{Binding HotelDetailsInfo.RoomTypes}"
-									HorizontalOptions="Start"
-									Orientation="Horizontal"
-									Spacing="16">
+                                BindableLayout.ItemsSource="{Binding HotelDetailsInfo.RoomTypes}"
+								Orientation="Horizontal"
+								Spacing="16">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid
-												ColumnSpacing="0"
-												RowSpacing="27"
-												WidthRequest="{Binding ItemWidth}">
+											ColumnSpacing="0"
+											RowSpacing="38"
+											WidthRequest="190">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="206" />
+                                                <RowDefinition Height="208" />
                                                 <RowDefinition Height="50" />
                                             </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{Binding ItemWidth}"/>
+                                            </Grid.ColumnDefinitions>
                                             <ImageButton
-													Grid.Row="0"
-													Aspect="AspectFill"
-													CornerRadius="12"
-													HeightRequest="206"
-													HorizontalOptions="CenterAndExpand"
-													Source="{Binding ImagePath}"
-													VerticalOptions="CenterAndExpand"
-                                                    BackgroundColor="Transparent"
-													WidthRequest="{Binding ItemWidth}" />
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="208"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}" />
 
                                             <StackLayout
-													Grid.Row="1"
-													HorizontalOptions="StartAndExpand"
-													Spacing="2" >
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+                                               
                                                 <Label 
-														FontFamily="PoppinsSemiBoldFontFamily"
-														FontSize="14"
-														Text="{Binding Room_Type}"
-														TextColor="White" />
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+													Text="{Binding Room_Type}"
+													TextColor="White"/>
+
+                                                <Label IsVisible="False"
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
                                             </StackLayout>
                                         </Grid>
                                     </DataTemplate>
@@ -767,11 +779,7 @@
                             </StackLayout>
                         </ScrollView>
 
-
-                        <BoxView 
-							Grid.Row="4" 
-							Grid.ColumnSpan="3" 
-							BackgroundColor="#2A2A31"/>
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
                     </Grid>
 
                     <Label
@@ -786,18 +794,17 @@
 						Text="Guest perks"
 						TextColor="White"/>
 
-                    <Grid 
-									Grid.Row="15"
+                    <Grid
+                        Margin="0,29,0,0"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        Grid.Row="15"
 						Grid.Column="1"
-						Grid.ColumnSpan="5"
-									RowSpacing="0"
-									ColumnSpacing="0" Margin="0,29,0,0">
+						Grid.ColumnSpan="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="208"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -805,7 +812,7 @@
                             <ColumnDefinition Width="20"/>
                         </Grid.ColumnDefinitions>
                         <Label
-							Grid.Column="0"
+                            Grid.Column="0"
 							Grid.Row="0"
 							FontFamily="PoppinsMediumFontFamily"
 							FontSize="18"
@@ -816,83 +823,71 @@
 							VerticalTextAlignment="Center" />
 
                         <Label
-								Grid.Column="0"
-								Grid.Row="1"
-								FontFamily="PoppinsRegularFontFamily"
-								FontSize="14"
-								HorizontalTextAlignment="Start"
-								Text="You will be able to book following service from your smartphone" 
-								TextColor="White"
-								Opacity="0.42"
-								Margin="0,10,45,30"
-								LineHeight="1.2"
-								VerticalTextAlignment="Center" />
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="You will be able to book following service from your smartphone" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,30"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
 
                         <Label
-							Grid.Row="0"
+                            Grid.Row="0"
 							Grid.Column="1"
-							Grid.RowSpan="2"
+                            Grid.RowSpan="2"
 							FontFamily="{StaticResource MaterialFontFamily}"
 							FontSize="40" 
 							HorizontalTextAlignment="Start"
 							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
 							TextColor="White"
-							Opacity="0.70"
+                            Opacity="0.70"
 							VerticalTextAlignment="Start"/>
 
                         <ScrollView
-								Grid.ColumnSpan="2"
-								Grid.Row="2"
-								HorizontalScrollBarVisibility="Never"
-								Orientation="Horizontal">
+                            Grid.ColumnSpan="3"
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
                             <StackLayout
-									BindableLayout.ItemsSource="{Binding HotelDetailsInfo.GuestPerkObjects}"
-									Margin="0,0,28,0"
-									HorizontalOptions="Start"
-									Orientation="Horizontal"
-									Spacing="16">
+                                BindableLayout.ItemsSource="{Binding HotelDetailsInfo.GuestPerkObjects}"
+								Orientation="Horizontal"
+								Spacing="16">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <Grid
-												ColumnSpacing="0"
-												RowSpacing="27"
-												WidthRequest="{Binding ItemWidth}">
+                                        <Grid RowSpacing="38" ColumnSpacing="0" HorizontalOptions="StartAndExpand">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="208" />
-                                                <RowDefinition Height="50" />
+                                                <RowDefinition/>
+                                                <RowDefinition Height="20"/>
                                             </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{Binding ItemWidth}"/>
+                                                <ColumnDefinition Width="10"/>
+                                            </Grid.ColumnDefinitions>
                                             <ImageButton
-													Grid.Row="0"
-													Aspect="AspectFill"
-													CornerRadius="12"
-													HeightRequest="208"
-													HorizontalOptions="CenterAndExpand"
-													Source="{Binding ImagePath}"
-													VerticalOptions="CenterAndExpand"
-                                                    BackgroundColor="Transparent"
-													WidthRequest="{Binding ItemWidth}" />
+                                                Grid.Column="0"
+                                                Grid.Row="0"
+                                                CornerRadius="8"
+                                                Aspect="AspectFill"
+                                                HeightRequest="208"
+                                                Source="{Binding ImagePath}"/>
 
-                                            <StackLayout
-													Grid.Row="1"
-													HorizontalOptions="StartAndExpand"
-													Spacing="2" >
-                                                <Label
-														FontFamily="PoppinsSemiBoldFontFamily"
-														FontSize="14"
-														Text="{Binding PerkObjectName}"
-														TextColor="White"/>
-                                            </StackLayout>
+                                            <Label
+                                                Grid.Column="0"
+                                                Grid.Row="1"
+												FontFamily="PoppinsSemiBoldFontFamily"
+												FontSize="14"
+												Text="{Binding PerkObjectName}"
+												TextColor="White"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
                         </ScrollView>
 
-
-                        <BoxView 
-							Grid.Row="4" 
-							Grid.ColumnSpan="3" 
-							BackgroundColor="#2A2A31"/>
                     </Grid>
                 </Grid>
             </ScrollView>

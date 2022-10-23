@@ -346,7 +346,7 @@ namespace Dstricts.ViewModels
 		}
 		private void ExecuteSocailClickCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.Apartment.SocialPage());
+			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
 		}
 		#endregion
 
@@ -354,11 +354,11 @@ namespace Dstricts.ViewModels
 		private ICommand hotelCommand;
 		public ICommand HotelCommand
 		{
-			get => hotelCommand ?? (hotelCommand = new Command(() => ExecuteHotelCommand()));
+			get => hotelCommand ?? (hotelCommand = new Command(async () => await ExecuteHotelCommand()));
 		}
-		private void ExecuteHotelCommand()
+		private async Task ExecuteHotelCommand()
 		{
-			Application.Current.MainPage = new NavigationPage(new Views.Hotel.HotelPage());
+			await Navigation.PushAsync(new Views.Hotel.HotelPage());
 		}
 		#endregion
 
