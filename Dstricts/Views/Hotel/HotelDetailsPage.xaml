@@ -476,7 +476,8 @@
                                                     BackgroundColor="#1B1D24"
                                                     VerticalOptions="EndAndExpand"
                                                     HorizontalOptions="CenterAndExpand"
-                                                    FontFamily="PoppinsSemiBoldFontFamily"/>
+                                                    FontFamily="PoppinsSemiBoldFontFamily"
+													Command="{Binding GoToAdultsAndChildrenPageCommand}" />
                                             </StackLayout>
                                         </Frame>
 
