@@ -162,7 +162,7 @@
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
-					Text="Pay"
+					Text="Payment"
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
@@ -231,7 +231,7 @@
                         LineHeight="1.2"
                         HorizontalOptions="StartAndExpand"/>
 
-                    <StackLayout BindableLayout.ItemsSource="{Binding TenantInvoiceInfo.UnPaid}" HorizontalOptions="StartAndExpand">
+                    <StackLayout BindableLayout.ItemsSource="{Binding TenantInvoiceInfo.UnPaid}" HorizontalOptions="StartAndExpand" IsVisible="{Binding IsUnPaidVisible}">
                         <BindableLayout.EmptyView>
                             <Grid HeightRequest="368" WidthRequest="{Binding EmptyImageWidth}" HorizontalOptions="FillAndExpand" Margin="28,0,28,0">
                                 <Button 
@@ -467,7 +467,7 @@
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
 
-                    <Label
+                    <Label IsVisible="{Binding IsPaidListEmpty}"
                         Margin="28,45,0,0"
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="16"

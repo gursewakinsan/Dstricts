@@ -13,6 +13,8 @@ namespace Dstricts.ViewModels
 		public TenantInvoiceInfoPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+			IsUnPaidVisible = false;
+			IsPaidListEmpty = false;
 		}
 		#endregion
 
@@ -35,6 +37,7 @@ namespace Dstricts.ViewModels
 				IsPaidListEmpty = true;
 			else
 				IsPaidListEmpty = false;
+			IsUnPaidVisible = true;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -146,6 +149,17 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private bool isUnPaidVisible;
+		public bool IsUnPaidVisible
+		{
+			get => isUnPaidVisible;
+			set
+			{
+				isUnPaidVisible = value;
+				OnPropertyChanged("IsUnPaidVisible");
+			}
+		}
+		
 		private string propertyNickName;
 		public string PropertyNickName
 		{
