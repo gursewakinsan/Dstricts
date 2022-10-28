@@ -20,7 +20,7 @@ namespace Dstricts.Views.Apartment
         protected override void OnAppearing()
         {
             base.OnAppearing();
-		}
+        }
 
         void rr()
 		{

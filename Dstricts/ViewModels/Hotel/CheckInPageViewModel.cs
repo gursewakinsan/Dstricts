@@ -308,6 +308,34 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Get Community Info Command.
+		private ICommand getCommunityInfoCommand;
+		public ICommand GetCommunityInfoCommand
+		{
+			get => getCommunityInfoCommand ?? (getCommunityInfoCommand = new Command(async () => await ExecuteGetCommunityInfoCommand()));
+		}
+		private async Task ExecuteGetCommunityInfoCommand()
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			IApartmentService service = new ApartmentService();
+			var ApartmentDetailInfo = await service.ApartmentDetailInfoAsync(new Models.ApartmentDetailInfoRequest()
+			{
+				Id = Helper.Helper.ApartmentCheckedIn.QloudCheckOutId
+			});
+			Helper.Helper.ApartmentDetailInfo = ApartmentDetailInfo;
+
+			ICommunityService communityService = new CommunityService();
+			Helper.Helper.CommunityId = await communityService.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
+			{
+				CheckId = Helper.Helper.HotelCheckedIn
+			});
+			Helper.Helper.IsPayment = ApartmentDetailInfo.IsPayment;
+			Helper.Helper.BuildingId = ApartmentDetailInfo.BuildingId;
+			await Navigation.PushAsync(new Views.Apartment.SocialPage());
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
 		#region Properties.
 		private List<Models.CheckedInResponse> checkInList;
 		public List<Models.CheckedInResponse> CheckInList

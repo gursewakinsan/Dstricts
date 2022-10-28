@@ -12,7 +12,6 @@ namespace Dstricts.ViewModels
 		public SupportPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
-			ShowPaymentTab = ShowBookingTab = false;
 			if (!Helper.Helper.IsGuest)
 			{
 				if (Helper.Helper.IsPayment)

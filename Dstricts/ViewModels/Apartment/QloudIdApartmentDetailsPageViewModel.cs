@@ -14,6 +14,15 @@ namespace Dstricts.ViewModels
 		public QloudIdApartmentDetailsPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
+			if (!Helper.Helper.IsGuest)
+			{
+				if (Helper.Helper.IsPayment)
+					ShowPaymentTab = true;
+				else
+					ShowPaymentTab = false;
+			}
+			else
+				ShowBookingTab = true;
 		}
 		#endregion
 
@@ -27,30 +36,7 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			IApartmentService service = new ApartmentService();
-			ApartmentDetailInfo = await service.ApartmentDetailInfoAsync(new Models.ApartmentDetailInfoRequest()
-			{
-				Id = ApartmentDetails.QloudCheckOutId
-			});
-			Helper.Helper.ApartmentDetailInfo = ApartmentDetailInfo;
-
-			ICommunityService communityService = new CommunityService();
-			Helper.Helper.CommunityId = await communityService.GetCommunityInfoAsync(new Models.CommunityInfoRequest()
-			{
-				CheckId = Helper.Helper.HotelCheckedIn
-			});
-			Helper.Helper.IsPayment = ApartmentDetailInfo.IsPayment;
-			Helper.Helper.BuildingId = ApartmentDetailInfo.BuildingId;
-
-			ShowPaymentTab = ShowBookingTab = false;
-			if (!Helper.Helper.IsGuest)
-			{
-				if (Helper.Helper.IsPayment)
-					ShowPaymentTab = true;
-				else
-					ShowPaymentTab = false;
-			}
-			else
-				ShowBookingTab = true;
+			ApartmentDetailInfo = Helper.Helper.ApartmentDetailInfo;
 
 			var responses = await service.GetSratedDetailAsync(new Models.GetSratedDetailRequest()
 			{

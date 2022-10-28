@@ -14,7 +14,6 @@ namespace Dstricts.ViewModels
 		public CommunityPageViewModel(INavigation navigation)
 		{
 			Navigation = navigation;
-			ShowPaymentTab = ShowBookingTab = false;
 			if (!Helper.Helper.IsGuest)
 			{
 				if (Helper.Helper.IsPayment)

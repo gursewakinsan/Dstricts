@@ -70,6 +70,7 @@ namespace Dstricts.Views.Hotel
 			Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 			Helper.Helper.PropertyNickName = checkedIn.PropertyNickName;
 			Helper.Helper.ApartmentCheckedIn = checkedIn;
+			Helper.Helper.IsGuest = checkedIn.IsGuest;
 			if (checkedIn.Enc == 0) //Queue
 				await Navigation.PushAsync(new Queue.UserQueueWaitingDetailPage(checkedIn.Id));
 			else if (checkedIn.Enc == 1) //Hotel
@@ -78,7 +79,7 @@ namespace Dstricts.Views.Hotel
 				viewModel.HotelDetailsCommand.Execute(null);
 			}
 			else if (checkedIn.Enc == 2) //Apartment
-				await Navigation.PushAsync(new Apartment.SocialPage());
+				viewModel.GetCommunityInfoCommand.Execute(null);
 		}
 		#endregion
 
