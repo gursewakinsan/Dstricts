@@ -210,6 +210,9 @@
                         <RowDefinition Height="40" />
                         <RowDefinition Height="35" />
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -791,7 +794,7 @@
 						FontSize="24"
 						HorizontalTextAlignment="Start"
 						MaxLines="1" 
-						Text="Guest perks"
+						Text="Meeting rooms"
 						TextColor="White"/>
 
                     <Grid
@@ -799,6 +802,142 @@
                         RowSpacing="0"
                         ColumnSpacing="0"
                         Grid.Row="15"
+						Grid.Column="1"
+						Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="0"
+							FontFamily="PoppinsMediumFontFamily"
+							FontSize="18"
+							HorizontalTextAlignment="Start"
+							MaxLines="1"
+							Text="Venues" 
+							TextColor="White"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Column="0"
+							Grid.Row="1"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							HorizontalTextAlignment="Start"
+							Text="You will be able to book following service from your smartphone" 
+							TextColor="White"
+                            Opacity="0.42"
+                            Margin="0,10,45,30"
+                            LineHeight="1.2"
+							VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Row="0"
+							Grid.Column="1"
+                            Grid.RowSpan="2"
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="40" 
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.CellphoneIphone}"
+							TextColor="White"
+                            Opacity="0.70"
+							VerticalTextAlignment="Start"/>
+
+                        <ScrollView
+                            Grid.ColumnSpan="3"
+							Grid.Row="2"
+							HorizontalScrollBarVisibility="Never"
+							Orientation="Horizontal">
+                            <StackLayout
+                                BindableLayout.ItemsSource="{Binding HotelDetailsInfo.HotelVenues}"
+								Orientation="Horizontal"
+								Spacing="16">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="0"
+											RowSpacing="38"
+											WidthRequest="190">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="208" />
+                                                <RowDefinition Height="50" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{Binding ItemWidth}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ImageButton
+												Grid.Row="0"
+												Aspect="AspectFill"
+												CornerRadius="12"
+												HeightRequest="208"
+                                                ClassId="{Binding Id}"
+												HorizontalOptions="CenterAndExpand"
+												Source="{Binding ImagePath}"
+												VerticalOptions="CenterAndExpand"
+												WidthRequest="{Binding ItemWidth}"
+                                                Clicked="OnImageMeetingRoomsClicked"/>
+
+                                            <StackLayout
+												Grid.Row="1"
+												HorizontalOptions="StartAndExpand"
+												Spacing="2">
+
+                                                <Label 
+													FontFamily="PoppinsSemiBoldFontFamily"
+													FontSize="14"
+                                                    ClassId="{Binding Id}"
+													Text="{Binding VenueName}"
+													TextColor="White">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnLableMeetingRoomsClicked"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+
+                                                <Label IsVisible="False"
+													Padding="0"
+													FontFamily="PoppinsRegularFontFamily"
+													FontSize="12"
+													LineBreakMode="TailTruncation"
+													MaxLines="2"
+													Opacity="0.70"
+													Text="Book the clubhouse for small gatherings"
+													TextColor="White" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <BoxView Grid.Row="4" Grid.ColumnSpan="2" BackgroundColor="#2A2A31" Margin="0,0,8,0"/>
+                    </Grid>
+
+                    <Label
+						Grid.Row="17"
+						Grid.Column="1"
+						Grid.ColumnSpan="4"
+						FontAttributes="Bold"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="24"
+						HorizontalTextAlignment="Start"
+						MaxLines="1" 
+						Text="Guest perks"
+						TextColor="White"/>
+
+                    <Grid
+                        Margin="0,29,0,0"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        Grid.Row="18"
 						Grid.Column="1"
 						Grid.ColumnSpan="5">
                         <Grid.RowDefinitions>

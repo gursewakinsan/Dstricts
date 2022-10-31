@@ -14,5 +14,24 @@ namespace Dstricts.Views.Hotel
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new HotelPageViewModel(this.Navigation);
         }
-    }
+
+		#region On Meeting Rooms Clicked.
+		private void OnImageMeetingRoomsClicked(object sender, System.EventArgs e)
+		{
+			ImageButton control = sender as ImageButton;
+			OnMeetingRoomsClicked(System.Convert.ToInt32(control.ClassId));
+		}
+
+		private void OnLableMeetingRoomsClicked(object sender, System.EventArgs e)
+		{
+			Label control = sender as Label;
+			OnMeetingRoomsClicked(System.Convert.ToInt32(control.ClassId));
+		}
+
+		async void OnMeetingRoomsClicked(int id)
+		{
+			await Navigation.PushAsync(new Venues.VenueInfomationDetailPage(id));
+		}
+		#endregion
+	}
 }

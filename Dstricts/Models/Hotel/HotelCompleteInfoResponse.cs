@@ -165,6 +165,6 @@ public class HotelVenue
 
 	[Newtonsoft.Json.JsonProperty(PropertyName = "image_path1")]
 	public string ImagePath { get; set; }
-	public double ImgWidth { get; set; }
+	public double ItemWidth { get; set; }
 	public double ImgHeight { get; set; }
 }

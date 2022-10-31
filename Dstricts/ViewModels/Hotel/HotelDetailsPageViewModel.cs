@@ -104,7 +104,8 @@ namespace Dstricts.ViewModels
 			else
 				IsInhouseFittnessList = false;
 
-			if (response.HotelVenues?.Count > 0)
+			//Hotel Venues
+			/*if (response.HotelVenues?.Count > 0)
 			{
 				IsHotelVenuesList = true;
 				int deviceWidth = App.ScreenWidth - 56;
@@ -114,7 +115,7 @@ namespace Dstricts.ViewModels
 				else
 					widthVenues = deviceWidth * 85 / 100;
 				foreach (var hotelVenues in response.HotelVenues)
-					hotelVenues.ImgWidth = widthVenues;
+					hotelVenues.ImgWidth = widthVenues;*/
 
 				/*int deviceWidth = App.ScreenWidth - 56;
 				int w = deviceWidth * 80 / 100;
@@ -124,10 +125,22 @@ namespace Dstricts.ViewModels
 					hotelVenues.ImgHeight = h;
 					hotelVenues.ImgWidth = w;
 				}*/
-			}
-			else
-				IsHotelVenuesList = false;
+			//}
+			//else
+				//IsHotelVenuesList = false;
 
+			//Hotel Venues
+			if (response?.HotelVenues?.Count == 1)
+				response.HotelVenues[0].ItemWidth = App.ScreenWidth - 50;
+			else
+			{
+				int deviceWidth = App.ScreenWidth - 56;
+				int imgWidth = deviceWidth * 90 / 100;
+				foreach (var item in response.HotelVenues)
+					item.ItemWidth = imgWidth;
+			}
+
+			//Room Types
 			if (response?.RoomTypes?.Count == 1)
 				response.RoomTypes[0].ItemWidth = App.ScreenWidth - 50;
 			else
@@ -138,6 +151,7 @@ namespace Dstricts.ViewModels
 					item.ItemWidth = imgWidth;
 			}
 
+			//Guest Perk Objects
 			if (response?.GuestPerkObjects?.Count == 1)
 				response.RoomTypes[0].ItemWidth = App.ScreenWidth - 50;
 			else
