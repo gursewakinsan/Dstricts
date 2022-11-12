@@ -22,9 +22,10 @@ namespace Dstricts.Views.SosHelp
             viewModel.TravelAppCompanyCommand.Execute(null);
         }
 
-        private void OnCompaniesItemTapped(object sender, ItemTappedEventArgs e)
+        private async void OnCompaniesItemTapped(object sender, ItemTappedEventArgs e)
         {
             listView.SelectedItem = null;
+            await Navigation.PushAsync(new TravelAppCompanyDetailsPage());
         }
     }
 }

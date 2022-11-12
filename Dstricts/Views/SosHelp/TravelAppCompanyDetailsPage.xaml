@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.SosHelp.TravelAppCompanyDetailsPage"
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#282A34"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Padding="0,12,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="102" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+            Text="IMED Hospital"
+			HorizontalTextAlignment="Center"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <Grid 
+            Grid.Row="2"
+			Grid.ColumnSpan="3" 
+            Margin="28,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76" />
+                <RowDefinition Height="8" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="76" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="76" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+			    Grid.Row="0"
+			    Grid.Column="0"
+			    BackgroundColor="Transparent"
+			    BorderColor="#737B8C"
+			    BorderWidth="1"
+			    CornerRadius="38"
+			    Command="{Binding SocialCommand}"
+			    FontFamily="{StaticResource MaterialFontFamily}"
+			    FontSize="24"
+			    Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
+			    TextColor="White" />
+
+            <Button
+			    Grid.Row="0"
+			    Grid.Column="2"
+			    BorderColor="#737B8C"
+			    CornerRadius="38"
+			    Command="{Binding SocialCommand}"
+			    FontFamily="{StaticResource MaterialFontFamily}"
+			    FontSize="24"
+			    Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+			    TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0.1" Color="#fe2042" />
+                        <GradientStop Offset="1.0" Color="#ff900b" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <controls:CustomFrame
+				Grid.Row="0"
+			    Grid.Column="4"
+				Padding="0"
+                BorderColor="#737B8C"
+				BackgroundColor="Transparent"
+				CornerRadius="50,0,50,0"
+				HasShadow="False"
+				IsClippedToBounds="True">
+                <StackLayout 
+                    Margin="15,0,0,0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" Spacing="5">
+                    <Label
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						HorizontalTextAlignment="Start"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeOutline}"
+						TextColor="White"
+                        Margin="0,0,0,5"
+                        VerticalOptions="CenterAndExpand"
+						VerticalTextAlignment="Center"/>
+
+                    <Label
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Center"
+						Text="Guests"
+						TextColor="White"
+                        VerticalOptions="CenterAndExpand"
+						VerticalTextAlignment="Center" />
+                </StackLayout>
+            </controls:CustomFrame>
+
+			<Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="0"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="Center"
+				Text="Start"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+
+            <Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="2"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="Center"
+				Text="Location"
+				TextColor="White"
+				VerticalTextAlignment="End" />
+
+            <Label
+				Grid.Row="1"
+				Grid.RowSpan="2"
+				Grid.Column="4"
+				FontFamily="PoppinsRegularFontFamily"
+				FontSize="12"
+				HorizontalTextAlignment="Center"
+				Text="Check-in"
+				TextColor="White"
+                Margin="20,0,0,0"
+				VerticalTextAlignment="End" />
+        </Grid>
+        
+        <controls:CustomFrame
+			Grid.Row="4"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			BackgroundColor="#1B1D24"
+			CornerRadius="38,38,0,0"
+			HasShadow="False"
+			IsClippedToBounds="True">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="27"/>
+                        <RowDefinition Height="406"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="28"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="26"
+						HorizontalTextAlignment="Start"
+						Text="Central Salude"
+						TextColor="White" />
+
+                    <StackLayout 
+                        Grid.Row="3"
+                        Grid.Column="1" 
+                        Spacing="5"
+                        Orientation="Horizontal">
+                        <Label
+						    FontSize="15"
+						    HorizontalTextAlignment="Start"
+						    Text="Closed" 
+                            TextColor="#B90303"
+                            FontFamily="PoppinsSemiBoldFontFamily"/>
+
+                        <Label
+							FontFamily="{StaticResource MaterialFontFamily}"
+							FontSize="25"
+							HorizontalTextAlignment="Start"
+							Text="{x:Static fontawesome:DstrictsAppFlatIcons.Minus}"
+							TextColor="White" Opacity="0.70"
+							VerticalTextAlignment="Center"/>
+
+                        <Label
+						    FontSize="15"
+						    HorizontalTextAlignment="Start"
+						    Text="Opens 8am Wed " 
+                            TextColor="White"
+                            Opacity="0.70"
+                            FontFamily="PoppinsRegularFontFamily"/>
+                    </StackLayout>
+
+                    <controls:CustomFrame
+						Grid.Row="5"
+						Grid.Column="1"
+						Padding="0"
+						BackgroundColor="#242A37"
+						CornerRadius="16,16,16,0"
+						HasShadow="False"
+						IsClippedToBounds="True">
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="23"/>
+                                <RowDefinition Height="212"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="65"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="19"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="19"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:CustomFrame
+								Grid.Row="1"
+								Grid.Column="1"
+								Padding="0"
+								BackgroundColor="Wheat"
+								CornerRadius="16"
+								HasShadow="False"
+								IsClippedToBounds="True"/>
+
+                            <StackLayout 
+                                Grid.Row="2"
+								Grid.Column="1" 
+                                Spacing="2" 
+                                Margin="0,29,0,0">
+                                <Label
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="Mjölnerbacken 61" 
+									TextColor="White"
+									Opacity="0.70"
+									FontFamily="PoppinsRegularFontFamily"/>
+
+                                <Label
+									FontSize="16"
+									HorizontalTextAlignment="Start"
+									Text="174 60 Sundbyberg" 
+									TextColor="White"
+									Opacity="0.70"
+									FontFamily="PoppinsRegularFontFamily"/>
+                            </StackLayout>
+
+                            <controls:CustomFrame
+								Grid.Row="3"
+								Grid.Column="1"
+                                Grid.ColumnSpan="2"
+								Padding="0"
+                                WidthRequest="160"
+                                HorizontalOptions="EndAndExpand"
+								BackgroundColor="Transparent"
+								CornerRadius="30,0,0,0"
+								HasShadow="False"
+                                BorderColor="#fe2042"
+								IsClippedToBounds="True">
+                                <StackLayout 
+									Margin="10,0,0,0"
+									Orientation="Horizontal"
+									HorizontalOptions="CenterAndExpand" 
+									VerticalOptions="CenterAndExpand" Spacing="0">
+                                    <Label
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="16"
+										HorizontalTextAlignment="Center"
+										Text="Google Map"
+										TextColor="White"
+										VerticalOptions="CenterAndExpand"
+										VerticalTextAlignment="Center" />
+
+                                    <Label
+										FontFamily="{StaticResource MaterialFontFamily}"
+										FontSize="25"
+										HorizontalTextAlignment="Start"
+										Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+										TextColor="White"
+										VerticalOptions="CenterAndExpand"
+										VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </controls:CustomFrame>
+                        </Grid>
+                    </controls:CustomFrame>
+                </Grid>
+            </ScrollView>
+        </controls:CustomFrame>
+    </Grid>
+</ContentPage>
