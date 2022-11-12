@@ -26,11 +26,40 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ISosService service = new SosService();
-			TravelAppCompanyList = await service.TravelAppCompanyAsync(new Models.TravelAppCompanyRequest()
+			var response = await service.TravelAppCompanyAsync(new Models.TravelAppCompanyRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId,
 				EmergencyId = SelectedTravelAppAvailable.Id,
 				TabType = SelectedTravelAppAvailable.TabType
+			});
+            foreach (var item in response)
+				item.IsSelected = false;
+			
+			if (response?.Count > 0)
+			{
+				SelectcedCompanyName = response[0].EmergencyName;
+				response[0].IsSelected = true;
+				TravelAppCompanyLocationsCommand.Execute(response[0].Id);
+			}
+			TravelAppCompanyList = response;
+			DependencyService.Get<IProgressBar>().Hide();
+		}
+		#endregion
+
+		#region Travel App Company Locations Command.
+		private ICommand travelAppCompanyLocationsCommand;
+		public ICommand TravelAppCompanyLocationsCommand
+		{
+			get => travelAppCompanyLocationsCommand ?? (travelAppCompanyLocationsCommand = new Command<int>(async (emergencyId) => await ExecuteTravelAppCompanyLocationsCommand(emergencyId)));
+		}
+		private async Task ExecuteTravelAppCompanyLocationsCommand(int emergencyId)
+		{
+			DependencyService.Get<IProgressBar>().Show();
+			ISosService service = new SosService();
+			TravelAppCompanyLocationsList = await service.TravelAppCompanyLocationsAsync(new Models.TravelAppCompanyLocationsRequest()
+			{
+				UserId = Helper.Helper.LoggedInUserId,
+				EmergencyId = emergencyId,
 			});
 			DependencyService.Get<IProgressBar>().Hide();
 		}
@@ -48,6 +77,17 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+		private List<Models.TravelAppCompanyLocationsResponse> travelAppCompanyLocationsList;
+		public List<Models.TravelAppCompanyLocationsResponse> TravelAppCompanyLocationsList
+		{
+			get => travelAppCompanyLocationsList;
+			set
+			{
+				travelAppCompanyLocationsList = value;
+				OnPropertyChanged("TravelAppCompanyLocationsList");
+			}
+		}
+
 		private Models.TravelAppAvailableSosResponse selectedTravelAppAvailable;
 		public Models.TravelAppAvailableSosResponse SelectedTravelAppAvailable
 		{
@@ -58,6 +98,8 @@ namespace Dstricts.ViewModels
 				OnPropertyChanged("SelectedTravelAppAvailable");
 			}
 		}
+
+        public string SelectcedCompanyName { get; set; }
         #endregion
     }
 }

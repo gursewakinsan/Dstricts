@@ -46,7 +46,7 @@
 			Grid.Column="1"
 			FontFamily="PoppinsRegularFontFamily"
 			FontSize="14"
-            Text="IMED Hospital"
+            Text="{Binding SelectedCompanyName}"
 			HorizontalTextAlignment="Center"
 			TextColor="White"
 			VerticalTextAlignment="Center" />
@@ -199,7 +199,7 @@
 						FontFamily="PoppinsSemiBoldFontFamily"
 						FontSize="26"
 						HorizontalTextAlignment="Start"
-						Text="Central Salude"
+						Text="{Binding SelectedTravelAppCompanyLocations.StreetName}"
 						TextColor="White" />
 
                     <StackLayout 
@@ -268,18 +268,32 @@
                                 <Label
 									FontSize="16"
 									HorizontalTextAlignment="Start"
-									Text="Mjölnerbacken 61" 
 									TextColor="White"
 									Opacity="0.70"
-									FontFamily="PoppinsRegularFontFamily"/>
+									FontFamily="PoppinsRegularFontFamily">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.StreetName}"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.StreetName}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
                                 <Label
 									FontSize="16"
 									HorizontalTextAlignment="Start"
-									Text="174 60 Sundbyberg" 
 									TextColor="White"
 									Opacity="0.70"
-									FontFamily="PoppinsRegularFontFamily"/>
+									FontFamily="PoppinsRegularFontFamily">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.PostalCode}"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.City}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                             </StackLayout>
 
                             <controls:CustomFrame

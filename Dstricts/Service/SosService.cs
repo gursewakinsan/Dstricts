@@ -25,5 +25,14 @@ namespace Dstricts.Service
 				return res;
 			});
 		}
+
+		public Task<List<Models.TravelAppCompanyLocationsResponse>> TravelAppCompanyLocationsAsync(Models.TravelAppCompanyLocationsRequest request)
+		{
+			return Task.Factory.StartNew(() =>
+			{
+				var res = RestClient.Post<List<Models.TravelAppCompanyLocationsResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.TravelAppCompanyLocationsUrl)), string.Empty, request.ToJson());
+				return res;
+			});
+		}
 	}
 }

@@ -14,5 +14,29 @@ namespace Dstricts.ViewModels
 			Navigation = navigation;
 		}
 		#endregion
-	}
+
+		#region Properties.
+		private string selectedCompanyName;
+		public string SelectedCompanyName
+		{
+			get => selectedCompanyName;
+			set
+			{
+				selectedCompanyName = value;
+				OnPropertyChanged("SelectedCompanyName");
+			}
+		}
+
+		private Models.TravelAppCompanyLocationsResponse selectedTravelAppCompanyLocations;
+		public Models.TravelAppCompanyLocationsResponse SelectedTravelAppCompanyLocations
+		{
+			get => selectedTravelAppCompanyLocations;
+			set
+			{
+				selectedTravelAppCompanyLocations = value;
+				OnPropertyChanged("SelectedTravelAppCompanyLocations");
+			}
+		}
+        #endregion
+    }
 }

@@ -7,5 +7,6 @@ namespace Dstricts.Interfaces
     {
         Task<List<Models.TravelAppAvailableSosResponse>> TravelAppAvailableSosAsync(Models.TravelAppAvailableSosRequest request);
         Task<List<Models.TravelAppCompanyResponse>> TravelAppCompanyAsync(Models.TravelAppCompanyRequest request);
+        Task<List<Models.TravelAppCompanyLocationsResponse>> TravelAppCompanyLocationsAsync(Models.TravelAppCompanyLocationsRequest request);
     }
 }

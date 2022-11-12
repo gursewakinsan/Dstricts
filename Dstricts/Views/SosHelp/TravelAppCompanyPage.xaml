@@ -77,14 +77,15 @@
                                 <Button
                                     FontSize="12"
                                     TextColor="White"
-                                    Text="Physician"
+                                    Text="{Binding EmergencyName}"
                                     CornerRadius="10"
                                     Padding="10,0,10,0"
                                     HeightRequest="40"
                                     HorizontalOptions="Start" 
                                     VerticalOptions="Center"
                                     Margin="0,0,15,19"
-                                    BackgroundColor="#242A37"
+                                    BackgroundColor="{Binding ButtonBg}"
+                                    Clicked="OnTravelAppCompanyClicked"
                                     FontFamily="PoppinsRegularFontFamily"/>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -105,7 +106,7 @@
 			        BackgroundColor="Transparent"
 			        HasUnevenRows="True"
                     ItemTapped="OnCompaniesItemTapped"
-			        ItemsSource="{Binding TravelAppCompanyList}"
+			        ItemsSource="{Binding TravelAppCompanyLocationsList}"
 			        SeparatorVisibility="None"
 			        VerticalScrollBarVisibility="Never">
                     <ListView.ItemTemplate>
@@ -130,7 +131,15 @@
 				                            FontSize="15"
 				                            HorizontalTextAlignment="Start"
 				                            Text="Central Salude" 
-				                            TextColor="White" />
+				                            TextColor="White">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding StreetName}"/>
+                                                    <Span Text=" "/>
+                                                    <Span Text="{Binding PortNumber}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
                                         <Label
 				                            FontFamily="PoppinsRegularFontFamily"
@@ -138,7 +147,15 @@
                                             Opacity="0.42"
 				                            HorizontalTextAlignment="Start"
 				                            Text="300 m - Stockholm" 
-				                            TextColor="White" />
+				                            TextColor="White">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Distance}"/>
+                                                    <Span Text=" m - "/>
+                                                    <Span Text="{Binding Country}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
                                         <Label
 				                            FontFamily="PoppinsRegularFontFamily"

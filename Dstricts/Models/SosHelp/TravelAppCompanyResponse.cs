@@ -1,6 +1,8 @@
-﻿namespace Dstricts.Models
+﻿using Xamarin.Forms;
+
+namespace Dstricts.Models
 {
-    public class TravelAppCompanyResponse
+    public class TravelAppCompanyResponse : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
@@ -14,40 +16,30 @@
         [Newtonsoft.Json.JsonProperty(PropertyName = "emergency_name")]
         public string EmergencyName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty(PropertyName = "sos_companies")]
-        public System.Collections.Generic.List<SosCompany> SosCompanies { get; set; }
-    }
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get => isSelected;
+            set
+            {
+                isSelected = value;
+                if (isSelected)
+                    ButtonBg = Color.FromHex("#F40000");
+                else
+                    ButtonBg = Color.FromHex("#242A37");
+                OnPropertyChanged("IsSelected");
+            }
+        }
 
-    public class SosCompany
-    {
-        [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
-        public int Id { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "latitude")]
-        public string Latitude { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "longitude")]
-        public string Longitude { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "street_name_v")]
-        public string StreetName { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "city_v")]
-        public string City { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "port_number")]
-        public string PortNumber { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "postal_code_v")]
-        public string PostalCode { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "country_v")]
-        public string Country { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "langitude")]
-        public string Langitude { get; set; }
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "distance")]
-        public int Distance { get; set; }
+        private Color buttonBg;
+        public Color ButtonBg
+        {
+            get => buttonBg;
+            set
+            {
+                buttonBg = value;
+                OnPropertyChanged("ButtonBg");
+            }
+        }
     }
 }
