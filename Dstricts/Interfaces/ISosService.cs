@@ -6,5 +6,6 @@ namespace Dstricts.Interfaces
     public interface ISosService
     {
         Task<List<Models.TravelAppAvailableSosResponse>> TravelAppAvailableSosAsync(Models.TravelAppAvailableSosRequest request);
+        Task<List<Models.TravelAppCompanyResponse>> TravelAppCompanyAsync(Models.TravelAppCompanyRequest request);
     }
 }

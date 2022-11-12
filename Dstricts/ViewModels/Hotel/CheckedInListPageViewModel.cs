@@ -76,6 +76,18 @@ namespace Dstricts.ViewModels
 		}
 		#endregion
 
+		#region Sos Help Command.
+		private ICommand sosHelpCommand;
+		public ICommand SosHelpCommand
+		{
+			get => sosHelpCommand ?? (sosHelpCommand = new Command(async () => await ExecuteSosHelpCommand()));
+		}
+		private async Task ExecuteSosHelpCommand()
+		{
+			await Navigation.PushAsync(new Views.SosHelp.SosHelpPage());
+		}
+		#endregion
+
 		#region User Queue List Command.
 		private ICommand userQueueListCommand;
 		public ICommand UserQueueListCommand

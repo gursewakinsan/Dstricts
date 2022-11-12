@@ -2,12 +2,571 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Dstricts.Views.SosHelp.SosHelpPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    x:Class="Dstricts.Views.SosHelp.SosHelpPage"
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="#282A34"
+	NavigationPage.HasNavigationBar="False">
+    <Grid
+		Padding="0,12,0,0"
+		ColumnSpacing="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="102" />
+            <RowDefinition Height="26" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="2"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+            Margin="0,0,28,0"
+			HorizontalTextAlignment="End"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.Account}"
+			TextColor="White"
+			VerticalTextAlignment="Center"/>
+
+        <ScrollView
+			Grid.Row="2"
+			Grid.ColumnSpan="3"
+			Margin="28,0,0,0"
+			HorizontalScrollBarVisibility="Never"
+			Orientation="Horizontal">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="19" />
+                    <ColumnDefinition Width="76" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76" />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Button
+					Grid.Row="0"
+					Grid.Column="0"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					CornerRadius="38"
+					Command="{Binding SocialCommand}"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="2"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding GoToCheckInCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="4"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding GoToBookPageCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="6"
+					BackgroundColor="White"
+					Command="{Binding UserQueueListCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
+					TextColor="#282A34" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="0"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Social"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="2"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Activity"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="4"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Check-in"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="6"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="SOS Help"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+            </Grid>
+        </ScrollView>
+
+        <controls:CustomFrame
+			Grid.Row="4"
+			Grid.ColumnSpan="3"
+			Padding="0"
+			BackgroundColor="#1B1D24"
+			CornerRadius="38,38,0,0"
+			HasShadow="False"
+			IsClippedToBounds="True">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="42"/>
+                        <RowDefinition Height="406"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="107"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="211"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="211"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="28"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						FontSize="26"
+						HorizontalTextAlignment="Start"
+						Text="SOS HELP"
+						TextColor="White" />
+
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="16"
+						HorizontalTextAlignment="Start"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Opacity="0.7"
+						Text="Get help or help others in distress"
+						TextColor="White" />
+
+                    <BoxView
+						Grid.Row="5"
+						Grid.Column="1"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.1" />
+
+                    <ScrollView
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        HorizontalScrollBarVisibility="Never">
+                        <Grid ColumnSpacing="27">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="278"/>
+                                <ColumnDefinition Width="278"/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame 
+								Grid.Column="0"
+								Padding="0"
+								IsClippedToBounds="True" 
+								HasShadow="False"
+								CornerRadius="16"
+								BackgroundColor="#F40000">
+                                <StackLayout Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="40"
+										Text="REPORT"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="40"
+										Text="SOMEONE"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="40"
+										Text="LOST/FOUND"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="16"
+                                        LineHeight="1.2"
+										Text="Don't subject yourself or your relatives to unnecessary suffering."
+										TextColor="White" Margin="14,20,14,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <controls:CustomFrame
+								Padding="0"
+                                Grid.Column="0"
+								BackgroundColor="#B90303"
+								CornerRadius="25,0,0,0"
+								HasShadow="False"
+                                WidthRequest="70"
+                                HeightRequest="62"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="EndAndExpand"
+								IsClippedToBounds="True">
+                                <Label
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="22"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowRight}"
+									TextColor="White"
+									VerticalTextAlignment="Center"/>
+                            </controls:CustomFrame>
+
+                            <Frame 
+								Grid.Column="1"
+								Padding="0"
+								IsClippedToBounds="True" 
+								HasShadow="False"
+								CornerRadius="16"
+								BackgroundColor="#242A37">
+                                <StackLayout Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="40"
+										Text="REPORT"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsBoldFontFamily"
+										FontSize="40"
+										Text="SOMEONE"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="40"
+										Text="LOST/FOUND"
+										TextColor="White" />
+
+                                    <Label
+										HorizontalTextAlignment="Center"
+										FontFamily="PoppinsRegularFontFamily"
+										FontSize="16"
+                                        LineHeight="1.2"
+										Text="Don't subject yourself or your relatives to unnecessary suffering."
+										TextColor="White" Margin="14,20,14,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <controls:CustomFrame
+								Padding="0"
+                                Grid.Column="1"
+								BackgroundColor="#B90303"
+								CornerRadius="25,0,0,0"
+								HasShadow="False"
+                                WidthRequest="70"
+                                HeightRequest="62"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="EndAndExpand"
+								IsClippedToBounds="True">
+                                <Label
+									FontFamily="{StaticResource MaterialFontFamily}"
+									FontSize="22"
+									HorizontalTextAlignment="Center"
+									Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowRight}"
+									TextColor="White"
+									VerticalTextAlignment="Center"/>
+                            </controls:CustomFrame>
+                        </Grid>
+                    </ScrollView>
+
+                    <BoxView
+						Grid.Row="9"
+						Grid.Column="1"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.1" />
+
+                    <Label
+                        Grid.Row="11"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						Text="EMERGENCY"
+						TextColor="White" />
+
+                    <Label
+                        Grid.Row="13"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="90"
+						Text="112"
+						TextColor="White" />
+
+                    <BoxView
+						Grid.Row="15"
+						Grid.Column="1"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.1" />
+
+                    <Label
+                        Grid.Row="17"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						Text="CLOSEST POSITION"
+						TextColor="White" />
+
+                    <StackLayout 
+                        Grid.Row="18"
+                        Grid.Column="1" Grid.ColumnSpan="2">
+                        <Label
+							HorizontalTextAlignment="Start"
+							FontFamily="PoppinsRegularFontFamily"
+							FontSize="14"
+							LineHeight="1.2" 
+							Opacity="0.42"
+							Margin="0,11,28,26"
+							Text="Find closest healthcare from your location. You will also be able to see opening hours and distance"
+							TextColor="White" />
+
+                        <syncfusion:SfListView Margin="0,0,10,0"
+							x:Name="listView"
+							BackgroundColor="Transparent"
+							IsScrollBarVisible="False"
+							ItemSize="100"
+                            HeightRequest="200"
+                            ItemTapped="OnTravelAppAvailableSosItemTapped"                   
+							ItemsSource="{Binding TravelAppAvailableSosList}"
+							VerticalOptions="StartAndExpand">
+                            <syncfusion:SfListView.LayoutManager>
+                                <syncfusion:GridLayout SpanCount="3" />
+                            </syncfusion:SfListView.LayoutManager>
+                            <syncfusion:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame
+                                        Margin="0,0,10,10"
+                                        Padding="01"
+                                        HeightRequest="100"
+                                        WidthRequest="100"
+                                        HasShadow="False"
+                                        CornerRadius="8"
+                                        BackgroundColor="White"
+                                        IsClippedToBounds="True"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Grid RowSpacing="0">
+                                            <Label
+                                                Grid.Row="0"
+												FontFamily="{StaticResource MaterialFontFamily}"
+												FontSize="25"
+												HorizontalTextAlignment="Center"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Settings}"
+												TextColor="#F40000"
+                                                Margin="0,0,0,5"
+												VerticalTextAlignment="End"/>
+
+                                            <Label
+                                                Grid.Row="1"
+                                                VerticalTextAlignment="Start"
+												HorizontalTextAlignment="Center"
+												FontFamily="PoppinsMediumFontFamily"
+												FontSize="15"
+												Text="{Binding FrontDisplayName}"
+												TextColor="Black" />
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </syncfusion:SfListView.ItemTemplate>
+                        </syncfusion:SfListView>
+                    </StackLayout>
+
+                    <BoxView
+						Grid.Row="20"
+						Grid.Column="1"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.1" />
+
+                    <Label
+                        Grid.Row="22"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="20"
+						Text="CREATE YOUR"
+						TextColor="White" />
+
+                    <Label
+                        Grid.Row="23"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						Text="EMERGENCY CONTACT LIST"
+						TextColor="White" />
+
+                    <Label
+                        Grid.Row="24"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="14"
+                        LineHeight="1.2" 
+                        Opacity="0.42"
+                        Margin="0,12,0,19"
+						Text="Don't subject yourself or your relatives to unnecessary suffering."
+						TextColor="White" />
+
+                    <ImageButton 
+                        x:Name="img1"
+                        Grid.Row="25"
+                        Aspect="Fill"
+                        Grid.Column="1" 
+                        BackgroundColor="Transparent"/>
+
+                    <BoxView
+						Grid.Row="27"
+						Grid.Column="1"
+						BackgroundColor="White"
+						HeightRequest="1"
+						Opacity="0.1" />
+                    
+                    <Label
+                        Grid.Row="29"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"
+						FontSize="20"
+						Text="REGISTER YOUR ITEMS"
+						TextColor="White" />
+
+                    <Label
+                        Grid.Row="30"
+                        Grid.Column="1"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="14"
+                        LineHeight="1.2" 
+                        Opacity="0.42"
+                        Margin="0,12,0,19"
+						Text="Don't subject yourself or your relatives to unnecessary suffering."
+						TextColor="White" />
+
+                    <ImageButton 
+                        x:Name="img2"
+                        Grid.Row="31"
+                        Aspect="Fill"
+                        Grid.Column="1" 
+                        BackgroundColor="Transparent"/>
+                </Grid>
+            </ScrollView>
+        </controls:CustomFrame>
+    </Grid>
 </ContentPage>

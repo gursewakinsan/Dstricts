@@ -136,6 +136,7 @@
 
 		//SOS.
 		public const string TravelAppAvailableSosUrl = "https://www.qloudid.com/user/index.php/QloudidApp/travelAppAvailableSos";
+		public const string TravelAppCompanyUrl = "https://www.qloudid.com/user/index.php/QloudidApp/travelAppCompany";
 	}
 }
 
