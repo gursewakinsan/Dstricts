@@ -5,7 +5,9 @@
     x:Class="Dstricts.Views.SosHelp.TravelAppCompanyDetailsPage"
     xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
-	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     ios:Page.UseSafeArea="True"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
@@ -105,7 +107,6 @@
 				Padding="0"
                 BorderColor="#737B8C"
 				BackgroundColor="Transparent"
-				CornerRadius="50,0,50,0"
 				HasShadow="False"
 				IsClippedToBounds="True">
                 <StackLayout 
@@ -300,7 +301,7 @@
                                 </Label>
                             </StackLayout>
 
-                            <controls:CustomFrame
+                            <controls:CustomFrame 
 								Grid.Row="3"
 								Grid.Column="1"
                                 Grid.ColumnSpan="2"
@@ -308,7 +309,7 @@
                                 WidthRequest="160"
                                 HorizontalOptions="EndAndExpand"
 								BackgroundColor="Transparent"
-								CornerRadius="30,0,0,0"
+								CornerRadius="0,0,0,0"
 								HasShadow="False"
                                 BorderColor="#fe2042"
 								IsClippedToBounds="True">

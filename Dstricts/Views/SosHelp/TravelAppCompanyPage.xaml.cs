@@ -11,7 +11,6 @@ namespace Dstricts.Views.SosHelp
     public partial class TravelAppCompanyPage : ContentPage
     {
         TravelAppCompanyPageViewModel viewModel;
-        List<MapLocation> locations = new List<MapLocation>();
         public TravelAppCompanyPage(Models.TravelAppAvailableSosResponse travelApp)
         {
             InitializeComponent();
@@ -30,6 +29,7 @@ namespace Dstricts.Views.SosHelp
 
         private void LoadMap()
         {
+            List<MapLocation> locations = new List<MapLocation>();
             foreach (var companyLocations in viewModel.TravelAppCompanyLocationsList)
             {
                 locations.Add(new MapLocation()

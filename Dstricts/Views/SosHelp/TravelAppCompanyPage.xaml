@@ -48,11 +48,17 @@
 
         <controls:CustomFrame
 			Grid.Row="1"
-			Padding="0" Margin="0,-15,0,0"
+			Padding="0"
 			BackgroundColor="#1B1D24"
 			CornerRadius="38,38,0,0"
 			HasShadow="False"
 			IsClippedToBounds="True">
+            <controls:CustomFrame.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,-30,0,0"/>
+                    <On Platform="Android" Value="0,-15,0,0"/>
+                </OnPlatform>
+            </controls:CustomFrame.Margin>
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="23"/>

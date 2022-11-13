@@ -441,10 +441,9 @@
 							BackgroundColor="Transparent"
 							IsScrollBarVisible="False"
 							ItemSize="100"
-                            HeightRequest="200"
+							HeightRequest="{Binding ListHeightRequest}"
                             ItemTapped="OnTravelAppAvailableSosItemTapped"                   
-							ItemsSource="{Binding TravelAppAvailableSosList}"
-							VerticalOptions="StartAndExpand">
+							ItemsSource="{Binding TravelAppAvailableSosList}">
                             <syncfusion:SfListView.LayoutManager>
                                 <syncfusion:GridLayout SpanCount="3" />
                             </syncfusion:SfListView.LayoutManager>

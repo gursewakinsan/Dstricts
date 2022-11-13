@@ -15,13 +15,13 @@ namespace Dstricts.iOS
 				"IndicatorView_Experimental",
 				"Brush_Experimental"
 			});
+			Xamarin.FormsMaps.Init();
 			Rg.Plugins.Popup.Popup.Init();
 			global::Xamarin.Forms.Forms.Init();
 			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 			App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
 			App.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
 			Syncfusion.ListView.XForms.iOS.SfListViewRenderer.Init();
-            Xamarin.FormsMaps.Init();
             LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}

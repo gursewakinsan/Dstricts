@@ -30,6 +30,7 @@ namespace Dstricts.ViewModels
 			{
 				UserId = Helper.Helper.LoggedInUserId
 			});
+			ListHeightRequest = 200;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -55,6 +56,17 @@ namespace Dstricts.ViewModels
 			{
 				travelAppAvailableSosList = value;
 				OnPropertyChanged("TravelAppAvailableSosList");
+			}
+		}
+
+		private double listHeightRequest;
+		public double ListHeightRequest
+		{
+			get => listHeightRequest;
+			set
+			{
+				listHeightRequest = value;
+				OnPropertyChanged("ListHeightRequest");
 			}
 		}
 		#endregion
