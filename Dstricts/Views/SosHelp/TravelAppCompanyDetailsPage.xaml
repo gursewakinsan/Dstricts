@@ -275,7 +275,7 @@
                                         <FormattedString>
                                             <Span Text="{Binding SelectedTravelAppCompanyLocations.StreetName}"/>
                                             <Span Text=" "/>
-                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.StreetName}"/>
+                                            <Span Text="{Binding SelectedTravelAppCompanyLocations.PortNumber}"/>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>

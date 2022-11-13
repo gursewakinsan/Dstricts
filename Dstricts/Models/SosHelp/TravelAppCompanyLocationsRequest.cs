@@ -7,5 +7,11 @@
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "emergency_id")]
         public int EmergencyId { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "current_latitude")]
+        public double CurrentLatitude { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "current_longitude")]
+        public double CurrentLongitude { get; set; }
     }
 }

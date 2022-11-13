@@ -1,9 +1,14 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Dstricts.Service;
+using Xamarin.Forms.Maps;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using Plugin.Media.Abstractions;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 
 namespace Dstricts.ViewModels
 {
@@ -22,7 +27,7 @@ namespace Dstricts.ViewModels
 		{
 			get => travelAppCompanyCommand ?? (travelAppCompanyCommand = new Command(async () => await ExecuteTravelAppCompanyCommand()));
 		}
-		private async Task ExecuteTravelAppCompanyCommand()
+		public async Task ExecuteTravelAppCompanyCommand()
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ISosService service = new SosService();
@@ -39,7 +44,7 @@ namespace Dstricts.ViewModels
 			{
 				SelectcedCompanyName = response[0].EmergencyName;
 				response[0].IsSelected = true;
-				TravelAppCompanyLocationsCommand.Execute(response[0].Id);
+				await ExecuteTravelAppCompanyLocationsCommand(response[0].Id);
 			}
 			TravelAppCompanyList = response;
 			DependencyService.Get<IProgressBar>().Hide();
@@ -52,16 +57,21 @@ namespace Dstricts.ViewModels
 		{
 			get => travelAppCompanyLocationsCommand ?? (travelAppCompanyLocationsCommand = new Command<int>(async (emergencyId) => await ExecuteTravelAppCompanyLocationsCommand(emergencyId)));
 		}
-		private async Task ExecuteTravelAppCompanyLocationsCommand(int emergencyId)
+		public async Task ExecuteTravelAppCompanyLocationsCommand(int emergencyId)
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ISosService service = new SosService();
+            var myCurrentLocation = await Geolocation.GetLocationAsync();
+            Helper.Helper.MyCurrentLocationLatitude= myCurrentLocation.Latitude;
+			Helper.Helper.MyCurrentLocationLongitude= myCurrentLocation.Longitude;
 			TravelAppCompanyLocationsList = await service.TravelAppCompanyLocationsAsync(new Models.TravelAppCompanyLocationsRequest()
 			{
 				UserId = Helper.Helper.LoggedInUserId,
 				EmergencyId = emergencyId,
+				CurrentLatitude = myCurrentLocation.Latitude,
+				CurrentLongitude = myCurrentLocation.Longitude
 			});
-			DependencyService.Get<IProgressBar>().Hide();
+            DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 
@@ -99,7 +109,55 @@ namespace Dstricts.ViewModels
 			}
 		}
 
+        private ObservableCollection<MapLocation> mapLocations;
+        public ObservableCollection<MapLocation> MapLocations
+        {
+            get => mapLocations;
+            set
+            {
+                mapLocations = value;
+                OnPropertyChanged("MapLocations");
+            }
+        }
+
         public string SelectcedCompanyName { get; set; }
         #endregion
     }
+
+	public class MapLocation : Models.BaseModel
+	{
+        private string locationName;
+        public string LocationName
+        {
+            get => locationName;
+            set
+            {
+                locationName = value;
+                OnPropertyChanged("LocationName");
+            }
+        }
+
+        private string locationAddress;
+        public string LocationAddress
+        {
+            get => locationAddress;
+            set
+            {
+                locationAddress = value;
+                OnPropertyChanged("LocationAddress");
+            }
+        }
+
+
+        private Position positionPins;
+        public Position PositionPins
+        {
+            get => positionPins;
+            set
+            {
+                positionPins = value;
+                OnPropertyChanged("PositionPins");
+            }
+        }
+	}
 }

@@ -40,3 +40,5 @@ namespace Dstricts.ViewModels
         #endregion
     }
 }
+//https://www.youtube.com/watch?v=rgOwa7TQvIU
+//https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/
