@@ -67,6 +67,7 @@
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="19" />
                     <ColumnDefinition Width="76" />
+					<ColumnDefinition Width="15" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="76" />
@@ -195,7 +196,7 @@
                         <RowDefinition Height="1"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="25"/>
-                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="120"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="1"/>
@@ -398,14 +399,29 @@
 						Text="EMERGENCY"
 						TextColor="White" />
 
+					<BoxView Grid.Row="12" HeightRequest="20">
+						<BoxView.IsVisible>
+							<OnPlatform x:TypeArguments="x:Boolean">
+								<On Platform="iOS" Value="true"/>
+								<On Platform="Android" Value="false"/>
+							</OnPlatform>
+						</BoxView.IsVisible>
+					</BoxView>
+
                     <Label Padding="0"
                         Grid.Row="13"
                         Grid.Column="1"
 						HorizontalTextAlignment="Start"
 						FontFamily="PoppinsBoldFontFamily"
-						FontSize="110" 
-                        Text="112" 
-                        TextColor="White" />
+                        Text="112"
+                        TextColor="White">
+						<Label.FontSize>
+							<OnPlatform x:TypeArguments="x:Double">
+								<On Platform="iOS" Value="125"/>
+								<On Platform="Android" Value="110"/>
+							</OnPlatform>
+						</Label.FontSize>
+					</Label>
 
                     <BoxView
 						Grid.Row="15"
