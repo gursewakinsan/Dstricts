@@ -196,7 +196,7 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="25"/>
                         <RowDefinition Height="0"/>
-                        <RowDefinition Height="107"/>
+                        <RowDefinition Height="120"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="1"/>
                         <RowDefinition Height="40"/>
@@ -398,14 +398,14 @@
 						Text="EMERGENCY"
 						TextColor="White" />
 
-                    <Label
+                    <Label Padding="0"
                         Grid.Row="13"
                         Grid.Column="1"
 						HorizontalTextAlignment="Start"
 						FontFamily="PoppinsBoldFontFamily"
-						FontSize="90"
-						Text="112"
-						TextColor="White" />
+						FontSize="110" 
+                        Text="112" 
+                        TextColor="White" />
 
                     <BoxView
 						Grid.Row="15"
@@ -438,9 +438,10 @@
 
                         <syncfusion:SfListView Margin="0,0,10,0"
 							x:Name="listView"
-							BackgroundColor="Transparent"
+							BackgroundColor="#1B1D24"
 							IsScrollBarVisible="False"
 							ItemSize="100"
+                            SelectionMode="None"
 							HeightRequest="{Binding ListHeightRequest}"
                             ItemTapped="OnTravelAppAvailableSosItemTapped"                   
 							ItemsSource="{Binding TravelAppAvailableSosList}">

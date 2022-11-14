@@ -25,8 +25,10 @@ namespace Dstricts.Views.SosHelp
 
         private async void OnTravelAppAvailableSosItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
+            
             Models.TravelAppAvailableSosResponse travelApp = e.ItemData as Models.TravelAppAvailableSosResponse;
-            listView.SelectedItem = null;
+            //listView.SelectedItem = null;
+            //listView.BackgroundColor = Color.FromHex("#1B1D24");
             await Navigation.PushAsync(new TravelAppCompanyPage(travelApp));
         }
     }
