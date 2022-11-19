@@ -7,8 +7,8 @@ using System.Collections.Generic;
 
 namespace Dstricts.ViewModels
 {
-    public class SosHelpPageViewModel : BaseViewModel
-    {
+	public class SosHelpPageViewModel : BaseViewModel
+	{
 		#region Constructor.
 		public SosHelpPageViewModel(INavigation navigation)
 		{
@@ -44,6 +44,18 @@ namespace Dstricts.ViewModels
 		private void ExecuteGoToCheckInCommand()
 		{
 			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckedInListPage());
+		}
+		#endregion
+
+		#region Go To Lost Or Found Command.
+		private ICommand goToLostOrFoundCommand;
+		public ICommand GoToLostOrFoundCommand
+		{
+			get => goToLostOrFoundCommand ?? (goToLostOrFoundCommand = new Command(async () => await ExecuteGoToLostOrFoundCommand()));
+		}
+		private async Task ExecuteGoToLostOrFoundCommand()
+		{
+			await Navigation.PushAsync(new Views.Kins.KinsLostOrFoundPage());
 		}
 		#endregion
 

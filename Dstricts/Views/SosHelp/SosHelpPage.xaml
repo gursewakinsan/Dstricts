@@ -270,27 +270,45 @@
 								HasShadow="False"
 								CornerRadius="16"
 								BackgroundColor="#F40000">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                </Frame.GestureRecognizers>
                                 <StackLayout Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                    </StackLayout.GestureRecognizers>
                                     <Label
 										HorizontalTextAlignment="Center"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="40"
 										Text="REPORT"
-										TextColor="White" />
+										TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
                                     <Label
 										HorizontalTextAlignment="Center"
 										FontFamily="PoppinsBoldFontFamily"
 										FontSize="40"
 										Text="SOMEONE"
-										TextColor="White" />
+										TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
                                     <Label
 										HorizontalTextAlignment="Center"
 										FontFamily="PoppinsRegularFontFamily"
 										FontSize="40"
 										Text="LOST/FOUND"
-										TextColor="White" />
+										TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
                                     <Label
 										HorizontalTextAlignment="Center"
@@ -298,7 +316,11 @@
 										FontSize="16"
                                         LineHeight="1.2"
 										Text="Don't subject yourself or your relatives to unnecessary suffering."
-										TextColor="White" Margin="14,20,14,0"/>
+										TextColor="White" Margin="14,20,14,0">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GoToLostOrFoundCommand}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
                                 </StackLayout>
                             </Frame>
 

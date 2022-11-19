@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Kins.KinsListPage"
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,14,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="18" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+            Text="SOS Help"
+			HorizontalTextAlignment="Center"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <controls:CustomButton 
+            Grid.Row="2" 
+            Grid.ColumnSpan="2"
+            Margin="28,0,0,0"
+            CornerRadius="10"
+            FontSize="12"
+            TextColor="White"
+            Padding="15,0,15,0"
+            Text="From emergency list"
+            HorizontalOptions="StartAndExpand"
+            BackgroundColor="#242A37"
+            FontFamily="PoppinsBoldFontFamily"/>
+
+        <BoxView
+		    Grid.Row="4"
+		    Grid.ColumnSpan="3"
+		    BackgroundColor="White"
+		    HeightRequest="1"
+		    Opacity="0.1" 
+            Margin="28,0,28,0" />
+
+        
+        <Grid 
+            RowSpacing="0" 
+            ColumnSpacing="0" 
+            Grid.Row="5" 
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="28"/>
+            </Grid.ColumnDefinitions>
+
+            <CarouselView
+			    x:Name="CarouselViewKins"
+			    Grid.Row="1"
+                Grid.Column="1"
+			    BackgroundColor="Transparent"
+			    HorizontalScrollBarVisibility="Never"
+			    ItemsSource="{Binding KinsList}" >
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20" />
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:CustomFrame
+		                    Padding="0"
+                            Grid.Column="1"
+                            Grid.Row="1"
+		                    BackgroundColor="#242A37"
+		                    CornerRadius="16"
+		                    HasShadow="False"
+		                    IsClippedToBounds="True">
+                            <Grid RowSpacing="0" ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="63"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,5" Spacing="0">
+                                    <Grid ColumnSpacing="20" HeightRequest="1">
+                                        <BoxView Grid.Column="0" BackgroundColor="White"/>
+                                        <BoxView Grid.Column="1" BackgroundColor="White"/>
+                                        <BoxView Grid.Column="2" BackgroundColor="White"/>
+                                        <BoxView Grid.Column="3" BackgroundColor="White"/>
+                                        <BoxView Grid.Column="4" BackgroundColor="White"/>
+                                        <BoxView Grid.Column="5" BackgroundColor="White"/>
+                                    </Grid>
+
+                                    <ImageButton
+                                        BackgroundColor="Transparent"
+                                        CornerRadius="12"
+                                        HeightRequest="242" 
+                                        Margin="0,30,0,24" Aspect="Fill"
+                                        Source="{Binding ImgUrl}"/>
+
+                                    <Label
+			                            FontFamily="PoppinsRegularFontFamily"
+			                            FontSize="18"
+                                        Text="Daniel Ghirmai, 37 years old"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="White" />
+
+                                    <Label
+			                            FontFamily="PoppinsSemiBoldFontFamily"
+			                            FontSize="15"
+                                        Text="Missing for 35 days"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="White" />
+                                </StackLayout>
+
+                                <controls:CustomFrame
+					                Padding="0"
+                                    Grid.Row="1"
+					                BackgroundColor="#B90303"
+					                CornerRadius="25,0,0,0"
+					                HasShadow="False"
+                                    WidthRequest="120"
+                                    HeightRequest="63"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand"
+					                IsClippedToBounds="True">
+                                    <StackLayout Margin="13,0,0,0"
+                                        Orientation="Horizontal" 
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Label
+						                    FontFamily="PoppinsSemiBoldFontFamily"
+						                    FontSize="16"
+						                    HorizontalTextAlignment="Center"
+						                    Text="Select"
+						                    TextColor="#FFFEFE"
+						                    VerticalTextAlignment="Center"/>
+
+                                        <Label
+						                    FontFamily="{StaticResource MaterialFontFamily}"
+						                    FontSize="22"
+						                    HorizontalTextAlignment="Center"
+						                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+						                    TextColor="White"
+						                    VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </controls:CustomFrame>
+                            </Grid>
+                        </controls:CustomFrame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <controls:CustomButton IsVisible="False" 
+                Grid.Row="3"
+                Grid.Column="1"
+                CornerRadius="30"
+                FontSize="16"
+                TextColor="White"
+                Text="Go back"
+                BackgroundColor="#242A37"
+                FontFamily="PoppinsSemiBoldFontFamily"/>
+
+            <controls:CustomFrame
+			    Padding="15,0,15,0"
+                Grid.Row="3"
+                Grid.Column="1"
+			    BackgroundColor="#242A37"
+			    HasShadow="False"
+                WidthRequest="120"
+                HeightRequest="63"
+                CornerRadius="30"
+			    IsClippedToBounds="True">
+                <Grid ColumnSpacing="0">
+                    <Label
+                        Grid.Column="0"
+				        FontFamily="{StaticResource MaterialFontFamily}"
+				        FontSize="25"
+				        HorizontalTextAlignment="Start"
+				        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+				        TextColor="White"
+				        VerticalTextAlignment="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnArrowLeftTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label
+                        Grid.Column="1"
+				        FontFamily="{StaticResource MaterialFontFamily}"
+				        FontSize="25"
+				        HorizontalTextAlignment="End"
+				        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+				        TextColor="White"
+				        VerticalTextAlignment="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnArrowRightTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </controls:CustomFrame>
+        </Grid>
+    </Grid>
+</ContentPage>
