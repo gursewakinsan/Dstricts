@@ -31,7 +31,7 @@ namespace Dstricts.ViewModels
         }
         private async Task ExecuteNextCommand()
         {
-            await Task.CompletedTask;
+            await Navigation.PushAsync(new Views.Kins.KinsAddressPage());
         }
         #endregion
 

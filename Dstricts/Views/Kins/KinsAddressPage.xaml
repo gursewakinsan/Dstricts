@@ -2,7 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Dstricts.Views.Kins.KinsTimeAndDurationPage"
+    x:Class="Dstricts.Views.Kins.KinsAddressPage"
     xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
@@ -93,7 +93,7 @@
                     <Label
 				        FontFamily="PoppinsBoldFontFamily"
 				        FontSize="20" MaxLines="2"
-				        Text="Last seen" 
+				        Text="Last known location" 
 				        TextColor="White"/>
 
                     <Label
@@ -107,28 +107,20 @@
                         Margin="0,0,0,31"/>
                 </StackLayout>
 
-                
+
                 <Grid 
                     Grid.Row="2" 
                     Grid.Column="1" 
                     ColumnSpacing="23">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="105"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="60"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="106"/>
                     </Grid.RowDefinitions>
-                    <Label
-					    FontFamily="PoppinsRegularFontFamily"
-					    FontSize="12" 
-                        Opacity="0.70"
-					    Text="Duration"
-					    TextColor="White" 
-                        VerticalTextAlignment="Start"
-                        HorizontalOptions="Start"
-                        Grid.Row="0" Grid.Column="0"/>
 
                     <Label
                         VerticalTextAlignment="Start"
@@ -136,9 +128,9 @@
 					    FontFamily="PoppinsRegularFontFamily"
 					    FontSize="12" 
                         Opacity="0.70"
-					    Text="Time"
+					    Text="Address"
 					    TextColor="White" 
-                        Grid.Row="0" Grid.Column="1"/>
+                        Grid.Row="0" Grid.Column="0"/>
 
                     <controls:CustomFrame
                         Grid.Row="1"
@@ -149,67 +141,66 @@
                         CornerRadius="12"
 			            IsClippedToBounds="True">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="15"/>
-                            </Grid.ColumnDefinitions>
-
-                            <controls:CustomPicker
-						        x:Name="pickerDuration"
-						        FontFamily="PoppinsRegularFontFamily"
-						        FontSize="14"
-                                VerticalTextAlignment="Center"
-						        ItemsSource="{Binding DurationList}"
-						        SelectedItem="{Binding SelectedDuration}"
-						        TextColor="White"/>
-
-                            <Label
-			                    Grid.Row="0"
-			                    Grid.Column="1"
-			                    Padding="0"
-			                    FontFamily="{StaticResource MaterialFontFamily}"
-			                    FontSize="20"
-                                HorizontalTextAlignment="Center"
-                                VerticalTextAlignment="Center"
-			                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
-			                    TextColor="#F40000"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <controls:CustomEntry
+                                FontFamily="PoppinsRegularFontFamily"
+					            FontSize="14"
+                                TextColor="White"
+                                Placeholder="Address"
+                                PlaceholderColor="LightGray"
+                                BackgroundColor="Transparent"/>
                         </Grid>
                     </controls:CustomFrame>
 
+                    <StackLayout Orientation="Horizontal" Grid.Row="3" Spacing="5" VerticalOptions="CenterAndExpand">
+                        <BoxView 
+                            VerticalOptions="CenterAndExpand" 
+                            HeightRequest="1" 
+                            BackgroundColor="#C9C8C8" 
+                            HorizontalOptions="FillAndExpand"/>
+                        
+                        <Label
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Center"
+					        FontFamily="PoppinsSemiBoldFontFamily"
+					        FontSize="13" 
+                            Opacity="0.70"
+					        Text="OR"
+					        TextColor="White" />
+                        
+                        <BoxView 
+                            VerticalOptions="CenterAndExpand" 
+                            HeightRequest="1" 
+                            BackgroundColor="#C9C8C8" 
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+
+                    <Label
+                        VerticalTextAlignment="Start"
+                        HorizontalOptions="Start"
+					    FontFamily="PoppinsRegularFontFamily"
+					    FontSize="12" 
+                        Opacity="0.70"
+					    Text="Add closest point"
+					    TextColor="White" 
+                        Grid.Row="5" Grid.Column="0"/>
+
                     <controls:CustomFrame
-                        Grid.Row="1"
-                        Padding="15,0,15,0"
-                        Grid.Column="1"
+                        Grid.Row="6"
+                        Padding="10"
+                        Grid.Column="0"
 			            BackgroundColor="#242A37"
 			            HasShadow="False"
                         CornerRadius="12"
 			            IsClippedToBounds="True">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="15"/>
-                            </Grid.ColumnDefinitions>
-
-                            <controls:CustomPicker
-						        x:Name="pickerTime"
-						        FontFamily="PoppinsRegularFontFamily"
-						        FontSize="14"
-                                VerticalTextAlignment="Center"
-						        ItemsSource="{Binding TimeList}"
-						        SelectedItem="{Binding SelectedTime}"
-						        TextColor="White"/>
-
-                            <Label
-			                    Grid.Row="0"
-			                    Grid.Column="1"
-			                    Padding="0"
-			                    FontFamily="{StaticResource MaterialFontFamily}"
-			                    FontSize="20"
-                                HorizontalTextAlignment="Center"
-                                VerticalTextAlignment="Center"
-			                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronDown}"
-			                    TextColor="#F40000"/>
-                        </Grid>
+                        <Editor 
+                            FontFamily="PoppinsRegularFontFamily"
+					        FontSize="14"
+                            TextColor="White" 
+                            PlaceholderColor="LightGray"
+                            Placeholder="Add closest point"/>
                     </controls:CustomFrame>
                 </Grid>
             </Grid>
