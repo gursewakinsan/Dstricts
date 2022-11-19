@@ -4,10 +4,10 @@ using System.Threading.Tasks;
 
 namespace Dstricts.ViewModels
 {
-    public class KinsAddressPageViewModel : BaseViewModel
+    public class KinsWearingPageViewModel : BaseViewModel
     {
         #region Constructor.
-        public KinsAddressPageViewModel(INavigation navigation)
+        public KinsWearingPageViewModel(INavigation navigation)
         {
             Navigation = navigation;
         }
@@ -21,7 +21,7 @@ namespace Dstricts.ViewModels
         }
         private async Task ExecuteNextCommand()
         {
-            await Navigation.PushAsync(new Views.Kins.KinsWearingPage());
+            await Task.CompletedTask;
         }
         #endregion
     }

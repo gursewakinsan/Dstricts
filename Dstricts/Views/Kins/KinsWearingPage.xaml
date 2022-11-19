@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Kins.KinsWearingPage"
+     xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,14,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="18" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="18,0,0,0"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Start"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="PoppinsRegularFontFamily"
+			FontSize="14"
+            Text="SOS Help"
+			HorizontalTextAlignment="Center"
+			TextColor="White"
+			VerticalTextAlignment="Center" />
+
+        <controls:CustomButton 
+            Grid.Row="2" 
+            Grid.ColumnSpan="2"
+            Margin="28,0,0,0"
+            CornerRadius="10"
+            FontSize="12"
+            TextColor="White"
+            Padding="15,0,15,0"
+            Text="NOTIFY / GET NOTIFIED"
+            HorizontalOptions="StartAndExpand"
+            BackgroundColor="#242A37"
+            FontFamily="PoppinsBoldFontFamily"/>
+
+        <BoxView
+		    Grid.Row="4"
+		    Grid.ColumnSpan="3"
+		    BackgroundColor="White"
+		    HeightRequest="1"
+		    Opacity="0.1" 
+            Margin="28,0,28,0" />
+
+        <ScrollView 
+            Grid.Row="5" 
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="28"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout 
+                    Spacing="10" 
+                    Grid.Row="1" 
+                    Grid.Column="1">
+                    <Label
+				        FontFamily="PoppinsBoldFontFamily"
+				        FontSize="20" MaxLines="2"
+				        Text="Wearing" 
+				        TextColor="White"/>
+
+                    <Label
+					    FontFamily="PoppinsRegularFontFamily"
+					    FontSize="14" 
+                        Opacity="0.42"
+                        LineHeight="1.2"
+                        HorizontalOptions="FillAndExpand"
+					    Text="This report will go within our users in the network. Your report will not be sent to the police authorities"
+					    TextColor="White" 
+                        Margin="0,0,0,31"/>
+                </StackLayout>
+
+                <Grid 
+                    Grid.Row="2" 
+                    Grid.Column="1" 
+                    ColumnSpacing="23">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                    </Grid.RowDefinitions>
+
+                    <controls:CustomFrame
+                        Grid.Row="0"
+                        Padding="10"
+			            BackgroundColor="#242A37"
+			            HasShadow="False"
+                        CornerRadius="12"
+			            IsClippedToBounds="True">
+                        <Editor 
+                            FontFamily="PoppinsRegularFontFamily"
+					        FontSize="14"
+                            TextColor="White" 
+                            PlaceholderColor="LightGray"
+                            Placeholder="This report will go within our users in the network. Your report will not be sent to the police authorities"/>
+                    </controls:CustomFrame>
+                </Grid>
+            </Grid>
+        </ScrollView>
+
+        <Grid 
+            Grid.Row="6"
+            Margin="28,0,28,0"
+            Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame
+                Grid.Column="0"
+                Padding="10"
+			    BackgroundColor="Transparent"
+			    HasShadow="False"
+                CornerRadius="12"
+                BorderColor="White"
+                Opacity="0.2"
+			    IsClippedToBounds="True"/>
+
+            <controls:CustomButton
+                CornerRadius="8"
+                FontSize="16"
+                TextColor="White"
+                Text="Skip"
+                Grid.Column="0"
+                Command="{Binding NextCommand}"
+                BackgroundColor="Transparent"
+                FontFamily="PoppinsSemiBoldFontFamily"/>
+
+
+            <controls:CustomButton
+                CornerRadius="8"
+                FontSize="16"
+                TextColor="White"
+                Text="Next"
+                Grid.Column="2"
+                Command="{Binding NextCommand}"
+                BackgroundColor="#F40000"
+                FontFamily="PoppinsSemiBoldFontFamily"/>
+        </Grid>
+        
+    </Grid>
+</ContentPage>
