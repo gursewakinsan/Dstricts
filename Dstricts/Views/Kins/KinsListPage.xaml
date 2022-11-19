@@ -109,14 +109,26 @@
 		                    CornerRadius="16"
 		                    HasShadow="False"
 		                    IsClippedToBounds="True">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                            </controls:CustomFrame.GestureRecognizers>
                             <Grid RowSpacing="0" ColumnSpacing="0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="63"/>
                                 </Grid.RowDefinitions>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                                </Grid.GestureRecognizers>
 
                                 <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,5" Spacing="0">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                                    </StackLayout.GestureRecognizers>
                                     <Grid ColumnSpacing="20" HeightRequest="1">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                                        </Grid.GestureRecognizers>
                                         <BoxView Grid.Column="0" BackgroundColor="White"/>
                                         <BoxView Grid.Column="1" BackgroundColor="White"/>
                                         <BoxView Grid.Column="2" BackgroundColor="White"/>
@@ -130,21 +142,30 @@
                                         CornerRadius="12"
                                         HeightRequest="242" 
                                         Margin="0,30,0,24" Aspect="Fill"
-                                        Source="{Binding ImgUrl}"/>
+                                        Source="{Binding ImgUrl}"
+                                        Clicked="OnCustomImageButtonTapped"/>
 
                                     <Label
 			                            FontFamily="PoppinsRegularFontFamily"
 			                            FontSize="18"
                                         Text="Daniel Ghirmai, 37 years old"
 			                            HorizontalTextAlignment="Start"
-			                            TextColor="White" />
+			                            TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
                                     <Label
 			                            FontFamily="PoppinsSemiBoldFontFamily"
 			                            FontSize="15"
                                         Text="Missing for 35 days"
 			                            HorizontalTextAlignment="Start"
-			                            TextColor="White" />
+			                            TextColor="White">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
                                 </StackLayout>
 
                                 <controls:CustomFrame
@@ -158,17 +179,27 @@
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="EndAndExpand"
 					                IsClippedToBounds="True">
+                                    <controls:CustomFrame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                                    </controls:CustomFrame.GestureRecognizers>
                                     <StackLayout Margin="13,0,0,0"
                                         Orientation="Horizontal" 
                                         VerticalOptions="CenterAndExpand"
                                         HorizontalOptions="CenterAndExpand">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                                        </StackLayout.GestureRecognizers>
                                         <Label
 						                    FontFamily="PoppinsSemiBoldFontFamily"
 						                    FontSize="16"
 						                    HorizontalTextAlignment="Center"
 						                    Text="Select"
 						                    TextColor="#FFFEFE"
-						                    VerticalTextAlignment="Center"/>
+						                    VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
 
                                         <Label
 						                    FontFamily="{StaticResource MaterialFontFamily}"
@@ -176,7 +207,11 @@
 						                    HorizontalTextAlignment="Center"
 						                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
 						                    TextColor="White"
-						                    VerticalTextAlignment="Center"/>
+						                    VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
                                     </StackLayout>
                                 </controls:CustomFrame>
                             </Grid>
