@@ -16,5 +16,23 @@ namespace Dstricts.Service
                 return res;
             });
         }
+
+        public Task<int> AddMissingPersonInfoAsync(Models.AddMissingPersonInfoRequest request)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddMissingPersonInfoUrl)), string.Empty, request.ToJson());
+                return res;
+            });
+        }
+
+        public Task<int> AddMissingPersonImagesAsync(Models.AddMissingPersonImageRequest request)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.AddMissingPersonImagesUrl)), string.Empty, request.ToJson());
+                return res;
+            });
+        }
     }
 }

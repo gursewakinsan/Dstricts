@@ -6,5 +6,7 @@ namespace Dstricts.Interfaces
     public interface IKinsService
     {
         Task<List<Models.kinsListResponse>> KinsListAsync(Models.kinsListRequest request);
+        Task<int> AddMissingPersonInfoAsync(Models.AddMissingPersonInfoRequest request);
+        Task<int> AddMissingPersonImagesAsync(Models.AddMissingPersonImageRequest request);
     }
 }
