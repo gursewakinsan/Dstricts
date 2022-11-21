@@ -149,6 +149,7 @@
 					            FontSize="14"
                                 TextColor="White"
                                 Placeholder="Address"
+                                Text="{Binding Address}"
                                 PlaceholderColor="LightGray"
                                 BackgroundColor="Transparent"/>
                         </Grid>
@@ -199,6 +200,7 @@
                             FontFamily="PoppinsRegularFontFamily"
 					        FontSize="14"
                             TextColor="White" 
+                            Text="{Binding ClosestAddress}"
                             PlaceholderColor="LightGray"
                             Placeholder="Add closest point"/>
                     </controls:CustomFrame>

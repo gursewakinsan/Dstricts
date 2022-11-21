@@ -31,6 +31,25 @@ namespace Dstricts.ViewModels
         }
         private async Task ExecuteNextCommand()
         {
+            switch (SelectedTime)
+            {
+                case "Minutes":
+                    Helper.Helper.MissingPersonInfo.LastSeenTime = 1;
+                    break;
+                case "Hours":
+                    Helper.Helper.MissingPersonInfo.LastSeenTime = 2;
+                    break;
+                case "Days":
+                    Helper.Helper.MissingPersonInfo.LastSeenTime = 3;
+                    break;
+                case "Week":
+                    Helper.Helper.MissingPersonInfo.LastSeenTime = 4;
+                    break;
+                case "Month":
+                    Helper.Helper.MissingPersonInfo.LastSeenTime = 5;
+                    break;
+            }
+            Helper.Helper.MissingPersonInfo.LastSeenDuration = SelectedDuration;
             await Navigation.PushAsync(new Views.Kins.KinsAddressPage());
         }
         #endregion

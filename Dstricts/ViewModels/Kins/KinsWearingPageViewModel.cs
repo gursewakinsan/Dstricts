@@ -21,7 +21,24 @@ namespace Dstricts.ViewModels
         }
         private async Task ExecuteNextCommand()
         {
+            if (!string.IsNullOrWhiteSpace(WearingText))
+                Helper.Helper.MissingPersonInfo.ClothesWearing = WearingText;
+            else
+                Helper.Helper.MissingPersonInfo.ClothesWearing = string.Empty;
             await Navigation.PushAsync(new Views.Kins.KinsUploadPhotosPage());
+        }
+        #endregion
+
+        #region Properties
+        private string wearingText;
+        public string WearingText
+        {
+            get => wearingText;
+            set
+            {
+                wearingText = value;
+                OnPropertyChanged("WearingText");
+            }
         }
         #endregion
     }

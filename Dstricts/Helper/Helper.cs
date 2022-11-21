@@ -62,8 +62,10 @@ namespace Dstricts.Helper
 		public static double MyCurrentLocationLatitude { get; set; }
         public static double MyCurrentLocationLongitude { get; set; }
 
+		public static Models.AddMissingPersonInfoRequest MissingPersonInfo { get; set; }
 
-        public static string[] ListIconBgColorList =
+
+		public static string[] ListIconBgColorList =
 		{
 			"#223426", "#282732", "#342334", "#FC7125",
 			"#223426", "#282732", "#342334", "#FC7125",

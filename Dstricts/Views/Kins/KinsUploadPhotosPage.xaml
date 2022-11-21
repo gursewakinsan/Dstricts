@@ -464,16 +464,46 @@
             </Grid>
         </ScrollView>
         
-        <controls:CustomButton
+        <Grid 
             Grid.Row="6"
-            Grid.ColumnSpan="3"
             Margin="28,0,28,0"
-            CornerRadius="30"
-            FontSize="16"
-            TextColor="White"
-            Text="Submit"
-            Command="{Binding SubmitCommand}"
-            BackgroundColor="#F40000"
-            FontFamily="PoppinsSemiBoldFontFamily"/>
+            Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame
+                Grid.Column="0"
+                Padding="10"
+			    BackgroundColor="Transparent"
+			    HasShadow="False"
+                CornerRadius="12"
+                BorderColor="White"
+                Opacity="0.2"
+			    IsClippedToBounds="True"/>
+
+            <controls:CustomButton
+                CornerRadius="8"
+                FontSize="16"
+                TextColor="White"
+                Text="Skip"
+                Grid.Column="0"
+                Command="{Binding SubmitCommand}"
+                BackgroundColor="Transparent"
+                FontFamily="PoppinsSemiBoldFontFamily"/>
+
+
+            <controls:CustomButton
+                CornerRadius="8"
+                FontSize="16"
+                TextColor="White"
+                Text="Submit"
+                Grid.Column="2"
+                Command="{Binding SubmitCommand}"
+                BackgroundColor="#F40000"
+                FontFamily="PoppinsSemiBoldFontFamily"/>
+        </Grid>
     </Grid>
 </ContentPage>

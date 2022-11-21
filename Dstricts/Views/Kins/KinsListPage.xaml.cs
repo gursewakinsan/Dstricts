@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
+using Dstricts.Controls;
 
 namespace Dstricts.Views.Kins
 {
@@ -42,30 +43,41 @@ namespace Dstricts.Views.Kins
 
         private void OnCustomFrameTapped(object sender, System.EventArgs e)
         {
-            GoToKinsTimeAndDurationPage();
+            CustomFrame control = sender as CustomFrame;
+            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
         }
 
         private void OnCustomGridTapped(object sender, System.EventArgs e)
         {
-            GoToKinsTimeAndDurationPage();
+            Grid control = sender as Grid;
+            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
         }
 
         private void OnCustomStackLayoutTapped(object sender, System.EventArgs e)
         {
-            GoToKinsTimeAndDurationPage();
+            StackLayout control = sender as StackLayout;
+            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
         }
 
         private void OnCustomImageButtonTapped(object sender, System.EventArgs e)
         {
-            GoToKinsTimeAndDurationPage();
+            ImageButton control = sender as ImageButton;
+            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
         }
 
         private void OnCustomLabelTapped(object sender, System.EventArgs e)
         {
-            GoToKinsTimeAndDurationPage();
+            Label control = sender as Label;
+            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
         }
-        async void GoToKinsTimeAndDurationPage()
+        async void GoToKinsTimeAndDurationPage(Models.kinsListResponse kins)
         {
+            if (Helper.Helper.MissingPersonInfo == null)
+                Helper.Helper.MissingPersonInfo = new Models.AddMissingPersonInfoRequest();
+            Helper.Helper.MissingPersonInfo.FirstName = kins.FirstName;
+            Helper.Helper.MissingPersonInfo.LastName= kins.LastName;
+            Helper.Helper.MissingPersonInfo.Uid = kins.Uid;
+            Helper.Helper.MissingPersonInfo.UserId = Helper.Helper.LoggedInUserId;
             await Navigation.PushAsync(new KinsTimeAndDurationPage());
         }
     }
