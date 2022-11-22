@@ -125,10 +125,12 @@
                         <Editor 
                             FontFamily="PoppinsRegularFontFamily"
 					        FontSize="14"
-                            TextColor="White" 
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            MaxLength="500"
                             Text="{Binding WearingText}"
                             PlaceholderColor="LightGray"
-                            Placeholder="This report will go within our users in the network. Your report will not be sent to the police authorities"/>
+                            Placeholder="What is wearing?"/>
                     </controls:CustomFrame>
                 </Grid>
             </Grid>

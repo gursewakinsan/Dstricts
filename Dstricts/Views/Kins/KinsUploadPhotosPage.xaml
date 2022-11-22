@@ -490,7 +490,7 @@
                 TextColor="White"
                 Text="Skip"
                 Grid.Column="0"
-                Command="{Binding SubmitCommand}"
+                Command="{Binding SkipCommand}"
                 BackgroundColor="Transparent"
                 FontFamily="PoppinsSemiBoldFontFamily"/>
 

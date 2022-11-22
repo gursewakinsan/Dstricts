@@ -199,7 +199,8 @@
                         <Editor 
                             FontFamily="PoppinsRegularFontFamily"
 					        FontSize="14"
-                            TextColor="White" 
+                            TextColor="White"
+                            BackgroundColor="Transparent"
                             Text="{Binding ClosestAddress}"
                             PlaceholderColor="LightGray"
                             Placeholder="Add closest point"/>
