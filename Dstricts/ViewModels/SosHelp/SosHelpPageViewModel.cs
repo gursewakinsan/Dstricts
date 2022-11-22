@@ -4,6 +4,7 @@ using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 
 namespace Dstricts.ViewModels
 {
@@ -26,9 +27,14 @@ namespace Dstricts.ViewModels
 		{
 			DependencyService.Get<IProgressBar>().Show();
 			ISosService service = new SosService();
+            var myCurrentLocation = await Geolocation.GetLocationAsync();
+            Helper.Helper.MyCurrentLocationLatitude = myCurrentLocation.Latitude;
+            Helper.Helper.MyCurrentLocationLongitude = myCurrentLocation.Longitude;
 			TravelAppAvailableSosList = await service.TravelAppAvailableSosAsync(new Models.TravelAppAvailableSosRequest()
 			{
-				UserId = Helper.Helper.LoggedInUserId
+				UserId = Helper.Helper.LoggedInUserId,
+				CurrentLatitude = myCurrentLocation.Latitude,
+				CurrentLongitude = myCurrentLocation.Longitude
 			});
 			ListHeightRequest = 200;
 			DependencyService.Get<IProgressBar>().Hide();

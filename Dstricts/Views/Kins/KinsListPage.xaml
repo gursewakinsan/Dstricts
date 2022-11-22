@@ -71,6 +71,7 @@
 
         
         <Grid 
+            IsVisible="{Binding IsLoadData}"
             RowSpacing="0" 
             ColumnSpacing="0" 
             Grid.Row="5" 
@@ -93,6 +94,7 @@
 			    x:Name="CarouselViewKins"
 			    Grid.Row="1"
                 Grid.Column="1"
+                IsVisible="{Binding IsKinsList}"
 			    BackgroundColor="Transparent"
 			    HorizontalScrollBarVisibility="Never"
 			    ItemsSource="{Binding KinsList}" >
@@ -101,126 +103,236 @@
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <controls:CustomFrame
-		                    Padding="0"
-                            Grid.Column="1"
-                            Grid.Row="1"
-		                    BackgroundColor="#242A37"
-		                    CornerRadius="16"
-		                    HasShadow="False"
-		                    IsClippedToBounds="True">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <Grid RowSpacing="0" ColumnSpacing="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="63"/>
-                                </Grid.RowDefinitions>
-                                <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
-                                </Grid.GestureRecognizers>
+                        <StackLayout>
+                            <controls:CustomFrame
+		                        Padding="0"
+                                Grid.Column="1"
+                                Grid.Row="1"
+		                        BackgroundColor="#242A37"
+		                        CornerRadius="16"
+		                        HasShadow="False"
+		                        IsClippedToBounds="True"
+                                IsVisible="{Binding IsMissing, Converter={StaticResource InverseBoolConverter}}">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="63"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                                    </Grid.GestureRecognizers>
 
-                                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,5" Spacing="0">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
-                                    </StackLayout.GestureRecognizers>
-                                    <Grid ColumnSpacing="20" HeightRequest="1">
-                                        <Grid.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
-                                        </Grid.GestureRecognizers>
-                                        <BoxView Grid.Column="0" BackgroundColor="White"/>
-                                        <BoxView Grid.Column="1" BackgroundColor="White"/>
-                                        <BoxView Grid.Column="2" BackgroundColor="White"/>
-                                        <BoxView Grid.Column="3" BackgroundColor="White"/>
-                                        <BoxView Grid.Column="4" BackgroundColor="White"/>
-                                        <BoxView Grid.Column="5" BackgroundColor="White"/>
-                                    </Grid>
+                                    <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,5" Spacing="0">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <Grid ColumnSpacing="20" HeightRequest="3">
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                                            </Grid.GestureRecognizers>
+                                            <BoxView Grid.Column="0" BackgroundColor="White"/>
+                                            <BoxView Grid.Column="1" BackgroundColor="White"/>
+                                            <BoxView Grid.Column="2" BackgroundColor="White"/>
+                                            <BoxView Grid.Column="3" BackgroundColor="White"/>
+                                            <BoxView Grid.Column="4" BackgroundColor="White"/>
+                                            <BoxView Grid.Column="5" BackgroundColor="White"/>
+                                        </Grid>
 
-                                    <ImageButton
-                                        BackgroundColor="Transparent"
-                                        CornerRadius="12"
-                                        HeightRequest="242" 
-                                        Margin="0,30,0,24" Aspect="Fill"
-                                        Source="{Binding ImgUrl}"
-                                        Clicked="OnCustomImageButtonTapped"/>
+                                        <ImageButton
+                                            BackgroundColor="Transparent"
+                                            CornerRadius="12"
+                                            HeightRequest="242" 
+                                            Margin="0,30,0,24" Aspect="Fill"
+                                            Source="{Binding ImgUrl}"
+                                            Clicked="OnCustomImageButtonTapped"/>
 
-                                    <Label
-			                            FontFamily="PoppinsRegularFontFamily"
-			                            FontSize="18"
-                                        Text="Daniel Ghirmai, 37 years old"
-			                            HorizontalTextAlignment="Start"
-			                            TextColor="White">
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
-                                        </Label.GestureRecognizers>
-                                    </Label>
+                                        <Label
+			                                FontFamily="PoppinsRegularFontFamily"
+			                                FontSize="18"
+                                            Text="Daniel Ghirmai, 37 years old"
+			                                HorizontalTextAlignment="Start"
+			                                TextColor="White">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
 
-                                    <Label
+                                        <Label
 			                            FontFamily="PoppinsSemiBoldFontFamily"
 			                            FontSize="15"
                                         Text="Missing for 35 days"
 			                            HorizontalTextAlignment="Start"
 			                            TextColor="White">
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                </StackLayout>
-
-                                <controls:CustomFrame
-					                Padding="0"
-                                    Grid.Row="1"
-					                BackgroundColor="#B90303"
-					                CornerRadius="25,0,0,0"
-					                HasShadow="False"
-                                    WidthRequest="120"
-                                    HeightRequest="63"
-                                    HorizontalOptions="EndAndExpand"
-                                    VerticalOptions="EndAndExpand"
-					                IsClippedToBounds="True">
-                                    <controls:CustomFrame.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
-                                    </controls:CustomFrame.GestureRecognizers>
-                                    <StackLayout Margin="13,0,0,0"
-                                        Orientation="Horizontal" 
-                                        VerticalOptions="CenterAndExpand"
-                                        HorizontalOptions="CenterAndExpand">
-                                        <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
-                                        </StackLayout.GestureRecognizers>
-                                        <Label
-						                    FontFamily="PoppinsSemiBoldFontFamily"
-						                    FontSize="16"
-						                    HorizontalTextAlignment="Center"
-						                    Text="Select"
-						                    TextColor="#FFFEFE"
-						                    VerticalTextAlignment="Center">
-                                            <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
-                                            </Label.GestureRecognizers>
-                                        </Label>
-
-                                        <Label
-						                    FontFamily="{StaticResource MaterialFontFamily}"
-						                    FontSize="22"
-						                    HorizontalTextAlignment="Center"
-						                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
-						                    TextColor="White"
-						                    VerticalTextAlignment="Center">
                                             <Label.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
                                             </Label.GestureRecognizers>
                                         </Label>
                                     </StackLayout>
-                                </controls:CustomFrame>
-                            </Grid>
-                        </controls:CustomFrame>
+
+                                    <controls:CustomFrame
+					                    Padding="0"
+                                        Grid.Row="1"
+					                    BackgroundColor="#B90303"
+					                    CornerRadius="25,0,0,0"
+					                    HasShadow="False"
+                                        WidthRequest="120"
+                                        HeightRequest="63"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="EndAndExpand"
+					                    IsClippedToBounds="True">
+                                        <controls:CustomFrame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                                        </controls:CustomFrame.GestureRecognizers>
+                                        <StackLayout Margin="13,0,0,0"
+                                            Orientation="Horizontal" 
+                                            VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="CenterAndExpand">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                                            </StackLayout.GestureRecognizers>
+                                            <Label
+						                        FontFamily="PoppinsSemiBoldFontFamily"
+						                        FontSize="16"
+						                        HorizontalTextAlignment="Center"
+						                        Text="Select"
+						                        TextColor="#FFFEFE"
+						                        VerticalTextAlignment="Center">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+
+                                            <Label
+						                        FontFamily="{StaticResource MaterialFontFamily}"
+						                        FontSize="22"
+						                        HorizontalTextAlignment="Center"
+						                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+						                        TextColor="White"
+						                        VerticalTextAlignment="Center">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </StackLayout>
+                                    </controls:CustomFrame>
+                                </Grid>
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame
+		                        Padding="0"
+		                        BackgroundColor="#F4B400"
+		                        CornerRadius="16"
+		                        HasShadow="False"
+		                        IsClippedToBounds="True"
+                                IsVisible="{Binding IsMissing}">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="63"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,20" Spacing="0">
+                                        <Grid ColumnSpacing="20" HeightRequest="3">
+                                            <BoxView Grid.Column="0" BackgroundColor="#2D2D2D"/>
+                                            <BoxView Grid.Column="1" BackgroundColor="#2D2D2D"/>
+                                            <BoxView Grid.Column="2" BackgroundColor="#2D2D2D"/>
+                                            <BoxView Grid.Column="3" BackgroundColor="#2D2D2D"/>
+                                            <BoxView Grid.Column="4" BackgroundColor="#2D2D2D"/>
+                                            <BoxView Grid.Column="5" BackgroundColor="#2D2D2D"/>
+                                        </Grid>
+
+                                        <Grid HeightRequest="242" Margin="0,30,0,24">
+                                            <ImageButton
+                                                Grid.Row="0"
+                                                BackgroundColor="Black"
+                                                CornerRadius="12"
+                                                Aspect="Fill"
+                                                Source="{Binding Kin.ImgUrl}"/>
+
+                                            <controls:CustomFrame
+					                            Padding="0"
+                                                Grid.Row="0" 
+                                                Margin="0,0,-1,0"
+					                            BackgroundColor="#B90303"
+					                            CornerRadius="25,0,0,0"
+					                            HasShadow="False"
+                                                WidthRequest="100"
+                                                HeightRequest="63"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="EndAndExpand"
+					                            IsClippedToBounds="True">
+                                                <Label 
+                                                    Margin="5,0,0,0"
+						                            FontFamily="PoppinsSemiBoldFontFamily"
+						                            FontSize="16"
+						                            HorizontalTextAlignment="Center"
+						                            Text="Missing"
+						                            TextColor="#FFFEFE"
+						                            VerticalTextAlignment="Center"/>
+                                            </controls:CustomFrame>
+                                        </Grid>
+
+                                        <Label
+			                                FontFamily="PoppinsRegularFontFamily"
+			                                FontSize="18"
+                                            Text="Daniel Ghirmai, 37 years old"
+			                                HorizontalTextAlignment="Start"
+			                                TextColor="Black"/>
+
+                                        <Label
+			                                FontFamily="PoppinsSemiBoldFontFamily"
+			                                FontSize="15"
+                                            Text="Missing for 35 days"
+			                                HorizontalTextAlignment="Start"
+			                                TextColor="Black"/>
+                                    </StackLayout>
+
+                                    <controls:CustomFrame
+					                    Padding="10,0,10,0"
+                                        Grid.Row="1"
+					                    BackgroundColor="#171C26"
+					                    CornerRadius="10"
+					                    HasShadow="False"
+                                        WidthRequest="120"
+                                        HeightRequest="64" Margin="24,0,24,0"
+                                        VerticalOptions="EndAndExpand"
+					                    IsClippedToBounds="True">
+                                        <Grid VerticalOptions="CenterAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+						                        FontFamily="PoppinsRegularFontFamily"
+						                        FontSize="14"
+						                        HorizontalTextAlignment="Start"
+						                        Text="Stay informed"
+						                        TextColor="#FFFEFE"
+						                        VerticalTextAlignment="Center"/>
+
+                                            <Label
+			                                    Grid.Column="1"
+			                                    FontFamily="{StaticResource MaterialFontFamily}"
+			                                    FontSize="40"
+			                                    HorizontalTextAlignment="End"
+			                                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitch}"
+			                                    TextColor="#F40000"
+			                                    VerticalTextAlignment="Start"/>
+                                        </Grid>
+                                    </controls:CustomFrame>
+                                    <BoxView Grid.Row="2" HeightRequest="20"/>
+                                </Grid>
+                            </controls:CustomFrame>
+                        </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
-            <controls:CustomButton IsVisible="False" 
+            <controls:CustomButton
                 Grid.Row="3"
                 Grid.Column="1"
                 CornerRadius="30"
@@ -228,7 +340,9 @@
                 TextColor="White"
                 Text="Go back"
                 BackgroundColor="#242A37"
-                FontFamily="PoppinsSemiBoldFontFamily"/>
+                FontFamily="PoppinsSemiBoldFontFamily"
+                Command="{Binding CloseCommand}"
+                IsVisible="{Binding IsKinsList, Converter={StaticResource InverseBoolConverter}}"/>
 
             <controls:CustomFrame
 			    Padding="15,0,15,0"
@@ -239,7 +353,8 @@
                 WidthRequest="120"
                 HeightRequest="63"
                 CornerRadius="30"
-			    IsClippedToBounds="True">
+			    IsClippedToBounds="True" 
+                IsVisible="{Binding IsKinsList}">
                 <Grid ColumnSpacing="0">
                     <Label
                         Grid.Column="0"
@@ -268,6 +383,233 @@
                     </Label>
                 </Grid>
             </controls:CustomFrame>
+
+            <StackLayout 
+                Grid.Row="1"
+                Grid.Column="1"
+                IsVisible="{Binding IsKinsList, Converter={StaticResource InverseBoolConverter}}">
+                <controls:CustomFrame
+		            Padding="0"
+		            BackgroundColor="#242A37"
+		            CornerRadius="16"
+		            HasShadow="False"
+		            IsClippedToBounds="True"
+                    IsVisible="{Binding Kin.IsMissing, Converter={StaticResource InverseBoolConverter}}">
+                    <controls:CustomFrame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                    </controls:CustomFrame.GestureRecognizers>
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="63"/>
+                        </Grid.RowDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,5" Spacing="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                            </StackLayout.GestureRecognizers>
+                            <Grid ColumnSpacing="20" HeightRequest="3">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomGridTapped"/>
+                                </Grid.GestureRecognizers>
+                                <BoxView Grid.Column="0" BackgroundColor="White"/>
+                                <BoxView Grid.Column="1" BackgroundColor="White"/>
+                                <BoxView Grid.Column="2" BackgroundColor="White"/>
+                                <BoxView Grid.Column="3" BackgroundColor="White"/>
+                                <BoxView Grid.Column="4" BackgroundColor="White"/>
+                                <BoxView Grid.Column="5" BackgroundColor="White"/>
+                            </Grid>
+
+                            <ImageButton
+                                        BackgroundColor="Transparent"
+                                        CornerRadius="12"
+                                        HeightRequest="242" 
+                                        Margin="0,30,0,24" Aspect="Fill"
+                                        Source="{Binding Kin.ImgUrl}"
+                                        Clicked="OnCustomImageButtonTapped"/>
+
+                            <Label
+			                            FontFamily="PoppinsRegularFontFamily"
+			                            FontSize="18"
+                                        Text="Daniel Ghirmai, 37 years old"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="White">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label
+			                            FontFamily="PoppinsSemiBoldFontFamily"
+			                            FontSize="15"
+                                        Text="Missing for 35 days"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="White">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+
+                        <controls:CustomFrame
+					                Padding="0"
+                                    Grid.Row="1"
+					                BackgroundColor="#B90303"
+					                CornerRadius="25,0,0,0"
+					                HasShadow="False"
+                                    WidthRequest="120"
+                                    HeightRequest="63"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand"
+					                IsClippedToBounds="True">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCustomFrameTapped"/>
+                            </controls:CustomFrame.GestureRecognizers>
+                            <StackLayout Margin="13,0,0,0"
+                                        Orientation="Horizontal" 
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCustomStackLayoutTapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label
+						                    FontFamily="PoppinsSemiBoldFontFamily"
+						                    FontSize="16"
+						                    HorizontalTextAlignment="Center"
+						                    Text="Select"
+						                    TextColor="#FFFEFE"
+						                    VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+						                    FontFamily="{StaticResource MaterialFontFamily}"
+						                    FontSize="22"
+						                    HorizontalTextAlignment="Center"
+						                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
+						                    TextColor="White"
+						                    VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </controls:CustomFrame>
+                    </Grid>
+                </controls:CustomFrame>
+
+                <controls:CustomFrame
+		                    Padding="0"
+		                    BackgroundColor="#F4B400"
+		                    CornerRadius="16"
+		                    HasShadow="False"
+		                    IsClippedToBounds="True"
+                    IsVisible="{Binding Kin.IsMissing}">
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="63"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout VerticalOptions="StartAndExpand" Grid.Row="0" Margin="26,21,26,20" Spacing="0">
+                            <Grid ColumnSpacing="20" HeightRequest="3">
+                                <BoxView Grid.Column="0" BackgroundColor="#2D2D2D"/>
+                                <BoxView Grid.Column="1" BackgroundColor="#2D2D2D"/>
+                                <BoxView Grid.Column="2" BackgroundColor="#2D2D2D"/>
+                                <BoxView Grid.Column="3" BackgroundColor="#2D2D2D"/>
+                                <BoxView Grid.Column="4" BackgroundColor="#2D2D2D"/>
+                                <BoxView Grid.Column="5" BackgroundColor="#2D2D2D"/>
+                            </Grid>
+
+                            <Grid HeightRequest="242" Margin="0,30,0,24">
+                                <ImageButton
+                                    Grid.Row="0"
+                                        BackgroundColor="Black"
+                                        CornerRadius="12"
+                                         Aspect="Fill"
+                                        Source="{Binding Kin.ImgUrl}"/>
+
+                                <controls:CustomFrame
+					                Padding="0"
+                                    Grid.Row="0" Margin="0,0,-1,0"
+					                BackgroundColor="#B90303"
+					                CornerRadius="25,0,0,0"
+					                HasShadow="False"
+                                    WidthRequest="100"
+                                    HeightRequest="63"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand"
+					                IsClippedToBounds="True">
+                                    <Label Margin="5,0,0,0"
+						                    FontFamily="PoppinsSemiBoldFontFamily"
+						                    FontSize="16"
+						                    HorizontalTextAlignment="Center"
+						                    Text="Missing"
+						                    TextColor="#FFFEFE"
+						                    VerticalTextAlignment="Center"/>
+                                </controls:CustomFrame>
+                            </Grid>
+
+
+                            <Label
+			                            FontFamily="PoppinsRegularFontFamily"
+			                            FontSize="18"
+                                        Text="Daniel Ghirmai, 37 years old"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="Black"/>
+
+                            <Label
+			                            FontFamily="PoppinsSemiBoldFontFamily"
+			                            FontSize="15"
+                                        Text="Missing for 35 days"
+			                            HorizontalTextAlignment="Start"
+			                            TextColor="Black"/>
+                        </StackLayout>
+
+                        <controls:CustomFrame
+					                Padding="10,0,10,0"
+                                    Grid.Row="1"
+					                BackgroundColor="#171C26"
+					                CornerRadius="10"
+					                HasShadow="False"
+                                    WidthRequest="120"
+                                    HeightRequest="64" Margin="24,0,24,0"
+                                    VerticalOptions="EndAndExpand"
+					                IsClippedToBounds="True">
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Grid.Column="0"
+						                    FontFamily="PoppinsRegularFontFamily"
+						                    FontSize="14"
+						                    HorizontalTextAlignment="Start"
+						                    Text="Stay informed"
+						                    TextColor="#FFFEFE"
+						                    VerticalTextAlignment="Center"/>
+
+                                <Label
+			                        Grid.Column="1"
+			                        FontFamily="{StaticResource MaterialFontFamily}"
+			                        FontSize="40"
+			                        HorizontalTextAlignment="End"
+			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitch}"
+			                        TextColor="#F40000"
+			                        VerticalTextAlignment="Start"/>
+                            </Grid>
+                        </controls:CustomFrame>
+
+                        <BoxView Grid.Row="2" HeightRequest="20"/>
+                    </Grid>
+                </controls:CustomFrame>
+            </StackLayout>
         </Grid>
     </Grid>
 </ContentPage>

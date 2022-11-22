@@ -86,5 +86,8 @@
 
 		public const string AccountCircleOutline = "\U000f0b55";
 		public const string Dishwasher = "\U000f0aac";
-	}
+
+        public const string ToggleSwitch = "\U000f0521";
+        public const string ToggleSwitchOff = "\U000f0522";
+    }
 }

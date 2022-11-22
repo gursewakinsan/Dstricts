@@ -43,27 +43,27 @@ namespace Dstricts.Views.Kins
         #region On Image Clicked.
         private void OnImage0Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(0);
+            TakeOrPickPhoto(1);
         }
         private void OnImage1Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(1);
+            TakeOrPickPhoto(2);
         }
         private void OnImage2Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(2);
+            TakeOrPickPhoto(3);
         }
         private void OnImage3Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(3);
+            TakeOrPickPhoto(4);
         }
         private void OnImage4Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(4);
+            TakeOrPickPhoto(5);
         }
         private void OnImage5Clicked(object sender, EventArgs e)
         {
-            TakeOrPickPhoto(5);
+            TakeOrPickPhoto(6);
         }
         #endregion
 
@@ -105,32 +105,32 @@ namespace Dstricts.Views.Kins
                 {
                     switch (selectedImage)
                     {
-                        case 0:
+                        case 1:
                             imageButton0.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button0.IsVisible = false;
                             lbl0.IsVisible = boxView0.IsVisible = true;
                             break;
-                        case 1:
+                        case 2:
                             imageButton1.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button1.IsVisible = false;
                             lbl1.IsVisible = boxView1.IsVisible = true;
                             break;
-                        case 2:
+                        case 3:
                             imageButton2.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button2.IsVisible = false;
                             lbl2.IsVisible = boxView2.IsVisible = true;
                             break;
-                        case 3:
+                        case 4:
                             imageButton3.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button3.IsVisible = false;
                             lbl3.IsVisible = boxView3.IsVisible = true;
                             break;
-                        case 4:
+                        case 5:
                             imageButton4.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button4.IsVisible = false;
                             lbl4.IsVisible = boxView4.IsVisible = true;
                             break;
-                        case 5:
+                        case 6:
                             imageButton5.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button5.IsVisible = false;
                             lbl5.IsVisible = boxView5.IsVisible = true;
@@ -141,29 +141,34 @@ namespace Dstricts.Views.Kins
                     using (var memoryStream = new MemoryStream())
                     {
                         await stream.CopyToAsync(memoryStream);
-                        byte[] imageAsByte = memoryStream.ToArray();
-                        byte[] aa = await DependencyService.Get<Interfaces.IImageResizerService>().ResizeImage(imageAsByte, 600, 500);
-                        /*if (viewModel.ImageDataInfo == null)
-                            viewModel.ImageDataInfo = new List<ImageData>();
-                        var data = viewModel.ImageDataInfo.FirstOrDefault(x => x.ImageId.Equals(selectedImage));
-                        if (data != null)
-                        {
-                            data.ImageBytes = aa;
-                        }
-                        else
-                        {
-                            viewModel.ImageDataInfo.Add(new ImageData()
-                            {
-                                ImageBytes = aa,
-                                ImageId = selectedImage,
-                            });
-                        }*/
+                        await AddPhoto(selectedImage, memoryStream);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private async Task AddPhoto(int selectedImage, MemoryStream memoryStream)
+        {
+            byte[] imageAsByte = memoryStream.ToArray();
+            byte[] aa = await DependencyService.Get<Interfaces.IImageResizerService>().ResizeImage(imageAsByte, 600, 500);
+            if (viewModel.ImageDataInfo == null)
+                viewModel.ImageDataInfo = new List<ImageData>();
+            var data = viewModel.ImageDataInfo.FirstOrDefault(x => x.ImageId.Equals(selectedImage));
+            if (data != null)
+            {
+                data.ImageBytes = aa;
+            }
+            else
+            {
+                viewModel.ImageDataInfo.Add(new ImageData()
+                {
+                    ImageBytes = aa,
+                    ImageId = selectedImage,
+                });
             }
         }
         #endregion
@@ -185,47 +190,50 @@ namespace Dstricts.Views.Kins
                 {
                     switch (selectedImage)
                     {
-                        case 0:
+                        case 1:
                             imageButton0.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button0.IsVisible = false;
                             lbl0.IsVisible = boxView0.IsVisible = true;
                             break;
-                        case 1:
+                        case 2:
                             imageButton1.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button1.IsVisible = false;
                             lbl1.IsVisible = boxView1.IsVisible = true;
                             break;
-                        case 2:
+                        case 3:
                             imageButton2.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button2.IsVisible = false;
                             lbl2.IsVisible = boxView2.IsVisible = true;
                             break;
-                        case 3:
+                        case 4:
                             imageButton3.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button3.IsVisible = false;
                             lbl3.IsVisible = boxView3.IsVisible = true;
                             break;
-                        case 4:
+                        case 5:
                             imageButton4.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button4.IsVisible = false;
                             lbl4.IsVisible = boxView4.IsVisible = true;
                             break;
-                        case 5:
+                        case 6:
                             imageButton5.Source = ImageSource.FromStream(mediaFile.GetStream);
                             button5.IsVisible = false;
                             lbl5.IsVisible = boxView5.IsVisible = true;
                             break;
                     }
-
-
                     //var memoryStream = new MemoryStream();
                     //await mediaFile.GetStream().CopyToAsync(memoryStream);
                     //byte[] imageAsByte = memoryStream.ToArray();
-                    //viewModel.UserImageData = imageAsByte;
+                    //await AddPhoto(selectedImage, memoryStream);
 
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await mediaFile.GetStream().CopyToAsync(memoryStream);
+                        await AddPhoto(selectedImage, memoryStream);
+                    }
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -270,31 +278,37 @@ namespace Dstricts.Views.Kins
                     imageButton0.Source = null;
                     button0.IsVisible = true;
                     lbl0.IsVisible = boxView0.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 1);
                     break;
                 case 1:
                     imageButton1.Source = null;
                     button1.IsVisible = true;
                     lbl1.IsVisible = boxView1.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 2);
                     break;
                 case 2:
                     imageButton2.Source = null;
                     button2.IsVisible = true;
                     lbl2.IsVisible = boxView2.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 3);
                     break;
                 case 3:
                     imageButton3.Source = null;
                     button3.IsVisible = true;
                     lbl3.IsVisible = boxView3.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 4);
                     break;
                 case 4:
                     imageButton4.Source = null;
                     button4.IsVisible = true;
                     lbl4.IsVisible = boxView4.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 5);
                     break;
                 case 5:
                     imageButton5.Source = null;
                     button5.IsVisible = true;
                     lbl5.IsVisible = boxView5.IsVisible = false;
+                    viewModel.ImageDataInfo.RemoveAll(x => x.ImageId == 6);
                     break;
             }
         }

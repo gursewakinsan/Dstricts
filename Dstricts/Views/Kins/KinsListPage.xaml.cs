@@ -43,32 +43,57 @@ namespace Dstricts.Views.Kins
 
         private void OnCustomFrameTapped(object sender, System.EventArgs e)
         {
-            CustomFrame control = sender as CustomFrame;
-            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            if (viewModel.IsKinsList)
+            {
+                CustomFrame control = sender as CustomFrame;
+                GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            }
+            else
+                GoToKinsTimeAndDurationPage(viewModel.Kin);
         }
 
         private void OnCustomGridTapped(object sender, System.EventArgs e)
         {
-            Grid control = sender as Grid;
-            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            if (viewModel.IsKinsList)
+            {
+                Grid control = sender as Grid;
+                GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            }
+            else
+                GoToKinsTimeAndDurationPage(viewModel.Kin);
         }
 
         private void OnCustomStackLayoutTapped(object sender, System.EventArgs e)
         {
-            StackLayout control = sender as StackLayout;
-            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            if (viewModel.IsKinsList)
+            {
+                StackLayout control = sender as StackLayout;
+                GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            }
+            else
+                GoToKinsTimeAndDurationPage(viewModel.Kin);
         }
 
         private void OnCustomImageButtonTapped(object sender, System.EventArgs e)
         {
-            ImageButton control = sender as ImageButton;
-            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            if (viewModel.IsKinsList)
+            {
+                ImageButton control = sender as ImageButton;
+                GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            }
+            else
+                GoToKinsTimeAndDurationPage(viewModel.Kin);
         }
 
         private void OnCustomLabelTapped(object sender, System.EventArgs e)
         {
-            Label control = sender as Label;
-            GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            if (viewModel.IsKinsList)
+            {
+                Label control = sender as Label;
+                GoToKinsTimeAndDurationPage(control.BindingContext as Models.kinsListResponse);
+            }
+            else
+                GoToKinsTimeAndDurationPage(viewModel.Kin);
         }
         async void GoToKinsTimeAndDurationPage(Models.kinsListResponse kins)
         {

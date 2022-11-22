@@ -49,8 +49,8 @@ namespace Dstricts.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "images")]
         public List<kinImages> Images { get; set; }
 
-        public string ImgUrl { get; set; }
-        //public string ImgUrl => Images?.Count > 0 ? Images[0].ImagePath : string.Empty;
+        //public string ImgUrl { get; set; }
+        public string ImgUrl => Images?.Count > 0 ? Images[0].ImagePath : string.Empty;
     }
 
     public class kinImages
