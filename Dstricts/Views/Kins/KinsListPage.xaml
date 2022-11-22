@@ -152,15 +152,21 @@
                                         <Label
 			                                FontFamily="PoppinsRegularFontFamily"
 			                                FontSize="18"
-                                            Text="Daniel Ghirmai, 37 years old"
 			                                HorizontalTextAlignment="Start"
 			                                TextColor="White">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding FirstName}"/>
+                                                    <Span Text=" "/>
+                                                    <Span Text="{Binding LastName}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
                                             <Label.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
                                             </Label.GestureRecognizers>
                                         </Label>
 
-                                        <Label
+                                        <Label Margin="0,5,0,40"
 			                            FontFamily="PoppinsSemiBoldFontFamily"
 			                            FontSize="15"
                                         Text="Missing for 35 days"
@@ -278,11 +284,18 @@
                                         <Label
 			                                FontFamily="PoppinsRegularFontFamily"
 			                                FontSize="18"
-                                            Text="Daniel Ghirmai, 37 years old"
 			                                HorizontalTextAlignment="Start"
-			                                TextColor="Black"/>
+			                                TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding FirstName}"/>
+                                                    <Span Text=" "/>
+                                                    <Span Text="{Binding LastName}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                        <Label
+                                        <Label Margin="0,5,0,40"
 			                                FontFamily="PoppinsSemiBoldFontFamily"
 			                                FontSize="15"
                                             Text="Missing for 35 days"
@@ -434,15 +447,21 @@
                             <Label
 			                            FontFamily="PoppinsRegularFontFamily"
 			                            FontSize="18"
-                                        Text="Daniel Ghirmai, 37 years old"
 			                            HorizontalTextAlignment="Start"
 			                            TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Kin.FirstName}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding Kin.LastName}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnCustomLabelTapped"/>
                                 </Label.GestureRecognizers>
                             </Label>
 
-                            <Label
+                            <Label Margin="0,5,0,40"
 			                            FontFamily="PoppinsSemiBoldFontFamily"
 			                            FontSize="15"
                                         Text="Missing for 35 days"
@@ -559,11 +578,18 @@
                             <Label
 			                            FontFamily="PoppinsRegularFontFamily"
 			                            FontSize="18"
-                                        Text="Daniel Ghirmai, 37 years old"
 			                            HorizontalTextAlignment="Start"
-			                            TextColor="Black"/>
+			                            TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Kin.FirstName}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding Kin.LastName}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
 
-                            <Label
+                            <Label Margin="0,5,0,40"
 			                            FontFamily="PoppinsSemiBoldFontFamily"
 			                            FontSize="15"
                                         Text="Missing for 35 days"
