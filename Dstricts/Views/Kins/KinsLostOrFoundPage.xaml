@@ -167,13 +167,20 @@
 					    HasShadow="False"
 					    CornerRadius="16"
 					    BackgroundColor="#242A37">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KinsFoundCommand}"/>
+                        </Frame.GestureRecognizers>
                         <Label
 						    HorizontalTextAlignment="Center"
                             VerticalTextAlignment="Center"
 						    FontFamily="PoppinsBoldFontFamily"
 						    FontSize="36"
 						    Text="Found"
-						    TextColor="White"/>
+						    TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding KinsFoundCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Frame>
 
                     <controls:CustomFrame
@@ -187,13 +194,20 @@
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="EndAndExpand"
 					    IsClippedToBounds="True">
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding KinsFoundCommand}"/>
+                        </controls:CustomFrame.GestureRecognizers>
                         <Label
 						    FontFamily="{StaticResource MaterialFontFamily}"
 						    FontSize="22"
 						    HorizontalTextAlignment="Center"
 						    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ArrowRight}"
 						    TextColor="White"
-						    VerticalTextAlignment="Center"/>
+						    VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding KinsFoundCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                     </controls:CustomFrame>
                 </Grid>
             </Grid>

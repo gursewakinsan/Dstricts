@@ -255,6 +255,9 @@
     <EmbeddedResource Update="Views\Invoice\TenantInvoiceInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Kins\FoundKinsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Kins\KinsAddressPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -271,6 +274,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Kins\KinsWearingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Kins\NoMissingPersonFoundPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Laundry\LaundryServiceCheckOutToPayPage.xaml">
@@ -378,6 +384,7 @@
     <None Remove="AppFonts\SFProDisplaySemibold.ttf" />
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
     <None Remove="AppFonts\PoppinsMedium.ttf" />
+    <None Remove="ViewModels\Kins\5y2jnv0g.xnf~" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />

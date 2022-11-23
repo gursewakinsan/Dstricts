@@ -1,6 +1,9 @@
 ﻿using Xamarin.Forms;
+using Dstricts.Service;
+using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dstricts.ViewModels
 {
@@ -33,7 +36,17 @@ namespace Dstricts.ViewModels
         }
         private async Task ExecuteKinsFoundCommand()
         {
-            await Task.CompletedTask;
+            DependencyService.Get<IProgressBar>().Show();
+            IKinsService service = new KinsService();
+            var response = await service.MissingPersonListAsync(new Models.MissingPersonListRequest()
+            {
+                UserId = Helper.Helper.LoggedInUserId
+            });
+            if (response?.Count > 0)
+                await Navigation.PushAsync(new Views.Kins.FoundKinsPage(response));
+            else
+                await Navigation.PushAsync(new Views.Kins.NoMissingPersonFoundPage());
+            DependencyService.Get<IProgressBar>().Hide();
         }
         #endregion
     }
