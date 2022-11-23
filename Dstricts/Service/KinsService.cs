@@ -44,11 +44,11 @@ namespace Dstricts.Service
             });
         }
 
-        public Task<List<Models.MissingPersonEmergencyListResponse>> MissingPersonEmergencyListAsync(Models.MissingPersonEmergencyListRequest request)
+        public Task<List<Models.MissingPersonListResponse>> MissingPersonEmergencyListAsync(Models.MissingPersonEmergencyListRequest request)
         {
             return Task.Factory.StartNew(() =>
             {
-                var res = RestClient.Post<List<Models.MissingPersonEmergencyListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.MissingPersonEmergencyListUrl)), string.Empty, request.ToJson());
+                var res = RestClient.Post<List<Models.MissingPersonListResponse>>(HttpWebRequest.Create(string.Format(EndPointsList.MissingPersonEmergencyListUrl)), string.Empty, request.ToJson());
                 return res;
             });
         }

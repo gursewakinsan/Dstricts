@@ -9,7 +9,7 @@ namespace Dstricts.Interfaces
         Task<int> AddMissingPersonInfoAsync(Models.AddMissingPersonInfoRequest request);
         Task<int> AddMissingPersonImagesAsync(Models.AddMissingPersonImageRequest request);
         Task<List<Models.MissingPersonListResponse>> MissingPersonListAsync(Models.MissingPersonListRequest request);
-        Task<List<Models.MissingPersonEmergencyListResponse>> MissingPersonEmergencyListAsync(Models.MissingPersonEmergencyListRequest request);
+        Task<List<Models.MissingPersonListResponse>> MissingPersonEmergencyListAsync(Models.MissingPersonEmergencyListRequest request);
         Task<int> ReportPersonFoundAsync(Models.ReportPersonFoundRequest request);
     }
 }

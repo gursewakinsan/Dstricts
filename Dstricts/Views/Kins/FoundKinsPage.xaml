@@ -117,7 +117,7 @@
 					CornerRadius="16"
 					BackgroundColor="#F40000">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                        <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                     </Frame.GestureRecognizers>
                     <StackLayout Spacing="-10" HorizontalOptions="EndAndExpand" Margin="0,0,65,0" VerticalOptions="CenterAndExpand">
                         <Label
@@ -129,7 +129,7 @@
 				            Text="PEOPLE"
 				            TextColor="White">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                                <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
@@ -142,7 +142,7 @@
 				            Text="MISSING"
 				            TextColor="White">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                                <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
@@ -155,7 +155,7 @@
 				            Text="TODAY"
 				            TextColor="White">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                                <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
@@ -174,7 +174,7 @@
                     Margin="15,-8,0,0"
 				    TextColor="White">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding KinsFoundCommand}"/>
+                        <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
 
@@ -192,7 +192,7 @@
                     VerticalOptions="EndAndExpand"
 			        IsClippedToBounds="True">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                        <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                     </Frame.GestureRecognizers>
                     <Label
 					    FontFamily="{StaticResource MaterialFontFamily}"
@@ -202,7 +202,7 @@
 					    TextColor="White"
 					    VerticalTextAlignment="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding KinsLostCommand}"/>
+                            <TapGestureRecognizer Command="{Binding GoToMissingPeopleCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </controls:CustomFrame>
@@ -257,7 +257,13 @@
 					    HasShadow="False"
                         VerticalOptions="EndAndExpand"
 					    IsClippedToBounds="True">
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToMissingEmergencyPeopleCommand}"/>
+                        </controls:CustomFrame.GestureRecognizers>
                         <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToMissingEmergencyPeopleCommand}"/>
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="40"/>
@@ -269,7 +275,11 @@
 						        HorizontalTextAlignment="Start"
 						        Text="From emergency list"
 						        TextColor="#FFFEFE"
-						        VerticalTextAlignment="Center"/>
+						        VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToMissingEmergencyPeopleCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
                             <Button
 			                    Grid.Column="1"
@@ -282,6 +292,7 @@
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
                                 BackgroundColor="#F40000"
+                                Command="{Binding GoToMissingEmergencyPeopleCommand}"
 			                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"
 			                    TextColor="White"/>
                         </Grid>

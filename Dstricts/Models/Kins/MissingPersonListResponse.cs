@@ -12,7 +12,7 @@
         public string LastName { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "image_path")]
-        public string ImagePath { get; set; }
+        public string ImgUrl { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "person_heart_user_id")]
         public int PersonHeartUserId { get; set; }

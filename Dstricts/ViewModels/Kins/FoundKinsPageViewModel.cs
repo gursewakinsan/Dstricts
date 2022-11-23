@@ -35,9 +35,33 @@ namespace Dstricts.ViewModels
         }
         #endregion
 
+        #region Go To Missing People Command.
+        private ICommand goToMissingPeopleCommand;
+        public ICommand GoToMissingPeopleCommand
+        {
+            get => goToMissingPeopleCommand ?? (goToMissingPeopleCommand = new Command(async () => await ExecuteGoToMissingPeopleCommand()));
+        }
+        private async Task ExecuteGoToMissingPeopleCommand()
+        {
+            await Navigation.PushAsync(new Views.Kins.PeopleMissingPage(MissingPersonList));
+        }
+        #endregion
+
+        #region Go To Missing Emergency People Command.
+        private ICommand goToMissingEmergencyPeopleCommand;
+        public ICommand GoToMissingEmergencyPeopleCommand
+        {
+            get => goToMissingEmergencyPeopleCommand ?? (goToMissingEmergencyPeopleCommand = new Command(async () => await ExecuteGoToMissingEmergencyPeopleCommand()));
+        }
+        private async Task ExecuteGoToMissingEmergencyPeopleCommand()
+        {
+            await Navigation.PushAsync(new Views.Kins.PeopleMissingPage(MissingPersonEmergencyList));
+        }
+        #endregion
+
         #region Properties.
-        private List<Models.MissingPersonEmergencyListResponse> missingPersonEmergencyList;
-        public List<Models.MissingPersonEmergencyListResponse> MissingPersonEmergencyList
+        private List<Models.MissingPersonListResponse> missingPersonEmergencyList;
+        public List<Models.MissingPersonListResponse> MissingPersonEmergencyList
         {
             get => missingPersonEmergencyList;
             set
