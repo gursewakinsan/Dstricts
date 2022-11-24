@@ -1,9 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Xamarin.Forms;
 using Dstricts.Service;
 using Dstricts.Interfaces;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Dstricts.ViewModels
 {
@@ -35,7 +36,7 @@ namespace Dstricts.ViewModels
             if (!IsKinsList)
                 Kin = response[0];
             else
-                KinsList = response;
+                KinsList = new ObservableCollection<Models.kinsListResponse>(response);
             IsLoadData = true;
             DependencyService.Get<IProgressBar>().Hide();
         }
@@ -48,8 +49,7 @@ namespace Dstricts.ViewModels
             get => updateNotificationRequirementCommand ?? (updateNotificationRequirementCommand = new Command<Models.kinsListResponse>(async (kin) => await ExecuteUpdateNotificationRequirementCommand(kin)));
         }
         private async Task ExecuteUpdateNotificationRequirementCommand(Models.kinsListResponse kin)
-        {
-            IsLoadData = false;
+        { 
             DependencyService.Get<IProgressBar>().Show();
             IKinsService service = new KinsService();
             var response = await service.UpdateNotificationRequirementAsync(new Models.UpdateNotificationRequirementRequest()
@@ -57,14 +57,19 @@ namespace Dstricts.ViewModels
                 Id = kin.Id,
                 UpdateInfo = kin.IsNotificationRequired ? 0 : 1
             });
-            KinsListCommand.Execute(null);
+            //KinsListCommand.Execute(null);
+            if (KinsList?.Count > 1)
+                KinsList.FirstOrDefault(x => x.Id == kin.Id).IsNotificationRequired = !kin.IsNotificationRequired;
+            else
+                Kin.IsNotificationRequired = !kin.IsNotificationRequired;
+            //kin.IsNotificationRequired = !kin.IsNotificationRequired;
             DependencyService.Get<IProgressBar>().Hide();
         }
         #endregion
 
         #region Properties.
-        private List<Models.kinsListResponse> kinsList;
-        public List<Models.kinsListResponse> KinsList
+        private ObservableCollection<Models.kinsListResponse> kinsList;
+        public ObservableCollection<Models.kinsListResponse> KinsList
         {
             get => kinsList;
             set

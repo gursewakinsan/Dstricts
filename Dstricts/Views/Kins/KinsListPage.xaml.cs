@@ -14,12 +14,12 @@ namespace Dstricts.Views.Kins
             InitializeComponent();
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new KinsListPageViewModel(this.Navigation);
+            viewModel.KinsListCommand.Execute(null);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            viewModel.KinsListCommand.Execute(null);
         }
 
         private void OnArrowLeftTapped(object sender, System.EventArgs e)
