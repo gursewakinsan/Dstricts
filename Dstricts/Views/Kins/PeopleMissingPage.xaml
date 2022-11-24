@@ -15,7 +15,7 @@
             <RowDefinition Height="28" />
             <RowDefinition Height="50" />
             <RowDefinition Height="18" />
-            <RowDefinition Height="1" />
+            <RowDefinition Height="0" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -188,24 +188,24 @@
                                         VerticalOptions="EndAndExpand"
 					                    IsClippedToBounds="True">
                                         <controls:CustomFrame.GestureRecognizers>
-                                            <TapGestureRecognizer />
+                                            <TapGestureRecognizer Tapped="OnKinFoundCustomFrame"/>
                                         </controls:CustomFrame.GestureRecognizers>
                                         <StackLayout Margin="13,0,0,0"
                                             Orientation="Horizontal" 
                                             VerticalOptions="CenterAndExpand"
                                             HorizontalOptions="CenterAndExpand">
                                             <StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer />
+                                                <TapGestureRecognizer Tapped="OnKinFoundStackLayout"/>
                                             </StackLayout.GestureRecognizers>
                                             <Label
 						                        FontFamily="PoppinsSemiBoldFontFamily"
 						                        FontSize="16"
 						                        HorizontalTextAlignment="Center"
-						                        Text="Select"
+						                        Text="Found"
 						                        TextColor="#FFFEFE"
 						                        VerticalTextAlignment="Center">
                                                 <Label.GestureRecognizers>
-                                                    <TapGestureRecognizer />
+                                                    <TapGestureRecognizer Tapped="OnKinFoundLabel"/>
                                                 </Label.GestureRecognizers>
                                             </Label>
 
@@ -217,7 +217,7 @@
 						                        TextColor="White"
 						                        VerticalTextAlignment="Center">
                                                 <Label.GestureRecognizers>
-                                                    <TapGestureRecognizer />
+                                                    <TapGestureRecognizer Tapped="OnKinFoundLabel"/>
                                                 </Label.GestureRecognizers>
                                             </Label>
                                         </StackLayout>
@@ -367,24 +367,24 @@
                                     VerticalOptions="EndAndExpand"
 					                IsClippedToBounds="True">
                             <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer />
+                                <TapGestureRecognizer Tapped="OnKinFoundCustomFrame" />
                             </controls:CustomFrame.GestureRecognizers>
                             <StackLayout Margin="13,0,0,0"
                                         Orientation="Horizontal" 
                                         VerticalOptions="CenterAndExpand"
                                         HorizontalOptions="CenterAndExpand">
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer />
+                                    <TapGestureRecognizer Tapped="OnKinFoundStackLayout" />
                                 </StackLayout.GestureRecognizers>
                                 <Label
 						                    FontFamily="PoppinsSemiBoldFontFamily"
 						                    FontSize="16"
 						                    HorizontalTextAlignment="Center"
-						                    Text="Select"
+						                    Text="Found"
 						                    TextColor="#FFFEFE"
 						                    VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer />
+                                        <TapGestureRecognizer Tapped="OnKinFoundLabel" />
                                     </Label.GestureRecognizers>
                                 </Label>
 
@@ -396,7 +396,7 @@
 						                    TextColor="White"
 						                    VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer />
+                                        <TapGestureRecognizer Tapped="OnKinFoundLabel" />
                                     </Label.GestureRecognizers>
                                 </Label>
                             </StackLayout>

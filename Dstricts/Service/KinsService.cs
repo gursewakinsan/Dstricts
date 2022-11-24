@@ -61,5 +61,14 @@ namespace Dstricts.Service
                 return res;
             });
         }
+
+        public Task<int> UpdateNotificationRequirementAsync(Models.UpdateNotificationRequirementRequest request)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                var res = RestClient.Post<int>(HttpWebRequest.Create(string.Format(EndPointsList.UpdateNotificationRequirementUrl)), string.Empty, request.ToJson());
+                return res;
+            });
+        }
     }
 }

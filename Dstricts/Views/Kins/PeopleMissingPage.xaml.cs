@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
+using Dstricts.Controls;
 using Xamarin.Forms.Xaml;
 using Dstricts.ViewModels;
 using System.Collections.Generic;
@@ -17,7 +19,8 @@ namespace Dstricts.Views.Kins
             viewModel.MissingPersonList = missings;
         }
 
-        private void OnArrowLeftTapped(object sender, System.EventArgs e)
+        #region Arrow Left/Right.
+        private void OnArrowLeftTapped(object sender, EventArgs e)
         {
             if (CarouselViewKins.Position > 0)
             {
@@ -26,7 +29,7 @@ namespace Dstricts.Views.Kins
             }
         }
 
-        private void OnArrowRightTapped(object sender, System.EventArgs e)
+        private void OnArrowRightTapped(object sender, EventArgs e)
         {
             if (CarouselViewKins.Position < viewModel.MissingPersonList.Count)
             {
@@ -35,5 +38,46 @@ namespace Dstricts.Views.Kins
             else
                 CarouselViewKins.Position = 0;
         }
+        #endregion
+
+        #region Kin Found.
+        private void OnKinFoundCustomFrame(object sender, EventArgs e)
+        {
+            if (viewModel.MissingPersonList.Count > 1)
+            {
+                CustomFrame control = sender as CustomFrame;
+                OnKinFound(control.BindingContext as Models.MissingPersonListResponse);
+            }
+            else
+                OnKinFound(viewModel.Kin);
+        }
+
+        private void OnKinFoundStackLayout(object sender, EventArgs e)
+        {
+            if (viewModel.MissingPersonList.Count > 1)
+            {
+                StackLayout control = sender as StackLayout;
+                OnKinFound(control.BindingContext as Models.MissingPersonListResponse);
+            }
+            else
+                OnKinFound(viewModel.Kin);
+        }
+
+        private void OnKinFoundLabel(object sender, EventArgs e)
+        {
+            if (viewModel.MissingPersonList.Count > 1)
+            {
+                Label control = sender as Label;
+                OnKinFound(control.BindingContext as Models.MissingPersonListResponse);
+            }
+            else
+                OnKinFound(viewModel.Kin);
+        }
+
+        void OnKinFound(Models.MissingPersonListResponse foundKin)
+        {
+            viewModel.ReportPersonFoundCommand.Execute(Convert.ToInt32(foundKin.Id));
+        }
+        #endregion
     }
 }

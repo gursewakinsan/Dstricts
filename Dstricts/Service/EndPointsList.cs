@@ -146,6 +146,7 @@
 		public const string MissingPersonListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/missingPersonList";
 		public const string MissingPersonEmergencyListUrl = "https://www.qloudid.com/user/index.php/QloudidApp/missingPersonEmergencyList";
 		public const string ReportPersonFoundUrl = "https://www.qloudid.com/user/index.php/QloudidApp/reportPersonFound";
+		public const string UpdateNotificationRequirementUrl = "https://www.qloudid.com/user/index.php/QloudidApp/updateNotificationRequirement";
     }
 }
 

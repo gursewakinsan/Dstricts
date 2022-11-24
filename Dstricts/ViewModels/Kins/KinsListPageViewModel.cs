@@ -41,6 +41,27 @@ namespace Dstricts.ViewModels
         }
         #endregion
 
+        #region Update Notification Requirement Command.
+        private ICommand updateNotificationRequirementCommand;
+        public ICommand UpdateNotificationRequirementCommand
+        {
+            get => updateNotificationRequirementCommand ?? (updateNotificationRequirementCommand = new Command<Models.kinsListResponse>(async (kin) => await ExecuteUpdateNotificationRequirementCommand(kin)));
+        }
+        private async Task ExecuteUpdateNotificationRequirementCommand(Models.kinsListResponse kin)
+        {
+            IsLoadData = false;
+            DependencyService.Get<IProgressBar>().Show();
+            IKinsService service = new KinsService();
+            var response = await service.UpdateNotificationRequirementAsync(new Models.UpdateNotificationRequirementRequest()
+            {
+                Id = kin.Id,
+                UpdateInfo = kin.IsNotificationRequired ? 0 : 1
+            });
+            KinsListCommand.Execute(null);
+            DependencyService.Get<IProgressBar>().Hide();
+        }
+        #endregion
+
         #region Properties.
         private List<Models.kinsListResponse> kinsList;
         public List<Models.kinsListResponse> KinsList

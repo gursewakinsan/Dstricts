@@ -15,7 +15,7 @@
             <RowDefinition Height="28" />
             <RowDefinition Height="50" />
             <RowDefinition Height="18" />
-            <RowDefinition Height="1" />
+            <RowDefinition Height="0" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -330,11 +330,30 @@
                                             <Label
 			                                    Grid.Column="1"
 			                                    FontFamily="{StaticResource MaterialFontFamily}"
-			                                    FontSize="40"
+			                                    FontSize="50"
 			                                    HorizontalTextAlignment="End"
 			                                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitch}"
 			                                    TextColor="#F40000"
-			                                    VerticalTextAlignment="Start"/>
+			                                    VerticalTextAlignment="Start" 
+                                                IsVisible="{Binding IsNotificationRequired}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnToggleOnOffTapped"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+
+                                            <Label
+			                                    Grid.Column="1"
+			                                    FontFamily="{StaticResource MaterialFontFamily}"
+			                                    FontSize="50"
+			                                    HorizontalTextAlignment="End"
+			                                    Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitchOff}"
+			                                    TextColor="#F40000"
+			                                    VerticalTextAlignment="Start" 
+                                                IsVisible="{Binding IsNotificationRequired, Converter={StaticResource InverseBoolConverter}}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnToggleOnOffTapped"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
                                         </Grid>
                                     </controls:CustomFrame>
                                     <BoxView Grid.Row="2" HeightRequest="20"/>
@@ -555,7 +574,7 @@
 
                                 <controls:CustomFrame
 					                Padding="0"
-                                    Grid.Row="0" Margin="0,0,-1,0"
+                                    Grid.Row="0" Margin="0"
 					                BackgroundColor="#B90303"
 					                CornerRadius="25,0,0,0"
 					                HasShadow="False"
@@ -624,11 +643,30 @@
                                 <Label
 			                        Grid.Column="1"
 			                        FontFamily="{StaticResource MaterialFontFamily}"
-			                        FontSize="40"
+			                        FontSize="50"
 			                        HorizontalTextAlignment="End"
 			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitch}"
 			                        TextColor="#F40000"
-			                        VerticalTextAlignment="Start"/>
+			                        VerticalTextAlignment="Start"
+                                    IsVisible="{Binding Kin.IsNotificationRequired}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnKinToggleOnOffTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+			                        Grid.Column="1"
+			                        FontFamily="{StaticResource MaterialFontFamily}"
+			                        FontSize="50"
+			                        HorizontalTextAlignment="End"
+			                        Text="{x:Static fontawesome:DstrictsAppFlatIcons.ToggleSwitchOff}"
+			                        TextColor="#F40000"
+			                        VerticalTextAlignment="Start" 
+                                    IsVisible="{Binding Kin.IsNotificationRequired, Converter={StaticResource InverseBoolConverter}}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnKinToggleOnOffTapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </Grid>
                         </controls:CustomFrame>
 

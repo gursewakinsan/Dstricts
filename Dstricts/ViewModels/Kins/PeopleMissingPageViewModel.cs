@@ -17,6 +17,25 @@ namespace Dstricts.ViewModels
         }
         #endregion
 
+        #region Report Person Found Command.
+        private ICommand reportPersonFoundCommand;
+        public ICommand ReportPersonFoundCommand
+        {
+            get => reportPersonFoundCommand ?? (reportPersonFoundCommand = new Command<int>(async (missingPersonId) => await ExecuteReportPersonFoundCommand(missingPersonId)));
+        }
+        private async Task ExecuteReportPersonFoundCommand(int missingPersonId)
+        {
+            DependencyService.Get<IProgressBar>().Show();
+            IKinsService service = new KinsService();
+            int response = await service.ReportPersonFoundAsync(new Models.ReportPersonFoundRequest()
+            {
+                MissingPersonId = missingPersonId
+            });
+            Application.Current.MainPage = new NavigationPage(new Views.SosHelp.SosHelpPage());
+            DependencyService.Get<IProgressBar>().Hide();
+        }
+        #endregion
+
         #region Properties.
         private List<Models.MissingPersonListResponse> missingPersonList;
         public List<Models.MissingPersonListResponse> MissingPersonList
@@ -25,7 +44,7 @@ namespace Dstricts.ViewModels
             set
             {
                 missingPersonList = value;
-                if (value.Count > 0)
+                if (value.Count > 1)
                     IsMissingPersonList = true;
                 else
                 {

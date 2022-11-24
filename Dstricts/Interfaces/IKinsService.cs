@@ -11,5 +11,6 @@ namespace Dstricts.Interfaces
         Task<List<Models.MissingPersonListResponse>> MissingPersonListAsync(Models.MissingPersonListRequest request);
         Task<List<Models.MissingPersonListResponse>> MissingPersonEmergencyListAsync(Models.MissingPersonEmergencyListRequest request);
         Task<int> ReportPersonFoundAsync(Models.ReportPersonFoundRequest request);
+        Task<int> UpdateNotificationRequirementAsync(Models.UpdateNotificationRequirementRequest request);
     }
 }

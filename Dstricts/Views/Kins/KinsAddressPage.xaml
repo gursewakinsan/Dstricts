@@ -72,20 +72,21 @@
 
         <ScrollView 
             Grid.Row="5" 
-            Grid.Column="0"
-            Grid.ColumnSpan="3">
+            Grid.ColumnSpan="3"
+            Margin="0,0,0,10"
+            Orientation="Vertical"
+            VerticalScrollBarVisibility="Never">
             <Grid RowSpacing="0" ColumnSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="28"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="28"/>
                 </Grid.ColumnDefinitions>
-
                 <StackLayout 
                     Spacing="10" 
                     Grid.Row="1" 
@@ -107,7 +108,6 @@
                         Margin="0,0,0,31"/>
                 </StackLayout>
 
-
                 <Grid 
                     Grid.Row="2" 
                     Grid.Column="1" 
@@ -121,7 +121,6 @@
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="106"/>
                     </Grid.RowDefinitions>
-
                     <Label
                         VerticalTextAlignment="Start"
                         HorizontalOptions="Start"
@@ -130,12 +129,11 @@
                         Opacity="0.70"
 					    Text="Address"
 					    TextColor="White" 
-                        Grid.Row="0" Grid.Column="0"/>
+                        Grid.Row="0" />
 
                     <controls:CustomFrame
                         Grid.Row="1"
                         Padding="15,0,15,0"
-                        Grid.Column="0"
 			            BackgroundColor="#242A37"
 			            HasShadow="False"
                         CornerRadius="12"
@@ -161,7 +159,7 @@
                             HeightRequest="1" 
                             BackgroundColor="#C9C8C8" 
                             HorizontalOptions="FillAndExpand"/>
-                        
+
                         <Label
                             VerticalTextAlignment="Center"
                             HorizontalOptions="Center"
@@ -170,7 +168,7 @@
                             Opacity="0.70"
 					        Text="OR"
 					        TextColor="White" />
-                        
+
                         <BoxView 
                             VerticalOptions="CenterAndExpand" 
                             HeightRequest="1" 
@@ -186,12 +184,11 @@
                         Opacity="0.70"
 					    Text="Add closest point"
 					    TextColor="White" 
-                        Grid.Row="5" Grid.Column="0"/>
+                        Grid.Row="5"/>
 
                     <controls:CustomFrame
                         Grid.Row="6"
                         Padding="10"
-                        Grid.Column="0"
 			            BackgroundColor="#242A37"
 			            HasShadow="False"
                         CornerRadius="12"

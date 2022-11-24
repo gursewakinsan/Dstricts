@@ -2,7 +2,7 @@
 
 namespace Dstricts.Models
 {
-    public class kinsListResponse
+    public class kinsListResponse : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
@@ -45,6 +45,19 @@ namespace Dstricts.Models
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "is_missing")]
         public bool IsMissing { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "notification_required")]
+        private bool isNotificationRequired;
+        public bool IsNotificationRequired
+        {
+            get => isNotificationRequired;
+            set
+            {
+                isNotificationRequired = value;
+                OnPropertyChanged("IsNotificationRequired");
+            }
+        }
+
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "images")]
         public List<kinImages> Images { get; set; }

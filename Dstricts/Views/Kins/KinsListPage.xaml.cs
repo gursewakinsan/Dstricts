@@ -105,5 +105,16 @@ namespace Dstricts.Views.Kins
             Helper.Helper.MissingPersonInfo.UserId = Helper.Helper.LoggedInUserId;
             await Navigation.PushAsync(new KinsTimeAndDurationPage());
         }
+
+        private void OnToggleOnOffTapped(object sender, System.EventArgs e)
+        {
+            Label control = sender as Label;
+            viewModel.UpdateNotificationRequirementCommand.Execute(control.BindingContext as Models.kinsListResponse);
+        }
+
+        private void OnKinToggleOnOffTapped(object sender, System.EventArgs e)
+        {
+            viewModel.UpdateNotificationRequirementCommand.Execute(viewModel.Kin);
+        }
     }
 }
