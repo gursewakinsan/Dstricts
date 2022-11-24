@@ -56,9 +56,11 @@
 
         <Image
             x:Name="imgNoMissing"
-            Grid.Row="1" 
+            Grid.Row="1"
+            Source="noMissing.png"
+            BackgroundColor="Transparent"
             Margin="55,71,55,40" 
-            Aspect="AspectFill"/>
+            Aspect="AspectFit"/>
 
         <controls:CustomButton 
             Grid.Row="4"

@@ -27957,76 +27957,79 @@ namespace Dstricts.Droid
 			public const int navigation_empty_icon = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int notification_action_background = 2131165388;
+			public const int noMissing = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int notification_bg = 2131165389;
+			public const int notification_action_background = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int notification_bg_low = 2131165390;
+			public const int notification_bg = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int notification_bg_low_normal = 2131165391;
+			public const int notification_bg_low = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int notification_bg_low_pressed = 2131165392;
+			public const int notification_bg_low_normal = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int notification_bg_normal = 2131165393;
+			public const int notification_bg_low_pressed = 2131165393;
 			
 			// aapt resource value: 0x7F0700D2
-			public const int notification_bg_normal_pressed = 2131165394;
+			public const int notification_bg_normal = 2131165394;
 			
 			// aapt resource value: 0x7F0700D3
-			public const int notification_icon_background = 2131165395;
+			public const int notification_bg_normal_pressed = 2131165395;
 			
 			// aapt resource value: 0x7F0700D4
-			public const int notification_template_icon_bg = 2131165396;
+			public const int notification_icon_background = 2131165396;
 			
 			// aapt resource value: 0x7F0700D5
-			public const int notification_template_icon_low_bg = 2131165397;
+			public const int notification_template_icon_bg = 2131165397;
 			
 			// aapt resource value: 0x7F0700D6
-			public const int notification_tile_bg = 2131165398;
+			public const int notification_template_icon_low_bg = 2131165398;
 			
 			// aapt resource value: 0x7F0700D7
-			public const int notify_panel_notification_icon_bg = 2131165399;
+			public const int notification_tile_bg = 2131165399;
 			
 			// aapt resource value: 0x7F0700D8
-			public const int pageLogo = 2131165400;
+			public const int notify_panel_notification_icon_bg = 2131165400;
 			
 			// aapt resource value: 0x7F0700D9
-			public const int preference_list_divider_material = 2131165401;
+			public const int pageLogo = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int roundedbg = 2131165402;
+			public const int preference_list_divider_material = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int roundedbgdark = 2131165403;
+			public const int roundedbg = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int searchBG = 2131165404;
-			
-			// aapt resource value: 0x7F0700DE
-			public const int splashLogo = 2131165406;
-			
-			// aapt resource value: 0x7F0700DF
-			public const int splashLogo_1 = 2131165407;
+			public const int roundedbgdark = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int splash_screen = 2131165405;
+			public const int searchBG = 2131165405;
+			
+			// aapt resource value: 0x7F0700DF
+			public const int splashLogo = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int test_custom_background = 2131165408;
+			public const int splashLogo_1 = 2131165408;
+			
+			// aapt resource value: 0x7F0700DE
+			public const int splash_screen = 2131165406;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int tooltip_frame_dark = 2131165409;
+			public const int test_custom_background = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int tooltip_frame_light = 2131165410;
+			public const int tooltip_frame_dark = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int WaitListImage = 2131165411;
+			public const int tooltip_frame_light = 2131165411;
+			
+			// aapt resource value: 0x7F0700E4
+			public const int WaitListImage = 2131165412;
 			
 			static Drawable()
 			{

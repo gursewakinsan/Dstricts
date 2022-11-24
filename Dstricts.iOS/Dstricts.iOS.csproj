@@ -253,4 +253,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconNoImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\noMissing.png" />
+  </ItemGroup>
 </Project>

@@ -13,7 +13,12 @@ namespace Dstricts.Views.Kins
             InitializeComponent();
             NavigationPage.SetBackButtonTitle(this, "");
             BindingContext = viewModel = new NoMissingPersonFoundPageViewModel(this.Navigation);
-            imgNoMissing.Source = ImageSource.FromUri(new System.Uri("https://www.qloudid.com/html/usercontent/images/bg/noMissing.png"));
+            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //imgNoMissing.Source = "https://www.qloudid.com/html/usercontent/images/bg/noMissing.png";
         }
     }
 }

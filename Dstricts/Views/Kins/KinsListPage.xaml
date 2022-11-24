@@ -261,7 +261,6 @@
                                             <controls:CustomFrame
 					                            Padding="0"
                                                 Grid.Row="0" 
-                                                Margin="0,0,0,-1"
 					                            BackgroundColor="#B90303"
 					                            CornerRadius="25,0,0,0"
 					                            HasShadow="False"
@@ -270,6 +269,12 @@
                                                 HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="EndAndExpand"
 					                            IsClippedToBounds="True">
+                                                <controls:CustomFrame.Margin>
+                                                    <OnPlatform x:TypeArguments="Thickness">
+                                                        <On Platform="iOS" Value="0,0,0,-1"/>
+                                                        <On Platform="Android" Value="0,0,-1,0"/>
+                                                    </OnPlatform>
+                                                </controls:CustomFrame.Margin>
                                                 <Label 
                                                     Margin="5,0,0,0"
 						                            FontFamily="PoppinsSemiBoldFontFamily"
@@ -574,7 +579,7 @@
 
                                 <controls:CustomFrame
 					                Padding="0"
-                                    Grid.Row="0" Margin="0,0,0,-1"
+                                    Grid.Row="0"
 					                BackgroundColor="#B90303"
 					                CornerRadius="25,0,0,0"
 					                HasShadow="False"
@@ -583,6 +588,12 @@
                                     HorizontalOptions="EndAndExpand"
                                     VerticalOptions="EndAndExpand"
 					                IsClippedToBounds="True">
+                                    <controls:CustomFrame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness">
+                                            <On Platform="iOS" Value="0,0,0,-1"/>
+                                            <On Platform="Android" Value="0,0,-1,0"/>
+                                        </OnPlatform>
+                                    </controls:CustomFrame.Margin>
                                     <Label Margin="5,0,0,0"
 						                    FontFamily="PoppinsSemiBoldFontFamily"
 						                    FontSize="16"
