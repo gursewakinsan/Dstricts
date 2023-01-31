@@ -89,5 +89,6 @@
 
         public const string ToggleSwitch = "\U000f0521";
         public const string ToggleSwitchOff = "\U000f0522";
-    }
+		public const string AlertCircle = "\U000f0028";
+	}
 }

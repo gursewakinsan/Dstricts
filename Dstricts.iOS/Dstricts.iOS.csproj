@@ -256,4 +256,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\noMissing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\matchFound.png" />
+  </ItemGroup>
 </Project>

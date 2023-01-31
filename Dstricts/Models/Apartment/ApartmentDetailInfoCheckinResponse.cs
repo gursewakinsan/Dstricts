@@ -1,6 +1,6 @@
 ﻿namespace Dstricts.Models
 {
-    public class ApartmentDetailInfoCheckinResponse
+    public class ApartmentDetailInfoCheckinResponse : BaseModel
     {
         [Newtonsoft.Json.JsonProperty(PropertyName = "property_nickname")]
         public string PropertyNickname { get; set; }
@@ -21,5 +21,30 @@
         public int OwnerCheckedIn { get; set; }
 
         public string DisplayName => string.IsNullOrWhiteSpace(PropertyNickname) ? NameOnHouse : PropertyNickname;
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "passport_count")]
+        private bool passportCount;
+        public bool PassportCount
+        {
+            get => passportCount;
+            set
+            {
+                passportCount = value;
+                OnPropertyChanged("PassportCount");
+            }
+        }
+
+       [Newtonsoft.Json.JsonProperty(PropertyName = "card_count")]
+        
+        private bool cardCount;
+        public bool CardCount
+        {
+            get => cardCount;
+            set
+            {
+                cardCount = value;
+                OnPropertyChanged("CardCount");
+            }
+        }
     }
 }
