@@ -31,7 +31,7 @@ namespace Dstricts.ViewModels
 				Id = Helper.Helper.VerifyCheckinId,
 				DstrictsUserId = Helper.Helper.LoggedInUserId
 			});
-			if (!ApartmentDetailInfo.PassportCount || ApartmentDetailInfo.CardCount)
+			if (!ApartmentDetailInfo.PassportCount || !ApartmentDetailInfo.CardCount)
 				Application.Current.MainPage = new NavigationPage(new Views.CompleteSignUpPage(ApartmentDetailInfo));
 			DependencyService.Get<IProgressBar>().Hide();
 		}
