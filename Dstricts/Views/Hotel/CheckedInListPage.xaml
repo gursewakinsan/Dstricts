@@ -67,9 +67,9 @@
 				</Frame>
 
 				<Label
-					FontFamily="{StaticResource MaterialFontFamily}"
+					FontFamily="{StaticResource MaterialIconFont1Family}"
 					FontSize="25"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Mail}"
 					TextColor="White">
 				<Label.GestureRecognizers>
 					<TapGestureRecognizer Command="{Binding GoToTestDesignPagesCommand}"/>
@@ -77,9 +77,9 @@
 			</Label>
 
 				<Label
-					FontFamily="{StaticResource MaterialFontFamily}"
+					FontFamily="{StaticResource MaterialIconFont1Family}"
 					FontSize="25"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_User}"
 					TextColor="White" />
 			</StackLayout>
 
@@ -110,64 +110,59 @@
 					<Button
 						Grid.Row="0"
 						Grid.Column="0"
-						BackgroundColor="White"
+						BackgroundColor="#F29DFE"
 						CornerRadius="38"
-						FontFamily="{StaticResource MaterialFontFamily}"
+						FontFamily="{StaticResource MaterialIconFont1Family}"
 						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
-						TextColor="#282A34" />
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
+						TextColor="#181A1F" />
 
 					<Button
 						Grid.Row="0"
 						Grid.Column="2"
-						BackgroundColor="Transparent"
-						BorderColor="#737B8C"
-						BorderWidth="1"
+						BackgroundColor="White"
 						Command="{Binding GoToCheckInCommand}"
 						CornerRadius="38"
-						FontFamily="{StaticResource MaterialFontFamily}"
-						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
-						TextColor="White" />
+						FontFamily="{StaticResource MaterialIconFont1Family}"
+						FontSize="24" Opacity="0.10"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Doublelinehead}"
+						TextColor="#737B8C" />
 
 					<Button
 						Grid.Row="0"
 						Grid.Column="4"
-						BackgroundColor="Transparent"
-						BorderColor="#737B8C"
-						BorderWidth="1"
+						Opacity="0.10"
+						BackgroundColor="White"
 						Command="{Binding GoToBookPageCommand}"
 						CornerRadius="38"
 						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="24"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
-						TextColor="White" />
+						TextColor="#737B8C" />
 
 					<Button
 						Grid.Row="0"
 						Grid.Column="6"
-						BackgroundColor="Transparent"
-						BorderColor="#737B8C"
-						BorderWidth="1"
+						Opacity="0.10"
+						BackgroundColor="White"
 						Command="{Binding GoToAllWaitCommand}"
 						CornerRadius="38"
-						FontFamily="{StaticResource MaterialFontFamily}"
+						FontFamily="{StaticResource MaterialIconFont1Family}"
 						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
-						TextColor="White" />
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Rclecut}"
+						TextColor="#737B8C" />
 
                     <Button
 						Grid.Row="0"
 						Grid.Column="8"
-						BackgroundColor="Transparent"
-						BorderColor="#737B8C"
-						BorderWidth="1"
+                        Opacity="0.10"
+						BackgroundColor="White"
 						Command="{Binding SosHelpCommand}"
 						CornerRadius="38"
 						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="24"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
-						TextColor="White" />
+						TextColor="#737B8C" />
 
                     <Label
 						Grid.Row="1"
@@ -188,7 +183,7 @@
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="Check-in"
-						TextColor="White"
+						TextColor="#737B8C"
 						VerticalTextAlignment="End" />
 
 					<Label
@@ -201,7 +196,7 @@
 						LineBreakMode="TailTruncation"
 						MaxLines="1"
 						Text="Book"
-						TextColor="White"
+						TextColor="#737B8C"
 						VerticalTextAlignment="End" />
 
 					<Label
@@ -212,7 +207,7 @@
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="Waitlist"
-						TextColor="White"
+						TextColor="#737B8C"
 						VerticalTextAlignment="End" />
 
                     <Label
@@ -223,7 +218,7 @@
 						FontSize="12"
 						HorizontalTextAlignment="Center"
 						Text="SOS Help"
-						TextColor="White"
+						TextColor="#737B8C"
 						VerticalTextAlignment="End" />
                 </Grid>
 			</ScrollView>
@@ -255,7 +250,7 @@
 											<RowDefinition Height="10" />
 											<RowDefinition Height="400" />
 											<RowDefinition Height="15" />
-											<RowDefinition Height="24" />
+											<RowDefinition Height="28" />
 											<RowDefinition Height="13" />
 											<RowDefinition Height="auto" />
 											<RowDefinition Height="25" />
@@ -346,9 +341,9 @@
 											Orientation="Horizontal"
 											Spacing="0">
 											<Label
-												FontFamily="{StaticResource MaterialFontFamily}"
+												FontFamily="{StaticResource MaterialIconFont1Family}"
 												FontSize="24"
-												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.HeartNew}"
 												TextColor="#EF3B17"
 												VerticalTextAlignment="Center" />
 
@@ -362,10 +357,10 @@
 												VerticalTextAlignment="Center" />
 
 											<Label
-												FontFamily="{StaticResource MaterialFontFamily}"
+												FontFamily="{StaticResource MaterialIconFont1Family}"
 												FontSize="22"
 												Opacity="0.7"
-												Text="{x:Static fontawesome:DstrictsAppFlatIcons.MessageOutline}"
+												Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Chat}"
 												TextColor="White"
 												VerticalTextAlignment="Center" />
 										</StackLayout>
@@ -373,12 +368,12 @@
 										<Label
 											Grid.Row="5"
 											Grid.Column="3"
-											FontFamily="{StaticResource MaterialFontFamily}"
+											FontFamily="{StaticResource MaterialIconFont1Family}"
 											FontSize="24"
 											HorizontalOptions="End"
 											HorizontalTextAlignment="End"
 											Opacity="0.7"
-											Text="{x:Static fontawesome:DstrictsAppFlatIcons.BookmarkPlusOutline}"
+											Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_BookmarkAdd}"
 											TextColor="White"
 											VerticalTextAlignment="Center" />
 

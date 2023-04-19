@@ -66,15 +66,15 @@
 			</Frame>
 
 			<Label
-				FontFamily="{StaticResource MaterialFontFamily}"
+				FontFamily="{StaticResource MaterialIconFont1Family}"
 				FontSize="25"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Heart}"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Mail}"
 				TextColor="White" />
 
 			<Label
-				FontFamily="{StaticResource MaterialFontFamily}"
+				FontFamily="{StaticResource MaterialIconFont1Family}"
 				FontSize="25"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.AccountOutline}"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_User}"
 				TextColor="White" />
 		</StackLayout>
 
@@ -102,52 +102,49 @@
 				<Button
 					Grid.Row="0"
 					Grid.Column="0"
-					BackgroundColor="Transparent"
-					BorderColor="#737B8C"
-					BorderWidth="1"
+                    Opacity="0.10"
+					BackgroundColor="White"
 					CornerRadius="38"
 					Command="{Binding SocialCommand}"
-					FontFamily="{StaticResource MaterialFontFamily}"
+					FontFamily="{StaticResource MaterialIconFont1Family}"
 					FontSize="24"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.HomeVariant}"
-					TextColor="White" />
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
+					TextColor="#737B8C" />
 
 				<Button
 					Grid.Row="0"
 					Grid.Column="2"
-					BackgroundColor="White"
+					BackgroundColor="#F29DFE"
 					Command="{Binding GoToCheckInCommand}"
 					CornerRadius="38"
-					FontFamily="{StaticResource MaterialFontFamily}"
+					FontFamily="{StaticResource MaterialIconFont1Family}"
 					FontSize="24"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Soundcloud}"
-					TextColor="#282A34" />
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Arrowleftclose}"
+					TextColor="#181A1F" />
 
 				<Button
 					Grid.Row="0"
 					Grid.Column="4"
-					BackgroundColor="Transparent"
-					BorderColor="#737B8C"
-					BorderWidth="1"
+                    Opacity="0.10"
+					BackgroundColor="White"
 					Command="{Binding GoToBookPageCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
-					TextColor="White" />
+					TextColor="#737B8C" />
 
 				<Button
 					Grid.Row="0"
 					Grid.Column="6"
-					BackgroundColor="Transparent"
-					BorderColor="#737B8C"
-					BorderWidth="1"
+                    Opacity="0.10"
+					BackgroundColor="White"
 					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
-					FontFamily="{StaticResource MaterialFontFamily}"
+					FontFamily="{StaticResource MaterialIconFont1Family}"
 					FontSize="24"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
-					TextColor="White" />
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bendcon}"
+					TextColor="#737B8C" />
 
 				<Label
 					Grid.Row="1"
@@ -157,7 +154,7 @@
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Text="Social"
-					TextColor="White"
+					TextColor="#737B8C"
 					VerticalTextAlignment="End" />
 
 				<Label
@@ -181,7 +178,7 @@
 					LineBreakMode="TailTruncation"
 					MaxLines="1"
 					Text="Book"
-					TextColor="White"
+					TextColor="#737B8C"
 					VerticalTextAlignment="End" />
 
 				<Label
@@ -192,7 +189,7 @@
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Text="Waitlist"
-					TextColor="White"
+					TextColor="#737B8C"
 					VerticalTextAlignment="End" />
 			</Grid>
 		</ScrollView>

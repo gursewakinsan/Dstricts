@@ -90,5 +90,22 @@
         public const string ToggleSwitch = "\U000f0521";
         public const string ToggleSwitchOff = "\U000f0522";
 		public const string AlertCircle = "\U000f0028";
-	}
+
+
+
+        //MaterialIconFont1Family 
+        public const string Outline_Add = "\ue905";
+        public const string Outline_BookmarkAdd = "\ue901";
+        public const string Outline_Chat = "\ue900";
+        public const string Outline_Mail = "\ue904";
+        public const string Outline_User = "\ue906";
+        public const string Shape = "\ue903";
+        public const string Anglegraph = "\ue908";
+        public const string Arrowleftclose = "\ue90b";
+        public const string Bendcon = "\ue90c";
+        public const string Doublelinehead = "\ue909";
+        public const string HeartNew = "\ue902";
+        public const string Message = "\ue907";
+        public const string Rclecut = "\ue90a";
+    }
 }

@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\materialdesignicons-webfont.ttf" />
+    <AndroidAsset Include="Assets\IconFont1.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
