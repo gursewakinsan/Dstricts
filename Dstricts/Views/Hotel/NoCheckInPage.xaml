@@ -68,7 +68,7 @@
 				    Grid.RowSpan="2"
 				    Grid.Column="0"
 				    Padding="0"
-				    CornerRadius="0,50,0,50"
+				    CornerRadius="0,5,0,5"
 				    HasShadow="False"
 				    IsClippedToBounds="True">
                     <Image
@@ -80,7 +80,7 @@
 				    Grid.Row="0"
 				    Grid.Column="1"
 				    Padding="0"
-				    CornerRadius="0,50,0,50"
+				    CornerRadius="5,0,5,0"
 				    HasShadow="False"
 				    IsClippedToBounds="True">
                     <Image
@@ -92,7 +92,7 @@
 				    Grid.Row="1"
 				    Grid.Column="1"
 				    Padding="0"
-				    CornerRadius="0,50,0,50"
+				    CornerRadius="5,0,5,0"
 				    HasShadow="False"
 				    IsClippedToBounds="True">
                     <Image

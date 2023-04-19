@@ -86,7 +86,7 @@
     <BundleResource Include="Resources\Fonts\materialdesignicons-webfont.ttf" />
     <BundleResource Include="Resources\splashLogo_1.png" />
     <BundleResource Include="Resources\iconMeeting.png" />
-    <BundleResource Include="Resources\Fonts\IconFont1.ttf" />
+    <BundleResource Include="Resources\Fonts\materialdesigniconsone-webfont.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

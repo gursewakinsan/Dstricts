@@ -29,8 +29,8 @@
             <OnPlatform
 				x:Key="MaterialIconFont1Family"
 				x:TypeArguments="x:String"
-				Android="IconFont1.ttf#IconFont1"
-				iOS="IconFont1" />
+				Android="materialdesigniconsone-webfont.ttf#Material Design Icons One"
+				iOS="Material Design Icons One" />
 
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 		</ResourceDictionary>

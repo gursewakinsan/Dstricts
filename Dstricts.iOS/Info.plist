@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/materialdesignicons-webfont.ttf</string>
+		<string>Fonts/materialdesigniconsone-webfont.ttf</string>
 	</array>
 	<key>UIDeviceFamily</key>
 	<array>
