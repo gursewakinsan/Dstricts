@@ -26,7 +26,50 @@ namespace Dstricts.ViewModels
 		}
 		private async Task ExecuteGoToCheckInCommand()
 		{
-			await Navigation.PushAsync(new Views.Hotel.CheckInPage());
+            DependencyService.Get<IProgressBar>().Show();
+            IHotelService service = new HotelService();
+            List<Models.CheckedInResponse> checkIns = new List<Models.CheckedInResponse>();
+            var responseCheckedIn = await service.CheckedInHotelAsync(new Models.CheckedInRequest()
+            {
+                UserId = Helper.Helper.LoggedInUserId
+            });
+
+            var responseCheckedInApartment = await service.CheckedInApartmentAsync(new Models.CheckedInRequest()
+            {
+                UserId = Helper.Helper.LoggedInUserId
+            });
+
+            var responseCheckedInOwnerApartment = await service.CheckedInOwnerApartmentAsync(new Models.CheckedInRequest()
+            {
+                UserId = Helper.Helper.LoggedInUserId
+            });
+
+
+            if (responseCheckedIn?.Count > 0)
+            {
+                foreach (var item in responseCheckedIn)
+                    if (item != null)
+                        checkIns.Add(item);
+            }
+
+            if (responseCheckedInApartment?.Count > 0)
+            {
+                foreach (var item in responseCheckedInApartment)
+                    if (item != null)
+                        checkIns.Add(item);
+            }
+
+            if (responseCheckedInOwnerApartment?.Count > 0)
+            {
+                foreach (var item in responseCheckedInOwnerApartment)
+                    if (item != null)
+                        checkIns.Add(item);
+            }
+           if(checkIns?.Count > 0)
+                await Navigation.PushAsync(new Views.Hotel.CheckInPage());
+		   else
+                await Navigation.PushAsync(new Views.Hotel.NoCheckInPage());
+            DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
 

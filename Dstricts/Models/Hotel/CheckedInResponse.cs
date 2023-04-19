@@ -60,5 +60,7 @@
 		}
 
 		public double ImgWidth { get; set; }
-	}
+
+		public bool IsSingleRecord { get; set; } = false;
+    }
 }

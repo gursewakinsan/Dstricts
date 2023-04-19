@@ -82,17 +82,19 @@ namespace Dstricts.ViewModels
 			int deviceWidth = App.ScreenWidth - 56;
 			int imgWidth = deviceWidth * 80 / 100;
 
-			if (checkIns?.Count > 1)
+			if (checkIns?.Count == 1)
 			{
-				foreach (var item in checkIns)
-					item.ImgWidth = imgWidth;
-				IsListOneRecord = true;
-			}
-			else if (checkIns?.Count == 1)
-				IsListOneRecord = false;
+				checkIns.Add(new Models.CheckedInResponse()
+				{
+					IsSingleRecord = true,
+					PropertyNickName = "Next check-in"
+				});
+            }
 
+            foreach (var item in checkIns)
+                item.ImgWidth = imgWidth;
 
-			CheckInList = checkIns;
+            CheckInList = checkIns;
 			DependencyService.Get<IProgressBar>().Hide();
 		}
 		#endregion
@@ -356,17 +358,6 @@ namespace Dstricts.ViewModels
 			{
 				checkedInMeetingList = value;
 				OnPropertyChanged("CheckedInMeetingList");
-			}
-		}
-
-		private bool isListOneRecord;
-		public bool IsListOneRecord
-		{
-			get => isListOneRecord;
-			set
-			{
-				isListOneRecord = value;
-				OnPropertyChanged("IsListOneRecord");
 			}
 		}
 

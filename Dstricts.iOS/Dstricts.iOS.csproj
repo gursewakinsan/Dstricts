@@ -259,4 +259,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\matchFound.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconCarBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconHomeBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconHotel1Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconHotel2Bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconHotel3Bg.png" />
+  </ItemGroup>
 </Project>

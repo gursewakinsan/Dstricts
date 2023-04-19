@@ -54,14 +54,14 @@ namespace Dstricts.Views.Hotel
 			{
 				UserImage = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png",
 				//CardsImage = CardsImages,
-				ImgURL = "frontPage1.png",
+				ImgURL = "iconHotel1Bg.png",
 				CommentImgURL = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"
 			});
 			demoCardsList.Add(new DemoCards()
 			{
 				UserImage = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage1.png",
 				//CardsImage = CardsImages,
-				ImgURL = "frontPage2.png",
+				ImgURL = "iconHotel2Bg.png",
 				CommentImgURL = "https://www.qloudid.com/html/usercontent/images/dstricts/ProfileImage2.png"
 			});
 			BindableLayout.SetItemsSource(cards, demoCardsList);

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Hotel.NoCheckInPage"
+    xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:Dstricts.Controls"
+    ios:Page.UseSafeArea="True"
+	BackgroundColor="Black"
+	NavigationPage.HasNavigationBar="False">
+    <Grid Margin="0,22,0,0" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button 
+            Command="{Binding CloseCommand}" 
+            Grid.Row="0" 
+            BorderWidth="1" 
+            Grid.Column="1" 
+            BackgroundColor="Transparent"
+            Opacity="0.2" 
+            CornerRadius="8" 
+            BorderColor="White"/>
+
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			FontFamily="{StaticResource MaterialFontFamily}"
+			FontSize="25"
+			HorizontalTextAlignment="Center"
+			Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronLeft}"
+			TextColor="White"
+			VerticalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding CloseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ScrollView
+            Grid.Row="1"
+            Margin="0,18,0,0"
+            Grid.ColumnSpan="3"
+            VerticalScrollBarVisibility="Never">
+            <Grid RowSpacing="15" ColumnSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="135"/>
+                    <RowDefinition Height="135"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="63"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="72"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <controls:CustomFrame
+				    Grid.RowSpan="2"
+				    Grid.Column="0"
+				    Padding="0"
+				    CornerRadius="0,50,0,50"
+				    HasShadow="False"
+				    IsClippedToBounds="True">
+                    <Image
+                        Source="iconHotel1Bg.png"
+                        Aspect="Fill"/>
+                </controls:CustomFrame>
+
+                <controls:CustomFrame
+				    Grid.Row="0"
+				    Grid.Column="1"
+				    Padding="0"
+				    CornerRadius="0,50,0,50"
+				    HasShadow="False"
+				    IsClippedToBounds="True">
+                    <Image
+                        Source="iconCarBg.png"
+                        Aspect="Fill"/>
+                </controls:CustomFrame>
+
+                <controls:CustomFrame
+				    Grid.Row="1"
+				    Grid.Column="1"
+				    Padding="0"
+				    CornerRadius="0,50,0,50"
+				    HasShadow="False"
+				    IsClippedToBounds="True">
+                    <Image
+                        Source="iconHotel3Bg.png"
+                        Aspect="Fill"/>
+                </controls:CustomFrame>
+
+                <Label
+				    Grid.Row="3"
+				    FontSize="50"
+                    Text="CHECK IN TO"
+				    TextColor="White" 
+                    Grid.ColumnSpan="2"
+				    HorizontalTextAlignment="Center"
+                    FontFamily="PoppinsRegularFontFamily"/>
+
+                <ScrollView
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalScrollBarVisibility="Never">
+                    <StackLayout Spacing="15" Orientation="Horizontal">
+                        <Button 
+                            Opacity="0.70"
+                            Text="Hotel"
+                            FontSize="14"
+                            BorderWidth="1" 
+                            WidthRequest="95"
+                            CornerRadius="10" 
+                            TextColor="White"
+                            BorderColor="#282A34" 
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="StartAndExpand"
+                            FontFamily="PoppinsRegularFontFamily"/>
+
+                        <Button 
+                            Opacity="0.70"
+                            Text="Airbnb"
+                            FontSize="14"
+                            CornerRadius="10" 
+                            TextColor="White"
+                            WidthRequest="95"
+                            BackgroundColor="#282A34"
+                            HorizontalOptions="StartAndExpand"
+                            FontFamily="PoppinsSemiBoldFontFamily"/>
+
+                        <Button 
+                            Opacity="0.70"
+                            Text="Car rental"
+                            FontSize="14"
+                            BorderWidth="1" 
+                            CornerRadius="10" 
+                            TextColor="White"
+                            BorderColor="#282A34" 
+                            WidthRequest="108"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="StartAndExpand"
+                            FontFamily="PoppinsRegularFontFamily"/>
+
+                        <Button 
+                            Opacity="0.70"
+                            Text="Community"
+                            FontSize="14"
+                            CornerRadius="10" 
+                            TextColor="#181A1F"
+                            WidthRequest="128"
+                            BackgroundColor="#F29DFE"
+                            HorizontalOptions="StartAndExpand"
+                            FontFamily="PoppinsSemiBoldFontFamily"/>
+                    </StackLayout>
+                </ScrollView>
+
+                <controls:CustomButton
+					Padding="0"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="30"
+                    FontSize="14"
+					BackgroundColor="White"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					Text="Scan QR code"
+					TextColor="#181A1F" 
+                    WidthRequest="229"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="OnBtnOpenCameraToScanQrCodeClicked"/>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

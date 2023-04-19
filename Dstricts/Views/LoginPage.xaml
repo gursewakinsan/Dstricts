@@ -8,11 +8,78 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	ios:Page.UseSafeArea="True"
-	BackgroundColor="White"
+	ios:Page.UseSafeArea="False"
+    BackgroundColor="Black"
 	NavigationPage.HasNavigationBar="False"
 	mc:Ignorable="d">
-	<ScrollView VerticalScrollBarVisibility="Never">
+    <Grid>
+        <Image 
+            BackgroundColor="Transparent"
+            Source="iconHomeBg.png"
+            Aspect="AspectFill"/>
+
+        <Frame
+            CornerRadius="10"
+            HasShadow="False"
+            Margin="39,0,39,41"
+            Padding="25,25,25,11"
+            IsClippedToBounds="True"
+            BackgroundColor="#0F1011"
+            VerticalOptions="EndAndExpand">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label
+					Grid.Row="0"
+                    FontSize="32"
+                    Text="Dstrict"
+					TextColor="White" 
+                    HorizontalTextAlignment="Center"
+					FontFamily="PoppinsBoldFontFamily"/>
+
+                <Label
+					Grid.Row="1"
+                    FontSize="13"
+                    Opacity="0.42"
+					TextColor="White" 
+                    LineHeight="1.1"
+                    Margin="0,20,0,20"
+                    HorizontalTextAlignment="Center"
+					FontFamily="PoppinsRegularFontFamily"
+                    Text="Explore and experience the beauty and excitement life has to offer."/>
+
+                <controls:CustomButton
+					Padding="0"
+                    Grid.Row="2"
+                    CornerRadius="25"
+                    FontSize="14"
+					BackgroundColor="White"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					Text="CREATE ACCOUNT"
+					TextColor="#181A1F" />
+
+                <controls:CustomButton
+					Padding="0"
+                    Grid.Row="4"
+                    CornerRadius="25"
+                    FontSize="14"
+					BackgroundColor="Transparent"
+					Command="{Binding LoginWithQloudIdAppCommand}"
+					FontFamily="PoppinsSemiBoldFontFamily"
+					Text="OR SIGN IN"
+					TextColor="White" />
+            </Grid>
+        </Frame>
+    </Grid>
+    
+    
+    
+	<!--<ScrollView VerticalScrollBarVisibility="Never">
 		<StackLayout Padding="0,100,0,80" Spacing="50">
 			<StackLayout
 				HorizontalOptions="CenterAndExpand"
@@ -85,5 +152,5 @@
 				</Frame>
 			</StackLayout>
 		</StackLayout>
-	</ScrollView>
+	</ScrollView>-->
 </ContentPage>

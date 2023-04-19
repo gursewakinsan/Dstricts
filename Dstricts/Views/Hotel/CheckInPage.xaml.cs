@@ -65,8 +65,18 @@ namespace Dstricts.Views.Hotel
 			Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
 			await OnCheckInListClicked(checkedIn);
 		}
-		private async Task OnCheckInListClicked(Models.CheckedInResponse checkedIn)
+
+        private async void OnImageButtonCheckInTapped(object sender, System.EventArgs e)
+        {
+            ImageButton button = sender as ImageButton;
+            Models.CheckedInResponse checkedIn = button.BindingContext as Models.CheckedInResponse;
+            await OnCheckInListClicked(checkedIn);
+        }
+
+        private async Task OnCheckInListClicked(Models.CheckedInResponse checkedIn)
 		{
+			if (checkedIn.IsSingleRecord) return;
+
 			Helper.Helper.HotelCheckedIn = checkedIn.QloudCheckOutId;
 			Helper.Helper.PropertyNickName = checkedIn.PropertyNickName;
 			Helper.Helper.ApartmentCheckedIn = checkedIn;

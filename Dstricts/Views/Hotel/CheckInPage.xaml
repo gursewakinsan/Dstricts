@@ -15,8 +15,8 @@
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="24" />
-			<RowDefinition Height="28" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="20" />
 			<RowDefinition Height="102" />
 			<RowDefinition Height="29" />
 			<RowDefinition Height="*" />
@@ -197,8 +197,146 @@
 			</Grid>
 		</ScrollView>
 
-		<controls:CustomFrame
+        <controls:CustomFrame
 			Grid.Row="4"
+			Grid.ColumnSpan="2"
+			Padding="0"
+			BackgroundColor="#1B1D24"
+			CornerRadius="38,38,0,0"
+			HasShadow="False"
+			IsClippedToBounds="True">
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <Grid
+					ColumnSpacing="0"
+					RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="13"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="11"/>
+                        <RowDefinition Height="175"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Label
+						Grid.Row="1"
+						FontSize="28"
+						Text="Hello"
+						TextColor="White"
+						Margin="28,0,0,0"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsBoldFontFamily"/>
+
+                    <Label
+						Grid.Row="2"
+						FontSize="16"
+						TextColor="White"
+						Margin="28,16,28,39"
+						LineHeight="1.1"
+						Opacity="0.32"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsRegularFontFamily"
+						Text="This is your personal check-in page. Add more check-in´s or visit a location"/>
+
+                    <Label
+						Grid.Row="3"
+						FontSize="18"
+						TextColor="White"
+						Margin="28,0,28,0"
+						LineHeight="1.1"
+						Opacity="0.70"
+						HorizontalTextAlignment="Start"
+						FontFamily="PoppinsRegularFontFamily"
+						Text="Checked-in"/>
+
+                    <BoxView
+						Grid.Row="5"
+						Margin="28,0,28,0"
+						BackgroundColor="#F29DFE"/>
+
+                    <ScrollView
+						Grid.Row="7"
+						Padding="28,0,0,0"
+						HorizontalScrollBarVisibility="Never"
+						Orientation="Horizontal">
+                        <StackLayout
+							BindableLayout.ItemsSource="{Binding CheckInList}"
+							Orientation="Horizontal"
+							Spacing="16">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowSpacing="0" ColumnSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="135"/>
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="{Binding ImgWidth}"/>
+                                            <ColumnDefinition Width="5"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ImageButton
+											Grid.Row="0"
+											Grid.Column="0"
+											CornerRadius="5"
+											Aspect="AspectFill"
+											Clicked="OnImageButtonCheckInTapped"
+											Source="{Binding ImagePath}"
+                                            BackgroundColor="Transparent"
+                                            IsVisible="{Binding IsSingleRecord, Converter={StaticResource InverseBoolConverter}}"/>
+
+                                        <ImageButton
+											Grid.Row="0"
+											Grid.Column="0"
+											CornerRadius="5"
+                                            BorderWidth="1"
+                                            BorderColor="#282A34"
+                                            BackgroundColor="Transparent"
+											Clicked="OnImageButtonCheckInTapped"
+                                            IsVisible="{Binding IsSingleRecord}"/>
+
+                                        <Label
+											Grid.Row="1"
+											FontFamily="PoppinsRegularFontFamily"
+											FontSize="14"
+											LineBreakMode="TailTruncation"
+											MaxLines="1"
+											Opacity="0.42"
+											HorizontalTextAlignment="Start"
+											VerticalTextAlignment="End"
+											Text="{Binding PropertyNickName}"
+											TextColor="White">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnLabelCheckInTapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+
+                    <controls:CustomButton
+						Padding="0"
+						Grid.Row="9"
+						CornerRadius="30"
+						FontSize="14"
+						BackgroundColor="White"
+						FontFamily="PoppinsSemiBoldFontFamily"
+						Text="Scan QR code"
+						TextColor="#181A1F" 
+						WidthRequest="229"
+						HorizontalOptions="CenterAndExpand"
+						Clicked="OnBtnOpenCameraToScanQrCodeClicked"/>
+                </Grid>
+            </ScrollView>
+        </controls:CustomFrame>
+
+            <!--<controls:CustomFrame
+			Grid.Row="4" IsVisible="False"
 			Grid.ColumnSpan="2"
 			Padding="0"
 			BackgroundColor="#1B1D24"
@@ -396,7 +534,7 @@
 					VerticalOptions="CenterAndExpand"
 					WidthRequest="134" />
 			</Grid>
-		</controls:CustomFrame>
+		</controls:CustomFrame>-->
 	</Grid>
 
 
