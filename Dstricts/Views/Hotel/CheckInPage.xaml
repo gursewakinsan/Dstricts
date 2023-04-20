@@ -112,7 +112,7 @@
 
 				<Button
 					Grid.Row="0"
-					Grid.Column="2"
+					Grid.Column="4"
 					BackgroundColor="#F29DFE"
 					Command="{Binding GoToCheckInCommand}"
 					CornerRadius="38"
@@ -123,7 +123,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="4"
+					Grid.Column="2"
                     BackgroundColor="#3D3F48"
 					CornerRadius="38"
 					FontFamily="CustomFontIconOne"
@@ -167,7 +167,7 @@
 				<Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
-					Grid.Column="2"
+					Grid.Column="4"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
@@ -178,7 +178,7 @@
                 <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
-					Grid.Column="4"
+					Grid.Column="2"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
