@@ -23,6 +23,9 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("ManropeRegular.ttf", Alias = "ManropeRegularFontFamily")]
 
 
+[assembly: ExportFont("IconFontOne.ttf", Alias = "CustomFontIconOne")]
+
+
 
 
 

@@ -66,13 +66,13 @@
 			</Frame>
 
 			<Label
-				FontFamily="{StaticResource MaterialIconFont1Family}"
+				FontFamily="CustomFontIconOne"
 				FontSize="25"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Mail}"
 				TextColor="White" />
 
 			<Label
-				FontFamily="{StaticResource MaterialIconFont1Family}"
+				FontFamily="CustomFontIconOne"
 				FontSize="25"
 				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_User}"
 				TextColor="White" />
@@ -106,7 +106,7 @@
 					BackgroundColor="White"
 					CornerRadius="38"
 					Command="{Binding SocialCommand}"
-					FontFamily="{StaticResource MaterialIconFont1Family}"
+					FontFamily="CustomFontIconOne"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
 					TextColor="#737B8C" />
@@ -117,7 +117,7 @@
 					BackgroundColor="#F29DFE"
 					Command="{Binding GoToCheckInCommand}"
 					CornerRadius="38"
-					FontFamily="{StaticResource MaterialIconFont1Family}"
+					FontFamily="CustomFontIconOne"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Arrowleftclose}"
 					TextColor="#181A1F" />
@@ -141,7 +141,7 @@
 					BackgroundColor="White"
 					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
-					FontFamily="{StaticResource MaterialIconFont1Family}"
+					FontFamily="CustomFontIconOne"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bendcon}"
 					TextColor="#737B8C" />

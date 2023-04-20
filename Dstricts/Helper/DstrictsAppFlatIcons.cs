@@ -93,8 +93,8 @@
 
 
 
-        //MaterialIconFont1Family 
-        public const string Outline_Add = "\ue905";
+		//CustomFontIconOne 
+		public const string Outline_Add = "\ue905";
         public const string Outline_BookmarkAdd = "\ue901";
         public const string Outline_Chat = "\ue900";
         public const string Outline_Mail = "\ue904";

@@ -26,12 +26,6 @@
 				Android="materialdesignicons-webfont.ttf#Material Design Icons"
 				iOS="Material Design Icons" />
 
-            <OnPlatform
-				x:Key="MaterialIconFont1Family"
-				x:TypeArguments="x:String"
-				Android="materialdesigniconsone-webfont.ttf#Material Design Icons One"
-				iOS="Material Design Icons One" />
-
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 		</ResourceDictionary>
 	</Application.Resources>

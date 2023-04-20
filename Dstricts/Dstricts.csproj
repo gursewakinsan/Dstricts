@@ -394,6 +394,7 @@
     <None Remove="AppFonts\SourceSansProBlack.ttf" />
     <None Remove="AppFonts\PoppinsMedium.ttf" />
     <None Remove="ViewModels\Kins\5y2jnv0g.xnf~" />
+    <None Remove="AppFonts\IconFont1.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />
@@ -411,5 +412,6 @@
     <EmbeddedResource Include="AppFonts\SFProDisplaySemibold.ttf" />
     <EmbeddedResource Include="AppFonts\SourceSansProBlack.ttf" />
     <EmbeddedResource Include="AppFonts\PoppinsMedium.ttf" />
+    <EmbeddedResource Include="AppFonts\IconFontOne.ttf" />
   </ItemGroup>
 </Project>
