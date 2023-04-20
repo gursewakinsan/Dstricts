@@ -7,11 +7,11 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-	ios:Page.UseSafeArea="False"
+	ios:Page.UseSafeArea="True"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Margin="0,50,0,0"
+		Padding="0,13,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
@@ -102,14 +102,13 @@
 				<Button
 					Grid.Row="0"
 					Grid.Column="0"
-                    Opacity="0.10"
-					BackgroundColor="White"
+                    BackgroundColor="#3D3F48"
 					CornerRadius="38"
 					Command="{Binding SocialCommand}"
 					FontFamily="CustomFontIconOne"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
-					TextColor="#737B8C" />
+					TextColor="#8E9095" />
 
 				<Button
 					Grid.Row="0"
@@ -122,29 +121,37 @@
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Arrowleftclose}"
 					TextColor="#181A1F" />
 
-				<Button
+                <Button
 					Grid.Row="0"
 					Grid.Column="4"
-                    Opacity="0.10"
-					BackgroundColor="White"
+                    BackgroundColor="#3D3F48"
+					CornerRadius="38"
+					FontFamily="CustomFontIconOne"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
+					TextColor="#8E9095" />
+
+                <!--<Button
+					Grid.Row="0"
+					Grid.Column="4"
+                    BackgroundColor="#3D3F48"
 					Command="{Binding GoToBookPageCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.WallSconceRound}"
-					TextColor="#737B8C" />
+					TextColor="#8E9095" />-->
 
 				<Button
 					Grid.Row="0"
 					Grid.Column="6"
-                    Opacity="0.10"
-					BackgroundColor="White"
+					BackgroundColor="#3D3F48"
 					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
 					FontFamily="CustomFontIconOne"
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bendcon}"
-					TextColor="#737B8C" />
+					TextColor="#8E9095" />
 
 				<Label
 					Grid.Row="1"
@@ -154,7 +161,7 @@
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Text="Social"
-					TextColor="#737B8C"
+					TextColor="#8E9095"
 					VerticalTextAlignment="End" />
 
 				<Label
@@ -168,7 +175,20 @@
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
-				<Label
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="4"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Activity"
+					TextColor="#8E9095"
+					VerticalTextAlignment="End" />
+
+                <!--<Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="4"
@@ -178,8 +198,8 @@
 					LineBreakMode="TailTruncation"
 					MaxLines="1"
 					Text="Book"
-					TextColor="#737B8C"
-					VerticalTextAlignment="End" />
+					TextColor="#8E9095"
+					VerticalTextAlignment="End" />-->
 
 				<Label
 					Grid.Row="1"
@@ -189,7 +209,7 @@
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Text="Waitlist"
-					TextColor="#737B8C"
+					TextColor="#8E9095"
 					VerticalTextAlignment="End" />
 			</Grid>
 		</ScrollView>
@@ -215,7 +235,7 @@
                         <RowDefinition Height="1"/>
                         <RowDefinition Height="11"/>
                         <RowDefinition Height="175"/>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="82"/>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
