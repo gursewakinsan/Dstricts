@@ -58,7 +58,7 @@
 		public string DisplayEntryCode => string.IsNullOrWhiteSpace(EntryCode) ? "Not required" : EntryCode;
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "property_layout")]
-		public int PropertyLayout { get; set; }
+		public string PropertyLayout { get; set; }
 
 		[Newtonsoft.Json.JsonProperty(PropertyName = "property_type")]
 		public int PropertyType { get; set; }

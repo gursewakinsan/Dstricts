@@ -7,11 +7,11 @@
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 	xmlns:textinputlayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-	ios:Page.UseSafeArea="True"
+	ios:Page.UseSafeArea="False"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
 	<Grid
-		Padding="0,13,0,0"
+		Padding="0,61,0,0"
 		ColumnSpacing="0"
 		RowSpacing="0">
 		<Grid.RowDefinitions>
@@ -87,12 +87,15 @@
 			<Grid ColumnSpacing="0" RowSpacing="0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="20" />
-					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="20" />
-					<ColumnDefinition Width="76" />
-					<ColumnDefinition Width="19" />
-					<ColumnDefinition Width="76" />
+						<ColumnDefinition Width="20" />
+						<ColumnDefinition Width="76" />
+						<ColumnDefinition Width="20" />
+						<ColumnDefinition Width="76" />
+						<ColumnDefinition Width="20" />
+						<ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="19" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="15" />
 				</Grid.ColumnDefinitions>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="76" />
@@ -153,6 +156,17 @@
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bendcon}"
 					TextColor="#8E9095" />
 
+				<Button
+						Grid.Row="0"
+						Grid.Column="8"
+                        BackgroundColor="#3D3F48"
+						Command="{Binding SosHelpCommand}"
+						CornerRadius="38"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
+						TextColor="#8E9095" />
+
 				<Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
@@ -211,6 +225,17 @@
 					Text="Waitlist"
 					TextColor="#8E9095"
 					VerticalTextAlignment="End" />
+
+				<Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="8"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="SOS Help"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
 			</Grid>
 		</ScrollView>
 

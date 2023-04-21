@@ -6,12 +6,12 @@
 	xmlns:controls="clr-namespace:Dstricts.Controls"
 	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
 	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-	ios:Page.UseSafeArea="True"
+	ios:Page.UseSafeArea="False"
 	BackgroundColor="#282A34"
 	NavigationPage.HasNavigationBar="False">
 	<ContentPage.Content>
 		<Grid
-			Padding="0,13,0,0"
+			Padding="0,61,0,0"
 			ColumnSpacing="0"
 			RowSpacing="0">
 			<Grid.RowDefinitions>
