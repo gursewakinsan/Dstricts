@@ -253,7 +253,6 @@
 				CornerRadius="38,38,0,0"
 				HasShadow="False"
 				IsClippedToBounds="True">
-                <ScrollView VerticalScrollBarVisibility="Never">
                     <Grid RowSpacing="0" ColumnSpacing="0" Margin="28,38,28,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
@@ -263,7 +262,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="32"/>
                             <RowDefinition Height="56"/>
-                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -324,11 +323,11 @@
                             ColumnSpacing="0"
                             RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="1"/>
-                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="1"/>
-                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -634,14 +633,12 @@
                             Grid.ColumnSpan="2"
                             CornerRadius="28"
                             FontSize="14"
-                            Padding="32,0,32,0"
+							Margin="74,0,74,0"
                             TextColor="#181A1F"
                             Text="All 193 services"
                             BackgroundColor="#F29DFE"
-                            HorizontalOptions="CenterAndExpand"
                             FontFamily="PoppinsSemiBoldFontFamily"/>
                     </Grid>
-                </ScrollView>
             </controls:CustomFrame>
         </Grid>
     </ContentPage.Content>
