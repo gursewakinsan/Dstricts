@@ -117,6 +117,7 @@
 						CornerRadius="38"
 						FontFamily="CustomFontIconOne"
 						FontSize="24"
+                        Command="{Binding SocialCommand}"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
 						TextColor="#8E9095" />
 
@@ -262,7 +263,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="32"/>
                             <RowDefinition Height="56"/>
-                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
