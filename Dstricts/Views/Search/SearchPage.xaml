@@ -317,7 +317,284 @@
                             Grid.ColumnSpan="2"
                             BackgroundColor="#3D3F48"/>
 
+                        <Grid
+                            Grid.Row="4"
+                            Grid.ColumnSpan="2"
+                            ColumnSpacing="0"
+                            RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="120"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="0"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="People &amp;"
+									TextColor="White" />
 
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Business"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="0"
+								Grid.Column="1"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="2"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Hotel &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Apartments"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="0"
+								Grid.Column="3"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="4"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Cars &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="boats"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="1"
+								Grid.ColumnSpan="5"
+								BackgroundColor="#3D3F48"/>
+
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="0"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Eat &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Drinks"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="2"
+								Grid.Column="1"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="2"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Beauty"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Treatments"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="2"
+								Grid.Column="3"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="4"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Handyman"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="for Home"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="3"
+								Grid.ColumnSpan="5"
+								BackgroundColor="#3D3F48"/>
+
+
+                            <StackLayout
+								Grid.Row="4"
+								Grid.Column="0"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Community"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="services"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="4"
+								Grid.Column="1"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="4"
+								Grid.Column="2"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Real Estate"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Agency"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="4"
+								Grid.Column="3"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="4"
+								Grid.Column="4"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+                                    Opacity="0.42"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Baby sitter"
+									TextColor="White" />
+                            </StackLayout>
+                        </Grid>
+                        
                         <Button
                             Grid.Row="6"
                             Grid.ColumnSpan="2"
