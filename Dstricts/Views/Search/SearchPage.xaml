@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Dstricts.Views.Search.SearchPage"
+    xmlns:controls="clr-namespace:Dstricts.Controls"
+	xmlns:fontawesome="clr-namespace:Dstricts.Helper"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="False"
+	BackgroundColor="#282A34"
+	NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+			Padding="0,61,0,0"
+			ColumnSpacing="0"
+			RowSpacing="0">
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

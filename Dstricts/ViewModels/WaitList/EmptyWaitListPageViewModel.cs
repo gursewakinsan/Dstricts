@@ -206,10 +206,34 @@ namespace Dstricts.ViewModels
 		{
 			Application.Current.MainPage = new NavigationPage(new Views.Hotel.CheckInPage());
 		}
-		#endregion
+        #endregion
 
-		#region Properties.
-		private List<Models.CheckedInResponse> checkInList;
+        #region Sos Help Command.
+        private ICommand sosHelpCommand;
+        public ICommand SosHelpCommand
+        {
+            get => sosHelpCommand ?? (sosHelpCommand = new Command(async () => await ExecuteSosHelpCommand()));
+        }
+        private async Task ExecuteSosHelpCommand()
+        {
+            await Navigation.PushAsync(new Views.SosHelp.SosHelpPage());
+        }
+        #endregion
+
+        #region Go To Search Page Command.
+        private ICommand goToSearchPageCommand;
+        public ICommand GoToSearchPageCommand
+        {
+            get => goToSearchPageCommand ?? (goToSearchPageCommand = new Command(async () => await ExecuteGoToSearchPageCommand()));
+        }
+        private async Task ExecuteGoToSearchPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Search.SearchPage());
+        }
+        #endregion
+
+        #region Properties.
+        private List<Models.CheckedInResponse> checkInList;
 		public List<Models.CheckedInResponse> CheckInList
 		{
 			get => checkInList;

@@ -65,6 +65,10 @@
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="19" />
                     <ColumnDefinition Width="76" />
 					<ColumnDefinition Width="15" />
@@ -107,6 +111,19 @@
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
+					Command="{Binding GoToSearchPageCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="6"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
 					Command="{Binding GoToBookPageCommand}"
 					CornerRadius="38"
 					FontFamily="{StaticResource MaterialFontFamily}"
@@ -116,7 +133,20 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="6"
+					Grid.Column="8"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding UserQueueListCommand}"
+					CornerRadius="38"
+					FontFamily="CustomFontIconOne"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Bendcon}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="10"
 					BackgroundColor="White"
 					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
@@ -156,7 +186,7 @@
 					HorizontalTextAlignment="Center"
 					LineBreakMode="TailTruncation"
 					MaxLines="1"
-					Text="Check-in"
+					Text="Search"
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
@@ -164,6 +194,32 @@
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="6"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Check-in"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="8"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="TailTruncation"
+					MaxLines="1"
+					Text="Waitlist"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="10"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"

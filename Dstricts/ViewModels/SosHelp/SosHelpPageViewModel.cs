@@ -63,10 +63,55 @@ namespace Dstricts.ViewModels
 		{
 			await Navigation.PushAsync(new Views.Kins.KinsLostOrFoundPage());
 		}
-		#endregion
+        #endregion
 
-		#region Properties.
-		private List<Models.TravelAppAvailableSosResponse> travelAppAvailableSosList;
+        #region User Queue List Command.
+        private ICommand userQueueListCommand;
+        public ICommand UserQueueListCommand
+        {
+            get => userQueueListCommand ?? (userQueueListCommand = new Command(async () => await ExecuteUserQueueListCommand()));
+
+        }
+        private async Task ExecuteUserQueueListCommand()
+        {
+            DependencyService.Get<IProgressBar>().Show();
+            IHotelService service = new HotelService();
+            var UserQueueList = await service.UserQueueListAsync(new Models.UserQueueListRequest()
+            {
+                UserId = Helper.Helper.LoggedInUserId
+            });
+            if (UserQueueList?.Count > 0)
+            {
+                int deviceWidth = App.ScreenWidth - 56;
+                int imgWidth = deviceWidth * 80 / 100;
+
+                foreach (var waitList in UserQueueList)
+                {
+                    waitList.ImgWidth = imgWidth;
+                    waitList.ImagePath = "WaitListImage.png";
+                }
+                await Navigation.PushAsync(new Views.WaitList.AllWaitListPage(UserQueueList));
+            }
+            else
+                await Navigation.PushAsync(new Views.WaitList.EmptyWaitListPage());
+            DependencyService.Get<IProgressBar>().Hide();
+        }
+        #endregion
+
+        #region Go To Search Page Command.
+        private ICommand goToSearchPageCommand;
+        public ICommand GoToSearchPageCommand
+        {
+            get => goToSearchPageCommand ?? (goToSearchPageCommand = new Command(async () => await ExecuteGoToSearchPageCommand()));
+        }
+        private async Task ExecuteGoToSearchPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Search.SearchPage());
+        }
+        #endregion
+
+        #region Properties.
+        private List<Models.TravelAppAvailableSosResponse> travelAppAvailableSosList;
 		public List<Models.TravelAppAvailableSosResponse> TravelAppAvailableSosList
 		{
 			get => travelAppAvailableSosList;

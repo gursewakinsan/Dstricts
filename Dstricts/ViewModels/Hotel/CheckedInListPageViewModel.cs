@@ -129,10 +129,22 @@ namespace Dstricts.ViewModels
 		{
 			await Navigation.PushAsync(new Views.SosHelp.SosHelpPage());
 		}
-		#endregion
+        #endregion
 
-		#region User Queue List Command.
-		private ICommand userQueueListCommand;
+        #region Go To Search Page Command.
+        private ICommand goToSearchPageCommand;
+        public ICommand GoToSearchPageCommand
+        {
+            get => goToSearchPageCommand ?? (goToSearchPageCommand = new Command(async () => await ExecuteGoToSearchPageCommand()));
+        }
+        private async Task ExecuteGoToSearchPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Search.SearchPage());
+        }
+        #endregion
+
+        #region User Queue List Command.
+        private ICommand userQueueListCommand;
 		public ICommand UserQueueListCommand
 		{
 			get => userQueueListCommand ?? (userQueueListCommand = new Command(async () => await ExecuteUserQueueListCommand()));

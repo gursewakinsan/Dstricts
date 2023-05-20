@@ -90,6 +90,10 @@
                     <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="76" />
                     <ColumnDefinition Width="19" />
                     <ColumnDefinition Width="76" />
                 </Grid.ColumnDefinitions>
@@ -113,7 +117,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="2"
+					Grid.Column="4"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -126,7 +130,20 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="4"
+					Grid.Column="2"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding GoToSearchPageCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+					TextColor="White" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="6"
 					BackgroundColor="Transparent"
 					BorderColor="#737B8C"
 					BorderWidth="1"
@@ -139,7 +156,7 @@
 
                 <Button
 					Grid.Row="0"
-					Grid.Column="6"
+					Grid.Column="8"
 					BackgroundColor="White"
 					Command="{Binding UserQueueListCommand}"
 					CornerRadius="38"
@@ -147,6 +164,19 @@
 					FontSize="24"
 					Text="{x:Static fontawesome:DstrictsAppFlatIcons.PlusBox}"
 					TextColor="#282A34" />
+
+                <Button
+					Grid.Row="0"
+					Grid.Column="10"
+					BackgroundColor="Transparent"
+					BorderColor="#737B8C"
+					BorderWidth="1"
+					Command="{Binding SosHelpCommand}"
+					CornerRadius="38"
+					FontFamily="{StaticResource MaterialFontFamily}"
+					FontSize="24"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
+					TextColor="White" />
 
                 <Label
 					Grid.Row="1"
@@ -166,7 +196,7 @@
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
-					Text="Check-in"
+					Text="Search"
 					TextColor="White"
 					VerticalTextAlignment="End" />
 
@@ -174,6 +204,17 @@
 					Grid.Row="1"
 					Grid.RowSpan="2"
 					Grid.Column="4"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="Check-in"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="6"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
@@ -186,11 +227,22 @@
                 <Label
 					Grid.Row="1"
 					Grid.RowSpan="2"
-					Grid.Column="6"
+					Grid.Column="8"
 					FontFamily="PoppinsRegularFontFamily"
 					FontSize="12"
 					HorizontalTextAlignment="Center"
 					Text="Waitlist"
+					TextColor="White"
+					VerticalTextAlignment="End" />
+
+                <Label
+					Grid.Row="1"
+					Grid.RowSpan="2"
+					Grid.Column="10"
+					FontFamily="PoppinsRegularFontFamily"
+					FontSize="12"
+					HorizontalTextAlignment="Center"
+					Text="SOS Help"
 					TextColor="White"
 					VerticalTextAlignment="End" />
             </Grid>

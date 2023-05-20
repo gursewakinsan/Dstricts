@@ -348,10 +348,22 @@ namespace Dstricts.ViewModels
 		{
 			await Navigation.PushAsync(new Views.SosHelp.SosHelpPage());
 		}
-		#endregion
+        #endregion
 
-		#region Properties.
-		private List<Models.CheckedInResponse> checkInList;
+        #region Go To Search Page Command.
+        private ICommand goToSearchPageCommand;
+        public ICommand GoToSearchPageCommand
+        {
+            get => goToSearchPageCommand ?? (goToSearchPageCommand = new Command(async () => await ExecuteGoToSearchPageCommand()));
+        }
+        private async Task ExecuteGoToSearchPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Search.SearchPage());
+        }
+        #endregion
+
+        #region Properties.
+        private List<Models.CheckedInResponse> checkInList;
 		public List<Models.CheckedInResponse> CheckInList
 		{
 			get => checkInList;

@@ -95,7 +95,9 @@
 						<ColumnDefinition Width="20" />
 						<ColumnDefinition Width="76" />
 						<ColumnDefinition Width="20" />
-						<ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="76" />
 						<ColumnDefinition Width="20" />
 						<ColumnDefinition Width="76" />
                         <ColumnDefinition Width="19" />
@@ -117,9 +119,19 @@
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
 						TextColor="#181A1F" />
 
-					<Button
+                    <Button
 						Grid.Row="0"
-						Grid.Column="4"
+						Grid.Column="2"
+						BackgroundColor="#3D3F48"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="6"
 						BackgroundColor="#3D3F48"
 						Command="{Binding GoToCheckInCommand}"
 						CornerRadius="38"
@@ -130,12 +142,13 @@
 
                     <Button
 						Grid.Row="0"
-						Grid.Column="2"
+						Grid.Column="4"
 						BackgroundColor="#3D3F48"
+						Command="{Binding GoToSearchPageCommand}"
 						CornerRadius="38"
-						FontFamily="CustomFontIconOne"
+						FontFamily="{StaticResource MaterialFontFamily}"
 						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
 						TextColor="#8E9095" />
 
                     <!--<Button
@@ -151,7 +164,7 @@
 
 					<Button
 						Grid.Row="0"
-						Grid.Column="6"
+						Grid.Column="8"
 						BackgroundColor="#3D3F48"
 						Command="{Binding GoToAllWaitCommand}"
 						CornerRadius="38"
@@ -162,7 +175,7 @@
 
                     <Button
 						Grid.Row="0"
-						Grid.Column="8"
+						Grid.Column="10"
                         BackgroundColor="#3D3F48"
 						Command="{Binding SosHelpCommand}"
 						CornerRadius="38"
@@ -182,17 +195,6 @@
 						TextColor="White"
 						VerticalTextAlignment="End" />
 
-					<Label
-						Grid.Row="1"
-						Grid.RowSpan="2"
-						Grid.Column="4"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						Text="Check-in"
-						TextColor="#8E9095"
-						VerticalTextAlignment="End" />
-
                     <Label
 						Grid.Row="1"
 						Grid.RowSpan="2"
@@ -203,6 +205,28 @@
 						LineBreakMode="TailTruncation"
 						MaxLines="1"
 						Text="Activity"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="6"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Check-in"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="4"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Search"
 						TextColor="#8E9095"
 						VerticalTextAlignment="End" />
 
@@ -222,7 +246,7 @@
 					<Label
 						Grid.Row="1"
 						Grid.RowSpan="2"
-						Grid.Column="6"
+						Grid.Column="8"
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
@@ -233,7 +257,7 @@
                     <Label
 						Grid.Row="1"
 						Grid.RowSpan="2"
-						Grid.Column="8"
+						Grid.Column="10"
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
