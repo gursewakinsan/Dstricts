@@ -342,6 +342,9 @@
 								Spacing="0"
 								HorizontalOptions="CenterAndExpand"
 								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}"/>
+                                </StackLayout.GestureRecognizers>
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
@@ -349,7 +352,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="People &amp;"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
@@ -358,7 +365,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="Business"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByUserCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
 
                             <BoxView
@@ -433,6 +444,9 @@
 								Spacing="0"
 								HorizontalOptions="CenterAndExpand"
 								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}"/>
+                                </StackLayout.GestureRecognizers>
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
@@ -440,7 +454,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="Eat &amp;"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
@@ -449,7 +467,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="Drinks"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByEatAndDrinkCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
 
                             <BoxView
@@ -463,6 +485,9 @@
 								Spacing="0"
 								HorizontalOptions="CenterAndExpand"
 								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SearchHotelByWellnessCommand}"/>
+                                </StackLayout.GestureRecognizers>
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
 									FontSize="13"
@@ -470,7 +495,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="Beauty"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByWellnessCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
 
                                 <Label
 									FontFamily="PoppinsRegularFontFamily"
@@ -479,7 +508,11 @@
 									HorizontalTextAlignment="Center"
 									VerticalTextAlignment="Center"
 									Text="Treatments"
-									TextColor="White" />
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SearchHotelByWellnessCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
 
                             <BoxView
