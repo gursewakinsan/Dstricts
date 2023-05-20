@@ -14,7 +14,324 @@
 			Padding="0,61,0,0"
 			ColumnSpacing="0"
 			RowSpacing="0">
-            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="102" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Padding="28,0,0,0"
+				FontFamily="PoppinsSemiBoldFontFamily"
+				FontSize="22"
+				HorizontalTextAlignment="Start"
+				Text="Dstricts"
+				TextColor="White"
+				VerticalTextAlignment="Center" />
+
+            <StackLayout
+				Grid.Row="0"
+				Grid.Column="1"
+				Padding="0,0,28,0"
+				HorizontalOptions="EndAndExpand"
+				Orientation="Horizontal"
+				Spacing="30"
+				VerticalOptions="CenterAndExpand">
+                <Frame
+					Padding="0"
+					BackgroundColor="Transparent"
+					BorderColor="#3C3D42"
+					HasShadow="False"
+					IsClippedToBounds="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
+                    </Frame.GestureRecognizers>
+                    <Label
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="25"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Plus}"
+						TextColor="White">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBtnOpenCameraToScanQrCodeClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+                <Label
+					FontFamily="CustomFontIconOne"
+					FontSize="25"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Mail}"
+					TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToTestDesignPagesCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+					FontFamily="CustomFontIconOne"
+					FontSize="25"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_User}"
+					TextColor="White" />
+            </StackLayout>
+
+            <ScrollView
+				Grid.Row="2"
+				Grid.ColumnSpan="2"
+				Margin="28,0,0,0"
+				HorizontalScrollBarVisibility="Never"
+				Orientation="Horizontal">
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="19" />
+                        <ColumnDefinition Width="76" />
+                        <ColumnDefinition Width="15" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="76" />
+                        <RowDefinition Height="8" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="0"
+						BackgroundColor="#3D3F48"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Message}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="2"
+						BackgroundColor="#3D3F48"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="6"
+						BackgroundColor="#3D3F48"
+						Command="{Binding GoToCheckInCommand}"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Doublelinehead}"
+						TextColor="#8E9095" />
+                   
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="4"
+						BackgroundColor="#F29DFE"
+						CornerRadius="38"
+						FontSize="24"
+                        FontFamily="{StaticResource MaterialFontFamily}"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.SearchIcon}"
+						TextColor="#181A1F" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="8"
+						BackgroundColor="#3D3F48"
+						Command="{Binding GoToAllWaitCommand}"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Rclecut}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="10"
+                        BackgroundColor="#3D3F48"
+						Command="{Binding SosHelpCommand}"
+						CornerRadius="38"
+						FontFamily="{StaticResource MaterialFontFamily}"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.ContactlessPaymentCircleOutline}"
+						TextColor="#8E9095" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="0"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Social"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="2"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="Activity"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="6"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Check-in"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="4"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Search"
+						TextColor="White"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="8"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Waitlist"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="10"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="SOS Help"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+                </Grid>
+            </ScrollView>
+
+            <controls:CustomFrame
+				Grid.Row="4"
+				Grid.ColumnSpan="2"
+				Padding="0"
+				BackgroundColor="#1B1D24"
+				CornerRadius="38,38,0,0"
+				HasShadow="False"
+				IsClippedToBounds="True">
+                <ScrollView VerticalScrollBarVisibility="Never">
+                    <Grid RowSpacing="0" ColumnSpacing="0" Margin="28,38,28,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="14"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="56"/>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="28"
+							HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+							Text="Search"
+							TextColor="White" />
+
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HasShadow="False"
+                            CornerRadius="8"
+                            BorderColor="#3D3F48"
+                            IsClippedToBounds="True"
+                            BackgroundColor="Transparent"/>
+
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Spacing="0"
+                            Margin="10,0,0,0"
+                            Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand">
+                            <Label
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="14"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="Center"
+								Text="Ongoing"
+								TextColor="White" />
+
+                            <Label
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+								VerticalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"/>
+                        </StackLayout>
+
+                        <BoxView
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="#3D3F48"/>
+
+
+                        <Button
+                            Grid.Row="6"
+                            Grid.ColumnSpan="2"
+                            CornerRadius="28"
+                            FontSize="14"
+                            Padding="32,0,32,0"
+                            TextColor="#181A1F"
+                            Text="All 193 services"
+                            BackgroundColor="#F29DFE"
+                            HorizontalOptions="CenterAndExpand"
+                            FontFamily="PoppinsSemiBoldFontFamily"/>
+                    </Grid>
+                </ScrollView>
+            </controls:CustomFrame>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
