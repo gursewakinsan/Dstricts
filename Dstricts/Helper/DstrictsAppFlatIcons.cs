@@ -107,5 +107,9 @@
         public const string HeartNew = "\ue902";
         public const string Message = "\ue907";
         public const string Rclecut = "\ue90a";
+
+        //CustomFontTwo
+        public const string IconFlag = "\ue902";
+        public const string Outline_Phone = "\ue901";
     }
 }

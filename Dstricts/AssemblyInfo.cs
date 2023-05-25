@@ -24,6 +24,7 @@ using Xamarin.Forms.Xaml;
 
 
 [assembly: ExportFont("IconFontOne.ttf", Alias = "CustomFontIconOne")]
+[assembly: ExportFont("IconFontTwo.ttf", Alias = "CustomFontIconTwo")]
 
 
 

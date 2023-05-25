@@ -381,6 +381,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="AppFonts\" />
+    <None Remove="AppFonts\IconFontTwo.ttf" />
     <None Remove="AppFonts\JosefinSansRegular.ttf" />
     <None Remove="AppFonts\JosefinSansSemiBold.ttf" />
     <None Remove="AppFonts\PoppinsBold.ttf" />
@@ -400,6 +401,7 @@
     <None Remove="AppFonts\IconFont1.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppFonts\IconFontTwo.ttf" />
     <EmbeddedResource Include="AppFonts\JosefinSansRegular.ttf" />
     <EmbeddedResource Include="AppFonts\JosefinSansSemiBold.ttf" />
     <EmbeddedResource Include="AppFonts\PoppinsBold.ttf" />
