@@ -65,8 +65,8 @@
                 TextColor="White"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center"
-				FontFamily="CustomFontIconTwo"
-				Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Phone}"/>
+				FontFamily="{StaticResource MaterialFontFamily}"
+				Text="{x:Static fontawesome:DstrictsAppFlatIcons.PhoneOutline}"/>
 
             <Label
                 Grid.Column="1"
@@ -279,9 +279,9 @@
 						Grid.Column="2"
 						BackgroundColor="#3D3F48"
 						CornerRadius="38"
-						FontFamily="IconFontTwo"
+						FontFamily="CustomFontIconOne"
 						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.IconFlag}"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
 						TextColor="#8E9095" />
 
                 <Button
@@ -398,7 +398,7 @@
 					Grid.Column="1"
 					BackgroundColor="Transparent"
 					CornerRadius="6"
-					FontFamily="IconFontTwo"
+					FontFamily="CustomFontIconOne"
 					FontSize="24"
                     BorderWidth="1"
                     HeightRequest="55"
@@ -406,7 +406,7 @@
                     BorderColor="#3D3F48"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-					Text="{x:Static fontawesome:DstrictsAppFlatIcons.IconFlag}"
+					Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
 					TextColor="#8E9095" />
 
                 <Label
