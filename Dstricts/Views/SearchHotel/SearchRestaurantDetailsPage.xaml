@@ -18,7 +18,7 @@
             <RowDefinition Height="101" />
             <RowDefinition Height="13" />
             <RowDefinition Height="0" />
-            <RowDefinition Height="24" />
+            <RowDefinition Height="38" />
             <RowDefinition Height="120" />
             <RowDefinition Height="23" />
             <RowDefinition Height="1" />
@@ -83,7 +83,7 @@
 			Grid.Row="2"
 			Grid.Column="1"
 			Grid.ColumnSpan="3"
-			ColumnSpacing="30">
+			ColumnSpacing="42">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
@@ -106,11 +106,12 @@
 					CornerRadius="37"
 					FontSize="25"
 					HeightRequest="74"
+					WidthRequest="74"
                     BackgroundColor="#F29DFE"
 					HorizontalOptions="CenterAndExpand"
 					VerticalOptions="CenterAndExpand"/>
 
-                <ImageButton
+                <ImageButton 
 					Grid.Row="0"
 					Grid.Column="0"
 					BackgroundColor="#181A1F"
@@ -120,7 +121,7 @@
 					VerticalOptions="CenterAndExpand"
 					WidthRequest="70" />
 
-                <ImageButton
+                <ImageButton 
 					Grid.Row="0"
 					Grid.Column="0"
 					BackgroundColor="Transparent"
@@ -148,6 +149,7 @@
             <Grid
 				Grid.RowSpan="2"
 				Grid.Column="1"
+				ColumnSpacing="21"
 				RowSpacing="13">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
