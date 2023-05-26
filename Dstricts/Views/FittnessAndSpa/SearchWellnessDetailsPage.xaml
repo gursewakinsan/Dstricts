@@ -18,9 +18,9 @@
             <RowDefinition Height="101" />
             <RowDefinition Height="13" />
             <RowDefinition Height="0" />
-            <RowDefinition Height="38" />
+            <RowDefinition Height="32" />
             <RowDefinition Height="120" />
-            <RowDefinition Height="23" />
+            <RowDefinition Height="20" />
             <RowDefinition Height="1" />
             <RowDefinition Height="17" />
             <RowDefinition Height="*" />
@@ -86,7 +86,7 @@
 			ColumnSpacing="42">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75" />
@@ -149,13 +149,14 @@
             <Grid
 				Grid.RowSpan="2"
 				Grid.Column="1"
-				RowSpacing="13">
+				RowSpacing="11"
+                HorizontalOptions="EndAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="36" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" ColumnSpacing="5">
+                <Grid Grid.Row="0" ColumnSpacing="17">
                     <StackLayout
 						Grid.Column="0"
 						HorizontalOptions="StartAndExpand"
