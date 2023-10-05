@@ -368,14 +368,26 @@
 												HorizontalTextAlignment="Center"
 												VerticalTextAlignment="Center"
 												Text="18"
-                                                Margin="0,-10,0,0"
-												TextColor="White" />
+												TextColor="White">
+												<Label.Margin>
+													<OnPlatform x:TypeArguments="Thickness">
+														<On Platform="iOS" Value="0,0,0,0" />
+														<On Platform="Android" Value="0,-20,0,0"/>
+													</OnPlatform>
+												</Label.Margin>
+											</Label>
 
                                             <BoxView
-                                                Margin="0,-20,0,0"
                                                 HeightRequest="1"
                                                 VerticalOptions="StartAndExpand"
-												BackgroundColor="#F29DFE"/>
+												BackgroundColor="#F29DFE">
+												<BoxView.Margin>
+													<OnPlatform x:TypeArguments="Thickness">
+														<On Platform="iOS" Value="0,0,0,2" />
+														<On Platform="Android" Value="0,-20,0,0"/>
+													</OnPlatform>
+												</BoxView.Margin>
+											</BoxView>
 
                                             <Label
 												FontFamily="PoppinsRegularFontFamily"
@@ -473,14 +485,26 @@
 												HorizontalTextAlignment="Center"
 												VerticalTextAlignment="Center"
 												Text="23"
-												Margin="0,-10,0,0"
-												TextColor="White" />
+												TextColor="White">
+												<Label.Margin>
+													<OnPlatform x:TypeArguments="Thickness">
+														<On Platform="iOS" Value="0,0,0,0" />
+														<On Platform="Android" Value="0,-20,0,0"/>
+													</OnPlatform>
+												</Label.Margin>
+											</Label>
 
                                             <BoxView
-												Margin="0,-20,0,0"
 												HeightRequest="1"
 												VerticalOptions="StartAndExpand"
-												BackgroundColor="#F29DFE"/>
+												BackgroundColor="#F29DFE">
+												<BoxView.Margin>
+													<OnPlatform x:TypeArguments="Thickness">
+														<On Platform="iOS" Value="0,0,0,2" />
+														<On Platform="Android" Value="0,-20,0,0"/>
+													</OnPlatform>
+												</BoxView.Margin>
+											</BoxView>
 
                                             <Label
 												FontFamily="PoppinsRegularFontFamily"
