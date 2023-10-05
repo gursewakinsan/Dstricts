@@ -377,6 +377,18 @@ namespace Dstricts.ViewModels
         }
         #endregion
 
+        #region Go To Happenings Page Command.
+        private ICommand goToHappeningsPageCommand;
+        public ICommand GoToHappeningsPageCommand
+        {
+            get => goToHappeningsPageCommand ?? (goToHappeningsPageCommand = new Command(async () => await ExecuteGoToHappeningsPageCommand()));
+        }
+        private async Task ExecuteGoToHappeningsPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Happening.HappeningsPage());
+        }
+        #endregion
+
         #region Search Hotel By User Command.
         private ICommand searchHotelByUserCommand;
         public ICommand SearchHotelByUserCommand

@@ -93,6 +93,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="76" />
                         <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="84" />
+                        <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="76" />
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="76" />
@@ -126,6 +128,19 @@
 						Grid.Column="2"
 						BackgroundColor="#3D3F48"
 						CornerRadius="38"
+						FontFamily="CustomFontIconTwo"
+						FontSize="24"
+						WidthRequest="76"
+						Command="{Binding GoToHappeningsPageCommand}"
+						HorizontalOptions="CenterAndExpand"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.IconFlag}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="4"
+						BackgroundColor="#3D3F48"
+						CornerRadius="38"
 						FontFamily="CustomFontIconOne"
 						FontSize="24"
 						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Anglegraph}"
@@ -134,18 +149,6 @@
                     <Button
 						Grid.Row="0"
 						Grid.Column="6"
-						BackgroundColor="#3D3F48"
-						Command="{Binding GoToCheckInCommand}"
-						CornerRadius="38"
-						FontFamily="CustomFontIconOne"
-						FontSize="24"
-						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Doublelinehead}"
-						TextColor="#8E9095" />
-                   
-
-                    <Button
-						Grid.Row="0"
-						Grid.Column="4"
 						BackgroundColor="#F29DFE"
 						CornerRadius="38"
 						FontSize="24"
@@ -157,6 +160,17 @@
 						Grid.Row="0"
 						Grid.Column="8"
 						BackgroundColor="#3D3F48"
+						Command="{Binding GoToCheckInCommand}"
+						CornerRadius="38"
+						FontFamily="CustomFontIconOne"
+						FontSize="24"
+						Text="{x:Static fontawesome:DstrictsAppFlatIcons.Doublelinehead}"
+						TextColor="#8E9095" />
+
+                    <Button
+						Grid.Row="0"
+						Grid.Column="10"
+						BackgroundColor="#3D3F48"
 						Command="{Binding GoToAllWaitCommand}"
 						CornerRadius="38"
 						FontFamily="CustomFontIconOne"
@@ -166,7 +180,7 @@
 
                     <Button
 						Grid.Row="0"
-						Grid.Column="10"
+						Grid.Column="12"
                         BackgroundColor="#3D3F48"
 						Command="{Binding SosHelpCommand}"
 						CornerRadius="38"
@@ -195,18 +209,7 @@
 						HorizontalTextAlignment="Center"
 						LineBreakMode="TailTruncation"
 						MaxLines="1"
-						Text="Activity"
-						TextColor="#8E9095"
-						VerticalTextAlignment="End" />
-
-                    <Label
-						Grid.Row="1"
-						Grid.RowSpan="2"
-						Grid.Column="6"
-						FontFamily="PoppinsRegularFontFamily"
-						FontSize="12"
-						HorizontalTextAlignment="Center"
-						Text="Check-in"
+						Text="Happenings"
 						TextColor="#8E9095"
 						VerticalTextAlignment="End" />
 
@@ -214,6 +217,19 @@
 						Grid.Row="1"
 						Grid.RowSpan="2"
 						Grid.Column="4"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						LineBreakMode="TailTruncation"
+						MaxLines="1"
+						Text="Activity"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+                   
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="6"
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
@@ -228,7 +244,7 @@
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
-						Text="Waitlist"
+						Text="Check-in"
 						TextColor="#8E9095"
 						VerticalTextAlignment="End" />
 
@@ -236,6 +252,17 @@
 						Grid.Row="1"
 						Grid.RowSpan="2"
 						Grid.Column="10"
+						FontFamily="PoppinsRegularFontFamily"
+						FontSize="12"
+						HorizontalTextAlignment="Center"
+						Text="Waitlist"
+						TextColor="#8E9095"
+						VerticalTextAlignment="End" />
+
+                    <Label
+						Grid.Row="1"
+						Grid.RowSpan="2"
+						Grid.Column="12"
 						FontFamily="PoppinsRegularFontFamily"
 						FontSize="12"
 						HorizontalTextAlignment="Center"
