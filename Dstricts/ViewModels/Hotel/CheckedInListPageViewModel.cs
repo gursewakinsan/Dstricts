@@ -143,6 +143,18 @@ namespace Dstricts.ViewModels
         }
         #endregion
 
+        #region Go To Happenings Page Command.
+        private ICommand goToHappeningsPageCommand;
+        public ICommand GoToHappeningsPageCommand
+        {
+            get => goToHappeningsPageCommand ?? (goToHappeningsPageCommand = new Command(async () => await ExecuteGoToHappeningsPageCommand()));
+        }
+        private async Task ExecuteGoToHappeningsPageCommand()
+        {
+            await Navigation.PushAsync(new Views.Happening.HappeningsPage());
+        }
+        #endregion
+
         #region User Queue List Command.
         private ICommand userQueueListCommand;
 		public ICommand UserQueueListCommand
