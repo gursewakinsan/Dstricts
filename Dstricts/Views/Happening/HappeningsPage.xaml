@@ -281,20 +281,25 @@
 				CornerRadius="38,38,0,0"
 				HasShadow="False"
 				IsClippedToBounds="True">
-                <ScrollView VerticalScrollBarVisibility="Never" Margin="28,38,28,0">
+                <ScrollView VerticalScrollBarVisibility="Never" Margin="0,38,0,0">
                     <Grid RowSpacing="0" ColumnSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="175"/>
+                            <RowDefinition Height="33"/>
+                            <RowDefinition Height="148"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="28"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="28"/>
                         </Grid.ColumnDefinitions>
                         <Label
 							Grid.Row="0"
-							Grid.Column="0"
+							Grid.Column="1"
 							FontFamily="PoppinsBoldFontFamily"
 							FontSize="24"
 							HorizontalTextAlignment="Start"
@@ -304,7 +309,7 @@
 
                         <Frame
 							Grid.Row="0"
-							Grid.Column="1"
+							Grid.Column="2"
 							HasShadow="False"
 							CornerRadius="8"
 							BorderColor="#3D3F48"
@@ -313,7 +318,7 @@
 
                         <StackLayout
 							Grid.Row="0"
-							Grid.Column="1"
+							Grid.Column="2"
 							Spacing="0"
 							Margin="10,0,0,0"
 							Orientation="Horizontal"
@@ -339,13 +344,14 @@
 
                         <ScrollView 
                             Grid.Row="2"
-							Grid.ColumnSpan="2"
+                            Grid.Column="1"
+							Grid.ColumnSpan="3"
                             Orientation="Horizontal" 
                             HorizontalScrollBarVisibility="Never">
-                            <StackLayout Orientation="Horizontal" Spacing="20">
+                            <StackLayout Orientation="Horizontal" Spacing="21">
                                 <Frame
                                     CornerRadius="4"
-                                    Padding="20"
+                                    Padding="13,13,23,13"
                                     HasShadow="False"
                                     IsClippedToBounds="True"
                                     BackgroundColor="#242A37">
@@ -445,7 +451,7 @@
 
                                 <Frame
 									CornerRadius="4"
-									Padding="20"
+									Padding="13,18,23,18"
 									HasShadow="False"
 									IsClippedToBounds="True"
 									BorderColor="#242A37"
@@ -547,8 +553,237 @@
                                         </StackLayout>
                                     </Grid>
                                 </Frame>
+
+                                <BoxView WidthRequest="10"/>
                             </StackLayout>
                         </ScrollView>
+
+                        <Grid
+							Grid.Row="4"
+                            Grid.Column="1"
+							Grid.ColumnSpan="2"
+							ColumnSpacing="10"
+							RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="104"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="104"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="0"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </StackLayout.GestureRecognizers>
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Tours &amp;"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Sightseeing"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="0"
+								Grid.Column="1"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="2"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Tickets &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Attraction"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="0"
+								Grid.Column="3"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="0"
+								Grid.Column="4"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Hotel &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Apartments"
+									TextColor="White" />
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="1"
+								Grid.ColumnSpan="5"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="0"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </StackLayout.GestureRecognizers>
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Cars &amp;"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Boats"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="2"
+								Grid.Column="1"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="2"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer />
+                                </StackLayout.GestureRecognizers>
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Eat &amp;"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Drinks"
+									TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+
+                            <BoxView
+								Grid.Row="2"
+								Grid.Column="3"
+								BackgroundColor="#3D3F48"/>
+
+                            <StackLayout
+								Grid.Row="2"
+								Grid.Column="4"
+								Spacing="0"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand">
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Beauty &amp;"
+									TextColor="White" />
+
+                                <Label
+									FontFamily="PoppinsRegularFontFamily"
+									FontSize="13"
+									Opacity="0.70"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center"
+									Text="Treatments"
+									TextColor="White" />
+                            </StackLayout>
+                        </Grid>
                     </Grid>
                 </ScrollView>
             </controls:CustomFrame>
