@@ -273,226 +273,285 @@
                 </Grid>
             </ScrollView>
 
-            <!--<controls:CustomFrame
-		Grid.Row="4"
-		Grid.ColumnSpan="2"
-		Padding="0"
-		BackgroundColor="#1B1D24"
-		CornerRadius="38,38,0,0"
-		HasShadow="False"
-		IsClippedToBounds="True">
-                <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout x:Name="cards">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <Frame
-							Padding="0"
-							BackgroundColor="Transparent"
-							BorderColor="Transparent"
-							CornerRadius="10"
+            <controls:CustomFrame
+				Grid.Row="4"
+				Grid.ColumnSpan="2"
+				Padding="0"
+				BackgroundColor="#1B1D24"
+				CornerRadius="38,38,0,0"
+				HasShadow="False"
+				IsClippedToBounds="True">
+                <ScrollView VerticalScrollBarVisibility="Never" Margin="28,38,28,0">
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="175"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							FontFamily="PoppinsBoldFontFamily"
+							FontSize="24"
+							HorizontalTextAlignment="Start"
+							VerticalTextAlignment="Center"
+							Text="Alicante"
+							TextColor="White" />
+
+                        <Frame
+							Grid.Row="0"
+							Grid.Column="1"
 							HasShadow="False"
+							CornerRadius="8"
+							BorderColor="#3D3F48"
 							IsClippedToBounds="True"
-							VerticalOptions="StartAndExpand">
-                                    <Grid ColumnSpacing="0" RowSpacing="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="28" />
-                                            <RowDefinition Height="40" />
-                                            <RowDefinition Height="10" />
-                                            <RowDefinition Height="400" />
-                                            <RowDefinition Height="15" />
-                                            <RowDefinition Height="28" />
-                                            <RowDefinition Height="13" />
-                                            <RowDefinition Height="auto" />
-                                            <RowDefinition Height="25" />
-                                            <RowDefinition Height="24" />
-                                            <RowDefinition Height="14" />
-                                            <RowDefinition Height="1" />
-                                            <RowDefinition Height="42" />
-                                        </Grid.RowDefinitions>
+							BackgroundColor="Transparent"/>
+
+                        <StackLayout
+							Grid.Row="0"
+							Grid.Column="1"
+							Spacing="0"
+							Margin="10,0,0,0"
+							Orientation="Horizontal"
+							HorizontalOptions="CenterAndExpand"
+							VerticalOptions="CenterAndExpand">
+                            <Label
+								FontFamily="PoppinsRegularFontFamily"
+								FontSize="12"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="Center"
+								Text="Events"
+								Margin="0,2,0,0"
+								TextColor="White" />
+
+                            <Label
+								FontFamily="{StaticResource MaterialFontFamily}"
+								FontSize="25"
+								TextColor="White"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="Center"
+								Text="{x:Static fontawesome:DstrictsAppFlatIcons.ChevronRight}"/>
+                        </StackLayout>
+
+                        <ScrollView 
+                            Grid.Row="2"
+							Grid.ColumnSpan="2"
+                            Orientation="Horizontal" 
+                            HorizontalScrollBarVisibility="Never">
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Frame
+                                    CornerRadius="4"
+                                    Padding="20"
+                                    HasShadow="False"
+                                    IsClippedToBounds="True"
+                                    BackgroundColor="#242A37">
+                                    <Grid RowSpacing="0" ColumnSpacing="15">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="28" />
-                                            <ColumnDefinition Width="40" />
-                                            <ColumnDefinition />
-                                            <ColumnDefinition Width="40" />
-                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="75"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="130"/>
                                         </Grid.ColumnDefinitions>
-
-
-                                        <ImageButton
-									Grid.Row="1"
-									Grid.Column="1"
-									Padding="0"
-									Aspect="AspectFill"
-									BackgroundColor="Transparent"
-									CornerRadius="20"
-									HeightRequest="40"
-									HorizontalOptions="StartAndExpand"
-									Source="{Binding UserImage}"
-									VerticalOptions="CenterAndExpand"
-									WidthRequest="40" />
-
-                                        <StackLayout
-									Grid.Row="1"
-									Grid.Column="2"
-									Margin="18,0,0,0"
-									HorizontalOptions="StartAndExpand"
-									Spacing="0"
-									VerticalOptions="CenterAndExpand">
+                                        <StackLayout Grid.Column="0" Spacing="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                             <Label
-										FontFamily="PoppinsSemiBoldFontFamily"
-										FontSize="12"
-										HorizontalTextAlignment="Start"
-										Text="Bank Hotel"
-										TextColor="White" />
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="55"
+												HorizontalTextAlignment="Center"
+												VerticalTextAlignment="Center"
+												Text="18"
+                                                Margin="0,-10,0,0"
+												TextColor="White" />
+
+                                            <BoxView
+                                                Margin="0,-20,0,0"
+                                                HeightRequest="1"
+                                                VerticalOptions="StartAndExpand"
+												BackgroundColor="#F29DFE"/>
 
                                             <Label
-										FontFamily="PoppinsRegularFontFamily"
-										FontSize="12"
-										HorizontalTextAlignment="Start"
-										LineBreakMode="TailTruncation"
-										MaxLines="1"
-										Opacity="0.70"
-										Text="Sponsored"
-										TextColor="White" />
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="16"
+												HorizontalTextAlignment="Center"
+												VerticalTextAlignment="Center"
+												Text="May"
+                                                Opacity="0.3"
+												TextColor="White" />
                                         </StackLayout>
-
-                                        <Button
-									Grid.Row="1"
-									Grid.Column="3"
-									Padding="0"
-									BackgroundColor="Transparent"
-									FontFamily="{StaticResource MaterialFontFamily}"
-									FontSize="32"
-									Text="{x:Static fontawesome:DstrictsAppFlatIcons.DotsHorizontal}"
-									TextColor="White"
-									VerticalOptions="StartAndExpand" />
-
-                                        <Frame
-									Grid.Row="3"
-									Grid.Column="1"
-									Grid.ColumnSpan="3"
-									Padding="0" CornerRadius="5"
-									BackgroundColor="Transparent"
-									BorderColor="Transparent"
-									HasShadow="False"
-									IsClippedToBounds="True"
-									VerticalOptions="StartAndExpand">
-                                            <Image
-										Aspect="AspectFill"
-										HeightRequest="400"
-										Source="{Binding ImgURL}" />
-                                        </Frame>
-
-                                        <StackLayout
-									Grid.Row="5"
-									Grid.Column="1"
-									Grid.ColumnSpan="2"
-									HorizontalOptions="StartAndExpand"
-									Orientation="Horizontal"
-									Spacing="0">
-                                            <Label
-										FontFamily="CustomFontIconOne"
-										FontSize="24"
-										Text="{x:Static fontawesome:DstrictsAppFlatIcons.HeartNew}"
-										TextColor="#EF3B17"
-										VerticalTextAlignment="Center" />
-
-                                            <Label
-										Margin="8,0,24,0"
-										FontFamily="PoppinsRegularFontFamily"
-										FontSize="14"
-										Opacity="0.7"
-										Text="100 likes"
-										TextColor="White"
-										VerticalTextAlignment="Center" />
-
-                                            <Label
-										FontFamily="CustomFontIconOne"
-										FontSize="22"
-										Opacity="0.7"
-										Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_Chat}"
-										TextColor="White"
-										VerticalTextAlignment="Center" />
-                                        </StackLayout>
-
-                                        <Label
-									Grid.Row="5"
-									Grid.Column="3"
-									FontFamily="CustomFontIconOne"
-									FontSize="24"
-									HorizontalOptions="End"
-									HorizontalTextAlignment="End"
-									Opacity="0.7"
-									Text="{x:Static fontawesome:DstrictsAppFlatIcons.Outline_BookmarkAdd}"
-									TextColor="White"
-									VerticalTextAlignment="Center" />
-
-                                        <Label
-									Grid.Row="7"
-									Grid.Column="1"
-									Grid.ColumnSpan="3"
-									FontFamily="PoppinsRegularFontFamily"
-									FontSize="12"
-									HorizontalTextAlignment="Start"
-									LineBreakMode="TailTruncation"
-									LineHeight="1.3"
-									MaxLines="2"
-									Opacity="0.70"
-									Text="Unexpected organic fruits in Siwa, Egypt. Unexpected organic fruits in Siwa, Egypt"
-									TextColor="White"
-									VerticalTextAlignment="Center" />
-
-                                        <Grid
-									Grid.Row="9"
-									Grid.Column="1"
-									Grid.ColumnSpan="3">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="8" />
-                                                <ColumnDefinition Width="24" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-
-                                            <ImageButton
-										Grid.Row="0"
-										Grid.Column="1"
-										Padding="0"
-										Aspect="AspectFill"
-										BackgroundColor="Transparent"
-										CornerRadius="12"
-										HeightRequest="24"
-										HorizontalOptions="StartAndExpand"
-										Source="{Binding CommentImgURL}"
-										VerticalOptions="CenterAndExpand"
-										WidthRequest="24" />
-
-                                            <Label
-										Grid.Row="0"
-										Grid.Column="2"
-										Margin="6,0,0,0"
-										FontFamily="PoppinsRegularFontFamily"
-										FontSize="12"
-										HorizontalTextAlignment="Start"
-										LineBreakMode="TailTruncation"
-										Opacity="0.32"
-										Text="Add comment"
-										TextColor="White"
-										VerticalTextAlignment="Center" />
-                                        </Grid>
 
                                         <BoxView
-									Grid.Row="11"
-									Grid.Column="1"
-									Grid.ColumnSpan="3"
-									BackgroundColor="White"
-									HeightRequest="1"
-									Opacity="0.2" />
+											Grid.Column="1"
+											BackgroundColor="#3D3F48"/>
+
+                                        <StackLayout Spacing="0" Grid.Column="2">
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="13"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="Sunday market"
+												Opacity="0.5"
+												TextColor="White" />
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="09:00 AM - 11:00 PM"
+												Opacity="0.3"
+												TextColor="White" />
+
+                                            <BoxView
+                                                Margin="0,7,0,7"
+                                                HeightRequest="1"
+												BackgroundColor="#3D3F48"/>
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="13"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="Spanish festival"
+												Opacity="0.5"
+												TextColor="White" />
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="11:00 AM - 12:00 PM"
+												Opacity="0.3"
+												TextColor="White" />
+
+                                            <BoxView
+												Margin="0,7,0,7"
+												HeightRequest="1"
+												BackgroundColor="#3D3F48"/>
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="+ 4 more"
+												TextColor="#0C8CE8" />
+                                        </StackLayout>
                                     </Grid>
                                 </Frame>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
+
+                                <Frame
+									CornerRadius="4"
+									Padding="20"
+									HasShadow="False"
+									IsClippedToBounds="True"
+									BorderColor="#242A37"
+                                    BackgroundColor="Transparent">
+                                    <Grid RowSpacing="0" ColumnSpacing="15">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="130"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout 
+                                            Grid.Column="0" 
+                                            Spacing="5" 
+                                            HorizontalOptions="CenterAndExpand" 
+                                            VerticalOptions="CenterAndExpand">
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="55"
+												HorizontalTextAlignment="Center"
+												VerticalTextAlignment="Center"
+												Text="23"
+												Margin="0,-10,0,0"
+												TextColor="White" />
+
+                                            <BoxView
+												Margin="0,-20,0,0"
+												HeightRequest="1"
+												VerticalOptions="StartAndExpand"
+												BackgroundColor="#F29DFE"/>
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="16"
+												HorizontalTextAlignment="Center"
+												VerticalTextAlignment="Center"
+												Text="May"
+												Opacity="0.3"
+												TextColor="White" />
+                                        </StackLayout>
+
+                                        <BoxView
+											Grid.Column="1"
+											BackgroundColor="#3D3F48"/>
+
+                                        <StackLayout Spacing="0" Grid.Column="2">
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="13"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="Sunday market"
+												Opacity="0.5"
+												TextColor="White" />
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="09:00 AM - 11:00 PM"
+												Opacity="0.3"
+												TextColor="White" />
+
+                                            <BoxView
+												Margin="0,7,0,7"
+												HeightRequest="1"
+												BackgroundColor="#3D3F48"/>
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="13"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="Spanish festival"
+												Opacity="0.5"
+												TextColor="White" />
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="11:00 AM - 12:00 PM"
+												Opacity="0.3"
+												TextColor="White" />
+
+                                            <BoxView
+												Margin="0,7,0,7"
+												HeightRequest="1"
+												BackgroundColor="#3D3F48"/>
+
+                                            <Label
+												FontFamily="PoppinsRegularFontFamily"
+												FontSize="11"
+												HorizontalTextAlignment="Start"
+												VerticalTextAlignment="Center"
+												Text="+ 4 more"
+												TextColor="#0C8CE8" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ScrollView>
+                    </Grid>
                 </ScrollView>
-            </controls:CustomFrame>-->
+            </controls:CustomFrame>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
